@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pending-tx.v1",
+  "title": "PendingTxEvent",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "schema_ver",
+    "chain_id",
+    "created_at",
+    "idempotency_key",
+    "tx_hash",
+    "seen_at",
+    "source",
+    "raw_tx_status"
+  ],
+  "properties": {
+    "event_id": {"type": "string", "minLength": 1},
+    "schema_ver": {"const": "pending-tx.v1"},
+    "chain_id": {"const": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "idempotency_key": {"type": "string", "minLength": 1},
+    "tx_hash": {"type": "string", "pattern": "^0x[a-fA-F0-9]{64}$"},
+    "raw_tx": {
+      "type": ["string", "null"],
+      "pattern": "^0x[a-fA-F0-9]+$"
+    },
+    "raw_tx_status": {
+      "type": "string",
+      "enum": ["available", "unavailable_from_provider", "not_found", "error"]
+    },
+    "tx": {
+      "type": ["object", "null"],
+      "additionalProperties": true
+    },
+    "seen_at": {"type": "string", "format": "date-time"},
+    "source": {"type": "string", "minLength": 1},
+    "replacement_status": {
+      "type": "string",
+      "enum": ["unknown", "active", "replaced", "dropped", "mined"]
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "active_endpoint_recommendation": "provider-pending-fallback",
+  "chain_id": 1,
+  "checked_at": "2026-05-13T02:25:12.175+00:00",
+  "endpoints": [
+    {
+      "checked_at": "2026-05-13T02:25:07.649+00:00",
+      "checks": {},
+      "client": "geth",
+      "enabled": false,
+      "name": "local-geth-primary",
+      "reason": "unset env ETH_MAIN_HTTP_URL",
+      "role": "primary",
+      "status": "skipped"
+    },
+    {
+      "checked_at": "2026-05-13T02:25:07.649+00:00",
+      "checks": {},
+      "client": "erigon",
+      "enabled": false,
+      "name": "local-erigon-backup",
+      "reason": "unset env ETH_BACKUP_HTTP_URL",
+      "role": "backup",
+      "status": "skipped"
+    },
+    {
+      "checked_at": "2026-05-13T02:25:07.649+00:00",
+      "checks": {
+        "chain_id": {
+          "error": null,
+          "latency_ms": 721.2,
+          "method_missing": false,
+          "ok": true,
+          "result": "0x1"
+        },
+        "head": {
+          "error": null,
+          "latency_ms": 727.41,
+          "method_missing": false,
+          "ok": true,
+          "result": "0x17ebd48"
+        },
+        "head_lag": {
+          "lag_blocks": 0,
+          "max_observed_head": 25083208,
+          "ok": true
+        },
+        "peer_count": {
+          "error": "-32600: net_peerCount is not available on the ETH_MAINNET. For more information see our docs: https://docs.alchemy.com/alchemy/documentation/apis/ethereum",
+          "latency_ms": 574.64,
+          "method_missing": false,
+          "ok": false,
+          "result": null
+        },
+        "trace_api": {
+          "error": "-32600: debug_traceCall is not available on the Free tier - upgrade to Pay As You Go, or Enterprise for access.",
+          "latency_ms": 611.66,
+          "method_missing": false,
+          "ok": false,
+          "result": null
+        },
+        "txpool_api": {
+          "error": "-32600: Unsupported method: txpool_status on ETH_MAINNET",
+          "latency_ms": 606.55,
+          "method_missing": false,
+          "ok": false,
+          "result": null
+        },
+        "websocket_new_heads": {
+          "error": null,
+          "latency_ms": 1281.65,
+          "method_missing": false,
+          "ok": true,
+          "result": {
+            "id": 1,
+            "jsonrpc": "2.0",
+            "result": "0x4694f63f32c4a6502c27dee09d471d4a"
+          }
+        }
+      },
+      "client": "provider",
+      "enabled": true,
+      "name": "provider-pending-fallback",
+      "required_checks": [
+        "chain_id",
+        "head",
+        "websocket_new_heads"
+      ],
+      "role": "provider_fallback",
+      "status": "ok"
+    }
+  ]
+}

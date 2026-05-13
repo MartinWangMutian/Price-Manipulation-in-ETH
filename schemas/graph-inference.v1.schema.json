@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "graph-inference.v1",
+  "title": "GraphInferenceRequest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "schema_ver",
+    "chain_id",
+    "created_at",
+    "idempotency_key",
+    "graph_id",
+    "tx_hash",
+    "nodes",
+    "edges",
+    "feature_ver",
+    "context_windows",
+    "feature_missing_flags"
+  ],
+  "properties": {
+    "event_id": {"type": "string", "minLength": 1},
+    "schema_ver": {"const": "graph-inference.v1"},
+    "chain_id": {"const": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "idempotency_key": {"type": "string", "minLength": 1},
+    "graph_id": {"type": "string", "minLength": 1},
+    "tx_hash": {"type": "string", "pattern": "^0x[a-fA-F0-9]{64}$"},
+    "nodes": {"type": "array", "items": {"type": "object"}},
+    "edges": {"type": "array", "items": {"type": "object"}},
+    "feature_ver": {"type": "string", "minLength": 1},
+    "context_windows": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["tx-only", "5m-address", "1h-protocol"]
+      },
+      "minItems": 1
+    },
+    "feature_missing_flags": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "graph_snapshot_ref": {"type": ["string", "null"]}
+  }
+}

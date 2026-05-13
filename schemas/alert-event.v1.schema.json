@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "alert-event.v1",
+  "title": "AlertEvent",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "schema_ver",
+    "chain_id",
+    "created_at",
+    "idempotency_key",
+    "alert_id",
+    "tx_hash",
+    "score",
+    "severity",
+    "reasons",
+    "evidence_refs",
+    "suggested_actions",
+    "alert_version"
+  ],
+  "properties": {
+    "event_id": {"type": "string", "minLength": 1},
+    "schema_ver": {"const": "alert-event.v1"},
+    "chain_id": {"const": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "idempotency_key": {"type": "string", "minLength": 1},
+    "alert_id": {"type": "string", "minLength": 1},
+    "tx_hash": {"type": "string", "pattern": "^0x[a-fA-F0-9]{64}$"},
+    "score": {"type": "number", "minimum": 0, "maximum": 1},
+    "severity": {
+      "type": "string",
+      "enum": ["low", "watch", "high", "critical"]
+    },
+    "reasons": {"type": "array", "items": {"type": "string"}},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "suggested_actions": {"type": "array", "items": {"type": "string"}},
+    "alert_version": {"type": "string", "minLength": 1},
+    "review_state": {
+      "type": "string",
+      "enum": [
+        "new",
+        "triaged",
+        "escalated",
+        "action_prepared",
+        "approved",
+        "rejected",
+        "resolved"
+      ]
+    }
+  }
+}

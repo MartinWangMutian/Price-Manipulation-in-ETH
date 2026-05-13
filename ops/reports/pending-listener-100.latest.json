@@ -1,0 +1,712 @@
+{
+  "checked_at": "2026-05-13T09:28:59.772+00:00",
+  "deduped_hashes": 100,
+  "duration_ms": 152129.38,
+  "errors": [],
+  "events": [
+    {
+      "event_id": "c4c4387484a40a3649e1a3a8ca61937f09736d4c013e293b87a9f934f9db3664",
+      "fetch_latency_ms": 1382.33,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/c4c4387484a40a3649e1a3a8ca61937f09736d4c013e293b87a9f934f9db3664.json",
+      "tx_hash": "0x7d0e6c6114fc6dfc0420dbb89dc22ab8b2a36818610c6f81eb01c63432688a53"
+    },
+    {
+      "event_id": "598a0ca825d8aa344803aa98ed8dde2088e7f9d00db456ecbbd84939f61be67a",
+      "fetch_latency_ms": 1370.03,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/598a0ca825d8aa344803aa98ed8dde2088e7f9d00db456ecbbd84939f61be67a.json",
+      "tx_hash": "0xe6662711608dbb45abda2fd19056e00429658fadf4bb09e32c1a02ce25c03d90"
+    },
+    {
+      "event_id": "6e2c9ce687fcf97ad27af08ea9f5124898fda61c551b3c183db40642c8e243a8",
+      "fetch_latency_ms": 1392.93,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/6e2c9ce687fcf97ad27af08ea9f5124898fda61c551b3c183db40642c8e243a8.json",
+      "tx_hash": "0xc256d4dacfb4e261eb42549ba86277b76b5684a919a25661574da6b9aac8fbde"
+    },
+    {
+      "event_id": "23861a31990096bc2ff640a70506ff19818f5b706840b179d61a7134c02473c6",
+      "fetch_latency_ms": 1287.61,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/23861a31990096bc2ff640a70506ff19818f5b706840b179d61a7134c02473c6.json",
+      "tx_hash": "0xc35c35118df43f3352ff465bede69589675230b9d81ee2f5a4c7f8fe6fa9af88"
+    },
+    {
+      "event_id": "5e8666a3a5bfa7c93375ab1cfed6358a5c2c7d386507a30fec15dc20dd1e1280",
+      "fetch_latency_ms": 2099.76,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/5e8666a3a5bfa7c93375ab1cfed6358a5c2c7d386507a30fec15dc20dd1e1280.json",
+      "tx_hash": "0xd6b33e8bce363754295225edd16bf8eaf6c31839f0519a31569a70157fddc4e7"
+    },
+    {
+      "event_id": "bcd6543638bdcf6ddf47db9421b6434260078d175c9ab3fcb06250920908b7bf",
+      "fetch_latency_ms": 1242.55,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/bcd6543638bdcf6ddf47db9421b6434260078d175c9ab3fcb06250920908b7bf.json",
+      "tx_hash": "0x478be21c21c30e043e1cf45577194a87fbed957ac52cd373a64b352142d87c02"
+    },
+    {
+      "event_id": "c907fff4fb1c66ee5ade9d925f96bebb85e5af71336d0bf41bc07a423b12bf15",
+      "fetch_latency_ms": 1673.98,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/c907fff4fb1c66ee5ade9d925f96bebb85e5af71336d0bf41bc07a423b12bf15.json",
+      "tx_hash": "0xc9c20c461e2af7d0a8da448d4547d3ffcaa92c184aba16548052efba0af19aa3"
+    },
+    {
+      "event_id": "3900eabbc8a8e5188a9c1007a037d4571040e9315ec0af486616dce45e441c2d",
+      "fetch_latency_ms": 1720.16,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/3900eabbc8a8e5188a9c1007a037d4571040e9315ec0af486616dce45e441c2d.json",
+      "tx_hash": "0xd459c573d99e05d890098b4853f3ff1127981136b4f1ec9fef0f67b7eecbcc70"
+    },
+    {
+      "event_id": "b8dc8c70dfd6cdfbf826fcffdb2707e527b6b728e1a80935bab3596db5a9f14d",
+      "fetch_latency_ms": 1380.31,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/b8dc8c70dfd6cdfbf826fcffdb2707e527b6b728e1a80935bab3596db5a9f14d.json",
+      "tx_hash": "0x5be71f91aa8bdd9997c1a8887d866fa17917f5abe29d00e802b91e40b789ab6a"
+    },
+    {
+      "event_id": "3d9fc8faaa15a16613d1c9752f40da6a6b4af3f387ebfb7f4860938d5a16d6db",
+      "fetch_latency_ms": 1758.46,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/3d9fc8faaa15a16613d1c9752f40da6a6b4af3f387ebfb7f4860938d5a16d6db.json",
+      "tx_hash": "0x0397d5a413d5585d011814876ebd770bbf6cc9ad1dcc9f685a1a6236bed43cbf"
+    },
+    {
+      "event_id": "52ab497223c78273e19963b558261583376d3a69d667f6cf9d2b54748e3b7a06",
+      "fetch_latency_ms": 1259.55,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/52ab497223c78273e19963b558261583376d3a69d667f6cf9d2b54748e3b7a06.json",
+      "tx_hash": "0xd876340718eddc916301c2df59be599d49bba66c269266b011a901f36d704a7d"
+    },
+    {
+      "event_id": "6a7e30884fc0cad383700050265f458f2034dd6813a913a63cd69a62d825472d",
+      "fetch_latency_ms": 1739.35,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/6a7e30884fc0cad383700050265f458f2034dd6813a913a63cd69a62d825472d.json",
+      "tx_hash": "0x8fde79c3357e5a6b17388183e5f8f372c7951be7e5726194f1fd36ed9fe497fa"
+    },
+    {
+      "event_id": "a661d0863a1983ba29b9ed3fc6c98f95815242ba5f92e60c566f5e03310082d0",
+      "fetch_latency_ms": 1449.48,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/a661d0863a1983ba29b9ed3fc6c98f95815242ba5f92e60c566f5e03310082d0.json",
+      "tx_hash": "0x93f8d9e1c535fdb3298278c733f46ce508d75c0d42a2d9d8fc7ecc3ef454510d"
+    },
+    {
+      "event_id": "495e5f3c2236a5585132bdf047945f81918ba4464ad707707aee1a53c9aa89d6",
+      "fetch_latency_ms": 1363.89,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/495e5f3c2236a5585132bdf047945f81918ba4464ad707707aee1a53c9aa89d6.json",
+      "tx_hash": "0x98505a81598aa7b9fca65e8b6ede7af333fa5c413b056a29cb943afc8ac111a6"
+    },
+    {
+      "event_id": "8aa27e83d2f7540813f15066454787b8d86e73e02258969ad1e24b5f51c3fc96",
+      "fetch_latency_ms": 1739.12,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/8aa27e83d2f7540813f15066454787b8d86e73e02258969ad1e24b5f51c3fc96.json",
+      "tx_hash": "0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3"
+    },
+    {
+      "event_id": "44106662ab76f54bcc2c6d4ff50956c1fe8c00466676b2147905cc7f006b81d7",
+      "fetch_latency_ms": 1150.19,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/44106662ab76f54bcc2c6d4ff50956c1fe8c00466676b2147905cc7f006b81d7.json",
+      "tx_hash": "0x866d37d962506d5dccf72fc7f4d6699ef2b255f24287d209cebf66e74ea6eaf0"
+    },
+    {
+      "event_id": "0a96528aa2a4763bc20b7bdf37b33c1988ac49888572d14fe715d676cee8d18b",
+      "fetch_latency_ms": 1343.31,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/0a96528aa2a4763bc20b7bdf37b33c1988ac49888572d14fe715d676cee8d18b.json",
+      "tx_hash": "0xe6b670cc55d258f08bc6feac61bbf1a5dd7ee678bafd8a3557876cbcc95a192a"
+    },
+    {
+      "event_id": "b38a76b7a5e21f00e4a242932b97000f8e36df767de831a790855783f23b5f5d",
+      "fetch_latency_ms": 1613.18,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/b38a76b7a5e21f00e4a242932b97000f8e36df767de831a790855783f23b5f5d.json",
+      "tx_hash": "0xda18ff16d411fde0fd028b6fcffdc743a7ed5c16ce5c97dfce4c50556589589b"
+    },
+    {
+      "event_id": "3867a28398531c16c00218a4bf39c36538a92a23aca882c4f3177d7536ed8a3a",
+      "fetch_latency_ms": 1202.41,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/3867a28398531c16c00218a4bf39c36538a92a23aca882c4f3177d7536ed8a3a.json",
+      "tx_hash": "0xd141eafe2ddee968efdbb6763672b23b71d2085f7cd46accc444c0e36e2e22f9"
+    },
+    {
+      "event_id": "3030ed3b167a245c6ec2f8e5844cc0c9930183b87811560eacbf65b65a1b8e28",
+      "fetch_latency_ms": 1250.06,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/3030ed3b167a245c6ec2f8e5844cc0c9930183b87811560eacbf65b65a1b8e28.json",
+      "tx_hash": "0x30c3524b6d4dcc443e67e238a38be4564c166fa9014631f8b4777c52af5bbab3"
+    },
+    {
+      "event_id": "6396fd600b414ab711143358a5bd7f8671bbb3ca827114249a0217202bf9f94a",
+      "fetch_latency_ms": 1240.48,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/6396fd600b414ab711143358a5bd7f8671bbb3ca827114249a0217202bf9f94a.json",
+      "tx_hash": "0x7e7732acc762bec2092801fb651f2a495f7057cfedca85429b194ed1dc54c187"
+    },
+    {
+      "event_id": "896f82a53a64c91a4ecc5271ad1a1d82c0b103db2e99b987244cedf75f5f0fda",
+      "fetch_latency_ms": 1859.31,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/896f82a53a64c91a4ecc5271ad1a1d82c0b103db2e99b987244cedf75f5f0fda.json",
+      "tx_hash": "0x3a17a7996b219a685f0332bd806784a3b5be47a2c0cc51c811b2b6816f5dff4e"
+    },
+    {
+      "event_id": "251325b7c5a2c805feedde2cd5cd1f3cb13e54ac90bb2bf792637dbfe07913cf",
+      "fetch_latency_ms": 1754.24,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/251325b7c5a2c805feedde2cd5cd1f3cb13e54ac90bb2bf792637dbfe07913cf.json",
+      "tx_hash": "0xccb643fa42789800816f9951e23ffc9bba80234224c305c3ee1e8942ebb7b204"
+    },
+    {
+      "event_id": "efe21e29df9c3b72a31e22b4f4f30fd6ec4b7036b3a31aa67f9d6afe8fe973b6",
+      "fetch_latency_ms": 1725.02,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/efe21e29df9c3b72a31e22b4f4f30fd6ec4b7036b3a31aa67f9d6afe8fe973b6.json",
+      "tx_hash": "0x52116931b4a4978c92b64911412f7fa75bd5919cbf4291d7e75ed26aad718003"
+    },
+    {
+      "event_id": "2b06e0515b529e4b6a5944b918394b694a9538ee6df1d91f3e9bf9f30376633b",
+      "fetch_latency_ms": 1292.94,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/2b06e0515b529e4b6a5944b918394b694a9538ee6df1d91f3e9bf9f30376633b.json",
+      "tx_hash": "0x5c7c89c0b97cdadcd9caf7809c2ed983a23200b778634b200a0812fe1970673c"
+    },
+    {
+      "event_id": "6da2f4282bf37ef8b99809c9372789767a3d5a52cefacae96c33b9c49de16a59",
+      "fetch_latency_ms": 1425.98,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/6da2f4282bf37ef8b99809c9372789767a3d5a52cefacae96c33b9c49de16a59.json",
+      "tx_hash": "0x328fca7ecda8f170da8d0553ea4606c6931e7036e248b8af5f9840de2527abd0"
+    },
+    {
+      "event_id": "a6c55922fdc15b8b87ce8807ab7867f9acff324e3da2be77cbb2762a664144d3",
+      "fetch_latency_ms": 1774.82,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/a6c55922fdc15b8b87ce8807ab7867f9acff324e3da2be77cbb2762a664144d3.json",
+      "tx_hash": "0xd4c81cb26ed27182ae1255b247f7c705be0a8591fa71aacc55cfdfc8f335e288"
+    },
+    {
+      "event_id": "bf69c5f7b622b4a36479916d6a5727f9a6da42ab97e18ec4f5315a199847c011",
+      "fetch_latency_ms": 1482.45,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/bf69c5f7b622b4a36479916d6a5727f9a6da42ab97e18ec4f5315a199847c011.json",
+      "tx_hash": "0x4680bdf70524935dab47d2d191559f89eb6a629db01339b75b5a98a334530d87"
+    },
+    {
+      "event_id": "fc71f9f5e7fbdff098874b72627141e6e293533684b6ba1b9ab787a7a6e24083",
+      "fetch_latency_ms": 1573.75,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/fc71f9f5e7fbdff098874b72627141e6e293533684b6ba1b9ab787a7a6e24083.json",
+      "tx_hash": "0xefd1ecc01ba0e7ccfc029c65731bde55331c1148624f9998414eda01e49cc447"
+    },
+    {
+      "event_id": "413f5b86cec11cebc274e486b6d70164189d44a20b0cfc30327246577b004492",
+      "fetch_latency_ms": 3101.79,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/413f5b86cec11cebc274e486b6d70164189d44a20b0cfc30327246577b004492.json",
+      "tx_hash": "0xbc708ce15e2b957651fbcae480d4049907ea18e8ff5c4955fc06211863f6a5bf"
+    },
+    {
+      "event_id": "2aa583ece505c10a612318140f197ac9842b8ec273abd41da5aad262b8f43d32",
+      "fetch_latency_ms": 1399.68,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/2aa583ece505c10a612318140f197ac9842b8ec273abd41da5aad262b8f43d32.json",
+      "tx_hash": "0x4ae15a092a638c8d15bc2a30e52602d95aa81eab81c94cdeb96157b93d600534"
+    },
+    {
+      "event_id": "e665ae4138fcbbbaf8a6fef5216c7f7faffaa07a5898a2d950be5a8a66719609",
+      "fetch_latency_ms": 1634.81,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/e665ae4138fcbbbaf8a6fef5216c7f7faffaa07a5898a2d950be5a8a66719609.json",
+      "tx_hash": "0xbf7be0d1521734cd40fe7fee7dfafb5d450facd889b19cfea80403781de10997"
+    },
+    {
+      "event_id": "bb4eff804e273bccb8702130da5b5e79231af5720b3098278bb52f36255f0571",
+      "fetch_latency_ms": 1176.37,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/bb4eff804e273bccb8702130da5b5e79231af5720b3098278bb52f36255f0571.json",
+      "tx_hash": "0x5430720bdf18996125c9a5d01241fe9f1e2cdeb21e67523ab903e230a9eadc63"
+    },
+    {
+      "event_id": "8a6ecd8a8f66be3de250d19303596510e1953d8a68ac7cd8bfc51907fcb926ea",
+      "fetch_latency_ms": 1233.91,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/8a6ecd8a8f66be3de250d19303596510e1953d8a68ac7cd8bfc51907fcb926ea.json",
+      "tx_hash": "0xb74c4fd2e5d3e62e684a8a43ea33ca82f5407f9a69b4e6d6a357061bba878a22"
+    },
+    {
+      "event_id": "db2cd6d54694306cbc4b44845f29bdd90c78bd665130024ffa3ecddd541ffc2d",
+      "fetch_latency_ms": 1227.8,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/db2cd6d54694306cbc4b44845f29bdd90c78bd665130024ffa3ecddd541ffc2d.json",
+      "tx_hash": "0xdf630896817053363a8702074a7b7bb418f6afab9b8061e87d23e403d2e387b0"
+    },
+    {
+      "event_id": "2ea7605f22cb1f495ec83b9e0c2def469377a83a2a6b825256cb5165dfda0100",
+      "fetch_latency_ms": 1770.69,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/2ea7605f22cb1f495ec83b9e0c2def469377a83a2a6b825256cb5165dfda0100.json",
+      "tx_hash": "0x9f13e14eea56fbb4f73c7d7b4bab5b924943b7ebf101943e4ab4a7c58d756fa7"
+    },
+    {
+      "event_id": "4139781f0368f72fbfd4e5b67be3ce13884322b481cd18507ae6c34da17e9437",
+      "fetch_latency_ms": 1213.58,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/4139781f0368f72fbfd4e5b67be3ce13884322b481cd18507ae6c34da17e9437.json",
+      "tx_hash": "0x488cc85ac60ace248b499aeaeca1700bab20087a9632c68b39748ebf92520d72"
+    },
+    {
+      "event_id": "faf5b484ed96cb13994ae29a58a071253916f4a7770e42c5b933e1c8de9e53b2",
+      "fetch_latency_ms": 1559.78,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/faf5b484ed96cb13994ae29a58a071253916f4a7770e42c5b933e1c8de9e53b2.json",
+      "tx_hash": "0xb1115ccdccad4fb78a70c157c65aab1ebf49f2586107b9f7a50c9f35350491f4"
+    },
+    {
+      "event_id": "2eed3948c134d8716474b2d3b7a28b99f617b8fb80b295a07812ca421fb52101",
+      "fetch_latency_ms": 1419.72,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/2eed3948c134d8716474b2d3b7a28b99f617b8fb80b295a07812ca421fb52101.json",
+      "tx_hash": "0xb16f961749f343ea83ea05638822defc8eda9a194c07feb9f18143ede15dea0f"
+    },
+    {
+      "event_id": "4d29cde76bc1c2813d0e7f23bf0040f4a1680cb792eb4c19a9c883d4b10cef3b",
+      "fetch_latency_ms": 1610.07,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/4d29cde76bc1c2813d0e7f23bf0040f4a1680cb792eb4c19a9c883d4b10cef3b.json",
+      "tx_hash": "0x7b7043167479b80052a5d7deb35011ebf7d1367398d322646bd5de57c8fc23f6"
+    },
+    {
+      "event_id": "17fb0e8515152fe82f3ddc962778e1abd4fff4498d7b7223e75e78ca12f651ae",
+      "fetch_latency_ms": 1548.89,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/17fb0e8515152fe82f3ddc962778e1abd4fff4498d7b7223e75e78ca12f651ae.json",
+      "tx_hash": "0x23c77e919e53989c596f5c3ce806adac16267a23a35c5cdb9b1b5117f28b4053"
+    },
+    {
+      "event_id": "c34796c90765cc8f3b2e2ddf26af2191dab69883b8bc7dd420c8dd3ab75b16f2",
+      "fetch_latency_ms": 1508.91,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/c34796c90765cc8f3b2e2ddf26af2191dab69883b8bc7dd420c8dd3ab75b16f2.json",
+      "tx_hash": "0x86370b8d64036397f5d453e55d6fb6d12177867085cef9c72761cfe694354079"
+    },
+    {
+      "event_id": "a486935b4921a99bd6d90c25a55d32c8c95644e6dcdd084f07e62a0304810e88",
+      "fetch_latency_ms": 1351.34,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/a486935b4921a99bd6d90c25a55d32c8c95644e6dcdd084f07e62a0304810e88.json",
+      "tx_hash": "0x482beec529af00524b97f877dbe703eb66801f48b10d60a20530ecc1b5053735"
+    },
+    {
+      "event_id": "ef5a721606df3461ef3c17ed3d9836e6b801e58113dc85ec16b5ad93952bb133",
+      "fetch_latency_ms": 1558.06,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/ef5a721606df3461ef3c17ed3d9836e6b801e58113dc85ec16b5ad93952bb133.json",
+      "tx_hash": "0x6eda893c594d7aa4b6627de99424a52779fc6be934f5fc423ad0b90f88e7e9ad"
+    },
+    {
+      "event_id": "a224e10b520bb91b5c4b83f7c89adecae25e4eb485f766f2a45e300c1598943e",
+      "fetch_latency_ms": 1212.76,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/a224e10b520bb91b5c4b83f7c89adecae25e4eb485f766f2a45e300c1598943e.json",
+      "tx_hash": "0x2182948b875afc908374c140dd8fe45805e28881716dbf9edbed0a666e3645a3"
+    },
+    {
+      "event_id": "1c68c033b601ad79c40ec54aa175ce9f0fa44e2b59ac9fc85acc00aa6dd56647",
+      "fetch_latency_ms": 1305.38,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/1c68c033b601ad79c40ec54aa175ce9f0fa44e2b59ac9fc85acc00aa6dd56647.json",
+      "tx_hash": "0x65c43ae33c3dfa70b38cdfdd804818fab396e5b9e8af51c2da3e3e1ab9ce858a"
+    },
+    {
+      "event_id": "854eb56b8d84eb5ae229bc5d364dea2a619d9f440255ca11e913a350437defe3",
+      "fetch_latency_ms": 1753.55,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/854eb56b8d84eb5ae229bc5d364dea2a619d9f440255ca11e913a350437defe3.json",
+      "tx_hash": "0x1e4969308e361e251649cd0f8206606ed3f9bc7d3d4b9735853d5d12ffab0769"
+    },
+    {
+      "event_id": "9f5dfa4cfa4afd0012b38b2aada51591510a8a01002ce77c3d18b3e30f74bee4",
+      "fetch_latency_ms": 1232.78,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/9f5dfa4cfa4afd0012b38b2aada51591510a8a01002ce77c3d18b3e30f74bee4.json",
+      "tx_hash": "0x8799bff03079c1609d1edde81a522f6862a56314ca0196a0b352b12ce3213666"
+    },
+    {
+      "event_id": "11349991ddd0886871662a454514b055317526af415151aede9f893c02987cd2",
+      "fetch_latency_ms": 1244.21,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/11349991ddd0886871662a454514b055317526af415151aede9f893c02987cd2.json",
+      "tx_hash": "0x15a4b05559833153e9ccb1dc6510c5a8a236c5df2ad1f8f60584a6bd6945aea1"
+    },
+    {
+      "event_id": "efcfbc49452e9e761eacc37b0f1058793fa44f52cffd3ae05fa52b8d4d109dac",
+      "fetch_latency_ms": 1626.19,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/efcfbc49452e9e761eacc37b0f1058793fa44f52cffd3ae05fa52b8d4d109dac.json",
+      "tx_hash": "0x1bf62ecfb55d845d78d1c1dbd50a436ffab80c0fc9a5add586d0b17b2cef3b63"
+    },
+    {
+      "event_id": "568477a157c46758f45bd0c816e11a67c9a2d4759b9eeb4198499cfed7181b87",
+      "fetch_latency_ms": 1395.29,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/568477a157c46758f45bd0c816e11a67c9a2d4759b9eeb4198499cfed7181b87.json",
+      "tx_hash": "0xc9f006fd96d8d2dff5e3855673c7652f9f252527dff421b730d10a198e522ac6"
+    },
+    {
+      "event_id": "69757f7fc96fc845e246529c12145fa1015bcc91bb353ae9456dd2f097a0ffaf",
+      "fetch_latency_ms": 1721.33,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/69757f7fc96fc845e246529c12145fa1015bcc91bb353ae9456dd2f097a0ffaf.json",
+      "tx_hash": "0x7e0558f0780d9138b7781aaea55b7521f43ca0a3d5fccbdcc64f899382ff9ecf"
+    },
+    {
+      "event_id": "6008e00164e9584d0db5a96995412dcd5b7e79b830a344c4b867af3bb0ed684e",
+      "fetch_latency_ms": 1432.06,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/6008e00164e9584d0db5a96995412dcd5b7e79b830a344c4b867af3bb0ed684e.json",
+      "tx_hash": "0xf951d59cab68466fea04e29c3540f5d3f4f75d2c76b5d893c3ccccdad948442b"
+    },
+    {
+      "event_id": "7963bc5e77e4ce4ea5ef53143b78bfc9bd1a1d98214f6453e77973d62b1c84ea",
+      "fetch_latency_ms": 1380.47,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/7963bc5e77e4ce4ea5ef53143b78bfc9bd1a1d98214f6453e77973d62b1c84ea.json",
+      "tx_hash": "0x7fab340b06f8aa88fb193a703947e146cd94b92552dcca4ad69b1032372a0f05"
+    },
+    {
+      "event_id": "ebaec893ced9e3dc088d0b3f32448f9d4a4e2b129a418b141d8f756340aacb28",
+      "fetch_latency_ms": 1376.33,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/ebaec893ced9e3dc088d0b3f32448f9d4a4e2b129a418b141d8f756340aacb28.json",
+      "tx_hash": "0x475e70f87164fabe07280fe7b0d1476c070720d53ee229996a703048bf0026bd"
+    },
+    {
+      "event_id": "ab2c7c3e215a24e2808ba4b899c87c50230db4a890860c241bd77632e6fdea15",
+      "fetch_latency_ms": 1840.06,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/ab2c7c3e215a24e2808ba4b899c87c50230db4a890860c241bd77632e6fdea15.json",
+      "tx_hash": "0x4cb597df7416e5a9fb5c98f31194d7a2d2f802db9e065fe1ebbe2ac9d6c15142"
+    },
+    {
+      "event_id": "56d25e7e43208554bf035561eb0ccf18e64cf7511f43c304277c598b650384e2",
+      "fetch_latency_ms": 1723.2,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/56d25e7e43208554bf035561eb0ccf18e64cf7511f43c304277c598b650384e2.json",
+      "tx_hash": "0x5f9e4b19641f9fdbab171525b9368f98e87c0d7723d88707eabcbdfa528f8a1e"
+    },
+    {
+      "event_id": "4edd9e610d51a2b01eeaf42497b3b99fc1dc8eff8cbd982897f12a2ec0ca48e1",
+      "fetch_latency_ms": 1199.36,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/4edd9e610d51a2b01eeaf42497b3b99fc1dc8eff8cbd982897f12a2ec0ca48e1.json",
+      "tx_hash": "0xc170c2439260d5885b28737abb1bf82cef55f11ecfaf88a7022bfd806f58748f"
+    },
+    {
+      "event_id": "1887dadb880df746ba2accefc1e41bc1c833ece544518d52df703e2b53f20cb3",
+      "fetch_latency_ms": 1320.62,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/1887dadb880df746ba2accefc1e41bc1c833ece544518d52df703e2b53f20cb3.json",
+      "tx_hash": "0x1549a8f77ff4030877ba09c12b838c6dec51133d0ed5c2c3a641c4d01c617ab4"
+    },
+    {
+      "event_id": "71949ef2b27871364afc9e9b0756fac8b985ec75e707f7f7b35f286bf2b7b300",
+      "fetch_latency_ms": 1390.14,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/71949ef2b27871364afc9e9b0756fac8b985ec75e707f7f7b35f286bf2b7b300.json",
+      "tx_hash": "0xe142c6e24e43365d166e8f3c3255e5c501d31dceca6e173657a0951d77b0c669"
+    },
+    {
+      "event_id": "25e75f98793df97208f6ad3cb9d82717411d2f1c49f4076e52fe22550a3ad31f",
+      "fetch_latency_ms": 1254.17,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/25e75f98793df97208f6ad3cb9d82717411d2f1c49f4076e52fe22550a3ad31f.json",
+      "tx_hash": "0x970925628ceee12ce68992f0c3f35cff3a0abd74fd90f29bc9d8acda3c7ba040"
+    },
+    {
+      "event_id": "91ffff22df322f10d99655cd00b537e32a148502bbbd6911519be6e39346a998",
+      "fetch_latency_ms": 1476.23,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/91ffff22df322f10d99655cd00b537e32a148502bbbd6911519be6e39346a998.json",
+      "tx_hash": "0x2668f88852bdafc95244bf06144a9f3aaf657424e812d87070163accb7fa5718"
+    },
+    {
+      "event_id": "0fc52e0a17efda57ec0b380df831bcb027a5ec95c9a6417a57d60ab017c2167a",
+      "fetch_latency_ms": 1176.92,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/0fc52e0a17efda57ec0b380df831bcb027a5ec95c9a6417a57d60ab017c2167a.json",
+      "tx_hash": "0xdf1624057675fef2d1396285434463d6d8483af5d7be501d9e64e86cdf6207c9"
+    },
+    {
+      "event_id": "9dd37886ea501632673fa4d1e7c008099beda459c428e0198dc73b01258b26d8",
+      "fetch_latency_ms": 1413.56,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/9dd37886ea501632673fa4d1e7c008099beda459c428e0198dc73b01258b26d8.json",
+      "tx_hash": "0x983defeecb5110d2dd0bf663139658be05808ac6b097d20ef909cd5fb9a40d49"
+    },
+    {
+      "event_id": "c2d7960d54d72175e0cfcb7e6faf714a5ea4a13a266611a0c410cdd666d5078a",
+      "fetch_latency_ms": 1390.88,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/c2d7960d54d72175e0cfcb7e6faf714a5ea4a13a266611a0c410cdd666d5078a.json",
+      "tx_hash": "0xca7f604dd961d35f29c27e4d1b393f64dffdfbe977e2505e8b26684f250c0666"
+    },
+    {
+      "event_id": "f42362af7ed90ff68831d7d08d76921bea62b2fbb2b66674b632cd16f05d726c",
+      "fetch_latency_ms": 1180.56,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/f42362af7ed90ff68831d7d08d76921bea62b2fbb2b66674b632cd16f05d726c.json",
+      "tx_hash": "0xb9ec70866c0ba92644323616854740499c50233f952c4773d1b1ec16f840ada8"
+    },
+    {
+      "event_id": "cce83ab168f4f8dda2530ebac59defb2ba7ffcaf6ec01d188c5f0ab4c202ff8f",
+      "fetch_latency_ms": 1616.15,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/cce83ab168f4f8dda2530ebac59defb2ba7ffcaf6ec01d188c5f0ab4c202ff8f.json",
+      "tx_hash": "0x678a73567a43a1324cd9c37ad57a3ebb533b5a0e02cd9e06e30b9c3ff128adc0"
+    },
+    {
+      "event_id": "6065e77d9510275a54f52c3ffe828acac0309fff6be90d2aa51daf7bf8932148",
+      "fetch_latency_ms": 1775.81,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/6065e77d9510275a54f52c3ffe828acac0309fff6be90d2aa51daf7bf8932148.json",
+      "tx_hash": "0xe9ee021df4c86d7ec7c68d9ba3f526edf6d8506df37151fb19142c95a1a4a833"
+    },
+    {
+      "event_id": "764329f6d8f351bc2b1755fcf564d17fdcf73e81887a18d25d96e1768cf98400",
+      "fetch_latency_ms": 1420.4,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/764329f6d8f351bc2b1755fcf564d17fdcf73e81887a18d25d96e1768cf98400.json",
+      "tx_hash": "0xb916099f8cbade06cc8c20b7d4dbb22c72c9c3569204eee2dc03175dd3fd2ee2"
+    },
+    {
+      "event_id": "dea6cb3ad6628c5357a2b5247d15cd6fe735f1841327af29b146e45a92be3db5",
+      "fetch_latency_ms": 1417.84,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/dea6cb3ad6628c5357a2b5247d15cd6fe735f1841327af29b146e45a92be3db5.json",
+      "tx_hash": "0xbeb5482c3ce33ad845779df0530d79b5bf42cb1b92718e4744f1a91bafe54ca1"
+    },
+    {
+      "event_id": "9de1f528c835e68b10a48ec8c6433b2eb7d8be3406dd4e94bb8da43e65f120d0",
+      "fetch_latency_ms": 1715.82,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/9de1f528c835e68b10a48ec8c6433b2eb7d8be3406dd4e94bb8da43e65f120d0.json",
+      "tx_hash": "0x8bf94b11127eca593d9ea1827c3dbbacc397000e5cd17b2672c566f581949ae2"
+    },
+    {
+      "event_id": "f37fb098ed362e4aad3f002435169d68a920e51a3096af572e8359da75e52bf3",
+      "fetch_latency_ms": 1158.42,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/f37fb098ed362e4aad3f002435169d68a920e51a3096af572e8359da75e52bf3.json",
+      "tx_hash": "0x8fcde1d01d42de83c92a20182d509d38986846920dc9d050b8dbf90134064e1f"
+    },
+    {
+      "event_id": "f69ef47c0ce0088c8eff18734fb0280c2abd73e148859822aa5a522c8c2f9fb6",
+      "fetch_latency_ms": 1267.28,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/f69ef47c0ce0088c8eff18734fb0280c2abd73e148859822aa5a522c8c2f9fb6.json",
+      "tx_hash": "0x7e1fe1c755fda02c292602cfe4a978d7bb4c3994a5e02f1f02f846016570f5b3"
+    },
+    {
+      "event_id": "717f13978be918b275eb79e0ea72fcc1fc328c4603f43ccf7c272add22d6dcc4",
+      "fetch_latency_ms": 1642.95,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/717f13978be918b275eb79e0ea72fcc1fc328c4603f43ccf7c272add22d6dcc4.json",
+      "tx_hash": "0x8f88ec9e7627d5d4ff2681d773e41d014a62edc93749b15ba88a6ace1d8a75da"
+    },
+    {
+      "event_id": "6c16b33696fdeb6eb8e7454061f73ba064a4b82e7532ec1328a78ad43abfb1e9",
+      "fetch_latency_ms": 1764.15,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/6c16b33696fdeb6eb8e7454061f73ba064a4b82e7532ec1328a78ad43abfb1e9.json",
+      "tx_hash": "0x6b75c2f9e805888a48a1d533f132b61f74701b725877db6bac558332802fd755"
+    },
+    {
+      "event_id": "d6f5ca0c77ac20d2b17f64b236c668b3327737faabd41276850303695ae1b175",
+      "fetch_latency_ms": 1384.14,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/d6f5ca0c77ac20d2b17f64b236c668b3327737faabd41276850303695ae1b175.json",
+      "tx_hash": "0xd09b0ed42a8c844b813f952708d6d9dcec63c3d4ba944e31b0facdf3d18a68ee"
+    },
+    {
+      "event_id": "207d7faa58bddb08507918d5d8b0c86cc69fb52b027aee1dad98524c85f2e86e",
+      "fetch_latency_ms": 1423.53,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/207d7faa58bddb08507918d5d8b0c86cc69fb52b027aee1dad98524c85f2e86e.json",
+      "tx_hash": "0x871ae9d947bd7609cc160a7e7913aabfd9579984e9c54d0e4fa7c87c4f37c53f"
+    },
+    {
+      "event_id": "eac5b320bfb393e1576cebbe5e5177226d5835426af27a5f11d6bead3cfec142",
+      "fetch_latency_ms": 1658.79,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/eac5b320bfb393e1576cebbe5e5177226d5835426af27a5f11d6bead3cfec142.json",
+      "tx_hash": "0xf4ec7d36298c8fe11b5431982caebeec2cf9d92f2f3af916b6d850759cc3bb21"
+    },
+    {
+      "event_id": "fc1dfecc5b4aebed2073542126a51735ad150c6e7ad44a6507ace8c487f22662",
+      "fetch_latency_ms": 1562.51,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/fc1dfecc5b4aebed2073542126a51735ad150c6e7ad44a6507ace8c487f22662.json",
+      "tx_hash": "0x1cd4540f6c55edaca5301e096c2ded458a0abb0bb659a66382870f368dca9be8"
+    },
+    {
+      "event_id": "2041963e0f45cea33c3e9e1e1542a415cced974886a8b2d06e28c951669ccd63",
+      "fetch_latency_ms": 1350.12,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/2041963e0f45cea33c3e9e1e1542a415cced974886a8b2d06e28c951669ccd63.json",
+      "tx_hash": "0xc6d08609cbee7029db102407aa1943aab8acabf68c176a2ce2c9968272d2e364"
+    },
+    {
+      "event_id": "f9b94cc1c426432ea86a34f657d8c5a22493932200f82b7951b30b0c293c55e5",
+      "fetch_latency_ms": 1505.03,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/f9b94cc1c426432ea86a34f657d8c5a22493932200f82b7951b30b0c293c55e5.json",
+      "tx_hash": "0xb26f03950f55ea3a55505a87a01fb6cef13b9ac63ab03debcddab3008ef060a4"
+    },
+    {
+      "event_id": "cb0b96e8401d0cbf0d5196327fa00ce3479ac842ade10601b89fd572b66a765b",
+      "fetch_latency_ms": 1820.81,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/cb0b96e8401d0cbf0d5196327fa00ce3479ac842ade10601b89fd572b66a765b.json",
+      "tx_hash": "0x60d0d167defed3458502d7ff9c5c8e51a77b0d84023fd2eb91ae2da2b69c5d1b"
+    },
+    {
+      "event_id": "4ed1fbab257d9d2ad14cb8408e7eece2634a2e476e98d11f5b14958883ec9277",
+      "fetch_latency_ms": 1418.88,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/4ed1fbab257d9d2ad14cb8408e7eece2634a2e476e98d11f5b14958883ec9277.json",
+      "tx_hash": "0x666b2e40c2db67a0fbed9c48c3dc02f4ea162b78e67071a63b65fd1ebfe8d4fd"
+    },
+    {
+      "event_id": "e092f722ae9f900aa4b0f34684d004764ed682e0c40e5ae1f10dcf73b7d40f07",
+      "fetch_latency_ms": 1429.28,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/e092f722ae9f900aa4b0f34684d004764ed682e0c40e5ae1f10dcf73b7d40f07.json",
+      "tx_hash": "0x8f83270fc76cc16dcfc3fbfcb27e59b40955351e04e8eff7b88306bff0f168ed"
+    },
+    {
+      "event_id": "d170a11fb030d65cb14942a5469446e0dc0a06aaea272ee7cd40fa6390d12d78",
+      "fetch_latency_ms": 1446.42,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/d170a11fb030d65cb14942a5469446e0dc0a06aaea272ee7cd40fa6390d12d78.json",
+      "tx_hash": "0xbb2de0f5604098c493109201ee5165bcdb85701d6d9a63129d89ff4c8b00b92c"
+    },
+    {
+      "event_id": "ffa692805c31ef34eededde57eef9e12a74915bd05d1a81fc637c7542ac70156",
+      "fetch_latency_ms": 1236.57,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/ffa692805c31ef34eededde57eef9e12a74915bd05d1a81fc637c7542ac70156.json",
+      "tx_hash": "0x309c78d8dc04a70a11ad6cb42e735b7da69c6352bbc287d2688a10b24be8d96b"
+    },
+    {
+      "event_id": "3724b2f2f2ef12a3051a7d48b566c70dbf751041b355cd63cd0cd2cea70ca5b1",
+      "fetch_latency_ms": 1869.1,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/3724b2f2f2ef12a3051a7d48b566c70dbf751041b355cd63cd0cd2cea70ca5b1.json",
+      "tx_hash": "0xf6529a11c0ea87df71a7bc7e4bd7435d873e029117bdf1a033ae9b72e8324a34"
+    },
+    {
+      "event_id": "aab8578336c815cd5712412f1e6ff3a600f811fe6f231db33f8dcb2c165580f1",
+      "fetch_latency_ms": 2048.32,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/aab8578336c815cd5712412f1e6ff3a600f811fe6f231db33f8dcb2c165580f1.json",
+      "tx_hash": "0x98955c642677c94b217ab3b13a907b6ccca8b408e332fb407ea5841d7777bcfb"
+    },
+    {
+      "event_id": "6d068c352bf263194dc46b77fbda2cbdb5f6a89d0991df80750e29dc9b8adde6",
+      "fetch_latency_ms": 1738.82,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/6d068c352bf263194dc46b77fbda2cbdb5f6a89d0991df80750e29dc9b8adde6.json",
+      "tx_hash": "0x98dbcea3442c9f33a17ee49dbb482b7a946162a0fe8af27b85e209b16eb72154"
+    },
+    {
+      "event_id": "04d9f7efeadd41b03025eb1db0ff6b2a994642cc4cd78d030f4449d69ea9ce60",
+      "fetch_latency_ms": 1693.57,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/04d9f7efeadd41b03025eb1db0ff6b2a994642cc4cd78d030f4449d69ea9ce60.json",
+      "tx_hash": "0x6c538dc4b66a6bed16ba71055b0ef3bcf9a094a3a7f12c9455354c798cf76d04"
+    },
+    {
+      "event_id": "fd353687c898050fac90eef8af541019c7f5a3c83f4c13a264f4f82309d34539",
+      "fetch_latency_ms": 1835.13,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/fd353687c898050fac90eef8af541019c7f5a3c83f4c13a264f4f82309d34539.json",
+      "tx_hash": "0xd0087af1aecfd10d877b184d6a3df9dcf1611d20b07ad3d03d050101605180cf"
+    },
+    {
+      "event_id": "13f42588f51ceacde88be56ae082276784c7a15ed5582d748244cdaa6839ba25",
+      "fetch_latency_ms": 1343.56,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/13f42588f51ceacde88be56ae082276784c7a15ed5582d748244cdaa6839ba25.json",
+      "tx_hash": "0xdd449ecee1bf5bc7a2bfefe1810b95213d30e628f7117d89293c089d6393325d"
+    },
+    {
+      "event_id": "d4eab76dcfc36579a747669c947dd692e5578795aaf4a632a28fbbfcc0a67d87",
+      "fetch_latency_ms": 1411.67,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/d4eab76dcfc36579a747669c947dd692e5578795aaf4a632a28fbbfcc0a67d87.json",
+      "tx_hash": "0x6aa4bbcc15197acf2e2a6e5c35e150dcb9ec8a7e6ed470e531971a12e9a3c5fa"
+    },
+    {
+      "event_id": "c8f6585bffa0d73d17c31d6f2901002989a4e5db22996cbeefd56fcb69078648",
+      "fetch_latency_ms": 1368.41,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/c8f6585bffa0d73d17c31d6f2901002989a4e5db22996cbeefd56fcb69078648.json",
+      "tx_hash": "0xffc1137d28e85a5a3f2f7690f93543696bf396fbce24c4f7712daf31d1febfc5"
+    },
+    {
+      "event_id": "e679949d320bfbc599d1f09b172aac1745fe4e4208d66d5756a86a9e1c707c0f",
+      "fetch_latency_ms": 1310.41,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/e679949d320bfbc599d1f09b172aac1745fe4e4208d66d5756a86a9e1c707c0f.json",
+      "tx_hash": "0x5b9755c4aee75190f538578632b52ee60296094de1e5b1ae93be23883c18bf72"
+    },
+    {
+      "event_id": "82ebd5eb589685b3686fa0074d77ffeaafe63510d41f6c0a71410c16adacbb73",
+      "fetch_latency_ms": 1442.67,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/82ebd5eb589685b3686fa0074d77ffeaafe63510d41f6c0a71410c16adacbb73.json",
+      "tx_hash": "0xd39630273909e3a5f416029587cf2f9a7bafda5394d9e00fc7d3b61079bb9f8c"
+    },
+    {
+      "event_id": "cdf2da035c6a2865b6d4bf6412e48081ad9be4965d71ef30969f555bdec6e24e",
+      "fetch_latency_ms": 1411.27,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/cdf2da035c6a2865b6d4bf6412e48081ad9be4965d71ef30969f555bdec6e24e.json",
+      "tx_hash": "0x5a67b075cf7282a6e84a52c4f918011e40de2610a908cc14f3ca3220be64890d"
+    },
+    {
+      "event_id": "f62fdd225d2f4960d9e09ae592aa62f6c6314d05b7df8b1771fffb6b6ef1169d",
+      "fetch_latency_ms": 1330.63,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/f62fdd225d2f4960d9e09ae592aa62f6c6314d05b7df8b1771fffb6b6ef1169d.json",
+      "tx_hash": "0x0c440e460999d0f698e8a5fb92444f178a1d53e92a49b01171d4bf371b01c1d9"
+    },
+    {
+      "event_id": "028cd295beb3393584911b4ec93530fa899276354ee52d2e9c9f432929033b82",
+      "fetch_latency_ms": 1354.48,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/028cd295beb3393584911b4ec93530fa899276354ee52d2e9c9f432929033b82.json",
+      "tx_hash": "0x980cada374d27d546ca09c09bb243fa72af59247337558193455c5af04ef952f"
+    },
+    {
+      "event_id": "a0d56cc0ac45f6a6408047679415b75ceff55a72b4343f16eb70bdea5ec4cca2",
+      "fetch_latency_ms": 1378.76,
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/a0d56cc0ac45f6a6408047679415b75ceff55a72b4343f16eb70bdea5ec4cca2.json",
+      "tx_hash": "0xd076d5aad131b6b7a5cdc68057d1bd809aaebac0e7d10a61ee12cbffd9715286"
+    }
+  ],
+  "requested_events": 100,
+  "source": "provider-pending-fallback",
+  "status": "ok",
+  "written_events": 100
+}

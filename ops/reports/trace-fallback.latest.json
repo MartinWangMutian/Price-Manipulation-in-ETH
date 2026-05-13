@@ -1,0 +1,71 @@
+{
+  "checked_at": "2026-05-13T09:07:47.756+00:00",
+  "errors": [],
+  "input": "data/replay/pending-tx.v1",
+  "pending_files_seen": 10,
+  "status": "ok",
+  "trace_status": "unsupported",
+  "written": [
+    {
+      "event_id": "55f078e72353d906b6f43cf192dfba2eeba09f8c1c1b2b94f5565a63fb03bda4",
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-05-13/hour=09/55f078e72353d906b6f43cf192dfba2eeba09f8c1c1b2b94f5565a63fb03bda4.json",
+      "trace_status": "unsupported",
+      "tx_hash": "0x3004f7f2c6d4e57039335b52a53e4529541d4c787e9f72c9661a034b4d81d7e2"
+    },
+    {
+      "event_id": "0b941b1c6be15b47f54c26df4e9a2a03b219e2ee00d546782178a2db96115a6c",
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-05-13/hour=09/0b941b1c6be15b47f54c26df4e9a2a03b219e2ee00d546782178a2db96115a6c.json",
+      "trace_status": "unsupported",
+      "tx_hash": "0x839e2bcdcdf69843fbe630b04be7a7864430355678240723de258c9dd953c343"
+    },
+    {
+      "event_id": "233e7bcb5b12ba2904ec1b9881443f7bd37c3bfff3f9b8f2245f86e32cee54b5",
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-05-13/hour=09/233e7bcb5b12ba2904ec1b9881443f7bd37c3bfff3f9b8f2245f86e32cee54b5.json",
+      "trace_status": "unsupported",
+      "tx_hash": "0x47136c7afcd8228f0f16633828a6a5c2198c8e2967b3352970a5e66a42e0abf2"
+    },
+    {
+      "event_id": "3aaa87d42ef378b8edfc79650e6b4698fd9c41f0d9ef0fdc740d0e0f81c751c8",
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-05-13/hour=09/3aaa87d42ef378b8edfc79650e6b4698fd9c41f0d9ef0fdc740d0e0f81c751c8.json",
+      "trace_status": "unsupported",
+      "tx_hash": "0x5e419924351fd844d519007a1e15663a7ea2e4e948325f5ef4bdd8f7fcaf180f"
+    },
+    {
+      "event_id": "1808191f0a3c7d3e829a3345c326323ab64a61e5e5cd18711c33ca73d5b9bcb2",
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-05-13/hour=09/1808191f0a3c7d3e829a3345c326323ab64a61e5e5cd18711c33ca73d5b9bcb2.json",
+      "trace_status": "unsupported",
+      "tx_hash": "0x624180f2e711b2a83944fe489022776f517d2d2d2f36dff5acc8581b7f4c0da0"
+    },
+    {
+      "event_id": "782e7673d6944538a87215c26138e7e9a5854e55a0c8da3d92864d60ebe62db9",
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-05-13/hour=09/782e7673d6944538a87215c26138e7e9a5854e55a0c8da3d92864d60ebe62db9.json",
+      "trace_status": "unsupported",
+      "tx_hash": "0x2121c6baaca546b4b4c9f715fb184ae7c075c9187ce1e6003169784f2c45058a"
+    },
+    {
+      "event_id": "bc734ce9a5f01700a791715fbff1f550d0359787b3ec8b40a18dd56968a4432b",
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-05-13/hour=09/bc734ce9a5f01700a791715fbff1f550d0359787b3ec8b40a18dd56968a4432b.json",
+      "trace_status": "unsupported",
+      "tx_hash": "0xd9211c81adb2dd95030f06c2193e2dec9446eb2e258a98c7d386ab6d1c8298c7"
+    },
+    {
+      "event_id": "1e61b96c8dddcf2686782f21eb6eb80a7925636e27df72c19a3651131fa46634",
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-05-13/hour=09/1e61b96c8dddcf2686782f21eb6eb80a7925636e27df72c19a3651131fa46634.json",
+      "trace_status": "unsupported",
+      "tx_hash": "0x519949aea1eeea2ce4f0831ab66dbcb4ded2f5a2e757e83fdb2a3b4992f79097"
+    },
+    {
+      "event_id": "172f5a1a9ecc01780fa46755edd744eb90a5d1b869697305f5595d18903224a1",
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-05-13/hour=09/172f5a1a9ecc01780fa46755edd744eb90a5d1b869697305f5595d18903224a1.json",
+      "trace_status": "unsupported",
+      "tx_hash": "0x5dde58083332262a59946f964694b1651ac4c63363570897dd16a7abcc589c1f"
+    },
+    {
+      "event_id": "1e4f6d0bc276847dc40a9eceb458aa57118ed2ee4436c0e64715a0c25e1e1a90",
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-05-13/hour=09/1e4f6d0bc276847dc40a9eceb458aa57118ed2ee4436c0e64715a0c25e1e1a90.json",
+      "trace_status": "unsupported",
+      "tx_hash": "0x137d0f549f923534d791c6d9b101d5d08656269adc4d85d412fc61260e5caacd"
+    }
+  ],
+  "written_trace_bundles": 10
+}

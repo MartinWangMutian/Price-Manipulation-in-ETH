@@ -1,0 +1,32 @@
+{
+  "chain_id": 1,
+  "created_at": "2026-05-13T09:27:19.905+00:00",
+  "event_id": "e665ae4138fcbbbaf8a6fef5216c7f7faffaa07a5898a2d950be5a8a66719609",
+  "fetch_latency_ms": 1634.81,
+  "idempotency_key": "1:0xbf7be0d1521734cd40fe7fee7dfafb5d450facd889b19cfea80403781de10997:provider-pending-fallback",
+  "raw_tx": null,
+  "raw_tx_status": "unavailable_from_provider",
+  "replacement_status": "unknown",
+  "schema_ver": "pending-tx.v1",
+  "seen_at": "2026-05-13T09:27:19.905+00:00",
+  "source": "provider-pending-fallback",
+  "tx": {
+    "blockHash": "0x847b9c9660881f405d76b6cc014a13f4289870a5e18e01db86d36eafc1d2cac8",
+    "blockNumber": "0x17ec580",
+    "chainId": "0x1",
+    "from": "0xae45a8240147e6179ec7c9f92c5a18f9a97b3fca",
+    "gas": "0x5208",
+    "gasPrice": "0x7999929",
+    "hash": "0xbf7be0d1521734cd40fe7fee7dfafb5d450facd889b19cfea80403781de10997",
+    "input": "0x",
+    "nonce": "0x3f9995",
+    "r": "0x69dfc2c21ecee8ec64013278a37a1a5cde20f47c7411d1741156c7f7eba17964",
+    "s": "0x8b7e8d50595cb6ec26042b2205923bde38878ff84e962de6e4b7e074759fffe",
+    "to": "0x15141f44f20ce16d6873d33ffb30757330f717d9",
+    "transactionIndex": "0x11f",
+    "type": "0x0",
+    "v": "0x26",
+    "value": "0x8aa2cdc0800"
+  },
+  "tx_hash": "0xbf7be0d1521734cd40fe7fee7dfafb5d450facd889b19cfea80403781de10997"
+}

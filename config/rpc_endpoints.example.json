@@ -1,0 +1,37 @@
+{
+  "chain_id": 1,
+  "head_lag_threshold_blocks": 2,
+  "rpc_max_rps": 5,
+  "rpc_min_interval_ms": 200,
+  "rpc_latency_warn_ms": 500,
+  "trace_timeout_ms": 1500,
+  "endpoints": [
+    {
+      "name": "local-geth-primary",
+      "role": "primary",
+      "client": "geth",
+      "http_url_env": "ETH_MAIN_HTTP_URL",
+      "ws_url_env": "ETH_MAIN_WS_URL",
+      "required_apis": ["eth", "net", "txpool", "debug"],
+      "uses": ["pending_stream", "new_heads", "logs", "debug_traceCall"]
+    },
+    {
+      "name": "local-erigon-backup",
+      "role": "backup",
+      "client": "erigon",
+      "http_url_env": "ETH_BACKUP_HTTP_URL",
+      "ws_url_env": "ETH_BACKUP_WS_URL",
+      "required_apis": ["eth", "net", "txpool", "trace"],
+      "uses": ["pending_stream", "new_heads", "logs", "trace_call"]
+    },
+    {
+      "name": "provider-pending-fallback",
+      "role": "provider_fallback",
+      "client": "provider",
+      "http_url_env": "ETH_PROVIDER_HTTP_URL",
+      "ws_url_env": "ETH_PROVIDER_WS_URL",
+      "required_apis": ["eth"],
+      "uses": ["pending_stream", "new_heads", "logs", "trace_supplement"]
+    }
+  ]
+}

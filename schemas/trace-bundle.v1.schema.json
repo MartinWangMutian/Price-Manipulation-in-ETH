@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "trace-bundle.v1",
+  "title": "TraceBundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "schema_ver",
+    "chain_id",
+    "created_at",
+    "idempotency_key",
+    "tx_hash",
+    "trace_source",
+    "trace_status",
+    "calls",
+    "logs",
+    "state_diff"
+  ],
+  "properties": {
+    "event_id": {"type": "string", "minLength": 1},
+    "schema_ver": {"const": "trace-bundle.v1"},
+    "chain_id": {"const": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "idempotency_key": {"type": "string", "minLength": 1},
+    "tx_hash": {"type": "string", "pattern": "^0x[a-fA-F0-9]{64}$"},
+    "trace_source": {
+      "type": "string",
+      "enum": ["debug_traceCall", "trace_call", "provider_fallback", "none"]
+    },
+    "trace_status": {
+      "type": "string",
+      "enum": ["ok", "failed", "timeout", "unsupported"]
+    },
+    "trace_error": {
+      "type": ["object", "null"],
+      "additionalProperties": true
+    },
+    "calls": {"type": "array", "items": {"type": "object"}},
+    "logs": {"type": "array", "items": {"type": "object"}},
+    "token_transfers": {"type": "array", "items": {"type": "object"}},
+    "state_diff": {"type": "object"},
+    "raw_trace_ref": {"type": ["string", "null"]}
+  }
+}

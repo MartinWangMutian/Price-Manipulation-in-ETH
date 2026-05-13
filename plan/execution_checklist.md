@@ -12,54 +12,54 @@
 
 **依赖：无**
 
-- [ ] 确认一期只覆盖 Ethereum 主网
-- [ ] 明确不在一期同时支持多链
-- [ ] 确认目标 slot/延迟目标：
-  - [ ] 热路径 P95 < 3 秒
-  - [ ] 热路径 P99 < 8 秒
-  - [ ] RAG 异步执行，不进入热路径预算
-- [ ] 冻结首批目标协议白名单：
-  - [ ] AMM / DEX
-  - [ ] Lending market
-  - [ ] Oracle 相关合约
-  - [ ] Router / Aggregator 合约
-- [ ] 为每个协议记录：
-  - [ ] protocol_id
-  - [ ] 合约地址
-  - [ ] 合约角色
-  - [ ] pause / guardian / emergency 权限
-  - [ ] 文档与审计报告链接
+- [x] 确认一期只覆盖 Ethereum 主网
+- [x] 明确不在一期同时支持多链
+- [x] 确认目标 slot/延迟目标：
+  - [x] 热路径 P95 < 3 秒
+  - [x] 热路径 P99 < 8 秒
+  - [x] RAG 异步执行，不进入热路径预算
+- [x] 冻结首批目标协议白名单：
+  - [x] AMM / DEX
+  - [x] Lending market
+  - [x] Oracle 相关合约
+  - [x] Router / Aggregator 合约
+- [x] 为每个协议记录：
+  - [x] protocol_id
+  - [x] 合约地址
+  - [x] 合约角色
+  - [x] pause / guardian / emergency 权限
+  - [x] 文档与审计报告链接
 
 ### P0-B 风险类型与处置边界
 
-- [ ] 定义一期价格操纵风险类型：
-  - [ ] oracle_manipulation
-  - [ ] flash_loan_price_pump
-  - [ ] thin_liquidity_swap
-  - [ ] sandwich_assisted_manipulation
-  - [ ] cross_protocol_liquidation_cascade
-- [ ] 定义 reason code 命名规范
-- [ ] 明确默认不自动执行链上处置
-- [ ] 明确 critical 告警只生成建议交易和 runbook
-- [ ] 明确人工、多签或授权负责人审批流程
-- [ ] 定义第三方标签的使用边界：只作为风险参考，不作为法律事实
+- [x] 定义一期价格操纵风险类型：
+  - [x] oracle_manipulation
+  - [x] flash_loan_price_pump
+  - [x] thin_liquidity_swap
+  - [x] sandwich_assisted_manipulation
+  - [x] cross_protocol_liquidation_cascade
+- [x] 定义 reason code 命名规范
+- [x] 明确默认不自动执行链上处置
+- [x] 明确 critical 告警只生成建议交易和 runbook
+- [x] 明确人工、多签或授权负责人审批流程
+- [x] 定义第三方标签的使用边界：只作为风险参考，不作为法律事实
 
 ### P0-C 数据授权与项目文档
 
-- [ ] 建立数据授权清单：
-  - [ ] 本地节点数据
-  - [ ] 第三方 RPC/provider
-  - [ ] 地址标签
-  - [ ] 实体归因
-  - [ ] 安全报告
-  - [ ] 审计报告
-  - [ ] 协议文档
-- [ ] 创建 `scope.md`
-- [ ] 创建风险类型字典
-- [ ] 创建目标协议白名单
-- [ ] 创建初版值班与审批流程
+- [x] 建立数据授权清单：
+  - [x] 本地节点数据
+  - [x] 第三方 RPC/provider
+  - [x] 地址标签
+  - [x] 实体归因
+  - [x] 安全报告
+  - [x] 审计报告
+  - [x] 协议文档
+- [x] 创建 `scope.md`
+- [x] 创建风险类型字典
+- [x] 创建目标协议白名单
+- [x] 创建初版值班与审批流程
 
-**Phase 0 Gate Criterion：** 链范围、协议范围、风险类型、数据授权和处置权限均已确认。
+**Phase 0 Gate Criterion：** 链范围、协议范围、风险类型、数据授权和处置权限均已确认。Status: passed on 2026-05-13.
 
 ---
 
@@ -78,45 +78,45 @@
 - [ ] 开启 WebSocket RPC
 - [ ] 开启 `txpool` API
 - [ ] 开启 `debug` 或 `trace` API
-- [ ] 配置第三方 provider 作为备用 pending stream
+- [x] 配置第三方 provider 作为备用 pending stream
 - [ ] 配置第三方 provider 作为 trace/debug 补充来源
-- [ ] 建立 RPC endpoint 配置文件
+- [x] 建立 RPC endpoint 配置文件
 
 ### P1-B 节点健康检查
 
-- [ ] 实现 head lag 检查
-- [ ] 实现 peer count 检查
-- [ ] 实现 RPC latency 检查
-- [ ] 实现 trace availability 检查
-- [ ] 实现 WebSocket 订阅可用性检查
-- [ ] 建立主备节点切换规则
-- [ ] 记录故障时间、恢复时间和缺口范围
-- [ ] 输出节点健康检查报表
+- [x] 实现 head lag 检查
+- [x] 实现 peer count 检查
+- [x] 实现 RPC latency 检查
+- [x] 实现 trace availability 检查
+- [x] 实现 WebSocket 订阅可用性检查
+- [x] 建立主备节点切换规则
+- [x] 记录故障时间、恢复时间和缺口范围
+- [x] 输出节点健康检查报表
 
 ### P1-C 消息主题与 Schema 基础
 
-- [ ] 创建 schema 目录
-- [ ] 定义 `PendingTxEvent`
-- [ ] 定义 `TraceBundle`
-- [ ] 定义 `GraphInferenceRequest`
-- [ ] 定义 `AlertEvent`
-- [ ] 为所有事件加入：
-  - [ ] `event_id`
-  - [ ] `schema_ver`
-  - [ ] `chain_id`
-  - [ ] `created_at`
-  - [ ] 幂等键
-- [ ] 创建消息主题：
-  - [ ] `pending-tx.v1`
-  - [ ] `trace-bundle.v1`
-  - [ ] `graph-inference.v1`
-  - [ ] `risk-score.v1`
-  - [ ] `alert-event.v1`
-  - [ ] `rag-explanation.v1`
-- [ ] 设计 replay storage 目录
-- [ ] 设计 trace、图快照、模型输入、模型输出和告警版本的落盘格式
+- [x] 创建 schema 目录
+- [x] 定义 `PendingTxEvent`
+- [x] 定义 `TraceBundle`
+- [x] 定义 `GraphInferenceRequest`
+- [x] 定义 `AlertEvent`
+- [x] 为所有事件加入：
+  - [x] `event_id`
+  - [x] `schema_ver`
+  - [x] `chain_id`
+  - [x] `created_at`
+  - [x] 幂等键
+- [x] 创建消息主题：
+  - [x] `pending-tx.v1`
+  - [x] `trace-bundle.v1`
+  - [x] `graph-inference.v1`
+  - [x] `risk-score.v1`
+  - [x] `alert-event.v1`
+  - [x] `rag-explanation.v1`
+- [x] 设计 replay storage 目录
+- [x] 设计 trace、图快照、模型输入、模型输出和告警版本的落盘格式
 
-**Phase 1 Gate Criterion：** 主备节点均可读取 pending 交易、newHeads、关键协议 logs，并能完成至少 100 笔 pending 交易模拟抽样；事件 schema 可校验。
+**Phase 1 Gate Criterion：** 主备节点均可读取 pending 交易、newHeads、关键协议 logs，并能完成至少 100 笔 pending 交易模拟抽样；事件 schema 可校验。Status: provider-only development path is active with 110 valid `PendingTxEvent` records and 110 provider fallback `TraceBundle` records; full gate remains pending local/dedicated node deployment and 100 pending transaction trace sample.
 
 ---
 

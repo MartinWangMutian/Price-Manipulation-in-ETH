@@ -1,0 +1,34 @@
+{
+  "topics": [
+    {
+      "name": "pending-tx.v1",
+      "schema": "schemas/pending-tx.v1.schema.json",
+      "idempotency_key": "chain_id:tx_hash:source"
+    },
+    {
+      "name": "trace-bundle.v1",
+      "schema": "schemas/trace-bundle.v1.schema.json",
+      "idempotency_key": "chain_id:tx_hash:trace_source"
+    },
+    {
+      "name": "graph-inference.v1",
+      "schema": "schemas/graph-inference.v1.schema.json",
+      "idempotency_key": "chain_id:tx_hash:feature_ver"
+    },
+    {
+      "name": "risk-score.v1",
+      "schema": "schemas/risk-score.v1.schema.json",
+      "idempotency_key": "chain_id:tx_hash:model_version:threshold_profile"
+    },
+    {
+      "name": "alert-event.v1",
+      "schema": "schemas/alert-event.v1.schema.json",
+      "idempotency_key": "chain_id:tx_hash:severity:alert_version"
+    },
+    {
+      "name": "rag-explanation.v1",
+      "schema": "schemas/rag-explanation.v1.schema.json",
+      "idempotency_key": "chain_id:alert_id:rag_model:knowledge_snapshot"
+    }
+  ]
+}

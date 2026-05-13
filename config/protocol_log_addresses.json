@@ -1,0 +1,65 @@
+{
+  "chain_id": 1,
+  "addresses": [
+    {
+      "protocol_id": "uniswap_v3",
+      "contract": "UniswapV3Factory",
+      "role": "factory",
+      "address": "0x1F98431c8aD98523631AE4a59f267346ea31F984"
+    },
+    {
+      "protocol_id": "uniswap_v3",
+      "contract": "NonfungiblePositionManager",
+      "role": "lp_position_manager",
+      "address": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88"
+    },
+    {
+      "protocol_id": "uniswap_v3_router",
+      "contract": "UniversalRouter",
+      "role": "router",
+      "address": "0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD"
+    },
+    {
+      "protocol_id": "uniswap_v3_router",
+      "contract": "SwapRouter02",
+      "role": "router",
+      "address": "0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45"
+    },
+    {
+      "protocol_id": "aave_v3_ethereum",
+      "contract": "PoolAddressesProvider",
+      "role": "address_registry",
+      "address": "0x2f39d218133AFaB8F2B819B1066c7E434Ad94E9e"
+    },
+    {
+      "protocol_id": "aave_v3_ethereum",
+      "contract": "Pool",
+      "role": "lending_pool",
+      "address": "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2"
+    },
+    {
+      "protocol_id": "aave_v3_ethereum",
+      "contract": "PoolConfigurator",
+      "role": "reserve_configurator",
+      "address": "0x64b761D848206f447Fe2dd461b0c635Ec39EbB27"
+    },
+    {
+      "protocol_id": "compound_v3_usdc",
+      "contract": "cUSDCv3 / Comet proxy",
+      "role": "lending_market",
+      "address": "0xc3d688B66703497DAA19211EEdff47f25384cdc3"
+    },
+    {
+      "protocol_id": "chainlink_eth_usd",
+      "contract": "ETH/USD Feed Proxy",
+      "role": "oracle_feed",
+      "address": "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"
+    },
+    {
+      "protocol_id": "chainlink_usdc_usd",
+      "contract": "USDC/USD Feed Proxy",
+      "role": "oracle_feed",
+      "address": "0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6"
+    }
+  ]
+}

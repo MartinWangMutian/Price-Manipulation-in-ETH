@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-05-13T02:29:09.896+00:00",
+  "duration_ms": 3922.27,
+  "provider_ws_env": "ETH_PROVIDER_WS_URL",
+  "samples": {
+    "logs": [],
+    "newHeads": [
+      {
+        "hash": "0xcdd1a1329d299054d661eda2ddc1dba02d216d5643757d4cb7f41a004e4bea36",
+        "number": "0x17ebd5c"
+      }
+    ],
+    "newPendingTransactions": [
+      "0x4ee25531b106ff1575de5e3408a72124d8616d9bb6a3ee8981b0b45566f5f219",
+      "0xdf65f0f125d849eb50e0b4a6f863c209e3f1c1641ccf0dce6bc63b2827e7ba38",
+      "0xcf9da70aa621caf6053e4a68d56fcabd3686e3d8d72469d7476819f9d94447b6",
+      "0x468ebddab9b5436be3207b9c9eecf2f8175a4c936e25f86f6c78fb1958a1b2f0",
+      "0xae74df0a3ee917da9046ad85834921da9f05f2d75c348e546e132dca0173862b"
+    ]
+  },
+  "status": "ok",
+  "subscriptions": {
+    "logs": {
+      "ok": true,
+      "subscription_id": "0x41f8d94bfe955bbee7e75a768c71e6b4"
+    },
+    "newHeads": {
+      "ok": true,
+      "subscription_id": "0xa284132c46ffcd48950d751d6fd6aaa1"
+    },
+    "newPendingTransactions": {
+      "ok": true,
+      "subscription_id": "0x8a5cca48745aa0a9e1a89b23d2d21380"
+    }
+  }
+}

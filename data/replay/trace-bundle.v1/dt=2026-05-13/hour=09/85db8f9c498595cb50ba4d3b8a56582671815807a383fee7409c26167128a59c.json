@@ -1,0 +1,21 @@
+{
+  "calls": [],
+  "chain_id": 1,
+  "created_at": "2026-05-13T09:30:26.697+00:00",
+  "event_id": "85db8f9c498595cb50ba4d3b8a56582671815807a383fee7409c26167128a59c",
+  "idempotency_key": "1:0x5430720bdf18996125c9a5d01241fe9f1e2cdeb21e67523ab903e230a9eadc63:provider_fallback",
+  "logs": [],
+  "raw_trace_ref": null,
+  "schema_ver": "trace-bundle.v1",
+  "state_diff": {},
+  "token_transfers": [],
+  "trace_error": {
+    "code": "provider_only_trace_unavailable",
+    "message": "Provider-only mode does not expose local debug_traceCall or trace_call for pending transaction simulation.",
+    "raw_tx_status": "unavailable_from_provider",
+    "upstream_event_id": "bb4eff804e273bccb8702130da5b5e79231af5720b3098278bb52f36255f0571"
+  },
+  "trace_source": "provider_fallback",
+  "trace_status": "unsupported",
+  "tx_hash": "0x5430720bdf18996125c9a5d01241fe9f1e2cdeb21e67523ab903e230a9eadc63"
+}

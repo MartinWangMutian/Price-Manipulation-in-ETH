@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-05-13T00:00:00.000+00:00",
+  "chain_id": 1,
+  "active_endpoint_recommendation": "local-geth-primary",
+  "endpoints": [
+    {
+      "name": "local-geth-primary",
+      "role": "primary",
+      "client": "geth",
+      "status": "ok",
+      "checked_at": "2026-05-13T00:00:00.000+00:00",
+      "checks": {
+        "chain_id": {"ok": true, "latency_ms": 25.0, "result": "0x1"},
+        "head": {"ok": true, "latency_ms": 30.0, "result": "0x0"},
+        "head_lag": {"ok": true, "lag_blocks": 0, "max_observed_head": 0},
+        "peer_count": {"ok": true, "latency_ms": 20.0, "result": "0x32"},
+        "txpool_api": {"ok": true, "latency_ms": 35.0, "result": {}},
+        "trace_api": {"ok": true, "latency_ms": 80.0, "result": "method_available"},
+        "websocket_new_heads": {"ok": true, "latency_ms": 40.0, "result": {}}
+      }
+    }
+  ]
+}
