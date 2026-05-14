@@ -1,0 +1,6 @@
+{
+  "audit_trail": "data/console/review-audit-trail.v1.jsonl",
+  "entries": 110,
+  "exported_at": "2026-05-14T04:38:24.744+00:00",
+  "schema_ver": "review-audit-trail-export.v1"
+}

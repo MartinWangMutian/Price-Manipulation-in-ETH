@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-05-14T04:24:51.478+00:00",
+  "duplicate_idempotency_keys": [],
+  "errors": [],
+  "files_seen": 110,
+  "input": "data/replay/risk-score.v1",
+  "reason_counts": {
+    "FEATURE_TRACE_UNSUPPORTED": 110,
+    "RULE_BASELINE_NO_RICH_EVIDENCE": 110
+  },
+  "severity_counts": {
+    "low": 110
+  },
+  "status": "ok",
+  "unique_idempotency_keys": 110,
+  "valid_scores": 110
+}

@@ -1,0 +1,140 @@
+{
+  "checked_at": "2026-05-14T04:50:09.413+00:00",
+  "metrics": [
+    {
+      "name": "roc_auc",
+      "note": "GraphSAGE training is blocked",
+      "observed": null,
+      "ok": false,
+      "target": ">=0.95"
+    },
+    {
+      "name": "pr_auc_lift",
+      "note": "GraphSAGE training is blocked",
+      "observed": null,
+      "ok": false,
+      "target": "project baseline lift"
+    },
+    {
+      "name": "recall_at_fpr_3pct",
+      "note": "GraphSAGE training is blocked",
+      "observed": null,
+      "ok": false,
+      "target": ">=0.80"
+    },
+    {
+      "name": "lead_time",
+      "note": "requires labeled attack timeline",
+      "observed": null,
+      "ok": false,
+      "target": "measured"
+    },
+    {
+      "name": "calibration_error",
+      "note": "requires labeled validation set",
+      "observed": null,
+      "ok": false,
+      "target": "measured"
+    },
+    {
+      "name": "pending_enqueue_p95",
+      "note": "live stream load test required",
+      "observed": null,
+      "ok": false,
+      "target": "<=100ms"
+    },
+    {
+      "name": "trace_p95",
+      "note": "Geth/Erigon trace endpoint required",
+      "observed": null,
+      "ok": false,
+      "target": "<=1.5s"
+    },
+    {
+      "name": "graph_build_p95",
+      "note": "",
+      "observed": 0.005,
+      "ok": true,
+      "target": "<=300ms"
+    },
+    {
+      "name": "model_inference_p95",
+      "note": "",
+      "observed": 0.004,
+      "ok": true,
+      "target": "<=50ms"
+    },
+    {
+      "name": "end_to_end_detection_p95",
+      "note": "current value is replay timestamp gap, not live SLO",
+      "observed": 92727577.0,
+      "ok": false,
+      "target": "<3s"
+    },
+    {
+      "name": "end_to_end_detection_p99",
+      "note": "current value is replay timestamp gap, not live SLO",
+      "observed": 92732287.0,
+      "ok": false,
+      "target": "<8s"
+    },
+    {
+      "name": "high_critical_graph_evidence_coverage",
+      "note": "no high/critical rich graph samples",
+      "observed": {
+        "coverage": null,
+        "covered_alerts": 0,
+        "eligible_alerts": 0
+      },
+      "ok": false,
+      "target": "100%"
+    },
+    {
+      "name": "high_critical_explanation_availability",
+      "note": "no high/critical rich graph samples",
+      "observed": {
+        "coverage": null,
+        "covered_alerts": 0,
+        "eligible_alerts": 0
+      },
+      "ok": false,
+      "target": "100%"
+    },
+    {
+      "name": "evidence_ref_validity",
+      "note": "",
+      "observed": {
+        "coverage": 1.0,
+        "invalid_refs": [],
+        "refs_seen": 550,
+        "refs_valid": 550
+      },
+      "ok": true,
+      "target": "100%"
+    },
+    {
+      "name": "duplicate_alert_rate",
+      "note": "",
+      "observed": {
+        "duplicate_idempotency_keys": []
+      },
+      "ok": true,
+      "target": "near 0"
+    },
+    {
+      "name": "analyst_review_completion_trace",
+      "note": "",
+      "observed": {
+        "audit_trail_lines": 110,
+        "detail_views": 110
+      },
+      "ok": true,
+      "target": "all states leave audit trail"
+    }
+  ],
+  "status": "not_pass",
+  "summary": {
+    "failed": 11,
+    "passed": 5
+  }
+}

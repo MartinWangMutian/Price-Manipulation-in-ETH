@@ -1,0 +1,17 @@
+{
+  "alert_list_items": 110,
+  "allowed_review_states": [
+    "action_prepared",
+    "approved",
+    "escalated",
+    "new",
+    "rejected",
+    "resolved",
+    "triaged"
+  ],
+  "audit_trail_lines": 110,
+  "checked_at": "2026-05-14T04:39:05.025+00:00",
+  "detail_views": 110,
+  "errors": [],
+  "status": "ok"
+}

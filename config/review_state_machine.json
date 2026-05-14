@@ -1,0 +1,15 @@
+{
+  "schema_ver": "review-state-machine.v1",
+  "states": ["new", "triaged", "escalated", "action_prepared", "approved", "rejected", "resolved"],
+  "initial_state": "new",
+  "transitions": {
+    "new": ["triaged", "escalated", "rejected"],
+    "triaged": ["escalated", "resolved", "rejected"],
+    "escalated": ["action_prepared", "resolved", "rejected"],
+    "action_prepared": ["approved", "rejected"],
+    "approved": ["resolved"],
+    "rejected": ["resolved"],
+    "resolved": []
+  },
+  "required_transition_fields": ["operator", "reason", "evidence_refs", "changed_at"]
+}

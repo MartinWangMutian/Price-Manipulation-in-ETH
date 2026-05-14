@@ -1,0 +1,20 @@
+{
+  "call_protocol_annotations": [],
+  "chain_id": 1,
+  "created_at": "2026-05-14T04:12:35.682+00:00",
+  "event_id": "acbe87400c55b914eb1a4b2360059fd433a59d7c0fcabfedcecbc2755e5f0f2a",
+  "feature_missing_flags": [
+    "insufficient_trace_context_for_protocol_roles",
+    "no_calls",
+    "no_logs",
+    "no_protocol_role_matches",
+    "trace_unsupported"
+  ],
+  "idempotency_key": "1:0x86370b8d64036397f5d453e55d6fb6d12177867085cef9c72761cfe694354079:provider_fallback:parsed-trace.v1:protocol-features.v1",
+  "matched_protocol_roles": [],
+  "schema_ver": "protocol-features.v1",
+  "source_parsed_event_id": "7fd861a4ed0ba299edaaaeaef2842aef96b8cfc31461fb14cc2be26a13967c14",
+  "source_parsed_idempotency_key": "1:0x86370b8d64036397f5d453e55d6fb6d12177867085cef9c72761cfe694354079:provider_fallback:parsed-trace.v1",
+  "transfer_protocol_annotations": [],
+  "tx_hash": "0x86370b8d64036397f5d453e55d6fb6d12177867085cef9c72761cfe694354079"
+}

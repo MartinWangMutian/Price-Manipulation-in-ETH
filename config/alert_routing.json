@@ -1,0 +1,22 @@
+{
+  "schema_ver": "alert-routing.v1",
+  "alert_version": "alert-orchestrator.v1",
+  "severity_thresholds": {
+    "low": {"min": 0.0, "max_exclusive": 0.5},
+    "watch": {"min": 0.5, "max_exclusive": 0.75},
+    "high": {"min": 0.75, "max_exclusive": 0.9},
+    "critical": {"min_exclusive": 0.9, "max": 1.0}
+  },
+  "actions": {
+    "low": ["store_for_replay", "include_in_drift_monitoring"],
+    "watch": ["enqueue_analyst_review"],
+    "high": ["page_oncall_analyst", "trigger_rag_async"],
+    "critical": [
+      "page_oncall_analyst",
+      "page_oncall_engineer",
+      "trigger_rag_async",
+      "prepare_suggested_transaction_after_approval",
+      "attach_incident_runbook_steps"
+    ]
+  }
+}

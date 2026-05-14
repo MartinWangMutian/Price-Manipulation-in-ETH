@@ -1,0 +1,49 @@
+{
+  "schema_ver": "gray-launch.v1",
+  "launch_id": "gray-launch.provider-only-seed",
+  "mode": "provider_only_shadow",
+  "target_protocols": [
+    "uniswap_v3",
+    "aave_v3_ethereum",
+    "chainlink_eth_usd"
+  ],
+  "alert_enablement": {
+    "watch": true,
+    "high": true,
+    "critical": true
+  },
+  "execution_policy": {
+    "auto_onchain_execution": false,
+    "allowed_outputs": ["alert", "runbook", "suggested_unsigned_action"],
+    "approval_required_for_any_chain_action": true
+  },
+  "notifications": {
+    "dashboard": {
+      "configured": true,
+      "target": "local_console_view_model"
+    },
+    "pager_or_feishu": {
+      "configured": false,
+      "target": "TBD"
+    },
+    "phone_or_manual_escalation": {
+      "configured": false,
+      "target": "TBD"
+    }
+  },
+  "slo_dashboard": {
+    "configured": true,
+    "source_reports": [
+      "ops/reports/load-test-replay.latest.json",
+      "ops/reports/offline-evaluation.latest.json",
+      "ops/reports/failure-drill.latest.json"
+    ]
+  },
+  "blocking_conditions": [
+    "no live Geth or Erigon trace endpoint",
+    "no confirmed Pager/Feishu target",
+    "no confirmed phone escalation target",
+    "no named multisig or authorized approver roster",
+    "no two-week stable run"
+  ]
+}

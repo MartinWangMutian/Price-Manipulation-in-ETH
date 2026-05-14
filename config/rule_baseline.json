@@ -1,0 +1,41 @@
+{
+  "schema_ver": "rule-baseline.v1",
+  "model_version": "rule-baseline.v1",
+  "threshold_profile": "rule-baseline-thresholds.v1",
+  "severity_thresholds": {
+    "watch": 0.5,
+    "high": 0.75,
+    "critical": 0.9
+  },
+  "rules": {
+    "abnormal_profit_path": {
+      "reason_code": "RULE_ABNORMAL_PROFIT_PATH",
+      "weight": 0.35,
+      "min_abs_amount_norm": 100000.0
+    },
+    "oracle_read_write_same_tx": {
+      "reason_code": "RULE_ORACLE_READ_WRITE_SAME_TX",
+      "weight": 0.25
+    },
+    "excessive_slippage": {
+      "reason_code": "RULE_EXCESSIVE_SLIPPAGE",
+      "weight": 0.2,
+      "min_slippage_bps": 300
+    },
+    "thin_liquidity_trade": {
+      "reason_code": "RULE_THIN_LIQUIDITY_TRADE",
+      "weight": 0.2,
+      "max_liquidity_usd": 1000000.0
+    },
+    "flash_loan_path": {
+      "reason_code": "RULE_FLASH_LOAN_PATH",
+      "weight": 0.3,
+      "selector_hints": ["flashloan", "flashloansimple", "flash"]
+    }
+  },
+  "fallback": {
+    "model_reject_reason": "model_unavailable_rule_fallback",
+    "no_rich_evidence_score": 0.05,
+    "no_rich_evidence_reason": "RULE_BASELINE_NO_RICH_EVIDENCE"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "checked_at": "2026-05-14T04:32:52.122+00:00",
+  "hits": [
+    {
+      "dense_score": 0.340502,
+      "doc_id": "aave_v3_pool_docs",
+      "evidence_ref": "doc:aave_v3_pool_docs#pool",
+      "evidence_template": "[doc:aave_v3_pool_docs#pool] aave_v3_ethereum / pool: Aave v3 Pool documentation seed for lending, liquidation, reserve, borrow, and repay context.",
+      "protocol": "aave_v3_ethereum",
+      "rrf_score": 0.032266,
+      "section": "pool",
+      "severity": "info",
+      "source_type": "protocol_doc",
+      "source_url": "https://aave.com/docs/developers/smart-contracts/pool",
+      "sparse_score": 2
+    },
+    {
+      "dense_score": 0.3849,
+      "doc_id": "mango_2022_dni",
+      "evidence_ref": "doc:mango_2022_dni#oracle_market_manipulation",
+      "evidence_template": "[doc:mango_2022_dni#oracle_market_manipulation] mango_markets / oracle_market_manipulation: Mango Markets incident database seed for oracle and market manipulation training context.",
+      "protocol": "mango_markets",
+      "rrf_score": 0.031778,
+      "section": "oracle_market_manipulation",
+      "severity": "critical",
+      "source_type": "incident_database",
+      "source_url": "https://dn.institute/research/cyberattacks/incidents/2022-10-11-mango-markets/",
+      "sparse_score": 2
+    },
+    {
+      "dense_score": 0.340502,
+      "doc_id": "bzx_2020_dia",
+      "evidence_ref": "doc:bzx_2020_dia#oracle_manipulation",
+      "evidence_template": "[doc:bzx_2020_dia#oracle_manipulation] bzx / oracle_manipulation: bZx oracle manipulation seed for price oracle failure and thin liquidity exploit context.",
+      "protocol": "bzx",
+      "rrf_score": 0.031498,
+      "section": "oracle_manipulation",
+      "severity": "high",
+      "source_type": "security_report",
+      "source_url": "https://www.diadata.org/blog/post/the-bzx-attack-how-an-oracle-made-2400-eth-disappear/",
+      "sparse_score": 2
+    },
+    {
+      "dense_score": 0.273861,
+      "doc_id": "beanstalk_2022_postmortem",
+      "evidence_ref": "doc:beanstalk_2022_postmortem#governance_flash_loan",
+      "evidence_template": "[doc:beanstalk_2022_postmortem#governance_flash_loan] beanstalk / governance_flash_loan: Beanstalk exploit seed for flash-loan governance attack and emergency response context.",
+      "protocol": "beanstalk",
+      "rrf_score": 0.031281,
+      "section": "governance_flash_loan",
+      "severity": "critical",
+      "source_type": "exploit_postmortem",
+      "source_url": "https://bean.money/blog/beanstalk-farms-2022-roundup",
+      "sparse_score": 2
+    },
+    {
+      "dense_score": 0.356348,
+      "doc_id": "chainlink_eth_usd_feed",
+      "evidence_ref": "doc:chainlink_eth_usd_feed#feed_reference",
+      "evidence_template": "[doc:chainlink_eth_usd_feed#feed_reference] chainlink_eth_usd / feed_reference: Chainlink ETH/USD feed reference seed for oracle address and price feed context.",
+      "protocol": "chainlink_eth_usd",
+      "rrf_score": 0.031054,
+      "section": "feed_reference",
+      "severity": "info",
+      "source_type": "protocol_doc",
+      "source_url": "https://data.chain.link/feeds/ethereum/mainnet/eth-usd",
+      "sparse_score": 1
+    }
+  ],
+  "knowledge_snapshot": "knowledge-snapshot.seed-2026-05-14",
+  "null_reason": null,
+  "null_retrieval": false,
+  "query": "oracle manipulation flash loan lending pool",
+  "status": "ok"
+}

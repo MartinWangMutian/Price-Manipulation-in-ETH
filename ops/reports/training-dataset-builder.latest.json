@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-05-14T04:27:33.473+00:00",
+  "missing_key_transaction_incidents": [
+    "beanstalk_2022_04_17",
+    "bzx_2020_02_18",
+    "conic_finance_2023_07_21",
+    "cream_finance_2021_10_27",
+    "curve_vyper_2023_07_30",
+    "harvest_finance_2020_10_26",
+    "mango_markets_2022_10_11"
+  ],
+  "outputs": [
+    "data/training/label_snapshot.v1.json",
+    "data/training/splits/train.v1.json",
+    "data/training/splits/validation.v1.json",
+    "data/training/splits/replay.v1.json",
+    "data/training/unlabeled_pool.provider_only.v1.json"
+  ],
+  "positive_incidents": 8,
+  "replay_status_counts": {
+    "needs_trace_replay": 1,
+    "needs_tx_hash_review": 6,
+    "not_ethereum_replay": 1
+  },
+  "split_counts": {
+    "replay": 1,
+    "train": 6,
+    "validation": 1
+  },
+  "status": "ok",
+  "training_ready": false,
+  "unlabeled_provider_only_graphs": 110
+}

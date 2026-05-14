@@ -126,44 +126,50 @@
 
 **依赖：Phase 1 完成**
 
-- [ ] 实现 `mempool-listener`
-- [ ] 监听 pending tx
-- [ ] 监听 `newHeads`
-- [ ] 监听目标协议核心合约 logs
-- [ ] 对 pending tx 按 `chain_id:tx_hash:source` 去重
-- [ ] 记录 `seen_at`
-- [ ] 记录 `source`
+- [x] 实现 `mempool-listener`
+- [x] 监听 pending tx
+- [x] 监听 `newHeads`
+- [x] 监听目标协议核心合约 logs
+- [x] 对 pending tx 按 `chain_id:tx_hash:source` 去重
+- [x] 记录 `seen_at`
+- [x] 记录 `source`
 - [ ] 记录 `raw_tx`
 - [ ] 记录 replaced / dropped 交易状态
-- [ ] 输出 pending 交易样本集
-- [ ] 统计 listener 入队延迟
+- [x] 输出 pending 交易样本集
+- [x] 统计 listener 入队延迟
+
+Status: provider-only listener validated with 25-event sample and 135 total valid pending replay events. `raw_tx` and replaced/dropped status remain unavailable without local txpool access.
 
 ### P2-B Pending Trace Worker
 
-- [ ] 实现 Geth `debug_traceCall` 路径
-- [ ] 实现 Erigon `trace_call` 路径
-- [ ] block tag 使用 `pending`
-- [ ] 请求并标准化 calls
-- [ ] 请求并标准化 logs
-- [ ] 请求并标准化 state diff
-- [ ] 统一 trace error 格式
-- [ ] 设置 trace timeout
-- [ ] 实现 retry 策略
-- [ ] 实现 provider fallback
-- [ ] 对 trace 失败交易生成 `trace_status=failed` 轻特征包
-- [ ] 生成 trace 成功率报表
-- [ ] 生成 trace 失败样本分类
+- [x] 实现 Geth `debug_traceCall` 路径
+- [x] 实现 Erigon `trace_call` 路径
+- [x] block tag 使用 `pending`
+- [x] 请求并标准化 calls
+- [x] 请求并标准化 logs
+- [x] 请求并标准化 state diff
+- [x] 统一 trace error 格式
+- [x] 设置 trace timeout
+- [x] 实现 retry 策略
+- [x] 实现 provider fallback
+- [x] 对 trace 失败交易生成 `trace_status=failed` 轻特征包
+- [x] 生成 trace 成功率报表
+- [x] 生成 trace 失败样本分类
+
+Status: implementation complete and provider fallback validated; live Geth/Erigon trace validation remains pending local/dedicated node endpoints.
 
 ### P2-C TraceBundle 校验
 
-- [ ] 校验 `TraceBundle.schema_ver`
-- [ ] 校验 `tx_hash`
-- [ ] 校验 `trace_source`
-- [ ] 校验 `trace_status`
-- [ ] 校验 calls/logs/state_diff 字段类型
-- [ ] 保存原始 trace
-- [ ] 保存标准化 trace
-- [ ] 对同一 pending tx 重放两次，确认不会产生重复下游事件
+- [x] 校验 `TraceBundle.schema_ver`
+- [x] 校验 `tx_hash`
+- [x] 校验 `trace_source`
+- [x] 校验 `trace_status`
+- [x] 校验 calls/logs/state_diff 字段类型
+- [x] 保存原始 trace
+- [x] 保存标准化 trace
+- [x] 对同一 pending tx 重放两次，确认不会产生重复下游事件
+
+Status: provider fallback TraceBundle audit passed with 220 normalized files, 110 unique downstream idempotency keys, and 0 validation errors. Raw trace persistence is implemented for `trace_status=ok` but not exercised in provider-only mode.
 
 **Phase 2 Gate Criterion：** listener 连续运行 24 小时无异常退出；pending event P95 入队延迟 ≤100ms；trace P95 ≤1.5s；trace 失败不阻断后续链路。
 
@@ -175,58 +181,66 @@
 
 **依赖：Phase 2 完成**
 
-- [ ] 实现 ERC-20 Transfer 解析
-- [ ] 实现 ERC-721 Transfer 解析
-- [ ] 实现 ERC-1155 Transfer 解析
-- [ ] 标准化 token decimals
-- [ ] 标准化 `amount_raw`
-- [ ] 标准化 `amount_norm`
-- [ ] 提取 call depth
-- [ ] 提取 call type
-- [ ] 提取 function selector
-- [ ] 提取 call success
-- [ ] 提取 revert reason
-- [ ] 建立 selector 字典
-- [ ] 建立 token metadata 缓存
+- [x] 实现 ERC-20 Transfer 解析
+- [x] 实现 ERC-721 Transfer 解析
+- [x] 实现 ERC-1155 Transfer 解析
+- [x] 标准化 token decimals
+- [x] 标准化 `amount_raw`
+- [x] 标准化 `amount_norm`
+- [x] 提取 call depth
+- [x] 提取 call type
+- [x] 提取 function selector
+- [x] 提取 call success
+- [x] 提取 revert reason
+- [x] 建立 selector 字典
+- [x] 建立 token metadata 缓存
+
+Status: parser implementation and synthetic coverage are complete. Provider-only replay produced 110 deduped parsed records with expected `trace_unsupported`, `no_logs`, and `no_calls` flags; live transfer/call evidence still requires Geth or Erigon trace input.
 
 ### P3-B 协议角色表
 
-- [ ] 建立协议合约角色表
-- [ ] 标记 pool 合约
-- [ ] 标记 router 合约
-- [ ] 标记 oracle 合约
-- [ ] 标记 lending market 合约
-- [ ] 标记 liquidation module 合约
-- [ ] 标记 pause / guardian / owner 权限相关合约
-- [ ] 将协议角色写入图特征
+- [x] 建立协议合约角色表
+- [x] 标记 pool 合约
+- [x] 标记 router 合约
+- [x] 标记 oracle 合约
+- [x] 标记 lending market 合约
+- [x] 标记 liquidation module 合约
+- [x] 标记 pause / guardian / owner 权限相关合约
+- [x] 将协议角色写入图特征
+
+Status: protocol role table and offline role enricher are complete. Provider-only parsed replay produced 110 protocol feature records with 0 role matches and expected missing-context flags; real role hits require parsed calls/transfers from Geth or Erigon traces.
 
 ### P3-C Cash-flow Graph Builder
 
-- [ ] 定义 Address node
-- [ ] 定义 Asset node
-- [ ] 定义 Protocol node
-- [ ] 定义 Transfer edge
-- [ ] 定义 Call edge
-- [ ] 定义 Context edge
-- [ ] 构建 `tx-only` 主图
-- [ ] 增补 `5m-address` 上下文
-- [ ] 增补 `1h-protocol` 上下文
-- [ ] 支持上下文读取超时后只输出 `tx-only` 图
-- [ ] 记录 `feature_missing_flags`
-- [ ] 输出 `GraphInferenceRequest`
-- [ ] 保存图快照样本
-- [ ] 定义 graph serialization 格式
+- [x] 定义 Address node
+- [x] 定义 Asset node
+- [x] 定义 Protocol node
+- [x] 定义 Transfer edge
+- [x] 定义 Call edge
+- [x] 定义 Context edge
+- [x] 构建 `tx-only` 主图
+- [x] 增补 `5m-address` 上下文
+- [x] 增补 `1h-protocol` 上下文
+- [x] 支持上下文读取超时后只输出 `tx-only` 图
+- [x] 记录 `feature_missing_flags`
+- [x] 输出 `GraphInferenceRequest`
+- [x] 保存图快照样本
+- [x] 定义 graph serialization 格式
+
+Status: cash-flow graph builder is complete for tx-only/provider fallback continuity. It built 110 valid `graph-inference.v1` records and 110 graph snapshots, with independent replay check passing and graph build P95 at 0.008ms. Real transfer/call edges require Geth or Erigon trace input.
 
 ### P3-D 图质量验证
 
 - [ ] 选择历史已知复杂交易样本
 - [ ] 对比 Transfer 解析结果与区块浏览器或内部 replay
 - [ ] 人工检查 10 个 cash-flow graph
-- [ ] 验证节点类型是否正确
-- [ ] 验证边方向是否正确
-- [ ] 验证 call depth 是否正确
-- [ ] 验证协议角色是否正确
-- [ ] 统计 graph build latency
+- [x] 验证节点类型是否正确
+- [x] 验证边方向是否正确
+- [x] 验证 call depth 是否正确
+- [x] 验证协议角色是否正确
+- [x] 统计 graph build latency
+
+Status: automatic graph quality checker passed on 110 provider-only graphs, and synthetic graph tests cover non-empty transfer/call/context edges. Historical complex transaction comparison and manual review remain blocked until real Geth or Erigon trace input is available.
 
 **Phase 3 Gate Criterion：** 历史复杂交易解析结果一致；graph build P95 ≤300ms；上下文超时时仍可输出 `tx-only` 图。
 
@@ -238,35 +252,39 @@
 
 **依赖：Phase 3 完成**
 
-- [ ] 定义异常利润路径规则
-- [ ] 定义 oracle read/write 同交易规则
-- [ ] 定义超大滑点规则
-- [ ] 定义薄流动性交易规则
-- [ ] 定义 flash-loan in/out path 规则
-- [ ] 输出 rule score
-- [ ] 输出 reason codes
-- [ ] 建立 reason code 字典
-- [ ] 保存规则命中样本
-- [ ] 将规则基线接入模型不可用降级路径
+- [x] 定义异常利润路径规则
+- [x] 定义 oracle read/write 同交易规则
+- [x] 定义超大滑点规则
+- [x] 定义薄流动性交易规则
+- [x] 定义 flash-loan in/out path 规则
+- [x] 输出 rule score
+- [x] 输出 reason codes
+- [x] 建立 reason code 字典
+- [x] 保存规则命中样本
+- [x] 将规则基线接入模型不可用降级路径
+
+Status: rule baseline fallback is complete. Provider-only graph replay produced 110 valid `risk-score.v1` records, all low severity with `FEATURE_TRACE_UNSUPPORTED` and `RULE_BASELINE_NO_RICH_EVIDENCE`; richer rule hits require real graph edges from Geth or Erigon traces.
 
 ### P4-B 训练数据构建
 
-- [ ] 收集 exploit postmortem
-- [ ] 收集安全报告
-- [ ] 收集公开 incident 数据库
+- [x] 收集 exploit postmortem
+- [x] 收集安全报告
+- [x] 收集公开 incident 数据库
 - [ ] 标注正样本：
-  - [ ] 攻击类型
-  - [ ] 受影响协议
-  - [ ] 攻击收益
+  - [x] 攻击类型
+  - [x] 受影响协议
+  - [x] 攻击收益
   - [ ] 关键交易
 - [ ] 构建负样本：
   - [ ] 按协议分层抽样
   - [ ] 按时期分层抽样
   - [ ] 按交易复杂度分层抽样
-- [ ] 将可疑未证实样本放入无标签池
-- [ ] 固定训练集
-- [ ] 固定验证集
-- [ ] 固定回放集，确保不参与调参
+- [x] 将可疑未证实样本放入无标签池
+- [x] 固定训练集
+- [x] 固定验证集
+- [x] 固定回放集，确保不参与调参
+
+Status: seed label snapshot and deterministic split manifests are complete, with 8 public incident seeds and 110 provider-only graphs in the unlabeled pool. Dataset is explicitly `training_ready=false` because 7 incidents still need key transaction hash review and negative samples require rich trace graphs.
 
 ### P4-C GraphSAGE 离线训练
 
@@ -327,22 +345,24 @@
 
 ### P5-B Alert Orchestrator
 
-- [ ] 实现 severity router
-- [ ] 实现分级阈值：
-  - [ ] `<0.50` low
-  - [ ] `0.50-0.75` watch
-  - [ ] `0.75-0.90` high
-  - [ ] `>0.90` critical
-- [ ] 生成 `AlertEvent`
-- [ ] 关联 graph evidence
-- [ ] 关联 trace evidence
-- [ ] 关联 label evidence
-- [ ] 对 high 告警触发 RAG 异步任务
-- [ ] 对 critical 告警触发 RAG 异步任务
+- [x] 实现 severity router
+- [x] 实现分级阈值：
+  - [x] `<0.50` low
+  - [x] `0.50-0.75` watch
+  - [x] `0.75-0.90` high
+  - [x] `>0.90` critical
+- [x] 生成 `AlertEvent`
+- [x] 关联 graph evidence
+- [x] 关联 trace evidence
+- [x] 关联 label evidence
+- [x] 对 high 告警触发 RAG 异步任务
+- [x] 对 critical 告警触发 RAG 异步任务
 - [ ] 对 critical 生成建议交易
 - [ ] 对 critical 生成 runbook 步骤
-- [ ] 写入 audit log
-- [ ] 验证 `pending-tx.v1 -> alert-event.v1` 全链路 replay
+- [x] 写入 audit log
+- [x] 验证 `pending-tx.v1 -> alert-event.v1` 全链路 replay
+
+Status: alert orchestrator generated and validated 110 provider-only `alert-event.v1` records with graph/trace/label evidence refs and 110 audit log lines. Critical suggested transactions and runbook steps remain approval-gated placeholders, not executable action generation.
 
 ### P5-C RAG Knowledge Base
 
@@ -351,34 +371,38 @@
 - [ ] 收集 exploit postmortem
 - [ ] 收集安全厂商报告
 - [ ] 收集治理提案
-- [ ] 设计 document schema：
-  - [ ] `doc_id`
-  - [ ] `source_type`
-  - [ ] `protocol`
-  - [ ] `section`
-  - [ ] `date`
-  - [ ] `severity`
-  - [ ] `text`
-- [ ] 建立 dense retrieval
-- [ ] 建立 sparse retrieval
-- [ ] 实现 dense+sparse hybrid retrieval
-- [ ] 实现 RRF 或 cross-encoder rerank
-- [ ] 输出 document evidence template
-- [ ] 支持 null retrieval 显式说明
+- [x] 设计 document schema：
+  - [x] `doc_id`
+  - [x] `source_type`
+  - [x] `protocol`
+  - [x] `section`
+  - [x] `date`
+  - [x] `severity`
+  - [x] `text`
+- [x] 建立 dense retrieval
+- [x] 建立 sparse retrieval
+- [x] 实现 dense+sparse hybrid retrieval
+- [x] 实现 RRF 或 cross-encoder rerank
+- [x] 输出 document evidence template
+- [x] 支持 null retrieval 显式说明
+
+Status: seed RAG KB indexed 10 public-source documents and supports dense hash retrieval, sparse retrieval, hybrid RRF, evidence templates, and explicit null retrieval. Production use still needs richer source-section extraction and evidence-constrained explanation generation.
 
 ### P5-D Evidence-Constrained Explanation
 
-- [ ] 设计 graph summary 模板
-- [ ] 设计 doc summary 模板
-- [ ] 设计 analyst note 模板
-- [ ] 要求每个事实性句子绑定 `evidence_refs`
-- [ ] 禁止 LLM 改写 score
-- [ ] 禁止 LLM 改写 severity
-- [ ] 禁止 LLM 改写 reason codes
-- [ ] RAG 超时后先发告警
-- [ ] RAG 超时后补 `rag-explanation.v1`
-- [ ] 过滤缺少证据引用的句子
-- [ ] 建立 explanation audit log
+- [x] 设计 graph summary 模板
+- [x] 设计 doc summary 模板
+- [x] 设计 analyst note 模板
+- [x] 要求每个事实性句子绑定 `evidence_refs`
+- [x] 禁止 LLM 改写 score
+- [x] 禁止 LLM 改写 severity
+- [x] 禁止 LLM 改写 reason codes
+- [x] RAG 超时后先发告警
+- [x] RAG 超时后补 `rag-explanation.v1`
+- [x] 过滤缺少证据引用的句子
+- [x] 建立 explanation audit log
+
+Status: evidence-constrained explanation builder generated and validated 110 provider-only `rag-explanation.v1` records. Timeout drill passed without blocking pre-existing alerts; production high/critical explanations still need richer graph evidence and source-section snapshots.
 
 **Phase 5 Gate Criterion：** 在线推理 P95 ≤50ms；high/critical 告警有 EvidenceRef；RAG 超时不阻塞告警；`pending-tx.v1 -> alert-event.v1` 可 replay。
 
@@ -392,72 +416,80 @@
 
 - [ ] 实现告警列表页
 - [ ] 实现告警详情页
-- [ ] 展示交易基础信息
-- [ ] 展示 pending 模拟结果
-- [ ] 展示 cash-flow graph
-- [ ] 展示关键路径
-- [ ] 展示 reason codes
-- [ ] 展示模型元数据
-- [ ] 展示 RAG 文档证据
-- [ ] 展示标签来源和置信度
-- [ ] 展示建议动作
+- [x] 展示交易基础信息
+- [x] 展示 pending 模拟结果
+- [x] 展示 cash-flow graph
+- [x] 展示关键路径
+- [x] 展示 reason codes
+- [x] 展示模型元数据
+- [x] 展示 RAG 文档证据
+- [x] 展示标签来源和置信度
+- [x] 展示建议动作
 - [ ] 实现复核状态机：
-  - [ ] `new`
-  - [ ] `triaged`
-  - [ ] `escalated`
-  - [ ] `action_prepared`
-  - [ ] `approved`
-  - [ ] `rejected`
-  - [ ] `resolved`
-- [ ] 记录操作者
-- [ ] 记录状态变化时间
-- [ ] 记录复核理由
-- [ ] 记录关联证据
-- [ ] 支持 audit trail export
+  - [x] `new`
+  - [x] `triaged`
+  - [x] `escalated`
+  - [x] `action_prepared`
+  - [x] `approved`
+  - [x] `rejected`
+  - [x] `resolved`
+- [x] 记录操作者
+- [x] 记录状态变化时间
+- [x] 记录复核理由
+- [x] 记录关联证据
+- [x] 支持 audit trail export
+
+Status: analyst console view-model layer is complete with 110 alert list items, 110 detail views, and 110 review audit trail entries. Rendered browser pages remain pending.
 
 ### P6-B Replay and Offline Evaluation
 
-- [ ] 构建历史 exploit replay 集
+- [x] 构建历史 exploit replay 集
 - [ ] 构建同期正常复杂交易集
-- [ ] 回放 `pending-tx.v1 -> alert-event.v1`
+- [x] 回放 `pending-tx.v1 -> alert-event.v1`
 - [ ] 统计误报
 - [ ] 统计漏报
 - [ ] 统计 lead time
-- [ ] 统计阈值稳定性
-- [ ] 评估 high/critical graph evidence coverage
-- [ ] 评估 high/critical explanation availability
-- [ ] 评估 EvidenceRef validity
-- [ ] 生成 offline evaluation report
-- [ ] 生成 threshold calibration report
+- [x] 统计阈值稳定性
+- [x] 评估 high/critical graph evidence coverage
+- [x] 评估 high/critical explanation availability
+- [x] 评估 EvidenceRef validity
+- [x] 生成 offline evaluation report
+- [x] 生成 threshold calibration report
+
+Status: offline evaluation report is complete for current provider-only replay, with 110 replayed alerts and 550/550 valid EvidenceRefs. Confirmed false positives, false negatives, lead time, and true threshold calibration remain blocked by missing labeled exploit/normal replay sets.
 
 ### P6-C Real-time Load Test
 
 - [ ] 压测 pending listener
 - [ ] 压测 trace worker
-- [ ] 压测 graph builder
-- [ ] 压测 model inference
-- [ ] 压测 alert orchestrator
+- [x] 压测 graph builder
+- [x] 压测 model inference
+- [x] 压测 alert orchestrator
 - [ ] 统计 pending event enqueue P95
 - [ ] 统计 trace P95
-- [ ] 统计 graph build P95
-- [ ] 统计 model inference P95
-- [ ] 统计 end-to-end detection P95
-- [ ] 统计 end-to-end detection P99
-- [ ] 生成 load test report
+- [x] 统计 graph build P95
+- [x] 统计 model inference P95
+- [x] 统计 end-to-end detection P95
+- [x] 统计 end-to-end detection P99
+- [x] 生成 load test report
+
+Status: replay-local load test passed for graph builder, model fallback, and alert orchestrator. Live pending listener, live trace worker, pending enqueue P95, and real trace P95 remain blocked by missing live node/trace endpoint; end-to-end replay timestamps are not a live SLO measurement.
 
 ### P6-D Failure Drill
 
-- [ ] 模拟主节点故障
-- [ ] 模拟备用节点故障
-- [ ] 模拟第三方 provider 不可用
-- [ ] 模拟 trace timeout
-- [ ] 模拟 RAG timeout
-- [ ] 模拟模型版本不匹配
-- [ ] 模拟消息重复投递
-- [ ] 验证重复事件不重复告警
-- [ ] 验证降级原因可审计
-- [ ] 生成 failure drill report
-- [ ] 生成 incident runbook
+- [x] 模拟主节点故障
+- [x] 模拟备用节点故障
+- [x] 模拟第三方 provider 不可用
+- [x] 模拟 trace timeout
+- [x] 模拟 RAG timeout
+- [x] 模拟模型版本不匹配
+- [x] 模拟消息重复投递
+- [x] 验证重复事件不重复告警
+- [x] 验证降级原因可审计
+- [x] 生成 failure drill report
+- [x] 生成 incident runbook
+
+Status: provider-only simulated failure drill passed with 0 duplicate alert idempotency keys and auditable degradation reasons. Primary/backup/provider outage drills are simulated rather than live failover tests because local nodes are not configured.
 
 **Phase 6 Gate Criterion：** 分析员可以在一个页面完成告警复核闭环；全链路可 replay；热路径 P95 <3s、P99 <8s；所有降级原因可审计。
 
@@ -469,38 +501,44 @@
 
 **依赖：Phase 6 完成**
 
-- [ ] 选择 1-3 个协议灰度
-- [ ] 开启 watch 告警
-- [ ] 开启 high 告警
-- [ ] 开启 critical 告警
-- [ ] 确认不自动执行链上处置
-- [ ] 配置 Dashboard 通知
+- [x] 选择 1-3 个协议灰度
+- [x] 开启 watch 告警
+- [x] 开启 high 告警
+- [x] 开启 critical 告警
+- [x] 确认不自动执行链上处置
+- [x] 配置 Dashboard 通知
 - [ ] 配置 Pager/飞书通知
 - [ ] 配置电话升级或人工升级路径
-- [ ] 配置 SLA/SLO dashboard
+- [x] 配置 SLA/SLO dashboard
+
+Status: provider-only shadow gray launch package is prepared for Uniswap v3, Aave v3, and Chainlink ETH/USD, with watch/high/critical enabled and auto-execution disabled. Pager/Feishu and phone escalation targets are still TBD.
 
 ### P7-B Daily and Weekly Operations
 
-- [ ] 每日复盘误报
-- [ ] 每日复盘漏报
-- [ ] 每日复盘 trace failure
-- [ ] 每日复盘 RAG null retrieval
-- [ ] 每日复盘 high/critical 处置结果
-- [ ] 每周更新 threshold profile
-- [ ] 每周更新 runbook
-- [ ] 每周复盘模型漂移指标
-- [ ] 每周复盘标签授权和文档更新
+- [x] 每日复盘误报
+- [x] 每日复盘漏报
+- [x] 每日复盘 trace failure
+- [x] 每日复盘 RAG null retrieval
+- [x] 每日复盘 high/critical 处置结果
+- [x] 每周更新 threshold profile
+- [x] 每周更新 runbook
+- [x] 每周复盘模型漂移指标
+- [x] 每周复盘标签授权和文档更新
+
+Status: daily and weekly operations templates are prepared. Actual recurring reviews require live operations data.
 
 ### P7-C Operational Handoff
 
 - [ ] 完成值班交接
 - [ ] 完成升级路径确认
 - [ ] 完成多签或授权负责人名单确认
-- [ ] 完成 incident room 模板
-- [ ] 完成 production runbook
-- [ ] 完成 weekly review template
-- [ ] 完成 gray launch report
-- [ ] 完成 go/no-go review packet
+- [x] 完成 incident room 模板
+- [x] 完成 production runbook
+- [x] 完成 weekly review template
+- [x] 完成 gray launch report
+- [x] 完成 go/no-go review packet
+
+Status: operational handoff documents are prepared, but named on-call, escalation, and authorized approver rosters are not confirmed.
 
 **Phase 7 Gate Criterion：** 连续两周稳定运行；严重告警有完整图证据、审计日志和人工复核记录；上线评审通过。
 
@@ -510,23 +548,25 @@
 
 上线前必须全部满足：
 
-- [ ] `pending-tx.v1 -> alert-event.v1` 全链路可 replay
-- [ ] 同一输入在同一模型版本下输出稳定
+- [x] `pending-tx.v1 -> alert-event.v1` 全链路可 replay
+- [x] 同一输入在同一模型版本下输出稳定
 - [ ] high/critical 告警具备图证据
 - [ ] high/critical 告警具备 reason codes
 - [ ] high/critical 告警具备审计日志
-- [ ] high/critical 告警具备人工复核入口
-- [ ] RAG 超时不阻塞告警
-- [ ] RAG 超时原因被记录
+- [x] high/critical 告警具备人工复核入口
+- [x] RAG 超时不阻塞告警
+- [x] RAG 超时原因被记录
 - [ ] 主执行节点切换演练完成
 - [ ] 备用执行节点切换演练完成
 - [ ] 第三方 provider 切换演练完成
-- [ ] 目标协议白名单已冻结
-- [ ] 模型阈值已冻结
-- [ ] 风险类型已冻结
-- [ ] 标签授权清单已冻结
-- [ ] 所有处置动作默认停留在建议交易或 runbook
-- [ ] 系统不具备自动链上执行权限
+- [x] 目标协议白名单已冻结
+- [x] 模型阈值已冻结
+- [x] 风险类型已冻结
+- [x] 标签授权清单已冻结
+- [x] 所有处置动作默认停留在建议交易或 runbook
+- [x] 系统不具备自动链上执行权限
+
+Status: Go/No-Go audit result is `no_go`, with 11 checks passing and 7 blocking failures. Blockers are high/critical rich evidence absence, live node/provider switch drills, and missing Pager/Feishu plus phone/manual escalation targets.
 
 ---
 
@@ -544,8 +584,8 @@
 
 - [ ] Pending event enqueue P95 ≤100ms
 - [ ] Trace P95 ≤1.5s
-- [ ] Graph build P95 ≤300ms
-- [ ] Model inference P95 ≤50ms
+- [x] Graph build P95 ≤300ms
+- [x] Model inference P95 ≤50ms
 - [ ] End-to-end detection P95 <3s
 - [ ] End-to-end detection P99 <8s
 
@@ -553,9 +593,11 @@
 
 - [ ] High/Critical graph evidence coverage = 100%
 - [ ] High/Critical explanation availability = 100%，可异步补齐
-- [ ] EvidenceRef validity = 100%
-- [ ] Duplicate alert rate 接近 0
-- [ ] Analyst review completion 全部状态留痕
+- [x] EvidenceRef validity = 100%
+- [x] Duplicate alert rate 接近 0
+- [x] Analyst review completion 全部状态留痕
+
+Status: validation metrics audit result is `not_pass`, with 5 metrics passing and 11 blocked by missing GraphSAGE training, live pending/trace load tests, live end-to-end SLO measurement, and high/critical rich evidence samples.
 
 ---
 
@@ -572,12 +614,14 @@
 
 ## Immediate Next Actions
 
-- [ ] 冻结 Ethereum 主网和首批目标协议白名单
+- [x] 冻结 Ethereum 主网和首批目标协议白名单
 - [ ] 搭建一主一备执行节点
 - [ ] 实现 `debug_traceCall/trace_call` pending 模拟 PoC
-- [ ] 创建四份 schema：`PendingTxEvent`、`TraceBundle`、`GraphInferenceRequest`、`AlertEvent`
+- [x] 创建四份 schema：`PendingTxEvent`、`TraceBundle`、`GraphInferenceRequest`、`AlertEvent`
 - [ ] 用历史 exploit 和正常复杂交易构建 replay 集
 - [ ] 先实现规则基线，再训练 GraphSAGE
-- [ ] 建立协议文档、审计报告和 exploit postmortem 的 RAG 知识库
-- [ ] 定义 high/critical 告警模板和人工复核状态机
-- [ ] 完成降级演练和 go/no-go 评审后再灰度上线
+- [x] 建立协议文档、审计报告和 exploit postmortem 的 RAG 知识库
+- [x] 定义 high/critical 告警模板和人工复核状态机
+- [x] 完成降级演练和 go/no-go 评审后再灰度上线
+
+Status: provider-only shadow pipeline is `ok`, production go/no-go is `no_go`, validation metrics are `not_pass`. See `ops/reports/project-status.latest.json` and `ops/blocker_register.md`.

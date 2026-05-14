@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-05-14T04:28:52.766+00:00",
+  "errors": [],
+  "missing_key_transaction_incidents": [
+    "beanstalk_2022_04_17",
+    "bzx_2020_02_18",
+    "conic_finance_2023_07_21",
+    "cream_finance_2021_10_27",
+    "curve_vyper_2023_07_30",
+    "harvest_finance_2020_10_26",
+    "mango_markets_2022_10_11"
+  ],
+  "positive_incidents": 8,
+  "split_counts": {
+    "replay": 1,
+    "train": 6,
+    "validation": 1
+  },
+  "status": "ok",
+  "training_ready": false,
+  "unlabeled_provider_only_graphs": 110
+}

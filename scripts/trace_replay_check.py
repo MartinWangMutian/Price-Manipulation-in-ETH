@@ -75,6 +75,11 @@ def main() -> int:
         default="ops/reports/trace-replay-check.latest.json",
         help="summary report path",
     )
+    parser.add_argument(
+        "--allow-replay-duplicates",
+        action="store_true",
+        help="treat duplicate idempotency keys as replay duplicates, not errors",
+    )
     args = parser.parse_args()
 
     root = Path(__file__).resolve().parents[1]
@@ -108,9 +113,13 @@ def main() -> int:
         "files_seen": len(files),
         "valid_events": len(keys),
         "unique_idempotency_keys": len(counts),
+        "deduped_downstream_events": len(counts),
         "duplicate_idempotency_keys": duplicate_keys,
+        "allow_replay_duplicates": args.allow_replay_duplicates,
         "errors": errors,
-        "status": "ok" if keys and not errors and not duplicate_keys else "degraded",
+        "status": "ok"
+        if keys and not errors and (not duplicate_keys or args.allow_replay_duplicates)
+        else "degraded",
     }
     out_path = root / args.out
     out_path.parent.mkdir(parents=True, exist_ok=True)

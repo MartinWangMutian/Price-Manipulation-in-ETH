@@ -1,0 +1,19 @@
+{
+  "action_counts": {
+    "include_in_drift_monitoring": 110,
+    "store_for_replay": 110
+  },
+  "audit_log": "ops/audit/alert-orchestrator.jsonl",
+  "audit_log_lines": 110,
+  "checked_at": "2026-05-14T04:24:51.522+00:00",
+  "duplicate_idempotency_keys": [],
+  "errors": [],
+  "files_seen": 110,
+  "input": "data/replay/alert-event.v1",
+  "severity_counts": {
+    "low": 110
+  },
+  "status": "ok",
+  "unique_idempotency_keys": 110,
+  "valid_alerts": 110
+}

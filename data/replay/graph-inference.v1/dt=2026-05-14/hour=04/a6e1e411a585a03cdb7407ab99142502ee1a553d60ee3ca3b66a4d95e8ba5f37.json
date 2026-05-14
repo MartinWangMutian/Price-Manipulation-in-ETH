@@ -1,0 +1,33 @@
+{
+  "chain_id": 1,
+  "context_windows": [
+    "tx-only"
+  ],
+  "created_at": "2026-05-14T04:15:55.314+00:00",
+  "edges": [],
+  "event_id": "a6e1e411a585a03cdb7407ab99142502ee1a553d60ee3ca3b66a4d95e8ba5f37",
+  "feature_missing_flags": [
+    "context_1h_protocol_unavailable",
+    "context_5m_address_unavailable",
+    "insufficient_trace_context_for_protocol_roles",
+    "no_calls",
+    "no_logs",
+    "no_protocol_role_matches",
+    "trace_unsupported"
+  ],
+  "feature_ver": "cash-flow-graph-builder.v1",
+  "graph_id": "graph:0x482beec529af00524b97f877dbe703eb66801f48b10d60a20530ecc1b5053735",
+  "graph_snapshot_ref": "data/graph-snapshots/graph-inference.v1/dt=2026-05-14/hour=04/a6e1e411a585a03cdb7407ab99142502ee1a553d60ee3ca3b66a4d95e8ba5f37.json",
+  "idempotency_key": "1:0x482beec529af00524b97f877dbe703eb66801f48b10d60a20530ecc1b5053735:provider_fallback:parsed-trace.v1:graph-inference.v1",
+  "nodes": [
+    {
+      "node_id": "tx:0x482beec529af00524b97f877dbe703eb66801f48b10d60a20530ecc1b5053735",
+      "node_type": "transaction",
+      "trace_source": "provider_fallback",
+      "trace_status": "unsupported",
+      "tx_hash": "0x482beec529af00524b97f877dbe703eb66801f48b10d60a20530ecc1b5053735"
+    }
+  ],
+  "schema_ver": "graph-inference.v1",
+  "tx_hash": "0x482beec529af00524b97f877dbe703eb66801f48b10d60a20530ecc1b5053735"
+}

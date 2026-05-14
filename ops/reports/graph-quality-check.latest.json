@@ -1,0 +1,21 @@
+{
+  "build_latency_ms": {
+    "max": 0.068,
+    "p50": 0.006,
+    "p95": 0.008
+  },
+  "checked_at": "2026-05-14T04:18:27.078+00:00",
+  "coverage_notes": [
+    "Current provider-only graphs contain no transfer/call/context edges.",
+    "Edge direction, call depth, and protocol role checks are enforced when such edges exist."
+  ],
+  "edge_counts": {},
+  "errors": [],
+  "files_seen": 110,
+  "graphs_checked": 110,
+  "input": "data/replay/graph-inference.v1",
+  "node_counts": {
+    "transaction": 110
+  },
+  "status": "ok"
+}

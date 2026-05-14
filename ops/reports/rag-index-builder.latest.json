@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-05-14T04:32:52.098+00:00",
+  "documents_indexed": 10,
+  "documents_seen": 10,
+  "errors": [],
+  "index_path": "data/rag/index/knowledge-snapshot.seed-2026-05-14.json",
+  "knowledge_snapshot": "knowledge-snapshot.seed-2026-05-14",
+  "protocol_counts": {
+    "aave_v3_ethereum": 2,
+    "beanstalk": 1,
+    "bzx": 1,
+    "chainlink_eth_usd": 1,
+    "euler_finance": 1,
+    "harvest_finance": 1,
+    "mango_markets": 1,
+    "uniswap_v3": 2
+  },
+  "source_type_counts": {
+    "audit_report": 1,
+    "exploit_postmortem": 2,
+    "governance_proposal": 1,
+    "incident_database": 1,
+    "protocol_doc": 3,
+    "security_report": 2
+  },
+  "status": "ok"
+}

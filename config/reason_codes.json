@@ -1,0 +1,33 @@
+{
+  "schema_ver": "reason-codes.v1",
+  "codes": {
+    "RULE_ABNORMAL_PROFIT_PATH": {
+      "risk_type": "price_oracle_manipulation",
+      "description": "Transaction graph contains a short path with large positive normalized asset flow after protocol interaction."
+    },
+    "RULE_ORACLE_READ_WRITE_SAME_TX": {
+      "risk_type": "oracle_state_inconsistency",
+      "description": "Transaction graph touches oracle role and trading/lending protocol roles in the same transaction."
+    },
+    "RULE_EXCESSIVE_SLIPPAGE": {
+      "risk_type": "dex_price_impact",
+      "description": "Transaction graph or context reports slippage above the configured basis point threshold."
+    },
+    "RULE_THIN_LIQUIDITY_TRADE": {
+      "risk_type": "thin_liquidity_manipulation",
+      "description": "Transaction graph or context reports liquidity below the configured USD threshold."
+    },
+    "RULE_FLASH_LOAN_PATH": {
+      "risk_type": "flash_loan_price_manipulation",
+      "description": "Transaction graph contains flash-loan-like call signatures or same-asset in/out flow."
+    },
+    "RULE_BASELINE_NO_RICH_EVIDENCE": {
+      "risk_type": "feature_gap",
+      "description": "Rule baseline ran but the graph has no transfer, call, or protocol role evidence."
+    },
+    "FEATURE_TRACE_UNSUPPORTED": {
+      "risk_type": "feature_gap",
+      "description": "Trace source could not provide call tree or logs."
+    }
+  }
+}

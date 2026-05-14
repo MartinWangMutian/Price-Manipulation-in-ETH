@@ -1,0 +1,20 @@
+{
+  "alerts_seen": 110,
+  "checked_at": "2026-05-14T04:38:24.744+00:00",
+  "detail_views": 110,
+  "errors": [],
+  "list_items": 110,
+  "outputs": [
+    "data/console/alerts-list.v1.json",
+    "data/console/alerts-detail.v1/",
+    "data/console/review-audit-trail.v1.jsonl",
+    "data/console/review-audit-trail-export.v1.json"
+  ],
+  "review_state_counts": {
+    "new": 110
+  },
+  "severity_counts": {
+    "low": 110
+  },
+  "status": "ok"
+}

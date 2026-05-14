@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-05-14T04:04:44.599+00:00",
+  "duplicate_idempotency_keys": [],
+  "errors": [],
+  "files_seen": 135,
+  "input": "data/replay/pending-tx.v1",
+  "status": "ok",
+  "unique_idempotency_keys": 135,
+  "valid_events": 135
+}

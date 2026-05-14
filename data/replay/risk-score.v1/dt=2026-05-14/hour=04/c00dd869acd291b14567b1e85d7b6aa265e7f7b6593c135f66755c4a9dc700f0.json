@@ -1,0 +1,18 @@
+{
+  "chain_id": 1,
+  "created_at": "2026-05-14T04:21:01.039+00:00",
+  "event_id": "c00dd869acd291b14567b1e85d7b6aa265e7f7b6593c135f66755c4a9dc700f0",
+  "feature_ver": "cash-flow-graph-builder.v1",
+  "idempotency_key": "1:0xb1115ccdccad4fb78a70c157c65aab1ebf49f2586107b9f7a50c9f35350491f4:provider_fallback:parsed-trace.v1:graph-inference.v1:risk-score.v1",
+  "model_reject_reason": "model_unavailable_rule_fallback",
+  "model_version": "rule-baseline.v1",
+  "reasons": [
+    "FEATURE_TRACE_UNSUPPORTED",
+    "RULE_BASELINE_NO_RICH_EVIDENCE"
+  ],
+  "schema_ver": "risk-score.v1",
+  "score": 0.05,
+  "severity": "low",
+  "threshold_profile": "rule-baseline-thresholds.v1",
+  "tx_hash": "0xb1115ccdccad4fb78a70c157c65aab1ebf49f2586107b9f7a50c9f35350491f4"
+}

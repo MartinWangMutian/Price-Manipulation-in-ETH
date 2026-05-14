@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rag-document.v1",
+  "title": "RagDocument",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "doc_id",
+    "schema_ver",
+    "source_type",
+    "protocol",
+    "section",
+    "date",
+    "severity",
+    "text",
+    "source_url",
+    "retrieved_at",
+    "license_note"
+  ],
+  "properties": {
+    "doc_id": {"type": "string", "minLength": 1},
+    "schema_ver": {"const": "rag-document.v1"},
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "protocol_doc",
+        "audit_report",
+        "exploit_postmortem",
+        "security_report",
+        "governance_proposal",
+        "incident_database"
+      ]
+    },
+    "protocol": {"type": "string", "minLength": 1},
+    "section": {"type": "string", "minLength": 1},
+    "date": {"type": "string", "minLength": 1},
+    "severity": {
+      "type": "string",
+      "enum": ["info", "low", "watch", "high", "critical"]
+    },
+    "text": {"type": "string", "minLength": 1},
+    "source_url": {"type": "string", "minLength": 1},
+    "retrieved_at": {"type": "string", "format": "date-time"},
+    "license_note": {"type": "string", "minLength": 1}
+  }
+}

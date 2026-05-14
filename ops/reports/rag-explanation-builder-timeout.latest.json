@@ -1,0 +1,20 @@
+{
+  "alerts_seen": 110,
+  "audit_log": "ops/audit/rag-explanation-builder.jsonl",
+  "checked_at": "2026-05-14T04:35:00.808+00:00",
+  "errors": [],
+  "explanations_generated": 110,
+  "explanations_written": 0,
+  "knowledge_snapshot": "knowledge-snapshot.seed-2026-05-14",
+  "rag_model": "local-hybrid-rrf.seed",
+  "severity_counts": {
+    "low": 110
+  },
+  "skipped_by_severity": 0,
+  "skipped_duplicate_alerts": 0,
+  "status": "ok",
+  "timeout_counts": {
+    "timeout": 110
+  },
+  "unique_alerts": 110
+}

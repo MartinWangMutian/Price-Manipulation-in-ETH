@@ -1,0 +1,22 @@
+{
+  "calls": [],
+  "chain_id": 1,
+  "created_at": "2026-05-14T03:58:00.480+00:00",
+  "event_id": "fdda9ab73e3f8042df57b56f8108ffcd14e7af2a8953fd26590d995a11f667cf",
+  "idempotency_key": "1:0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3:provider_fallback",
+  "logs": [],
+  "raw_trace_ref": null,
+  "schema_ver": "trace-bundle.v1",
+  "state_diff": {},
+  "token_transfers": [],
+  "trace_error": {
+    "attempt_errors": [],
+    "code": "provider_only_trace_unavailable",
+    "message": "No Geth or Erigon trace endpoint environment variables are configured.",
+    "raw_tx_status": "unavailable_from_provider",
+    "upstream_event_id": "8aa27e83d2f7540813f15066454787b8d86e73e02258969ad1e24b5f51c3fc96"
+  },
+  "trace_source": "provider_fallback",
+  "trace_status": "unsupported",
+  "tx_hash": "0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3"
+}

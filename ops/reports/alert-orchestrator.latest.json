@@ -1,0 +1,22 @@
+{
+  "action_counts": {
+    "include_in_drift_monitoring": 110,
+    "store_for_replay": 110
+  },
+  "alerts_generated": 110,
+  "alerts_written": 110,
+  "audit_log": "ops/audit/alert-orchestrator.jsonl",
+  "checked_at": "2026-05-14T04:23:38.749+00:00",
+  "errors": [],
+  "files_seen": 110,
+  "graph_input": "data/replay/graph-inference.v1",
+  "risk_input": "data/replay/risk-score.v1",
+  "severity_counts": {
+    "low": 110
+  },
+  "skipped_duplicate_risk_scores": 0,
+  "status": "ok",
+  "trace_input": "data/replay/trace-bundle.v1",
+  "unique_risk_scores": 110,
+  "warnings": []
+}

@@ -1,0 +1,37 @@
+{
+  "0x095ea7b3": {
+    "signature": "approve(address,uint256)",
+    "name": "approve",
+    "protocol": "erc20"
+  },
+  "0x23b872dd": {
+    "signature": "transferFrom(address,address,uint256)",
+    "name": "transferFrom",
+    "protocol": "erc20"
+  },
+  "0x38ed1739": {
+    "signature": "swapExactTokensForTokens(uint256,uint256,address[],address,uint256)",
+    "name": "swapExactTokensForTokens",
+    "protocol": "uniswap_v2_like"
+  },
+  "0xa9059cbb": {
+    "signature": "transfer(address,uint256)",
+    "name": "transfer",
+    "protocol": "erc20"
+  },
+  "0x414bf389": {
+    "signature": "exactInputSingle((address,address,uint24,address,uint256,uint256,uint160))",
+    "name": "exactInputSingle",
+    "protocol": "uniswap_v3"
+  },
+  "0x5ae401dc": {
+    "signature": "multicall(uint256,bytes[])",
+    "name": "multicall",
+    "protocol": "router"
+  },
+  "0xac9650d8": {
+    "signature": "multicall(bytes[])",
+    "name": "multicall",
+    "protocol": "router"
+  }
+}

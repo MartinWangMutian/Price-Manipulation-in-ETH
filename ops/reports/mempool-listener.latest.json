@@ -1,0 +1,202 @@
+{
+  "checked_at": "2026-05-14T04:04:28.242+00:00",
+  "deduped_pending_hashes": 25,
+  "duration_ms": 15042.48,
+  "enqueue_latency_ms": {
+    "max": 526.46,
+    "p50": 460.52,
+    "p95": 503.77
+  },
+  "errors": [],
+  "head_samples": [],
+  "log_samples": [],
+  "pending_events": [
+    {
+      "enqueue_latency_ms": 526.46,
+      "event_id": "f3241123ed84f48fa7b6b9219acb270a7dff8678d751ad9fcc574bf5345d591d",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/f3241123ed84f48fa7b6b9219acb270a7dff8678d751ad9fcc574bf5345d591d.json",
+      "tx_hash": "0x691b395d41dc43bf68f57d7029ce448d3a69182c7f4cde5c3d01ace203a827fb"
+    },
+    {
+      "enqueue_latency_ms": 448.35,
+      "event_id": "7063fc04d8015bb23f696d63fc5913b1f7cbac014e97e300fd3332c20f182efe",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/7063fc04d8015bb23f696d63fc5913b1f7cbac014e97e300fd3332c20f182efe.json",
+      "tx_hash": "0xf439f2129775f707d4833400b7d6d05b470e9ca063b3c1f5c16f8d5c01a69cac"
+    },
+    {
+      "enqueue_latency_ms": 469.06,
+      "event_id": "2346547cfd65738c2aeba654945682e9481cb61f4d448f6dd1a1a19bdf93a948",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/2346547cfd65738c2aeba654945682e9481cb61f4d448f6dd1a1a19bdf93a948.json",
+      "tx_hash": "0x1ad76a12d55ec77d8a3a05ca2230b3178d900bbd35c95d41cb345323952cfdfa"
+    },
+    {
+      "enqueue_latency_ms": 503.77,
+      "event_id": "3c7bcf5ada2f0192cd4967935323b36ef1ed1d838fa0f43f40e9947d8ff984d7",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/3c7bcf5ada2f0192cd4967935323b36ef1ed1d838fa0f43f40e9947d8ff984d7.json",
+      "tx_hash": "0x081557957cfc3b9d455e91640cbacc48479385ef782346e498ec7d6857359636"
+    },
+    {
+      "enqueue_latency_ms": 473.66,
+      "event_id": "f06c6e7a0b61a4607883cd250ab93c12394259c0856c094ce90e141c7e679fc3",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/f06c6e7a0b61a4607883cd250ab93c12394259c0856c094ce90e141c7e679fc3.json",
+      "tx_hash": "0x9246d86a59930782cf0cad4735d6c3a2eaba490d5114ab567c4f099ce89f3a42"
+    },
+    {
+      "enqueue_latency_ms": 493.95,
+      "event_id": "8cc72698dbce2d54ef90e95cd25a87d8f7aed8cc6787310a02810990f1cfce67",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/8cc72698dbce2d54ef90e95cd25a87d8f7aed8cc6787310a02810990f1cfce67.json",
+      "tx_hash": "0x7f7f9fdb569bc357a8e60cc2f58b9ddabd7916b7356182c874f6c2736dd8fc83"
+    },
+    {
+      "enqueue_latency_ms": 460.52,
+      "event_id": "044723061f787cfe42e987e678f6a42baff65d51ca6037b0c50e3248fa6e50c4",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/044723061f787cfe42e987e678f6a42baff65d51ca6037b0c50e3248fa6e50c4.json",
+      "tx_hash": "0x171a8d24c6322369be5c4a23ec880fb499a557247caf0bb2e74a22f3e8a5da4f"
+    },
+    {
+      "enqueue_latency_ms": 467.66,
+      "event_id": "3c8e6b9770349d989108ad08198c297f74b27bd62dac3f923da9387cea71b169",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/3c8e6b9770349d989108ad08198c297f74b27bd62dac3f923da9387cea71b169.json",
+      "tx_hash": "0x90f9a92a8216ea49276c48d0dba81821dd7f5f362ede933c684a71bdb8f2e7f7"
+    },
+    {
+      "enqueue_latency_ms": 459.52,
+      "event_id": "ad2f801adebb1f6095372faaeeed1918441bb38028c001485be6de78b6121d8a",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/ad2f801adebb1f6095372faaeeed1918441bb38028c001485be6de78b6121d8a.json",
+      "tx_hash": "0x9c273216d7367f94441591aa3f4c583344becd87afa9d179f1fef4d7794b181e"
+    },
+    {
+      "enqueue_latency_ms": 459.02,
+      "event_id": "794aa869dd0b5fad7b656df2d58619d4f90310efcfe1615e98efbdb522199ba1",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/794aa869dd0b5fad7b656df2d58619d4f90310efcfe1615e98efbdb522199ba1.json",
+      "tx_hash": "0xe5259242521e538c13561c1216bd662e926c367adc35e9e97a60789f7e4b7bdf"
+    },
+    {
+      "enqueue_latency_ms": 458.87,
+      "event_id": "9baf629c83e450820cb1dae5a37cff7dfd6fee297b97399c96cc752b4e701357",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/9baf629c83e450820cb1dae5a37cff7dfd6fee297b97399c96cc752b4e701357.json",
+      "tx_hash": "0x669c3d4cf476f4ef2c0279eefc82e5195251a4be165c239702c3c4126eb497a0"
+    },
+    {
+      "enqueue_latency_ms": 495.48,
+      "event_id": "9fce722518616d262b2fe240f1c8f41e720a11a8a327278c9aa88c3a2a984697",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/9fce722518616d262b2fe240f1c8f41e720a11a8a327278c9aa88c3a2a984697.json",
+      "tx_hash": "0x1bc9e191fc567b22f52c3637a8511240ce38bb602d7bb130ef2c1614f8585408"
+    },
+    {
+      "enqueue_latency_ms": 462.33,
+      "event_id": "fffa6c2a89b6631637f512fcd0647dcdbd561af8e70f63c530f4f7a362e99909",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/fffa6c2a89b6631637f512fcd0647dcdbd561af8e70f63c530f4f7a362e99909.json",
+      "tx_hash": "0x49340605c22fb9585ef7d86bbad22af8b3066b77ee4bfc52ab83a151d948ec4b"
+    },
+    {
+      "enqueue_latency_ms": 473.65,
+      "event_id": "e2df897d9027e86294b93501e469c13969869237705cb1e2bd320d44ac5f7d07",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/e2df897d9027e86294b93501e469c13969869237705cb1e2bd320d44ac5f7d07.json",
+      "tx_hash": "0xc04b29e63933ea053be7dab4b5e929187be51873ffe84bdd97f714738af30407"
+    },
+    {
+      "enqueue_latency_ms": 472.56,
+      "event_id": "ae4540be0b86499f03902c8f303d9b6fd877771c984dee31b7d74600da4dd48d",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/ae4540be0b86499f03902c8f303d9b6fd877771c984dee31b7d74600da4dd48d.json",
+      "tx_hash": "0xc406059048d558ad1132d6ab581dd5467bfdfb4fa36351342090a70839f4f0b5"
+    },
+    {
+      "enqueue_latency_ms": 441.76,
+      "event_id": "932911f19e8eda981fff9290ad95d2a8e5cd1a97fa95f33e458df84d3b33a5e6",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/932911f19e8eda981fff9290ad95d2a8e5cd1a97fa95f33e458df84d3b33a5e6.json",
+      "tx_hash": "0x12941b8027ddeac1722ca01f9cbc844a95a74079981c020d5869a0a9964fabc8"
+    },
+    {
+      "enqueue_latency_ms": 442.06,
+      "event_id": "0ded7287a3dced50ac89b92b781c19d947d32f99c41a5a8a59d7b137b96f18ec",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/0ded7287a3dced50ac89b92b781c19d947d32f99c41a5a8a59d7b137b96f18ec.json",
+      "tx_hash": "0xa2f1f046d5da7b1a026deb43edbf33eae546a2a43534067189c12538f60417d3"
+    },
+    {
+      "enqueue_latency_ms": 499.84,
+      "event_id": "4be390b2f12926069506645c10238898d9a4c1b022910cd93ab0a337aff7bd50",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/4be390b2f12926069506645c10238898d9a4c1b022910cd93ab0a337aff7bd50.json",
+      "tx_hash": "0xefa2c1dae8ebe8621fa1e2805652d24d86927e28eff3cf77f505ce5451ba3122"
+    },
+    {
+      "enqueue_latency_ms": 447.7,
+      "event_id": "49c5fca85e8c4b0bd979aa5e1f984ccd6dbf2a6332fbf1b7ff183443512c9968",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/49c5fca85e8c4b0bd979aa5e1f984ccd6dbf2a6332fbf1b7ff183443512c9968.json",
+      "tx_hash": "0x764ec82d7a13d396664ef106a88ba465d5bbc52adb99ff86fd1eb909d3a950ed"
+    },
+    {
+      "enqueue_latency_ms": 446.69,
+      "event_id": "321af222489caeab220ff590bbcdfc3a77eb13c658d12a3d18ea727767969e0a",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/321af222489caeab220ff590bbcdfc3a77eb13c658d12a3d18ea727767969e0a.json",
+      "tx_hash": "0x965e7dcae4dccdfe9c0ec909a9d4256ab51afa14562b0d511c81a6334e7e6236"
+    },
+    {
+      "enqueue_latency_ms": 496.24,
+      "event_id": "014a3ef7e3b4421f585eefc8ee4c6f9225e91609028e83448ecf5789a6c4c91b",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/014a3ef7e3b4421f585eefc8ee4c6f9225e91609028e83448ecf5789a6c4c91b.json",
+      "tx_hash": "0x132e60068d26aa6410a825a7fb40c9193ba59122cdc6860ba3c6c2c788f7967a"
+    },
+    {
+      "enqueue_latency_ms": 460.11,
+      "event_id": "2d6f80d3cd0f7b4d7a06b51d498e6567a8592b9e88fcf038d44666d6c85bae9c",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/2d6f80d3cd0f7b4d7a06b51d498e6567a8592b9e88fcf038d44666d6c85bae9c.json",
+      "tx_hash": "0xc7aad6b7fecbca8389fbc4220b5ba554bce701917d7d8380a50eb0869b1185be"
+    },
+    {
+      "enqueue_latency_ms": 447.17,
+      "event_id": "b6ff0c62ced2c2854ce03399f349605876759942e0edd26b7c995ead582675c1",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/b6ff0c62ced2c2854ce03399f349605876759942e0edd26b7c995ead582675c1.json",
+      "tx_hash": "0x46c3589aa68d3bf0a6e6ffcfdfce67790b76adc3ce39034731629278e1799fba"
+    },
+    {
+      "enqueue_latency_ms": 445.88,
+      "event_id": "793c8bc0a6ea081f42671df6d1822381df95cabc11962f566127fc361319f750",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/793c8bc0a6ea081f42671df6d1822381df95cabc11962f566127fc361319f750.json",
+      "tx_hash": "0x756511c42a7c99d264107a63b9d9f93df6408f5d5b15edcf336bf556491154ec"
+    },
+    {
+      "enqueue_latency_ms": 459.42,
+      "event_id": "d278ef93d6ec90ab5f0b840b955264e0bfa5adbac5aebf04233509f6d723ca70",
+      "raw_tx_status": "unavailable_from_provider",
+      "replay_path": "data/replay/pending-tx.v1/dt=2026-05-14/hour=04/d278ef93d6ec90ab5f0b840b955264e0bfa5adbac5aebf04233509f6d723ca70.json",
+      "tx_hash": "0x8f27cfa74b94260eb31321e5b8b3e9de84ad61b4b5cea3c73d20446e2f3b20fd"
+    }
+  ],
+  "pending_events_written": 25,
+  "provider_only_limitations": {
+    "raw_tx_status": "unavailable_from_provider",
+    "replacement_status": "unknown"
+  },
+  "source": "provider-pending-fallback",
+  "status": "ok",
+  "subscriptions_seen": [
+    "logs",
+    "newHeads",
+    "newPendingTransactions"
+  ]
+}

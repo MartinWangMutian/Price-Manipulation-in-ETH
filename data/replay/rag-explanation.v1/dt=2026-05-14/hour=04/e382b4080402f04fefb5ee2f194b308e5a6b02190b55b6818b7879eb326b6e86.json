@@ -1,0 +1,24 @@
+{
+  "alert_id": "alert:0x5a67b075cf7282a6e84a52c4f918011e40de2610a908cc14f3ca3220be64890d",
+  "analyst_note": "Use the alert score 0.05, severity low, and reason codes FEATURE_TRACE_UNSUPPORTED, RULE_BASELINE_NO_RICH_EVIDENCE without rewriting them. [alert:771e0fd432d0846a821e5daffebe6acbce32d0048ea4c1cff4cbd39959ea5a2f]",
+  "chain_id": 1,
+  "created_at": "2026-05-14T04:35:00.815+00:00",
+  "doc_summary": "No RAG document matched query 'low FEATURE TRACE UNSUPPORTED RULE BASELINE NO RICH EVIDENCE'. [knowledge:knowledge-snapshot.seed-2026-05-14:null]",
+  "event_id": "e382b4080402f04fefb5ee2f194b308e5a6b02190b55b6818b7879eb326b6e86",
+  "evidence_refs": [
+    "alert:771e0fd432d0846a821e5daffebe6acbce32d0048ea4c1cff4cbd39959ea5a2f",
+    "graph-snapshot:data/graph-snapshots/graph-inference.v1/dt=2026-05-14/hour=04/3b0bf1bb6318666f74fc2f6ec69b2c72e0e55f1b4e18d7530c9e0a731858d39f.json",
+    "graph:3b0bf1bb6318666f74fc2f6ec69b2c72e0e55f1b4e18d7530c9e0a731858d39f",
+    "knowledge:knowledge-snapshot.seed-2026-05-14:null",
+    "label:none",
+    "risk-score:da2e3e7757541af0636da4a2afa18830d2f1b1948390253f0efe745fd960fe1f",
+    "trace:7f53d3511d588a339ebdaae8dfc8971320b0155ed3eb1471424095e92994ff0b"
+  ],
+  "graph_summary": "Graph evidence for tx 0x5a67b075cf7282a6e84a52c4f918011e40de2610a908cc14f3ca3220be64890d has 1 nodes and 0 edges. [graph:3b0bf1bb6318666f74fc2f6ec69b2c72e0e55f1b4e18d7530c9e0a731858d39f]",
+  "idempotency_key": "1:0x5a67b075cf7282a6e84a52c4f918011e40de2610a908cc14f3ca3220be64890d:provider_fallback:parsed-trace.v1:graph-inference.v1:risk-score.v1:alert-event.v1:rag-explanation.v1",
+  "knowledge_snapshot": "knowledge-snapshot.seed-2026-05-14",
+  "rag_model": "local-hybrid-rrf.seed",
+  "schema_ver": "rag-explanation.v1",
+  "timeout": false,
+  "tx_hash": "0x5a67b075cf7282a6e84a52c4f918011e40de2610a908cc14f3ca3220be64890d"
+}

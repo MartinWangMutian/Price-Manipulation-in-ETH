@@ -1,0 +1,16 @@
+{
+  "blocking_reasons": [
+    "no confirmed positive graph replay set",
+    "no confirmed stratified normal complex transaction set"
+  ],
+  "calibration_ready": false,
+  "checked_at": "2026-05-14T04:41:01.135+00:00",
+  "score_buckets": {
+    "<0.50": 110
+  },
+  "severity_counts": {
+    "low": 110
+  },
+  "status": "ok",
+  "threshold_profile": "rule-baseline-thresholds.v1"
+}

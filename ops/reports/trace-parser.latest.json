@@ -1,0 +1,22 @@
+{
+  "calls": {
+    "failed": 0,
+    "success": 0,
+    "total": 0
+  },
+  "checked_at": "2026-05-14T04:10:14.102+00:00",
+  "errors": [],
+  "feature_missing_flags": {
+    "no_calls": 110,
+    "no_logs": 110,
+    "trace_unsupported": 110
+  },
+  "files_seen": 220,
+  "input": "data/replay/trace-bundle.v1",
+  "parsed_records": 110,
+  "skipped_duplicate_trace_bundles": 110,
+  "status": "ok",
+  "token_transfer_counts": {},
+  "unique_trace_bundles": 110,
+  "write_replay": true
+}

@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-05-14T04:21:01.061+00:00",
+  "errors": [],
+  "files_seen": 110,
+  "input": "data/replay/graph-inference.v1",
+  "model_reject_reason": "model_unavailable_rule_fallback",
+  "model_version": "rule-baseline.v1",
+  "reason_counts": {
+    "FEATURE_TRACE_UNSUPPORTED": 110,
+    "RULE_BASELINE_NO_RICH_EVIDENCE": 110
+  },
+  "risk_scores_written": 110,
+  "scores_generated": 110,
+  "severity_counts": {
+    "low": 110
+  },
+  "skipped_duplicate_graphs": 0,
+  "status": "ok",
+  "threshold_profile": "rule-baseline-thresholds.v1",
+  "unique_graphs": 110
+}

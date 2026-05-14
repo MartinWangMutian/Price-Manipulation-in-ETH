@@ -1,0 +1,53 @@
+{
+  "alert_orchestrator_latency_ms": {
+    "count": 110,
+    "max": 0.007,
+    "p50": 0.003,
+    "p95": 0.003,
+    "p99": 0.005
+  },
+  "checked_at": "2026-05-14T04:42:47.897+00:00",
+  "counts": {
+    "alerts": 110,
+    "e2e_pairs": 110,
+    "graphs": 110,
+    "parsed_records": 110,
+    "risk_scores": 110
+  },
+  "end_to_end_detection_latency_ms": {
+    "count": 110,
+    "max": 92733015.0,
+    "p50": 68159125.0,
+    "p95": 92727577.0,
+    "p99": 92732287.0
+  },
+  "graph_builder_latency_ms": {
+    "count": 110,
+    "max": 0.076,
+    "p50": 0.004,
+    "p95": 0.005,
+    "p99": 0.011
+  },
+  "limitations": [
+    "replay_local measures local Python processing, not live node/network load",
+    "trace latency cannot be measured without Geth or Erigon trace endpoint",
+    "provider-only replay has no high/critical workload mix"
+  ],
+  "mode": "replay_local",
+  "model_inference_latency_ms": {
+    "count": 110,
+    "max": 0.016,
+    "p50": 0.004,
+    "p95": 0.004,
+    "p99": 0.009
+  },
+  "pending_listener": {
+    "note": "live pending listener load test requires node/provider stream",
+    "status": "not_live_load_tested"
+  },
+  "status": "ok",
+  "trace_worker": {
+    "note": "live trace worker load test requires Geth or Erigon trace endpoint",
+    "status": "not_live_load_tested"
+  }
+}

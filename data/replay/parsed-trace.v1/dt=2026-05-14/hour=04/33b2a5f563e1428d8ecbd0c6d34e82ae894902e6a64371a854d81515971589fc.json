@@ -1,0 +1,19 @@
+{
+  "calls": [],
+  "chain_id": 1,
+  "created_at": "2026-05-14T04:10:14.089+00:00",
+  "event_id": "33b2a5f563e1428d8ecbd0c6d34e82ae894902e6a64371a854d81515971589fc",
+  "feature_missing_flags": [
+    "no_calls",
+    "no_logs",
+    "trace_unsupported"
+  ],
+  "idempotency_key": "1:0x8bf94b11127eca593d9ea1827c3dbbacc397000e5cd17b2672c566f581949ae2:provider_fallback:parsed-trace.v1",
+  "schema_ver": "parsed-trace.v1",
+  "source_trace_event_id": "ae10a010ec6f1a65d7aa2ed7fe5bd78d733e256fe6f3645adcc9a60cba2d223e",
+  "source_trace_idempotency_key": "1:0x8bf94b11127eca593d9ea1827c3dbbacc397000e5cd17b2672c566f581949ae2:provider_fallback",
+  "token_transfers": [],
+  "trace_source": "provider_fallback",
+  "trace_status": "unsupported",
+  "tx_hash": "0x8bf94b11127eca593d9ea1827c3dbbacc397000e5cd17b2672c566f581949ae2"
+}

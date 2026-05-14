@@ -1,0 +1,114 @@
+{
+  "blocking_conditions": [
+    "no live Geth or Erigon trace endpoint",
+    "no confirmed Pager/Feishu target",
+    "no confirmed phone escalation target",
+    "no named multisig or authorized approver roster",
+    "no two-week stable run"
+  ],
+  "checked_at": "2026-05-14T04:47:14.581+00:00",
+  "checks": [
+    {
+      "evidence": [
+        "uniswap_v3",
+        "aave_v3_ethereum",
+        "chainlink_eth_usd"
+      ],
+      "name": "target_protocols_selected",
+      "ok": true
+    },
+    {
+      "evidence": true,
+      "name": "watch_alerts_enabled",
+      "ok": true
+    },
+    {
+      "evidence": true,
+      "name": "high_alerts_enabled",
+      "ok": true
+    },
+    {
+      "evidence": true,
+      "name": "critical_alerts_enabled",
+      "ok": true
+    },
+    {
+      "evidence": {
+        "allowed_outputs": [
+          "alert",
+          "runbook",
+          "suggested_unsigned_action"
+        ],
+        "approval_required_for_any_chain_action": true,
+        "auto_onchain_execution": false
+      },
+      "name": "no_auto_onchain_execution",
+      "ok": true
+    },
+    {
+      "evidence": {
+        "configured": true,
+        "target": "local_console_view_model"
+      },
+      "name": "notification_dashboard",
+      "ok": true
+    },
+    {
+      "evidence": {
+        "configured": false,
+        "target": "TBD"
+      },
+      "name": "notification_pager_or_feishu",
+      "ok": false
+    },
+    {
+      "evidence": {
+        "configured": false,
+        "target": "TBD"
+      },
+      "name": "notification_phone_or_manual_escalation",
+      "ok": false
+    },
+    {
+      "evidence": [
+        "ops/reports/load-test-replay.latest.json",
+        "ops/reports/offline-evaluation.latest.json",
+        "ops/reports/failure-drill.latest.json"
+      ],
+      "name": "slo_dashboard_source_reports_exist",
+      "ok": true
+    },
+    {
+      "evidence": [
+        "ops/production_runbook.md",
+        "ops/weekly_review_template.md",
+        "ops/incident_room_template.md",
+        "ops/operational_handoff.md",
+        "ops/go_no_go_review_packet.md"
+      ],
+      "name": "handoff_documents_exist",
+      "ok": true
+    }
+  ],
+  "failed_checks": [
+    {
+      "evidence": {
+        "configured": false,
+        "target": "TBD"
+      },
+      "name": "notification_pager_or_feishu",
+      "ok": false
+    },
+    {
+      "evidence": {
+        "configured": false,
+        "target": "TBD"
+      },
+      "name": "notification_phone_or_manual_escalation",
+      "ok": false
+    }
+  ],
+  "launch_id": "gray-launch.provider-only-seed",
+  "mode": "provider_only_shadow",
+  "status": "not_ready"
+}

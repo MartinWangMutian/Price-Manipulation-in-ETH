@@ -1,0 +1,69 @@
+{
+  "alert_replay_status": "ok",
+  "checked_at": "2026-05-14T04:44:26.947+00:00",
+  "degradation_reason_counts": {
+    "context_1h_protocol_unavailable": 110,
+    "context_5m_address_unavailable": 110,
+    "insufficient_trace_context_for_protocol_roles": 110,
+    "model_unavailable_rule_fallback": 110,
+    "no_calls": 110,
+    "no_logs": 110,
+    "no_protocol_role_matches": 110,
+    "trace_unsupported": 110
+  },
+  "degradation_reasons_auditable": true,
+  "duplicate_alert_idempotency_keys": [],
+  "limitations": [
+    "primary/backup/provider failures are simulated because no local nodes are configured",
+    "trace timeout is represented by provider fallback unsupported traces",
+    "model version mismatch is represented by rule baseline fallback metadata"
+  ],
+  "mode": "simulated_provider_only",
+  "node_health_status": "provider-pending-fallback",
+  "scenarios": [
+    {
+      "evidence": "local primary endpoint is not configured in provider-only mode",
+      "expected_degradation": "provider_fallback",
+      "scenario": "primary_node_failure",
+      "status": "simulated_degraded"
+    },
+    {
+      "evidence": "backup endpoint is not configured in provider-only mode",
+      "expected_degradation": "provider_fallback",
+      "scenario": "backup_node_failure",
+      "status": "simulated_degraded"
+    },
+    {
+      "evidence": "provider-only mode has no live local node failover target",
+      "expected_degradation": "no_hot_path_source",
+      "scenario": "third_party_provider_unavailable",
+      "status": "simulated_blocking"
+    },
+    {
+      "evidence": "trace unsupported fallback records are present and downstream graph/risk/alert stages completed",
+      "expected_degradation": "trace_unsupported",
+      "scenario": "trace_timeout",
+      "status": "simulated_ok"
+    },
+    {
+      "evidence": "rag timeout drill generated 110 timeout explanations",
+      "expected_degradation": "rag_timeout_after_alert",
+      "scenario": "rag_timeout",
+      "status": "simulated_ok"
+    },
+    {
+      "evidence": "rule baseline emits model_reject_reason=model_unavailable_rule_fallback",
+      "expected_degradation": "model_reject_reason",
+      "scenario": "model_version_mismatch",
+      "status": "simulated_ok"
+    },
+    {
+      "evidence": "duplicate alert idempotency keys: 0",
+      "expected_degradation": "idempotent_drop",
+      "scenario": "duplicate_message_delivery",
+      "status": "ok"
+    }
+  ],
+  "status": "ok",
+  "trace_report_status": "ok"
+}

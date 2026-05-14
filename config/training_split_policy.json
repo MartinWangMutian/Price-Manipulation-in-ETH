@@ -1,0 +1,24 @@
+{
+  "schema_ver": "training-split-policy.v1",
+  "snapshot_id": "label-snapshot.seed-2026-05-14",
+  "split_ratios": {
+    "train": 0.6,
+    "validation": 0.2,
+    "replay": 0.2
+  },
+  "stratification_keys": ["chain", "attack_type", "affected_protocol"],
+  "negative_sampling": {
+    "status": "blocked_pending_rich_graphs",
+    "strategy": ["protocol", "time_period", "transaction_complexity"],
+    "exclusion_rules": [
+      "exclude tx_hash present in positive labels",
+      "exclude tx_hash present in unlabeled suspicious pool",
+      "exclude provider-only graphs with trace_unsupported from confirmed negatives"
+    ]
+  },
+  "unlabeled_pool_rules": [
+    "provider-only graph records with trace_unsupported",
+    "suspicious public incidents missing key transaction hash",
+    "public reports without enough evidence for positive replay"
+  ]
+}

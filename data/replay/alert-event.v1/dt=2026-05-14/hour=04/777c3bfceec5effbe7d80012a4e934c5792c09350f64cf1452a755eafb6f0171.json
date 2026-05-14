@@ -1,0 +1,28 @@
+{
+  "alert_id": "alert:0x5430720bdf18996125c9a5d01241fe9f1e2cdeb21e67523ab903e230a9eadc63",
+  "alert_version": "alert-orchestrator.v1",
+  "chain_id": 1,
+  "created_at": "2026-05-14T04:23:38.735+00:00",
+  "event_id": "777c3bfceec5effbe7d80012a4e934c5792c09350f64cf1452a755eafb6f0171",
+  "evidence_refs": [
+    "risk-score:9d537d4169b30f77ababa50f89988009ad1c843a99bc69b01ead61aca62a3546",
+    "graph:e42b3e12ef76962e2170a49d6073d7732cb4cb0e2567c083087764ca21fab2c9",
+    "graph-snapshot:data/graph-snapshots/graph-inference.v1/dt=2026-05-14/hour=04/e42b3e12ef76962e2170a49d6073d7732cb4cb0e2567c083087764ca21fab2c9.json",
+    "trace:85db8f9c498595cb50ba4d3b8a56582671815807a383fee7409c26167128a59c",
+    "label:none"
+  ],
+  "idempotency_key": "1:0x5430720bdf18996125c9a5d01241fe9f1e2cdeb21e67523ab903e230a9eadc63:provider_fallback:parsed-trace.v1:graph-inference.v1:risk-score.v1:alert-event.v1",
+  "reasons": [
+    "FEATURE_TRACE_UNSUPPORTED",
+    "RULE_BASELINE_NO_RICH_EVIDENCE"
+  ],
+  "review_state": "new",
+  "schema_ver": "alert-event.v1",
+  "score": 0.05,
+  "severity": "low",
+  "suggested_actions": [
+    "store_for_replay",
+    "include_in_drift_monitoring"
+  ],
+  "tx_hash": "0x5430720bdf18996125c9a5d01241fe9f1e2cdeb21e67523ab903e230a9eadc63"
+}

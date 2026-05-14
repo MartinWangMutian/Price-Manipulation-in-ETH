@@ -1,0 +1,47 @@
+{
+  "alerts_replayed": 110,
+  "blocking_reasons": [
+    "confirmed false-positive and false-negative counts require labeled normal and exploit replay sets",
+    "lead time requires attack timeline labels and first-detection timestamps",
+    "rich graph evidence coverage requires Geth or Erigon trace replay"
+  ],
+  "checked_at": "2026-05-14T04:41:01.135+00:00",
+  "evidence_ref_validity": {
+    "coverage": 1.0,
+    "invalid_refs": [],
+    "refs_seen": 550,
+    "refs_valid": 550
+  },
+  "exploit_replay_seed_incidents": 8,
+  "false_negatives": null,
+  "false_positives": null,
+  "graphs": 110,
+  "high_critical_explanation_availability": {
+    "coverage": null,
+    "covered_alerts": 0,
+    "eligible_alerts": 0
+  },
+  "high_critical_graph_evidence_coverage": {
+    "coverage": null,
+    "covered_alerts": 0,
+    "eligible_alerts": 0
+  },
+  "label_snapshot_training_ready": false,
+  "lead_time": null,
+  "provider_unlabeled_eval_txs": 110,
+  "reason_counts": {
+    "FEATURE_TRACE_UNSUPPORTED": 110,
+    "RULE_BASELINE_NO_RICH_EVIDENCE": 110
+  },
+  "risk_scores": 110,
+  "severity_counts": {
+    "low": 110
+  },
+  "status": "ok",
+  "threshold_stability": {
+    "note": "provider-only replay has no confirmed labels; stability is distribution-only",
+    "score_buckets": {
+      "<0.50": 110
+    }
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "blocking_failures": [
+    {
+      "blocking": true,
+      "evidence": {
+        "coverage": null,
+        "covered_alerts": 0,
+        "eligible_alerts": 0
+      },
+      "name": "high_critical_graph_evidence",
+      "ok": false
+    },
+    {
+      "blocking": true,
+      "evidence": {
+        "eligible_high_critical_alerts": 0
+      },
+      "name": "high_critical_reason_codes",
+      "ok": false
+    },
+    {
+      "blocking": true,
+      "evidence": {
+        "eligible_high_critical_alerts": 0
+      },
+      "name": "high_critical_audit_log",
+      "ok": false
+    },
+    {
+      "blocking": true,
+      "evidence": "simulated only; no local primary node configured",
+      "name": "primary_node_switch_drill",
+      "ok": false
+    },
+    {
+      "blocking": true,
+      "evidence": "simulated only; no local backup node configured",
+      "name": "backup_node_switch_drill",
+      "ok": false
+    },
+    {
+      "blocking": true,
+      "evidence": "simulated only; provider-only mode has no local failover target",
+      "name": "third_party_provider_switch_drill",
+      "ok": false
+    },
+    {
+      "blocking": true,
+      "evidence": {
+        "failed_checks": [
+          {
+            "evidence": {
+              "configured": false,
+              "target": "TBD"
+            },
+            "name": "notification_pager_or_feishu",
+            "ok": false
+          },
+          {
+            "evidence": {
+              "configured": false,
+              "target": "TBD"
+            },
+            "name": "notification_phone_or_manual_escalation",
+            "ok": false
+          }
+        ],
+        "status": "not_ready"
+      },
+      "name": "gray_launch_readiness",
+      "ok": false
+    }
+  ],
+  "checked_at": "2026-05-14T04:48:46.398+00:00",
+  "items": [
+    {
+      "blocking": true,
+      "evidence": {
+        "valid_alerts": 110
+      },
+      "name": "pending_to_alert_replay",
+      "ok": true
+    },
+    {
+      "blocking": true,
+      "evidence": {
+        "duplicate_idempotency_keys": [],
+        "model_version": "rule-baseline.v1"
+      },
+      "name": "same_input_same_model_stable",
+      "ok": true
+    },
+    {
+      "blocking": true,
+      "evidence": {
+        "coverage": null,
+        "covered_alerts": 0,
+        "eligible_alerts": 0
+      },
+      "name": "high_critical_graph_evidence",
+      "ok": false
+    },
+    {
+      "blocking": true,
+      "evidence": {
+        "eligible_high_critical_alerts": 0
+      },
+      "name": "high_critical_reason_codes",
+      "ok": false
+    },
+    {
+      "blocking": true,
+      "evidence": {
+        "eligible_high_critical_alerts": 0
+      },
+      "name": "high_critical_audit_log",
+      "ok": false
+    },
+    {
+      "blocking": true,
+      "evidence": {
+        "console_view_model": "data/console/alerts-list.v1.json"
+      },
+      "name": "high_critical_human_review_entry",
+      "ok": true
+    },
+    {
+      "blocking": true,
+      "evidence": {
+        "timeout": 110
+      },
+      "name": "rag_timeout_does_not_block_alert",
+      "ok": true
+    },
+    {
+      "blocking": true,
+      "evidence": {
+        "timeout": 110
+      },
+      "name": "rag_timeout_reason_recorded",
+      "ok": true
+    },
+    {
+      "blocking": true,
+      "evidence": "simulated only; no local primary node configured",
+      "name": "primary_node_switch_drill",
+      "ok": false
+    },
+    {
+      "blocking": true,
+      "evidence": "simulated only; no local backup node configured",
+      "name": "backup_node_switch_drill",
+      "ok": false
+    },
+    {
+      "blocking": true,
+      "evidence": "simulated only; provider-only mode has no local failover target",
+      "name": "third_party_provider_switch_drill",
+      "ok": false
+    },
+    {
+      "blocking": true,
+      "evidence": "plan/target_protocol_whitelist.md",
+      "name": "target_protocol_whitelist_frozen",
+      "ok": true
+    },
+    {
+      "blocking": true,
+      "evidence": "config/rule_baseline.json",
+      "name": "model_threshold_frozen",
+      "ok": true
+    },
+    {
+      "blocking": true,
+      "evidence": "plan/risk_type_dictionary.md",
+      "name": "risk_types_frozen",
+      "ok": true
+    },
+    {
+      "blocking": true,
+      "evidence": "plan/data_authorization.md",
+      "name": "label_authorization_frozen",
+      "ok": true
+    },
+    {
+      "blocking": true,
+      "evidence": {
+        "allowed_outputs": [
+          "alert",
+          "runbook",
+          "suggested_unsigned_action"
+        ],
+        "approval_required_for_any_chain_action": true,
+        "auto_onchain_execution": false
+      },
+      "name": "actions_are_suggestions_only",
+      "ok": true
+    },
+    {
+      "blocking": true,
+      "evidence": {
+        "allowed_outputs": [
+          "alert",
+          "runbook",
+          "suggested_unsigned_action"
+        ],
+        "approval_required_for_any_chain_action": true,
+        "auto_onchain_execution": false
+      },
+      "name": "no_auto_onchain_execution_authority",
+      "ok": true
+    },
+    {
+      "blocking": true,
+      "evidence": {
+        "failed_checks": [
+          {
+            "evidence": {
+              "configured": false,
+              "target": "TBD"
+            },
+            "name": "notification_pager_or_feishu",
+            "ok": false
+          },
+          {
+            "evidence": {
+              "configured": false,
+              "target": "TBD"
+            },
+            "name": "notification_phone_or_manual_escalation",
+            "ok": false
+          }
+        ],
+        "status": "not_ready"
+      },
+      "name": "gray_launch_readiness",
+      "ok": false
+    }
+  ],
+  "status": "no_go",
+  "summary": {
+    "failed": 7,
+    "passed": 11
+  }
+}

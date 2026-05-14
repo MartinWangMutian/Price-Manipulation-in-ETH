@@ -1,0 +1,194 @@
+{
+  "schema_ver": "training-positive-incidents.v1",
+  "snapshot_id": "label-snapshot.seed-2026-05-14",
+  "created_at": "2026-05-14T00:00:00.000+00:00",
+  "incidents": [
+    {
+      "incident_id": "euler_finance_2023_03_13",
+      "chain": "ethereum",
+      "incident_date": "2023-03-13",
+      "attack_type": "flash_loan_liquidation_logic",
+      "affected_protocol": "Euler Finance",
+      "estimated_loss_usd": 197000000,
+      "estimated_profit_usd": null,
+      "key_transactions": [
+        "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d"
+      ],
+      "risk_families": ["flash_loan_price_manipulation", "cross_protocol_liquidation_cascade"],
+      "source_refs": [
+        {
+          "title": "Euler Finance Incident Analysis",
+          "url": "https://www.certik.com/resources/blog/euler-finance-incident-analysis",
+          "source_type": "security_report"
+        },
+        {
+          "title": "Euler Finance donateToReserves Flash Loan Exploit",
+          "url": "https://nomoslabs.io/archive/euler-finance-2023",
+          "source_type": "incident_database"
+        }
+      ],
+      "label_confidence": "medium",
+      "replay_status": "needs_trace_replay"
+    },
+    {
+      "incident_id": "beanstalk_2022_04_17",
+      "chain": "ethereum",
+      "incident_date": "2022-04-17",
+      "attack_type": "flash_loan_governance",
+      "affected_protocol": "Beanstalk Farms",
+      "estimated_loss_usd": 182000000,
+      "estimated_profit_usd": 80000000,
+      "key_transactions": [],
+      "risk_families": ["governance_flash_loan"],
+      "source_refs": [
+        {
+          "title": "Beanstalk Farms 2022 Roundup",
+          "url": "https://bean.money/blog/beanstalk-farms-2022-roundup",
+          "source_type": "postmortem"
+        },
+        {
+          "title": "Revisiting Beanstalk Farms Exploit",
+          "url": "https://www.certik.com/blog/revisiting-beanstalk-farms-exploit",
+          "source_type": "security_report"
+        }
+      ],
+      "label_confidence": "medium",
+      "replay_status": "needs_tx_hash_review"
+    },
+    {
+      "incident_id": "cream_finance_2021_10_27",
+      "chain": "ethereum",
+      "incident_date": "2021-10-27",
+      "attack_type": "oracle_manipulation_lending_pool",
+      "affected_protocol": "Cream Finance",
+      "estimated_loss_usd": 130000000,
+      "estimated_profit_usd": null,
+      "key_transactions": [],
+      "risk_families": ["price_oracle_manipulation", "cross_protocol_liquidation_cascade"],
+      "source_refs": [
+        {
+          "title": "Cream Finance Hack: $130 Million Stolen in Exploit",
+          "url": "https://dn.institute/research/cyberattacks/incidents/2021-10-27-cream-finance/",
+          "source_type": "incident_database"
+        }
+      ],
+      "label_confidence": "medium",
+      "replay_status": "needs_tx_hash_review"
+    },
+    {
+      "incident_id": "harvest_finance_2020_10_26",
+      "chain": "ethereum",
+      "incident_date": "2020-10-26",
+      "attack_type": "curve_price_manipulation",
+      "affected_protocol": "Harvest Finance",
+      "estimated_loss_usd": 24000000,
+      "estimated_profit_usd": null,
+      "key_transactions": [],
+      "risk_families": ["dex_price_impact", "thin_liquidity_manipulation"],
+      "source_refs": [
+        {
+          "title": "fUSDC/fUSDT Economic Attack Oct 26 2020",
+          "url": "https://docs.harvest.finance/other/security/incidents/fusdc-fusdt-economic-attack-oct-26-2020",
+          "source_type": "postmortem"
+        }
+      ],
+      "label_confidence": "medium",
+      "replay_status": "needs_tx_hash_review"
+    },
+    {
+      "incident_id": "bzx_2020_02_18",
+      "chain": "ethereum",
+      "incident_date": "2020-02-18",
+      "attack_type": "oracle_manipulation_margin_position",
+      "affected_protocol": "bZx",
+      "estimated_loss_usd": 645000,
+      "estimated_profit_usd": null,
+      "key_transactions": [],
+      "risk_families": ["price_oracle_manipulation", "thin_liquidity_manipulation"],
+      "source_refs": [
+        {
+          "title": "How an oracle made 2400 ETH disappear",
+          "url": "https://www.diadata.org/blog/post/the-bzx-attack-how-an-oracle-made-2400-eth-disappear/",
+          "source_type": "security_report"
+        },
+        {
+          "title": "bZx attacked again, $645K in ETH estimated to be lost",
+          "url": "https://www.theblock.co/post/56207/bzx-attacked-again-645k-in-eth-estimated-to-be-lost",
+          "source_type": "news_report"
+        }
+      ],
+      "label_confidence": "medium",
+      "replay_status": "needs_tx_hash_review"
+    },
+    {
+      "incident_id": "mango_markets_2022_10_11",
+      "chain": "solana",
+      "incident_date": "2022-10-11",
+      "attack_type": "oracle_market_manipulation",
+      "affected_protocol": "Mango Markets",
+      "estimated_loss_usd": 116000000,
+      "estimated_profit_usd": null,
+      "key_transactions": [],
+      "risk_families": ["price_oracle_manipulation"],
+      "source_refs": [
+        {
+          "title": "Mango Markets Exploited for $116 Million",
+          "url": "https://dn.institute/research/cyberattacks/incidents/2022-10-11-mango-markets/",
+          "source_type": "incident_database"
+        },
+        {
+          "title": "Mango Markets Exploit: An Order Book Analysis",
+          "url": "https://www.soliduslabs.com/post/mango-hack",
+          "source_type": "security_report"
+        }
+      ],
+      "label_confidence": "medium",
+      "replay_status": "not_ethereum_replay"
+    },
+    {
+      "incident_id": "curve_vyper_2023_07_30",
+      "chain": "ethereum",
+      "incident_date": "2023-07-30",
+      "attack_type": "reentrancy_compiler_bug",
+      "affected_protocol": "Curve Finance",
+      "estimated_loss_usd": 40000000,
+      "estimated_profit_usd": null,
+      "key_transactions": [],
+      "risk_families": ["cross_protocol_liquidity_drain"],
+      "source_refs": [
+        {
+          "title": "Curve Finance Exploit and DeFi Implications",
+          "url": "https://www.coinbase.com/institutional/research-insights/research/market-intelligence/curve-finance-exploit",
+          "source_type": "security_report"
+        },
+        {
+          "title": "Vyper Incident Analysis",
+          "url": "https://www.certik.com/blog/vyper-incident-anaylsis",
+          "source_type": "security_report"
+        }
+      ],
+      "label_confidence": "medium",
+      "replay_status": "needs_tx_hash_review"
+    },
+    {
+      "incident_id": "conic_finance_2023_07_21",
+      "chain": "ethereum",
+      "incident_date": "2023-07-21",
+      "attack_type": "read_only_reentrancy",
+      "affected_protocol": "Conic Finance",
+      "estimated_loss_usd": 3200000,
+      "estimated_profit_usd": null,
+      "key_transactions": [],
+      "risk_families": ["oracle_state_inconsistency", "cross_protocol_liquidity_drain"],
+      "source_refs": [
+        {
+          "title": "Conic Finance Incident Analysis",
+          "url": "https://www.certik.com/resources/blog/conic-finance-incident-analysis",
+          "source_type": "security_report"
+        }
+      ],
+      "label_confidence": "medium",
+      "replay_status": "needs_tx_hash_review"
+    }
+  ]
+}

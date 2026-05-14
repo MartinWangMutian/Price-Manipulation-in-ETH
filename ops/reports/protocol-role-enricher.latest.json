@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-05-14T04:12:35.694+00:00",
+  "errors": [],
+  "feature_missing_flags": {
+    "insufficient_trace_context_for_protocol_roles": 110,
+    "no_calls": 110,
+    "no_logs": 110,
+    "no_protocol_role_matches": 110,
+    "trace_unsupported": 110
+  },
+  "files_seen": 110,
+  "input": "data/replay/parsed-trace.v1",
+  "protocol_counts": {},
+  "protocol_feature_records": 110,
+  "records_with_role_matches": 0,
+  "role_contracts_loaded": 10,
+  "role_counts": {},
+  "skipped_duplicate_parsed_records": 0,
+  "status": "ok",
+  "unique_parsed_records": 110,
+  "write_replay": true
+}

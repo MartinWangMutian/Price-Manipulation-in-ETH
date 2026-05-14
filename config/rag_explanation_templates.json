@@ -1,0 +1,14 @@
+{
+  "schema_ver": "rag-explanation-templates.v1",
+  "knowledge_snapshot": "knowledge-snapshot.seed-2026-05-14",
+  "rag_model": "local-hybrid-rrf.seed",
+  "templates": {
+    "graph_summary": "Graph evidence {graph_ref}: tx {tx_hash} has {node_count} nodes and {edge_count} edges.",
+    "doc_summary": "Document evidence {doc_ref}: {doc_text}",
+    "analyst_note": "Alert evidence {alert_ref}: score={score}, severity={severity}, reasons={reasons}."
+  },
+  "filters": {
+    "require_sentence_evidence_ref": true,
+    "preserve_score_severity_reasons_from_alert": true
+  }
+}

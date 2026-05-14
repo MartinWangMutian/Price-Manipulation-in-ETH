@@ -1,0 +1,14 @@
+{
+  "alerts": "data/replay/alert-event.v1",
+  "audit_log": "ops/audit/rag-explanation-builder.jsonl",
+  "audit_log_lines": 220,
+  "checked_at": "2026-05-14T04:36:20.277+00:00",
+  "errors": [],
+  "files_seen": 110,
+  "input": "data/replay/rag-explanation.v1",
+  "status": "ok",
+  "timeout_counts": {
+    "ok": 110
+  },
+  "valid_explanations": 110
+}
