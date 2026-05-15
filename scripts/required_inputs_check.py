@@ -48,7 +48,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Check required external inputs.")
     parser.add_argument(
         "--contacts",
-        default=os.environ.get("OPS_CONTACTS_CONFIG", "config/ops_contacts.example.json"),
+        default=os.environ.get("OPS_CONTACTS_CONFIG", "config/ops_contacts.local.json"),
     )
     parser.add_argument("--preflight-report", default="ops/reports/trace-endpoint-preflight.latest.json")
     parser.add_argument("--label-readiness-report", default="ops/reports/label-readiness-audit.latest.json")

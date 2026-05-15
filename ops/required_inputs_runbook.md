@@ -6,14 +6,16 @@ Check whether the user-provided inputs and Phase B readiness gates needed to lea
 
 ## Steps
 
-1. Copy the contacts template:
+1. Bootstrap the local contacts file:
 
 ```bash
-cp config/ops_contacts.example.json config/ops_contacts.local.json
+python3 scripts/ops_contacts_bootstrap.py \
+  --report ops/reports/ops-contacts-bootstrap.latest.json
 ```
 
 `config/ops_contacts.local.json` is ignored by git and should contain local
-operational contact details only.
+operational contact details only. The bootstrap command does not overwrite an
+existing local contacts file unless `--force` is used.
 
 2. Fill in all `TBD` fields in `config/ops_contacts.local.json`.
 

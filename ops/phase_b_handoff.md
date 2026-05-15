@@ -10,7 +10,7 @@
 - Persisted historical trace bundles: 0 / 57
 - Training ready: false
 - Env local: provider_configured_main_missing
-- Provider trace probe: dry-run ready, real probe not run
+- Provider trace probe: degraded; current Alchemy Free tier endpoint does not expose trace methods
 - Report secret audit: ok
 - Production go/no-go: no_go
 
@@ -18,14 +18,16 @@
 
 For the shortest user-facing checklist, see
 `ops/phase_b_user_action_packet.md`.
+For the evidence checklist, see `ops/phase_b_completion_checklist.md`.
+For endpoint upgrade details, see `ops/trace_endpoint_application_guide.md`.
 
 1. `ETH_MAIN_HTTP_URL`
    - Must be an Ethereum mainnet Geth or Erigon HTTP endpoint.
    - Must support either `debug_traceTransaction` or `trace_transaction`.
-   - Alchemy provider endpoint is useful for pending/provider shadow mode, but it may not satisfy this trace requirement.
+   - Current Alchemy Free tier provider endpoint is useful for pending/provider shadow mode, but it does not satisfy this trace requirement.
 
 2. Operations contact config
-   - Copy `config/ops_contacts.example.json` to `config/ops_contacts.local.json`.
+   - Run `python3 scripts/ops_contacts_bootstrap.py --report ops/reports/ops-contacts-bootstrap.latest.json`.
    - `config/ops_contacts.local.json` is ignored by git.
    - Fill pager or Feishu target, phone/manual escalation, on-call analyst, on-call engineer, incident commander, protocol owner or partner contact, and authorized approver.
    - Export `OPS_CONTACTS_CONFIG=config/ops_contacts.local.json`.
@@ -33,6 +35,13 @@ For the shortest user-facing checklist, see
 ## Current Safe Prechecks
 
 Run these any time after editing `.env.local` or generated reports:
+
+```bash
+python3 scripts/phase_b_refresh.py \
+  --out ops/reports/phase-b-refresh.latest.json
+```
+
+For a narrower check, run the individual audits:
 
 ```bash
 python3 scripts/env_local_audit.py \

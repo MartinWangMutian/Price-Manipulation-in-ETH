@@ -52,6 +52,7 @@ def test_run_provider_trace_probe() -> None:
         seed_blocked(root)
         report = run_next(root)
         assert report["selected_action"]["action_id"] == "run_provider_trace_probe"
+        assert any("phase_b_refresh.py" in command for command in report["selected_action"]["commands"])
 
 
 def test_promote_provider_to_main_trace_env() -> None:
@@ -61,15 +62,28 @@ def test_promote_provider_to_main_trace_env() -> None:
         write_json(root, "ops/reports/provider-trace-capability-probe.latest.json", {"status": "ok", "selected_method": "debug_traceTransaction"})
         report = run_next(root)
         assert report["selected_action"]["action_id"] == "promote_provider_to_main_trace_env"
+        assert any("phase_b_refresh.py" in command for command in report["selected_action"]["commands"])
 
 
 def test_apply_for_trace_endpoint() -> None:
     with tempfile.TemporaryDirectory() as tmpdir:
         root = Path(tmpdir)
         seed_blocked(root)
-        write_json(root, "ops/reports/provider-trace-capability-probe.latest.json", {"status": "degraded"})
+        write_json(
+            root,
+            "ops/reports/provider-trace-capability-probe.latest.json",
+            {
+                "status": "degraded",
+                "checks": [
+                    {"name": "eth_chainId", "ok": True},
+                    {"name": "debug_traceTransaction", "ok": False, "error": {"code": -32600}},
+                ],
+            },
+        )
         report = run_next(root)
         assert report["selected_action"]["action_id"] == "apply_for_trace_endpoint"
+        assert report["selected_action"]["evidence"]["failed_trace_methods"][0]["name"] == "debug_traceTransaction"
+        assert report["selected_action"]["next_steps"]
 
 
 def main() -> int:

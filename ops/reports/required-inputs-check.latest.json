@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-05-14T14:04:06.477+00:00",
+  "checked_at": "2026-05-15T08:04:52.912+00:00",
   "checks": [
     {
       "name": "ETH_MAIN_HTTP_URL",
@@ -18,7 +18,7 @@
         "high/critical escalation"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "phone_or_manual_escalation_target",
@@ -27,7 +27,7 @@
         "production go/no-go"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "on_call_analyst",
@@ -36,7 +36,7 @@
         "analyst review"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "on_call_engineer",
@@ -44,7 +44,7 @@
         "trace/model/infra validation"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "incident_commander",
@@ -52,7 +52,7 @@
         "critical incident coordination"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "protocol_owner_or_partner_contact",
@@ -61,7 +61,7 @@
         "partner notification"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "multisig_signer_or_authorized_approver",
@@ -69,7 +69,7 @@
         "approval-gated suggested actions"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "trace_endpoint_preflight",
@@ -102,7 +102,7 @@
       "source": "ops/phase_b_handoff.md"
     }
   ],
-  "contacts_config": "config/ops_contacts.example.json",
+  "contacts_config": "config/ops_contacts.local.json",
   "handoff": "ops/phase_b_handoff.md",
   "label_readiness_report": "ops/reports/label-readiness-audit.latest.json",
   "missing": [
@@ -123,7 +123,7 @@
         "high/critical escalation"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "phone_or_manual_escalation_target",
@@ -132,7 +132,7 @@
         "production go/no-go"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "on_call_analyst",
@@ -141,7 +141,7 @@
         "analyst review"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "on_call_engineer",
@@ -149,7 +149,7 @@
         "trace/model/infra validation"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "incident_commander",
@@ -157,7 +157,7 @@
         "critical incident coordination"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "protocol_owner_or_partner_contact",
@@ -166,7 +166,7 @@
         "partner notification"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "multisig_signer_or_authorized_approver",
@@ -174,7 +174,7 @@
         "approval-gated suggested actions"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "trace_endpoint_preflight",
@@ -206,7 +206,7 @@
         "high/critical escalation"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "phone_or_manual_escalation_target",
@@ -215,7 +215,7 @@
         "production go/no-go"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "on_call_analyst",
@@ -224,7 +224,7 @@
         "analyst review"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "on_call_engineer",
@@ -232,7 +232,7 @@
         "trace/model/infra validation"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "incident_commander",
@@ -240,7 +240,7 @@
         "critical incident coordination"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "protocol_owner_or_partner_contact",
@@ -249,7 +249,7 @@
         "partner notification"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "multisig_signer_or_authorized_approver",
@@ -257,7 +257,7 @@
         "approval-gated suggested actions"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     }
   ],
   "preflight_report": "ops/reports/trace-endpoint-preflight.latest.json",
@@ -325,7 +325,7 @@
         "high/critical escalation"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "phone_or_manual_escalation_target",
@@ -334,7 +334,7 @@
         "production go/no-go"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "on_call_analyst",
@@ -343,7 +343,7 @@
         "analyst review"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "on_call_engineer",
@@ -351,7 +351,7 @@
         "trace/model/infra validation"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "incident_commander",
@@ -359,7 +359,7 @@
         "critical incident coordination"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "protocol_owner_or_partner_contact",
@@ -368,7 +368,7 @@
         "partner notification"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     },
     {
       "name": "multisig_signer_or_authorized_approver",
@@ -376,7 +376,7 @@
         "approval-gated suggested actions"
       ],
       "ok": false,
-      "source": "config/ops_contacts.example.json"
+      "source": "config/ops_contacts.local.json"
     }
   ]
 }

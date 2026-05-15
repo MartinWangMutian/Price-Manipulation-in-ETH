@@ -1,0 +1,122 @@
+{
+  "checked_at": "2026-05-15T08:04:53.056+00:00",
+  "contacts": "config/ops_contacts.local.json",
+  "env_file": ".env.local",
+  "failed_steps": [],
+  "network_trace_probe": "not_run",
+  "next_action_report": "ops/reports/phase-b-next-action.latest.json",
+  "status": "ok",
+  "status_summary": "ops/status_summary.md",
+  "steps": [
+    {
+      "command": [
+        "/opt/anaconda3/bin/python3",
+        "scripts/ops_contacts_bootstrap.py",
+        "--report",
+        "ops/reports/ops-contacts-bootstrap.latest.json"
+      ],
+      "name": "ops_contacts_bootstrap",
+      "ok": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"checked_at\": \"2026-05-15T08:04:52.869+00:00\",\n  \"created\": false,\n  \"errors\": [],\n  \"example\": \"config/ops_contacts.example.json\",\n  \"git_ignored\": true,\n  \"next_action\": \"fill all TBD fields in config/ops_contacts.local.json\",\n  \"out\": \"config/ops_contacts.local.json\",\n  \"overwritten\": false,\n  \"status\": \"exists\"\n}\n"
+    },
+    {
+      "command": [
+        "/opt/anaconda3/bin/python3",
+        "scripts/env_local_audit.py",
+        "--env-file",
+        ".env.local",
+        "--out",
+        "ops/reports/env-local-audit.latest.json"
+      ],
+      "name": "env_local_audit",
+      "ok": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"checked_at\": \"2026-05-15T08:04:52.890+00:00\",\n  \"checks\": [\n    {\n      \"error\": null,\n      \"host\": \"eth-mainnet.g.alchemy.com\",\n      \"name\": \"ETH_PROVIDER_HTTP_URL\",\n      \"ok\": true,\n      \"path_redacted\": true,\n      \"present\": true,\n      \"role\": \"provider_http\",\n      \"scheme\": \"https\"\n    },\n    {\n      \"error\": null,\n      \"host\": \"eth-mainnet.g.alchemy.com\",\n      \"name\": \"ETH_PROVIDER_WS_URL\",\n      \"ok\": true,\n      \"path_redacted\": true,\n      \"present\": true,\n      \"role\": \"provider_ws\",\n      \"scheme\": \"wss\"\n    },\n    {\n      \"error\": \"missing\",\n      \"host\": null,\n      \"name\": \"ETH_MAIN_HTTP_URL\",\n      \"ok\": false,\n      \"present\": false,\n      \"role\": \"main_trace_http\",\n      \"scheme\": null\n    },\n    {\n      \"error\": \"missing\",\n      \"host\": null,\n      \"name\": \"ETH_MAIN_WS_URL\",\n      \"ok\": false,\n      \"present\": false,\n      \"role\": \"main_ws\",\n      \"scheme\": null\n    }\n  ],\n  \"env_file\": \".env.local\",\n  \"main_trace_ready\": false,\n  \"next_actions\": [\n    \"run provider trace capability probe against ETH_PROVIDER_HTTP_URL\",\n    \"set ETH_MAIN_HTTP_URL to a trace-capable endpoint if provider probe fails\"\n  ],\n  \"parse_errors\": [],\n  \"provider_ready\": true,\n  \"secrets_redacted\": true,\n  \"status\": \"provider_configured_main_missing\"\n}\n"
+    },
+    {
+      "command": [
+        "/opt/anaconda3/bin/python3",
+        "scripts/required_inputs_check.py",
+        "--contacts",
+        "config/ops_contacts.local.json",
+        "--out",
+        "ops/reports/required-inputs-check.latest.json"
+      ],
+      "name": "required_inputs_check",
+      "ok": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "t_preflight\",\n      \"needed_for\": [\n        \"real trace replay\",\n        \"trace P95\",\n        \"rich graph evidence\"\n      ],\n      \"observed_status\": \"missing_endpoint\",\n      \"ok\": false,\n      \"source\": \"ops/reports/trace-endpoint-preflight.latest.json\"\n    }\n  ],\n  \"status\": \"missing_inputs\",\n  \"user_input_checks\": [\n    {\n      \"name\": \"ETH_MAIN_HTTP_URL\",\n      \"needed_for\": [\n        \"Geth/Erigon trace replay\",\n        \"trace P95\",\n        \"rich graph evidence\"\n      ],\n      \"ok\": false,\n      \"source\": \"environment\"\n    },\n    {\n      \"name\": \"pager_or_feishu_target\",\n      \"needed_for\": [\n        \"gray launch readiness\",\n        \"high/critical escalation\"\n      ],\n      \"ok\": false,\n      \"source\": \"config/ops_contacts.local.json\"\n    },\n    {\n      \"name\": \"phone_or_manual_escalation_target\",\n      \"needed_for\": [\n        \"manual escalation path\",\n        \"production go/no-go\"\n      ],\n      \"ok\": false,\n      \"source\": \"config/ops_contacts.local.json\"\n    },\n    {\n      \"name\": \"on_call_analyst\",\n      \"needed_for\": [\n        \"operational handoff\",\n        \"analyst review\"\n      ],\n      \"ok\": false,\n      \"source\": \"config/ops_contacts.local.json\"\n    },\n    {\n      \"name\": \"on_call_engineer\",\n      \"needed_for\": [\n        \"trace/model/infra validation\"\n      ],\n      \"ok\": false,\n      \"source\": \"config/ops_contacts.local.json\"\n    },\n    {\n      \"name\": \"incident_commander\",\n      \"needed_for\": [\n        \"critical incident coordination\"\n      ],\n      \"ok\": false,\n      \"source\": \"config/ops_contacts.local.json\"\n    },\n    {\n      \"name\": \"protocol_owner_or_partner_contact\",\n      \"needed_for\": [\n        \"protocol escalation\",\n        \"partner notification\"\n      ],\n      \"ok\": false,\n      \"source\": \"config/ops_contacts.local.json\"\n    },\n    {\n      \"name\": \"multisig_signer_or_authorized_approver\",\n      \"needed_for\": [\n        \"approval-gated suggested actions\"\n      ],\n      \"ok\": false,\n      \"source\": \"config/ops_contacts.local.json\"\n    }\n  ]\n}\n"
+    },
+    {
+      "command": [
+        "/opt/anaconda3/bin/python3",
+        "scripts/phase_b_completion_audit.py",
+        "--out",
+        "ops/reports/phase-b-completion-audit.latest.json"
+      ],
+      "name": "phase_b_completion_audit",
+      "ok": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "  {\n      \"evidence\": {\n        \"status\": \"ok\",\n        \"training_ready\": false\n      },\n      \"name\": \"training_ready\",\n      \"ok\": false,\n      \"owner\": \"project\"\n    },\n    {\n      \"evidence\": {\n        \"missing_contact_inputs\": [\n          \"pager_or_feishu_target\",\n          \"phone_or_manual_escalation_target\",\n          \"on_call_analyst\",\n          \"on_call_engineer\",\n          \"incident_commander\",\n          \"protocol_owner_or_partner_contact\",\n          \"multisig_signer_or_authorized_approver\"\n        ],\n        \"status\": \"missing_inputs\"\n      },\n      \"name\": \"ops_contacts_configured\",\n      \"ok\": false,\n      \"owner\": \"user\"\n    },\n    {\n      \"evidence\": {\n        \"handoff\": \"ops/phase_b_handoff.md\",\n        \"post_endpoint_runbook\": \"ops/post_endpoint_trace_runbook.md\"\n      },\n      \"name\": \"phase_b_handoff_ready\",\n      \"ok\": true,\n      \"owner\": \"project\"\n    }\n  ],\n  \"missing_checks\": [\n    \"trace_endpoint_preflight_ok\",\n    \"historical_trace_replay_complete\",\n    \"label_promotion_complete\",\n    \"training_ready\",\n    \"ops_contacts_configured\"\n  ],\n  \"next_project_actions_after_user_inputs\": [\n    \"run trace endpoint preflight\",\n    \"run exploit and normal historical trace replay\",\n    \"parse traces, rebuild protocol features and cash-flow graphs\",\n    \"audit and promote labels, then refresh training dataset readiness\"\n  ],\n  \"next_user_actions\": [\n    \"provide ETH_MAIN_HTTP_URL or pass provider trace capability probe\",\n    \"fill config/ops_contacts.local.json and export OPS_CONTACTS_CONFIG\",\n    \"after real trace replay, analyst-promote exploit and normal label decisions\"\n  ],\n  \"phase_b_complete\": false,\n  \"project_blockers\": [\n    \"historical_trace_replay_complete\",\n    \"training_ready\"\n  ],\n  \"readiness_gaps\": [\n    \"trace_endpoint_preflight\"\n  ],\n  \"required_inputs_status\": \"missing_inputs\",\n  \"status\": \"blocked_user_input\",\n  \"user_blockers\": [\n    \"trace_endpoint_preflight_ok\",\n    \"label_promotion_complete\",\n    \"ops_contacts_configured\"\n  ]\n}\n"
+    },
+    {
+      "command": [
+        "/opt/anaconda3/bin/python3",
+        "scripts/phase_b_next_action.py",
+        "--out",
+        "ops/reports/phase-b-next-action.latest.json"
+      ],
+      "name": "phase_b_next_action",
+      "ok": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"checked_at\": \"2026-05-15T08:04:52.955+00:00\",\n  \"inputs\": {\n    \"env_local_status\": \"provider_configured_main_missing\",\n    \"phase_b_completion_status\": \"blocked_user_input\",\n    \"provider_probe_status\": \"degraded\",\n    \"required_inputs_status\": \"missing_inputs\",\n    \"trace_preflight_status\": \"missing_endpoint\",\n    \"trace_results_status\": \"awaiting_real_replay\"\n  },\n  \"selected_action\": {\n    \"action_id\": \"apply_for_trace_endpoint\",\n    \"commands\": [],\n    \"evidence\": {\n      \"failed_trace_methods\": [\n        {\n          \"error\": {\n            \"code\": -32600,\n            \"message\": \"debug_traceTransaction is not available on the Free tier - upgrade to Pay As You Go, or Enterprise for access.\"\n          },\n          \"name\": \"debug_traceTransaction\"\n        },\n        {\n          \"error\": {\n            \"code\": -32600,\n            \"message\": \"trace_transaction is not available on the Free tier - upgrade to Pay As You Go, or Enterprise for access.\"\n          },\n          \"name\": \"trace_transaction\"\n        }\n      ],\n      \"provider_probe_status\": \"degraded\"\n    },\n    \"needed\": \"Ethereum mainnet Geth/Erigon HTTP endpoint supporting debug_traceTransaction or trace_transaction\",\n    \"next_steps\": [\n      \"Upgrade/apply for Alchemy Pay As You Go or Enterprise Trace API/Debug API access, or use another trace-capable Geth/Erigon endpoint.\",\n      \"Set ETH_MAIN_HTTP_URL to the trace-capable Ethereum mainnet HTTP endpoint in .env.local.\",\n      \"Run python3 scripts/main_trace_endpoint_preflight.py --env-file .env.local --queue data/training/trace_replay_queue.v1.json --method auto --out ops/reports/trace-endpoint-preflight.latest.json\",\n      \"Run python3 scripts/phase_b_refresh.py --out ops/reports/phase-b-refresh.latest.json\"\n    ],\n    \"owner\": \"user\",\n    \"reason\": \"Provider RPC is not sufficient for historical trace replay.\"\n  },\n  \"status\": \"ok\"\n}\n"
+    },
+    {
+      "command": [
+        "/opt/anaconda3/bin/python3",
+        "scripts/artifact_manifest.py",
+        "--out",
+        "ops/reports/artifact-manifest.latest.json"
+      ],
+      "name": "artifact_manifest",
+      "ok": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "eplay\": 1015,\n    \"reports\": 67,\n    \"runbooks_and_reports_docs\": 79,\n    \"schemas\": 7,\n    \"scripts\": 74,\n    \"training\": 11\n  },\n  \"generated_at\": \"2026-05-15T08:04:53.004+00:00\",\n  \"out\": \"ops/reports/artifact-manifest.latest.json\",\n  \"status_files\": [\n    \"ops/reports/project-status.latest.json\",\n    \"ops/reports/go-no-go-audit.latest.json\",\n    \"ops/reports/validation-metrics-audit.latest.json\",\n    \"ops/reports/required-inputs-check.latest.json\",\n    \"ops/reports/ops-contacts-bootstrap.latest.json\",\n    \"ops/reports/env-local-audit.latest.json\",\n    \"ops/reports/provider-trace-capability-probe.latest.json\",\n    \"ops/reports/provider-trace-capability-probe.plan.json\",\n    \"ops/reports/report-secret-audit.latest.json\",\n    \"ops/reports/replay-label-candidates-check.latest.json\",\n    \"ops/reports/trace-replay-queue-builder.latest.json\",\n    \"ops/reports/trace-endpoint-preflight.plan.json\",\n    \"ops/reports/trace-endpoint-preflight.latest.json\",\n    \"ops/reports/historical-trace-replay.latest.json\",\n    \"ops/reports/historical-trace-results-audit.latest.json\",\n    \"ops/reports/normal-replay-candidates-check.latest.json\",\n    \"ops/reports/normal-historical-trace-replay.latest.json\",\n    \"ops/reports/normal-replay-candidates-builder.latest.json\",\n    \"ops/reports/label-readiness-audit.latest.json\",\n    \"ops/reports/label-promotion-audit.latest.json\",\n    \"ops/reports/label-promotion-template-builder.latest.json\",\n    \"ops/reports/training-dataset-check.latest.json\",\n    \"ops/reports/phase-b-completion-audit.latest.json\",\n    \"ops/reports/phase-b-next-action.latest.json\",\n    \"ops/reports/phase-b-refresh.latest.json\",\n    \"ops/reports/artifact-manifest.latest.json\",\n    \"ops/status_summary.md\",\n    \"ops/phase_b_completion_checklist.md\",\n    \"ops/phase_b_handoff.md\",\n    \"ops/trace_endpoint_application_guide.md\",\n    \"ops/main_trace_endpoint_preflight_runbook.md\",\n    \"ops/phase_b_user_action_packet.md\",\n    \"ops/blocker_register.md\",\n    \"ops/command_index.md\"\n  ]\n}\n"
+    },
+    {
+      "command": [
+        "/opt/anaconda3/bin/python3",
+        "scripts/status_summary.py",
+        "--out",
+        "ops/status_summary.md"
+      ],
+      "name": "status_summary",
+      "ok": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"out\": \"ops/status_summary.md\",\n  \"status\": \"ok\"\n}\n"
+    },
+    {
+      "command": [
+        "/opt/anaconda3/bin/python3",
+        "scripts/report_secret_audit.py",
+        "--input",
+        "ops/reports",
+        "--out",
+        "ops/reports/report-secret-audit.latest.json"
+      ],
+      "name": "report_secret_audit",
+      "ok": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "stdout_tail": "{\n  \"checked_at\": \"2026-05-15T08:04:53.054+00:00\",\n  \"findings\": [],\n  \"input\": \"ops/reports\",\n  \"patterns\": [\n    \"alchemy_v2_url_path\",\n    \"generic_rpc_v2_url_path\"\n  ],\n  \"scanned_files\": 67,\n  \"status\": \"ok\"\n}\n"
+    }
+  ]
+}

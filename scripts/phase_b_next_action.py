@@ -43,6 +43,22 @@ def command_action(action_id: str, owner: str, reason: str, command: list[str]) 
     }
 
 
+def failed_trace_methods(provider_probe: Any | None) -> list[dict[str, Any]]:
+    if not provider_probe:
+        return []
+    methods = {"debug_traceTransaction", "trace_transaction"}
+    failed = []
+    for check in provider_probe.get("checks", []):
+        if check.get("name") in methods and not check.get("ok"):
+            failed.append(
+                {
+                    "name": check.get("name"),
+                    "error": check.get("error"),
+                }
+            )
+    return failed
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Pick the next concrete Phase B action.")
     parser.add_argument("--out", default="ops/reports/phase-b-next-action.latest.json")
@@ -79,6 +95,8 @@ def main() -> int:
                 "--queue data/training/trace_replay_queue.v1.json "
                 "--method auto "
                 "--out ops/reports/trace-endpoint-preflight.latest.json",
+                "python3 scripts/phase_b_refresh.py "
+                "--out ops/reports/phase-b-refresh.latest.json",
             ],
         )
     elif provider_ready and status(provider_probe) == "missing" and not main_trace_ready:
@@ -95,6 +113,8 @@ def main() -> int:
                 "python3 scripts/report_secret_audit.py "
                 "--input ops/reports "
                 "--out ops/reports/report-secret-audit.latest.json",
+                "python3 scripts/phase_b_refresh.py "
+                "--out ops/reports/phase-b-refresh.latest.json",
             ],
         )
     elif status(provider_probe) == "degraded" and "ETH_MAIN_HTTP_URL" in missing_names:
@@ -104,6 +124,16 @@ def main() -> int:
             "reason": "Provider RPC is not sufficient for historical trace replay.",
             "commands": [],
             "needed": "Ethereum mainnet Geth/Erigon HTTP endpoint supporting debug_traceTransaction or trace_transaction",
+            "evidence": {
+                "provider_probe_status": status(provider_probe),
+                "failed_trace_methods": failed_trace_methods(provider_probe),
+            },
+            "next_steps": [
+                "Upgrade/apply for Alchemy Pay As You Go or Enterprise Trace API/Debug API access, or use another trace-capable Geth/Erigon endpoint.",
+                "Set ETH_MAIN_HTTP_URL to the trace-capable Ethereum mainnet HTTP endpoint in .env.local.",
+                "Run python3 scripts/main_trace_endpoint_preflight.py --env-file .env.local --queue data/training/trace_replay_queue.v1.json --method auto --out ops/reports/trace-endpoint-preflight.latest.json",
+                "Run python3 scripts/phase_b_refresh.py --out ops/reports/phase-b-refresh.latest.json",
+            ],
         }
     elif main_trace_ready and status(trace_preflight) != "ok":
         action = command_action(
@@ -112,10 +142,13 @@ def main() -> int:
             "ETH_MAIN_HTTP_URL appears configured but standard trace endpoint preflight has not passed.",
             [
                 "source .env.local",
-                "python3 scripts/trace_endpoint_preflight.py "
+                "python3 scripts/main_trace_endpoint_preflight.py "
+                "--env-file .env.local "
                 "--queue data/training/trace_replay_queue.v1.json "
                 "--method auto "
                 "--out ops/reports/trace-endpoint-preflight.latest.json",
+                "python3 scripts/phase_b_refresh.py "
+                "--out ops/reports/phase-b-refresh.latest.json",
             ],
         )
     elif status(trace_preflight) == "ok" and status(trace_results) != "ok":
@@ -134,6 +167,8 @@ def main() -> int:
                 "--out ops/reports/normal-historical-trace-replay.latest.json",
                 "python3 scripts/historical_trace_results_audit.py "
                 "--out ops/reports/historical-trace-results-audit.latest.json",
+                "python3 scripts/phase_b_refresh.py "
+                "--out ops/reports/phase-b-refresh.latest.json",
             ],
         )
     elif missing_names:
@@ -150,12 +185,8 @@ def main() -> int:
             "project",
             "No more specific action was selected; refresh Phase B gates.",
             [
-                "python3 scripts/required_inputs_check.py "
-                "--contacts \"${OPS_CONTACTS_CONFIG:-config/ops_contacts.example.json}\" "
-                "--out ops/reports/required-inputs-check.latest.json",
-                "python3 scripts/phase_b_completion_audit.py "
-                "--out ops/reports/phase-b-completion-audit.latest.json",
-                "python3 scripts/status_summary.py --out ops/status_summary.md",
+                "python3 scripts/phase_b_refresh.py "
+                "--out ops/reports/phase-b-refresh.latest.json",
             ],
         )
 

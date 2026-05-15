@@ -5,8 +5,17 @@ This index groups the local replay and audit commands by stage.
 ## Required Inputs
 
 ```bash
+python3 scripts/ops_contacts_bootstrap.py \
+  --report ops/reports/ops-contacts-bootstrap.latest.json
+```
+
+```bash
+python3 scripts/ops_contacts_bootstrap_selftest.py
+```
+
+```bash
 python3 scripts/required_inputs_check.py \
-  --contacts "${OPS_CONTACTS_CONFIG:-config/ops_contacts.example.json}" \
+  --contacts "${OPS_CONTACTS_CONFIG:-config/ops_contacts.local.json}" \
   --out ops/reports/required-inputs-check.latest.json
 ```
 
@@ -50,8 +59,6 @@ python3 scripts/provider_smoke_test.py \
 ```
 
 ```bash
-source .env.local
-export SSL_CERT_FILE="$(python3 -c 'import certifi; print(certifi.where())')"
 python3 scripts/provider_trace_capability_probe.py \
   --env-file .env.local \
   --queue data/training/trace_replay_queue.v1.json \
@@ -61,6 +68,18 @@ python3 scripts/provider_trace_capability_probe.py \
 
 ```bash
 python3 scripts/provider_trace_capability_probe_selftest.py
+```
+
+```bash
+python3 scripts/main_trace_endpoint_preflight.py \
+  --env-file .env.local \
+  --queue data/training/trace_replay_queue.v1.json \
+  --method auto \
+  --out ops/reports/trace-endpoint-preflight.latest.json
+```
+
+```bash
+python3 scripts/main_trace_endpoint_preflight_selftest.py
 ```
 
 ## Pending and Trace Replay
@@ -407,6 +426,15 @@ python3 scripts/phase_b_next_action_selftest.py
 
 ```bash
 python3 scripts/phase_b_completion_audit_selftest.py
+```
+
+```bash
+python3 scripts/phase_b_refresh.py \
+  --out ops/reports/phase-b-refresh.latest.json
+```
+
+```bash
+python3 scripts/phase_b_refresh_selftest.py
 ```
 
 ```bash

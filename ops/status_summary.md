@@ -1,9 +1,10 @@
 # Project Status Summary
 
-Generated: 2026-05-14T14:21:45.676+00:00
+Generated: 2026-05-15T08:05:02.758+00:00
 
 Handoff: ops/phase_b_handoff.md
 User action packet: ops/phase_b_user_action_packet.md
+Completion checklist: ops/phase_b_completion_checklist.md
 
 ## Current Readiness
 
@@ -12,10 +13,10 @@ User action packet: ops/phase_b_user_action_packet.md
 - Validation metrics: not_pass
 - Required inputs: missing_inputs
 - Env local: provider_configured_main_missing
-- Provider trace probe: not_run
+- Provider trace probe: degraded
 - Report secret audit: ok
 - Phase B completion: blocked_user_input
-- Phase B next action: run_provider_trace_probe
+- Phase B next action: apply_for_trace_endpoint
 - Gray launch readiness: not_ready
 
 ## Passing Local Replay Surface
@@ -71,19 +72,32 @@ User action packet: ops/phase_b_user_action_packet.md
 
 ## Provider Trace Probe
 
+- Latest status: degraded
 - Dry-run plan: ready_to_probe
 - Provider host: eth-mainnet.g.alchemy.com
 
+## Main Trace Endpoint Plan
+
+- Dry-run plan: missing_or_invalid_main_trace_http_url
+- ETH_MAIN_HTTP_URL present: False
+- ETH_MAIN_HTTP_URL ok: False
+
 ## Report Secret Audit
 
-- Scanned files: 63
+- Scanned files: 67
 - Findings: 0
+
+## Ops Contacts Bootstrap
+
+- Status: exists
+- Local file git-ignored: True
+- Next action: fill all TBD fields in config/ops_contacts.local.json
 
 ## Phase B Next Action
 
-- Action: run_provider_trace_probe
+- Action: apply_for_trace_endpoint
 - Owner: user
-- Reason: Provider HTTP URL is configured and dry-run is ready, but real provider trace probe has not run.
+- Reason: Provider RPC is not sufficient for historical trace replay.
 
 ## Training Label Backlog
 
@@ -112,13 +126,13 @@ User action packet: ops/phase_b_user_action_packet.md
 ## Inputs Needed From User
 
 - ETH_MAIN_HTTP_URL: Geth/Erigon trace replay, trace P95, rich graph evidence (source: environment)
-- pager_or_feishu_target: gray launch readiness, high/critical escalation (source: config/ops_contacts.example.json)
-- phone_or_manual_escalation_target: manual escalation path, production go/no-go (source: config/ops_contacts.example.json)
-- on_call_analyst: operational handoff, analyst review (source: config/ops_contacts.example.json)
-- on_call_engineer: trace/model/infra validation (source: config/ops_contacts.example.json)
-- incident_commander: critical incident coordination (source: config/ops_contacts.example.json)
-- protocol_owner_or_partner_contact: protocol escalation, partner notification (source: config/ops_contacts.example.json)
-- multisig_signer_or_authorized_approver: approval-gated suggested actions (source: config/ops_contacts.example.json)
+- pager_or_feishu_target: gray launch readiness, high/critical escalation (source: config/ops_contacts.local.json)
+- phone_or_manual_escalation_target: manual escalation path, production go/no-go (source: config/ops_contacts.local.json)
+- on_call_analyst: operational handoff, analyst review (source: config/ops_contacts.local.json)
+- on_call_engineer: trace/model/infra validation (source: config/ops_contacts.local.json)
+- incident_commander: critical incident coordination (source: config/ops_contacts.local.json)
+- protocol_owner_or_partner_contact: protocol escalation, partner notification (source: config/ops_contacts.local.json)
+- multisig_signer_or_authorized_approver: approval-gated suggested actions (source: config/ops_contacts.local.json)
 
 ## Phase B Readiness Gaps
 
@@ -131,17 +145,23 @@ User action packet: ops/phase_b_user_action_packet.md
 - evaluation: 2
 - rag: 2
 - replay: 1015
-- reports: 63
-- runbooks_and_reports_docs: 74
+- reports: 67
+- runbooks_and_reports_docs: 79
 - schemas: 7
-- scripts: 67
+- scripts: 74
 - training: 11
 
 ## Next Commands
 
 ```bash
+python3 scripts/phase_b_refresh.py \
+  --out ops/reports/phase-b-refresh.latest.json
+
+python3 scripts/ops_contacts_bootstrap.py \
+  --report ops/reports/ops-contacts-bootstrap.latest.json
+
 python3 scripts/required_inputs_check.py \
-  --contacts "${OPS_CONTACTS_CONFIG:-config/ops_contacts.example.json}" \
+  --contacts "${OPS_CONTACTS_CONFIG:-config/ops_contacts.local.json}" \
   --out ops/reports/required-inputs-check.latest.json
 
 python3 scripts/env_local_audit.py \
@@ -160,8 +180,8 @@ python3 scripts/provider_trace_capability_probe.py \
   --out ops/reports/provider-trace-capability-probe.latest.json
 
 # Standard Phase B trace endpoint preflight; requires ETH_MAIN_HTTP_URL.
-source .env.local
-python3 scripts/trace_endpoint_preflight.py \
+python3 scripts/main_trace_endpoint_preflight.py \
+  --env-file .env.local \
   --queue data/training/trace_replay_queue.v1.json \
   --method auto \
   --out ops/reports/trace-endpoint-preflight.latest.json

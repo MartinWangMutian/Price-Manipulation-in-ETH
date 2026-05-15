@@ -51,6 +51,7 @@ def render_summary(root: Path) -> str:
     go_no_go = read_json_or_none(root / "ops/reports/go-no-go-audit.latest.json")
     validation = read_json_or_none(root / "ops/reports/validation-metrics-audit.latest.json")
     required = read_json_or_none(root / "ops/reports/required-inputs-check.latest.json")
+    contacts_bootstrap = read_json_or_none(root / "ops/reports/ops-contacts-bootstrap.latest.json")
     env_local = read_json_or_none(root / "ops/reports/env-local-audit.latest.json")
     provider_probe = read_json_or_none(root / "ops/reports/provider-trace-capability-probe.latest.json")
     provider_probe_plan = read_json_or_none(root / "ops/reports/provider-trace-capability-probe.plan.json")
@@ -60,6 +61,7 @@ def render_summary(root: Path) -> str:
     next_action = read_json_or_none(root / "ops/reports/phase-b-next-action.latest.json")
     replay_candidates = read_json_or_none(root / "ops/reports/replay-label-candidates-check.latest.json")
     trace_queue = read_json_or_none(root / "ops/reports/trace-replay-queue-builder.latest.json")
+    trace_preflight_plan = read_json_or_none(root / "ops/reports/trace-endpoint-preflight.plan.json")
     trace_preflight = read_json_or_none(root / "ops/reports/trace-endpoint-preflight.latest.json")
     historical_trace = read_json_or_none(root / "ops/reports/historical-trace-replay.latest.json")
     normal_candidates = read_json_or_none(root / "ops/reports/normal-replay-candidates-check.latest.json")
@@ -80,6 +82,7 @@ def render_summary(root: Path) -> str:
         "",
         "Handoff: ops/phase_b_handoff.md",
         "User action packet: ops/phase_b_user_action_packet.md",
+        "Completion checklist: ops/phase_b_completion_checklist.md",
         "",
         "## Current Readiness",
         "",
@@ -167,10 +170,26 @@ def render_summary(root: Path) -> str:
             if host:
                 lines.append(f"- Provider host: {host}")
 
+    if trace_preflight_plan:
+        lines.extend(["", "## Main Trace Endpoint Plan", ""])
+        lines.append(f"- Dry-run plan: {trace_preflight_plan.get('status', 'unknown')}")
+        main_check = trace_preflight_plan.get("main_trace_http_check", {})
+        if main_check:
+            lines.append(f"- ETH_MAIN_HTTP_URL present: {main_check.get('present')}")
+            lines.append(f"- ETH_MAIN_HTTP_URL ok: {main_check.get('ok')}")
+
     if secret_audit:
         lines.extend(["", "## Report Secret Audit", ""])
         lines.append(f"- Scanned files: {secret_audit.get('scanned_files', 0)}")
         lines.append(f"- Findings: {len(secret_audit.get('findings', []))}")
+
+    if contacts_bootstrap:
+        lines.extend(["", "## Ops Contacts Bootstrap", ""])
+        lines.append(f"- Status: {contacts_bootstrap.get('status', 'unknown')}")
+        lines.append(f"- Local file git-ignored: {contacts_bootstrap.get('git_ignored')}")
+        next_contact_action = contacts_bootstrap.get("next_action")
+        if next_contact_action:
+            lines.append(f"- Next action: {next_contact_action}")
 
     if next_action:
         selected = next_action.get("selected_action", {})
@@ -264,8 +283,14 @@ def render_summary(root: Path) -> str:
             "## Next Commands",
             "",
             "```bash",
+            "python3 scripts/phase_b_refresh.py \\",
+            "  --out ops/reports/phase-b-refresh.latest.json",
+            "",
+            "python3 scripts/ops_contacts_bootstrap.py \\",
+            "  --report ops/reports/ops-contacts-bootstrap.latest.json",
+            "",
             "python3 scripts/required_inputs_check.py \\",
-            "  --contacts \"${OPS_CONTACTS_CONFIG:-config/ops_contacts.example.json}\" \\",
+            "  --contacts \"${OPS_CONTACTS_CONFIG:-config/ops_contacts.local.json}\" \\",
             "  --out ops/reports/required-inputs-check.latest.json",
             "",
             "python3 scripts/env_local_audit.py \\",
@@ -287,13 +312,13 @@ def render_summary(root: Path) -> str:
                 "  --queue data/training/trace_replay_queue.v1.json \\",
                 "  --method auto \\",
                 "  --out ops/reports/provider-trace-capability-probe.latest.json",
-                "",
-                "# Standard Phase B trace endpoint preflight; requires ETH_MAIN_HTTP_URL.",
-                "source .env.local",
-                "python3 scripts/trace_endpoint_preflight.py \\",
-                "  --queue data/training/trace_replay_queue.v1.json \\",
-                "  --method auto \\",
-                "  --out ops/reports/trace-endpoint-preflight.latest.json",
+            "",
+            "# Standard Phase B trace endpoint preflight; requires ETH_MAIN_HTTP_URL.",
+            "python3 scripts/main_trace_endpoint_preflight.py \\",
+            "  --env-file .env.local \\",
+            "  --queue data/training/trace_replay_queue.v1.json \\",
+            "  --method auto \\",
+            "  --out ops/reports/trace-endpoint-preflight.latest.json",
                 "",
                 "python3 scripts/historical_trace_replay.py \\",
                 "  --queue data/training/trace_replay_queue.v1.json \\",

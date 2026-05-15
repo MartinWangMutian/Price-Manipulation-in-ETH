@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-05-15T08:04:52.869+00:00",
+  "created": false,
+  "errors": [],
+  "example": "config/ops_contacts.example.json",
+  "git_ignored": true,
+  "next_action": "fill all TBD fields in config/ops_contacts.local.json",
+  "out": "config/ops_contacts.local.json",
+  "overwritten": false,
+  "status": "exists"
+}

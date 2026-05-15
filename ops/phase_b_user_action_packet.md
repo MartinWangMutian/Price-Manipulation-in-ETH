@@ -5,49 +5,40 @@
 Phase B is blocked by user-provided inputs, not by local code:
 
 - Provider fallback is configured and passes local env shape checks.
-- Provider trace probe dry-run is ready.
+- Provider trace probe has run and is degraded on the current Alchemy Free tier endpoint.
 - Main trace endpoint is not configured.
 - Operations contacts are still placeholders.
 - Generated reports currently have no detected RPC key leakage.
 
-## Action 1: Run Provider Trace Probe
+## Action 1: Apply For Trace Endpoint
 
-Run this from the project root:
+The current Alchemy Free tier endpoint passes normal Ethereum RPC checks but
+rejects both `debug_traceTransaction` and `trace_transaction`.
+
+Apply for, upgrade, or configure an Ethereum mainnet Geth/Erigon HTTP endpoint
+that supports one of:
+
+- `debug_traceTransaction`
+- `trace_transaction`
+
+Then set:
 
 ```bash
-python3 scripts/provider_trace_capability_probe.py \
-  --env-file .env.local \
-  --queue data/training/trace_replay_queue.v1.json \
-  --method auto \
-  --out ops/reports/provider-trace-capability-probe.latest.json
+export ETH_MAIN_HTTP_URL="https://your-trace-capable-mainnet-endpoint"
 ```
-
-Then run:
-
-```bash
-python3 scripts/report_secret_audit.py \
-  --input ops/reports \
-  --out ops/reports/report-secret-audit.latest.json
-```
-
-Interpretation:
-
-- If provider probe returns `status=ok` with `selected_method`, set
-  `ETH_MAIN_HTTP_URL` to the provider HTTP URL for the next Phase B replay.
-- If provider probe returns `degraded`, apply for or configure a dedicated
-  Ethereum mainnet Geth/Erigon HTTP endpoint supporting `debug_traceTransaction`
-  or `trace_transaction`.
 
 ## Action 2: Fill Operations Contacts
 
 Create local contacts config:
 
 ```bash
-cp config/ops_contacts.example.json config/ops_contacts.local.json
+python3 scripts/ops_contacts_bootstrap.py \
+  --report ops/reports/ops-contacts-bootstrap.latest.json
 ```
 
 `config/ops_contacts.local.json` is ignored by git so local contact details are
-not committed.
+not committed. The bootstrap command will not overwrite an existing local file
+unless you pass `--force`.
 
 Fill every placeholder:
 
@@ -68,6 +59,13 @@ export OPS_CONTACTS_CONFIG="config/ops_contacts.local.json"
 ## Action 3: Refresh Gates
 
 After Action 1 and Action 2:
+
+```bash
+python3 scripts/phase_b_refresh.py \
+  --out ops/reports/phase-b-refresh.latest.json
+```
+
+Or run the individual commands:
 
 ```bash
 python3 scripts/required_inputs_check.py \

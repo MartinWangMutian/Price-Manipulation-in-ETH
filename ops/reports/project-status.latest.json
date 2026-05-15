@@ -41,7 +41,7 @@
       ]
     }
   ],
-  "checked_at": "2026-05-14T14:05:13.396+00:00",
+  "checked_at": "2026-05-15T07:58:12.907+00:00",
   "gray_launch_readiness": "not_ready",
   "next_actions": [
     "configure Geth/Erigon trace endpoint",
