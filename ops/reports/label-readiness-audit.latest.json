@@ -1,0 +1,80 @@
+{
+  "blockers": [
+    "ETH_MAIN_HTTP_URL trace endpoint is required for real replay",
+    "candidate traces must be analyst-promoted before labels are training-ready",
+    "negative candidates require screening against incident/sanctions/exploit labels"
+  ],
+  "checked_at": "2026-05-14T13:53:31.096+00:00",
+  "checks": [
+    {
+      "evidence": {
+        "candidate_transactions": 7,
+        "missing_ethereum_candidate_incidents": [],
+        "status": "ok"
+      },
+      "name": "exploit_candidate_hashes",
+      "ok": true
+    },
+    {
+      "evidence": {
+        "queue_items_seen": 7,
+        "status": "dry_run_ok"
+      },
+      "name": "exploit_trace_queue_dry_run",
+      "ok": true
+    },
+    {
+      "evidence": {
+        "bucket_counts": {
+          "contract_call": 16,
+          "erc20_approve": 3,
+          "erc20_transfer": 16,
+          "simple_transfer": 15
+        },
+        "candidate_count": 50,
+        "status": "ok"
+      },
+      "name": "normal_candidate_hashes",
+      "ok": true
+    },
+    {
+      "evidence": {
+        "queue_items_seen": 50,
+        "status": "dry_run_ok"
+      },
+      "name": "normal_trace_queue_dry_run",
+      "ok": true
+    },
+    {
+      "evidence": {
+        "status": "ok",
+        "training_ready": false
+      },
+      "name": "training_dataset_manifest",
+      "ok": true
+    },
+    {
+      "evidence": {
+        "decision_counts": {
+          "pending_trace": 57
+        },
+        "promoted_markers": 0,
+        "status": "ok"
+      },
+      "name": "promotion_decision_template",
+      "ok": true
+    }
+  ],
+  "exploit_candidate_transactions": 7,
+  "next_commands_after_endpoint": [
+    "python3 scripts/historical_trace_replay.py --queue data/training/trace_replay_queue.v1.json --method auto --out ops/reports/historical-trace-replay.latest.json",
+    "python3 scripts/historical_trace_replay.py --queue data/training/normal_trace_replay_queue.v1.json --method auto --out ops/reports/normal-historical-trace-replay.latest.json"
+  ],
+  "normal_candidate_transactions": 50,
+  "pending_promotion_decisions": 57,
+  "promoted_markers": 0,
+  "status": "trace_ready",
+  "total_trace_queue_items": 57,
+  "trace_ready": true,
+  "training_ready": false
+}

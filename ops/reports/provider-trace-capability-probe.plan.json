@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-05-14T14:09:57.332+00:00",
+  "env_file": ".env.local",
+  "next_action": "run without --dry-run to test trace capability",
+  "parse_errors": [],
+  "provider_http_check": {
+    "error": null,
+    "host": "eth-mainnet.g.alchemy.com",
+    "name": "ETH_PROVIDER_HTTP_URL",
+    "ok": true,
+    "path_redacted": true,
+    "present": true,
+    "role": "provider_http",
+    "scheme": "https"
+  },
+  "secrets_redacted": true,
+  "status": "ready_to_probe"
+}

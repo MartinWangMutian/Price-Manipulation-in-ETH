@@ -10,6 +10,11 @@ from pathlib import Path
 from typing import Any
 
 
+EXCLUDED_ARTIFACTS = {
+    "config/ops_contacts.local.json",
+}
+
+
 def now_iso() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="milliseconds")
 
@@ -32,7 +37,8 @@ def recursive_files(root: Path, subdir: str, suffix: str | None = None) -> list[
     paths = [path for path in base.rglob("*") if path.is_file()]
     if suffix is not None:
         paths = [path for path in paths if path.name.endswith(suffix)]
-    return sorted(str(path.relative_to(root)) for path in paths)
+    relative_paths = [str(path.relative_to(root)) for path in paths]
+    return sorted(path for path in relative_paths if path not in EXCLUDED_ARTIFACTS)
 
 
 def main() -> int:
@@ -62,11 +68,34 @@ def main() -> int:
         "generated_at": now_iso(),
         "categories": categories,
         "counts": {name: len(paths) for name, paths in categories.items()},
+        "excluded_artifacts": sorted(EXCLUDED_ARTIFACTS),
         "status_files": [
             "ops/reports/project-status.latest.json",
             "ops/reports/go-no-go-audit.latest.json",
             "ops/reports/validation-metrics-audit.latest.json",
             "ops/reports/required-inputs-check.latest.json",
+            "ops/reports/env-local-audit.latest.json",
+            "ops/reports/provider-trace-capability-probe.latest.json",
+            "ops/reports/provider-trace-capability-probe.plan.json",
+            "ops/reports/report-secret-audit.latest.json",
+            "ops/reports/replay-label-candidates-check.latest.json",
+            "ops/reports/trace-replay-queue-builder.latest.json",
+            "ops/reports/trace-endpoint-preflight.latest.json",
+            "ops/reports/historical-trace-replay.latest.json",
+            "ops/reports/historical-trace-results-audit.latest.json",
+            "ops/reports/normal-replay-candidates-check.latest.json",
+            "ops/reports/normal-historical-trace-replay.latest.json",
+            "ops/reports/normal-replay-candidates-builder.latest.json",
+            "ops/reports/label-readiness-audit.latest.json",
+            "ops/reports/label-promotion-audit.latest.json",
+            "ops/reports/label-promotion-template-builder.latest.json",
+            "ops/reports/training-dataset-check.latest.json",
+            "ops/reports/phase-b-completion-audit.latest.json",
+            "ops/reports/phase-b-next-action.latest.json",
+            "ops/reports/artifact-manifest.latest.json",
+            "ops/status_summary.md",
+            "ops/phase_b_handoff.md",
+            "ops/phase_b_user_action_packet.md",
             "ops/blocker_register.md",
             "ops/command_index.md",
         ],

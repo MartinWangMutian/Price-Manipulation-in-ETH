@@ -13,7 +13,7 @@
     },
     {
       "id": "ops_contacts",
-      "needed": "Pager/Feishu, phone/manual escalation, on-call and approver names",
+      "needed": "Pager/Feishu, phone/manual escalation, on-call, protocol partner, and approver names",
       "owner": "user",
       "unblocks": [
         "gray launch readiness",
@@ -23,7 +23,7 @@
     },
     {
       "id": "labeled_replay_sets",
-      "needed": "confirmed exploit tx hashes and normal complex transaction set",
+      "needed": "trace-replayed and analyst-promoted exploit and normal transaction labels",
       "owner": "project",
       "unblocks": [
         "false positive/negative metrics",
@@ -41,14 +41,15 @@
       ]
     }
   ],
-  "checked_at": "2026-05-14T04:53:00.237+00:00",
+  "checked_at": "2026-05-14T14:05:13.396+00:00",
   "gray_launch_readiness": "not_ready",
   "next_actions": [
     "configure Geth/Erigon trace endpoint",
     "fill operations contact roster",
-    "review key transaction hashes for seed incidents",
+    "trace replay and analyst-promote candidate exploit/normal labels",
     "run live failover drills"
   ],
+  "phase_b_completion": "blocked_user_input",
   "production_go_no_go": "no_go",
   "provider_only_shadow_pipeline": "ok",
   "report_statuses": {
@@ -60,6 +61,7 @@
     "gray_launch": "not_ready",
     "offline_eval": "ok",
     "pending_replay": "ok",
+    "phase_b_completion": "blocked_user_input",
     "rag_explanation": "ok",
     "required_inputs": "missing_inputs",
     "risk_replay": "ok",

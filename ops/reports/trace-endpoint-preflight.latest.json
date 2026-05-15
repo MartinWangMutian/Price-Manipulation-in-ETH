@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-05-14T13:57:48.113+00:00",
+  "checks": [],
+  "endpoint_configured": false,
+  "method": "auto",
+  "queue": "data/training/trace_replay_queue.v1.json",
+  "selected_method": null,
+  "status": "missing_endpoint",
+  "validation_errors": []
+}

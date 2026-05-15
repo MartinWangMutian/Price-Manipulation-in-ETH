@@ -56,6 +56,7 @@ def main() -> int:
         "go_no_go": "ops/reports/go-no-go-audit.latest.json",
         "validation_metrics": "ops/reports/validation-metrics-audit.latest.json",
         "required_inputs": "ops/reports/required-inputs-check.latest.json",
+        "phase_b_completion": "ops/reports/phase-b-completion-audit.latest.json",
     }
     statuses = {name: report_status(root, path) for name, path in reports.items()}
     provider_shadow_ok = all(
@@ -82,13 +83,13 @@ def main() -> int:
         {
             "id": "ops_contacts",
             "owner": "user",
-            "needed": "Pager/Feishu, phone/manual escalation, on-call and approver names",
+            "needed": "Pager/Feishu, phone/manual escalation, on-call, protocol partner, and approver names",
             "unblocks": ["gray launch readiness", "operational handoff", "production go/no-go"],
         },
         {
             "id": "labeled_replay_sets",
             "owner": "project",
-            "needed": "confirmed exploit tx hashes and normal complex transaction set",
+            "needed": "trace-replayed and analyst-promoted exploit and normal transaction labels",
             "unblocks": ["false positive/negative metrics", "lead time", "GraphSAGE evaluation"],
         },
         {
@@ -104,13 +105,14 @@ def main() -> int:
         "production_go_no_go": statuses.get("go_no_go"),
         "validation_metrics": statuses.get("validation_metrics"),
         "required_inputs": statuses.get("required_inputs"),
+        "phase_b_completion": statuses.get("phase_b_completion"),
         "gray_launch_readiness": statuses.get("gray_launch"),
         "report_statuses": statuses,
         "blockers": blockers,
         "next_actions": [
             "configure Geth/Erigon trace endpoint",
             "fill operations contact roster",
-            "review key transaction hashes for seed incidents",
+            "trace replay and analyst-promote candidate exploit/normal labels",
             "run live failover drills",
         ],
     }

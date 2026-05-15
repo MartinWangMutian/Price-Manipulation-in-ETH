@@ -11,6 +11,7 @@ Created the seed training data manifest flow for Phase 4-B.
 - Provider-only unlabeled pool construction
 - Deterministic train/validation/replay split manifests
 - Label snapshot with blocking reasons
+- Replay label candidate backlog for exploit transaction review
 
 ## Seed Sources
 
@@ -25,14 +26,15 @@ Current builder output:
 - positive incident seeds: 8
 - train/validation/replay split counts: 6 / 1 / 1
 - provider-only unlabeled graphs: 110
-- incidents missing key transaction review: 7
+- candidate transaction hashes: 7
+- incidents missing key transaction review: 1
 - `training_ready`: false
 - dataset check status: ok
 
-Most positive incidents still need transaction hash review and replay against real trace data.
+Candidate transaction hashes still need replay against real trace data and analyst promotion before they can become confirmed training labels.
 
 ## Blocking Gaps
 
-- Key transaction hashes are missing for most incidents
+- Candidate transaction hashes require trace replay and some require secondary source review
 - Current local graphs are provider-only and cannot be used as confirmed negatives
 - Stratified negative samples require rich graph features by protocol, time period, and transaction complexity

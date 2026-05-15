@@ -1,12 +1,16 @@
 {
-  "checked_at": "2026-05-14T04:27:33.473+00:00",
-  "missing_key_transaction_incidents": [
+  "candidate_transaction_incidents": [
     "beanstalk_2022_04_17",
     "bzx_2020_02_18",
     "conic_finance_2023_07_21",
     "cream_finance_2021_10_27",
     "curve_vyper_2023_07_30",
-    "harvest_finance_2020_10_26",
+    "euler_finance_2023_03_13",
+    "harvest_finance_2020_10_26"
+  ],
+  "candidate_transactions": 7,
+  "checked_at": "2026-05-14T13:24:28.055+00:00",
+  "missing_key_transaction_incidents": [
     "mango_markets_2022_10_11"
   ],
   "outputs": [

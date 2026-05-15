@@ -274,6 +274,7 @@ Status: rule baseline fallback is complete. Provider-only graph replay produced 
   - [x] 攻击类型
   - [x] 受影响协议
   - [x] 攻击收益
+  - [x] 关键交易候选 backlog
   - [ ] 关键交易
 - [ ] 构建负样本：
   - [ ] 按协议分层抽样
@@ -284,7 +285,7 @@ Status: rule baseline fallback is complete. Provider-only graph replay produced 
 - [x] 固定验证集
 - [x] 固定回放集，确保不参与调参
 
-Status: seed label snapshot and deterministic split manifests are complete, with 8 public incident seeds and 110 provider-only graphs in the unlabeled pool. Dataset is explicitly `training_ready=false` because 7 incidents still need key transaction hash review and negative samples require rich trace graphs.
+Status: seed label snapshot and deterministic split manifests are complete, with 8 public incident seeds, 7 Ethereum candidate exploit transaction hashes, 50 normal candidate transaction hashes, and 110 provider-only graphs in the unlabeled pool. Label readiness is `trace_ready`, but the dataset remains explicitly `training_ready=false` because Mango is non-Ethereum/out of replay scope, all 57 candidate hashes require real trace replay, normal candidates require screening, and exploit/normal decisions require analyst promotion.
 
 ### P4-C GraphSAGE 离线训练
 

@@ -1,0 +1,1317 @@
+{
+  "candidate_label": 0,
+  "created_at": "2026-05-14T13:34:08.290+00:00",
+  "items": [
+    {
+      "block_number": "0x17ebd89",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x8a5221f95c8af2d249bc1a7f075b31336ee5032f",
+      "gas": "0x6cfbe",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0x571d3dc7"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "a6cfc55190945188fc51bddff6c8bda10d2182d3d2035f6e04ac3ed8fb6ab90b",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "contract_call",
+      "source_event_id": "9fb31dbe335ebc74d86417b0da47aed77ca9b11c2dca50781d56a55c02704379",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=02/9fb31dbe335ebc74d86417b0da47aed77ca9b11c2dca50781d56a55c02704379.json",
+      "to": "0xacddac6c77318b615f7f6fb9bb67c6833e9c05f1",
+      "tx_hash": "0xd9211c81adb2dd95030f06c2193e2dec9446eb2e258a98c7d386ab6d1c8298c7",
+      "value": "0x872a0ad9716"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x767890c2c0e1cbe275b26647e7d362ba5b48fe7c",
+      "gas": "0xcafc",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0x095ea7b3"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "237089507a3d3fc92d11fa58de34d1168ac84b83c284e6852cb67839e31bbc58",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_approve",
+      "source_event_id": "764329f6d8f351bc2b1755fcf564d17fdcf73e81887a18d25d96e1768cf98400",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/764329f6d8f351bc2b1755fcf564d17fdcf73e81887a18d25d96e1768cf98400.json",
+      "to": "0x259338656198ec7a76c729514d3cb45dfbf768a1",
+      "tx_hash": "0xb916099f8cbade06cc8c20b7d4dbb22c72c9c3569204eee2dc03175dd3fd2ee2",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ebd89",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x19af84a5a207c39cf794cf6eeb9aa9793c022042",
+      "gas": "0x186a0",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xa9059cbb"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "60d11cb105158783bac5cead3aa24c5174592ffc0ff5ce924fe4d5a711a02cd3",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_transfer",
+      "source_event_id": "614f4418e989ce8754e85b44d0ef965084a0d6f3329fff778daa6423af231985",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=02/614f4418e989ce8754e85b44d0ef965084a0d6f3329fff778daa6423af231985.json",
+      "to": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "tx_hash": "0x2121c6baaca546b4b4c9f715fb184ae7c075c9187ce1e6003169784f2c45058a",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ebd89",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xe15dcd34128d235cdd514368513eb42785a98625",
+      "gas": "0x52d0",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": null
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "eaae1a763c5198beb95606126c966236d04cee356a2f25f69929c74be8867ca0",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "simple_transfer",
+      "source_event_id": "1d1e222ea45950024d0552731ed516ade657bcf101380d503316a007e3f62947",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=02/1d1e222ea45950024d0552731ed516ade657bcf101380d503316a007e3f62947.json",
+      "to": "0xeea3cc82c5e925da49047405bbd7b2e6ee55a21a",
+      "tx_hash": "0x3004f7f2c6d4e57039335b52a53e4529541d4c787e9f72c9661a034b4d81d7e2",
+      "value": "0x3b9aca00"
+    },
+    {
+      "block_number": "0x17ec581",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x7ca6d3edbefebf9e0d61e783896e00669626c761",
+      "gas": "0x11250",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xa22cb465"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "32d4f27f85b734a2f358c2e50f76c4ee09f44ee00e3fb577c378b56ac865a730",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "contract_call",
+      "source_event_id": "028cd295beb3393584911b4ec93530fa899276354ee52d2e9c9f432929033b82",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/028cd295beb3393584911b4ec93530fa899276354ee52d2e9c9f432929033b82.json",
+      "to": "0xb3f85ef5a814793fd620b922393d71cced24a842",
+      "tx_hash": "0x980cada374d27d546ca09c09bb243fa72af59247337558193455c5af04ef952f",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xdd00615c7d70e999e979edc0d8ee59980e2ac4e1",
+      "gas": "0xab30",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0x095ea7b3"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "86feba7a790898684240f70d6285cae62435afdcc4fa85390600792fe9e0f739",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_approve",
+      "source_event_id": "91ffff22df322f10d99655cd00b537e32a148502bbbd6911519be6e39346a998",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/91ffff22df322f10d99655cd00b537e32a148502bbbd6911519be6e39346a998.json",
+      "to": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "tx_hash": "0x2668f88852bdafc95244bf06144a9f3aaf657424e812d87070163accb7fa5718",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xadff6cec1e2af4f05406d53f2e94f6e433b9369a",
+      "gas": "0xfde8",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xa9059cbb"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "e28f888f3830243c29b29b5c82e25513b7eacb10cae275619c75d617b1e4efe0",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_transfer",
+      "source_event_id": "0a96528aa2a4763bc20b7bdf37b33c1988ac49888572d14fe715d676cee8d18b",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/0a96528aa2a4763bc20b7bdf37b33c1988ac49888572d14fe715d676cee8d18b.json",
+      "to": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "tx_hash": "0xe6b670cc55d258f08bc6feac61bbf1a5dd7ee678bafd8a3557876cbcc95a192a",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x4aeb4c4eab243728dd25d909c98f79f108f5e0ec",
+      "gas": "0x5208",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": null
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "b2b413f839c153f4a204be81eb533b1e1f8c58c4db3965b839db1c3a98795f33",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "simple_transfer",
+      "source_event_id": "17fb0e8515152fe82f3ddc962778e1abd4fff4498d7b7223e75e78ca12f651ae",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/17fb0e8515152fe82f3ddc962778e1abd4fff4498d7b7223e75e78ca12f651ae.json",
+      "to": "0xcbd6832ebc203e49e2b771897067fce3c58575ac",
+      "tx_hash": "0x23c77e919e53989c596f5c3ce806adac16267a23a35c5cdb9b1b5117f28b4053",
+      "value": "0x56be73a96330f8"
+    },
+    {
+      "block_number": "0x17ec581",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xf376425b6944e1825b27f4518d52302303e829cb",
+      "gas": "0x927c0",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0x42e3dcf3"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "cddf1fdb30c7ec45518f8d01e54d6ef6a53a73f27fe0da2c86ed5bd14cc172d5",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "contract_call",
+      "source_event_id": "04d9f7efeadd41b03025eb1db0ff6b2a994642cc4cd78d030f4449d69ea9ce60",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/04d9f7efeadd41b03025eb1db0ff6b2a994642cc4cd78d030f4449d69ea9ce60.json",
+      "to": "0x278d858f05b94576c1e6f73285886876ff6ef8d2",
+      "tx_hash": "0x6c538dc4b66a6bed16ba71055b0ef3bcf9a094a3a7f12c9455354c798cf76d04",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec581",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xa1f06e5ab822c3022e6ca2c4e2ef2638e966716d",
+      "gas": "0xdae6",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0x095ea7b3"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "f5a16286651127b55f7e160719fe760328971158c3c4fbab7c150d4a6a40b587",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_approve",
+      "source_event_id": "a0d56cc0ac45f6a6408047679415b75ceff55a72b4343f16eb70bdea5ec4cca2",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/a0d56cc0ac45f6a6408047679415b75ceff55a72b4343f16eb70bdea5ec4cca2.json",
+      "to": "0x68bbed6a47194eff1cf514b50ea91895597fc91e",
+      "tx_hash": "0xd076d5aad131b6b7a5cdc68057d1bd809aaebac0e7d10a61ee12cbffd9715286",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x97c5e43c895437ee3087c67e0ecc0a8413b38858",
+      "gas": "0x13880",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xa9059cbb"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "a43c2887f52b06e23dca8ad3c39adabfe352cff049ae4c489186bc8f79dc2ba8",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_transfer",
+      "source_event_id": "0fc52e0a17efda57ec0b380df831bcb027a5ec95c9a6417a57d60ab017c2167a",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/0fc52e0a17efda57ec0b380df831bcb027a5ec95c9a6417a57d60ab017c2167a.json",
+      "to": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "tx_hash": "0xdf1624057675fef2d1396285434463d6d8483af5d7be501d9e64e86cdf6207c9",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xb71bbe3c5ade12e385425244383a94257e25612f",
+      "gas": "0x5208",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": null
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "863e1e9edcd619aa8fa6c758dc9452aad15809dc51559905071909121f1e1536",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "simple_transfer",
+      "source_event_id": "1887dadb880df746ba2accefc1e41bc1c833ece544518d52df703e2b53f20cb3",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/1887dadb880df746ba2accefc1e41bc1c833ece544518d52df703e2b53f20cb3.json",
+      "to": "0xc1dce65f052803ab93747625ab78fae774ef290f",
+      "tx_hash": "0x1549a8f77ff4030877ba09c12b838c6dec51133d0ed5c2c3a641c4d01c617ab4",
+      "value": "0x9f877e04c5ef47"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x4a98459c0c2cf86d3b4b8af90b57a40d7c08c273",
+      "gas": "0x1750a",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xb0d1bfe7"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "070e7096c60b34af5b7eee50299c263523db6cccb2b6e24533c8bad793fcf769",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "contract_call",
+      "source_event_id": "11349991ddd0886871662a454514b055317526af415151aede9f893c02987cd2",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/11349991ddd0886871662a454514b055317526af415151aede9f893c02987cd2.json",
+      "to": "0xd8822cdb7e83393fd5d57f604be2606545946aa0",
+      "tx_hash": "0x15a4b05559833153e9ccb1dc6510c5a8a236c5df2ad1f8f60584a6bd6945aea1",
+      "value": "0x8e1bc9bf04000"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x81cd0778c20e72bb5457bc8d043d9686c86f0b7d",
+      "gas": "0xf644",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xa9059cbb"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "5c1ac285a2c5fdc59f71ac0f7d3ee807eab607a4a12c8fae76dc27a7fa572699",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_transfer",
+      "source_event_id": "25e75f98793df97208f6ad3cb9d82717411d2f1c49f4076e52fe22550a3ad31f",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/25e75f98793df97208f6ad3cb9d82717411d2f1c49f4076e52fe22550a3ad31f.json",
+      "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "tx_hash": "0x970925628ceee12ce68992f0c3f35cff3a0abd74fd90f29bc9d8acda3c7ba040",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x8a8ec1f91d109b18a620a768ada086fb40eb887e",
+      "gas": "0x5208",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": null
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "a888f16f500f0391eeca438dd1446232d800445eaeb4fdc184f32a119ff403c6",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "simple_transfer",
+      "source_event_id": "1c68c033b601ad79c40ec54aa175ce9f0fa44e2b59ac9fc85acc00aa6dd56647",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/1c68c033b601ad79c40ec54aa175ce9f0fa44e2b59ac9fc85acc00aa6dd56647.json",
+      "to": "0x3e1f44ab2b036a5df2fa70a8f6510940ce4a66c1",
+      "tx_hash": "0x65c43ae33c3dfa70b38cdfdd804818fab396e5b9e8af51c2da3e3e1ab9ce858a",
+      "value": "0xefb6876868b0"
+    },
+    {
+      "block_number": "0x17ec581",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x2dc81d217ebb60290fd9f72ef1136e024a7b0b2d",
+      "gas": "0x927c0",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0x95435ac9"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "de40d3c92046b5b694ad7acd34eea42f624600d283ec1d997def5a2390c410e5",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "contract_call",
+      "source_event_id": "13f42588f51ceacde88be56ae082276784c7a15ed5582d748244cdaa6839ba25",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/13f42588f51ceacde88be56ae082276784c7a15ed5582d748244cdaa6839ba25.json",
+      "to": "0x278d858f05b94576c1e6f73285886876ff6ef8d2",
+      "tx_hash": "0xdd449ecee1bf5bc7a2bfefe1810b95213d30e628f7117d89293c089d6393325d",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xc17a40852e4bfe04bc81af355fdf132c539ba753",
+      "gas": "0x1e024",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xa9059cbb"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "0698115b8c838eed26657416ecaa40571bb136461d587ad371dea0b58d9301e5",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_transfer",
+      "source_event_id": "3030ed3b167a245c6ec2f8e5844cc0c9930183b87811560eacbf65b65a1b8e28",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/3030ed3b167a245c6ec2f8e5844cc0c9930183b87811560eacbf65b65a1b8e28.json",
+      "to": "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
+      "tx_hash": "0x30c3524b6d4dcc443e67e238a38be4564c166fa9014631f8b4777c52af5bbab3",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xa9ac43f5b5e38155a288d1a01d2cbc4478e14573",
+      "gas": "0x33450",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": null
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "e64ac280d389e5b030839ad6da23383bd4868bdc811b6ebdf08f7fd66d026875",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "simple_transfer",
+      "source_event_id": "207d7faa58bddb08507918d5d8b0c86cc69fb52b027aee1dad98524c85f2e86e",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/207d7faa58bddb08507918d5d8b0c86cc69fb52b027aee1dad98524c85f2e86e.json",
+      "to": "0xacdd0da707df61b7ddf244b292c1a8ec5ff00720",
+      "tx_hash": "0x871ae9d947bd7609cc160a7e7913aabfd9579984e9c54d0e4fa7c87c4f37c53f",
+      "value": "0xaa87bee538000"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xa10c46b93f8ea6c62776b699627a87b727d8c17f",
+      "gas": "0x12119",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0x9ddf93bb"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "af266449ad7a782363ac95530a3d784ed2de69995908e0fc9a0ddc4809cd8ed8",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "contract_call",
+      "source_event_id": "2041963e0f45cea33c3e9e1e1542a415cced974886a8b2d06e28c951669ccd63",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/2041963e0f45cea33c3e9e1e1542a415cced974886a8b2d06e28c951669ccd63.json",
+      "to": "0xb685760ebd368a891f27ae547391f4e2a289895b",
+      "tx_hash": "0xc6d08609cbee7029db102407aa1943aab8acabf68c176a2ce2c9968272d2e364",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xbe0562201362d5adea1b0c678406d70432d33d8d",
+      "gas": "0x13880",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xa9059cbb"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "7c0d0926bbc5b533592386b631de17725e20858190b013ed1d7c00574a96d50d",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_transfer",
+      "source_event_id": "3900eabbc8a8e5188a9c1007a037d4571040e9315ec0af486616dce45e441c2d",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/3900eabbc8a8e5188a9c1007a037d4571040e9315ec0af486616dce45e441c2d.json",
+      "to": "0xc944e90c64b2c07662a292be6244bdf05cda44a7",
+      "tx_hash": "0xd459c573d99e05d890098b4853f3ff1127981136b4f1ec9fef0f67b7eecbcc70",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xae45a8240147e6179ec7c9f92c5a18f9a97b3fca",
+      "gas": "0x5208",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": null
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "35f97bc22274d74326c102bab155f9a65819ca3a4655a5b07ac0b6f6b2ee0f15",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "simple_transfer",
+      "source_event_id": "2aa583ece505c10a612318140f197ac9842b8ec273abd41da5aad262b8f43d32",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/2aa583ece505c10a612318140f197ac9842b8ec273abd41da5aad262b8f43d32.json",
+      "to": "0x93a1f8f699ce0995025282912d58ed4d8396b51c",
+      "tx_hash": "0x4ae15a092a638c8d15bc2a30e52602d95aa81eab81c94cdeb96157b93d600534",
+      "value": "0x772b5db6300"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x241b584b32b48338727bdb79d881373c4a433747",
+      "gas": "0x61c7d",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xfa74fd43"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "954d773d8e682a247074b3b5199ec61fc33a9efbda54680e9e9b49fbd147e7a4",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "contract_call",
+      "source_event_id": "251325b7c5a2c805feedde2cd5cd1f3cb13e54ac90bb2bf792637dbfe07913cf",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/251325b7c5a2c805feedde2cd5cd1f3cb13e54ac90bb2bf792637dbfe07913cf.json",
+      "to": "0x337685fdab40d39bd02028545a4ffa7d287cc3e2",
+      "tx_hash": "0xccb643fa42789800816f9951e23ffc9bba80234224c305c3ee1e8942ebb7b204",
+      "value": "0x1c6bf52634000"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x5f45e35e1e45e01c7a77297de7688fc3fe43a750",
+      "gas": "0xc350",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xa9059cbb"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "d3be516b611d839a9a3d736203a01b77346ea422756adeea49380b8d45be8912",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_transfer",
+      "source_event_id": "3d9fc8faaa15a16613d1c9752f40da6a6b4af3f387ebfb7f4860938d5a16d6db",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/3d9fc8faaa15a16613d1c9752f40da6a6b4af3f387ebfb7f4860938d5a16d6db.json",
+      "to": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "tx_hash": "0x0397d5a413d5585d011814876ebd770bbf6cc9ad1dcc9f685a1a6236bed43cbf",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xae45a8240147e6179ec7c9f92c5a18f9a97b3fca",
+      "gas": "0x5208",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": null
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "9d3c41a1f66630d39b0ce85e95056af417061bf9b5e84b29739124414048e052",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "simple_transfer",
+      "source_event_id": "2ea7605f22cb1f495ec83b9e0c2def469377a83a2a6b825256cb5165dfda0100",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/2ea7605f22cb1f495ec83b9e0c2def469377a83a2a6b825256cb5165dfda0100.json",
+      "to": "0xfcdf956b3fd73b764140214bdb23bbecc37625c4",
+      "tx_hash": "0x9f13e14eea56fbb4f73c7d7b4bab5b924943b7ebf101943e4ab4a7c58d756fa7",
+      "value": "0xba2e5ba4f80"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xabc40b37e3d616f9ab80f1ec5683c49270396422",
+      "gas": "0x8652f",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xf9e4bab4"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "fe05307019f510bf49b5af4dc7b9a64b64aa712bf3f8d870b1a7c84fbb2f59a2",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "contract_call",
+      "source_event_id": "2b06e0515b529e4b6a5944b918394b694a9538ee6df1d91f3e9bf9f30376633b",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/2b06e0515b529e4b6a5944b918394b694a9538ee6df1d91f3e9bf9f30376633b.json",
+      "to": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be",
+      "tx_hash": "0x5c7c89c0b97cdadcd9caf7809c2ed983a23200b778634b200a0812fe1970673c",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x99337b8b138537222342e86e76005f5e7c427d9f",
+      "gas": "0x11170",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xa9059cbb"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "ab7ac1a36ed5004d86a102e73e1e34fe2cf3b8c9a0812305650c57a9f00ae7ca",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_transfer",
+      "source_event_id": "4139781f0368f72fbfd4e5b67be3ce13884322b481cd18507ae6c34da17e9437",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/4139781f0368f72fbfd4e5b67be3ce13884322b481cd18507ae6c34da17e9437.json",
+      "to": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "tx_hash": "0x488cc85ac60ace248b499aeaeca1700bab20087a9632c68b39748ebf92520d72",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xae45a8240147e6179ec7c9f92c5a18f9a97b3fca",
+      "gas": "0x5208",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": null
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "1402ab54536796a59b0c04cf72b90f0bf6f750297d413468e3269a1286e14c3a",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "simple_transfer",
+      "source_event_id": "2eed3948c134d8716474b2d3b7a28b99f617b8fb80b295a07812ca421fb52101",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/2eed3948c134d8716474b2d3b7a28b99f617b8fb80b295a07812ca421fb52101.json",
+      "to": "0x0514b193a02b910e24f2f074b95bc3edccc05e0a",
+      "tx_hash": "0xb16f961749f343ea83ea05638822defc8eda9a194c07feb9f18143ede15dea0f",
+      "value": "0x772b5db6300"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x19f494583c7c933be7b0ee58104ddafac1e8adfa",
+      "gas": "0xaae60",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0x7d32e7bd"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "d969836e0017520e51236e004e3660408f4a9edbf0f6f32b447298ec59ad9c9e",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "contract_call",
+      "source_event_id": "3867a28398531c16c00218a4bf39c36538a92a23aca882c4f3177d7536ed8a3a",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/3867a28398531c16c00218a4bf39c36538a92a23aca882c4f3177d7536ed8a3a.json",
+      "to": "0xdab785f7719108390a26ff8d167e40ae4789f8d7",
+      "tx_hash": "0xd141eafe2ddee968efdbb6763672b23b71d2085f7cd46accc444c0e36e2e22f9",
+      "value": "0x60fd34925e4000"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x3ce2e18eaaccf404d2f083ea7d9a5b6f983b96e7",
+      "gas": "0x493e0",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xa9059cbb"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "ddb2c9df6d9215b714878a750945194a45b1bd76a04c5d727411225d6ae39317",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_transfer",
+      "source_event_id": "413f5b86cec11cebc274e486b6d70164189d44a20b0cfc30327246577b004492",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/413f5b86cec11cebc274e486b6d70164189d44a20b0cfc30327246577b004492.json",
+      "to": "0x30d20208d987713f46dfd34ef128bb16c404d10f",
+      "tx_hash": "0xbc708ce15e2b957651fbcae480d4049907ea18e8ff5c4955fc06211863f6a5bf",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec581",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x911a978f0cac392079b51db03e6f3027dfe6f96e",
+      "gas": "0x5208",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": null
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "793230f92e8c80b577d7691072a62426528dc7f27917bb75536655cbbb238f4b",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "simple_transfer",
+      "source_event_id": "3724b2f2f2ef12a3051a7d48b566c70dbf751041b355cd63cd0cd2cea70ca5b1",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/3724b2f2f2ef12a3051a7d48b566c70dbf751041b355cd63cd0cd2cea70ca5b1.json",
+      "to": "0xc9aa3a499f81f99df51c01f9e49cb5aa476f7edc",
+      "tx_hash": "0xf6529a11c0ea87df71a7bc7e4bd7435d873e029117bdf1a033ae9b72e8324a34",
+      "value": "0x38ce22111d7d8"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x19f494583c7c933be7b0ee58104ddafac1e8adfa",
+      "gas": "0xaae60",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0x7d32e7bd"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "f8215f6cc62229c4f384550ac474736349f44be929077a7e056fc250f52d3b57",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "contract_call",
+      "source_event_id": "495e5f3c2236a5585132bdf047945f81918ba4464ad707707aee1a53c9aa89d6",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/495e5f3c2236a5585132bdf047945f81918ba4464ad707707aee1a53c9aa89d6.json",
+      "to": "0xdab785f7719108390a26ff8d167e40ae4789f8d7",
+      "tx_hash": "0x98505a81598aa7b9fca65e8b6ede7af333fa5c413b056a29cb943afc8ac111a6",
+      "value": "0x10a741a46278000"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xcc84ff0d7cdcacc6f0eec5a322500a4a96606fe2",
+      "gas": "0x19752",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xa9059cbb"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "4c75d363f84be517a9bd92fc52486b8a5eb01895809857ca629c6f2f9ade3815",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_transfer",
+      "source_event_id": "4d29cde76bc1c2813d0e7f23bf0040f4a1680cb792eb4c19a9c883d4b10cef3b",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/4d29cde76bc1c2813d0e7f23bf0040f4a1680cb792eb4c19a9c883d4b10cef3b.json",
+      "to": "0xbf2c788931b3f4cc196aee8ac863680e54644089",
+      "tx_hash": "0x7b7043167479b80052a5d7deb35011ebf7d1367398d322646bd5de57c8fc23f6",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x6cdb7776f6a20b9ed4441b791e9541a6fc04e313",
+      "gas": "0x5208",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": null
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "c73ad730ad321b7550e0e41d840c6bbc5ef1fb5c30a2717c566da5869c1ec85b",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "simple_transfer",
+      "source_event_id": "44106662ab76f54bcc2c6d4ff50956c1fe8c00466676b2147905cc7f006b81d7",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/44106662ab76f54bcc2c6d4ff50956c1fe8c00466676b2147905cc7f006b81d7.json",
+      "to": "0xfcebb4c6e860a3520e1d10f12e40dbb8d0ac7c2c",
+      "tx_hash": "0x866d37d962506d5dccf72fc7f4d6699ef2b255f24287d209cebf66e74ea6eaf0",
+      "value": "0x191754d2e6d0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x1be4538f187761547d87ffbd80c680e6a838107a",
+      "gas": "0x19de12",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0x9f58dd7a"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "29d606fb51df9d1a8cb93d124e1543eacb1fc583f573d41ffa5fe27a3a14d2cf",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "contract_call",
+      "source_event_id": "56d25e7e43208554bf035561eb0ccf18e64cf7511f43c304277c598b650384e2",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/56d25e7e43208554bf035561eb0ccf18e64cf7511f43c304277c598b650384e2.json",
+      "to": "0xbf7fe109f674ab1341d69e67a262e50ce87eb7c1",
+      "tx_hash": "0x5f9e4b19641f9fdbab171525b9368f98e87c0d7723d88707eabcbdfa528f8a1e",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+      "gas": "0xf4240",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xa9059cbb"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "c9cf64ca885daea3f81ddbb6f714b9078c5533fab28acd56a9d76acb6a1c9acc",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_transfer",
+      "source_event_id": "4ed1fbab257d9d2ad14cb8408e7eece2634a2e476e98d11f5b14958883ec9277",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/4ed1fbab257d9d2ad14cb8408e7eece2634a2e476e98d11f5b14958883ec9277.json",
+      "to": "0xfa1c09fc8b491b6a4d3ff53a10cad29381b3f949",
+      "tx_hash": "0x666b2e40c2db67a0fbed9c48c3dc02f4ea162b78e67071a63b65fd1ebfe8d4fd",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x4c0a510fe65688835aedb1badca2ba1677ef1a90",
+      "gas": "0x5208",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": null
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "186f704e483f59fd8037caf6d497f4e1b575c992d45a99e5ceba487677536e63",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "simple_transfer",
+      "source_event_id": "4edd9e610d51a2b01eeaf42497b3b99fc1dc8eff8cbd982897f12a2ec0ca48e1",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/4edd9e610d51a2b01eeaf42497b3b99fc1dc8eff8cbd982897f12a2ec0ca48e1.json",
+      "to": "0x3e1f44ab2b036a5df2fa70a8f6510940ce4a66c1",
+      "tx_hash": "0xc170c2439260d5885b28737abb1bf82cef55f11ecfaf88a7022bfd806f58748f",
+      "value": "0x2083923c49eb8"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x7830c87c02e56aff27fa8ab1241711331fa86f43",
+      "gas": "0x1e8480",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xca350aa6"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "142f75725280256cfee92566e42b02fa79228fd017854682f9b580bdcbd6491f",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "contract_call",
+      "source_event_id": "6008e00164e9584d0db5a96995412dcd5b7e79b830a344c4b867af3bb0ed684e",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/6008e00164e9584d0db5a96995412dcd5b7e79b830a344c4b867af3bb0ed684e.json",
+      "to": "0xa9d1e08c7793af67e9d92fe308d5697fb81d3e43",
+      "tx_hash": "0xf951d59cab68466fea04e29c3540f5d3f4f75d2c76b5d893c3ccccdad948442b",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xf89d7b9c864f589bbf53a82105107622b35eaa40",
+      "gas": "0x15f90",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xa9059cbb"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "742fda403c6ac396933dba10bd3de0b3cf475fd09904be57d00813e147227701",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_transfer",
+      "source_event_id": "568477a157c46758f45bd0c816e11a67c9a2d4759b9eeb4198499cfed7181b87",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/568477a157c46758f45bd0c816e11a67c9a2d4759b9eeb4198499cfed7181b87.json",
+      "to": "0x10dea67478c5f8c5e2d90e5e9b26dbe60c54d800",
+      "tx_hash": "0xc9f006fd96d8d2dff5e3855673c7652f9f252527dff421b730d10a198e522ac6",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xa1229fd2c648af12292e0da23690bff15fdf534a",
+      "gas": "0x7530",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": null
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "dd454bca7835a1174b50113ea34e3e61601272ed55f3877e94073b35d030c8c9",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "simple_transfer",
+      "source_event_id": "52ab497223c78273e19963b558261583376d3a69d667f6cf9d2b54748e3b7a06",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/52ab497223c78273e19963b558261583376d3a69d667f6cf9d2b54748e3b7a06.json",
+      "to": "0xa03400e098f4421b34a3a44a1b4e571419517687",
+      "tx_hash": "0xd876340718eddc916301c2df59be599d49bba66c269266b011a901f36d704a7d",
+      "value": "0x294f16496f9648"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x7830c87c02e56aff27fa8ab1241711331fa86f43",
+      "gas": "0x1e8480",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0x1a1da075"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "f7cc0fd6d3d972f22df6823dd848d2a2023dbee210eafcae5f6cb4fb61970955",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "contract_call",
+      "source_event_id": "69757f7fc96fc845e246529c12145fa1015bcc91bb353ae9456dd2f097a0ffaf",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/69757f7fc96fc845e246529c12145fa1015bcc91bb353ae9456dd2f097a0ffaf.json",
+      "to": "0xa9d1e08c7793af67e9d92fe308d5697fb81d3e43",
+      "tx_hash": "0x7e0558f0780d9138b7781aaea55b7521f43ca0a3d5fccbdcc64f899382ff9ecf",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x084d179db0d0572138d0baf3aef888056c37ff4b",
+      "gas": "0x171ab",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xa9059cbb"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "1f850f7478e6b403c008e0cb76aaf4b3664e74f320bd0d9a7b98a1ba6ac52fb6",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_transfer",
+      "source_event_id": "5e8666a3a5bfa7c93375ab1cfed6358a5c2c7d386507a30fec15dc20dd1e1280",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/5e8666a3a5bfa7c93375ab1cfed6358a5c2c7d386507a30fec15dc20dd1e1280.json",
+      "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "tx_hash": "0xd6b33e8bce363754295225edd16bf8eaf6c31839f0519a31569a70157fddc4e7",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec581",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x31fc2cb761083a77cf218461e2072bcea0ca35ef",
+      "gas": "0x186a0",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": null
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "4099bebb3c27c755f21648a719d9e52a45cac9a5396dcdbaaee3079241eeea9b",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "simple_transfer",
+      "source_event_id": "6d068c352bf263194dc46b77fbda2cbdb5f6a89d0991df80750e29dc9b8adde6",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/6d068c352bf263194dc46b77fbda2cbdb5f6a89d0991df80750e29dc9b8adde6.json",
+      "to": "0xd38c9db1781c7e9baf18328f8791291574987dd0",
+      "tx_hash": "0x98dbcea3442c9f33a17ee49dbb482b7a946162a0fe8af27b85e209b16eb72154",
+      "value": "0x97341831a40000"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xa5a5491bca93dd4c076e4906e79e7673f4a5a142",
+      "gas": "0x6270",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xaa630dd9"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "18b04f036f7b62774b04236739a47398d29e77165436d92017a3baa5149cda77",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "contract_call",
+      "source_event_id": "6da2f4282bf37ef8b99809c9372789767a3d5a52cefacae96c33b9c49de16a59",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/6da2f4282bf37ef8b99809c9372789767a3d5a52cefacae96c33b9c49de16a59.json",
+      "to": "0x7f921fab847b06da6a0357e0e662a8ade212dbb7",
+      "tx_hash": "0x328fca7ecda8f170da8d0553ea4606c6931e7036e248b8af5f9840de2527abd0",
+      "value": "0xf6f88b95bb9d7"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xf1088841ab08fc1cb3835fd75207bcb3137f6ee3",
+      "gas": "0x493e0",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xa9059cbb"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "477f307964d7a0a54b217fef66cec71056ef956b590b7af2435f91235da77064",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_transfer",
+      "source_event_id": "6065e77d9510275a54f52c3ffe828acac0309fff6be90d2aa51daf7bf8932148",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/6065e77d9510275a54f52c3ffe828acac0309fff6be90d2aa51daf7bf8932148.json",
+      "to": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "tx_hash": "0xe9ee021df4c86d7ec7c68d9ba3f526edf6d8506df37151fb19142c95a1a4a833",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x8d18d00074dd99de3e3f22210b705b9b0a19835a",
+      "gas": "0x5324",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": null
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "9ec20cfc4209055d1cc8be369a343dafc660ece199408b80b6dd3ecc6289a9fa",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "simple_transfer",
+      "source_event_id": "71949ef2b27871364afc9e9b0756fac8b985ec75e707f7f7b35f286bf2b7b300",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/71949ef2b27871364afc9e9b0756fac8b985ec75e707f7f7b35f286bf2b7b300.json",
+      "to": "0x38dbd6fb655f0eba61ef8842cbfa5911d249d881",
+      "tx_hash": "0xe142c6e24e43365d166e8f3c3255e5c501d31dceca6e173657a0951d77b0c669",
+      "value": "0x237a546f129eb8"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x991cec65a906b5727b32d175cfc550673a20ed17",
+      "gas": "0x52fdf",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xb6b55f25"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "0b0d767fb05119b2bb0e5a0c7206259cfc4bb8cb28f61ef8715866a6f3542c03",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "contract_call",
+      "source_event_id": "896f82a53a64c91a4ecc5271ad1a1d82c0b103db2e99b987244cedf75f5f0fda",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/896f82a53a64c91a4ecc5271ad1a1d82c0b103db2e99b987244cedf75f5f0fda.json",
+      "to": "0x10eefccc9c97a461484015467f2ee9f9f9c94b8e",
+      "tx_hash": "0x3a17a7996b219a685f0332bd806784a3b5be47a2c0cc51c811b2b6816f5dff4e",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xaaff78b00a9c452d498c2ace5de1eda5cc3c678a",
+      "gas": "0xfde8",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xa9059cbb"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "3583b91251925a10a597e398f99dd2c7a1307d3e9bfdca5cc647c6039be32f9c",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_transfer",
+      "source_event_id": "6396fd600b414ab711143358a5bd7f8671bbb3ca827114249a0217202bf9f94a",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/6396fd600b414ab711143358a5bd7f8671bbb3ca827114249a0217202bf9f94a.json",
+      "to": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "tx_hash": "0x7e7732acc762bec2092801fb651f2a495f7057cfedca85429b194ed1dc54c187",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec581",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0xfd4be211bd83ddedbdb9d21f4a04b15531221e08",
+      "gas": "0x5324",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": null
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "94c5c603a18a613e2133e45f8994d51106bf3f8d347a221f00cfe85cdbca1f4f",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "simple_transfer",
+      "source_event_id": "82ebd5eb589685b3686fa0074d77ffeaafe63510d41f6c0a71410c16adacbb73",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/82ebd5eb589685b3686fa0074d77ffeaafe63510d41f6c0a71410c16adacbb73.json",
+      "to": "0x307576dd4f73f91bb8c4a2edb762938e8e067d31",
+      "tx_hash": "0xd39630273909e3a5f416029587cf2f9a7bafda5394d9e00fc7d3b61079bb9f8c",
+      "value": "0x238294eda75300"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x13cee6cd97f74a9c6afa8ea5419519708205baba",
+      "gas": "0x21e76",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xe9ae5c53"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "8a67e94dbb100b9a031922fedc0997ab237eb96e86a19742e55be31404aa2fa5",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "contract_call",
+      "source_event_id": "8aa27e83d2f7540813f15066454787b8d86e73e02258969ad1e24b5f51c3fc96",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/8aa27e83d2f7540813f15066454787b8d86e73e02258969ad1e24b5f51c3fc96.json",
+      "to": "0x45b45576d403a4326671ac3dd8b20eef30814a1b",
+      "tx_hash": "0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3",
+      "value": "0x0"
+    },
+    {
+      "block_number": "0x17ec580",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "from": "0x11c4fbe93c221fd6d3be84e279cf795a4b354212",
+      "gas": "0x17740",
+      "incident_id": "normal_candidate",
+      "metadata": {
+        "selector": "0xa9059cbb"
+      },
+      "preferred_rpc_methods": [
+        "debug_traceTransaction",
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "6d97c38224b8a4d79e09d8968a18502a59c47c421a0ec7b3d5d73932e0731c64",
+      "review_status": "needs_trace_replay_and_screening",
+      "selection_bucket": "erc20_transfer",
+      "source_event_id": "6a7e30884fc0cad383700050265f458f2034dd6813a913a63cd69a62d825472d",
+      "source_replay_path": "data/replay/pending-tx.v1/dt=2026-05-13/hour=09/6a7e30884fc0cad383700050265f458f2034dd6813a913a63cd69a62d825472d.json",
+      "to": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "tx_hash": "0x8fde79c3357e5a6b17388183e5f8f372c7951be7e5726194f1fd36ed9fe497fa",
+      "value": "0x0"
+    }
+  ],
+  "review_status": "needs_trace_replay_and_screening",
+  "schema_ver": "normal-replay-candidates.v1",
+  "selection_rules": [
+    "ethereum mainnet only",
+    "transaction was mined at capture time",
+    "exclude known positive exploit candidate hashes",
+    "dedupe by tx_hash",
+    "sample across simple transfers, ERC20 transfers, approvals, whitelisted protocol calls, and other contract calls",
+    "promote only after trace replay and analyst screening"
+  ],
+  "target_count": 50
+}

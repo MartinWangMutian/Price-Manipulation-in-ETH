@@ -1,0 +1,46 @@
+{
+  "checked_at": "2026-05-14T13:57:58.044+00:00",
+  "checks": [
+    {
+      "name": "trace_endpoint_preflight",
+      "ok": false,
+      "selected_method": null,
+      "status": "missing_endpoint"
+    },
+    {
+      "dry_run": true,
+      "expected_count": 7,
+      "failed_trace_bundles": 0,
+      "method": "auto",
+      "name": "exploit_historical_trace_replay",
+      "ok": false,
+      "ok_trace_bundles": 0,
+      "queue_items_seen": 7,
+      "replay_paths_missing": [],
+      "state": "dry_run_only",
+      "status": "dry_run_ok",
+      "written_trace_bundles": 0
+    },
+    {
+      "dry_run": true,
+      "expected_count": 50,
+      "failed_trace_bundles": 0,
+      "method": "auto",
+      "name": "normal_historical_trace_replay",
+      "ok": false,
+      "ok_trace_bundles": 0,
+      "queue_items_seen": 50,
+      "replay_paths_missing": [],
+      "state": "dry_run_only",
+      "status": "dry_run_ok",
+      "written_trace_bundles": 0
+    }
+  ],
+  "expected_total": 57,
+  "failed_total": 0,
+  "next_action": "run trace_endpoint_preflight then full historical replay with ETH_MAIN_HTTP_URL",
+  "ok_total": 0,
+  "status": "awaiting_real_replay",
+  "trace_results_ready": false,
+  "written_total": 0
+}

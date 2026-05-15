@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-05-14T14:18:33.594+00:00",
+  "inputs": {
+    "env_local_status": "provider_configured_main_missing",
+    "phase_b_completion_status": "blocked_user_input",
+    "provider_probe_status": "missing",
+    "required_inputs_status": "missing_inputs",
+    "trace_preflight_status": "missing_endpoint",
+    "trace_results_status": "awaiting_real_replay"
+  },
+  "selected_action": {
+    "action_id": "run_provider_trace_probe",
+    "commands": [
+      "python3 scripts/provider_trace_capability_probe.py --env-file .env.local --queue data/training/trace_replay_queue.v1.json --method auto --out ops/reports/provider-trace-capability-probe.latest.json",
+      "python3 scripts/report_secret_audit.py --input ops/reports --out ops/reports/report-secret-audit.latest.json"
+    ],
+    "owner": "user",
+    "reason": "Provider HTTP URL is configured and dry-run is ready, but real provider trace probe has not run."
+  },
+  "status": "ok"
+}

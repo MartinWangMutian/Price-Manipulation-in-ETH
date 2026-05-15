@@ -1,0 +1,53 @@
+{
+  "checked_at": "2026-05-14T14:07:30.877+00:00",
+  "checks": [
+    {
+      "error": null,
+      "host": "eth-mainnet.g.alchemy.com",
+      "name": "ETH_PROVIDER_HTTP_URL",
+      "ok": true,
+      "path_redacted": true,
+      "present": true,
+      "role": "provider_http",
+      "scheme": "https"
+    },
+    {
+      "error": null,
+      "host": "eth-mainnet.g.alchemy.com",
+      "name": "ETH_PROVIDER_WS_URL",
+      "ok": true,
+      "path_redacted": true,
+      "present": true,
+      "role": "provider_ws",
+      "scheme": "wss"
+    },
+    {
+      "error": "missing",
+      "host": null,
+      "name": "ETH_MAIN_HTTP_URL",
+      "ok": false,
+      "present": false,
+      "role": "main_trace_http",
+      "scheme": null
+    },
+    {
+      "error": "missing",
+      "host": null,
+      "name": "ETH_MAIN_WS_URL",
+      "ok": false,
+      "present": false,
+      "role": "main_ws",
+      "scheme": null
+    }
+  ],
+  "env_file": ".env.local",
+  "main_trace_ready": false,
+  "next_actions": [
+    "run provider trace capability probe against ETH_PROVIDER_HTTP_URL",
+    "set ETH_MAIN_HTTP_URL to a trace-capable endpoint if provider probe fails"
+  ],
+  "parse_errors": [],
+  "provider_ready": true,
+  "secrets_redacted": true,
+  "status": "provider_configured_main_missing"
+}

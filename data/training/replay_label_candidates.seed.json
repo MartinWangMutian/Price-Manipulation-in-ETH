@@ -1,0 +1,172 @@
+{
+  "schema_ver": "replay-label-candidates.v1",
+  "snapshot_id": "label-snapshot.seed-2026-05-14",
+  "created_at": "2026-05-14T00:00:00.000+00:00",
+  "positive_candidates": [
+    {
+      "incident_id": "euler_finance_2023_03_13",
+      "chain": "ethereum",
+      "candidate_transactions": [
+        {
+          "tx_hash": "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d",
+          "candidate_role": "attack_tx",
+          "confidence": "high",
+          "review_status": "needs_trace_replay",
+          "source_refs": [
+            {
+              "title": "Euler Finance donateToReserves Flash Loan Exploit",
+              "url": "https://nomoslabs.io/archive/euler-finance-2023",
+              "source_type": "incident_database"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "beanstalk_2022_04_17",
+      "chain": "ethereum",
+      "candidate_transactions": [
+        {
+          "tx_hash": "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7",
+          "candidate_role": "attack_tx",
+          "confidence": "medium",
+          "review_status": "needs_secondary_source_review",
+          "source_refs": [
+            {
+              "title": "Beanstalk Flashloan Exploiter Etherscan transaction",
+              "url": "https://etherscan.io/tx/0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7",
+              "source_type": "block_explorer"
+            },
+            {
+              "title": "Revisiting Beanstalk Farms Exploit",
+              "url": "https://www.certik.com/blog/revisiting-beanstalk-farms-exploit",
+              "source_type": "security_report"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "cream_finance_2021_10_27",
+      "chain": "ethereum",
+      "candidate_transactions": [
+        {
+          "tx_hash": "0x0fe2542079644e107cbf13690eb9c2c65963ccb79089ff96bfaf8dced2331c92",
+          "candidate_role": "attacker_flow_tx",
+          "confidence": "medium",
+          "review_status": "needs_secondary_source_review",
+          "source_refs": [
+            {
+              "title": "Cream Finance Flash Loan Exploiter Etherscan address",
+              "url": "https://etherscan.io/address/0x24354d31bc9d90f62fe5f2454709c32049cf866b",
+              "source_type": "block_explorer"
+            },
+            {
+              "title": "Cream Finance Hack: $130 Million Stolen in Exploit",
+              "url": "https://dn.institute/research/cyberattacks/incidents/2021-10-27-cream-finance/",
+              "source_type": "incident_database"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "harvest_finance_2020_10_26",
+      "chain": "ethereum",
+      "candidate_transactions": [
+        {
+          "tx_hash": "0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58",
+          "candidate_role": "attacker_profit_transfer_tx",
+          "confidence": "medium",
+          "review_status": "needs_attack_entry_tx_review",
+          "source_refs": [
+            {
+              "title": "Harvest Finance Hack",
+              "url": "https://cosimo.gitbook.io/ethereum-security/smart-contract-weaknesses/price-oracle-manipulation/harvest-finance-hack",
+              "source_type": "security_writeup"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "curve_vyper_2023_07_30",
+      "chain": "ethereum",
+      "candidate_transactions": [
+        {
+          "tx_hash": "0x4197ed0ef9b60ab1cacdc31d6d3ce06413b333b14b8947be5c0cfe29cb88b088",
+          "candidate_role": "attack_tx",
+          "confidence": "medium",
+          "review_status": "needs_pool_scope_review",
+          "source_refs": [
+            {
+              "title": "Curve Exploit Post Mortem",
+              "url": "https://alchemixfi.medium.com/curve-exploit-post-mortem-7142e78bc339",
+              "source_type": "postmortem"
+            },
+            {
+              "title": "Vyper Incident Analysis",
+              "url": "https://www.certik.com/blog/vyper-incident-anaylsis",
+              "source_type": "security_report"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "conic_finance_2023_07_21",
+      "chain": "ethereum",
+      "candidate_transactions": [
+        {
+          "tx_hash": "0x8b74995d1d61d3d7547575649136b8765acb22882960f0636941c44ec7bbe146",
+          "candidate_role": "attack_tx",
+          "confidence": "high",
+          "review_status": "needs_trace_replay",
+          "source_refs": [
+            {
+              "title": "Conic Finance Incident Analysis",
+              "url": "https://www.certik.com/resources/blog/conic-finance-incident-analysis",
+              "source_type": "security_report"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "incident_id": "bzx_2020_02_18",
+      "chain": "ethereum",
+      "candidate_transactions": [
+        {
+          "tx_hash": "0x762881b07feb63c436dee38edd4ff1f7a74c33091e534af56c9f7d49b5ecac15",
+          "candidate_role": "attack_tx",
+          "confidence": "high",
+          "review_status": "needs_trace_replay",
+          "source_refs": [
+            {
+              "title": "SlowMist: Details of the twice hacking aimed at bZx",
+              "url": "https://slowmist.medium.com/introduction-ca09c9b32b1b",
+              "source_type": "security_report"
+            },
+            {
+              "title": "Slow Mist: Detailed explanation of the whole process of DeFi protocol bZx being hacked twice",
+              "url": "https://www.odaily.news/en/post/5146388",
+              "source_type": "security_report"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "normal_complex_strategy": {
+    "review_status": "needs_sampling_after_trace_endpoint",
+    "required_count": 50,
+    "selection_rules": [
+      "ethereum mainnet only",
+      "successful transaction with rich internal call tree",
+      "contains at least one ERC20 Transfer event",
+      "touches at least one whitelisted protocol address or role",
+      "exclude transactions linked to known incidents, sanctions, or exploit labels",
+      "stratify across swaps, lending deposits, lending borrows, repayments, liquidations, and liquidity adds/removes"
+    ]
+  }
+}

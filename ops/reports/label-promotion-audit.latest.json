@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-05-14T13:37:41.104+00:00",
+  "decision_counts": {
+    "pending_trace": 57
+  },
+  "errors": [],
+  "exploit_decisions": 7,
+  "normal_decisions": 50,
+  "promoted_markers": 0,
+  "promotion_counts": {
+    "not_promoted": 57
+  },
+  "status": "ok",
+  "training_ready": false
+}

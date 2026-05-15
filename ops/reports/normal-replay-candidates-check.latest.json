@@ -1,0 +1,15 @@
+{
+  "bucket_counts": {
+    "contract_call": 16,
+    "erc20_approve": 3,
+    "erc20_transfer": 16,
+    "simple_transfer": 15
+  },
+  "candidate_count": 50,
+  "checked_at": "2026-05-14T13:34:08.269+00:00",
+  "errors": [],
+  "promotion_required": true,
+  "queue_count": 50,
+  "status": "ok",
+  "training_ready": false
+}

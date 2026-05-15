@@ -51,7 +51,23 @@ def render_summary(root: Path) -> str:
     go_no_go = read_json_or_none(root / "ops/reports/go-no-go-audit.latest.json")
     validation = read_json_or_none(root / "ops/reports/validation-metrics-audit.latest.json")
     required = read_json_or_none(root / "ops/reports/required-inputs-check.latest.json")
+    env_local = read_json_or_none(root / "ops/reports/env-local-audit.latest.json")
+    provider_probe = read_json_or_none(root / "ops/reports/provider-trace-capability-probe.latest.json")
+    provider_probe_plan = read_json_or_none(root / "ops/reports/provider-trace-capability-probe.plan.json")
+    secret_audit = read_json_or_none(root / "ops/reports/report-secret-audit.latest.json")
     manifest = read_json_or_none(root / "ops/reports/artifact-manifest.latest.json")
+    phase_b = read_json_or_none(root / "ops/reports/phase-b-completion-audit.latest.json")
+    next_action = read_json_or_none(root / "ops/reports/phase-b-next-action.latest.json")
+    replay_candidates = read_json_or_none(root / "ops/reports/replay-label-candidates-check.latest.json")
+    trace_queue = read_json_or_none(root / "ops/reports/trace-replay-queue-builder.latest.json")
+    trace_preflight = read_json_or_none(root / "ops/reports/trace-endpoint-preflight.latest.json")
+    historical_trace = read_json_or_none(root / "ops/reports/historical-trace-replay.latest.json")
+    normal_candidates = read_json_or_none(root / "ops/reports/normal-replay-candidates-check.latest.json")
+    normal_trace = read_json_or_none(root / "ops/reports/normal-historical-trace-replay.latest.json")
+    trace_results = read_json_or_none(root / "ops/reports/historical-trace-results-audit.latest.json")
+    label_readiness = read_json_or_none(root / "ops/reports/label-readiness-audit.latest.json")
+    label_promotion = read_json_or_none(root / "ops/reports/label-promotion-audit.latest.json")
+    training_check = read_json_or_none(root / "ops/reports/training-dataset-check.latest.json")
 
     report_statuses = project.get("report_statuses", {}) if project else {}
     blockers = project.get("blockers", []) if project else []
@@ -62,12 +78,20 @@ def render_summary(root: Path) -> str:
         "",
         f"Generated: {now_iso()}",
         "",
+        "Handoff: ops/phase_b_handoff.md",
+        "User action packet: ops/phase_b_user_action_packet.md",
+        "",
         "## Current Readiness",
         "",
         f"- Provider-only shadow pipeline: {project.get('provider_only_shadow_pipeline', 'missing') if project else 'missing'}",
         f"- Production go/no-go: {status_value(go_no_go)}",
         f"- Validation metrics: {status_value(validation)}",
         f"- Required inputs: {status_value(required)}",
+        f"- Env local: {status_value(env_local)}",
+        f"- Provider trace probe: {status_value(provider_probe) if provider_probe else 'not_run'}",
+        f"- Report secret audit: {status_value(secret_audit)}",
+        f"- Phase B completion: {project.get('phase_b_completion', status_value(phase_b)) if project else status_value(phase_b)}",
+        f"- Phase B next action: {next_action.get('selected_action', {}).get('action_id', 'missing') if next_action else 'missing'}",
         f"- Gray launch readiness: {project.get('gray_launch_readiness', 'missing') if project else 'missing'}",
         "",
         "## Passing Local Replay Surface",
@@ -104,12 +128,130 @@ def render_summary(root: Path) -> str:
         for failure in validation_failures:
             lines.append(f"- {failure}")
 
+    if phase_b:
+        lines.extend(["", "## Phase B Completion Audit", ""])
+        lines.append(f"- Complete: {phase_b.get('phase_b_complete')}")
+        missing_checks = phase_b.get("missing_checks", [])
+        if missing_checks:
+            lines.append(f"- Missing checks: {', '.join(missing_checks)}")
+        user_blockers = phase_b.get("user_blockers", [])
+        if user_blockers:
+            lines.append(f"- User blockers: {', '.join(user_blockers)}")
+        project_blockers = phase_b.get("project_blockers", [])
+        if project_blockers:
+            lines.append(f"- Project blockers: {', '.join(project_blockers)}")
+
+    if env_local:
+        lines.extend(["", "## Env Local Audit", ""])
+        lines.append(f"- Provider ready: {env_local.get('provider_ready')}")
+        lines.append(f"- Main trace ready: {env_local.get('main_trace_ready')}")
+        invalid = [
+            check.get("name", "unknown")
+            for check in env_local.get("checks", [])
+            if check.get("present") and not check.get("ok")
+        ]
+        if invalid:
+            lines.append(f"- Invalid URL checks: {', '.join(invalid)}")
+
+    if provider_probe or provider_probe_plan:
+        lines.extend(["", "## Provider Trace Probe", ""])
+        if provider_probe:
+            lines.append(f"- Latest status: {provider_probe.get('status', 'unknown')}")
+            selected_method = provider_probe.get("selected_method")
+            if selected_method:
+                lines.append(f"- Selected method: {selected_method}")
+        if provider_probe_plan:
+            lines.append(f"- Dry-run plan: {provider_probe_plan.get('status', 'unknown')}")
+            provider_check = provider_probe_plan.get("provider_http_check", {})
+            host = provider_check.get("host")
+            if host:
+                lines.append(f"- Provider host: {host}")
+
+    if secret_audit:
+        lines.extend(["", "## Report Secret Audit", ""])
+        lines.append(f"- Scanned files: {secret_audit.get('scanned_files', 0)}")
+        lines.append(f"- Findings: {len(secret_audit.get('findings', []))}")
+
+    if next_action:
+        selected = next_action.get("selected_action", {})
+        lines.extend(["", "## Phase B Next Action", ""])
+        lines.append(f"- Action: {selected.get('action_id', 'unknown')}")
+        lines.append(f"- Owner: {selected.get('owner', 'unknown')}")
+        reason = selected.get("reason")
+        if reason:
+            lines.append(f"- Reason: {reason}")
+
+    if replay_candidates or training_check:
+        lines.extend(["", "## Training Label Backlog", ""])
+        if replay_candidates:
+            missing = replay_candidates.get("missing_ethereum_candidate_incidents", [])
+            lines.append(f"- Candidate transaction incidents: {replay_candidates.get('positive_candidate_incidents', 0)}")
+            lines.append(f"- Candidate transactions: {replay_candidates.get('candidate_transactions', 0)}")
+            lines.append(f"- Missing Ethereum candidate incidents: {', '.join(missing) if missing else 'none'}")
+            lines.append(
+                "- Normal complex set: "
+                f"{replay_candidates.get('normal_complex_strategy_status', 'unknown')} "
+                f"({replay_candidates.get('normal_complex_required_count', 0)} required)"
+            )
+        if trace_queue:
+            lines.append(f"- Historical trace replay queue: {trace_queue.get('queue_items', 0)} items")
+        if trace_preflight:
+            lines.append(f"- Trace endpoint preflight: {trace_preflight.get('status', 'unknown')}")
+        if historical_trace:
+            lines.append(f"- Historical exploit replay status: {historical_trace.get('status', 'unknown')}")
+            lines.append(
+                "- Historical exploit replay persisted: "
+                f"{historical_trace.get('written_trace_bundles', 0)} "
+                f"(ok={historical_trace.get('ok_trace_bundles', 0)}, "
+                f"failed={historical_trace.get('failed_trace_bundles', 0)})"
+            )
+        if normal_candidates:
+            lines.append(f"- Normal candidate transactions: {normal_candidates.get('candidate_count', 0)}")
+            lines.append(f"- Normal candidate check: {normal_candidates.get('status', 'unknown')}")
+            bucket_counts = normal_candidates.get("bucket_counts", {})
+            if bucket_counts:
+                rendered = ", ".join(f"{name}={count}" for name, count in sorted(bucket_counts.items()))
+                lines.append(f"- Normal candidate buckets: {rendered}")
+        if normal_trace:
+            lines.append(f"- Normal trace replay status: {normal_trace.get('status', 'unknown')}")
+            lines.append(
+                "- Normal trace replay persisted: "
+                f"{normal_trace.get('written_trace_bundles', 0)} "
+                f"(ok={normal_trace.get('ok_trace_bundles', 0)}, "
+                f"failed={normal_trace.get('failed_trace_bundles', 0)})"
+            )
+        if trace_results:
+            lines.append(f"- Historical trace results: {trace_results.get('status', 'unknown')}")
+            lines.append(f"- Persisted trace bundles: {trace_results.get('written_total', 0)} / {trace_results.get('expected_total', 0)}")
+        if label_readiness:
+            lines.append(f"- Label queue readiness: {label_readiness.get('status', 'unknown')}")
+            lines.append(f"- Total trace queue items: {label_readiness.get('total_trace_queue_items', 0)}")
+        if label_promotion:
+            lines.append(f"- Pending promotion decisions: {label_promotion.get('decision_counts', {}).get('pending_trace', 0)}")
+            lines.append(f"- Promoted labels: {label_promotion.get('promoted_markers', 0)}")
+        if training_check:
+            lines.append(f"- Training dataset check: {training_check.get('status', 'unknown')}")
+            lines.append(f"- Training ready: {training_check.get('training_ready')}")
+
     if required:
-        missing = required.get("missing", [])
-        if missing:
+        missing_user_inputs = required.get("missing_user_inputs", required.get("missing", []))
+        if missing_user_inputs:
             lines.extend(["", "## Inputs Needed From User", ""])
-            for item in missing:
-                lines.append(f"- {item}")
+            for item in missing_user_inputs:
+                name = item.get("name", "unknown")
+                needed_for = ", ".join(item.get("needed_for", []))
+                source = item.get("source", "unknown")
+                lines.append(f"- {name}: {needed_for} (source: {source})")
+        readiness_gaps = required.get("readiness_gaps", [])
+        if readiness_gaps:
+            lines.extend(["", "## Phase B Readiness Gaps", ""])
+            for item in readiness_gaps:
+                name = item.get("name", "unknown")
+                observed = item.get("observed_status")
+                needed_for = ", ".join(item.get("needed_for", []))
+                source = item.get("source", "unknown")
+                detail = f"observed={observed}, " if observed is not None else ""
+                lines.append(f"- {name}: {detail}{needed_for} (source: {source})")
 
     if counts:
         lines.extend(["", "## Artifact Counts", ""])
@@ -126,9 +268,59 @@ def render_summary(root: Path) -> str:
             "  --contacts \"${OPS_CONTACTS_CONFIG:-config/ops_contacts.example.json}\" \\",
             "  --out ops/reports/required-inputs-check.latest.json",
             "",
+            "python3 scripts/env_local_audit.py \\",
+            "  --env-file .env.local \\",
+            "  --out ops/reports/env-local-audit.latest.json",
+            "",
+            "python3 scripts/report_secret_audit.py \\",
+            "  --input ops/reports \\",
+            "  --out ops/reports/report-secret-audit.latest.json",
+            ]
+        )
+    if label_readiness and label_readiness.get("status") == "trace_ready":
+        lines.extend(
+            [
+                "",
+                "# Optional: test whether ETH_PROVIDER_HTTP_URL can satisfy historical trace replay.",
+                "python3 scripts/provider_trace_capability_probe.py \\",
+                "  --env-file .env.local \\",
+                "  --queue data/training/trace_replay_queue.v1.json \\",
+                "  --method auto \\",
+                "  --out ops/reports/provider-trace-capability-probe.latest.json",
+                "",
+                "# Standard Phase B trace endpoint preflight; requires ETH_MAIN_HTTP_URL.",
+                "source .env.local",
+                "python3 scripts/trace_endpoint_preflight.py \\",
+                "  --queue data/training/trace_replay_queue.v1.json \\",
+                "  --method auto \\",
+                "  --out ops/reports/trace-endpoint-preflight.latest.json",
+                "",
+                "python3 scripts/historical_trace_replay.py \\",
+                "  --queue data/training/trace_replay_queue.v1.json \\",
+                "  --method auto \\",
+                "  --out ops/reports/historical-trace-replay.latest.json",
+                "",
+                "python3 scripts/historical_trace_replay.py \\",
+                "  --queue data/training/normal_trace_replay_queue.v1.json \\",
+                "  --method auto \\",
+                "  --out ops/reports/normal-historical-trace-replay.latest.json",
+                "",
+                "python3 scripts/label_readiness_audit.py \\",
+                "  --out ops/reports/label-readiness-audit.latest.json",
+            ]
+        )
+    lines.extend(
+        [
+            "",
             "python3 scripts/project_status_audit.py \\",
             "  --out ops/reports/project-status.latest.json \\",
             "  --blockers ops/blocker_register.md",
+            "",
+            "python3 scripts/phase_b_completion_audit.py \\",
+            "  --out ops/reports/phase-b-completion-audit.latest.json",
+            "",
+            "python3 scripts/phase_b_next_action.py \\",
+            "  --out ops/reports/phase-b-next-action.latest.json",
             "",
             "python3 scripts/status_summary.py \\",
             "  --out ops/status_summary.md",

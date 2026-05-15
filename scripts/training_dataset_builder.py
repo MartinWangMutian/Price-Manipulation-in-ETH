@@ -62,11 +62,28 @@ def provider_unlabeled_graphs(graph_root: Path) -> list[dict[str, Any]]:
     return items
 
 
+def label_candidates(path: Path) -> dict[str, list[str]]:
+    if not path.exists():
+        return {}
+    payload = read_json(path)
+    by_incident: dict[str, list[str]] = {}
+    for item in payload.get("positive_candidates", []):
+        tx_hashes = [
+            tx["tx_hash"]
+            for tx in item.get("candidate_transactions", [])
+            if tx.get("tx_hash")
+        ]
+        if tx_hashes:
+            by_incident[item["incident_id"]] = tx_hashes
+    return by_incident
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Build training dataset seed manifests.")
     parser.add_argument("--incidents", default="data/training/positive_incidents.seed.json")
     parser.add_argument("--split-policy", default="config/training_split_policy.json")
     parser.add_argument("--graph-input", default="data/replay/graph-inference.v1")
+    parser.add_argument("--label-candidates", default="data/training/replay_label_candidates.seed.json")
     parser.add_argument("--out-dir", default="data/training")
     parser.add_argument("--report", default="ops/reports/training-dataset-builder.latest.json")
     args = parser.parse_args()
@@ -74,6 +91,7 @@ def main() -> int:
     root = Path.cwd()
     incidents_payload = read_json(root / args.incidents)
     split_policy = read_json(root / args.split_policy)
+    candidates_by_incident = label_candidates(root / args.label_candidates)
     incidents = incidents_payload.get("incidents", [])
     ratios = split_policy["split_ratios"]
     splits = {"train": [], "validation": [], "replay": []}
@@ -92,13 +110,14 @@ def main() -> int:
             "attack_type": incident["attack_type"],
             "affected_protocol": incident["affected_protocol"],
             "key_transactions": incident.get("key_transactions", []),
+            "candidate_transactions": candidates_by_incident.get(incident_id, []),
             "replay_status": incident.get("replay_status"),
         }
         splits[split].append(item)
         status_counts[incident.get("replay_status", "unknown")] += 1
         chain_counts[incident["chain"]] += 1
         attack_counts[incident["attack_type"]] += 1
-        if not incident.get("key_transactions"):
+        if not incident.get("key_transactions") and incident_id not in candidates_by_incident:
             missing_key_tx.append(incident_id)
 
     unlabeled = provider_unlabeled_graphs(root / args.graph_input)
@@ -134,11 +153,13 @@ def main() -> int:
         "chain_counts": dict(sorted(chain_counts.items())),
         "attack_type_counts": dict(sorted(attack_counts.items())),
         "missing_key_transaction_incidents": sorted(missing_key_tx),
+        "candidate_transaction_incidents": sorted(candidates_by_incident),
+        "candidate_transactions": sum(len(values) for values in candidates_by_incident.values()),
         "training_ready": False,
         "blocking_reasons": [
             "positive labels are incident-level and not fully mapped to graph replay records",
             "negative samples require rich trace graphs and stratified sampling",
-            "most seed incidents still need key transaction hash review",
+            "candidate transaction hashes require trace replay and analyst promotion",
         ],
     }
     write_json(out_dir / "label_snapshot.v1.json", label_snapshot)
@@ -151,6 +172,8 @@ def main() -> int:
         "split_counts": label_snapshot["split_counts"],
         "replay_status_counts": label_snapshot["replay_status_counts"],
         "missing_key_transaction_incidents": label_snapshot["missing_key_transaction_incidents"],
+        "candidate_transaction_incidents": label_snapshot["candidate_transaction_incidents"],
+        "candidate_transactions": label_snapshot["candidate_transactions"],
         "training_ready": False,
         "outputs": [
             "data/training/label_snapshot.v1.json",

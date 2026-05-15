@@ -1,0 +1,120 @@
+{
+  "checked_at": "2026-05-14T14:04:06.478+00:00",
+  "checks": [
+    {
+      "evidence": {
+        "status": "ok"
+      },
+      "name": "provider_only_shadow_pipeline",
+      "ok": true,
+      "owner": "project"
+    },
+    {
+      "evidence": {
+        "status": "trace_ready",
+        "total_trace_queue_items": 57
+      },
+      "name": "label_queue_trace_ready",
+      "ok": true,
+      "owner": "project"
+    },
+    {
+      "evidence": {
+        "endpoint_configured": false,
+        "selected_method": null,
+        "status": "missing_endpoint"
+      },
+      "name": "trace_endpoint_preflight_ok",
+      "ok": false,
+      "owner": "user"
+    },
+    {
+      "evidence": {
+        "expected_total": 57,
+        "status": "awaiting_real_replay",
+        "written_total": 0
+      },
+      "name": "historical_trace_replay_complete",
+      "ok": false,
+      "owner": "project"
+    },
+    {
+      "evidence": {
+        "pending_trace": 57,
+        "promoted_markers": 0,
+        "status": "ok"
+      },
+      "name": "label_promotion_complete",
+      "ok": false,
+      "owner": "user"
+    },
+    {
+      "evidence": {
+        "status": "ok",
+        "training_ready": false
+      },
+      "name": "training_ready",
+      "ok": false,
+      "owner": "project"
+    },
+    {
+      "evidence": {
+        "missing_contact_inputs": [
+          "pager_or_feishu_target",
+          "phone_or_manual_escalation_target",
+          "on_call_analyst",
+          "on_call_engineer",
+          "incident_commander",
+          "protocol_owner_or_partner_contact",
+          "multisig_signer_or_authorized_approver"
+        ],
+        "status": "missing_inputs"
+      },
+      "name": "ops_contacts_configured",
+      "ok": false,
+      "owner": "user"
+    },
+    {
+      "evidence": {
+        "handoff": "ops/phase_b_handoff.md",
+        "post_endpoint_runbook": "ops/post_endpoint_trace_runbook.md"
+      },
+      "name": "phase_b_handoff_ready",
+      "ok": true,
+      "owner": "project"
+    }
+  ],
+  "missing_checks": [
+    "trace_endpoint_preflight_ok",
+    "historical_trace_replay_complete",
+    "label_promotion_complete",
+    "training_ready",
+    "ops_contacts_configured"
+  ],
+  "next_project_actions_after_user_inputs": [
+    "run trace endpoint preflight",
+    "run exploit and normal historical trace replay",
+    "parse traces, rebuild protocol features and cash-flow graphs",
+    "audit and promote labels, then refresh training dataset readiness"
+  ],
+  "next_user_actions": [
+    "provide ETH_MAIN_HTTP_URL or pass provider trace capability probe",
+    "fill config/ops_contacts.local.json and export OPS_CONTACTS_CONFIG",
+    "after real trace replay, analyst-promote exploit and normal label decisions"
+  ],
+  "phase_b_complete": false,
+  "project_blockers": [
+    "historical_trace_replay_complete",
+    "training_ready"
+  ],
+  "readiness_gaps": [
+    "trace_endpoint_preflight"
+  ],
+  "required_inputs_status": "missing_inputs",
+  "status": "blocked_user_input",
+  "user_blockers": [
+    "trace_endpoint_preflight_ok",
+    "label_promotion_complete",
+    "ops_contacts_configured"
+  ]
+}

@@ -5,3 +5,4 @@ __pycache__/
 *.py[cod]
 .env
 .env.*
+config/ops_contacts.local.json

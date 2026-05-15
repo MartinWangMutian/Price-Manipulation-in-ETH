@@ -32,6 +32,7 @@ def main() -> int:
     parser.add_argument("--snapshot", default="data/training/label_snapshot.v1.json")
     parser.add_argument("--splits-dir", default="data/training/splits")
     parser.add_argument("--unlabeled", default="data/training/unlabeled_pool.provider_only.v1.json")
+    parser.add_argument("--label-candidates", default="data/training/replay_label_candidates.seed.json")
     parser.add_argument("--out", default="ops/reports/training-dataset-check.latest.json")
     args = parser.parse_args()
 
@@ -39,6 +40,12 @@ def main() -> int:
     incidents = read_json(root / args.incidents).get("incidents", [])
     snapshot = read_json(root / args.snapshot)
     unlabeled = read_json(root / args.unlabeled).get("items", [])
+    label_candidates = read_json(root / args.label_candidates) if (root / args.label_candidates).exists() else {}
+    candidate_incident_ids = {
+        item.get("incident_id")
+        for item in label_candidates.get("positive_candidates", [])
+        if item.get("candidate_transactions")
+    }
     errors: list[str] = []
     incident_ids = set()
     missing_tx = []
@@ -55,7 +62,7 @@ def main() -> int:
                 errors.append(f"{incident_id} missing {field}")
         if not incident.get("source_refs"):
             errors.append(f"{incident_id} missing source_refs")
-        if not incident.get("key_transactions"):
+        if not incident.get("key_transactions") and incident_id not in candidate_incident_ids:
             missing_tx.append(incident_id)
 
     split_ids: set[str] = set()
@@ -82,6 +89,11 @@ def main() -> int:
         errors.append("snapshot unlabeled count mismatch")
     if snapshot.get("training_ready") is not False:
         errors.append("seed dataset should remain training_ready=false until graph replay labels exist")
+    if snapshot.get("candidate_transactions", 0) != sum(
+        len(item.get("candidate_transactions", []))
+        for item in label_candidates.get("positive_candidates", [])
+    ):
+        errors.append("snapshot candidate_transactions count mismatch")
 
     report = {
         "checked_at": now_iso(),
@@ -90,6 +102,8 @@ def main() -> int:
         "split_counts": split_counts,
         "unlabeled_provider_only_graphs": len(unlabeled),
         "missing_key_transaction_incidents": sorted(missing_tx),
+        "candidate_transaction_incidents": sorted(candidate_incident_ids),
+        "candidate_transactions": snapshot.get("candidate_transactions", 0),
         "training_ready": snapshot.get("training_ready"),
         "errors": errors,
     }

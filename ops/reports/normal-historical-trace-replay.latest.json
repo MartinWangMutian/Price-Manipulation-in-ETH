@@ -1,0 +1,16 @@
+{
+  "attempts": [],
+  "checked_at": "2026-05-14T13:45:12.738+00:00",
+  "dry_run": true,
+  "endpoint_configured": false,
+  "failed_trace_bundles": 0,
+  "method": "auto",
+  "ok_trace_bundles": 0,
+  "queue": "data/training/normal_trace_replay_queue.v1.json",
+  "queue_items_seen": 50,
+  "status": "dry_run_ok",
+  "validation_errors": [],
+  "write_failed_bundles": false,
+  "written": [],
+  "written_trace_bundles": 0
+}

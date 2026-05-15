@@ -1,0 +1,8 @@
+{
+  "checked_at": "2026-05-14T13:37:35.860+00:00",
+  "exploit_decisions": 7,
+  "normal_decisions": 50,
+  "out": "data/training/label_promotion_decisions.seed.json",
+  "status": "ok",
+  "training_ready": false
+}

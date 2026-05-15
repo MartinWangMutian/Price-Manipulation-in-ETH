@@ -16,7 +16,14 @@ from pathlib import Path
 from typing import Any
 
 
-VALID_SOURCES = {"debug_traceCall", "trace_call", "provider_fallback", "none"}
+VALID_SOURCES = {
+    "debug_traceCall",
+    "trace_call",
+    "debug_traceTransaction",
+    "trace_transaction",
+    "provider_fallback",
+    "none",
+}
 VALID_STATUSES = {"ok", "failed", "timeout", "unsupported"}
 
 

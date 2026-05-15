@@ -26,7 +26,14 @@
     "tx_hash": {"type": "string", "pattern": "^0x[a-fA-F0-9]{64}$"},
     "trace_source": {
       "type": "string",
-      "enum": ["debug_traceCall", "trace_call", "provider_fallback", "none"]
+      "enum": [
+        "debug_traceCall",
+        "trace_call",
+        "debug_traceTransaction",
+        "trace_transaction",
+        "provider_fallback",
+        "none"
+      ]
     },
     "trace_status": {
       "type": "string",

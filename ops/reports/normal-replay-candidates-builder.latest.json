@@ -1,0 +1,23 @@
+{
+  "available_by_bucket": {
+    "contract_call": 25,
+    "erc20_approve": 3,
+    "erc20_transfer": 41,
+    "simple_transfer": 35
+  },
+  "checked_at": "2026-05-14T13:34:08.291+00:00",
+  "out": "data/training/normal_replay_candidates.seed.json",
+  "queue_out": "data/training/normal_trace_replay_queue.v1.json",
+  "selected_by_bucket": {
+    "contract_call": 16,
+    "erc20_approve": 3,
+    "erc20_transfer": 16,
+    "simple_transfer": 15
+  },
+  "selected_count": 50,
+  "skipped": {
+    "not_mined_at_capture_time": 31
+  },
+  "status": "ok",
+  "target_count": 50
+}

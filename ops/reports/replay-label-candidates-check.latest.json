@@ -1,0 +1,35 @@
+{
+  "candidate_transactions": 7,
+  "checked_at": "2026-05-14T13:53:24.754+00:00",
+  "confidence_counts": {
+    "high": 3,
+    "medium": 4
+  },
+  "errors": [],
+  "missing_ethereum_candidate_incidents": [],
+  "normal_candidate_bucket_counts": {
+    "contract_call": 16,
+    "erc20_approve": 3,
+    "erc20_transfer": 16,
+    "simple_transfer": 15
+  },
+  "normal_candidate_transactions": 50,
+  "normal_complex_required_count": 50,
+  "normal_complex_strategy_plan_status": "needs_sampling_after_trace_endpoint",
+  "normal_complex_strategy_status": "candidate_queue_seeded_pending_trace",
+  "positive_candidate_incidents": 7,
+  "review_status_counts": {
+    "needs_attack_entry_tx_review": 1,
+    "needs_pool_scope_review": 1,
+    "needs_secondary_source_review": 2,
+    "needs_trace_replay": 3
+  },
+  "source_type_counts": {
+    "block_explorer": 2,
+    "incident_database": 2,
+    "postmortem": 1,
+    "security_report": 5,
+    "security_writeup": 1
+  },
+  "status": "ok"
+}

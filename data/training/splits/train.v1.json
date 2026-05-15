@@ -1,9 +1,12 @@
 {
-  "created_at": "2026-05-14T04:27:33.472+00:00",
+  "created_at": "2026-05-14T13:24:28.054+00:00",
   "items": [
     {
       "affected_protocol": "Beanstalk Farms",
       "attack_type": "flash_loan_governance",
+      "candidate_transactions": [
+        "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7"
+      ],
       "chain": "ethereum",
       "incident_id": "beanstalk_2022_04_17",
       "key_transactions": [],
@@ -13,6 +16,9 @@
     {
       "affected_protocol": "Cream Finance",
       "attack_type": "oracle_manipulation_lending_pool",
+      "candidate_transactions": [
+        "0x0fe2542079644e107cbf13690eb9c2c65963ccb79089ff96bfaf8dced2331c92"
+      ],
       "chain": "ethereum",
       "incident_id": "cream_finance_2021_10_27",
       "key_transactions": [],
@@ -22,6 +28,9 @@
     {
       "affected_protocol": "Harvest Finance",
       "attack_type": "curve_price_manipulation",
+      "candidate_transactions": [
+        "0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58"
+      ],
       "chain": "ethereum",
       "incident_id": "harvest_finance_2020_10_26",
       "key_transactions": [],
@@ -31,6 +40,9 @@
     {
       "affected_protocol": "bZx",
       "attack_type": "oracle_manipulation_margin_position",
+      "candidate_transactions": [
+        "0x762881b07feb63c436dee38edd4ff1f7a74c33091e534af56c9f7d49b5ecac15"
+      ],
       "chain": "ethereum",
       "incident_id": "bzx_2020_02_18",
       "key_transactions": [],
@@ -40,6 +52,9 @@
     {
       "affected_protocol": "Curve Finance",
       "attack_type": "reentrancy_compiler_bug",
+      "candidate_transactions": [
+        "0x4197ed0ef9b60ab1cacdc31d6d3ce06413b333b14b8947be5c0cfe29cb88b088"
+      ],
       "chain": "ethereum",
       "incident_id": "curve_vyper_2023_07_30",
       "key_transactions": [],
@@ -49,6 +64,9 @@
     {
       "affected_protocol": "Conic Finance",
       "attack_type": "read_only_reentrancy",
+      "candidate_transactions": [
+        "0x8b74995d1d61d3d7547575649136b8765acb22882960f0636941c44ec7bbe146"
+      ],
       "chain": "ethereum",
       "incident_id": "conic_finance_2023_07_21",
       "key_transactions": [],
