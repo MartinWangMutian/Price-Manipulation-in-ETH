@@ -5,6 +5,7 @@
       "config/gray_launch.json",
       "config/message_topics.json",
       "config/ops_contacts.example.json",
+      "config/phase_b_scope.json",
       "config/protocol_log_addresses.json",
       "config/protocol_roles.json",
       "config/rag_explanation_templates.json",
@@ -1231,6 +1232,7 @@
       "ops/blocker_register.md",
       "ops/cash_flow_graph_builder_runbook.md",
       "ops/command_index.md",
+      "ops/course_submission_summary.md",
       "ops/daily_operations_template.md",
       "ops/env_local_audit_runbook.md",
       "ops/failover_runbook.md",
@@ -1405,13 +1407,13 @@
     ]
   },
   "counts": {
-    "config": 14,
+    "config": 15,
     "console": 112,
     "evaluation": 2,
     "rag": 2,
     "replay": 1015,
     "reports": 67,
-    "runbooks_and_reports_docs": 79,
+    "runbooks_and_reports_docs": 80,
     "schemas": 7,
     "scripts": 74,
     "training": 11
@@ -1419,8 +1421,9 @@
   "excluded_artifacts": [
     "config/ops_contacts.local.json"
   ],
-  "generated_at": "2026-05-15T08:04:53.004+00:00",
+  "generated_at": "2026-05-15T13:57:50.710+00:00",
   "status_files": [
+    "config/phase_b_scope.json",
     "ops/reports/project-status.latest.json",
     "ops/reports/go-no-go-audit.latest.json",
     "ops/reports/validation-metrics-audit.latest.json",
@@ -1448,6 +1451,7 @@
     "ops/reports/phase-b-refresh.latest.json",
     "ops/reports/artifact-manifest.latest.json",
     "ops/status_summary.md",
+    "ops/course_submission_summary.md",
     "ops/phase_b_completion_checklist.md",
     "ops/phase_b_handoff.md",
     "ops/trace_endpoint_application_guide.md",

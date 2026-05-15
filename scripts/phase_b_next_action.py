@@ -59,12 +59,20 @@ def failed_trace_methods(provider_probe: Any | None) -> list[dict[str, Any]]:
     return failed
 
 
+def read_scope_policy(root: Path, rel_path: str) -> dict[str, Any]:
+    policy = read_json_or_none(root / rel_path)
+    return policy if isinstance(policy, dict) else {}
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Pick the next concrete Phase B action.")
+    parser.add_argument("--scope-policy", default="config/phase_b_scope.json")
     parser.add_argument("--out", default="ops/reports/phase-b-next-action.latest.json")
     args = parser.parse_args()
 
     root = Path.cwd()
+    scope_policy = read_scope_policy(root, args.scope_policy)
+    trace_replay_required = scope_policy.get("trace_replay_required", True) is not False
     env_local = read_json_or_none(root / "ops/reports/env-local-audit.latest.json")
     provider_probe = read_json_or_none(root / "ops/reports/provider-trace-capability-probe.latest.json")
     required = read_json_or_none(root / "ops/reports/required-inputs-check.latest.json")
@@ -77,7 +85,24 @@ def main() -> int:
     provider_ready = bool(env_local and env_local.get("provider_ready"))
     main_trace_ready = bool(env_local and env_local.get("main_trace_ready"))
 
-    if status(phase_b) == "complete":
+    if not trace_replay_required and status(phase_b) == "complete":
+        action = {
+            "action_id": "none_phase_b_lite_complete",
+            "owner": "none",
+            "reason": "Course no-trace Phase B completion audit is complete; paid trace APIs and local nodes are waived by scope policy.",
+            "commands": [],
+        }
+    elif not trace_replay_required:
+        action = command_action(
+            "refresh_phase_b_lite_audits",
+            "project",
+            "Course no-trace scope is active; refresh local reports instead of applying for trace endpoint access.",
+            [
+                "python3 scripts/phase_b_refresh.py "
+                "--out ops/reports/phase-b-refresh.latest.json",
+            ],
+        )
+    elif status(phase_b) == "complete":
         action = {
             "action_id": "none_phase_b_complete",
             "owner": "none",
@@ -195,6 +220,9 @@ def main() -> int:
         "status": "ok",
         "selected_action": action,
         "inputs": {
+            "scope_policy": args.scope_policy,
+            "scope_mode": scope_policy.get("mode", "default"),
+            "trace_replay_required": trace_replay_required,
             "env_local_status": status(env_local),
             "provider_probe_status": status(provider_probe),
             "required_inputs_status": status(required),

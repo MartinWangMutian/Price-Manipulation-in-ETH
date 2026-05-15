@@ -1,44 +1,21 @@
 {
-  "checked_at": "2026-05-15T08:04:52.955+00:00",
+  "checked_at": "2026-05-15T13:56:38.742+00:00",
   "inputs": {
     "env_local_status": "provider_configured_main_missing",
-    "phase_b_completion_status": "blocked_user_input",
+    "phase_b_completion_status": "complete",
     "provider_probe_status": "degraded",
-    "required_inputs_status": "missing_inputs",
-    "trace_preflight_status": "missing_endpoint",
+    "required_inputs_status": "ok",
+    "scope_mode": "course_no_trace",
+    "scope_policy": "config/phase_b_scope.json",
+    "trace_preflight_status": "degraded",
+    "trace_replay_required": false,
     "trace_results_status": "awaiting_real_replay"
   },
   "selected_action": {
-    "action_id": "apply_for_trace_endpoint",
+    "action_id": "none_phase_b_lite_complete",
     "commands": [],
-    "evidence": {
-      "failed_trace_methods": [
-        {
-          "error": {
-            "code": -32600,
-            "message": "debug_traceTransaction is not available on the Free tier - upgrade to Pay As You Go, or Enterprise for access."
-          },
-          "name": "debug_traceTransaction"
-        },
-        {
-          "error": {
-            "code": -32600,
-            "message": "trace_transaction is not available on the Free tier - upgrade to Pay As You Go, or Enterprise for access."
-          },
-          "name": "trace_transaction"
-        }
-      ],
-      "provider_probe_status": "degraded"
-    },
-    "needed": "Ethereum mainnet Geth/Erigon HTTP endpoint supporting debug_traceTransaction or trace_transaction",
-    "next_steps": [
-      "Upgrade/apply for Alchemy Pay As You Go or Enterprise Trace API/Debug API access, or use another trace-capable Geth/Erigon endpoint.",
-      "Set ETH_MAIN_HTTP_URL to the trace-capable Ethereum mainnet HTTP endpoint in .env.local.",
-      "Run python3 scripts/main_trace_endpoint_preflight.py --env-file .env.local --queue data/training/trace_replay_queue.v1.json --method auto --out ops/reports/trace-endpoint-preflight.latest.json",
-      "Run python3 scripts/phase_b_refresh.py --out ops/reports/phase-b-refresh.latest.json"
-    ],
-    "owner": "user",
-    "reason": "Provider RPC is not sufficient for historical trace replay."
+    "owner": "none",
+    "reason": "Course no-trace Phase B completion audit is complete; paid trace APIs and local nodes are waived by scope policy."
   },
   "status": "ok"
 }

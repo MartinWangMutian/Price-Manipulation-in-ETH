@@ -4,43 +4,37 @@ Generated from current local reports on 2026-05-15.
 
 ## Objective
 
-Continue Phase B until the trace-backed replay, label promotion, and training
-readiness gates are complete, asking the user only for inputs that cannot be
-created locally.
+Finish a course-scope Phase B evidence bundle without paid trace APIs or local
+Ethereum node deployment.
 
-## Checklist
+## Active Requirements
 
 | Requirement | Evidence | Current status |
 | --- | --- | --- |
+| Course no-trace scope is recorded | `config/phase_b_scope.json` | Active: `course_no_trace` |
 | Provider-only shadow pipeline is healthy | `ops/reports/project-status.latest.json` via `provider_only_shadow_pipeline` | Pass: `ok` |
-| Trace replay queues are ready | `ops/reports/label-readiness-audit.latest.json` | Pass: `trace_ready`, 57 queued items |
-| Local provider/main env shape is audited without leaking keys | `ops/reports/env-local-audit.latest.json` | Partial: provider ready, main trace endpoint missing |
-| Provider trace capability has been tested against the real provider | `ops/reports/provider-trace-capability-probe.latest.json` | Blocked: `degraded`; current Alchemy Free tier rejects both trace methods |
-| Standard trace endpoint preflight passes | `ops/reports/trace-endpoint-preflight.latest.json` | Blocked: `missing_endpoint` |
-| Exploit and normal historical trace replay bundles are persisted | `ops/reports/historical-trace-results-audit.latest.json` | Blocked: `awaiting_real_replay`, 0 / 57 persisted |
-| Labels have analyst-promoted trace-backed decisions | `ops/reports/label-promotion-audit.latest.json` | Blocked: 57 pending trace decisions, 0 promoted |
-| Training dataset is ready | `ops/reports/training-dataset-check.latest.json` | Blocked: `training_ready=false` |
-| Operations contacts are filled locally and ignored by git | `config/ops_contacts.local.json`, `ops/reports/ops-contacts-bootstrap.latest.json`, `.gitignore` | Partial: file exists and is ignored, fields still `TBD` |
-| Generated reports do not expose RPC URL secrets | `ops/reports/report-secret-audit.latest.json` | Pass: `ok`, 0 findings |
-| Phase B handoff and next-action documents are present | `ops/phase_b_handoff.md`, `ops/phase_b_user_action_packet.md`, `ops/reports/phase-b-next-action.latest.json` | Pass: next action is `apply_for_trace_endpoint` |
+| Local replay/report surface is present | `ops/reports/project-status.latest.json` report statuses | Pass: pending replay, graph, risk, alert, RAG, console, offline eval, failure drill |
+| Generated reports do not expose RPC URL secrets | `ops/reports/report-secret-audit.latest.json` | Pass when latest report returns `status=ok` |
+| Handoff/status docs are present | `ops/phase_b_handoff.md`, `ops/status_summary.md`, `ops/course_submission_summary.md` | Pass after refresh |
 
-## Current Blockers
+## Waived For Course Scope
 
-1. Provide a trace-capable Ethereum mainnet HTTP endpoint. The current Alchemy
-   Free tier endpoint passes `eth_chainId`, but rejects both
-   `debug_traceTransaction` and `trace_transaction`.
+| Waived item | Reason |
+| --- | --- |
+| `ETH_MAIN_HTTP_URL` | Would require trace-capable paid API or local node |
+| Trace endpoint preflight | Same as above |
+| Historical trace replay | Same as above |
+| Trace-backed label promotion | Depends on historical trace replay |
+| Training readiness | Depends on trace-backed labels |
+| Production contacts and go/no-go | Operational production concern, not needed for the course submission |
 
-2. Fill all `TBD` values in `config/ops_contacts.local.json`.
-
-3. Refresh local gates:
+## Refresh Command
 
 ```bash
 python3 scripts/phase_b_refresh.py \
   --out ops/reports/phase-b-refresh.latest.json
 ```
 
-## Completion Rule
-
-Phase B is complete only when
-`ops/reports/phase-b-completion-audit.latest.json` reports
-`phase_b_complete=true`.
+Completion is measured by
+`ops/reports/phase-b-completion-audit.latest.json` under the active
+`course_no_trace` scope.

@@ -104,11 +104,39 @@ def test_readiness_only_gap() -> None:
         assert [item["name"] for item in report["readiness_gaps"]] == ["trace_endpoint_preflight"]
 
 
+def test_course_no_trace_waives_trace_and_contacts() -> None:
+    with tempfile.TemporaryDirectory() as tmpdir:
+        root = Path(tmpdir)
+        write_json(
+            root,
+            "config/phase_b_scope.json",
+            {
+                "mode": "course_no_trace",
+                "trace_replay_required": False,
+                "ops_contacts_required": False,
+            },
+        )
+        write_json(root, "ops/reports/trace-endpoint-preflight.latest.json", {"status": "degraded"})
+        write_json(root, "ops/reports/label-readiness-audit.latest.json", {"status": "missing"})
+        (root / "ops").mkdir(parents=True, exist_ok=True)
+        (root / "ops/phase_b_handoff.md").write_text("# handoff\n", encoding="utf-8")
+        report = run_check(root, {})
+        assert report["status"] == "ok"
+        assert report["trace_replay_required"] is False
+        assert report["ops_contacts_required"] is False
+        assert report["missing_user_inputs"] == []
+        assert report["readiness_gaps"] == []
+        waived = {item["name"] for item in report["checks"] if item.get("waived")}
+        assert "ETH_MAIN_HTTP_URL" in waived
+        assert "trace_endpoint_preflight" in waived
+
+
 def main() -> int:
     test_ok()
     test_missing_contacts_and_readiness_gap()
     test_readiness_only_gap()
-    print(json.dumps({"status": "ok", "tests": 3}, indent=2, sort_keys=True))
+    test_course_no_trace_waives_trace_and_contacts()
+    print(json.dumps({"status": "ok", "tests": 4}, indent=2, sort_keys=True))
     return 0
 
 

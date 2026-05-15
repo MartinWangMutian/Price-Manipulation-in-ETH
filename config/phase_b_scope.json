@@ -1,0 +1,25 @@
+{
+  "schema_ver": "phase-b-scope.v1",
+  "mode": "course_no_trace",
+  "completion_target": "provider_only_course_submission",
+  "paid_api_allowed": false,
+  "local_node_required": false,
+  "trace_replay_required": false,
+  "ops_contacts_required": false,
+  "training_required": false,
+  "label_promotion_required": false,
+  "waived_requirements": [
+    "ETH_MAIN_HTTP_URL",
+    "trace_endpoint_preflight",
+    "historical_trace_replay",
+    "trace_backed_label_promotion",
+    "training_ready",
+    "live_failover_drill",
+    "production_go_no_go"
+  ],
+  "notes": [
+    "Course assignment scope: do not buy paid trace APIs.",
+    "Course assignment scope: do not deploy or maintain a local Ethereum archive node.",
+    "Use existing provider-only and local replay reports as the submission evidence."
+  ]
+}

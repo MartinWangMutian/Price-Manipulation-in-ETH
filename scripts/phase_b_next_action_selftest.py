@@ -86,11 +86,32 @@ def test_apply_for_trace_endpoint() -> None:
         assert report["selected_action"]["next_steps"]
 
 
+def test_course_no_trace_complete() -> None:
+    with tempfile.TemporaryDirectory() as tmpdir:
+        root = Path(tmpdir)
+        seed_blocked(root)
+        write_json(
+            root,
+            "config/phase_b_scope.json",
+            {
+                "mode": "course_no_trace",
+                "trace_replay_required": False,
+                "paid_api_allowed": False,
+                "local_node_required": False,
+            },
+        )
+        write_json(root, "ops/reports/phase-b-completion-audit.latest.json", {"status": "complete"})
+        report = run_next(root)
+        assert report["selected_action"]["action_id"] == "none_phase_b_lite_complete"
+        assert report["inputs"]["trace_replay_required"] is False
+
+
 def main() -> int:
     test_run_provider_trace_probe()
     test_promote_provider_to_main_trace_env()
     test_apply_for_trace_endpoint()
-    print(json.dumps({"status": "ok", "tests": 3}, indent=2, sort_keys=True))
+    test_course_no_trace_complete()
+    print(json.dumps({"status": "ok", "tests": 4}, indent=2, sort_keys=True))
     return 0
 
 

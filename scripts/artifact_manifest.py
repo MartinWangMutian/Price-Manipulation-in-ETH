@@ -70,6 +70,7 @@ def main() -> int:
         "counts": {name: len(paths) for name, paths in categories.items()},
         "excluded_artifacts": sorted(EXCLUDED_ARTIFACTS),
         "status_files": [
+            "config/phase_b_scope.json",
             "ops/reports/project-status.latest.json",
             "ops/reports/go-no-go-audit.latest.json",
             "ops/reports/validation-metrics-audit.latest.json",
@@ -97,6 +98,7 @@ def main() -> int:
             "ops/reports/phase-b-refresh.latest.json",
             "ops/reports/artifact-manifest.latest.json",
             "ops/status_summary.md",
+            "ops/course_submission_summary.md",
             "ops/phase_b_completion_checklist.md",
             "ops/phase_b_handoff.md",
             "ops/trace_endpoint_application_guide.md",

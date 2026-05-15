@@ -57,6 +57,27 @@ def seed_common(root: Path) -> None:
     write_json(root, "ops/reports/training-dataset-check.latest.json", {"status": "ok", "training_ready": False})
 
 
+def seed_course_project_status(root: Path) -> None:
+    write_json(
+        root,
+        "ops/reports/project-status.latest.json",
+        {
+            "provider_only_shadow_pipeline": "ok",
+            "report_statuses": {
+                "pending_replay": "ok",
+                "trace_audit": "ok",
+                "graph_replay": "ok",
+                "risk_replay": "ok",
+                "alert_replay": "ok",
+                "rag_explanation": "ok",
+                "console_view": "ok",
+                "offline_eval": "ok",
+                "failure_drill": "ok",
+            },
+        },
+    )
+
+
 def test_blocked_user_input() -> None:
     with tempfile.TemporaryDirectory() as tmpdir:
         root = Path(tmpdir)
@@ -89,6 +110,46 @@ def test_blocked_user_input() -> None:
         assert "trace_endpoint_preflight_ok" in report["user_blockers"]
         contact_check = next(check for check in report["checks"] if check["name"] == "ops_contacts_configured")
         assert contact_check["evidence"]["missing_contact_inputs"] == ["pager_or_feishu_target"]
+
+
+def test_course_no_trace_complete() -> None:
+    with tempfile.TemporaryDirectory() as tmpdir:
+        root = Path(tmpdir)
+        seed_common(root)
+        seed_course_project_status(root)
+        write_json(
+            root,
+            "config/phase_b_scope.json",
+            {
+                "mode": "course_no_trace",
+                "completion_target": "provider_only_course_submission",
+                "paid_api_allowed": False,
+                "local_node_required": False,
+                "trace_replay_required": False,
+                "ops_contacts_required": False,
+                "training_required": False,
+                "label_promotion_required": False,
+            },
+        )
+        write_json(
+            root,
+            "ops/reports/required-inputs-check.latest.json",
+            {"status": "ok", "missing_user_inputs": [], "readiness_gaps": []},
+        )
+        write_json(root, "ops/reports/report-secret-audit.latest.json", {"status": "ok"})
+        write_json(root, "ops/reports/trace-endpoint-preflight.latest.json", {"status": "degraded"})
+        write_json(
+            root,
+            "ops/reports/historical-trace-results-audit.latest.json",
+            {"status": "awaiting_real_replay", "written_total": 0, "expected_total": 57},
+        )
+        report = run_audit(root)
+        assert report["status"] == "complete"
+        assert report["phase_b_complete"] is True
+        assert report["trace_replay_required"] is False
+        assert report["missing_checks"] == []
+        waived = {item["name"] for item in report["waived_checks"]}
+        assert "historical_trace_replay_complete" in waived
 
 
 def test_complete() -> None:
@@ -124,8 +185,9 @@ def test_complete() -> None:
 
 def main() -> int:
     test_blocked_user_input()
+    test_course_no_trace_complete()
     test_complete()
-    print(json.dumps({"status": "ok", "tests": 2}, indent=2, sort_keys=True))
+    print(json.dumps({"status": "ok", "tests": 3}, indent=2, sort_keys=True))
     return 0
 
 

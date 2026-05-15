@@ -34,13 +34,27 @@ def report_status(root: Path, path: str) -> Any:
     return data.get("status", "unknown")
 
 
+def read_json_or_none(path: Path) -> Any | None:
+    if not path.exists():
+        return None
+    return read_json(path)
+
+
+def read_scope_policy(root: Path, rel_path: str) -> dict[str, Any]:
+    policy = read_json_or_none(root / rel_path)
+    return policy if isinstance(policy, dict) else {}
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Aggregate project status.")
     parser.add_argument("--out", default="ops/reports/project-status.latest.json")
     parser.add_argument("--blockers", default="ops/blocker_register.md")
+    parser.add_argument("--scope-policy", default="config/phase_b_scope.json")
     args = parser.parse_args()
 
     root = Path.cwd()
+    scope_policy = read_scope_policy(root, args.scope_policy)
+    trace_replay_required = scope_policy.get("trace_replay_required", True) is not False
     reports = {
         "pending_replay": "ops/reports/pending-replay-check-p2a.latest.json",
         "trace_replay": "ops/reports/trace-replay-check-p2b-deduped.latest.json",
@@ -73,7 +87,7 @@ def main() -> int:
             "failure_drill",
         )
     )
-    blockers = [
+    default_blockers = [
         {
             "id": "live_trace_endpoint",
             "owner": "user",
@@ -99,8 +113,24 @@ def main() -> int:
             "unblocks": ["go/no-go failover checks", "Phase 6 gate"],
         },
     ]
+    blockers = default_blockers if trace_replay_required else []
+    next_actions = (
+        [
+            "configure Geth/Erigon trace endpoint",
+            "fill operations contact roster",
+            "trace replay and analyst-promote candidate exploit/normal labels",
+            "run live failover drills",
+        ]
+        if trace_replay_required
+        else [
+            "refresh local course-scope reports",
+            "use ops/status_summary.md and ops/course_submission_summary.md for submission evidence",
+        ]
+    )
     status = {
         "checked_at": now_iso(),
+        "scope_mode": scope_policy.get("mode", "default"),
+        "trace_replay_required": trace_replay_required,
         "provider_only_shadow_pipeline": "ok" if provider_shadow_ok else "not_ok",
         "production_go_no_go": statuses.get("go_no_go"),
         "validation_metrics": statuses.get("validation_metrics"),
@@ -109,16 +139,22 @@ def main() -> int:
         "gray_launch_readiness": statuses.get("gray_launch"),
         "report_statuses": statuses,
         "blockers": blockers,
-        "next_actions": [
-            "configure Geth/Erigon trace endpoint",
-            "fill operations contact roster",
-            "trace replay and analyst-promote candidate exploit/normal labels",
-            "run live failover drills",
-        ],
+        "next_actions": next_actions,
     }
     write_json(root / args.out, status)
 
     blocker_md = ["# Blocker Register", "", f"Updated: {now_iso()}", ""]
+    if not trace_replay_required:
+        blocker_md.extend(
+            [
+                "## Course Scope",
+                "",
+                f"- Mode: {scope_policy.get('mode', 'default')}",
+                "- Active blockers: none for the course-scope evidence bundle",
+                "- Waived: live trace endpoint, ops contacts, trace-backed label promotion, live failover drill",
+                "",
+            ]
+        )
     for blocker in blockers:
         blocker_md.extend(
             [

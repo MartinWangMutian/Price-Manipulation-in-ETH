@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-05-15T08:04:52.912+00:00",
+  "checked_at": "2026-05-15T13:55:19.379+00:00",
   "checks": [
     {
       "name": "ETH_MAIN_HTTP_URL",
@@ -8,8 +8,11 @@
         "trace P95",
         "rich graph evidence"
       ],
-      "ok": false,
-      "source": "environment"
+      "observed_present": false,
+      "ok": true,
+      "required": false,
+      "source": "environment",
+      "waived": true
     },
     {
       "name": "pager_or_feishu_target",
@@ -17,8 +20,10 @@
         "gray launch readiness",
         "high/critical escalation"
       ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
+      "ok": true,
+      "required": false,
+      "source": "config/ops_contacts.local.json",
+      "waived": true
     },
     {
       "name": "phone_or_manual_escalation_target",
@@ -26,8 +31,10 @@
         "manual escalation path",
         "production go/no-go"
       ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
+      "ok": true,
+      "required": false,
+      "source": "config/ops_contacts.local.json",
+      "waived": true
     },
     {
       "name": "on_call_analyst",
@@ -35,24 +42,30 @@
         "operational handoff",
         "analyst review"
       ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
+      "ok": true,
+      "required": false,
+      "source": "config/ops_contacts.local.json",
+      "waived": true
     },
     {
       "name": "on_call_engineer",
       "needed_for": [
         "trace/model/infra validation"
       ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
+      "ok": true,
+      "required": false,
+      "source": "config/ops_contacts.local.json",
+      "waived": true
     },
     {
       "name": "incident_commander",
       "needed_for": [
         "critical incident coordination"
       ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
+      "ok": true,
+      "required": false,
+      "source": "config/ops_contacts.local.json",
+      "waived": true
     },
     {
       "name": "protocol_owner_or_partner_contact",
@@ -60,16 +73,20 @@
         "protocol escalation",
         "partner notification"
       ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
+      "ok": true,
+      "required": false,
+      "source": "config/ops_contacts.local.json",
+      "waived": true
     },
     {
       "name": "multisig_signer_or_authorized_approver",
       "needed_for": [
         "approval-gated suggested actions"
       ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
+      "ok": true,
+      "required": false,
+      "source": "config/ops_contacts.local.json",
+      "waived": true
     },
     {
       "name": "trace_endpoint_preflight",
@@ -78,9 +95,11 @@
         "trace P95",
         "rich graph evidence"
       ],
-      "observed_status": "missing_endpoint",
-      "ok": false,
-      "source": "ops/reports/trace-endpoint-preflight.latest.json"
+      "observed_status": "degraded",
+      "ok": true,
+      "required": false,
+      "source": "ops/reports/trace-endpoint-preflight.latest.json",
+      "waived": true
     },
     {
       "name": "label_queue_trace_ready",
@@ -90,7 +109,9 @@
       ],
       "observed_status": "trace_ready",
       "ok": true,
-      "source": "ops/reports/label-readiness-audit.latest.json"
+      "required": false,
+      "source": "ops/reports/label-readiness-audit.latest.json",
+      "waived": true
     },
     {
       "name": "phase_b_handoff_exists",
@@ -98,168 +119,19 @@
         "operator handoff",
         "Phase B continuation"
       ],
+      "observed_status": "present",
       "ok": true,
-      "source": "ops/phase_b_handoff.md"
+      "required": true,
+      "source": "ops/phase_b_handoff.md",
+      "waived": false
     }
   ],
   "contacts_config": "config/ops_contacts.local.json",
   "handoff": "ops/phase_b_handoff.md",
   "label_readiness_report": "ops/reports/label-readiness-audit.latest.json",
-  "missing": [
-    {
-      "name": "ETH_MAIN_HTTP_URL",
-      "needed_for": [
-        "Geth/Erigon trace replay",
-        "trace P95",
-        "rich graph evidence"
-      ],
-      "ok": false,
-      "source": "environment"
-    },
-    {
-      "name": "pager_or_feishu_target",
-      "needed_for": [
-        "gray launch readiness",
-        "high/critical escalation"
-      ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
-    },
-    {
-      "name": "phone_or_manual_escalation_target",
-      "needed_for": [
-        "manual escalation path",
-        "production go/no-go"
-      ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
-    },
-    {
-      "name": "on_call_analyst",
-      "needed_for": [
-        "operational handoff",
-        "analyst review"
-      ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
-    },
-    {
-      "name": "on_call_engineer",
-      "needed_for": [
-        "trace/model/infra validation"
-      ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
-    },
-    {
-      "name": "incident_commander",
-      "needed_for": [
-        "critical incident coordination"
-      ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
-    },
-    {
-      "name": "protocol_owner_or_partner_contact",
-      "needed_for": [
-        "protocol escalation",
-        "partner notification"
-      ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
-    },
-    {
-      "name": "multisig_signer_or_authorized_approver",
-      "needed_for": [
-        "approval-gated suggested actions"
-      ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
-    },
-    {
-      "name": "trace_endpoint_preflight",
-      "needed_for": [
-        "real trace replay",
-        "trace P95",
-        "rich graph evidence"
-      ],
-      "observed_status": "missing_endpoint",
-      "ok": false,
-      "source": "ops/reports/trace-endpoint-preflight.latest.json"
-    }
-  ],
-  "missing_user_inputs": [
-    {
-      "name": "ETH_MAIN_HTTP_URL",
-      "needed_for": [
-        "Geth/Erigon trace replay",
-        "trace P95",
-        "rich graph evidence"
-      ],
-      "ok": false,
-      "source": "environment"
-    },
-    {
-      "name": "pager_or_feishu_target",
-      "needed_for": [
-        "gray launch readiness",
-        "high/critical escalation"
-      ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
-    },
-    {
-      "name": "phone_or_manual_escalation_target",
-      "needed_for": [
-        "manual escalation path",
-        "production go/no-go"
-      ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
-    },
-    {
-      "name": "on_call_analyst",
-      "needed_for": [
-        "operational handoff",
-        "analyst review"
-      ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
-    },
-    {
-      "name": "on_call_engineer",
-      "needed_for": [
-        "trace/model/infra validation"
-      ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
-    },
-    {
-      "name": "incident_commander",
-      "needed_for": [
-        "critical incident coordination"
-      ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
-    },
-    {
-      "name": "protocol_owner_or_partner_contact",
-      "needed_for": [
-        "protocol escalation",
-        "partner notification"
-      ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
-    },
-    {
-      "name": "multisig_signer_or_authorized_approver",
-      "needed_for": [
-        "approval-gated suggested actions"
-      ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
-    }
-  ],
+  "missing": [],
+  "missing_user_inputs": [],
+  "ops_contacts_required": false,
   "preflight_report": "ops/reports/trace-endpoint-preflight.latest.json",
   "readiness_checks": [
     {
@@ -269,9 +141,11 @@
         "trace P95",
         "rich graph evidence"
       ],
-      "observed_status": "missing_endpoint",
-      "ok": false,
-      "source": "ops/reports/trace-endpoint-preflight.latest.json"
+      "observed_status": "degraded",
+      "ok": true,
+      "required": false,
+      "source": "ops/reports/trace-endpoint-preflight.latest.json",
+      "waived": true
     },
     {
       "name": "label_queue_trace_ready",
@@ -281,7 +155,9 @@
       ],
       "observed_status": "trace_ready",
       "ok": true,
-      "source": "ops/reports/label-readiness-audit.latest.json"
+      "required": false,
+      "source": "ops/reports/label-readiness-audit.latest.json",
+      "waived": true
     },
     {
       "name": "phase_b_handoff_exists",
@@ -289,24 +165,18 @@
         "operator handoff",
         "Phase B continuation"
       ],
+      "observed_status": "present",
       "ok": true,
-      "source": "ops/phase_b_handoff.md"
+      "required": true,
+      "source": "ops/phase_b_handoff.md",
+      "waived": false
     }
   ],
-  "readiness_gaps": [
-    {
-      "name": "trace_endpoint_preflight",
-      "needed_for": [
-        "real trace replay",
-        "trace P95",
-        "rich graph evidence"
-      ],
-      "observed_status": "missing_endpoint",
-      "ok": false,
-      "source": "ops/reports/trace-endpoint-preflight.latest.json"
-    }
-  ],
-  "status": "missing_inputs",
+  "readiness_gaps": [],
+  "scope_mode": "course_no_trace",
+  "scope_policy": "config/phase_b_scope.json",
+  "status": "ok",
+  "trace_replay_required": false,
   "user_input_checks": [
     {
       "name": "ETH_MAIN_HTTP_URL",
@@ -315,8 +185,11 @@
         "trace P95",
         "rich graph evidence"
       ],
-      "ok": false,
-      "source": "environment"
+      "observed_present": false,
+      "ok": true,
+      "required": false,
+      "source": "environment",
+      "waived": true
     },
     {
       "name": "pager_or_feishu_target",
@@ -324,8 +197,10 @@
         "gray launch readiness",
         "high/critical escalation"
       ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
+      "ok": true,
+      "required": false,
+      "source": "config/ops_contacts.local.json",
+      "waived": true
     },
     {
       "name": "phone_or_manual_escalation_target",
@@ -333,8 +208,10 @@
         "manual escalation path",
         "production go/no-go"
       ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
+      "ok": true,
+      "required": false,
+      "source": "config/ops_contacts.local.json",
+      "waived": true
     },
     {
       "name": "on_call_analyst",
@@ -342,24 +219,30 @@
         "operational handoff",
         "analyst review"
       ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
+      "ok": true,
+      "required": false,
+      "source": "config/ops_contacts.local.json",
+      "waived": true
     },
     {
       "name": "on_call_engineer",
       "needed_for": [
         "trace/model/infra validation"
       ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
+      "ok": true,
+      "required": false,
+      "source": "config/ops_contacts.local.json",
+      "waived": true
     },
     {
       "name": "incident_commander",
       "needed_for": [
         "critical incident coordination"
       ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
+      "ok": true,
+      "required": false,
+      "source": "config/ops_contacts.local.json",
+      "waived": true
     },
     {
       "name": "protocol_owner_or_partner_contact",
@@ -367,16 +250,20 @@
         "protocol escalation",
         "partner notification"
       ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
+      "ok": true,
+      "required": false,
+      "source": "config/ops_contacts.local.json",
+      "waived": true
     },
     {
       "name": "multisig_signer_or_authorized_approver",
       "needed_for": [
         "approval-gated suggested actions"
       ],
-      "ok": false,
-      "source": "config/ops_contacts.local.json"
+      "ok": true,
+      "required": false,
+      "source": "config/ops_contacts.local.json",
+      "waived": true
     }
   ]
 }

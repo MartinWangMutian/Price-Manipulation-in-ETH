@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 import tempfile
@@ -19,6 +20,20 @@ def run_dry(root: Path) -> dict[str, object]:
     result = subprocess.run(
         [sys.executable, str(SCRIPT), "--env-file", ".env.local", "--dry-run", "--out", out],
         cwd=root,
+        text=True,
+        capture_output=True,
+    )
+    payload = json.loads(result.stdout)
+    assert payload == json.loads((root / out).read_text(encoding="utf-8"))
+    return payload  # type: ignore[return-value]
+
+
+def run_dry_with_env(root: Path, env: dict[str, str]) -> dict[str, object]:
+    out = "ops/reports/trace-endpoint-preflight.plan.json"
+    result = subprocess.run(
+        [sys.executable, str(SCRIPT), "--env-file", ".env.local", "--dry-run", "--out", out],
+        cwd=root,
+        env={**os.environ, **env},
         text=True,
         capture_output=True,
     )
@@ -52,10 +67,21 @@ def test_invalid_main_trace_url() -> None:
         assert report["main_trace_http_check"]["error"] == "invalid_url_or_scheme"
 
 
+def test_environment_fallback() -> None:
+    with tempfile.TemporaryDirectory() as tmpdir:
+        root = Path(tmpdir)
+        (root / ".env.local").write_text("", encoding="utf-8")
+        report = run_dry_with_env(root, {"ETH_MAIN_HTTP_URL": "https://trace-mainnet.example.com/v2/secret"})
+        assert report["status"] == "ready_to_preflight"
+        assert report["main_trace_http_source"] == "environment"
+        assert report["main_trace_http_check"]["host"] == "trace-mainnet.example.com"
+
+
 def main() -> int:
     test_ready_to_preflight()
     test_invalid_main_trace_url()
-    print(json.dumps({"status": "ok", "tests": 2}, indent=2, sort_keys=True))
+    test_environment_fallback()
+    print(json.dumps({"status": "ok", "tests": 3}, indent=2, sort_keys=True))
     return 0
 
 

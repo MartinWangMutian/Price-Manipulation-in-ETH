@@ -44,6 +44,51 @@ def report_status(path: Path) -> str:
     return str(report.get("status", "unknown"))
 
 
+def read_scope_policy(root: Path, rel_path: str) -> dict[str, Any]:
+    policy = read_json_or_none(root / rel_path)
+    return policy if isinstance(policy, dict) else {}
+
+
+def required_check(
+    name: str,
+    ok: bool,
+    source: str,
+    needed_for: list[str],
+    required: bool = True,
+    observed_present: bool | None = None,
+) -> dict[str, Any]:
+    check = {
+        "name": name,
+        "ok": ok if required else True,
+        "required": required,
+        "waived": not required,
+        "source": source,
+        "needed_for": needed_for,
+    }
+    if observed_present is not None:
+        check["observed_present"] = observed_present
+    return check
+
+
+def readiness_check(
+    name: str,
+    ok: bool,
+    source: str,
+    observed_status: str,
+    needed_for: list[str],
+    required: bool = True,
+) -> dict[str, Any]:
+    return {
+        "name": name,
+        "ok": ok if required else True,
+        "required": required,
+        "waived": not required,
+        "source": source,
+        "observed_status": observed_status,
+        "needed_for": needed_for,
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Check required external inputs.")
     parser.add_argument(
@@ -53,61 +98,75 @@ def main() -> int:
     parser.add_argument("--preflight-report", default="ops/reports/trace-endpoint-preflight.latest.json")
     parser.add_argument("--label-readiness-report", default="ops/reports/label-readiness-audit.latest.json")
     parser.add_argument("--handoff", default="ops/phase_b_handoff.md")
+    parser.add_argument("--scope-policy", default="config/phase_b_scope.json")
     parser.add_argument("--out", default="ops/reports/required-inputs-check.latest.json")
     args = parser.parse_args()
 
     root = Path.cwd()
+    scope_policy = read_scope_policy(root, args.scope_policy)
+    trace_replay_required = scope_policy.get("trace_replay_required", True) is not False
+    ops_contacts_required = scope_policy.get("ops_contacts_required", True) is not False
     contacts_path = root / args.contacts
     contacts = read_json(contacts_path) if contacts_path.exists() else {}
+    eth_main_present = present(os.environ.get("ETH_MAIN_HTTP_URL"))
     user_input_checks = [
-        {
-            "name": "ETH_MAIN_HTTP_URL",
-            "ok": present(os.environ.get("ETH_MAIN_HTTP_URL")),
-            "source": "environment",
-            "needed_for": ["Geth/Erigon trace replay", "trace P95", "rich graph evidence"],
-        },
-        {
-            "name": "pager_or_feishu_target",
-            "ok": present(contacts.get("pager_or_feishu_target")),
-            "source": args.contacts,
-            "needed_for": ["gray launch readiness", "high/critical escalation"],
-        },
-        {
-            "name": "phone_or_manual_escalation_target",
-            "ok": present(contacts.get("phone_or_manual_escalation_target")),
-            "source": args.contacts,
-            "needed_for": ["manual escalation path", "production go/no-go"],
-        },
-        {
-            "name": "on_call_analyst",
-            "ok": present(contacts.get("on_call_analyst")),
-            "source": args.contacts,
-            "needed_for": ["operational handoff", "analyst review"],
-        },
-        {
-            "name": "on_call_engineer",
-            "ok": present(contacts.get("on_call_engineer")),
-            "source": args.contacts,
-            "needed_for": ["trace/model/infra validation"],
-        },
-        {
-            "name": "incident_commander",
-            "ok": present(contacts.get("incident_commander")),
-            "source": args.contacts,
-            "needed_for": ["critical incident coordination"],
-        },
-        {
-            "name": "protocol_owner_or_partner_contact",
-            "ok": present(contacts.get("protocol_owner_or_partner_contact")),
-            "source": args.contacts,
-            "needed_for": ["protocol escalation", "partner notification"],
-        },
-        {
-            "name": "multisig_signer_or_authorized_approver",
-            "ok": present(contacts.get("multisig_signer_or_authorized_approver")),
-            "source": args.contacts,
-            "needed_for": ["approval-gated suggested actions"],
-        },
+        required_check(
+            "ETH_MAIN_HTTP_URL",
+            eth_main_present,
+            "environment",
+            ["Geth/Erigon trace replay", "trace P95", "rich graph evidence"],
+            required=trace_replay_required,
+            observed_present=eth_main_present,
+        ),
+        required_check(
+            "pager_or_feishu_target",
+            present(contacts.get("pager_or_feishu_target")),
+            args.contacts,
+            ["gray launch readiness", "high/critical escalation"],
+            required=ops_contacts_required,
+        ),
+        required_check(
+            "phone_or_manual_escalation_target",
+            present(contacts.get("phone_or_manual_escalation_target")),
+            args.contacts,
+            ["manual escalation path", "production go/no-go"],
+            required=ops_contacts_required,
+        ),
+        required_check(
+            "on_call_analyst",
+            present(contacts.get("on_call_analyst")),
+            args.contacts,
+            ["operational handoff", "analyst review"],
+            required=ops_contacts_required,
+        ),
+        required_check(
+            "on_call_engineer",
+            present(contacts.get("on_call_engineer")),
+            args.contacts,
+            ["trace/model/infra validation"],
+            required=ops_contacts_required,
+        ),
+        required_check(
+            "incident_commander",
+            present(contacts.get("incident_commander")),
+            args.contacts,
+            ["critical incident coordination"],
+            required=ops_contacts_required,
+        ),
+        required_check(
+            "protocol_owner_or_partner_contact",
+            present(contacts.get("protocol_owner_or_partner_contact")),
+            args.contacts,
+            ["protocol escalation", "partner notification"],
+            required=ops_contacts_required,
+        ),
+        required_check(
+            "multisig_signer_or_authorized_approver",
+            present(contacts.get("multisig_signer_or_authorized_approver")),
+            args.contacts,
+            ["approval-gated suggested actions"],
+            required=ops_contacts_required,
+        ),
     ]
     preflight_path = root / args.preflight_report
     preflight_status = report_status(preflight_path)
@@ -115,29 +174,36 @@ def main() -> int:
     label_readiness_status = report_status(label_readiness_path)
     handoff_path = root / args.handoff
     readiness_checks = [
-        {
-            "name": "trace_endpoint_preflight",
-            "ok": preflight_status == "ok",
-            "source": args.preflight_report,
-            "observed_status": preflight_status,
-            "needed_for": ["real trace replay", "trace P95", "rich graph evidence"],
-        },
-        {
-            "name": "label_queue_trace_ready",
-            "ok": label_readiness_status == "trace_ready",
-            "source": args.label_readiness_report,
-            "observed_status": label_readiness_status,
-            "needed_for": ["historical trace replay queue", "label promotion queue"],
-        },
-        {
-            "name": "phase_b_handoff_exists",
-            "ok": handoff_path.exists(),
-            "source": args.handoff,
-            "needed_for": ["operator handoff", "Phase B continuation"],
-        },
+        readiness_check(
+            "trace_endpoint_preflight",
+            preflight_status == "ok",
+            args.preflight_report,
+            preflight_status,
+            ["real trace replay", "trace P95", "rich graph evidence"],
+            required=trace_replay_required,
+        ),
+        readiness_check(
+            "label_queue_trace_ready",
+            label_readiness_status == "trace_ready",
+            args.label_readiness_report,
+            label_readiness_status,
+            ["historical trace replay queue", "label promotion queue"],
+            required=trace_replay_required,
+        ),
+        readiness_check(
+            "phase_b_handoff_exists",
+            handoff_path.exists(),
+            args.handoff,
+            "present" if handoff_path.exists() else "missing",
+            ["operator handoff", "Phase B continuation"],
+        ),
     ]
-    missing_user_inputs = [check for check in user_input_checks if not check["ok"]]
-    readiness_gaps = [check for check in readiness_checks if not check["ok"]]
+    missing_user_inputs = [
+        check for check in user_input_checks if check.get("required", True) and not check["ok"]
+    ]
+    readiness_gaps = [
+        check for check in readiness_checks if check.get("required", True) and not check["ok"]
+    ]
     missing = missing_user_inputs + readiness_gaps
     if missing_user_inputs:
         status = "missing_inputs"
@@ -149,6 +215,10 @@ def main() -> int:
         "checked_at": now_iso(),
         "status": status,
         "contacts_config": args.contacts,
+        "scope_policy": args.scope_policy,
+        "scope_mode": scope_policy.get("mode", "default"),
+        "trace_replay_required": trace_replay_required,
+        "ops_contacts_required": ops_contacts_required,
         "preflight_report": args.preflight_report,
         "label_readiness_report": args.label_readiness_report,
         "handoff": args.handoff,

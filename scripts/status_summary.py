@@ -70,6 +70,8 @@ def render_summary(root: Path) -> str:
     label_readiness = read_json_or_none(root / "ops/reports/label-readiness-audit.latest.json")
     label_promotion = read_json_or_none(root / "ops/reports/label-promotion-audit.latest.json")
     training_check = read_json_or_none(root / "ops/reports/training-dataset-check.latest.json")
+    scope_policy = read_json_or_none(root / "config/phase_b_scope.json") or {}
+    trace_replay_required = scope_policy.get("trace_replay_required", True) is not False
 
     report_statuses = project.get("report_statuses", {}) if project else {}
     blockers = project.get("blockers", []) if project else []
@@ -86,9 +88,13 @@ def render_summary(root: Path) -> str:
         "",
         "## Current Readiness",
         "",
+        f"- Scope mode: {scope_policy.get('mode', 'default')}",
+        f"- Trace replay required: {trace_replay_required}",
         f"- Provider-only shadow pipeline: {project.get('provider_only_shadow_pipeline', 'missing') if project else 'missing'}",
-        f"- Production go/no-go: {status_value(go_no_go)}",
-        f"- Validation metrics: {status_value(validation)}",
+        f"- Production go/no-go: {status_value(go_no_go)}"
+        + (" (out of scope)" if not trace_replay_required else ""),
+        f"- Validation metrics: {status_value(validation)}"
+        + (" (out of scope)" if not trace_replay_required else ""),
         f"- Required inputs: {status_value(required)}",
         f"- Env local: {status_value(env_local)}",
         f"- Provider trace probe: {status_value(provider_probe) if provider_probe else 'not_run'}",
@@ -120,16 +126,22 @@ def render_summary(root: Path) -> str:
         lines.append("- none recorded")
 
     go_failures = first_blocking_names(go_no_go)
-    if go_failures:
+    if go_failures and trace_replay_required:
         lines.extend(["", "## Go/No-Go Failures", ""])
         for name in go_failures:
             lines.append(f"- {name}")
+    elif go_failures:
+        lines.extend(["", "## Out-Of-Scope Production Gaps", ""])
+        lines.append("- Production go/no-go failures are retained for reference only and are waived for course_no_trace scope.")
 
     validation_failures = metric_failures(validation)
-    if validation_failures:
+    if validation_failures and trace_replay_required:
         lines.extend(["", "## Metric Gaps", ""])
         for failure in validation_failures:
             lines.append(f"- {failure}")
+    elif validation_failures:
+        lines.extend(["", "## Out-Of-Scope Metric Gaps", ""])
+        lines.append("- Training/live-SLO metric gaps are retained for reference only and are waived for course_no_trace scope.")
 
     if phase_b:
         lines.extend(["", "## Phase B Completion Audit", ""])
@@ -172,6 +184,8 @@ def render_summary(root: Path) -> str:
 
     if trace_preflight_plan:
         lines.extend(["", "## Main Trace Endpoint Plan", ""])
+        if not trace_replay_required:
+            lines.append("- Scope: waived for course_no_trace")
         lines.append(f"- Dry-run plan: {trace_preflight_plan.get('status', 'unknown')}")
         main_check = trace_preflight_plan.get("main_trace_http_check", {})
         if main_check:
@@ -188,8 +202,10 @@ def render_summary(root: Path) -> str:
         lines.append(f"- Status: {contacts_bootstrap.get('status', 'unknown')}")
         lines.append(f"- Local file git-ignored: {contacts_bootstrap.get('git_ignored')}")
         next_contact_action = contacts_bootstrap.get("next_action")
-        if next_contact_action:
+        if next_contact_action and trace_replay_required:
             lines.append(f"- Next action: {next_contact_action}")
+        elif next_contact_action:
+            lines.append("- Scope: optional for course_no_trace")
 
     if next_action:
         selected = next_action.get("selected_action", {})
@@ -202,6 +218,8 @@ def render_summary(root: Path) -> str:
 
     if replay_candidates or training_check:
         lines.extend(["", "## Training Label Backlog", ""])
+        if not trace_replay_required:
+            lines.append("- Scope note: trace replay, trace-backed promotion, and training readiness are waived for this course assignment.")
         if replay_candidates:
             missing = replay_candidates.get("missing_ethereum_candidate_incidents", [])
             lines.append(f"- Candidate transaction incidents: {replay_candidates.get('positive_candidate_incidents', 0)}")
@@ -302,7 +320,7 @@ def render_summary(root: Path) -> str:
             "  --out ops/reports/report-secret-audit.latest.json",
             ]
         )
-    if label_readiness and label_readiness.get("status") == "trace_ready":
+    if trace_replay_required and label_readiness and label_readiness.get("status") == "trace_ready":
         lines.extend(
             [
                 "",

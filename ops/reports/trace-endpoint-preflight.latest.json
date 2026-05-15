@@ -1,10 +1,49 @@
 {
-  "checked_at": "2026-05-14T13:57:48.113+00:00",
-  "checks": [],
-  "endpoint_configured": false,
+  "checked_at": "2026-05-15T13:47:05.774+00:00",
+  "checks": [
+    {
+      "error": {
+        "code": "http_403",
+        "message": "Forbidden"
+      },
+      "latency_ms": 1858.37,
+      "name": "eth_chainId",
+      "ok": false,
+      "result": null
+    },
+    {
+      "error": {
+        "code": "http_403",
+        "message": "Forbidden"
+      },
+      "latency_ms": 822.9,
+      "name": "debug_traceTransaction",
+      "ok": false,
+      "result_shape": {
+        "empty": true,
+        "type": null
+      },
+      "tx_hash": "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7"
+    },
+    {
+      "error": {
+        "code": "http_403",
+        "message": "Forbidden"
+      },
+      "latency_ms": 2842.78,
+      "name": "trace_transaction",
+      "ok": false,
+      "result_shape": {
+        "empty": true,
+        "type": null
+      },
+      "tx_hash": "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7"
+    }
+  ],
+  "endpoint_configured": true,
   "method": "auto",
   "queue": "data/training/trace_replay_queue.v1.json",
   "selected_method": null,
-  "status": "missing_endpoint",
+  "status": "degraded",
   "validation_errors": []
 }

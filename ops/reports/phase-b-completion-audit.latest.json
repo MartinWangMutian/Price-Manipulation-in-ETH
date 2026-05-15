@@ -1,6 +1,17 @@
 {
-  "checked_at": "2026-05-15T08:04:52.933+00:00",
+  "checked_at": "2026-05-15T13:56:31.411+00:00",
   "checks": [
+    {
+      "evidence": {
+        "local_node_required": false,
+        "mode": "course_no_trace",
+        "paid_api_allowed": false,
+        "trace_replay_required": false
+      },
+      "name": "course_scope_no_paid_api_or_local_node",
+      "ok": true,
+      "owner": "project"
+    },
     {
       "evidence": {
         "status": "ok"
@@ -11,22 +22,66 @@
     },
     {
       "evidence": {
-        "status": "trace_ready",
-        "total_trace_queue_items": 57
+        "missing_or_not_ok": [],
+        "required_report_statuses": {
+          "alert_replay": "ok",
+          "console_view": "ok",
+          "failure_drill": "ok",
+          "graph_replay": "ok",
+          "offline_eval": "ok",
+          "pending_replay": "ok",
+          "rag_explanation": "ok",
+          "risk_replay": "ok",
+          "trace_audit": "ok"
+        }
       },
-      "name": "label_queue_trace_ready",
+      "name": "local_replay_surface",
       "ok": true,
       "owner": "project"
     },
     {
       "evidence": {
-        "endpoint_configured": false,
-        "selected_method": null,
-        "status": "missing_endpoint"
+        "status": "ok"
+      },
+      "name": "report_secret_audit",
+      "ok": true,
+      "owner": "project"
+    },
+    {
+      "evidence": {
+        "handoff": "ops/phase_b_handoff.md"
+      },
+      "name": "phase_b_handoff_ready",
+      "ok": true,
+      "owner": "project"
+    }
+  ],
+  "completion_target": "provider_only_course_submission",
+  "missing_checks": [],
+  "next_project_actions_after_user_inputs": [
+    "refresh local reports",
+    "use ops/course_submission_summary.md and ops/status_summary.md as course submission evidence"
+  ],
+  "next_user_actions": [],
+  "phase_b_complete": true,
+  "project_blockers": [],
+  "readiness_gaps": [],
+  "required_inputs_status": "ok",
+  "scope_mode": "course_no_trace",
+  "scope_policy": "config/phase_b_scope.json",
+  "status": "complete",
+  "trace_replay_required": false,
+  "user_blockers": [],
+  "waived_checks": [
+    {
+      "evidence": {
+        "status": "degraded"
       },
       "name": "trace_endpoint_preflight_ok",
-      "ok": false,
-      "owner": "user"
+      "ok": true,
+      "owner": "none",
+      "reason": "Trace endpoint preflight is outside course_no_trace scope.",
+      "waived": true
     },
     {
       "evidence": {
@@ -35,8 +90,10 @@
         "written_total": 0
       },
       "name": "historical_trace_replay_complete",
-      "ok": false,
-      "owner": "project"
+      "ok": true,
+      "owner": "none",
+      "reason": "Historical trace replay would require a paid trace API or local archive node.",
+      "waived": true
     },
     {
       "evidence": {
@@ -45,8 +102,10 @@
         "status": "ok"
       },
       "name": "label_promotion_complete",
-      "ok": false,
-      "owner": "user"
+      "ok": true,
+      "owner": "none",
+      "reason": "Trace-backed label promotion is outside course_no_trace scope.",
+      "waived": true
     },
     {
       "evidence": {
@@ -54,67 +113,21 @@
         "training_ready": false
       },
       "name": "training_ready",
-      "ok": false,
-      "owner": "project"
+      "ok": true,
+      "owner": "none",
+      "reason": "Training readiness is outside course_no_trace scope.",
+      "waived": true
     },
     {
       "evidence": {
-        "missing_contact_inputs": [
-          "pager_or_feishu_target",
-          "phone_or_manual_escalation_target",
-          "on_call_analyst",
-          "on_call_engineer",
-          "incident_commander",
-          "protocol_owner_or_partner_contact",
-          "multisig_signer_or_authorized_approver"
-        ],
-        "status": "missing_inputs"
+        "missing_contact_inputs": [],
+        "required": false
       },
       "name": "ops_contacts_configured",
-      "ok": false,
-      "owner": "user"
-    },
-    {
-      "evidence": {
-        "handoff": "ops/phase_b_handoff.md",
-        "post_endpoint_runbook": "ops/post_endpoint_trace_runbook.md"
-      },
-      "name": "phase_b_handoff_ready",
       "ok": true,
-      "owner": "project"
+      "owner": "none",
+      "reason": "Production on-call contacts are outside course_no_trace scope.",
+      "waived": true
     }
-  ],
-  "missing_checks": [
-    "trace_endpoint_preflight_ok",
-    "historical_trace_replay_complete",
-    "label_promotion_complete",
-    "training_ready",
-    "ops_contacts_configured"
-  ],
-  "next_project_actions_after_user_inputs": [
-    "run trace endpoint preflight",
-    "run exploit and normal historical trace replay",
-    "parse traces, rebuild protocol features and cash-flow graphs",
-    "audit and promote labels, then refresh training dataset readiness"
-  ],
-  "next_user_actions": [
-    "provide ETH_MAIN_HTTP_URL or pass provider trace capability probe",
-    "fill config/ops_contacts.local.json and export OPS_CONTACTS_CONFIG",
-    "after real trace replay, analyst-promote exploit and normal label decisions"
-  ],
-  "phase_b_complete": false,
-  "project_blockers": [
-    "historical_trace_replay_complete",
-    "training_ready"
-  ],
-  "readiness_gaps": [
-    "trace_endpoint_preflight"
-  ],
-  "required_inputs_status": "missing_inputs",
-  "status": "blocked_user_input",
-  "user_blockers": [
-    "trace_endpoint_preflight_ok",
-    "label_promotion_complete",
-    "ops_contacts_configured"
   ]
 }

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 from typing import Any
 
@@ -18,6 +19,7 @@ def write_preflight_plan(
     env_file: str,
     main_check: dict[str, Any],
     parse_errors: list[str],
+    main_url_source: str,
 ) -> None:
     if parse_errors:
         status = "invalid_env_file"
@@ -29,6 +31,7 @@ def write_preflight_plan(
         "checked_at": now_iso(),
         "status": status,
         "env_file": env_file,
+        "main_trace_http_source": main_url_source,
         "main_trace_http_check": main_check,
         "parse_errors": parse_errors,
         "secrets_redacted": True,
@@ -54,10 +57,16 @@ def main() -> int:
 
     root = Path.cwd()
     values, parse_errors = parse_env_file(root / args.env_file)
-    main_url = values.get("ETH_MAIN_HTTP_URL")
+    main_url = values.get("ETH_MAIN_HTTP_URL") or os.environ.get("ETH_MAIN_HTTP_URL")
+    if values.get("ETH_MAIN_HTTP_URL"):
+        main_url_source = args.env_file
+    elif os.environ.get("ETH_MAIN_HTTP_URL"):
+        main_url_source = "environment"
+    else:
+        main_url_source = "missing"
     main_check = audit_url("ETH_MAIN_HTTP_URL", main_url)
     if args.dry_run or parse_errors or not main_check["ok"]:
-        write_preflight_plan(root, args.out, args.env_file, main_check, parse_errors)
+        write_preflight_plan(root, args.out, args.env_file, main_check, parse_errors, main_url_source)
         return 0 if main_check["ok"] and not parse_errors else 2
 
     return trace_preflight_main_args(

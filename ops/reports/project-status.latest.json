@@ -1,55 +1,12 @@
 {
-  "blockers": [
-    {
-      "id": "live_trace_endpoint",
-      "needed": "Geth or Erigon trace HTTP endpoint",
-      "owner": "user",
-      "unblocks": [
-        "real trace P95",
-        "rich graph edges",
-        "high/critical evidence",
-        "GraphSAGE training data"
-      ]
-    },
-    {
-      "id": "ops_contacts",
-      "needed": "Pager/Feishu, phone/manual escalation, on-call, protocol partner, and approver names",
-      "owner": "user",
-      "unblocks": [
-        "gray launch readiness",
-        "operational handoff",
-        "production go/no-go"
-      ]
-    },
-    {
-      "id": "labeled_replay_sets",
-      "needed": "trace-replayed and analyst-promoted exploit and normal transaction labels",
-      "owner": "project",
-      "unblocks": [
-        "false positive/negative metrics",
-        "lead time",
-        "GraphSAGE evaluation"
-      ]
-    },
-    {
-      "id": "live_failover_drill",
-      "needed": "primary/backup/provider switch test with real endpoints",
-      "owner": "project",
-      "unblocks": [
-        "go/no-go failover checks",
-        "Phase 6 gate"
-      ]
-    }
-  ],
-  "checked_at": "2026-05-15T07:58:12.907+00:00",
+  "blockers": [],
+  "checked_at": "2026-05-15T13:56:27.503+00:00",
   "gray_launch_readiness": "not_ready",
   "next_actions": [
-    "configure Geth/Erigon trace endpoint",
-    "fill operations contact roster",
-    "trace replay and analyst-promote candidate exploit/normal labels",
-    "run live failover drills"
+    "refresh local course-scope reports",
+    "use ops/status_summary.md and ops/course_submission_summary.md for submission evidence"
   ],
-  "phase_b_completion": "blocked_user_input",
+  "phase_b_completion": "complete",
   "production_go_no_go": "no_go",
   "provider_only_shadow_pipeline": "ok",
   "report_statuses": {
@@ -61,14 +18,16 @@
     "gray_launch": "not_ready",
     "offline_eval": "ok",
     "pending_replay": "ok",
-    "phase_b_completion": "blocked_user_input",
+    "phase_b_completion": "complete",
     "rag_explanation": "ok",
-    "required_inputs": "missing_inputs",
+    "required_inputs": "ok",
     "risk_replay": "ok",
     "trace_audit": "ok",
     "trace_replay": "ok",
     "validation_metrics": "not_pass"
   },
-  "required_inputs": "missing_inputs",
+  "required_inputs": "ok",
+  "scope_mode": "course_no_trace",
+  "trace_replay_required": false,
   "validation_metrics": "not_pass"
 }
