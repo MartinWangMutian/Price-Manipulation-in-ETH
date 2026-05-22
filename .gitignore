@@ -6,3 +6,6 @@ __pycache__/
 .env
 .env.*
 config/ops_contacts.local.json
+plan
+ppt
+论文部分
