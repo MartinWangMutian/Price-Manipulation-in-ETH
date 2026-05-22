@@ -70,6 +70,14 @@ def role_annotation(address: str | None, role_index: dict[str, dict[str, Any]]) 
         "contract": contract.get("contract"),
         "roles": contract.get("roles", []),
         "graph_node_type": contract.get("graph_node_type"),
+        "audit_status": contract.get("audit_status", "unknown"),
+        "governance_control": contract.get("governance_control", "unknown"),
+        "pause_capability": contract.get(
+            "pause_capability",
+            bool(contract.get("emergency_surface", False)),
+        ),
+        "upgradeability": contract.get("upgradeability", "unknown"),
+        "risk_tier": contract.get("risk_tier", "unknown"),
         "emergency_surface": contract.get("emergency_surface", False),
     }
 

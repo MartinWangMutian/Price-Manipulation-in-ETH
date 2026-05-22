@@ -58,6 +58,11 @@ def main() -> int:
                 "contract": "UniversalRouter",
                 "roles": ["router"],
                 "graph_node_type": "protocol",
+                "audit_status": "audited",
+                "governance_control": "uniswap_governance",
+                "pause_capability": False,
+                "upgradeability": "immutable",
+                "risk_tier": "router",
                 "emergency_surface": False,
             }
         ],
@@ -65,15 +70,46 @@ def main() -> int:
         "transfer_protocol_annotations": [],
         "feature_missing_flags": [],
     }
-    graph = build_graph(parsed, protocol_features)
+    address_context = {
+        "items": [
+            {
+                "address": sender,
+                "relation_type": "same_initiator",
+                "count": 4,
+                "last_seen_at": "2026-05-14T00:04:00.000+00:00",
+            }
+        ]
+    }
+    protocol_context = {
+        "items": [
+            {
+                "protocol_id": "uniswap_v3_router",
+                "relation_type": "volume_spike",
+                "count": 12,
+                "volume_usd": 1200000.0,
+                "last_seen_at": "2026-05-14T00:05:00.000+00:00",
+            }
+        ]
+    }
+    graph = build_graph(parsed, protocol_features, address_context, protocol_context)
     errors = validate_graph_shape(graph)
     assert not errors, errors
     node_types = {node["node_type"] for node in graph["nodes"]}
     edge_types = {edge["edge_type"] for edge in graph["edges"]}
-    assert {"transaction", "address", "asset", "protocol"}.issubset(node_types), graph
+    assert {"transaction", "address", "asset", "protocol", "context"}.issubset(node_types), graph
     assert {"transfer", "call", "context"}.issubset(edge_types), graph
-    assert graph["context_windows"] == ["tx-only"], graph
-    assert "context_5m_address_unavailable" in graph["feature_missing_flags"], graph
+    assert graph["context_windows"] == ["tx-only", "5m-address", "1h-protocol"], graph
+    assert "context_5m_address_unavailable" not in graph["feature_missing_flags"], graph
+    protocol_node = next(node for node in graph["nodes"] if node["node_type"] == "protocol")
+    assert protocol_node["audit_status"] == "audited", protocol_node
+    call_edge = next(edge for edge in graph["edges"] if edge["edge_type"] == "call")
+    assert call_edge["semantic_action"] == "swap", call_edge
+    temporal_edges = [
+        edge
+        for edge in graph["edges"]
+        if edge.get("edge_type") == "context" and edge.get("context_type") == "temporal_window"
+    ]
+    assert {edge["window"] for edge in temporal_edges} == {"5m-address", "1h-protocol"}, graph
     print("cash_flow_graph_builder_selftest ok")
     return 0
 

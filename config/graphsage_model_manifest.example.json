@@ -1,0 +1,16 @@
+{
+  "schema_ver": "graphsage-model-manifest.v1",
+  "model_version": "graphsage.v1",
+  "feature_ver": "cash-flow-graph-builder.v1",
+  "label_snapshot": "label-snapshot.v1",
+  "threshold_profile": "graphsage-thresholds.v1",
+  "input_dim": 18,
+  "hidden_dim": 64,
+  "dropout": 0.1,
+  "num_layers": 2,
+  "aggregator": "mean",
+  "dependencies": {
+    "torch": true,
+    "torch_geometric": true
+  }
+}

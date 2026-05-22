@@ -126,9 +126,20 @@ python3 scripts/protocol_role_enricher.py \
 ```
 
 ```bash
+python3 scripts/context_window_builder.py \
+  --parsed-input data/replay/parsed-trace.v1 \
+  --protocol-features data/replay/protocol-features.v1 \
+  --address-out data/context/address-context.v1.json \
+  --protocol-out data/context/protocol-context.v1.json \
+  --report ops/reports/context-window-builder.latest.json
+```
+
+```bash
 python3 scripts/cash_flow_graph_builder.py \
   --parsed-input data/replay/parsed-trace.v1 \
   --protocol-features data/replay/protocol-features.v1 \
+  --address-context data/context/address-context.v1.json \
+  --protocol-context data/context/protocol-context.v1.json \
   --write-replay \
   --write-snapshot \
   --out ops/reports/cash-flow-graph-builder.latest.json
@@ -258,6 +269,30 @@ python3 scripts/training_dataset_check.py \
   --unlabeled data/training/unlabeled_pool.provider_only.v1.json \
   --label-candidates data/training/replay_label_candidates.seed.json \
   --out ops/reports/training-dataset-check.latest.json
+```
+
+```bash
+python3 scripts/graph_label_exporter.py \
+  --decisions data/training/label_promotion_decisions.seed.json \
+  --graphs data/replay/graph-inference.v1 \
+  --out data/training/graph_labels.v1.json \
+  --report ops/reports/graph-label-exporter.latest.json
+```
+
+```bash
+python3 scripts/graphsage_train.py \
+  --graphs data/replay/graph-inference.v1 \
+  --labels data/training/graph_labels.v1.json \
+  --out-dir models/graphsage/latest \
+  --report ops/reports/graphsage-train.latest.json \
+  --dry-run
+```
+
+```bash
+python3 scripts/graphsage_inference_service.py \
+  --input data/replay/graph-inference.v1 \
+  --model-dir models/graphsage/latest \
+  --out ops/reports/graphsage-inference.latest.json
 ```
 
 ```bash

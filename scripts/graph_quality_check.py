@@ -44,6 +44,7 @@ def check_node(node: dict[str, Any]) -> list[str]:
         "address": "address:0x",
         "asset": "asset:0x",
         "protocol": "protocol:0x",
+        "context": "context:",
     }.get(node_type)
     if expected_prefix is None:
         errors.append(f"unknown node_type {node_type}")
@@ -80,10 +81,17 @@ def check_edge(edge: dict[str, Any], nodes: set[str]) -> list[str]:
         if depth is not None and (not isinstance(depth, int) or depth < 0):
             errors.append("call depth must be non-negative integer or null")
     if edge_type == "context":
-        if not isinstance(from_node, str) or not from_node.startswith("address:"):
-            errors.append("context from_node must be address")
-        if not isinstance(to_node, str) or not to_node.startswith("protocol:"):
-            errors.append("context to_node must be protocol")
+        context_type = edge.get("context_type")
+        if context_type == "temporal_window":
+            if not isinstance(from_node, str) or not from_node.startswith("tx:"):
+                errors.append("temporal context from_node must be transaction")
+            if not isinstance(to_node, str) or not to_node.startswith("context:"):
+                errors.append("temporal context to_node must be context")
+        else:
+            if not isinstance(from_node, str) or not from_node.startswith("address:"):
+                errors.append("context from_node must be address")
+            if not isinstance(to_node, str) or not to_node.startswith("protocol:"):
+                errors.append("context to_node must be protocol")
     return errors
 
 
@@ -155,8 +163,8 @@ def main() -> int:
         "edge_counts": dict(sorted(edge_counts.items())),
         "build_latency_ms": latency_report,
         "coverage_notes": [
-            "Current provider-only graphs contain no transfer/call/context edges.",
-            "Edge direction, call depth, and protocol role checks are enforced when such edges exist.",
+            "Provider-only graphs may contain only transaction nodes until rich trace is available.",
+            "Transfer/call/context edge direction, call depth, protocol role, and temporal context checks are enforced when such edges exist.",
         ],
         "errors": errors,
     }

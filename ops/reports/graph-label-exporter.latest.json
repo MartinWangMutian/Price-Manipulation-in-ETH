@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-05-22T06:11:40.412+00:00",
+  "errors": [],
+  "graphs_seen": 110,
+  "label_counts": {},
+  "out": "data/training/graph_labels.v1.json",
+  "promoted_labels": 0,
+  "status": "ok",
+  "training_ready": false
+}

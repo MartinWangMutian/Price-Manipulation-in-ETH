@@ -33,5 +33,60 @@
     "signature": "multicall(bytes[])",
     "name": "multicall",
     "protocol": "router"
+  },
+  "0x128acb08": {
+    "signature": "swap(address,bool,int256,uint160,bytes)",
+    "name": "swap",
+    "protocol": "uniswap_v3_pool"
+  },
+  "0x022c0d9f": {
+    "signature": "swap(uint256,uint256,address,bytes)",
+    "name": "swap",
+    "protocol": "uniswap_v2_pair"
+  },
+  "0x5cffe9de": {
+    "signature": "flashLoan(address,address,uint256,bytes)",
+    "name": "flashLoan",
+    "protocol": "lending_or_amm"
+  },
+  "0xab9c4b5d": {
+    "signature": "flashLoanSimple(address,address,uint256,bytes,uint16)",
+    "name": "flashLoanSimple",
+    "protocol": "aave_v3"
+  },
+  "0x617ba037": {
+    "signature": "supply(address,uint256,address,uint16)",
+    "name": "supply",
+    "protocol": "aave_v3"
+  },
+  "0xa415bcad": {
+    "signature": "borrow(address,uint256,uint256,uint16,address)",
+    "name": "borrow",
+    "protocol": "aave_v3"
+  },
+  "0x573ade81": {
+    "signature": "repay(address,uint256,uint256,address)",
+    "name": "repay",
+    "protocol": "aave_v3"
+  },
+  "0x69328dec": {
+    "signature": "withdraw(address,uint256,address)",
+    "name": "withdraw",
+    "protocol": "aave_v3"
+  },
+  "0x00a718a9": {
+    "signature": "liquidationCall(address,address,address,uint256,bool)",
+    "name": "liquidationCall",
+    "protocol": "aave_v3"
+  },
+  "0xfeaf968c": {
+    "signature": "latestRoundData()",
+    "name": "latestRoundData",
+    "protocol": "chainlink"
+  },
+  "0x50d25bcd": {
+    "signature": "latestAnswer()",
+    "name": "latestAnswer",
+    "protocol": "chainlink"
   }
 }

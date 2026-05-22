@@ -1,0 +1,19 @@
+{
+  "blocking_reasons": [
+    "torch_or_torch_geometric_missing",
+    "no_labeled_graph_replay_records",
+    "labels_must_include_positive_and_negative_classes"
+  ],
+  "checked_at": "2026-05-22T06:11:53.875+00:00",
+  "checkpoint_path": null,
+  "dependencies": {
+    "torch": false,
+    "torch_geometric": false
+  },
+  "feature_ver": "cash-flow-graph-builder.v1",
+  "graphs_seen": 110,
+  "labeled_graphs": 0,
+  "manifest_path": null,
+  "model_version": "graphsage.v1",
+  "status": "blocked"
+}

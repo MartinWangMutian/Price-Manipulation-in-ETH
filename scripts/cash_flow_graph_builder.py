@@ -14,6 +14,8 @@ from typing import Any
 
 
 FEATURE_VER = "cash-flow-graph-builder.v1"
+ADDRESS_CONTEXT_WINDOW = "5m-address"
+PROTOCOL_CONTEXT_WINDOW = "1h-protocol"
 
 
 def now_iso() -> str:
@@ -87,6 +89,14 @@ def node_protocol(annotation: dict[str, Any]) -> dict[str, Any]:
         "category": annotation.get("category"),
         "contract": annotation.get("contract"),
         "roles": annotation.get("roles", []),
+        "audit_status": annotation.get("audit_status", "unknown"),
+        "governance_control": annotation.get("governance_control", "unknown"),
+        "pause_capability": annotation.get(
+            "pause_capability",
+            bool(annotation.get("emergency_surface", False)),
+        ),
+        "upgradeability": annotation.get("upgradeability", "unknown"),
+        "risk_tier": annotation.get("risk_tier", "unknown"),
         "emergency_surface": annotation.get("emergency_surface", False),
     }
 
@@ -120,20 +130,85 @@ def build_call_edge(call: dict[str, Any], ordinal: int) -> dict[str, Any] | None
     receiver = normalize_address(call.get("to"))
     if sender is None or receiver is None:
         return None
+    call_type = call.get("type")
+    function_selector = call.get("function_selector")
+    function_name = call.get("function_name")
     return {
         "edge_id": stable_id("edge", "call", ordinal, sender, receiver),
         "edge_type": "call",
         "from_node": f"address:{sender}",
         "to_node": f"address:{receiver}",
         "depth": call.get("depth"),
-        "call_type": call.get("type"),
-        "function_selector": call.get("function_selector"),
+        "call_depth": call.get("depth"),
+        "call_type": call_type,
+        "function_selector": function_selector,
         "function_signature": call.get("function_signature"),
-        "function_name": call.get("function_name"),
+        "function_name": function_name,
+        "semantic_action": classify_call_semantic(function_name, function_selector),
+        "selector_family": selector_family(function_selector),
+        "protocol_hint": call.get("protocol_hint"),
+        "is_delegatecall": str(call_type or "").lower() == "delegatecall",
+        "is_staticcall": str(call_type or "").lower() == "staticcall",
+        "is_value_transfer": str(call.get("value") or "0") not in {"0", "0x0"},
         "success": call.get("success"),
         "revert_reason": call.get("revert_reason"),
         "value": call.get("value"),
     }
+
+
+def selector_family(selector: Any) -> str | None:
+    if not isinstance(selector, str):
+        return None
+    known = {
+        "0x095ea7b3": "erc20_approval",
+        "0x23b872dd": "erc20_transfer",
+        "0xa9059cbb": "erc20_transfer",
+        "0x38ed1739": "swap",
+        "0x128acb08": "swap",
+        "0x022c0d9f": "swap",
+        "0x414bf389": "swap",
+        "0x5cffe9de": "flash_loan",
+        "0xab9c4b5d": "flash_loan",
+        "0x617ba037": "lending_supply",
+        "0xa415bcad": "lending_borrow",
+        "0x573ade81": "lending_repay",
+        "0x69328dec": "lending_withdraw",
+        "0x00a718a9": "liquidation",
+        "0xfeaf968c": "oracle_read",
+        "0x50d25bcd": "oracle_read",
+        "0x5ae401dc": "batched_call",
+        "0xac9650d8": "batched_call",
+    }
+    return known.get(selector.lower(), "unknown_selector")
+
+
+def classify_call_semantic(function_name: Any, selector: Any) -> str:
+    name = str(function_name or "").lower()
+    family = selector_family(selector)
+    if "flashloan" in name or "flash_loan" in name or family == "flash_loan":
+        return "flash_loan"
+    if "swap" in name or family == "swap":
+        return "swap"
+    if "liquidat" in name or family == "liquidation":
+        return "liquidation"
+    if "borrow" in name or family == "lending_borrow":
+        return "borrow"
+    if "repay" in name or family == "lending_repay":
+        return "repay"
+    if "deposit" in name or "supply" in name or family == "lending_supply":
+        return "supply"
+    if "withdraw" in name or "redeem" in name or family == "lending_withdraw":
+        return "withdraw"
+    if (
+        "latestanswer" in name
+        or "latestrounddata" in name
+        or "getanswer" in name
+        or family == "oracle_read"
+    ):
+        return "oracle_read"
+    if family in {"erc20_transfer", "erc20_approval", "batched_call"}:
+        return family
+    return "unknown"
 
 
 def build_context_edge(annotation: dict[str, Any], side: str, ordinal: int) -> dict[str, Any]:
@@ -143,9 +218,94 @@ def build_context_edge(annotation: dict[str, Any], side: str, ordinal: int) -> d
         "edge_type": "context",
         "from_node": f"address:{address}",
         "to_node": f"protocol:{address}",
-        "context_type": "protocol_role",
+        "context_type": "protocol_role_match",
+        "window": "tx-only",
+        "relation_type": "protocol_role",
         "side": side,
         "roles": annotation.get("roles", []),
+    }
+
+
+def extract_context_records(context: dict[str, Any], window: str) -> list[dict[str, Any]]:
+    if not isinstance(context, dict):
+        return []
+    for key in ("items", "records", "contexts", "summaries"):
+        value = context.get(key)
+        if isinstance(value, list):
+            return [item for item in value if isinstance(item, dict)]
+    if window == ADDRESS_CONTEXT_WINDOW:
+        value = context.get("addresses") or context.get("address_context")
+    else:
+        value = context.get("protocols") or context.get("protocol_context")
+    if isinstance(value, list):
+        return [item for item in value if isinstance(item, dict)]
+    if isinstance(value, dict):
+        records = []
+        for key, item in value.items():
+            if isinstance(item, dict):
+                records.append({**item, "address" if window == ADDRESS_CONTEXT_WINDOW else "protocol_id": key})
+        return records
+    if any(key in context for key in ("address", "protocol_id", "relation_type", "count")):
+        return [context]
+    return []
+
+
+def select_context_records(
+    context: dict[str, Any] | None,
+    window: str,
+    tx_hash: str,
+) -> list[dict[str, Any]]:
+    if not isinstance(context, dict):
+        return []
+    tx_key = tx_hash.lower()
+    for key in ("contexts_by_tx", "records_by_tx", "by_tx"):
+        value = context.get(key)
+        if not isinstance(value, dict):
+            continue
+        records = value.get(tx_key) or value.get(tx_hash)
+        if isinstance(records, list):
+            return [item for item in records if isinstance(item, dict)]
+    return extract_context_records(context, window)
+
+
+def context_node(record: dict[str, Any], window: str, ordinal: int) -> dict[str, Any]:
+    relation_type = record.get("relation_type") or record.get("type") or "history_summary"
+    if window == ADDRESS_CONTEXT_WINDOW:
+        subject = normalize_address(record.get("address")) or record.get("address") or f"record-{ordinal}"
+    else:
+        subject = record.get("protocol_id") or normalize_address(record.get("address")) or f"record-{ordinal}"
+    return {
+        "node_id": stable_id("context", window, subject, relation_type),
+        "node_type": "context",
+        "window": window,
+        "subject": subject,
+        "relation_type": relation_type,
+        "count": record.get("count", record.get("tx_count")),
+        "last_seen_at": record.get("last_seen_at"),
+        "volume_usd": record.get("volume_usd"),
+        "price_deviation_bps": record.get("price_deviation_bps"),
+        "liquidity_delta_usd": record.get("liquidity_delta_usd"),
+    }
+
+
+def temporal_context_edge(
+    tx_hash: str,
+    context_node_id: str,
+    record: dict[str, Any],
+    window: str,
+    ordinal: int,
+) -> dict[str, Any]:
+    relation_type = record.get("relation_type") or record.get("type") or "history_summary"
+    return {
+        "edge_id": stable_id("edge", "context", tx_hash, window, relation_type, ordinal),
+        "edge_type": "context",
+        "from_node": f"tx:{tx_hash}",
+        "to_node": context_node_id,
+        "context_type": "temporal_window",
+        "window": window,
+        "relation_type": relation_type,
+        "count": record.get("count", record.get("tx_count")),
+        "last_seen_at": record.get("last_seen_at"),
     }
 
 
@@ -241,14 +401,28 @@ def build_graph(
     context_windows = ["tx-only"]
     missing_flags = set(parsed.get("feature_missing_flags", []))
     missing_flags.update(protocol_features.get("feature_missing_flags", []))
-    if address_context:
-        context_windows.append("5m-address")
+    address_records = select_context_records(address_context, ADDRESS_CONTEXT_WINDOW, tx_hash)
+    protocol_records = select_context_records(protocol_context, PROTOCOL_CONTEXT_WINDOW, tx_hash)
+    if address_records:
+        context_windows.append(ADDRESS_CONTEXT_WINDOW)
+        for idx, record in enumerate(address_records):
+            node = context_node(record, ADDRESS_CONTEXT_WINDOW, idx)
+            add_node(nodes, node)
+            edges.append(temporal_context_edge(tx_hash, node["node_id"], record, ADDRESS_CONTEXT_WINDOW, idx))
     else:
         missing_flags.add("context_5m_address_unavailable")
-    if protocol_context:
-        context_windows.append("1h-protocol")
+        if address_context:
+            missing_flags.add("context_5m_address_empty")
+    if protocol_records:
+        context_windows.append(PROTOCOL_CONTEXT_WINDOW)
+        for idx, record in enumerate(protocol_records):
+            node = context_node(record, PROTOCOL_CONTEXT_WINDOW, idx)
+            add_node(nodes, node)
+            edges.append(temporal_context_edge(tx_hash, node["node_id"], record, PROTOCOL_CONTEXT_WINDOW, idx))
     else:
         missing_flags.add("context_1h_protocol_unavailable")
+        if protocol_context:
+            missing_flags.add("context_1h_protocol_empty")
     for flag in context_timeout_flags or []:
         missing_flags.add(flag)
 
