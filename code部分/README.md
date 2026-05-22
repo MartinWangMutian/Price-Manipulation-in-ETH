@@ -12,9 +12,7 @@ config/    规则、协议白名单、selector 字典、模型 manifest 示例
 schemas/   事件与 replay JSON Schema
 data/      replay 数据、训练候选、上下文窗口、RAG 索引和控制台数据
 ops/       命令索引、runbook、审计报告和生成报告
-plan/      项目计划、执行清单、风险类型和研究材料
 docs/      存储、图序列化等工程文档
-ppt/       演示材料和网页 PPT 产物
 ```
 
 ## 核心流水线

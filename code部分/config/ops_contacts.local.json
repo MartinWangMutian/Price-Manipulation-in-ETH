@@ -1,0 +1,10 @@
+{
+  "incident_commander": "TBD",
+  "multisig_signer_or_authorized_approver": "TBD",
+  "on_call_analyst": "TBD",
+  "on_call_engineer": "TBD",
+  "pager_or_feishu_target": "TBD",
+  "phone_or_manual_escalation_target": "TBD",
+  "protocol_owner_or_partner_contact": "TBD",
+  "schema_ver": "ops-contacts.v1"
+}
