@@ -28,7 +28,6 @@ docs/      存储、图序列化等工程文档
 
 ## 当前状态
 
-已完成：
 
 - Provider-only replay 链路和 110 条唯一评分链路验证。
 - Cash-Flow Graph 构建器，包括 Protocol 节点、Call 边、Context 边结构。
@@ -37,12 +36,6 @@ docs/      存储、图序列化等工程文档
 - GraphSAGE 模型定义、训练脚本、推理入口、模型 manifest 协议和降级路径。
 - 全量 `*_selftest.py` 自测通过。
 
-仍需外部条件：
-
-- 完整 trace-capable API 或本地 Geth/Erigon 节点，用于真实 call tree/state diff。
-- 经分析员晋升的正负图级标签，导出为 `data/training/graph_labels.v1.json`。
-- 安装 PyTorch / PyTorch Geometric 后训练并发布 `models/graphsage/latest/model.pt`。
-- 真实离线评估：ROC-AUC、PR-AUC、Recall@FPR、校准曲线、消融实验和在线延迟测量。
 
 ## 快速开始
 
@@ -163,10 +156,4 @@ python3 scripts/report_secret_audit.py \
 
 - 示例配置放在 `config/*.example.json` 或 `ops/*.env.example`。
 
-## 开发约定
-
-- 新增或修改脚本时，优先添加相邻 `*_selftest.py`。
-- JSON 输出保持 `indent=2`、`sort_keys=True`、UTF-8 和尾随换行。
-- 生成报告默认写入 `ops/reports/`。
-- `ppt/`、`outputs/`、`data/replay/` 是产物较多的区域，修改前确认任务是否需要触碰。
 
