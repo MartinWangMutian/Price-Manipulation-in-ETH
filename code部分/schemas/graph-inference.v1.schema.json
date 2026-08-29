@@ -29,6 +29,36 @@
     "nodes": {"type": "array", "items": {"type": "object"}},
     "edges": {"type": "array", "items": {"type": "object"}},
     "feature_ver": {"type": "string", "minLength": 1},
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "transaction_ref",
+        "trace_bundle_event_id",
+        "trace_bundle_idempotency_key",
+        "raw_trace_ref",
+        "parsed_trace_event_id",
+        "parsed_trace_idempotency_key",
+        "protocol_features_event_id",
+        "protocol_features_idempotency_key",
+        "trace_parser_ver",
+        "protocol_role_enricher_ver",
+        "graph_builder_ver"
+      ],
+      "properties": {
+        "transaction_ref": {"type": ["string", "null"]},
+        "trace_bundle_event_id": {"type": ["string", "null"]},
+        "trace_bundle_idempotency_key": {"type": ["string", "null"]},
+        "raw_trace_ref": {"type": ["string", "null"]},
+        "parsed_trace_event_id": {"type": ["string", "null"]},
+        "parsed_trace_idempotency_key": {"type": ["string", "null"]},
+        "protocol_features_event_id": {"type": ["string", "null"]},
+        "protocol_features_idempotency_key": {"type": ["string", "null"]},
+        "trace_parser_ver": {"type": ["string", "null"]},
+        "protocol_role_enricher_ver": {"type": ["string", "null"]},
+        "graph_builder_ver": {"type": ["string", "null"]}
+      }
+    },
     "context_windows": {
       "type": "array",
       "items": {

@@ -1,0 +1,56 @@
+{
+  "calls": [
+    {
+      "action": {
+        "callType": "call",
+        "from": "0xadff6cec1e2af4f05406d53f2e94f6e433b9369a",
+        "gas": "0xa980",
+        "input": "0xa9059cbb000000000000000000000000bb42feea0840258aa5eb9257e2dc74872b8037490000000000000000000000000000000000000000000000000000000001c9c380",
+        "to": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "value": "0x0"
+      },
+      "blockHash": "0x847b9c9660881f405d76b6cc014a13f4289870a5e18e01db86d36eafc1d2cac8",
+      "blockNumber": 25085312,
+      "result": {
+        "gasUsed": "0x5fb5",
+        "output": "0x"
+      },
+      "subtraces": 0,
+      "traceAddress": [],
+      "transactionHash": "0xe6b670cc55d258f08bc6feac61bbf1a5dd7ee678bafd8a3557876cbcc95a192a",
+      "transactionPosition": 32,
+      "type": "call"
+    }
+  ],
+  "chain_id": 1,
+  "created_at": "2026-08-29T08:58:14.472+00:00",
+  "event_id": "8f576e5d61555870379c030fef79cf8b40b22383a688b659955ba784164acc1a",
+  "idempotency_key": "1:0xe6b670cc55d258f08bc6feac61bbf1a5dd7ee678bafd8a3557876cbcc95a192a:trace_transaction",
+  "logs": [
+    {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "blockHash": "0x847b9c9660881f405d76b6cc014a13f4289870a5e18e01db86d36eafc1d2cac8",
+      "blockNumber": "0x17ec580",
+      "blockTimestamp": "0x6a0443cb",
+      "data": "0x0000000000000000000000000000000000000000000000000000000001c9c380",
+      "logIndex": "0xe1",
+      "removed": false,
+      "topics": [
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+        "0x000000000000000000000000adff6cec1e2af4f05406d53f2e94f6e433b9369a",
+        "0x000000000000000000000000bb42feea0840258aa5eb9257e2dc74872b803749"
+      ],
+      "transactionHash": "0xe6b670cc55d258f08bc6feac61bbf1a5dd7ee678bafd8a3557876cbcc95a192a",
+      "transactionIndex": "0x20"
+    }
+  ],
+  "observed_at": "2026-05-13T09:26:35.000+00:00",
+  "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-29/hour=08/1-0xe6b670cc55d258f08bc6feac61bbf1a5dd7ee678bafd8a3557876cbcc95a192a-trace_transaction.json",
+  "schema_ver": "trace-bundle.v1",
+  "state_diff": {},
+  "token_transfers": [],
+  "trace_error": null,
+  "trace_source": "trace_transaction",
+  "trace_status": "ok",
+  "tx_hash": "0xe6b670cc55d258f08bc6feac61bbf1a5dd7ee678bafd8a3557876cbcc95a192a"
+}

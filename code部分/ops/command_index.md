@@ -158,6 +158,17 @@ python3 scripts/graph_quality_check.py \
   --out ops/reports/graph-quality-check.latest.json
 ```
 
+Strict gate for the frozen paid rich-trace partition:
+
+```bash
+python3 scripts/rich_graph_quality_audit.py \
+  --trace-input data/replay/trace-bundle.v1/dt=2026-08-29 \
+  --parsed-input data/replay/parsed-trace.v1/dt=2026-08-29 \
+  --protocol-input data/replay/protocol-features.v1/dt=2026-08-29 \
+  --graph-input data/replay/graph-inference.v1/dt=2026-08-29 \
+  --out ops/reports/rich-graph-quality-audit.latest.json
+```
+
 ## Risk, Alert, and RAG
 
 ```bash

@@ -1,0 +1,78 @@
+{
+  "chain_id": 1,
+  "context_windows": [
+    "tx-only"
+  ],
+  "created_at": "2026-08-29T09:18:13.002+00:00",
+  "edges": [
+    {
+      "call_depth": 0,
+      "call_type": "call",
+      "depth": 0,
+      "edge_id": "edge:340e973e60e42cd00f0b5b07",
+      "edge_type": "call",
+      "from_node": "address:0x31fc2cb761083a77cf218461e2072bcea0ca35ef",
+      "function_name": null,
+      "function_selector": null,
+      "function_signature": null,
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": true,
+      "ordinal": 0,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "selector_family": null,
+      "semantic_action": "unknown",
+      "success": true,
+      "to_node": "address:0xd38c9db1781c7e9baf18328f8791291574987dd0",
+      "value": "42560000000000000"
+    }
+  ],
+  "event_id": "7310e5475b8980d4230ab2718d3fcd897870b606eb318f42219b612a1921d04a",
+  "feature_missing_flags": [
+    "context_1h_protocol_empty",
+    "context_1h_protocol_unavailable",
+    "context_5m_address_empty",
+    "context_5m_address_unavailable",
+    "no_logs",
+    "no_protocol_role_matches"
+  ],
+  "feature_ver": "cash-flow-graph-builder.v1",
+  "graph_id": "graph:0x98dbcea3442c9f33a17ee49dbb482b7a946162a0fe8af27b85e209b16eb72154",
+  "graph_snapshot_ref": "data/graph-snapshots/graph-inference.v1/dt=2026-08-29/hour=09/7310e5475b8980d4230ab2718d3fcd897870b606eb318f42219b612a1921d04a.json",
+  "idempotency_key": "1:0x98dbcea3442c9f33a17ee49dbb482b7a946162a0fe8af27b85e209b16eb72154:trace_transaction:parsed-trace.v1:graph-inference.v1",
+  "lineage": {
+    "graph_builder_ver": "cash-flow-graph-builder.v1",
+    "parsed_trace_event_id": "eeac752ebf52e7d754f536721f01ff106abf30f2e0949a074724e29bb37e3aa6",
+    "parsed_trace_idempotency_key": "1:0x98dbcea3442c9f33a17ee49dbb482b7a946162a0fe8af27b85e209b16eb72154:trace_transaction:parsed-trace.v1",
+    "protocol_features_event_id": "950914aa67e1f8d0cc4cb51d5362ab692853e8d6ac506412cf59d3ec5a1ca509",
+    "protocol_features_idempotency_key": "1:0x98dbcea3442c9f33a17ee49dbb482b7a946162a0fe8af27b85e209b16eb72154:trace_transaction:parsed-trace.v1:protocol-features.v1",
+    "protocol_role_enricher_ver": "protocol-role-enricher.v1",
+    "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-29/hour=09/1-0x98dbcea3442c9f33a17ee49dbb482b7a946162a0fe8af27b85e209b16eb72154-trace_transaction.json",
+    "trace_bundle_event_id": "d8abadd2817b6b87ab4550574687b0f1b4643103b064cc54fad17900d26f1d8a",
+    "trace_bundle_idempotency_key": "1:0x98dbcea3442c9f33a17ee49dbb482b7a946162a0fe8af27b85e209b16eb72154:trace_transaction",
+    "trace_parser_ver": "trace-parser.v1",
+    "transaction_ref": "ethereum:1:0x98dbcea3442c9f33a17ee49dbb482b7a946162a0fe8af27b85e209b16eb72154"
+  },
+  "nodes": [
+    {
+      "address": "0x31fc2cb761083a77cf218461e2072bcea0ca35ef",
+      "node_id": "address:0x31fc2cb761083a77cf218461e2072bcea0ca35ef",
+      "node_type": "address"
+    },
+    {
+      "address": "0xd38c9db1781c7e9baf18328f8791291574987dd0",
+      "node_id": "address:0xd38c9db1781c7e9baf18328f8791291574987dd0",
+      "node_type": "address"
+    },
+    {
+      "node_id": "tx:0x98dbcea3442c9f33a17ee49dbb482b7a946162a0fe8af27b85e209b16eb72154",
+      "node_type": "transaction",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x98dbcea3442c9f33a17ee49dbb482b7a946162a0fe8af27b85e209b16eb72154"
+    }
+  ],
+  "schema_ver": "graph-inference.v1",
+  "tx_hash": "0x98dbcea3442c9f33a17ee49dbb482b7a946162a0fe8af27b85e209b16eb72154"
+}

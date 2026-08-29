@@ -1,0 +1,9 @@
+{
+  "address_context_records": 34,
+  "address_out": "data/context/address-context.stage3.v1.json",
+  "checked_at": "2026-08-29T09:18:12.728+00:00",
+  "parsed_records": 57,
+  "protocol_context_records": 0,
+  "protocol_out": "data/context/protocol-context.stage3.v1.json",
+  "status": "ok"
+}

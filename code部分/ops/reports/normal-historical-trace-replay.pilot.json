@@ -1,0 +1,288 @@
+{
+  "attempts": [
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_ms": 544.02,
+          "ok": true,
+          "source": "trace_transaction"
+        }
+      ],
+      "queue_id": "a6cfc55190945188fc51bddff6c8bda10d2182d3d2035f6e04ac3ed8fb6ab90b",
+      "selected": "trace_transaction"
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_ms": 786.72,
+          "ok": true,
+          "source": "trace_transaction"
+        }
+      ],
+      "queue_id": "237089507a3d3fc92d11fa58de34d1168ac84b83c284e6852cb67839e31bbc58",
+      "selected": "trace_transaction"
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_ms": 827.46,
+          "ok": true,
+          "source": "trace_transaction"
+        }
+      ],
+      "queue_id": "60d11cb105158783bac5cead3aa24c5174592ffc0ff5ce924fe4d5a711a02cd3",
+      "selected": "trace_transaction"
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_ms": 531.22,
+          "ok": true,
+          "source": "trace_transaction"
+        }
+      ],
+      "queue_id": "eaae1a763c5198beb95606126c966236d04cee356a2f25f69929c74be8867ca0",
+      "selected": "trace_transaction"
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_ms": 678.09,
+          "ok": true,
+          "source": "trace_transaction"
+        }
+      ],
+      "queue_id": "32d4f27f85b734a2f358c2e50f76c4ee09f44ee00e3fb577c378b56ac865a730",
+      "selected": "trace_transaction"
+    }
+  ],
+  "chain_check": {
+    "chain_id": "0x1",
+    "latency_ms": 578.63,
+    "ok": true,
+    "performed": true
+  },
+  "checked_at": "2026-08-29T08:57:39.534+00:00",
+  "dry_run": false,
+  "endpoint_configured": true,
+  "fail_fast": true,
+  "failed_trace_bundles": 0,
+  "max_retries": 1,
+  "method": "trace_transaction",
+  "ok_trace_bundles": 5,
+  "provider_cost_note": "Inspect the provider billing dashboard; JSON-RPC responses do not include invoice cost.",
+  "queue": "data/training/normal_trace_replay_queue.v1.json",
+  "queue_items_seen": 5,
+  "reused_existing_bundles": 0,
+  "rpc_call_summary": {
+    "chain_checks": 1,
+    "trace_attempts": 5,
+    "transaction_context_calls": 15
+  },
+  "run_id": "stage2-normal-pilot",
+  "skip_existing": true,
+  "start_index": 0,
+  "status": "ok",
+  "transaction_contexts": [
+    {
+      "calls": [
+        {
+          "latency_ms": 513.48,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "latency_ms": 521.57,
+          "method": "eth_getTransactionReceipt",
+          "ok": true
+        },
+        {
+          "latency_ms": 568.56,
+          "method": "eth_getBlockByHash",
+          "ok": true
+        }
+      ],
+      "context": {
+        "block_hash": "0x8243f995b77b98087cc3cb2893c29401e844fc94ceed5c10b956c5851ace57bc",
+        "block_number": "0x17ebd89",
+        "log_count": 10,
+        "observed_at": "2026-05-13T02:38:11.000+00:00",
+        "receipt_status": "0x1",
+        "tx_hash": "0xd9211c81adb2dd95030f06c2193e2dec9446eb2e258a98c7d386ab6d1c8298c7"
+      },
+      "queue_id": "a6cfc55190945188fc51bddff6c8bda10d2182d3d2035f6e04ac3ed8fb6ab90b",
+      "tx_hash": "0xd9211c81adb2dd95030f06c2193e2dec9446eb2e258a98c7d386ab6d1c8298c7"
+    },
+    {
+      "calls": [
+        {
+          "latency_ms": 515.71,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "latency_ms": 513.71,
+          "method": "eth_getTransactionReceipt",
+          "ok": true
+        },
+        {
+          "latency_ms": 1110.77,
+          "method": "eth_getBlockByHash",
+          "ok": true
+        }
+      ],
+      "context": {
+        "block_hash": "0x847b9c9660881f405d76b6cc014a13f4289870a5e18e01db86d36eafc1d2cac8",
+        "block_number": "0x17ec580",
+        "log_count": 1,
+        "observed_at": "2026-05-13T09:26:35.000+00:00",
+        "receipt_status": "0x1",
+        "tx_hash": "0xb916099f8cbade06cc8c20b7d4dbb22c72c9c3569204eee2dc03175dd3fd2ee2"
+      },
+      "queue_id": "237089507a3d3fc92d11fa58de34d1168ac84b83c284e6852cb67839e31bbc58",
+      "tx_hash": "0xb916099f8cbade06cc8c20b7d4dbb22c72c9c3569204eee2dc03175dd3fd2ee2"
+    },
+    {
+      "calls": [
+        {
+          "latency_ms": 585.62,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "latency_ms": 514.55,
+          "method": "eth_getTransactionReceipt",
+          "ok": true
+        },
+        {
+          "latency_ms": 558.63,
+          "method": "eth_getBlockByHash",
+          "ok": true
+        }
+      ],
+      "context": {
+        "block_hash": "0x8243f995b77b98087cc3cb2893c29401e844fc94ceed5c10b956c5851ace57bc",
+        "block_number": "0x17ebd89",
+        "log_count": 1,
+        "observed_at": "2026-05-13T02:38:11.000+00:00",
+        "receipt_status": "0x1",
+        "tx_hash": "0x2121c6baaca546b4b4c9f715fb184ae7c075c9187ce1e6003169784f2c45058a"
+      },
+      "queue_id": "60d11cb105158783bac5cead3aa24c5174592ffc0ff5ce924fe4d5a711a02cd3",
+      "tx_hash": "0x2121c6baaca546b4b4c9f715fb184ae7c075c9187ce1e6003169784f2c45058a"
+    },
+    {
+      "calls": [
+        {
+          "latency_ms": 511.27,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "latency_ms": 514.64,
+          "method": "eth_getTransactionReceipt",
+          "ok": true
+        },
+        {
+          "latency_ms": 557.67,
+          "method": "eth_getBlockByHash",
+          "ok": true
+        }
+      ],
+      "context": {
+        "block_hash": "0x8243f995b77b98087cc3cb2893c29401e844fc94ceed5c10b956c5851ace57bc",
+        "block_number": "0x17ebd89",
+        "log_count": 0,
+        "observed_at": "2026-05-13T02:38:11.000+00:00",
+        "receipt_status": "0x1",
+        "tx_hash": "0x3004f7f2c6d4e57039335b52a53e4529541d4c787e9f72c9661a034b4d81d7e2"
+      },
+      "queue_id": "eaae1a763c5198beb95606126c966236d04cee356a2f25f69929c74be8867ca0",
+      "tx_hash": "0x3004f7f2c6d4e57039335b52a53e4529541d4c787e9f72c9661a034b4d81d7e2"
+    },
+    {
+      "calls": [
+        {
+          "latency_ms": 512.65,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "latency_ms": 568.65,
+          "method": "eth_getTransactionReceipt",
+          "ok": true
+        },
+        {
+          "latency_ms": 527.9,
+          "method": "eth_getBlockByHash",
+          "ok": true
+        }
+      ],
+      "context": {
+        "block_hash": "0x743ae421aeded6e888020414054df27bae44f791f5adee0f4d1f18d6cb251134",
+        "block_number": "0x17ec581",
+        "log_count": 1,
+        "observed_at": "2026-05-13T09:26:47.000+00:00",
+        "receipt_status": "0x1",
+        "tx_hash": "0x980cada374d27d546ca09c09bb243fa72af59247337558193455c5af04ef952f"
+      },
+      "queue_id": "32d4f27f85b734a2f358c2e50f76c4ee09f44ee00e3fb577c378b56ac865a730",
+      "tx_hash": "0x980cada374d27d546ca09c09bb243fa72af59247337558193455c5af04ef952f"
+    }
+  ],
+  "validation_errors": [],
+  "write_failed_bundles": false,
+  "written": [
+    {
+      "event_id": "a90cec7fc4b345b38fb4fa0c1116d4c6eab80267d63de0e92f3df36f811aac39",
+      "incident_id": "normal_candidate",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/a90cec7fc4b345b38fb4fa0c1116d4c6eab80267d63de0e92f3df36f811aac39.json",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0xd9211c81adb2dd95030f06c2193e2dec9446eb2e258a98c7d386ab6d1c8298c7"
+    },
+    {
+      "event_id": "048f70f7bfb2cb2f1c0761c613e52179fa5d14489d3a7dde1bc8d179ba5ce207",
+      "incident_id": "normal_candidate",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/048f70f7bfb2cb2f1c0761c613e52179fa5d14489d3a7dde1bc8d179ba5ce207.json",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0xb916099f8cbade06cc8c20b7d4dbb22c72c9c3569204eee2dc03175dd3fd2ee2"
+    },
+    {
+      "event_id": "a89895e481b328ebbf2e530cbdee445efafd30ac6fd795034a8d478b1029c5ae",
+      "incident_id": "normal_candidate",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/a89895e481b328ebbf2e530cbdee445efafd30ac6fd795034a8d478b1029c5ae.json",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x2121c6baaca546b4b4c9f715fb184ae7c075c9187ce1e6003169784f2c45058a"
+    },
+    {
+      "event_id": "91570976e78d314f3275a8c546500078ebb7d5cdbaec4d903d78b3589f446993",
+      "incident_id": "normal_candidate",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/91570976e78d314f3275a8c546500078ebb7d5cdbaec4d903d78b3589f446993.json",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x3004f7f2c6d4e57039335b52a53e4529541d4c787e9f72c9661a034b4d81d7e2"
+    },
+    {
+      "event_id": "db40b87e651f96fba251cc43b34fb72106bc98f88c7d6b5a02bd285cd0fac30a",
+      "incident_id": "normal_candidate",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/db40b87e651f96fba251cc43b34fb72106bc98f88c7d6b5a02bd285cd0fac30a.json",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x980cada374d27d546ca09c09bb243fa72af59247337558193455c5af04ef952f"
+    }
+  ],
+  "written_trace_bundles": 5
+}

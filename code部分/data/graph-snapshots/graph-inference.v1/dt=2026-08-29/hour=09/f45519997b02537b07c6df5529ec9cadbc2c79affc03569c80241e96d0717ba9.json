@@ -1,0 +1,203 @@
+{
+  "chain_id": 1,
+  "context_windows": [
+    "tx-only"
+  ],
+  "created_at": "2026-08-29T09:18:12.990+00:00",
+  "edges": [
+    {
+      "amount_norm": "13000000",
+      "amount_raw": "13000000000000",
+      "asset_node": "asset:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "edge_id": "edge:066fa29ca47cb297974ec95e",
+      "edge_type": "transfer",
+      "from_node": "address:0xc6028a9fa486f52efd2b95b949ac630d287ce0af",
+      "log_index": 0,
+      "standard": "erc20",
+      "to_node": "address:0x3811765a53c3188c24d412daec3f60faad5f119b",
+      "token_id": null
+    },
+    {
+      "amount_norm": "11000000",
+      "amount_raw": "11000000000000",
+      "asset_node": "asset:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "edge_id": "edge:26de09019680afa74a1ce60c",
+      "edge_type": "transfer",
+      "from_node": "address:0xc6028a9fa486f52efd2b95b949ac630d287ce0af",
+      "log_index": 1,
+      "standard": "erc20",
+      "to_node": "address:0x3811765a53c3188c24d412daec3f60faad5f119b",
+      "token_id": null
+    },
+    {
+      "call_depth": 0,
+      "call_type": "call",
+      "depth": 0,
+      "edge_id": "edge:59fc85bd142215802c640651",
+      "edge_type": "call",
+      "from_node": "address:0xf224ab004461540778a914ea397c589b677e27bb",
+      "function_name": null,
+      "function_selector": "0x1dd19cb4",
+      "function_signature": null,
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": false,
+      "ordinal": 0,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "selector_family": "unknown_selector",
+      "semantic_action": "unknown",
+      "success": true,
+      "to_node": "address:0xc6028a9fa486f52efd2b95b949ac630d287ce0af",
+      "value": "0"
+    },
+    {
+      "call_depth": 1,
+      "call_type": "call",
+      "depth": 1,
+      "edge_id": "edge:dd845c22d1535f52b3f716fb",
+      "edge_type": "call",
+      "from_node": "address:0xc6028a9fa486f52efd2b95b949ac630d287ce0af",
+      "function_name": "transfer",
+      "function_selector": "0xa9059cbb",
+      "function_signature": "transfer(address,uint256)",
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": false,
+      "ordinal": 1,
+      "protocol_hint": "erc20",
+      "revert_reason": null,
+      "selector_family": "erc20_transfer",
+      "semantic_action": "erc20_transfer",
+      "success": true,
+      "to_node": "address:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "value": "0"
+    },
+    {
+      "call_depth": 2,
+      "call_type": "call",
+      "depth": 2,
+      "edge_id": "edge:7781a3bb200ce7269f5b6839",
+      "edge_type": "call",
+      "from_node": "address:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "function_name": "transfer",
+      "function_selector": "0xa9059cbb",
+      "function_signature": "transfer(address,uint256)",
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": false,
+      "ordinal": 2,
+      "protocol_hint": "erc20",
+      "revert_reason": null,
+      "selector_family": "erc20_transfer",
+      "semantic_action": "erc20_transfer",
+      "success": true,
+      "to_node": "address:0xb7277a6e95992041568d9391d09d0122023778a2",
+      "value": "0"
+    },
+    {
+      "call_depth": 1,
+      "call_type": "call",
+      "depth": 1,
+      "edge_id": "edge:1c709e5ebd6b43de3835533a",
+      "edge_type": "call",
+      "from_node": "address:0xc6028a9fa486f52efd2b95b949ac630d287ce0af",
+      "function_name": "transfer",
+      "function_selector": "0xa9059cbb",
+      "function_signature": "transfer(address,uint256)",
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": false,
+      "ordinal": 3,
+      "protocol_hint": "erc20",
+      "revert_reason": null,
+      "selector_family": "erc20_transfer",
+      "semantic_action": "erc20_transfer",
+      "success": true,
+      "to_node": "address:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "value": "0"
+    }
+  ],
+  "event_id": "f45519997b02537b07c6df5529ec9cadbc2c79affc03569c80241e96d0717ba9",
+  "feature_missing_flags": [
+    "context_1h_protocol_empty",
+    "context_1h_protocol_unavailable",
+    "context_5m_address_empty",
+    "context_5m_address_unavailable",
+    "no_protocol_role_matches"
+  ],
+  "feature_ver": "cash-flow-graph-builder.v1",
+  "graph_id": "graph:0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58",
+  "graph_snapshot_ref": "data/graph-snapshots/graph-inference.v1/dt=2026-08-29/hour=09/f45519997b02537b07c6df5529ec9cadbc2c79affc03569c80241e96d0717ba9.json",
+  "idempotency_key": "1:0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58:trace_transaction:parsed-trace.v1:graph-inference.v1",
+  "lineage": {
+    "graph_builder_ver": "cash-flow-graph-builder.v1",
+    "parsed_trace_event_id": "bcf3793ec2058ad2e0f1a5e1f524c219677480e965754d1ad3f3ce1141704676",
+    "parsed_trace_idempotency_key": "1:0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58:trace_transaction:parsed-trace.v1",
+    "protocol_features_event_id": "7245b000b9ef00770ab66cea2f4d28be05e117b4e8648eccb965511e583c54ef",
+    "protocol_features_idempotency_key": "1:0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58:trace_transaction:parsed-trace.v1:protocol-features.v1",
+    "protocol_role_enricher_ver": "protocol-role-enricher.v1",
+    "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-29/hour=08/1-0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58-trace_transaction.json",
+    "trace_bundle_event_id": "9016838b6032444ee12b051d3530598af99956afc9616d5d021a9c1bdda7ad96",
+    "trace_bundle_idempotency_key": "1:0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58:trace_transaction",
+    "trace_parser_ver": "trace-parser.v1",
+    "transaction_ref": "ethereum:1:0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58"
+  },
+  "nodes": [
+    {
+      "address": "0x3811765a53c3188c24d412daec3f60faad5f119b",
+      "node_id": "address:0x3811765a53c3188c24d412daec3f60faad5f119b",
+      "node_type": "address"
+    },
+    {
+      "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "node_id": "address:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "node_type": "address"
+    },
+    {
+      "address": "0xb7277a6e95992041568d9391d09d0122023778a2",
+      "node_id": "address:0xb7277a6e95992041568d9391d09d0122023778a2",
+      "node_type": "address"
+    },
+    {
+      "address": "0xc6028a9fa486f52efd2b95b949ac630d287ce0af",
+      "node_id": "address:0xc6028a9fa486f52efd2b95b949ac630d287ce0af",
+      "node_type": "address"
+    },
+    {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_id": "address:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_type": "address"
+    },
+    {
+      "address": "0xf224ab004461540778a914ea397c589b677e27bb",
+      "node_id": "address:0xf224ab004461540778a914ea397c589b677e27bb",
+      "node_type": "address"
+    },
+    {
+      "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "decimals": 6,
+      "node_id": "asset:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "node_type": "asset",
+      "standard": "erc20",
+      "symbol": "USDC"
+    },
+    {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "decimals": 6,
+      "node_id": "asset:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_type": "asset",
+      "standard": "erc20",
+      "symbol": "USDT"
+    },
+    {
+      "node_id": "tx:0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58",
+      "node_type": "transaction",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58"
+    }
+  ],
+  "schema_ver": "graph-inference.v1",
+  "tx_hash": "0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58"
+}

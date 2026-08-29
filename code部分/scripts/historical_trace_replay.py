@@ -10,6 +10,7 @@ import os
 import ssl
 import time
 from datetime import datetime, timezone
+from http.client import HTTPException
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
@@ -97,7 +98,7 @@ def rpc_call(url: str, method: str, params: list[Any], timeout_s: float) -> tupl
             body = json.loads(exc.read())
         except json.JSONDecodeError:
             body = {"error": {"code": f"http_{exc.code}", "message": exc.reason}}
-    except (URLError, TimeoutError, OSError) as exc:
+    except (URLError, TimeoutError, OSError, HTTPException, json.JSONDecodeError) as exc:
         body = {"error": {"code": "transport_error", "message": str(exc)}}
     return body, (time.perf_counter() - started) * 1000
 
@@ -187,6 +188,202 @@ def error_object(source: str, response: dict[str, Any], latency_ms: float) -> di
     }
 
 
+def result_is_nonempty(method: str, result: Any) -> bool:
+    if method == "trace_transaction":
+        return isinstance(result, list) and bool(result)
+    if method == "debug_traceTransaction":
+        return isinstance(result, dict) and bool(result)
+    return result is not None
+
+
+def rpc_error(method: str, response: dict[str, Any], latency_ms: float, fallback: str) -> dict[str, Any]:
+    if isinstance(response.get("error"), dict):
+        return error_object(method, response, latency_ms)
+    return {
+        "source": method,
+        "code": fallback,
+        "message": fallback.replace("_", " "),
+        "latency_ms": round(latency_ms, 2),
+    }
+
+
+def validated_rpc_call(
+    url: str,
+    method: str,
+    params: list[Any],
+    timeout_s: float,
+    retries: int,
+    validator: Any,
+    fallback_error: str,
+) -> tuple[Any | None, list[dict[str, Any]]]:
+    attempts: list[dict[str, Any]] = []
+    for attempt_index in range(retries + 1):
+        response, latency_ms = rpc_call(url, method, params, timeout_s)
+        result = response.get("result")
+        ok = bool(validator(result))
+        attempt: dict[str, Any] = {
+            "method": method,
+            "attempt": attempt_index + 1,
+            "latency_ms": round(latency_ms, 2),
+            "ok": ok,
+        }
+        if not ok:
+            attempt["error"] = rpc_error(method, response, latency_ms, fallback_error)
+        attempts.append(attempt)
+        if ok:
+            return result, attempts
+    return None, attempts
+
+
+def fetch_transaction_context(
+    url: str,
+    tx_hash: str,
+    timeout_s: float,
+    retries: int,
+    block_context_cache: dict[str, dict[str, Any]] | None = None,
+) -> tuple[dict[str, Any] | None, list[Any], list[dict[str, Any]]]:
+    calls: list[dict[str, Any]] = []
+
+    tx_result, tx_calls = validated_rpc_call(
+        url,
+        "eth_getTransactionByHash",
+        [tx_hash],
+        timeout_s,
+        retries,
+        lambda result: isinstance(result, dict)
+        and str(result.get("hash", "")).lower() == tx_hash.lower()
+        and isinstance(result.get("blockHash"), str),
+        "transaction_not_found_or_mismatched",
+    )
+    calls.extend(tx_calls)
+    if tx_result is None:
+        return None, [], calls
+
+    receipt, receipt_calls = validated_rpc_call(
+        url,
+        "eth_getTransactionReceipt",
+        [tx_hash],
+        timeout_s,
+        retries,
+        lambda result: isinstance(result, dict)
+        and str(result.get("transactionHash", "")).lower() == tx_hash.lower()
+        and isinstance(result.get("blockHash"), str)
+        and result.get("blockHash") == tx_result.get("blockHash"),
+        "receipt_not_found_or_mismatched",
+    )
+    calls.extend(receipt_calls)
+    if receipt is None:
+        return None, [], calls
+
+    block_hash = receipt["blockHash"]
+    cached_block = (block_context_cache or {}).get(str(block_hash).lower())
+    if (
+        isinstance(cached_block, dict)
+        and cached_block.get("block_number") == receipt.get("blockNumber")
+        and isinstance(cached_block.get("observed_at"), str)
+    ):
+        calls.append(
+            {
+                "method": "local_block_context_cache",
+                "attempt": 1,
+                "latency_ms": 0.0,
+                "ok": True,
+            }
+        )
+        logs = receipt.get("logs") if isinstance(receipt.get("logs"), list) else []
+        return {
+            "tx_hash": tx_hash.lower(),
+            "block_hash": block_hash,
+            "block_number": receipt.get("blockNumber"),
+            "receipt_status": receipt.get("status"),
+            "log_count": len(logs),
+            "observed_at": cached_block["observed_at"],
+        }, logs, calls
+
+    block, block_calls = validated_rpc_call(
+        url,
+        "eth_getBlockByHash",
+        [block_hash, False],
+        timeout_s,
+        retries,
+        lambda result: isinstance(result, dict)
+        and result.get("hash") == block_hash
+        and isinstance(result.get("timestamp"), str),
+        "block_not_found_or_mismatched",
+    )
+    calls.extend(block_calls)
+    if block is None:
+        return None, [], calls
+
+    try:
+        observed_at = datetime.fromtimestamp(int(block["timestamp"], 16), timezone.utc).isoformat(
+            timespec="milliseconds"
+        )
+    except (TypeError, ValueError, OSError):
+        calls[-1]["ok"] = False
+        calls[-1]["error"] = {
+            "source": "eth_getBlockByHash",
+            "code": "invalid_block_timestamp",
+            "message": "invalid block timestamp",
+            "latency_ms": calls[-1]["latency_ms"],
+        }
+        return None, [], calls
+
+    logs = receipt.get("logs") if isinstance(receipt.get("logs"), list) else []
+    context = {
+        "tx_hash": tx_hash.lower(),
+        "block_hash": block_hash,
+        "block_number": receipt.get("blockNumber"),
+        "receipt_status": receipt.get("status"),
+        "log_count": len(logs),
+        "observed_at": observed_at,
+    }
+    return context, logs, calls
+
+
+def load_block_context_cache(root: Path) -> dict[str, dict[str, Any]]:
+    cache: dict[str, dict[str, Any]] = {}
+    reports_root = root / "ops" / "reports"
+    for path in sorted(reports_root.glob("*historical-trace-replay*.json")):
+        try:
+            report = read_json(path)
+        except (OSError, json.JSONDecodeError):
+            continue
+        for item in report.get("transaction_contexts", []):
+            context = item.get("context") if isinstance(item, dict) else None
+            if not isinstance(context, dict):
+                continue
+            block_hash = context.get("block_hash")
+            if isinstance(block_hash, str) and isinstance(context.get("observed_at"), str):
+                cache[block_hash.lower()] = {
+                    "block_number": context.get("block_number"),
+                    "observed_at": context["observed_at"],
+                }
+    return cache
+
+
+def existing_success(root: Path, tx_hash: str, method: str) -> tuple[dict[str, Any], Path] | None:
+    trace_root = root / "data" / "replay" / "trace-bundle.v1"
+    allowed = set(TRACE_METHODS) if method == "auto" else {method}
+    for path in sorted(trace_root.glob("dt=*/hour=*/*.json"), reverse=True):
+        try:
+            bundle = read_json(path)
+        except (OSError, json.JSONDecodeError):
+            continue
+        raw_ref = bundle.get("raw_trace_ref")
+        if (
+            str(bundle.get("tx_hash", "")).lower() == tx_hash.lower()
+            and bundle.get("trace_source") in allowed
+            and bundle.get("trace_status") == "ok"
+            and isinstance(bundle.get("calls"), list)
+            and bool(bundle["calls"])
+            and isinstance(raw_ref, str)
+            and (root / raw_ref).exists()
+        ):
+            return bundle, path
+    return None
+
+
 def validate_queue_item(item: dict[str, Any]) -> list[str]:
     errors = []
     if item.get("chain_id") != 1 or item.get("chain") != "ethereum":
@@ -206,22 +403,30 @@ def trace_item(
     method: str,
     timeout_s: float,
     retries: int,
+    receipt_logs: list[Any] | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     attempts = []
     for attempt_index in range(retries + 1):
         response, latency_ms = rpc_call(url, method, [item["tx_hash"]], timeout_s)
+        ok = (
+            "result" in response
+            and "error" not in response
+            and result_is_nonempty(method, response.get("result"))
+        )
         attempt = {
             "source": method,
             "attempt": attempt_index + 1,
             "latency_ms": round(latency_ms, 2),
-            "ok": "result" in response and "error" not in response,
+            "ok": ok,
         }
         attempts.append(attempt)
-        if "result" in response and "error" not in response:
+        if ok:
             created = now_dt()
             raw_path = raw_trace_path(root, created, item["tx_hash"], method)
             write_json(raw_path, response["result"])
             calls, logs, state_diff = normalize_trace(method, response["result"])
+            if receipt_logs is not None:
+                logs = receipt_logs
             bundle = build_bundle(
                 item,
                 method,
@@ -233,7 +438,7 @@ def trace_item(
                 str(raw_path.relative_to(root)),
             )
             return bundle, {"attempts": attempts, "selected": method}
-        attempt["error"] = error_object(method, response, latency_ms)
+        attempt["error"] = rpc_error(method, response, latency_ms, "empty_trace_result")
 
     bundle = build_bundle(
         item,
@@ -261,12 +466,15 @@ def trace_item_auto(
     method: str,
     timeout_s: float,
     retries: int,
+    receipt_logs: list[Any] | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     methods = TRACE_METHODS if method == "auto" else [method]
     all_attempts = []
     last_bundle = None
     for candidate_method in methods:
-        bundle, meta = trace_item(root, item, url, candidate_method, timeout_s, retries)
+        bundle, meta = trace_item(
+            root, item, url, candidate_method, timeout_s, retries, receipt_logs=receipt_logs
+        )
         all_attempts.extend(meta["attempts"])
         last_bundle = bundle
         if bundle["trace_status"] == "ok":
@@ -287,6 +495,8 @@ def main_args(argv: list[str] | None = None) -> int:
     )
     parser.add_argument("--timeout-s", type=float, default=15.0)
     parser.add_argument("--retries", type=retry_count, default=1)
+    parser.add_argument("--inter-item-delay-s", type=float, default=0.0)
+    parser.add_argument("--start-index", type=int, default=0)
     parser.add_argument("--limit", type=int, default=0, help="0 means all queue items")
     parser.add_argument("--run-id", default=None)
     parser.add_argument(
@@ -294,6 +504,12 @@ def main_args(argv: list[str] | None = None) -> int:
         action=argparse.BooleanOptionalAction,
         default=True,
         help="Stop after the first failed trace. Enabled by default for cost control.",
+    )
+    parser.add_argument(
+        "--skip-existing",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Reuse an existing successful trace_transaction bundle instead of paying twice.",
     )
     parser.add_argument("--dry-run", action="store_true", help="Validate queue without RPC calls")
     parser.add_argument(
@@ -306,6 +522,11 @@ def main_args(argv: list[str] | None = None) -> int:
     root = Path.cwd()
     queue = read_json(root / args.queue)
     items = queue.get("items", [])
+    if args.start_index < 0:
+        parser.error("--start-index must be non-negative")
+    if args.inter_item_delay_s < 0:
+        parser.error("--inter-item-delay-s must be non-negative")
+    items = items[args.start_index :]
     if args.limit > 0:
         items = items[: args.limit]
 
@@ -317,6 +538,10 @@ def main_args(argv: list[str] | None = None) -> int:
 
     written = []
     attempts = []
+    transaction_contexts = []
+    chain_check: dict[str, Any] = {"performed": False, "ok": False, "chain_id": None}
+    reused_existing = 0
+    block_context_cache = load_block_context_cache(root)
     status = "ok"
     if validation_errors:
         status = "failed"
@@ -325,8 +550,92 @@ def main_args(argv: list[str] | None = None) -> int:
     elif not args.rpc_url:
         status = "missing_endpoint"
     else:
-        for item in items:
-            bundle, trace_meta = trace_item_auto(root, item, args.rpc_url, args.method, args.timeout_s, args.retries)
+        chain_response, chain_latency = rpc_call(args.rpc_url, "eth_chainId", [], args.timeout_s)
+        chain_id = chain_response.get("result")
+        chain_check = {
+            "performed": True,
+            "ok": chain_id == "0x1",
+            "chain_id": chain_id,
+            "latency_ms": round(chain_latency, 2),
+        }
+        if not chain_check["ok"]:
+            chain_check["error"] = rpc_error(
+                "eth_chainId", chain_response, chain_latency, "ethereum_mainnet_required"
+            )
+            status = "wrong_chain"
+        for item in items if chain_check["ok"] else []:
+            existing = existing_success(root, item["tx_hash"], args.method) if args.skip_existing else None
+            if existing is not None:
+                bundle, output_path = existing
+                reused_existing += 1
+                written.append(
+                    {
+                        "event_id": bundle["event_id"],
+                        "incident_id": item.get("incident_id"),
+                        "tx_hash": item["tx_hash"],
+                        "trace_source": bundle["trace_source"],
+                        "trace_status": "ok",
+                        "replay_path": str(output_path.relative_to(root)),
+                        "persisted": True,
+                        "reused_existing": True,
+                    }
+                )
+                attempts.append(
+                    {"queue_id": item.get("queue_id"), "attempts": [], "selected": "existing_bundle"}
+                )
+                continue
+
+            if args.inter_item_delay_s > 0:
+                time.sleep(args.inter_item_delay_s)
+            context, receipt_logs, context_calls = fetch_transaction_context(
+                args.rpc_url,
+                item["tx_hash"],
+                args.timeout_s,
+                args.retries,
+                block_context_cache=block_context_cache,
+            )
+            if context is not None:
+                block_context_cache[str(context["block_hash"]).lower()] = {
+                    "block_number": context.get("block_number"),
+                    "observed_at": context["observed_at"],
+                }
+            transaction_contexts.append(
+                {
+                    "queue_id": item.get("queue_id"),
+                    "tx_hash": item["tx_hash"],
+                    "context": context,
+                    "calls": context_calls,
+                }
+            )
+            if context is None:
+                source = args.method if args.method != "auto" else "trace_transaction"
+                bundle = build_bundle(
+                    item,
+                    source,
+                    "failed",
+                    [],
+                    [],
+                    {},
+                    {
+                        "code": "transaction_context_validation_failed",
+                        "message": "Transaction, receipt, or block context validation failed.",
+                        "queue_id": item.get("queue_id"),
+                        "attempts": context_calls,
+                    },
+                    None,
+                )
+                trace_meta = {"attempts": [], "selected": "none"}
+            else:
+                enriched_item = {**item, "observed_at": context["observed_at"]}
+                bundle, trace_meta = trace_item_auto(
+                    root,
+                    enriched_item,
+                    args.rpc_url,
+                    args.method,
+                    args.timeout_s,
+                    args.retries,
+                    receipt_logs=receipt_logs,
+                )
             written_item = {
                 "event_id": bundle["event_id"],
                 "incident_id": item.get("incident_id"),
@@ -360,6 +669,25 @@ def main_args(argv: list[str] | None = None) -> int:
         "write_failed_bundles": args.write_failed_bundles,
         "fail_fast": args.fail_fast,
         "max_retries": args.retries,
+        "inter_item_delay_s": args.inter_item_delay_s,
+        "start_index": args.start_index,
+        "skip_existing": args.skip_existing,
+        "reused_existing_bundles": reused_existing,
+        "chain_check": chain_check,
+        "transaction_contexts": transaction_contexts,
+        "block_context_cache_entries": len(block_context_cache),
+        "block_context_cache_hits": sum(
+            1
+            for item in transaction_contexts
+            for call in item.get("calls", [])
+            if call.get("method") == "local_block_context_cache" and call.get("ok") is True
+        ),
+        "rpc_call_summary": {
+            "chain_checks": 1 if chain_check["performed"] else 0,
+            "transaction_context_calls": sum(len(item["calls"]) for item in transaction_contexts),
+            "trace_attempts": sum(len(item.get("attempts", [])) for item in attempts),
+        },
+        "provider_cost_note": "Inspect the provider billing dashboard; JSON-RPC responses do not include invoice cost.",
         "written_trace_bundles": sum(1 for item in written if item["persisted"]),
         "ok_trace_bundles": sum(1 for item in written if item["trace_status"] == "ok"),
         "failed_trace_bundles": sum(1 for item in written if item["trace_status"] != "ok"),

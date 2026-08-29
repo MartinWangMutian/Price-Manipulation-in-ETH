@@ -12,6 +12,9 @@ from pathlib import Path
 from typing import Any
 
 
+FEATURE_ENRICHER_VER = "protocol-role-enricher.v1"
+
+
 def now_iso() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="milliseconds")
 
@@ -132,6 +135,7 @@ def build_protocol_features(parsed: dict[str, Any], role_index: dict[str, dict[s
         "idempotency_key": f"{parsed['idempotency_key']}:protocol-features.v1",
         "source_parsed_event_id": parsed["event_id"],
         "source_parsed_idempotency_key": parsed["idempotency_key"],
+        "feature_enricher_ver": FEATURE_ENRICHER_VER,
         "tx_hash": parsed["tx_hash"],
         "matched_protocol_roles": sorted(matched.values(), key=lambda item: item["address"]),
         "call_protocol_annotations": call_annotations,

@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-08-29T09:18:20.504+00:00",
+  "context_window_counts": {
+    "5m-address": 18,
+    "tx-only": 57
+  },
+  "duplicate_idempotency_keys": [],
+  "edge_counts": {
+    "call": 11521,
+    "context": 48,
+    "transfer": 492
+  },
+  "errors": [],
+  "feature_missing_flags": {
+    "context_1h_protocol_empty": 57,
+    "context_1h_protocol_unavailable": 57,
+    "context_5m_address_empty": 39,
+    "context_5m_address_unavailable": 39,
+    "no_logs": 18,
+    "no_protocol_role_matches": 56,
+    "token_decimals_missing": 18
+  },
+  "files_seen": 57,
+  "input": "data/replay/graph-inference.v1/dt=2026-08-29",
+  "node_counts": {
+    "address": 583,
+    "asset": 96,
+    "context": 34,
+    "protocol": 1,
+    "transaction": 57
+  },
+  "status": "ok",
+  "unique_idempotency_keys": 57,
+  "valid_graphs": 57
+}

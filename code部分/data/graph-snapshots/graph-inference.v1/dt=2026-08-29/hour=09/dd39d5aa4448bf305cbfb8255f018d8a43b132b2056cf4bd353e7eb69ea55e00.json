@@ -1,0 +1,147 @@
+{
+  "chain_id": 1,
+  "context_windows": [
+    "tx-only",
+    "5m-address"
+  ],
+  "created_at": "2026-08-29T09:18:12.989+00:00",
+  "edges": [
+    {
+      "amount_norm": "177.071891",
+      "amount_raw": "177071891",
+      "asset_node": "asset:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "edge_id": "edge:a04d2375a74ca72629e607e5",
+      "edge_type": "transfer",
+      "from_node": "address:0x99337b8b138537222342e86e76005f5e7c427d9f",
+      "log_index": 511,
+      "standard": "erc20",
+      "to_node": "address:0xd06b9bd93556a9337b99682593ea730a95a74fe3",
+      "token_id": null
+    },
+    {
+      "call_depth": 0,
+      "call_type": "call",
+      "depth": 0,
+      "edge_id": "edge:49185f1ab8216266d808f3f3",
+      "edge_type": "call",
+      "from_node": "address:0x99337b8b138537222342e86e76005f5e7c427d9f",
+      "function_name": "transfer",
+      "function_selector": "0xa9059cbb",
+      "function_signature": "transfer(address,uint256)",
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": false,
+      "ordinal": 0,
+      "protocol_hint": "erc20",
+      "revert_reason": null,
+      "selector_family": "erc20_transfer",
+      "semantic_action": "erc20_transfer",
+      "success": true,
+      "to_node": "address:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "value": "0"
+    },
+    {
+      "context_type": "temporal_window",
+      "count": 7,
+      "edge_id": "edge:932167edd3471a87302bf1f5",
+      "edge_type": "context",
+      "from_node": "tx:0x488cc85ac60ace248b499aeaeca1700bab20087a9632c68b39748ebf92520d72",
+      "last_seen_at": "2026-05-13T09:26:35.000+00:00",
+      "relation_type": "same_counterparty",
+      "to_node": "context:932a97cfcb8db82987b7a633",
+      "window": "5m-address"
+    },
+    {
+      "context_type": "temporal_window",
+      "count": 7,
+      "edge_id": "edge:1bde0d62710f2ee9d749cf96",
+      "edge_type": "context",
+      "from_node": "tx:0x488cc85ac60ace248b499aeaeca1700bab20087a9632c68b39748ebf92520d72",
+      "last_seen_at": "2026-05-13T09:26:35.000+00:00",
+      "relation_type": "same_asset",
+      "to_node": "context:a64ccdd6a47173a071f3d92b",
+      "window": "5m-address"
+    }
+  ],
+  "event_id": "dd39d5aa4448bf305cbfb8255f018d8a43b132b2056cf4bd353e7eb69ea55e00",
+  "feature_missing_flags": [
+    "context_1h_protocol_empty",
+    "context_1h_protocol_unavailable",
+    "no_protocol_role_matches"
+  ],
+  "feature_ver": "cash-flow-graph-builder.v1",
+  "graph_id": "graph:0x488cc85ac60ace248b499aeaeca1700bab20087a9632c68b39748ebf92520d72",
+  "graph_snapshot_ref": "data/graph-snapshots/graph-inference.v1/dt=2026-08-29/hour=09/dd39d5aa4448bf305cbfb8255f018d8a43b132b2056cf4bd353e7eb69ea55e00.json",
+  "idempotency_key": "1:0x488cc85ac60ace248b499aeaeca1700bab20087a9632c68b39748ebf92520d72:trace_transaction:parsed-trace.v1:graph-inference.v1",
+  "lineage": {
+    "graph_builder_ver": "cash-flow-graph-builder.v1",
+    "parsed_trace_event_id": "b9186e0a6d4e77340bfa1f5320f4ac6946b19bc6b1c7e0fc600bfb63d668ee76",
+    "parsed_trace_idempotency_key": "1:0x488cc85ac60ace248b499aeaeca1700bab20087a9632c68b39748ebf92520d72:trace_transaction:parsed-trace.v1",
+    "protocol_features_event_id": "e1c6c3d52f819a303175871761a0d7f709f781e230dbe7a273dc62f58d168936",
+    "protocol_features_idempotency_key": "1:0x488cc85ac60ace248b499aeaeca1700bab20087a9632c68b39748ebf92520d72:trace_transaction:parsed-trace.v1:protocol-features.v1",
+    "protocol_role_enricher_ver": "protocol-role-enricher.v1",
+    "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-29/hour=09/1-0x488cc85ac60ace248b499aeaeca1700bab20087a9632c68b39748ebf92520d72-trace_transaction.json",
+    "trace_bundle_event_id": "a765c6330108849aff0115beee4cecfa90659426a01846fd6a378877730b6483",
+    "trace_bundle_idempotency_key": "1:0x488cc85ac60ace248b499aeaeca1700bab20087a9632c68b39748ebf92520d72:trace_transaction",
+    "trace_parser_ver": "trace-parser.v1",
+    "transaction_ref": "ethereum:1:0x488cc85ac60ace248b499aeaeca1700bab20087a9632c68b39748ebf92520d72"
+  },
+  "nodes": [
+    {
+      "address": "0x99337b8b138537222342e86e76005f5e7c427d9f",
+      "node_id": "address:0x99337b8b138537222342e86e76005f5e7c427d9f",
+      "node_type": "address"
+    },
+    {
+      "address": "0xd06b9bd93556a9337b99682593ea730a95a74fe3",
+      "node_id": "address:0xd06b9bd93556a9337b99682593ea730a95a74fe3",
+      "node_type": "address"
+    },
+    {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_id": "address:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_type": "address"
+    },
+    {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "decimals": 6,
+      "node_id": "asset:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_type": "asset",
+      "standard": "erc20",
+      "symbol": "USDT"
+    },
+    {
+      "count": 7,
+      "last_seen_at": "2026-05-13T09:26:35.000+00:00",
+      "liquidity_delta_usd": null,
+      "node_id": "context:932a97cfcb8db82987b7a633",
+      "node_type": "context",
+      "price_deviation_bps": null,
+      "relation_type": "same_counterparty",
+      "subject": "0x99337b8b138537222342e86e76005f5e7c427d9f",
+      "volume_usd": null,
+      "window": "5m-address"
+    },
+    {
+      "count": 7,
+      "last_seen_at": "2026-05-13T09:26:35.000+00:00",
+      "liquidity_delta_usd": null,
+      "node_id": "context:a64ccdd6a47173a071f3d92b",
+      "node_type": "context",
+      "price_deviation_bps": null,
+      "relation_type": "same_asset",
+      "subject": "0x99337b8b138537222342e86e76005f5e7c427d9f",
+      "volume_usd": null,
+      "window": "5m-address"
+    },
+    {
+      "node_id": "tx:0x488cc85ac60ace248b499aeaeca1700bab20087a9632c68b39748ebf92520d72",
+      "node_type": "transaction",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x488cc85ac60ace248b499aeaeca1700bab20087a9632c68b39748ebf92520d72"
+    }
+  ],
+  "schema_ver": "graph-inference.v1",
+  "tx_hash": "0x488cc85ac60ace248b499aeaeca1700bab20087a9632c68b39748ebf92520d72"
+}

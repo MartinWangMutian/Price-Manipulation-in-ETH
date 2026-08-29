@@ -1,0 +1,157 @@
+{
+  "chain_id": 1,
+  "context_windows": [
+    "tx-only"
+  ],
+  "created_at": "2026-08-29T09:18:12.975+00:00",
+  "edges": [
+    {
+      "amount_norm": null,
+      "amount_raw": "1750000000000000000000",
+      "asset_node": "asset:0x20deed9e6f40de5ce0100d957d299549d9cf1691",
+      "edge_id": "edge:b1c0d53c64dbd65b8cb27b00",
+      "edge_type": "transfer",
+      "from_node": "address:0xd8822cdb7e83393fd5d57f604be2606545946aa0",
+      "log_index": 554,
+      "standard": "erc20",
+      "to_node": "address:0xbbc8806e59ddf6b561b6c7cda4903da3990ff5d5",
+      "token_id": null
+    },
+    {
+      "call_depth": 0,
+      "call_type": "call",
+      "depth": 0,
+      "edge_id": "edge:e7cdac69144144d9953ea126",
+      "edge_type": "call",
+      "from_node": "address:0x4a98459c0c2cf86d3b4b8af90b57a40d7c08c273",
+      "function_name": null,
+      "function_selector": "0xb0d1bfe7",
+      "function_signature": null,
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": true,
+      "ordinal": 0,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "selector_family": "unknown_selector",
+      "semantic_action": "unknown",
+      "success": true,
+      "to_node": "address:0xd8822cdb7e83393fd5d57f604be2606545946aa0",
+      "value": "2500000000000000"
+    },
+    {
+      "call_depth": 1,
+      "call_type": "call",
+      "depth": 1,
+      "edge_id": "edge:95d0538d764081534fd5d163",
+      "edge_type": "call",
+      "from_node": "address:0xd8822cdb7e83393fd5d57f604be2606545946aa0",
+      "function_name": "transfer",
+      "function_selector": "0xa9059cbb",
+      "function_signature": "transfer(address,uint256)",
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": false,
+      "ordinal": 1,
+      "protocol_hint": "erc20",
+      "revert_reason": null,
+      "selector_family": "erc20_transfer",
+      "semantic_action": "erc20_transfer",
+      "success": true,
+      "to_node": "address:0x20deed9e6f40de5ce0100d957d299549d9cf1691",
+      "value": "0"
+    },
+    {
+      "call_depth": 1,
+      "call_type": "call",
+      "depth": 1,
+      "edge_id": "edge:bacdb6ac98df34ad0eba87b4",
+      "edge_type": "call",
+      "from_node": "address:0xd8822cdb7e83393fd5d57f604be2606545946aa0",
+      "function_name": null,
+      "function_selector": null,
+      "function_signature": null,
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": true,
+      "ordinal": 2,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "selector_family": null,
+      "semantic_action": "unknown",
+      "success": true,
+      "to_node": "address:0xde1e60fa0a7d54e074a6bd2a3ddb114e778745f1",
+      "value": "2500000000000000"
+    }
+  ],
+  "event_id": "892aaf4aa4827dcbcd3dec20ebb210d33162f8e652c38978c3a0db71b99fd81b",
+  "feature_missing_flags": [
+    "context_1h_protocol_empty",
+    "context_1h_protocol_unavailable",
+    "context_5m_address_empty",
+    "context_5m_address_unavailable",
+    "no_protocol_role_matches",
+    "token_decimals_missing"
+  ],
+  "feature_ver": "cash-flow-graph-builder.v1",
+  "graph_id": "graph:0x15a4b05559833153e9ccb1dc6510c5a8a236c5df2ad1f8f60584a6bd6945aea1",
+  "graph_snapshot_ref": "data/graph-snapshots/graph-inference.v1/dt=2026-08-29/hour=09/892aaf4aa4827dcbcd3dec20ebb210d33162f8e652c38978c3a0db71b99fd81b.json",
+  "idempotency_key": "1:0x15a4b05559833153e9ccb1dc6510c5a8a236c5df2ad1f8f60584a6bd6945aea1:trace_transaction:parsed-trace.v1:graph-inference.v1",
+  "lineage": {
+    "graph_builder_ver": "cash-flow-graph-builder.v1",
+    "parsed_trace_event_id": "7f714a192d6462f30cf69d77fbcd3150b67d3a02866dc7e25b0d6deac74c2939",
+    "parsed_trace_idempotency_key": "1:0x15a4b05559833153e9ccb1dc6510c5a8a236c5df2ad1f8f60584a6bd6945aea1:trace_transaction:parsed-trace.v1",
+    "protocol_features_event_id": "299e591e8349356402c8c6f68203bb210b026732c04681b2507426a622ce9ab8",
+    "protocol_features_idempotency_key": "1:0x15a4b05559833153e9ccb1dc6510c5a8a236c5df2ad1f8f60584a6bd6945aea1:trace_transaction:parsed-trace.v1:protocol-features.v1",
+    "protocol_role_enricher_ver": "protocol-role-enricher.v1",
+    "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-29/hour=08/1-0x15a4b05559833153e9ccb1dc6510c5a8a236c5df2ad1f8f60584a6bd6945aea1-trace_transaction.json",
+    "trace_bundle_event_id": "1b88fef9ad414a0acf89c42aa83feb4355fb5963e79b32b11b555a162cafba2f",
+    "trace_bundle_idempotency_key": "1:0x15a4b05559833153e9ccb1dc6510c5a8a236c5df2ad1f8f60584a6bd6945aea1:trace_transaction",
+    "trace_parser_ver": "trace-parser.v1",
+    "transaction_ref": "ethereum:1:0x15a4b05559833153e9ccb1dc6510c5a8a236c5df2ad1f8f60584a6bd6945aea1"
+  },
+  "nodes": [
+    {
+      "address": "0x20deed9e6f40de5ce0100d957d299549d9cf1691",
+      "node_id": "address:0x20deed9e6f40de5ce0100d957d299549d9cf1691",
+      "node_type": "address"
+    },
+    {
+      "address": "0x4a98459c0c2cf86d3b4b8af90b57a40d7c08c273",
+      "node_id": "address:0x4a98459c0c2cf86d3b4b8af90b57a40d7c08c273",
+      "node_type": "address"
+    },
+    {
+      "address": "0xbbc8806e59ddf6b561b6c7cda4903da3990ff5d5",
+      "node_id": "address:0xbbc8806e59ddf6b561b6c7cda4903da3990ff5d5",
+      "node_type": "address"
+    },
+    {
+      "address": "0xd8822cdb7e83393fd5d57f604be2606545946aa0",
+      "node_id": "address:0xd8822cdb7e83393fd5d57f604be2606545946aa0",
+      "node_type": "address"
+    },
+    {
+      "address": "0xde1e60fa0a7d54e074a6bd2a3ddb114e778745f1",
+      "node_id": "address:0xde1e60fa0a7d54e074a6bd2a3ddb114e778745f1",
+      "node_type": "address"
+    },
+    {
+      "address": "0x20deed9e6f40de5ce0100d957d299549d9cf1691",
+      "decimals": null,
+      "node_id": "asset:0x20deed9e6f40de5ce0100d957d299549d9cf1691",
+      "node_type": "asset",
+      "standard": "erc20",
+      "symbol": null
+    },
+    {
+      "node_id": "tx:0x15a4b05559833153e9ccb1dc6510c5a8a236c5df2ad1f8f60584a6bd6945aea1",
+      "node_type": "transaction",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x15a4b05559833153e9ccb1dc6510c5a8a236c5df2ad1f8f60584a6bd6945aea1"
+    }
+  ],
+  "schema_ver": "graph-inference.v1",
+  "tx_hash": "0x15a4b05559833153e9ccb1dc6510c5a8a236c5df2ad1f8f60584a6bd6945aea1"
+}

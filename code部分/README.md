@@ -2,7 +2,7 @@
 
 本仓库实现一个面向 Ethereum pending/replay 交易的 DeFi 价格操纵风险监控原型。系统目标是在交易确认前后尽早构建 cash-flow graph，结合规则基线和 GraphSAGE 风险模型输出可复核告警，并通过 RAG 证据解释辅助分析员复核。
 
-当前仓库是可审计的工程原型：Provider-only replay、图构建、规则评分、告警、RAG 解释、报告审计和故障降级链路已经打通；GraphSAGE 训练入口、推理入口和模型版本协议已实现，但真实训练仍依赖完整 trace/API 数据、已晋升图级标签，以及 `torch`/`torch_geometric` 环境。
+当前仓库是可审计的工程原型：Provider-only replay、真实历史 trace、富图构建、规则评分、告警、RAG 解释、报告审计和故障降级链路已经打通；GraphSAGE 训练入口、推理入口和模型版本协议已实现。当前 7 张攻击图和 50 张正常候选图只用于工程闭环；训练前仍需完成人工标签晋级、无泄漏切分和 `torch`/`torch_geometric` 环境锁定。
 
 ## 目录结构
 
@@ -30,6 +30,8 @@ docs/      存储、图序列化等工程文档
 
 
 - Provider-only replay 链路和 110 条唯一评分链路验证。
+- 57 笔 Ethereum Mainnet 历史交易的 `trace_transaction` 回放、原始 trace 哈希和谱系审计。
+- 57 张富 Cash-Flow Graph，包含 11,521 条 Call 边、492 条 Transfer 边和 48 条 Context 边，严格质量门控错误数为 0。
 - Cash-Flow Graph 构建器，包括 Protocol 节点、Call 边、Context 边结构。
 - Context 窗口聚合器和图级标签导出器。
 - 规则基线评分器、告警编排、RAG 解释和控制台数据构建。
@@ -103,6 +105,17 @@ python3 scripts/cash_flow_graph_builder.py \
   --out ops/reports/cash-flow-graph-builder.latest.json
 ```
 
+对真实历史 trace 生成的富图运行严格谱系与结构审计：
+
+```bash
+python3 scripts/rich_graph_quality_audit.py \
+  --trace-input data/replay/trace-bundle.v1/dt=2026-08-29 \
+  --parsed-input data/replay/parsed-trace.v1/dt=2026-08-29 \
+  --protocol-input data/replay/protocol-features.v1/dt=2026-08-29 \
+  --graph-input data/replay/graph-inference.v1/dt=2026-08-29 \
+  --out ops/reports/rich-graph-quality-audit.latest.json
+```
+
 运行规则基线：
 
 ```bash
@@ -155,5 +168,4 @@ python3 scripts/report_secret_audit.py \
 ```
 
 - 示例配置放在 `config/*.example.json` 或 `ops/*.env.example`。
-
 

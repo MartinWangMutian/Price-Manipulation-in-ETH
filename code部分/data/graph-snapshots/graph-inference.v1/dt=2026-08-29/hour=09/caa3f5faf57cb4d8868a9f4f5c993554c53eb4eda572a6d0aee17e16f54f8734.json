@@ -1,0 +1,201 @@
+{
+  "chain_id": 1,
+  "context_windows": [
+    "tx-only",
+    "5m-address"
+  ],
+  "created_at": "2026-08-29T09:18:12.979+00:00",
+  "edges": [
+    {
+      "amount_norm": "1250",
+      "amount_raw": "1250000000",
+      "asset_node": "asset:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "edge_id": "edge:73b6d5e0f170192102c6b7e1",
+      "edge_type": "transfer",
+      "from_node": "address:0x45b45576d403a4326671ac3dd8b20eef30814a1b",
+      "log_index": 892,
+      "standard": "erc20",
+      "to_node": "address:0x7db3f0cc952919558584047f72965e4103ec644a",
+      "token_id": null
+    },
+    {
+      "call_depth": 0,
+      "call_type": "call",
+      "depth": 0,
+      "edge_id": "edge:ef9ae57b998be90477ccbf5f",
+      "edge_type": "call",
+      "from_node": "address:0x13cee6cd97f74a9c6afa8ea5419519708205baba",
+      "function_name": null,
+      "function_selector": "0xe9ae5c53",
+      "function_signature": null,
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": false,
+      "ordinal": 0,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "selector_family": "unknown_selector",
+      "semantic_action": "unknown",
+      "success": true,
+      "to_node": "address:0x45b45576d403a4326671ac3dd8b20eef30814a1b",
+      "value": "0"
+    },
+    {
+      "call_depth": 1,
+      "call_type": "call",
+      "depth": 1,
+      "edge_id": "edge:6d5fe9a6586d09c5aa062e30",
+      "edge_type": "call",
+      "from_node": "address:0x45b45576d403a4326671ac3dd8b20eef30814a1b",
+      "function_name": null,
+      "function_selector": "0x5c975abb",
+      "function_signature": null,
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": false,
+      "ordinal": 1,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "selector_family": "unknown_selector",
+      "semantic_action": "unknown",
+      "success": true,
+      "to_node": "address:0x00000000fb2736c301e53904409f03de06c8467a",
+      "value": "0"
+    },
+    {
+      "call_depth": 1,
+      "call_type": "call",
+      "depth": 1,
+      "edge_id": "edge:e67265535b9e91f359ae1545",
+      "edge_type": "call",
+      "from_node": "address:0x45b45576d403a4326671ac3dd8b20eef30814a1b",
+      "function_name": "transfer",
+      "function_selector": "0xa9059cbb",
+      "function_signature": "transfer(address,uint256)",
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": false,
+      "ordinal": 2,
+      "protocol_hint": "erc20",
+      "revert_reason": null,
+      "selector_family": "erc20_transfer",
+      "semantic_action": "erc20_transfer",
+      "success": true,
+      "to_node": "address:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "value": "0"
+    },
+    {
+      "context_type": "temporal_window",
+      "count": 4,
+      "edge_id": "edge:48bd91c683a073e3033d3d98",
+      "edge_type": "context",
+      "from_node": "tx:0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3",
+      "last_seen_at": "2026-05-13T09:26:35.000+00:00",
+      "relation_type": "same_counterparty",
+      "to_node": "context:c0458faaebb0cf92f847ab40",
+      "window": "5m-address"
+    },
+    {
+      "context_type": "temporal_window",
+      "count": 4,
+      "edge_id": "edge:192edec628a67378130f7aab",
+      "edge_type": "context",
+      "from_node": "tx:0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3",
+      "last_seen_at": "2026-05-13T09:26:35.000+00:00",
+      "relation_type": "same_asset",
+      "to_node": "context:f26b25931e890f6046740ef9",
+      "window": "5m-address"
+    }
+  ],
+  "event_id": "caa3f5faf57cb4d8868a9f4f5c993554c53eb4eda572a6d0aee17e16f54f8734",
+  "feature_missing_flags": [
+    "context_1h_protocol_empty",
+    "context_1h_protocol_unavailable",
+    "no_protocol_role_matches"
+  ],
+  "feature_ver": "cash-flow-graph-builder.v1",
+  "graph_id": "graph:0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3",
+  "graph_snapshot_ref": "data/graph-snapshots/graph-inference.v1/dt=2026-08-29/hour=09/caa3f5faf57cb4d8868a9f4f5c993554c53eb4eda572a6d0aee17e16f54f8734.json",
+  "idempotency_key": "1:0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3:trace_transaction:parsed-trace.v1:graph-inference.v1",
+  "lineage": {
+    "graph_builder_ver": "cash-flow-graph-builder.v1",
+    "parsed_trace_event_id": "90e9eea70d914ab598193ccc1b19c93487c958fa782a1efdfd2c3cda913fbf95",
+    "parsed_trace_idempotency_key": "1:0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3:trace_transaction:parsed-trace.v1",
+    "protocol_features_event_id": "24469ea9c6ce1ef8edc2c4cdbfa5c69a2fa3de89f785827d598d53da1adef19a",
+    "protocol_features_idempotency_key": "1:0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3:trace_transaction:parsed-trace.v1:protocol-features.v1",
+    "protocol_role_enricher_ver": "protocol-role-enricher.v1",
+    "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-29/hour=09/1-0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3-trace_transaction.json",
+    "trace_bundle_event_id": "f6c27094466e152cfa803a9b4b8ce7a44f43e059afe459437f13480a73f5891f",
+    "trace_bundle_idempotency_key": "1:0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3:trace_transaction",
+    "trace_parser_ver": "trace-parser.v1",
+    "transaction_ref": "ethereum:1:0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3"
+  },
+  "nodes": [
+    {
+      "address": "0x00000000fb2736c301e53904409f03de06c8467a",
+      "node_id": "address:0x00000000fb2736c301e53904409f03de06c8467a",
+      "node_type": "address"
+    },
+    {
+      "address": "0x13cee6cd97f74a9c6afa8ea5419519708205baba",
+      "node_id": "address:0x13cee6cd97f74a9c6afa8ea5419519708205baba",
+      "node_type": "address"
+    },
+    {
+      "address": "0x45b45576d403a4326671ac3dd8b20eef30814a1b",
+      "node_id": "address:0x45b45576d403a4326671ac3dd8b20eef30814a1b",
+      "node_type": "address"
+    },
+    {
+      "address": "0x7db3f0cc952919558584047f72965e4103ec644a",
+      "node_id": "address:0x7db3f0cc952919558584047f72965e4103ec644a",
+      "node_type": "address"
+    },
+    {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_id": "address:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_type": "address"
+    },
+    {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "decimals": 6,
+      "node_id": "asset:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_type": "asset",
+      "standard": "erc20",
+      "symbol": "USDT"
+    },
+    {
+      "count": 4,
+      "last_seen_at": "2026-05-13T09:26:35.000+00:00",
+      "liquidity_delta_usd": null,
+      "node_id": "context:c0458faaebb0cf92f847ab40",
+      "node_type": "context",
+      "price_deviation_bps": null,
+      "relation_type": "same_counterparty",
+      "subject": "0x13cee6cd97f74a9c6afa8ea5419519708205baba",
+      "volume_usd": null,
+      "window": "5m-address"
+    },
+    {
+      "count": 4,
+      "last_seen_at": "2026-05-13T09:26:35.000+00:00",
+      "liquidity_delta_usd": null,
+      "node_id": "context:f26b25931e890f6046740ef9",
+      "node_type": "context",
+      "price_deviation_bps": null,
+      "relation_type": "same_asset",
+      "subject": "0x13cee6cd97f74a9c6afa8ea5419519708205baba",
+      "volume_usd": null,
+      "window": "5m-address"
+    },
+    {
+      "node_id": "tx:0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3",
+      "node_type": "transaction",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3"
+    }
+  ],
+  "schema_ver": "graph-inference.v1",
+  "tx_hash": "0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3"
+}

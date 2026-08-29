@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-05-14T13:29:35.544+00:00",
-  "deduped_downstream_events": 110,
+  "checked_at": "2026-08-29T09:03:49.751+00:00",
+  "deduped_downstream_events": 167,
   "duplicate_idempotency_keys": [
     "1:0x0397d5a413d5585d011814876ebd770bbf6cc9ad1dcc9f685a1a6236bed43cbf:provider_fallback",
     "1:0x0c440e460999d0f698e8a5fb92444f178a1d53e92a49b01171d4bf371b01c1d9:provider_fallback",
@@ -114,17 +114,19 @@
     "1:0xffc1137d28e85a5a3f2f7690f93543696bf396fbce24c4f7712daf31d1febfc5:provider_fallback"
   ],
   "errors": [],
-  "files_seen": 220,
+  "files_seen": 277,
   "input": "data/replay/trace-bundle.v1",
-  "normalized_trace_files": 220,
+  "normalized_trace_files": 277,
   "provider_only_note": "raw_trace_refs is expected to be 0 when all traces are provider_fallback/unsupported.",
-  "raw_trace_refs": 0,
+  "raw_trace_refs": 57,
   "status": "ok",
   "trace_source_counts": {
-    "provider_fallback": 220
+    "provider_fallback": 220,
+    "trace_transaction": 57
   },
   "trace_status_counts": {
+    "ok": 57,
     "unsupported": 220
   },
-  "unique_idempotency_keys": 110
+  "unique_idempotency_keys": 167
 }
