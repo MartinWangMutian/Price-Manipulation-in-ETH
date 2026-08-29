@@ -1,0 +1,129 @@
+{
+  "chain_id": 1,
+  "context_windows": [
+    "tx-only"
+  ],
+  "created_at": "2026-08-29T09:18:12.827+00:00",
+  "edges": [
+    {
+      "amount_norm": "557.47",
+      "amount_raw": "557470000",
+      "asset_node": "asset:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "edge_id": "edge:c32c1c2e60f574b44fb80e18",
+      "edge_type": "transfer",
+      "from_node": "address:0x81cd0778c20e72bb5457bc8d043d9686c86f0b7d",
+      "log_index": 594,
+      "standard": "erc20",
+      "to_node": "address:0xc2f4c9e3c94cbd3693f48454bbe5ca99ffd564aa",
+      "token_id": null
+    },
+    {
+      "call_depth": 0,
+      "call_type": "call",
+      "depth": 0,
+      "edge_id": "edge:d45737d5e75d8bcf8ea3ba0a",
+      "edge_type": "call",
+      "from_node": "address:0x81cd0778c20e72bb5457bc8d043d9686c86f0b7d",
+      "function_name": "transfer",
+      "function_selector": "0xa9059cbb",
+      "function_signature": "transfer(address,uint256)",
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": false,
+      "ordinal": 0,
+      "protocol_hint": "erc20",
+      "revert_reason": null,
+      "selector_family": "erc20_transfer",
+      "semantic_action": "erc20_transfer",
+      "success": true,
+      "to_node": "address:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "value": "0"
+    },
+    {
+      "call_depth": 1,
+      "call_type": "call",
+      "depth": 1,
+      "edge_id": "edge:7b6aeaca98f504ffa66de0bb",
+      "edge_type": "call",
+      "from_node": "address:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "function_name": "transfer",
+      "function_selector": "0xa9059cbb",
+      "function_signature": "transfer(address,uint256)",
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": false,
+      "ordinal": 1,
+      "protocol_hint": "erc20",
+      "revert_reason": null,
+      "selector_family": "erc20_transfer",
+      "semantic_action": "erc20_transfer",
+      "success": true,
+      "to_node": "address:0x43506849d7c04f9138d1a2050bbf3a0c054402dd",
+      "value": "0"
+    }
+  ],
+  "event_id": "24e6adb0dc805636a230958107d0c5503bf66b0ba420b84fbf1a0384dfdef448",
+  "feature_missing_flags": [
+    "context_1h_protocol_empty",
+    "context_1h_protocol_unavailable",
+    "context_5m_address_empty",
+    "context_5m_address_unavailable",
+    "no_protocol_role_matches"
+  ],
+  "feature_ver": "cash-flow-graph-builder.v1",
+  "graph_id": "graph:0x970925628ceee12ce68992f0c3f35cff3a0abd74fd90f29bc9d8acda3c7ba040",
+  "graph_snapshot_ref": "data/graph-snapshots/graph-inference.v1/dt=2026-08-29/hour=09/24e6adb0dc805636a230958107d0c5503bf66b0ba420b84fbf1a0384dfdef448.json",
+  "idempotency_key": "1:0x970925628ceee12ce68992f0c3f35cff3a0abd74fd90f29bc9d8acda3c7ba040:trace_transaction:parsed-trace.v1:graph-inference.v1",
+  "lineage": {
+    "graph_builder_ver": "cash-flow-graph-builder.v1",
+    "parsed_trace_event_id": "36e9e94666da9a6fa06ac763ccba327a7ecbb61433d1b5906e70f5999741570a",
+    "parsed_trace_idempotency_key": "1:0x970925628ceee12ce68992f0c3f35cff3a0abd74fd90f29bc9d8acda3c7ba040:trace_transaction:parsed-trace.v1",
+    "protocol_features_event_id": "4f0e01da7c8eff4aac358bb3d4d318a39adefb95518edb1cf3360aa9af22747d",
+    "protocol_features_idempotency_key": "1:0x970925628ceee12ce68992f0c3f35cff3a0abd74fd90f29bc9d8acda3c7ba040:trace_transaction:parsed-trace.v1:protocol-features.v1",
+    "protocol_role_enricher_ver": "protocol-role-enricher.v1",
+    "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-29/hour=08/1-0x970925628ceee12ce68992f0c3f35cff3a0abd74fd90f29bc9d8acda3c7ba040-trace_transaction.json",
+    "trace_bundle_event_id": "657ae464330bb13b0f12b2d37f6a5754e9b413482fa1de09383353ebbebe9549",
+    "trace_bundle_idempotency_key": "1:0x970925628ceee12ce68992f0c3f35cff3a0abd74fd90f29bc9d8acda3c7ba040:trace_transaction",
+    "trace_parser_ver": "trace-parser.v1",
+    "transaction_ref": "ethereum:1:0x970925628ceee12ce68992f0c3f35cff3a0abd74fd90f29bc9d8acda3c7ba040"
+  },
+  "nodes": [
+    {
+      "address": "0x43506849d7c04f9138d1a2050bbf3a0c054402dd",
+      "node_id": "address:0x43506849d7c04f9138d1a2050bbf3a0c054402dd",
+      "node_type": "address"
+    },
+    {
+      "address": "0x81cd0778c20e72bb5457bc8d043d9686c86f0b7d",
+      "node_id": "address:0x81cd0778c20e72bb5457bc8d043d9686c86f0b7d",
+      "node_type": "address"
+    },
+    {
+      "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "node_id": "address:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "node_type": "address"
+    },
+    {
+      "address": "0xc2f4c9e3c94cbd3693f48454bbe5ca99ffd564aa",
+      "node_id": "address:0xc2f4c9e3c94cbd3693f48454bbe5ca99ffd564aa",
+      "node_type": "address"
+    },
+    {
+      "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "decimals": 6,
+      "node_id": "asset:0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+      "node_type": "asset",
+      "standard": "erc20",
+      "symbol": "USDC"
+    },
+    {
+      "node_id": "tx:0x970925628ceee12ce68992f0c3f35cff3a0abd74fd90f29bc9d8acda3c7ba040",
+      "node_type": "transaction",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x970925628ceee12ce68992f0c3f35cff3a0abd74fd90f29bc9d8acda3c7ba040"
+    }
+  ],
+  "schema_ver": "graph-inference.v1",
+  "tx_hash": "0x970925628ceee12ce68992f0c3f35cff3a0abd74fd90f29bc9d8acda3c7ba040"
+}

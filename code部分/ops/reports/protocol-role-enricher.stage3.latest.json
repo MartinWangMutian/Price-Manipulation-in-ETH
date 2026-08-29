@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-08-29T09:18:12.683+00:00",
+  "errors": [],
+  "feature_missing_flags": {
+    "no_logs": 18,
+    "no_protocol_role_matches": 56,
+    "token_decimals_missing": 18
+  },
+  "files_seen": 57,
+  "input": "data/replay/parsed-trace.v1/dt=2026-08-29",
+  "protocol_counts": {
+    "aave_v3_ethereum": 1
+  },
+  "protocol_feature_records": 57,
+  "records_with_role_matches": 1,
+  "role_contracts_loaded": 10,
+  "role_counts": {
+    "lending_market": 1,
+    "liquidation_module": 1,
+    "pool": 1
+  },
+  "skipped_duplicate_parsed_records": 0,
+  "status": "ok",
+  "unique_parsed_records": 57,
+  "write_replay": true
+}

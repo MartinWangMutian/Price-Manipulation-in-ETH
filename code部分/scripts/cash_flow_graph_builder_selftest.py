@@ -20,6 +20,10 @@ def main() -> int:
         "tx_hash": "0x" + "ef" * 32,
         "trace_source": "debug_traceCall",
         "trace_status": "ok",
+        "source_trace_event_id": "trace-1",
+        "source_trace_idempotency_key": "trace-key-1",
+        "raw_trace_ref": "data/raw-trace/example.json",
+        "parser_ver": "trace-parser.v1",
         "token_transfers": [
             {
                 "event_id": "transfer-1",
@@ -50,6 +54,9 @@ def main() -> int:
         "feature_missing_flags": [],
     }
     protocol_features = {
+        "event_id": "protocol-1",
+        "idempotency_key": "protocol-key-1",
+        "feature_enricher_ver": "protocol-role-enricher.v1",
         "matched_protocol_roles": [
             {
                 "address": router,
@@ -99,6 +106,9 @@ def main() -> int:
     assert {"transaction", "address", "asset", "protocol", "context"}.issubset(node_types), graph
     assert {"transfer", "call", "context"}.issubset(edge_types), graph
     assert graph["context_windows"] == ["tx-only", "5m-address", "1h-protocol"], graph
+    assert graph["lineage"]["trace_bundle_event_id"] == "trace-1", graph
+    assert graph["lineage"]["raw_trace_ref"] == "data/raw-trace/example.json", graph
+    assert graph["lineage"]["graph_builder_ver"] == "cash-flow-graph-builder.v1", graph
     assert "context_5m_address_unavailable" not in graph["feature_missing_flags"], graph
     protocol_node = next(node for node in graph["nodes"] if node["node_type"] == "protocol")
     assert protocol_node["audit_status"] == "audited", protocol_node

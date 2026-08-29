@@ -1,0 +1,147 @@
+{
+  "chain_id": 1,
+  "context_windows": [
+    "tx-only",
+    "5m-address"
+  ],
+  "created_at": "2026-08-29T09:18:12.983+00:00",
+  "edges": [
+    {
+      "amount_norm": "1358",
+      "amount_raw": "1358000000",
+      "asset_node": "asset:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "edge_id": "edge:79245e3b23614114a49008a9",
+      "edge_type": "transfer",
+      "from_node": "address:0x11c4fbe93c221fd6d3be84e279cf795a4b354212",
+      "log_index": 557,
+      "standard": "erc20",
+      "to_node": "address:0xe20d877c3e4041f6fffadef75d3425a2db2daf14",
+      "token_id": null
+    },
+    {
+      "call_depth": 0,
+      "call_type": "call",
+      "depth": 0,
+      "edge_id": "edge:327a04bde98a8f7d899b627f",
+      "edge_type": "call",
+      "from_node": "address:0x11c4fbe93c221fd6d3be84e279cf795a4b354212",
+      "function_name": "transfer",
+      "function_selector": "0xa9059cbb",
+      "function_signature": "transfer(address,uint256)",
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": false,
+      "ordinal": 0,
+      "protocol_hint": "erc20",
+      "revert_reason": null,
+      "selector_family": "erc20_transfer",
+      "semantic_action": "erc20_transfer",
+      "success": true,
+      "to_node": "address:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "value": "0"
+    },
+    {
+      "context_type": "temporal_window",
+      "count": 5,
+      "edge_id": "edge:8af8da898bf1bc0056405905",
+      "edge_type": "context",
+      "from_node": "tx:0x8fde79c3357e5a6b17388183e5f8f372c7951be7e5726194f1fd36ed9fe497fa",
+      "last_seen_at": "2026-05-13T09:26:35.000+00:00",
+      "relation_type": "same_counterparty",
+      "to_node": "context:8e2338b94dd3de7f46e8ae45",
+      "window": "5m-address"
+    },
+    {
+      "context_type": "temporal_window",
+      "count": 5,
+      "edge_id": "edge:fc68faf02961794c3a8df216",
+      "edge_type": "context",
+      "from_node": "tx:0x8fde79c3357e5a6b17388183e5f8f372c7951be7e5726194f1fd36ed9fe497fa",
+      "last_seen_at": "2026-05-13T09:26:35.000+00:00",
+      "relation_type": "same_asset",
+      "to_node": "context:26df370df3800f8b7b5bb9b3",
+      "window": "5m-address"
+    }
+  ],
+  "event_id": "f1f53a4ed138e627dfc955904012de90a802574cc5e78d4bce4090b04cd91a8b",
+  "feature_missing_flags": [
+    "context_1h_protocol_empty",
+    "context_1h_protocol_unavailable",
+    "no_protocol_role_matches"
+  ],
+  "feature_ver": "cash-flow-graph-builder.v1",
+  "graph_id": "graph:0x8fde79c3357e5a6b17388183e5f8f372c7951be7e5726194f1fd36ed9fe497fa",
+  "graph_snapshot_ref": "data/graph-snapshots/graph-inference.v1/dt=2026-08-29/hour=09/f1f53a4ed138e627dfc955904012de90a802574cc5e78d4bce4090b04cd91a8b.json",
+  "idempotency_key": "1:0x8fde79c3357e5a6b17388183e5f8f372c7951be7e5726194f1fd36ed9fe497fa:trace_transaction:parsed-trace.v1:graph-inference.v1",
+  "lineage": {
+    "graph_builder_ver": "cash-flow-graph-builder.v1",
+    "parsed_trace_event_id": "93ed00002689f4fcc2724879f2289f094be3e16767d13a8b9c433b322e2e9880",
+    "parsed_trace_idempotency_key": "1:0x8fde79c3357e5a6b17388183e5f8f372c7951be7e5726194f1fd36ed9fe497fa:trace_transaction:parsed-trace.v1",
+    "protocol_features_event_id": "c2c1682f144900535dd16c84b3962fd17b36f8f5fd49948ae40e89409c2a7d45",
+    "protocol_features_idempotency_key": "1:0x8fde79c3357e5a6b17388183e5f8f372c7951be7e5726194f1fd36ed9fe497fa:trace_transaction:parsed-trace.v1:protocol-features.v1",
+    "protocol_role_enricher_ver": "protocol-role-enricher.v1",
+    "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-29/hour=09/1-0x8fde79c3357e5a6b17388183e5f8f372c7951be7e5726194f1fd36ed9fe497fa-trace_transaction.json",
+    "trace_bundle_event_id": "6c9d92cf112894b2be9193f9deff8f581166ec9539fca14eab6c2115aa6f397f",
+    "trace_bundle_idempotency_key": "1:0x8fde79c3357e5a6b17388183e5f8f372c7951be7e5726194f1fd36ed9fe497fa:trace_transaction",
+    "trace_parser_ver": "trace-parser.v1",
+    "transaction_ref": "ethereum:1:0x8fde79c3357e5a6b17388183e5f8f372c7951be7e5726194f1fd36ed9fe497fa"
+  },
+  "nodes": [
+    {
+      "address": "0x11c4fbe93c221fd6d3be84e279cf795a4b354212",
+      "node_id": "address:0x11c4fbe93c221fd6d3be84e279cf795a4b354212",
+      "node_type": "address"
+    },
+    {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_id": "address:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_type": "address"
+    },
+    {
+      "address": "0xe20d877c3e4041f6fffadef75d3425a2db2daf14",
+      "node_id": "address:0xe20d877c3e4041f6fffadef75d3425a2db2daf14",
+      "node_type": "address"
+    },
+    {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "decimals": 6,
+      "node_id": "asset:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_type": "asset",
+      "standard": "erc20",
+      "symbol": "USDT"
+    },
+    {
+      "count": 5,
+      "last_seen_at": "2026-05-13T09:26:35.000+00:00",
+      "liquidity_delta_usd": null,
+      "node_id": "context:26df370df3800f8b7b5bb9b3",
+      "node_type": "context",
+      "price_deviation_bps": null,
+      "relation_type": "same_asset",
+      "subject": "0x11c4fbe93c221fd6d3be84e279cf795a4b354212",
+      "volume_usd": null,
+      "window": "5m-address"
+    },
+    {
+      "count": 5,
+      "last_seen_at": "2026-05-13T09:26:35.000+00:00",
+      "liquidity_delta_usd": null,
+      "node_id": "context:8e2338b94dd3de7f46e8ae45",
+      "node_type": "context",
+      "price_deviation_bps": null,
+      "relation_type": "same_counterparty",
+      "subject": "0x11c4fbe93c221fd6d3be84e279cf795a4b354212",
+      "volume_usd": null,
+      "window": "5m-address"
+    },
+    {
+      "node_id": "tx:0x8fde79c3357e5a6b17388183e5f8f372c7951be7e5726194f1fd36ed9fe497fa",
+      "node_type": "transaction",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x8fde79c3357e5a6b17388183e5f8f372c7951be7e5726194f1fd36ed9fe497fa"
+    }
+  ],
+  "schema_ver": "graph-inference.v1",
+  "tx_hash": "0x8fde79c3357e5a6b17388183e5f8f372c7951be7e5726194f1fd36ed9fe497fa"
+}

@@ -45,6 +45,12 @@ def main() -> int:
                 "depth": 1,
                 "error": "execution reverted",
             },
+            {
+                "type": "create",
+                "action": {"from": sender, "value": "0x0"},
+                "result": {"address": receiver, "gasUsed": "0x1"},
+                "traceAddress": [0, 1],
+            },
         ],
         "logs": [
             {
@@ -88,11 +94,15 @@ def main() -> int:
     assert erc1155["standard"] == "erc1155", erc1155
     assert erc1155["token_id"] == "7", erc1155
     assert erc1155["amount_raw"] == "3", erc1155
-    assert len(parsed["calls"]) == 2, parsed
+    assert len(parsed["calls"]) == 3, parsed
     assert parsed["calls"][0]["depth"] == 0, parsed["calls"][0]
     assert parsed["calls"][0]["function_selector"] == "0xa9059cbb", parsed["calls"][0]
     assert parsed["calls"][1]["success"] is False, parsed["calls"][1]
     assert parsed["calls"][1]["revert_reason"] == "execution reverted", parsed["calls"][1]
+    assert parsed["calls"][2]["type"] == "create", parsed["calls"][2]
+    assert parsed["calls"][2]["to"] == receiver, parsed["calls"][2]
+    assert parsed["calls"][2]["depth"] == 2, parsed["calls"][2]
+    assert parsed["parser_ver"] == "trace-parser.v1", parsed
     print("trace_parser_selftest ok")
     return 0
 

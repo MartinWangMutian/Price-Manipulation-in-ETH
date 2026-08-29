@@ -1,0 +1,63 @@
+{
+  "calls": [
+    {
+      "depth": 0,
+      "from": "0xf89d7b9c864f589bbf53a82105107622b35eaa40",
+      "function_name": "transfer",
+      "function_selector": "0xa9059cbb",
+      "function_signature": "transfer(address,uint256)",
+      "ordinal": 0,
+      "protocol_hint": "erc20",
+      "revert_reason": null,
+      "success": true,
+      "to": "0x10dea67478c5f8c5e2d90e5e9b26dbe60c54d800",
+      "type": "call",
+      "value": "0"
+    },
+    {
+      "depth": 1,
+      "from": "0x10dea67478c5f8c5e2d90e5e9b26dbe60c54d800",
+      "function_name": "transfer",
+      "function_selector": "0xa9059cbb",
+      "function_signature": "transfer(address,uint256)",
+      "ordinal": 1,
+      "protocol_hint": "erc20",
+      "revert_reason": null,
+      "success": true,
+      "to": "0x5c96ff5b7f61b9e3436ef04da1377c8388dfc106",
+      "type": "call",
+      "value": "0"
+    }
+  ],
+  "chain_id": 1,
+  "created_at": "2026-08-29T09:18:12.614+00:00",
+  "event_id": "f8f9af8657342c83a6112468d8a77d092f75d7c9f20e670b37917e935366b271",
+  "feature_missing_flags": [
+    "token_decimals_missing"
+  ],
+  "idempotency_key": "1:0xc9f006fd96d8d2dff5e3855673c7652f9f252527dff421b730d10a198e522ac6:trace_transaction:parsed-trace.v1",
+  "observed_at": "2026-05-13T09:26:35.000+00:00",
+  "parser_ver": "trace-parser.v1",
+  "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-29/hour=09/1-0xc9f006fd96d8d2dff5e3855673c7652f9f252527dff421b730d10a198e522ac6-trace_transaction.json",
+  "schema_ver": "parsed-trace.v1",
+  "source_trace_event_id": "4630cf85f4274cd9f7c0e3c03e11ec75d19bb120f15d06a47e2abe4c9b5ddc29",
+  "source_trace_idempotency_key": "1:0xc9f006fd96d8d2dff5e3855673c7652f9f252527dff421b730d10a198e522ac6:trace_transaction",
+  "token_transfers": [
+    {
+      "amount_norm": null,
+      "amount_raw": "619998000000000000000000",
+      "decimals": null,
+      "event_id": "6fa488464db52329a07dcbc4fd771d619273ea801fdc47b15de715aa4d39289d",
+      "from": "0xf89d7b9c864f589bbf53a82105107622b35eaa40",
+      "log_index": 221,
+      "standard": "erc20",
+      "symbol": null,
+      "to": "0x5b6ec8d7baea094058b49126a03f2a4ff18a64d5",
+      "token": "0x10dea67478c5f8c5e2d90e5e9b26dbe60c54d800",
+      "token_id": null
+    }
+  ],
+  "trace_source": "trace_transaction",
+  "trace_status": "ok",
+  "tx_hash": "0xc9f006fd96d8d2dff5e3855673c7652f9f252527dff421b730d10a198e522ac6"
+}

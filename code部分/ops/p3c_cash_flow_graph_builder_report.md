@@ -19,19 +19,21 @@ Implemented the Phase 3-C cash-flow graph builder and serialization format for d
 
 Synthetic self-test covers non-empty transfer, call, protocol role, and context edges.
 
-Provider-only replay built 110 valid `graph-inference.v1` records and 110 graph snapshots.
+The paid 2026-08-29 replay partition built 57 rich `graph-inference.v1` records and 57 matching snapshots from `trace_transaction` bundles.
 
-Current provider-only result:
+Current rich-graph result:
 
-- `graphs_built`: 110
-- `context_window_counts`: `tx-only=110`
-- `node_counts`: `transaction=110`
-- `edge_counts`: empty
-- build latency: `p95=0.008ms`, `max=0.068ms`
-- independent graph replay check: `valid_graphs=110`, duplicate idempotency keys empty, errors empty
+- `graphs_built`: 57
+- `context_window_counts`: `tx-only=57`, `5m-address=18`
+- `node_counts`: transaction=57, address=583, asset=96, protocol=1, context=34
+- `edge_counts`: Call=11,521, Transfer=492, Context=48
+- call depth maximum: 22
+- build latency: `p95=1.017ms`, `max=19.536ms`
+- independent graph replay check: `valid_graphs=57`, duplicate idempotency keys empty, errors empty
+- every new graph contains raw transaction/trace, parsed-feature, role-feature, and implementation-version lineage
 
-Empty edges are expected because the current trace source is provider fallback and has no calls/logs.
+The parser now preserves `CREATE`/`CREATE2` calls by resolving the created contract from Parity `result.address`; all 11,521 parsed calls therefore have graph Call edges.
 
-## Remaining Runtime Gap
+## Remaining Research Gap
 
-Graph quality and edge richness depend on real Geth or Erigon traces. Provider-only graphs are useful for pipeline continuity but do not satisfy the Phase 3 historical-complex-transaction validation gate.
+These 57 graphs satisfy the Phase 3 engineering gate but remain too small for a research conclusion. Protocol-role coverage is 1/57 and must be expanded before research-grade training.

@@ -1,0 +1,29 @@
+{
+  "build_latency_ms": {
+    "max": 19.536,
+    "p50": 0.023,
+    "p95": 1.017
+  },
+  "checked_at": "2026-08-29T09:18:20.549+00:00",
+  "coverage_notes": [
+    "Provider-only graphs may contain only transaction nodes until rich trace is available.",
+    "Transfer/call/context edge direction, call depth, protocol role, and temporal context checks are enforced when such edges exist."
+  ],
+  "edge_counts": {
+    "call": 11521,
+    "context": 48,
+    "transfer": 492
+  },
+  "errors": [],
+  "files_seen": 57,
+  "graphs_checked": 57,
+  "input": "data/replay/graph-inference.v1/dt=2026-08-29",
+  "node_counts": {
+    "address": 583,
+    "asset": 96,
+    "context": 34,
+    "protocol": 1,
+    "transaction": 57
+  },
+  "status": "ok"
+}

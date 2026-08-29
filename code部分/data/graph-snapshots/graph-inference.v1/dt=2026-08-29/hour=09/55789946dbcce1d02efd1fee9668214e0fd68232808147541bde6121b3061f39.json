@@ -1,0 +1,100 @@
+{
+  "chain_id": 1,
+  "context_windows": [
+    "tx-only",
+    "5m-address"
+  ],
+  "created_at": "2026-08-29T09:18:12.832+00:00",
+  "edges": [
+    {
+      "call_depth": 0,
+      "call_type": "call",
+      "depth": 0,
+      "edge_id": "edge:c482174364c54259415dff4c",
+      "edge_type": "call",
+      "from_node": "address:0x4c0a510fe65688835aedb1badca2ba1677ef1a90",
+      "function_name": null,
+      "function_selector": null,
+      "function_signature": null,
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": true,
+      "ordinal": 0,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "selector_family": null,
+      "semantic_action": "unknown",
+      "success": true,
+      "to_node": "address:0x3e1f44ab2b036a5df2fa70a8f6510940ce4a66c1",
+      "value": "571991459667640"
+    },
+    {
+      "context_type": "temporal_window",
+      "count": 1,
+      "edge_id": "edge:f2db2b331fbf0433dddd58b6",
+      "edge_type": "context",
+      "from_node": "tx:0xc170c2439260d5885b28737abb1bf82cef55f11ecfaf88a7022bfd806f58748f",
+      "last_seen_at": "2026-05-13T09:26:35.000+00:00",
+      "relation_type": "same_counterparty",
+      "to_node": "context:8e22afeae34e1294f14a5235",
+      "window": "5m-address"
+    }
+  ],
+  "event_id": "55789946dbcce1d02efd1fee9668214e0fd68232808147541bde6121b3061f39",
+  "feature_missing_flags": [
+    "context_1h_protocol_empty",
+    "context_1h_protocol_unavailable",
+    "no_logs",
+    "no_protocol_role_matches"
+  ],
+  "feature_ver": "cash-flow-graph-builder.v1",
+  "graph_id": "graph:0xc170c2439260d5885b28737abb1bf82cef55f11ecfaf88a7022bfd806f58748f",
+  "graph_snapshot_ref": "data/graph-snapshots/graph-inference.v1/dt=2026-08-29/hour=09/55789946dbcce1d02efd1fee9668214e0fd68232808147541bde6121b3061f39.json",
+  "idempotency_key": "1:0xc170c2439260d5885b28737abb1bf82cef55f11ecfaf88a7022bfd806f58748f:trace_transaction:parsed-trace.v1:graph-inference.v1",
+  "lineage": {
+    "graph_builder_ver": "cash-flow-graph-builder.v1",
+    "parsed_trace_event_id": "4f5dcd365613b0e1d724b7d059362adddd49ad9a3b5cb2d82b8181ab5e4be5db",
+    "parsed_trace_idempotency_key": "1:0xc170c2439260d5885b28737abb1bf82cef55f11ecfaf88a7022bfd806f58748f:trace_transaction:parsed-trace.v1",
+    "protocol_features_event_id": "1a03b45786a770eb6903e7fa65b8ad2f1c2c838a9375709f4a41a079643a3838",
+    "protocol_features_idempotency_key": "1:0xc170c2439260d5885b28737abb1bf82cef55f11ecfaf88a7022bfd806f58748f:trace_transaction:parsed-trace.v1:protocol-features.v1",
+    "protocol_role_enricher_ver": "protocol-role-enricher.v1",
+    "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-29/hour=09/1-0xc170c2439260d5885b28737abb1bf82cef55f11ecfaf88a7022bfd806f58748f-trace_transaction.json",
+    "trace_bundle_event_id": "22c3276cabe770fe583ab5abce84c7567916c5f0904d67d43eb3a53df8795036",
+    "trace_bundle_idempotency_key": "1:0xc170c2439260d5885b28737abb1bf82cef55f11ecfaf88a7022bfd806f58748f:trace_transaction",
+    "trace_parser_ver": "trace-parser.v1",
+    "transaction_ref": "ethereum:1:0xc170c2439260d5885b28737abb1bf82cef55f11ecfaf88a7022bfd806f58748f"
+  },
+  "nodes": [
+    {
+      "address": "0x3e1f44ab2b036a5df2fa70a8f6510940ce4a66c1",
+      "node_id": "address:0x3e1f44ab2b036a5df2fa70a8f6510940ce4a66c1",
+      "node_type": "address"
+    },
+    {
+      "address": "0x4c0a510fe65688835aedb1badca2ba1677ef1a90",
+      "node_id": "address:0x4c0a510fe65688835aedb1badca2ba1677ef1a90",
+      "node_type": "address"
+    },
+    {
+      "count": 1,
+      "last_seen_at": "2026-05-13T09:26:35.000+00:00",
+      "liquidity_delta_usd": null,
+      "node_id": "context:8e22afeae34e1294f14a5235",
+      "node_type": "context",
+      "price_deviation_bps": null,
+      "relation_type": "same_counterparty",
+      "subject": "0x4c0a510fe65688835aedb1badca2ba1677ef1a90",
+      "volume_usd": null,
+      "window": "5m-address"
+    },
+    {
+      "node_id": "tx:0xc170c2439260d5885b28737abb1bf82cef55f11ecfaf88a7022bfd806f58748f",
+      "node_type": "transaction",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0xc170c2439260d5885b28737abb1bf82cef55f11ecfaf88a7022bfd806f58748f"
+    }
+  ],
+  "schema_ver": "graph-inference.v1",
+  "tx_hash": "0xc170c2439260d5885b28737abb1bf82cef55f11ecfaf88a7022bfd806f58748f"
+}

@@ -1,0 +1,147 @@
+{
+  "chain_id": 1,
+  "context_windows": [
+    "tx-only",
+    "5m-address"
+  ],
+  "created_at": "2026-08-29T09:18:12.992+00:00",
+  "edges": [
+    {
+      "amount_norm": "4.24",
+      "amount_raw": "4240000",
+      "asset_node": "asset:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "edge_id": "edge:9eda9dd48252d38aafb7b4b8",
+      "edge_type": "transfer",
+      "from_node": "address:0xaaff78b00a9c452d498c2ace5de1eda5cc3c678a",
+      "log_index": 226,
+      "standard": "erc20",
+      "to_node": "address:0xbb42feea0840258aa5eb9257e2dc74872b803749",
+      "token_id": null
+    },
+    {
+      "call_depth": 0,
+      "call_type": "call",
+      "depth": 0,
+      "edge_id": "edge:ed50311ae6cb2acf60d177c3",
+      "edge_type": "call",
+      "from_node": "address:0xaaff78b00a9c452d498c2ace5de1eda5cc3c678a",
+      "function_name": "transfer",
+      "function_selector": "0xa9059cbb",
+      "function_signature": "transfer(address,uint256)",
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": false,
+      "ordinal": 0,
+      "protocol_hint": "erc20",
+      "revert_reason": null,
+      "selector_family": "erc20_transfer",
+      "semantic_action": "erc20_transfer",
+      "success": true,
+      "to_node": "address:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "value": "0"
+    },
+    {
+      "context_type": "temporal_window",
+      "count": 8,
+      "edge_id": "edge:07a5e704821639a8320a8c04",
+      "edge_type": "context",
+      "from_node": "tx:0x7e7732acc762bec2092801fb651f2a495f7057cfedca85429b194ed1dc54c187",
+      "last_seen_at": "2026-05-13T09:26:35.000+00:00",
+      "relation_type": "same_counterparty",
+      "to_node": "context:b2e8c2b3353d4bcbbee3f705",
+      "window": "5m-address"
+    },
+    {
+      "context_type": "temporal_window",
+      "count": 8,
+      "edge_id": "edge:33d21f1a214b65ab16992e3c",
+      "edge_type": "context",
+      "from_node": "tx:0x7e7732acc762bec2092801fb651f2a495f7057cfedca85429b194ed1dc54c187",
+      "last_seen_at": "2026-05-13T09:26:35.000+00:00",
+      "relation_type": "same_asset",
+      "to_node": "context:af12f3c771c030f5d9ce3638",
+      "window": "5m-address"
+    }
+  ],
+  "event_id": "9cecfab703f79b724685ea35e40fa7a1e3423b06d0b3c70c7568bf500840e0fd",
+  "feature_missing_flags": [
+    "context_1h_protocol_empty",
+    "context_1h_protocol_unavailable",
+    "no_protocol_role_matches"
+  ],
+  "feature_ver": "cash-flow-graph-builder.v1",
+  "graph_id": "graph:0x7e7732acc762bec2092801fb651f2a495f7057cfedca85429b194ed1dc54c187",
+  "graph_snapshot_ref": "data/graph-snapshots/graph-inference.v1/dt=2026-08-29/hour=09/9cecfab703f79b724685ea35e40fa7a1e3423b06d0b3c70c7568bf500840e0fd.json",
+  "idempotency_key": "1:0x7e7732acc762bec2092801fb651f2a495f7057cfedca85429b194ed1dc54c187:trace_transaction:parsed-trace.v1:graph-inference.v1",
+  "lineage": {
+    "graph_builder_ver": "cash-flow-graph-builder.v1",
+    "parsed_trace_event_id": "d934955bb0df8ed367d3e6672efe1ec5507de52febe7317f75a926111eded5d2",
+    "parsed_trace_idempotency_key": "1:0x7e7732acc762bec2092801fb651f2a495f7057cfedca85429b194ed1dc54c187:trace_transaction:parsed-trace.v1",
+    "protocol_features_event_id": "8ad150dd91786629b39d04773fff41ca22922783e8f300250d11d4eb1f0e31d1",
+    "protocol_features_idempotency_key": "1:0x7e7732acc762bec2092801fb651f2a495f7057cfedca85429b194ed1dc54c187:trace_transaction:parsed-trace.v1:protocol-features.v1",
+    "protocol_role_enricher_ver": "protocol-role-enricher.v1",
+    "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-29/hour=09/1-0x7e7732acc762bec2092801fb651f2a495f7057cfedca85429b194ed1dc54c187-trace_transaction.json",
+    "trace_bundle_event_id": "11d6218b604317a6e4ff834879c3fd26101710d3b101a3c34aa3ff529d8c99d0",
+    "trace_bundle_idempotency_key": "1:0x7e7732acc762bec2092801fb651f2a495f7057cfedca85429b194ed1dc54c187:trace_transaction",
+    "trace_parser_ver": "trace-parser.v1",
+    "transaction_ref": "ethereum:1:0x7e7732acc762bec2092801fb651f2a495f7057cfedca85429b194ed1dc54c187"
+  },
+  "nodes": [
+    {
+      "address": "0xaaff78b00a9c452d498c2ace5de1eda5cc3c678a",
+      "node_id": "address:0xaaff78b00a9c452d498c2ace5de1eda5cc3c678a",
+      "node_type": "address"
+    },
+    {
+      "address": "0xbb42feea0840258aa5eb9257e2dc74872b803749",
+      "node_id": "address:0xbb42feea0840258aa5eb9257e2dc74872b803749",
+      "node_type": "address"
+    },
+    {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_id": "address:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_type": "address"
+    },
+    {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "decimals": 6,
+      "node_id": "asset:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_type": "asset",
+      "standard": "erc20",
+      "symbol": "USDT"
+    },
+    {
+      "count": 8,
+      "last_seen_at": "2026-05-13T09:26:35.000+00:00",
+      "liquidity_delta_usd": null,
+      "node_id": "context:af12f3c771c030f5d9ce3638",
+      "node_type": "context",
+      "price_deviation_bps": null,
+      "relation_type": "same_asset",
+      "subject": "0xaaff78b00a9c452d498c2ace5de1eda5cc3c678a",
+      "volume_usd": null,
+      "window": "5m-address"
+    },
+    {
+      "count": 8,
+      "last_seen_at": "2026-05-13T09:26:35.000+00:00",
+      "liquidity_delta_usd": null,
+      "node_id": "context:b2e8c2b3353d4bcbbee3f705",
+      "node_type": "context",
+      "price_deviation_bps": null,
+      "relation_type": "same_counterparty",
+      "subject": "0xaaff78b00a9c452d498c2ace5de1eda5cc3c678a",
+      "volume_usd": null,
+      "window": "5m-address"
+    },
+    {
+      "node_id": "tx:0x7e7732acc762bec2092801fb651f2a495f7057cfedca85429b194ed1dc54c187",
+      "node_type": "transaction",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x7e7732acc762bec2092801fb651f2a495f7057cfedca85429b194ed1dc54c187"
+    }
+  ],
+  "schema_ver": "graph-inference.v1",
+  "tx_hash": "0x7e7732acc762bec2092801fb651f2a495f7057cfedca85429b194ed1dc54c187"
+}

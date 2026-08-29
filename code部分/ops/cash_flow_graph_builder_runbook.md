@@ -28,6 +28,8 @@ python3 scripts/cash_flow_graph_builder.py \
   --out ops/reports/cash-flow-graph-builder.latest.json
 ```
 
+For a paid replay batch, scope every input to the same `dt=...` partition and pass the batch-specific address/protocol context files. This prevents older provider-fallback records from being mixed into rich graphs.
+
 Validate written graph replay files independently:
 
 ```bash
@@ -35,6 +37,10 @@ python3 scripts/graph_replay_check.py \
   --input data/replay/graph-inference.v1 \
   --out ops/reports/graph-replay-check.latest.json
 ```
+
+## Rich graph lineage
+
+Rich graph records include a `lineage` object linking the raw transaction, trace bundle, local raw trace, parsed trace, protocol-role feature record, and all three implementation versions. Successful `CREATE` and `CREATE2` traces use `result.address` as the call-edge destination.
 
 ## Provider-only note
 

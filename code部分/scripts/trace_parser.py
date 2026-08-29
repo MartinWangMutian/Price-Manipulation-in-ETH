@@ -17,6 +17,7 @@ TRANSFER_TOPIC = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523
 ERC1155_SINGLE_TOPIC = "0xc3d58168c5ae7397731d063d5bbf3d6d37f186a5b44a5fbf0aecd7d43b1c7a"
 ERC1155_BATCH_TOPIC = "0x4a39dc06d4c0dbc64b70b2b9b850f3c9e70e74a5d2bd5cc664fa352f4aa3a08f"
 ERROR_STRING_SELECTOR = "0x08c379a0"
+PARSER_VER = "trace-parser.v1"
 
 
 def now_iso() -> str:
@@ -304,12 +305,16 @@ def parse_call(call: dict[str, Any], selector_dict: dict[str, Any], ordinal: int
     output = call.get("output", result.get("output"))
     error = call.get("error", result.get("error"))
     action = call.get("action") if isinstance(call.get("action"), dict) else {}
+    parsed_call_type = call_type(call)
+    recipient = normalize_address(call.get("to", action.get("to")))
+    if recipient is None and str(parsed_call_type or "").lower() in {"create", "create2"}:
+        recipient = normalize_address(result.get("address"))
     return {
         "ordinal": ordinal,
         "depth": call_depth(call),
-        "type": call_type(call),
+        "type": parsed_call_type,
         "from": normalize_address(call.get("from", action.get("from"))),
-        "to": normalize_address(call.get("to", action.get("to"))),
+        "to": recipient,
         "value": str(hex_to_int(call.get("value", action.get("value"))) or 0),
         "function_selector": selector,
         "function_signature": selector_meta.get("signature"),
@@ -361,6 +366,8 @@ def parse_trace_bundle(
         "tx_hash": tx_hash,
         "trace_source": bundle.get("trace_source"),
         "trace_status": bundle.get("trace_status"),
+        "raw_trace_ref": bundle.get("raw_trace_ref"),
+        "parser_ver": PARSER_VER,
         "token_transfers": transfers,
         "calls": parsed_calls,
         "feature_missing_flags": sorted(set(missing_flags)),
