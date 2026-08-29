@@ -13,7 +13,10 @@ from typing import Any
 
 NODE_TYPES = ("transaction", "address", "asset", "protocol", "context")
 ROLE_FLAGS = ("oracle", "router", "pool", "lending_market", "liquidation_module")
-FEATURE_DIM = len(NODE_TYPES) + len(ROLE_FLAGS) + 8
+EDGE_TYPES = ("transfer", "call", "context")
+EDGE_ACTIONS = ("flash_loan", "swap", "oracle_read", "borrow", "repay", "liquidation")
+EDGE_SUMMARY_DIM = len(EDGE_TYPES) + len(EDGE_ACTIONS) + 4
+FEATURE_DIM = len(NODE_TYPES) + len(ROLE_FLAGS) + 8 + EDGE_SUMMARY_DIM
 
 
 @dataclass(frozen=True)
@@ -72,6 +75,13 @@ try:
             hidden = self.conv2(hidden, edge_index)
             hidden = _functional.relu(hidden)
             graph_count = int(batch.max().item()) + 1 if batch.numel() else 1
+            # The first NODE_TYPES columns are one-hot node types. Pool only
+            # Address and Protocol nodes, falling back to all nodes for a
+            # degenerate tx-only graph.
+            readout_mask = (x[:, 1] + x[:, 3]) > 0
+            if bool(readout_mask.any()):
+                hidden = hidden[readout_mask]
+                batch = batch[readout_mask]
             pooled = hidden.new_zeros((graph_count, hidden.shape[1]))
             pooled.index_add_(0, batch, hidden)
             counts = hidden.new_zeros((graph_count, 1))
@@ -109,7 +119,9 @@ def load_manifest(path: Path) -> dict[str, Any]:
         return json.load(handle)
 
 
-def node_feature(node: dict[str, Any]) -> list[float]:
+def node_feature(
+    node: dict[str, Any], incident_features: list[float] | None = None
+) -> list[float]:
     node_type = str(node.get("node_type", ""))
     values = [1.0 if node_type == item else 0.0 for item in NODE_TYPES]
     roles = {str(role) for role in node.get("roles", []) if isinstance(role, str)}
@@ -126,6 +138,7 @@ def node_feature(node: dict[str, Any]) -> list[float]:
             _scaled_number(node.get("price_deviation_bps")),
         ]
     )
+    values.extend(incident_features or [0.0] * EDGE_SUMMARY_DIM)
     return values
 
 
@@ -148,7 +161,8 @@ def graph_tensors(graphs: list[dict[str, Any]]) -> tuple[Any, Any, Any]:
     for graph_index, graph in enumerate(graphs):
         nodes = [node for node in graph.get("nodes", []) if isinstance(node, dict)]
         node_index = {node["node_id"]: offset + idx for idx, node in enumerate(nodes)}
-        features.extend(node_feature(node) for node in nodes)
+        incident = incident_edge_features(graph, nodes)
+        features.extend(node_feature(node, incident.get(node["node_id"])) for node in nodes)
         batch.extend([graph_index] * len(nodes))
         for edge in graph.get("edges", []):
             if not isinstance(edge, dict):
@@ -169,6 +183,57 @@ def graph_tensors(graphs: list[dict[str, Any]]) -> tuple[Any, Any, Any]:
         edge_index,
         torch.tensor(batch, dtype=torch.long),
     )
+
+
+def incident_edge_features(
+    graph: dict[str, Any], nodes: list[dict[str, Any]] | None = None
+) -> dict[str, list[float]]:
+    """Summarize typed edge semantics onto incident nodes.
+
+    SAGEConv still uses a compact homogeneous adjacency, while this summary
+    prevents transfer/call/context type and action metadata from being silently
+    discarded.
+    """
+    nodes = nodes or [node for node in graph.get("nodes", []) if isinstance(node, dict)]
+    raw: dict[str, dict[str, float]] = {
+        str(node.get("node_id")): {} for node in nodes if isinstance(node.get("node_id"), str)
+    }
+    for edge in graph.get("edges", []):
+        if not isinstance(edge, dict):
+            continue
+        endpoints = [edge.get("from_node"), edge.get("to_node"), edge.get("asset_node")]
+        edge_type = str(edge.get("edge_type") or "")
+        action = str(edge.get("semantic_action") or "")
+        for endpoint in endpoints:
+            if not isinstance(endpoint, str) or endpoint not in raw:
+                continue
+            values = raw[endpoint]
+            if edge_type in EDGE_TYPES:
+                values[f"type:{edge_type}"] = values.get(f"type:{edge_type}", 0.0) + 1.0
+            if action in EDGE_ACTIONS:
+                values[f"action:{action}"] = 1.0
+            if edge.get("success") is False:
+                values["failed_calls"] = values.get("failed_calls", 0.0) + 1.0
+            depth = _scaled_number(edge.get("call_depth", edge.get("depth")))
+            values["max_depth"] = max(values.get("max_depth", 0.0), depth)
+            amount = _scaled_number(edge.get("value_usd", edge.get("amount_norm")))
+            values["amount"] = values.get("amount", 0.0) + amount
+            if edge.get("window") in {"5m-address", "1h-protocol"}:
+                values["temporal_context"] = 1.0
+    result: dict[str, list[float]] = {}
+    for node_id, values in raw.items():
+        vector = [_scaled_number(values.get(f"type:{name}")) for name in EDGE_TYPES]
+        vector.extend(values.get(f"action:{name}", 0.0) for name in EDGE_ACTIONS)
+        vector.extend(
+            [
+                _scaled_number(values.get("failed_calls")),
+                values.get("max_depth", 0.0),
+                min(values.get("amount", 0.0), 1.0),
+                values.get("temporal_context", 0.0),
+            ]
+        )
+        result[node_id] = vector
+    return result
 
 
 def add_edge_pair(
@@ -194,4 +259,3 @@ def load_graph_records(path: Path) -> list[dict[str, Any]]:
         if isinstance(payload, dict) and payload.get("schema_ver") == "graph-inference.v1":
             records.append(payload)
     return records
-

@@ -10,6 +10,7 @@ def parsed(tx_hash: str, minute: int, sender: str, receiver: str, token: str) ->
     return {
         "tx_hash": tx_hash,
         "created_at": f"2026-05-14T00:{minute:02d}:00.000+00:00",
+        "observed_at": f"2026-05-14T00:{minute:02d}:00.000+00:00",
         "idempotency_key": f"key:{tx_hash}",
         "calls": [
             {
@@ -43,6 +44,11 @@ def main() -> int:
     second = compact_record(parsed("0x" + "02" * 32, 4, sender, receiver, token), protocol)
     third = compact_record(parsed("0x" + "03" * 32, 7, sender, receiver, token), protocol)
     assert first is not None and second is not None and third is not None
+    delayed = parsed("0x" + "04" * 32, 20, sender, receiver, token)
+    delayed["created_at"] = "2026-05-15T12:00:00.000+00:00"
+    delayed_record = compact_record(delayed, protocol)
+    assert delayed_record is not None
+    assert delayed_record["created_at"].minute == 20, delayed_record
     address_by_tx, protocol_by_tx = build_contexts([first, second, third])
     second_records = address_by_tx[second["tx_hash"]]
     assert {record["relation_type"] for record in second_records} == {

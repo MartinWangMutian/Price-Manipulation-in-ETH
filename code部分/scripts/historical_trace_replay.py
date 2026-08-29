@@ -149,6 +149,7 @@ def build_bundle(
         "schema_ver": "trace-bundle.v1",
         "chain_id": chain_id,
         "created_at": created.isoformat(timespec="milliseconds"),
+        "observed_at": item.get("observed_at") or item.get("seen_at") or item.get("created_at"),
         "idempotency_key": f"{chain_id}:{tx_hash}:{source}",
         "tx_hash": tx_hash,
         "trace_source": source,

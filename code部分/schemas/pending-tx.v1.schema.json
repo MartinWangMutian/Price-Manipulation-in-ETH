@@ -36,6 +36,7 @@
     },
     "seen_at": {"type": "string", "format": "date-time"},
     "source": {"type": "string", "minLength": 1},
+    "fetch_latency_ms": {"type": "number", "minimum": 0},
     "replacement_status": {
       "type": "string",
       "enum": ["unknown", "active", "replaced", "dropped", "mined"]

@@ -114,7 +114,7 @@ def protocol_ids_for(protocol_features: dict[str, Any]) -> set[str]:
 
 
 def compact_record(parsed: dict[str, Any], protocol_features: dict[str, Any]) -> dict[str, Any] | None:
-    created_at = parse_time(parsed.get("created_at"))
+    created_at = parse_time(parsed.get("observed_at")) or parse_time(parsed.get("created_at"))
     if created_at is None:
         return None
     return {

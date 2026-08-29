@@ -31,6 +31,10 @@
       "enum": ["low", "watch", "high", "critical"]
     },
     "reasons": {"type": "array", "items": {"type": "string"}},
+    "rule_scores": {
+      "type": "object",
+      "additionalProperties": {"type": "number", "minimum": 0, "maximum": 1}
+    },
     "model_version": {"type": "string", "minLength": 1},
     "feature_ver": {"type": "string", "minLength": 1},
     "threshold_profile": {"type": "string", "minLength": 1},

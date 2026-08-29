@@ -141,6 +141,7 @@ def build_call_edge(call: dict[str, Any], ordinal: int) -> dict[str, Any] | None
         "depth": call.get("depth"),
         "call_depth": call.get("depth"),
         "call_type": call_type,
+        "ordinal": ordinal,
         "function_selector": function_selector,
         "function_signature": call.get("function_signature"),
         "function_name": function_name,

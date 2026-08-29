@@ -49,15 +49,16 @@ def ssl_context() -> ssl.SSLContext:
     return SSL_CONTEXT
 
 
-def ws_frame(payload: bytes) -> bytes:
+def ws_frame(payload: bytes, opcode: int = 0x1) -> bytes:
     key = os.urandom(4)
     length = len(payload)
+    first = 0x80 | (opcode & 0x0F)
     if length < 126:
-        header = struct.pack("!BB", 0x81, 0x80 | length)
+        header = struct.pack("!BB", first, 0x80 | length)
     elif length < 65536:
-        header = struct.pack("!BBH", 0x81, 0x80 | 126, length)
+        header = struct.pack("!BBH", first, 0x80 | 126, length)
     else:
-        header = struct.pack("!BBQ", 0x81, 0x80 | 127, length)
+        header = struct.pack("!BBQ", first, 0x80 | 127, length)
     masked = bytes(byte ^ key[index % 4] for index, byte in enumerate(payload))
     return header + key + masked
 
@@ -92,7 +93,7 @@ def read_ws_payload(sock: socket.socket) -> bytes:
     if opcode == 8:
         raise OSError("websocket close frame received")
     if opcode == 9:
-        sock.sendall(ws_frame(payload))
+        sock.sendall(ws_frame(payload, opcode=0xA))
         return read_ws_payload(sock)
     return payload
 

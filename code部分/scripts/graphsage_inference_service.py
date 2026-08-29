@@ -19,6 +19,7 @@ from graphsage_model import (
     load_manifest,
     require_torch_stack,
 )
+from rule_baseline_scorer import evaluate_graph
 
 
 def now_iso() -> str:
@@ -59,8 +60,10 @@ def risk_record(
     threshold_profile: str,
     thresholds: dict[str, Any],
     reject_reason: str | None,
+    reasons: list[str] | None = None,
+    rule_scores: dict[str, float] | None = None,
 ) -> dict[str, Any]:
-    return {
+    record = {
         "event_id": event_id_for(graph, model_version),
         "schema_ver": "risk-score.v1",
         "chain_id": graph["chain_id"],
@@ -69,12 +72,33 @@ def risk_record(
         "tx_hash": graph["tx_hash"],
         "score": round(score, 6),
         "severity": severity_for(score, thresholds),
-        "reasons": ["MODEL_GRAPHSAGE"] if reject_reason is None else ["MODEL_FALLBACK_RULE_BASELINE"],
+        "reasons": reasons or (
+            ["MODEL_GRAPHSAGE"] if reject_reason is None else ["MODEL_FALLBACK_RULE_BASELINE"]
+        ),
         "model_version": model_version,
         "feature_ver": graph["feature_ver"],
         "threshold_profile": threshold_profile,
         "model_reject_reason": reject_reason,
     }
+    if rule_scores is not None:
+        record["rule_scores"] = rule_scores
+    return record
+
+
+def rule_fallback_record(
+    graph: dict[str, Any], fallback: dict[str, Any], reject_reason: str
+) -> dict[str, Any]:
+    score, reasons, rule_scores = evaluate_graph(graph, fallback)
+    return risk_record(
+        graph,
+        score,
+        fallback["model_version"],
+        fallback["threshold_profile"],
+        fallback["severity_thresholds"],
+        reject_reason,
+        sorted(set(reasons + ["MODEL_FALLBACK_RULE_BASELINE"])),
+        rule_scores,
+    )
 
 
 def replay_output_path(root: Path, record: dict[str, Any]) -> Path:
@@ -118,19 +142,8 @@ def main() -> int:
 
     records: list[dict[str, Any]] = []
     if reject_reason is not None:
-        model_version = fallback["model_version"]
-        score = float(fallback["fallback"]["no_rich_evidence_score"])
         for graph in graphs:
-            records.append(
-                risk_record(
-                    graph,
-                    score,
-                    model_version,
-                    fallback["threshold_profile"],
-                    thresholds,
-                    reject_reason,
-                )
-            )
+            records.append(rule_fallback_record(graph, fallback, reject_reason))
     else:
         assert manifest is not None
         torch, _, _, _ = require_torch_stack()
@@ -151,16 +164,7 @@ def main() -> int:
         model.eval()
         for graph in graphs:
             if graph.get("feature_ver") != config.feature_ver:
-                records.append(
-                    risk_record(
-                        graph,
-                        float(fallback["fallback"]["no_rich_evidence_score"]),
-                        fallback["model_version"],
-                        fallback["threshold_profile"],
-                        thresholds,
-                        "feature_version_mismatch",
-                    )
-                )
+                records.append(rule_fallback_record(graph, fallback, "feature_version_mismatch"))
                 continue
             x, edge_index, batch = graph_tensors([graph])
             with torch.no_grad():

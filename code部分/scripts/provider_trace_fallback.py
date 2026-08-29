@@ -51,6 +51,7 @@ def build_trace_bundle(pending_event: dict[str, Any]) -> dict[str, Any]:
         "schema_ver": "trace-bundle.v1",
         "chain_id": chain_id,
         "created_at": created.isoformat(timespec="milliseconds"),
+        "observed_at": pending_event.get("seen_at") or pending_event.get("created_at"),
         "idempotency_key": f"{chain_id}:{tx_hash}:{trace_source}",
         "tx_hash": tx_hash,
         "trace_source": trace_source,

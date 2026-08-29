@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from rule_baseline_scorer import build_risk_score
+from rule_baseline_scorer import abnormal_profit_path, build_risk_score, severity_for
 
 
 def main() -> int:
@@ -27,12 +27,14 @@ def main() -> int:
             {
                 "node_id": "protocol:0x" + "44" * 20,
                 "node_type": "protocol",
+                "address": "0x" + "44" * 20,
                 "roles": ["oracle"],
             },
             {
                 "node_id": "protocol:0x" + "55" * 20,
                 "node_type": "protocol",
-                "roles": ["router"],
+                "address": "0x" + "55" * 20,
+                "roles": ["pool"],
             },
         ],
         "edges": [
@@ -42,13 +44,43 @@ def main() -> int:
                 "from_node": "address:0x" + "11" * 20,
                 "to_node": "address:0x" + "22" * 20,
                 "asset_node": "asset:0x" + "33" * 20,
-                "amount_norm": "250000",
+                "value_usd": 100.0,
             },
             {
                 "edge_id": "e2",
+                "edge_type": "transfer",
+                "from_node": "address:0x" + "22" * 20,
+                "to_node": "address:0x" + "11" * 20,
+                "asset_node": "asset:0x" + "33" * 20,
+                "value_usd": 160.0,
+            },
+            {
+                "edge_id": "e3",
+                "edge_type": "call",
+                "from_node": "address:0x" + "11" * 20,
+                "to_node": "address:0x" + "55" * 20,
+                "ordinal": 0,
+                "semantic_action": "swap",
+                "function_name": "swapExactTokensForTokens",
+                "success": True,
+            },
+            {
+                "edge_id": "e4",
+                "edge_type": "call",
+                "from_node": "address:0x" + "11" * 20,
+                "to_node": "address:0x" + "44" * 20,
+                "ordinal": 1,
+                "semantic_action": "oracle_read",
+                "function_name": "latestRoundData",
+                "success": True,
+            },
+            {
+                "edge_id": "e5",
                 "edge_type": "call",
                 "from_node": "address:0x" + "11" * 20,
                 "to_node": "address:0x" + "22" * 20,
+                "ordinal": 2,
+                "semantic_action": "flash_loan",
                 "function_name": "flashLoanSimple",
                 "success": True,
             },
@@ -65,11 +97,13 @@ def main() -> int:
             "abnormal_profit_path": {
                 "reason_code": "RULE_ABNORMAL_PROFIT_PATH",
                 "weight": 0.35,
-                "min_abs_amount_norm": 100000.0,
+                "min_profit_ratio": 0.3,
+                "full_score_ratio": 0.5,
             },
             "oracle_read_write_same_tx": {
                 "reason_code": "RULE_ORACLE_READ_WRITE_SAME_TX",
                 "weight": 0.25,
+                "max_call_distance": 5,
             },
             "excessive_slippage": {
                 "reason_code": "RULE_EXCESSIVE_SLIPPAGE",
@@ -94,12 +128,26 @@ def main() -> int:
         },
     }
     score = build_risk_score(graph, config)
-    assert score["score"] == 0.9, score
-    assert score["severity"] == "high", score
+    assert score["score"] == 0.692308, score
+    assert score["severity"] == "watch", score
     assert "RULE_ABNORMAL_PROFIT_PATH" in score["reasons"], score
     assert "RULE_FLASH_LOAN_PATH" in score["reasons"], score
     assert "RULE_ORACLE_READ_WRITE_SAME_TX" in score["reasons"], score
+    assert score["rule_scores"]["abnormal_profit_path"] == 1.0, score
+    assert score["rule_scores"]["oracle_read_write_same_tx"] == 1.0, score
     assert score["model_reject_reason"] == "model_unavailable_rule_fallback", score
+    one_way_payment = {
+        "edges": [
+            {
+                "edge_type": "transfer",
+                "from_node": "address:payer",
+                "to_node": "address:recipient",
+                "value_usd": 1_000.0,
+            }
+        ]
+    }
+    assert abnormal_profit_path(one_way_payment, 0.3, 0.5) == 0.0
+    assert severity_for(0.9, config["severity_thresholds"]) == "critical"
     print("rule_baseline_scorer_selftest ok")
     return 0
 

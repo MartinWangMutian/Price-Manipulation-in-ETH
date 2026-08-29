@@ -354,6 +354,7 @@ def parse_trace_bundle(
         "schema_ver": "parsed-trace.v1",
         "chain_id": bundle["chain_id"],
         "created_at": now_iso(),
+        "observed_at": bundle.get("observed_at") or bundle.get("created_at"),
         "idempotency_key": f"{bundle['idempotency_key']}:parsed-trace.v1",
         "source_trace_event_id": bundle["event_id"],
         "source_trace_idempotency_key": bundle["idempotency_key"],

@@ -1,6 +1,6 @@
 # Event Schemas
 
-Phase 1 schemas are JSON Schema draft 2020-12 documents. All event schemas
+Phase 1 schemas are JSON Schema draft 2020-12 documents. The six event schemas
 include:
 
 - `event_id`
@@ -19,8 +19,9 @@ include:
 | `risk-score.v1` | `risk-score.v1.schema.json` |
 | `alert-event.v1` | `alert-event.v1.schema.json` |
 | `rag-explanation.v1` | `rag-explanation.v1.schema.json` |
+| auxiliary RAG document | `rag-document.v1.schema.json` |
 
-Schema validation in Phase 1 can start with JSON parsing and required-field
-checks. A full JSON Schema validator should be added when project dependencies
-are introduced.
-
+`scripts/validate_schemas.py` checks the topic metadata and validates every
+committed replay record for the six event topics, plus the seeded RAG documents.
+It implements the JSON Schema keywords used by this repository without adding a
+runtime dependency.

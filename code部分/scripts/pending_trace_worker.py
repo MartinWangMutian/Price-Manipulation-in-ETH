@@ -166,11 +166,20 @@ def flatten_geth_call(node: dict[str, Any], depth: int = 0) -> list[dict[str, An
     return flattened
 
 
+def collect_geth_logs(node: dict[str, Any]) -> list[dict[str, Any]]:
+    """Collect callTracer logs from the root and every nested call frame."""
+    logs = [item for item in node.get("logs", []) if isinstance(item, dict)]
+    for child in node.get("calls") or []:
+        if isinstance(child, dict):
+            logs.extend(collect_geth_logs(child))
+    return logs
+
+
 def normalize_trace(source: str, result: Any) -> tuple[list[Any], list[Any], dict[str, Any]]:
     if source == "debug_traceCall":
         if isinstance(result, dict):
             calls = flatten_geth_call(result)
-            logs = result.get("logs") if isinstance(result.get("logs"), list) else []
+            logs = collect_geth_logs(result)
             return calls, logs, {}
         return [], [], {}
     if source == "trace_call":
@@ -221,6 +230,7 @@ def build_bundle(
         "schema_ver": "trace-bundle.v1",
         "chain_id": chain_id,
         "created_at": created.isoformat(timespec="milliseconds"),
+        "observed_at": pending_event.get("seen_at") or pending_event.get("created_at"),
         "idempotency_key": f"{chain_id}:{tx_hash}:{source}",
         "tx_hash": tx_hash,
         "trace_source": source,

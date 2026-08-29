@@ -43,7 +43,7 @@ def severity_for(score: float, thresholds: dict[str, Any]) -> str:
     critical = float(thresholds.get("critical", 0.9))
     high = float(thresholds.get("high", 0.75))
     watch = float(thresholds.get("watch", 0.5))
-    if score > critical:
+    if score >= critical:
         return "critical"
     if score >= high:
         return "high"
@@ -62,108 +62,182 @@ def protocol_roles(graph: dict[str, Any]) -> set[str]:
     return roles
 
 
-def abnormal_profit_path(graph: dict[str, Any], min_abs_amount: float) -> bool:
-    # Conservative placeholder: only fires when normalized transfer edges produce
-    # large net positive flow for an address after the graph has protocol context.
-    has_protocol = any(
-        isinstance(node, dict) and node.get("node_type") == "protocol"
-        for node in graph.get("nodes", [])
-    )
-    if not has_protocol:
-        return False
-    net_by_address_asset: dict[tuple[str, str], float] = defaultdict(float)
+def number(value: Any) -> float | None:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def abnormal_profit_path(
+    graph: dict[str, Any],
+    min_profit_ratio: float,
+    full_score_ratio: float,
+) -> float:
+    """Return a USD-normalized profit-path score in [0, 1].
+
+    Mixed token units are never compared directly. Transfer edges without a
+    reliable ``value_usd`` are ignored, and explicitly marked flash-loan borrow
+    and repay legs are excluded from profit accounting.
+    """
+    inflow: dict[str, float] = defaultdict(float)
+    outflow: dict[str, float] = defaultdict(float)
     for edge in graph.get("edges", []):
         if not isinstance(edge, dict) or edge.get("edge_type") != "transfer":
             continue
-        asset = edge.get("asset_node")
-        amount_norm = edge.get("amount_norm")
-        if asset is None or amount_norm is None:
+        if edge.get("flash_loan_leg") in {"borrow", "repay"}:
             continue
-        try:
-            amount = float(amount_norm)
-        except (TypeError, ValueError):
+        value_usd = number(edge.get("value_usd"))
+        if value_usd is None or value_usd < 0:
             continue
         sender = edge.get("from_node")
         receiver = edge.get("to_node")
         if isinstance(sender, str):
-            net_by_address_asset[(sender, asset)] -= amount
+            outflow[sender] += value_usd
         if isinstance(receiver, str):
-            net_by_address_asset[(receiver, asset)] += amount
-    return any(value >= min_abs_amount for value in net_by_address_asset.values())
+            inflow[receiver] += value_usd
+    # A one-way recipient is not a profit cycle. Restrict the rule to addresses
+    # that both spend and receive value inside the simulated transaction.
+    ratios = [
+        (inflow[address] - outflow[address]) / max(1.0, outflow[address])
+        for address in set(inflow) | set(outflow)
+        if inflow[address] > 0 and outflow[address] > 0
+    ]
+    best = max(ratios, default=0.0)
+    if best <= min_profit_ratio:
+        return 0.0
+    span = max(full_score_ratio - min_profit_ratio, 1e-9)
+    return min(1.0, (best - min_profit_ratio) / span)
 
 
-def oracle_read_write_same_tx(graph: dict[str, Any]) -> bool:
-    roles = protocol_roles(graph)
-    protocol_touch = bool(roles & {"pool", "router", "lending_market", "liquidation_module"})
-    return "oracle" in roles and protocol_touch
+def protocol_roles_by_node(graph: dict[str, Any]) -> dict[str, set[str]]:
+    result: dict[str, set[str]] = {}
+    for node in graph.get("nodes", []):
+        if not isinstance(node, dict) or node.get("node_type") != "protocol":
+            continue
+        node_id = node.get("node_id")
+        if isinstance(node_id, str):
+            node_roles = {
+                str(role) for role in node.get("roles", []) if isinstance(role, str)
+            }
+            result[node_id] = node_roles
+            address = node.get("address")
+            if isinstance(address, str):
+                result[f"address:{address.lower()}"] = node_roles
+    return result
 
 
-def excessive_slippage(graph: dict[str, Any], min_slippage_bps: float) -> bool:
+def oracle_read_write_same_tx(graph: dict[str, Any], max_call_distance: int) -> float:
+    """Score a price-changing call followed by an oracle read."""
+    roles = protocol_roles_by_node(graph)
+    calls = [
+        edge for edge in graph.get("edges", [])
+        if isinstance(edge, dict) and edge.get("edge_type") == "call"
+    ]
+    calls.sort(key=lambda edge: int(edge.get("ordinal", edge.get("call_depth", 0)) or 0))
+    price_actions: list[int] = []
+    oracle_reads: list[int] = []
+    for index, edge in enumerate(calls):
+        target_roles = roles.get(str(edge.get("to_node")), set())
+        semantic = str(edge.get("semantic_action") or "")
+        if semantic in {"swap", "oracle_write"} or target_roles & {"pool", "router"}:
+            price_actions.append(index)
+        if semantic == "oracle_read" or "oracle" in target_roles:
+            oracle_reads.append(index)
+    distances = [read - write for write in price_actions for read in oracle_reads if read > write]
+    if not distances:
+        return 0.0
+    distance = min(distances)
+    if distance > max_call_distance:
+        return 0.0
+    return max(0.2, 1.0 - (distance - 1) / max(1, max_call_distance))
+
+
+def excessive_slippage(graph: dict[str, Any], min_slippage_bps: float) -> float:
     for edge in graph.get("edges", []):
         if not isinstance(edge, dict):
             continue
         slippage = edge.get("slippage_bps")
         try:
             if slippage is not None and float(slippage) >= min_slippage_bps:
-                return True
+                return min(1.0, float(slippage) / max(min_slippage_bps * 2.0, 1.0))
         except (TypeError, ValueError):
             continue
-    return False
+    return 0.0
 
 
-def thin_liquidity_trade(graph: dict[str, Any], max_liquidity_usd: float) -> bool:
+def thin_liquidity_trade(graph: dict[str, Any], max_liquidity_usd: float) -> float:
     for node in graph.get("nodes", []):
         if not isinstance(node, dict):
             continue
         liquidity = node.get("liquidity_usd")
         try:
             if liquidity is not None and float(liquidity) <= max_liquidity_usd:
-                return True
+                return min(
+                    1.0,
+                    max(0.1, 1.0 - float(liquidity) / max(max_liquidity_usd, 1.0)),
+                )
         except (TypeError, ValueError):
             continue
-    return False
+    return 0.0
 
 
-def flash_loan_path(graph: dict[str, Any], selector_hints: list[str]) -> bool:
+def flash_loan_path(graph: dict[str, Any], selector_hints: list[str]) -> float:
     lowered_hints = [hint.lower() for hint in selector_hints]
     for edge in graph.get("edges", []):
         if not isinstance(edge, dict) or edge.get("edge_type") != "call":
             continue
         name = str(edge.get("function_name") or edge.get("function_signature") or "").lower()
-        if any(hint in name for hint in lowered_hints):
-            return True
-    return False
+        semantic = str(edge.get("semantic_action") or "").lower()
+        if semantic == "flash_loan" or any(hint in name for hint in lowered_hints):
+            return 1.0
+    return 0.0
 
 
-def score_graph(graph: dict[str, Any], config: dict[str, Any]) -> tuple[float, list[str]]:
+def evaluate_graph(
+    graph: dict[str, Any], config: dict[str, Any]
+) -> tuple[float, list[str], dict[str, float]]:
     rules = config["rules"]
     reasons: list[str] = []
-    score = 0.0
+    rule_scores: dict[str, float] = {}
 
     abnormal_cfg = rules["abnormal_profit_path"]
-    if abnormal_profit_path(graph, float(abnormal_cfg["min_abs_amount_norm"])):
-        score += float(abnormal_cfg["weight"])
-        reasons.append(abnormal_cfg["reason_code"])
+    rule_scores["abnormal_profit_path"] = abnormal_profit_path(
+        graph,
+        float(abnormal_cfg.get("min_profit_ratio", 0.3)),
+        float(abnormal_cfg.get("full_score_ratio", 0.5)),
+    )
 
     oracle_cfg = rules["oracle_read_write_same_tx"]
-    if oracle_read_write_same_tx(graph):
-        score += float(oracle_cfg["weight"])
-        reasons.append(oracle_cfg["reason_code"])
+    rule_scores["oracle_read_write_same_tx"] = oracle_read_write_same_tx(
+        graph, int(oracle_cfg.get("max_call_distance", 5))
+    )
 
     slippage_cfg = rules["excessive_slippage"]
-    if excessive_slippage(graph, float(slippage_cfg["min_slippage_bps"])):
-        score += float(slippage_cfg["weight"])
-        reasons.append(slippage_cfg["reason_code"])
+    rule_scores["excessive_slippage"] = excessive_slippage(
+        graph, float(slippage_cfg["min_slippage_bps"])
+    )
 
     liquidity_cfg = rules["thin_liquidity_trade"]
-    if thin_liquidity_trade(graph, float(liquidity_cfg["max_liquidity_usd"])):
-        score += float(liquidity_cfg["weight"])
-        reasons.append(liquidity_cfg["reason_code"])
+    rule_scores["thin_liquidity_trade"] = thin_liquidity_trade(
+        graph, float(liquidity_cfg["max_liquidity_usd"])
+    )
 
     flash_cfg = rules["flash_loan_path"]
-    if flash_loan_path(graph, list(flash_cfg["selector_hints"])):
-        score += float(flash_cfg["weight"])
-        reasons.append(flash_cfg["reason_code"])
+    rule_scores["flash_loan_path"] = flash_loan_path(
+        graph, list(flash_cfg["selector_hints"])
+    )
+
+    weighted = 0.0
+    total_weight = 0.0
+    for name, value in rule_scores.items():
+        rule = rules[name]
+        weight = float(rule["weight"])
+        weighted += weight * value
+        total_weight += weight
+        if value > 0:
+            reasons.append(rule["reason_code"])
+    score = weighted / total_weight if total_weight else 0.0
 
     no_edges = not graph.get("edges")
     if no_edges:
@@ -173,11 +247,18 @@ def score_graph(graph: dict[str, Any], config: dict[str, Any]) -> tuple[float, l
     if "trace_unsupported" in graph.get("feature_missing_flags", []):
         reasons.append("FEATURE_TRACE_UNSUPPORTED")
 
-    return min(round(score, 6), 1.0), sorted(set(reasons))
+    return min(round(score, 6), 1.0), sorted(set(reasons)), {
+        name: round(value, 6) for name, value in sorted(rule_scores.items())
+    }
+
+
+def score_graph(graph: dict[str, Any], config: dict[str, Any]) -> tuple[float, list[str]]:
+    score, reasons, _ = evaluate_graph(graph, config)
+    return score, reasons
 
 
 def build_risk_score(graph: dict[str, Any], config: dict[str, Any]) -> dict[str, Any]:
-    score, reasons = score_graph(graph, config)
+    score, reasons, rule_scores = evaluate_graph(graph, config)
     thresholds = config["severity_thresholds"]
     return {
         "event_id": event_id_for(graph),
@@ -189,6 +270,7 @@ def build_risk_score(graph: dict[str, Any], config: dict[str, Any]) -> dict[str,
         "score": score,
         "severity": severity_for(score, thresholds),
         "reasons": reasons,
+        "rule_scores": rule_scores,
         "model_version": config["model_version"],
         "feature_ver": graph["feature_ver"],
         "threshold_profile": config["threshold_profile"],
