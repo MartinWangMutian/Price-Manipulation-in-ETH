@@ -1,0 +1,85 @@
+{
+  "created_at": "2026-08-29T08:23:17.495+00:00",
+  "environment": {
+    "env_file": "../.env.local",
+    "env_file_exists": true,
+    "eth_main_http_url_present": false,
+    "eth_provider_http_url_present": true,
+    "ready": true,
+    "runtime_mapping": "ETH_MAIN_HTTP_URL<-ETH_PROVIDER_HTTP_URL",
+    "secret_values_recorded": false
+  },
+  "git": {
+    "branch": "codex/full-training",
+    "commit": "867ddf19e2c389f5b3e4108e7fec56482f0d06b4",
+    "dirty": true
+  },
+  "report_states": [
+    {
+      "checked_at": "2026-08-29T08:01:51.583+00:00",
+      "exists": true,
+      "path": "ops/reports/provider-trace-capability-probe.latest.json",
+      "sha256": "1c19dc15865694efd6b5a89863636128deda893ec1f9ad10badcdd869c788aee",
+      "status": "ok"
+    },
+    {
+      "checked_at": "2026-05-14T13:57:58.044+00:00",
+      "exists": true,
+      "path": "ops/reports/historical-trace-results-audit.latest.json",
+      "sha256": "5bac7655476665de5e536922b4e3c2b07690e808bbdb125501a20047c2e0935b",
+      "status": "awaiting_real_replay"
+    },
+    {
+      "checked_at": "2026-05-14T13:53:31.096+00:00",
+      "exists": true,
+      "path": "ops/reports/label-readiness-audit.latest.json",
+      "sha256": "ff87da2002a04e5c2a53fac4a2dd68dc0a66dbd78ffa10cf69d5870e1b8ddf1d",
+      "status": "trace_ready"
+    },
+    {
+      "checked_at": "2026-05-22T06:11:53.875+00:00",
+      "exists": true,
+      "path": "ops/reports/graphsage-train.latest.json",
+      "sha256": "0529337a6410cb5c93148d6795873b5062c11714db4c8dd970d3004e34833b4f",
+      "status": "blocked"
+    }
+  ],
+  "schema_ver": "training-run-guard.v1",
+  "snapshots": [
+    {
+      "bytes": 227361,
+      "exists": true,
+      "files": 12,
+      "path": "data/training",
+      "sha256": "62f7d7205f4f29b74a7850826b0ae11cd72ecfd3bcf827f87548005640f7b182"
+    },
+    {
+      "bytes": 194480,
+      "exists": true,
+      "files": 220,
+      "path": "data/replay/trace-bundle.v1",
+      "sha256": "e46bf1527d7efae8d3aef810e7cd06524dac7cbd5846a0d78014860e0742524f"
+    },
+    {
+      "bytes": 147620,
+      "exists": true,
+      "files": 110,
+      "path": "data/replay/graph-inference.v1",
+      "sha256": "89718e0055035d67084400e01b728758fd377561f669f1ef01a174aeee9bf782"
+    },
+    {
+      "bytes": 418684,
+      "exists": true,
+      "files": 72,
+      "path": "ops/reports",
+      "sha256": "001ffe6e97a338a756038476f4b64d321eef5571877a975228813a43da9a2397"
+    }
+  ],
+  "trace_policy": {
+    "chain_id": 1,
+    "fail_fast": true,
+    "max_retries": 1,
+    "method": "trace_transaction",
+    "raw_trace_committed": false
+  }
+}
