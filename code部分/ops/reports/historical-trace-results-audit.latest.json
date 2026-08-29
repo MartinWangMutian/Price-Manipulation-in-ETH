@@ -1,46 +1,46 @@
 {
-  "checked_at": "2026-05-14T13:57:58.044+00:00",
+  "checked_at": "2026-08-29T09:03:49.697+00:00",
   "checks": [
     {
       "name": "trace_endpoint_preflight",
-      "ok": false,
-      "selected_method": null,
-      "status": "missing_endpoint"
+      "ok": true,
+      "selected_method": "trace_transaction",
+      "status": "ok"
     },
     {
-      "dry_run": true,
+      "dry_run": false,
       "expected_count": 7,
       "failed_trace_bundles": 0,
-      "method": "auto",
+      "method": "trace_transaction",
       "name": "exploit_historical_trace_replay",
-      "ok": false,
-      "ok_trace_bundles": 0,
+      "ok": true,
+      "ok_trace_bundles": 7,
       "queue_items_seen": 7,
       "replay_paths_missing": [],
-      "state": "dry_run_only",
-      "status": "dry_run_ok",
-      "written_trace_bundles": 0
+      "state": "complete",
+      "status": "ok",
+      "written_trace_bundles": 7
     },
     {
-      "dry_run": true,
+      "dry_run": false,
       "expected_count": 50,
       "failed_trace_bundles": 0,
-      "method": "auto",
+      "method": "trace_transaction",
       "name": "normal_historical_trace_replay",
-      "ok": false,
-      "ok_trace_bundles": 0,
+      "ok": true,
+      "ok_trace_bundles": 50,
       "queue_items_seen": 50,
       "replay_paths_missing": [],
-      "state": "dry_run_only",
-      "status": "dry_run_ok",
-      "written_trace_bundles": 0
+      "state": "complete",
+      "status": "ok",
+      "written_trace_bundles": 50
     }
   ],
   "expected_total": 57,
   "failed_total": 0,
-  "next_action": "run trace_endpoint_preflight then full historical replay with ETH_MAIN_HTTP_URL",
-  "ok_total": 0,
-  "status": "awaiting_real_replay",
-  "trace_results_ready": false,
-  "written_total": 0
+  "next_action": "run parser, graph builder, and label promotion review",
+  "ok_total": 57,
+  "status": "ok",
+  "trace_results_ready": true,
+  "written_total": 57
 }

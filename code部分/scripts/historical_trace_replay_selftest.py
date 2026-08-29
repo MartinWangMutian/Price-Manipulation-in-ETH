@@ -111,6 +111,18 @@ def main() -> int:
             assert bundle["trace_error"]["code"] == "historical_trace_failed", bundle
             assert len(meta["attempts"]) == 2, meta
 
+            replay.rpc_call = lambda url, method, params, timeout_s: ({"result": []}, 1.0)  # type: ignore[assignment]
+            bundle, meta = replay.trace_item(
+                root,
+                item,
+                "http://example.invalid",
+                "trace_transaction",
+                1.0,
+                0,
+            )
+            assert bundle["trace_status"] == "failed", bundle
+            assert meta["attempts"][0]["error"]["code"] == "empty_trace_result", meta
+
             calls = {"count": 0}
 
             def rpc_erigon_only(url, method, params, timeout_s):
@@ -146,11 +158,38 @@ def main() -> int:
                 "items": [queue_item()],
             },
         )
-        with patch.object(
-            replay,
-            "rpc_call",
-            return_value=({"error": {"code": -32000, "message": "missing trie node"}}, 2.34),
-        ), patch.object(replay.Path, "cwd", return_value=root):
+        def context_ok_trace_fails(url, method, params, timeout_s):
+            if method == "eth_chainId":
+                return {"result": "0x1"}, 0.5
+            if method == "eth_getTransactionByHash":
+                return {
+                    "result": {
+                        "hash": TX_HASH,
+                        "blockHash": "0x" + "34" * 32,
+                    }
+                }, 0.5
+            if method == "eth_getTransactionReceipt":
+                return {
+                    "result": {
+                        "transactionHash": TX_HASH,
+                        "blockHash": "0x" + "34" * 32,
+                        "blockNumber": "0x10",
+                        "status": "0x1",
+                        "logs": [],
+                    }
+                }, 0.5
+            if method == "eth_getBlockByHash":
+                return {
+                    "result": {
+                        "hash": "0x" + "34" * 32,
+                        "timestamp": "0x66112233",
+                    }
+                }, 0.5
+            return {"error": {"code": -32000, "message": "missing trie node"}}, 2.34
+
+        with patch.object(replay, "rpc_call", side_effect=context_ok_trace_fails), patch.object(
+            replay.Path, "cwd", return_value=root
+        ):
             exit_code = replay.main_args(
                 [
                     "--queue",
@@ -168,9 +207,36 @@ def main() -> int:
         assert report["status"] == "degraded", report
         assert report["fail_fast"] is True, report
         assert report["max_retries"] == 0, report
+        assert report["chain_check"]["ok"] is True, report
+        assert report["rpc_call_summary"]["transaction_context_calls"] == 3, report
         assert report["written_trace_bundles"] == 0, report
         assert report["failed_trace_bundles"] == 1, report
         assert not list((root / "data" / "replay" / "trace-bundle.v1").glob("**/*.json"))
+
+    retry_calls = {"count": 0}
+
+    def transient_then_ok(url, method, params, timeout_s):
+        retry_calls["count"] += 1
+        if retry_calls["count"] == 1:
+            return {"error": {"code": "transport_error", "message": "closed"}}, 1.0
+        return {"result": {"hash": TX_HASH, "blockHash": "0x" + "56" * 32}}, 1.0
+
+    original_rpc_call = replay.rpc_call
+    try:
+        replay.rpc_call = transient_then_ok  # type: ignore[assignment]
+        result, attempts = replay.validated_rpc_call(
+            "http://example.invalid",
+            "eth_getTransactionByHash",
+            [TX_HASH],
+            1.0,
+            1,
+            lambda value: isinstance(value, dict) and value.get("hash") == TX_HASH,
+            "transaction_not_found_or_mismatched",
+        )
+        assert result is not None, attempts
+        assert len(attempts) == 2 and attempts[1]["ok"] is True, attempts
+    finally:
+        replay.rpc_call = original_rpc_call  # type: ignore[assignment]
 
     try:
         replay.retry_count("2")

@@ -1,7 +1,7 @@
 {
   "allow_replay_duplicates": true,
-  "checked_at": "2026-05-14T13:29:35.544+00:00",
-  "deduped_downstream_events": 110,
+  "checked_at": "2026-08-29T09:03:49.756+00:00",
+  "deduped_downstream_events": 167,
   "duplicate_idempotency_keys": [
     "1:0x0397d5a413d5585d011814876ebd770bbf6cc9ad1dcc9f685a1a6236bed43cbf:provider_fallback",
     "1:0x0c440e460999d0f698e8a5fb92444f178a1d53e92a49b01171d4bf371b01c1d9:provider_fallback",
@@ -115,9 +115,9 @@
     "1:0xffc1137d28e85a5a3f2f7690f93543696bf396fbce24c4f7712daf31d1febfc5:provider_fallback"
   ],
   "errors": [],
-  "files_seen": 220,
+  "files_seen": 277,
   "input": "data/replay/trace-bundle.v1",
   "status": "ok",
-  "unique_idempotency_keys": 110,
-  "valid_events": 220
+  "unique_idempotency_keys": 167,
+  "valid_events": 277
 }

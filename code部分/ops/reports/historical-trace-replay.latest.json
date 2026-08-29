@@ -1,16 +1,353 @@
 {
-  "attempts": [],
-  "checked_at": "2026-05-14T13:45:12.738+00:00",
-  "dry_run": true,
-  "endpoint_configured": false,
+  "attempts": [
+    {
+      "attempts": [],
+      "queue_id": "ef8a7e6c6a634a936355be79427157136bee3f66c91553c7bfdb480582991424",
+      "selected": "existing_bundle"
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_ms": 1018.52,
+          "ok": true,
+          "source": "trace_transaction"
+        }
+      ],
+      "queue_id": "199bc06fa94ea24ad2ba733bf310a2c12f2d137989f542d0d5f44a08e50fb580",
+      "selected": "trace_transaction"
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_ms": 1321.35,
+          "ok": true,
+          "source": "trace_transaction"
+        }
+      ],
+      "queue_id": "9304e6ce910cdab6cf8d1afae0ea7e1b9eac27052b6588e6f6759df3a403212e",
+      "selected": "trace_transaction"
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_ms": 2405.71,
+          "ok": true,
+          "source": "trace_transaction"
+        }
+      ],
+      "queue_id": "b42bec79c44938b9b27b355c02234654fea6148895044a31b263130f38f68357",
+      "selected": "trace_transaction"
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_ms": 621.43,
+          "ok": true,
+          "source": "trace_transaction"
+        }
+      ],
+      "queue_id": "9e0b2a86d3d2b5bc1cbc6e2de2d8753061280742826912d0d5cfdda862b6d763",
+      "selected": "trace_transaction"
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_ms": 623.08,
+          "ok": true,
+          "source": "trace_transaction"
+        }
+      ],
+      "queue_id": "9fed02bcf8a89f7a52df6f0a0b2ceacbf729605982cbbe06cda67591295b3b5d",
+      "selected": "trace_transaction"
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_ms": 537.33,
+          "ok": true,
+          "source": "trace_transaction"
+        }
+      ],
+      "queue_id": "c7124950b89988b15220fbda0dce85e757fa3812ee09dd383c301b68ccc89d77",
+      "selected": "trace_transaction"
+    }
+  ],
+  "chain_check": {
+    "chain_id": "0x1",
+    "latency_ms": 603.58,
+    "ok": true,
+    "performed": true
+  },
+  "checked_at": "2026-08-29T08:57:06.422+00:00",
+  "dry_run": false,
+  "endpoint_configured": true,
+  "fail_fast": true,
   "failed_trace_bundles": 0,
-  "method": "auto",
-  "ok_trace_bundles": 0,
+  "max_retries": 1,
+  "method": "trace_transaction",
+  "ok_trace_bundles": 7,
+  "provider_cost_note": "Inspect the provider billing dashboard; JSON-RPC responses do not include invoice cost.",
   "queue": "data/training/trace_replay_queue.v1.json",
   "queue_items_seen": 7,
-  "status": "dry_run_ok",
+  "reused_existing_bundles": 1,
+  "rpc_call_summary": {
+    "chain_checks": 1,
+    "trace_attempts": 6,
+    "transaction_context_calls": 18
+  },
+  "run_id": "stage2-exploit-full",
+  "skip_existing": true,
+  "start_index": 0,
+  "status": "ok",
+  "transaction_contexts": [
+    {
+      "calls": [
+        {
+          "latency_ms": 713.64,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "latency_ms": 587.11,
+          "method": "eth_getTransactionReceipt",
+          "ok": true
+        },
+        {
+          "latency_ms": 542.64,
+          "method": "eth_getBlockByHash",
+          "ok": true
+        }
+      ],
+      "context": {
+        "block_hash": "0x535b022a37d39e5ab2929ae38692fa5557f3e6e40fee79931d920649f820a062",
+        "block_number": "0x910773",
+        "log_count": 130,
+        "observed_at": "2020-02-18T03:13:58.000+00:00",
+        "receipt_status": "0x1",
+        "tx_hash": "0x762881b07feb63c436dee38edd4ff1f7a74c33091e534af56c9f7d49b5ecac15"
+      },
+      "queue_id": "199bc06fa94ea24ad2ba733bf310a2c12f2d137989f542d0d5f44a08e50fb580",
+      "tx_hash": "0x762881b07feb63c436dee38edd4ff1f7a74c33091e534af56c9f7d49b5ecac15"
+    },
+    {
+      "calls": [
+        {
+          "latency_ms": 827.87,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "latency_ms": 835.27,
+          "method": "eth_getTransactionReceipt",
+          "ok": true
+        },
+        {
+          "latency_ms": 586.79,
+          "method": "eth_getBlockByHash",
+          "ok": true
+        }
+      ],
+      "context": {
+        "block_hash": "0xf3b1ebd362a68a3aecef2ef3498ac2d1b94e528d642691b4487ee15d1ee8fdf0",
+        "block_number": "0x10eb49b",
+        "log_count": 565,
+        "observed_at": "2023-07-21T10:35:11.000+00:00",
+        "receipt_status": "0x1",
+        "tx_hash": "0x8b74995d1d61d3d7547575649136b8765acb22882960f0636941c44ec7bbe146"
+      },
+      "queue_id": "9304e6ce910cdab6cf8d1afae0ea7e1b9eac27052b6588e6f6759df3a403212e",
+      "tx_hash": "0x8b74995d1d61d3d7547575649136b8765acb22882960f0636941c44ec7bbe146"
+    },
+    {
+      "calls": [
+        {
+          "latency_ms": 516.1,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "latency_ms": 569.14,
+          "method": "eth_getTransactionReceipt",
+          "ok": true
+        },
+        {
+          "latency_ms": 528.95,
+          "method": "eth_getBlockByHash",
+          "ok": true
+        }
+      ],
+      "context": {
+        "block_hash": "0x70cedfd3dc711ad0b051e80a60290a9654b3a37ea9979e342f176d09a89cf920",
+        "block_number": "0xcdfd96",
+        "log_count": 164,
+        "observed_at": "2021-10-27T13:54:10.000+00:00",
+        "receipt_status": "0x1",
+        "tx_hash": "0x0fe2542079644e107cbf13690eb9c2c65963ccb79089ff96bfaf8dced2331c92"
+      },
+      "queue_id": "b42bec79c44938b9b27b355c02234654fea6148895044a31b263130f38f68357",
+      "tx_hash": "0x0fe2542079644e107cbf13690eb9c2c65963ccb79089ff96bfaf8dced2331c92"
+    },
+    {
+      "calls": [
+        {
+          "latency_ms": 669.4,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "latency_ms": 560.0,
+          "method": "eth_getTransactionReceipt",
+          "ok": true
+        },
+        {
+          "latency_ms": 537.1,
+          "method": "eth_getBlockByHash",
+          "ok": true
+        }
+      ],
+      "context": {
+        "block_hash": "0xbcbeffe1f3289ffaf61e59f2cb1b93fa41301738284d85e7bd25d67c0c5e799b",
+        "block_number": "0x1103edc",
+        "log_count": 1,
+        "observed_at": "2023-08-04T13:21:35.000+00:00",
+        "receipt_status": "0x1",
+        "tx_hash": "0x4197ed0ef9b60ab1cacdc31d6d3ce06413b333b14b8947be5c0cfe29cb88b088"
+      },
+      "queue_id": "9e0b2a86d3d2b5bc1cbc6e2de2d8753061280742826912d0d5cfdda862b6d763",
+      "tx_hash": "0x4197ed0ef9b60ab1cacdc31d6d3ce06413b333b14b8947be5c0cfe29cb88b088"
+    },
+    {
+      "calls": [
+        {
+          "latency_ms": 522.89,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "latency_ms": 540.43,
+          "method": "eth_getTransactionReceipt",
+          "ok": true
+        },
+        {
+          "latency_ms": 515.8,
+          "method": "eth_getBlockByHash",
+          "ok": true
+        }
+      ],
+      "context": {
+        "block_hash": "0xde714b65354d54e684a95d80a1da7f668e8b2ee6ae8b5779f69ab9e04468b859",
+        "block_number": "0x1009f4c",
+        "log_count": 56,
+        "observed_at": "2023-03-13T08:50:59.000+00:00",
+        "receipt_status": "0x1",
+        "tx_hash": "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d"
+      },
+      "queue_id": "9fed02bcf8a89f7a52df6f0a0b2ceacbf729605982cbbe06cda67591295b3b5d",
+      "tx_hash": "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d"
+    },
+    {
+      "calls": [
+        {
+          "latency_ms": 521.04,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "latency_ms": 562.09,
+          "method": "eth_getTransactionReceipt",
+          "ok": true
+        },
+        {
+          "latency_ms": 536.39,
+          "method": "eth_getBlockByHash",
+          "ok": true
+        }
+      ],
+      "context": {
+        "block_hash": "0xab946a653bdda9f1a28028229140628dbaa8a504fbe4758e1bdeee55acedff63",
+        "block_number": "0xa9d2ab",
+        "log_count": 2,
+        "observed_at": "2020-10-26T03:01:48.000+00:00",
+        "receipt_status": "0x1",
+        "tx_hash": "0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58"
+      },
+      "queue_id": "c7124950b89988b15220fbda0dce85e757fa3812ee09dd383c301b68ccc89d77",
+      "tx_hash": "0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58"
+    }
+  ],
   "validation_errors": [],
   "write_failed_bundles": false,
-  "written": [],
-  "written_trace_bundles": 0
+  "written": [
+    {
+      "event_id": "572a2527bd76f0077295f1854e8d6646717383075840a9f0186264b135acf7db",
+      "incident_id": "beanstalk_2022_04_17",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/572a2527bd76f0077295f1854e8d6646717383075840a9f0186264b135acf7db.json",
+      "reused_existing": true,
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7"
+    },
+    {
+      "event_id": "d0f8233addefe8ffbbfe0916531ab49b915a8bc4db2227d83a540bc434d2196c",
+      "incident_id": "bzx_2020_02_18",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/d0f8233addefe8ffbbfe0916531ab49b915a8bc4db2227d83a540bc434d2196c.json",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x762881b07feb63c436dee38edd4ff1f7a74c33091e534af56c9f7d49b5ecac15"
+    },
+    {
+      "event_id": "330537f1cd85fd7c813346b3b69dc89660205a023cbc723962e7cde8ca9aa71f",
+      "incident_id": "conic_finance_2023_07_21",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/330537f1cd85fd7c813346b3b69dc89660205a023cbc723962e7cde8ca9aa71f.json",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x8b74995d1d61d3d7547575649136b8765acb22882960f0636941c44ec7bbe146"
+    },
+    {
+      "event_id": "a4610df2f6583031081e09daf303a275d5634996cb6d0aed527c323b4ba0bddb",
+      "incident_id": "cream_finance_2021_10_27",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/a4610df2f6583031081e09daf303a275d5634996cb6d0aed527c323b4ba0bddb.json",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x0fe2542079644e107cbf13690eb9c2c65963ccb79089ff96bfaf8dced2331c92"
+    },
+    {
+      "event_id": "02961e5fcc20d21b46e9d85b52554215956ea15c82693a872f5b24c5f530199f",
+      "incident_id": "curve_vyper_2023_07_30",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/02961e5fcc20d21b46e9d85b52554215956ea15c82693a872f5b24c5f530199f.json",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x4197ed0ef9b60ab1cacdc31d6d3ce06413b333b14b8947be5c0cfe29cb88b088"
+    },
+    {
+      "event_id": "7d8ba2242400ce5617bc40033b193a919a7b1f9afa42c353c73ecd4d648fc0e6",
+      "incident_id": "euler_finance_2023_03_13",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/7d8ba2242400ce5617bc40033b193a919a7b1f9afa42c353c73ecd4d648fc0e6.json",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d"
+    },
+    {
+      "event_id": "9016838b6032444ee12b051d3530598af99956afc9616d5d021a9c1bdda7ad96",
+      "incident_id": "harvest_finance_2020_10_26",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/9016838b6032444ee12b051d3530598af99956afc9616d5d021a9c1bdda7ad96.json",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58"
+    }
+  ],
+  "written_trace_bundles": 7
 }

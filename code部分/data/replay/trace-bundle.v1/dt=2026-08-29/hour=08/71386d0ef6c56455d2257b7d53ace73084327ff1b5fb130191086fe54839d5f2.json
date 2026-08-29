@@ -1,0 +1,56 @@
+{
+  "calls": [
+    {
+      "action": {
+        "callType": "call",
+        "from": "0xa1f06e5ab822c3022e6ca2c4e2ef2638e966716d",
+        "gas": "0x864e",
+        "input": "0x095ea7b30000000000000000000000001231deb6f5749ef6ce6943a275a1d3e7486f4eae000000000000000000000000000000000000000000108b2a2c28029094000000",
+        "to": "0x68bbed6a47194eff1cf514b50ea91895597fc91e",
+        "value": "0x0"
+      },
+      "blockHash": "0x743ae421aeded6e888020414054df27bae44f791f5adee0f4d1f18d6cb251134",
+      "blockNumber": 25085313,
+      "result": {
+        "gasUsed": "0x6054",
+        "output": "0x0000000000000000000000000000000000000000000000000000000000000001"
+      },
+      "subtraces": 0,
+      "traceAddress": [],
+      "transactionHash": "0xd076d5aad131b6b7a5cdc68057d1bd809aaebac0e7d10a61ee12cbffd9715286",
+      "transactionPosition": 111,
+      "type": "call"
+    }
+  ],
+  "chain_id": 1,
+  "created_at": "2026-08-29T08:59:44.176+00:00",
+  "event_id": "71386d0ef6c56455d2257b7d53ace73084327ff1b5fb130191086fe54839d5f2",
+  "idempotency_key": "1:0xd076d5aad131b6b7a5cdc68057d1bd809aaebac0e7d10a61ee12cbffd9715286:trace_transaction",
+  "logs": [
+    {
+      "address": "0x68bbed6a47194eff1cf514b50ea91895597fc91e",
+      "blockHash": "0x743ae421aeded6e888020414054df27bae44f791f5adee0f4d1f18d6cb251134",
+      "blockNumber": "0x17ec581",
+      "blockTimestamp": "0x6a0443d7",
+      "data": "0x000000000000000000000000000000000000000000108b2a2c28029094000000",
+      "logIndex": "0xb1",
+      "removed": false,
+      "topics": [
+        "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925",
+        "0x000000000000000000000000a1f06e5ab822c3022e6ca2c4e2ef2638e966716d",
+        "0x0000000000000000000000001231deb6f5749ef6ce6943a275a1d3e7486f4eae"
+      ],
+      "transactionHash": "0xd076d5aad131b6b7a5cdc68057d1bd809aaebac0e7d10a61ee12cbffd9715286",
+      "transactionIndex": "0x6f"
+    }
+  ],
+  "observed_at": "2026-05-13T09:26:47.000+00:00",
+  "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-29/hour=08/1-0xd076d5aad131b6b7a5cdc68057d1bd809aaebac0e7d10a61ee12cbffd9715286-trace_transaction.json",
+  "schema_ver": "trace-bundle.v1",
+  "state_diff": {},
+  "token_transfers": [],
+  "trace_error": null,
+  "trace_source": "trace_transaction",
+  "trace_status": "ok",
+  "tx_hash": "0xd076d5aad131b6b7a5cdc68057d1bd809aaebac0e7d10a61ee12cbffd9715286"
+}
