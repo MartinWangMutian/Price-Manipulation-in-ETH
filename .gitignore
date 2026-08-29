@@ -6,3 +6,5 @@ __pycache__/
 .env
 .env.*
 config/ops_contacts.local.json
+code部分/data/raw-trace/
+code部分/models/graphsage/runs/

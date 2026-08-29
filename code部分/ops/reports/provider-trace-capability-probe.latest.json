@@ -1,19 +1,20 @@
 {
-  "checked_at": "2026-05-15T07:56:23.457+00:00",
+  "checked_at": "2026-08-29T08:01:51.583+00:00",
   "checks": [
     {
       "error": null,
-      "latency_ms": 780.21,
+      "latency_ms": 618.64,
       "name": "eth_chainId",
       "ok": true,
       "result": "0x1"
     },
     {
       "error": {
-        "code": -32600,
-        "message": "debug_traceTransaction is not available on the Free tier - upgrade to Pay As You Go, or Enterprise for access."
+        "code": -32008,
+        "data": "Exceeded max limit of 167772160",
+        "message": "Response is too big"
       },
-      "latency_ms": 418.59,
+      "latency_ms": 2560.78,
       "name": "debug_traceTransaction",
       "ok": false,
       "result_shape": {
@@ -23,16 +24,13 @@
       "tx_hash": "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7"
     },
     {
-      "error": {
-        "code": -32600,
-        "message": "trace_transaction is not available on the Free tier - upgrade to Pay As You Go, or Enterprise for access."
-      },
-      "latency_ms": 415.96,
+      "error": null,
+      "latency_ms": 1048.12,
       "name": "trace_transaction",
-      "ok": false,
+      "ok": true,
       "result_shape": {
-        "empty": true,
-        "type": null
+        "empty": false,
+        "type": "list"
       },
       "tx_hash": "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7"
     }
@@ -40,7 +38,7 @@
   "endpoint_configured": true,
   "method": "auto",
   "queue": "data/training/trace_replay_queue.v1.json",
-  "selected_method": null,
-  "status": "degraded",
+  "selected_method": "trace_transaction",
+  "status": "ok",
   "validation_errors": []
 }

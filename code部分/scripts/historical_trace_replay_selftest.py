@@ -166,9 +166,17 @@ def main() -> int:
         assert exit_code == 2, exit_code
         report = replay.read_json(report_path)
         assert report["status"] == "degraded", report
+        assert report["fail_fast"] is True, report
+        assert report["max_retries"] == 0, report
         assert report["written_trace_bundles"] == 0, report
         assert report["failed_trace_bundles"] == 1, report
         assert not list((root / "data" / "replay" / "trace-bundle.v1").glob("**/*.json"))
+
+    try:
+        replay.retry_count("2")
+        raise AssertionError("retry_count accepted a value greater than one")
+    except replay.argparse.ArgumentTypeError:
+        pass
 
     print("historical_trace_replay_selftest ok")
     return 0

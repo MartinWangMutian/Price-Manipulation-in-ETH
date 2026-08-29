@@ -20,6 +20,13 @@ SSL_CONTEXT: ssl.SSLContext | None = None
 TRACE_METHODS = ["debug_traceTransaction", "trace_transaction"]
 
 
+def retry_count(value: str) -> int:
+    number = int(value)
+    if number < 0 or number > 1:
+        raise argparse.ArgumentTypeError("retries must be 0 or 1 for cost-controlled replay")
+    return number
+
+
 def now_dt() -> datetime:
     return datetime.now(timezone.utc)
 
@@ -276,11 +283,18 @@ def main_args(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--method",
         choices=["auto", "debug_traceTransaction", "trace_transaction"],
-        default=os.environ.get("HISTORICAL_TRACE_METHOD", "auto"),
+        default=os.environ.get("HISTORICAL_TRACE_METHOD", "trace_transaction"),
     )
     parser.add_argument("--timeout-s", type=float, default=15.0)
-    parser.add_argument("--retries", type=int, default=1)
+    parser.add_argument("--retries", type=retry_count, default=1)
     parser.add_argument("--limit", type=int, default=0, help="0 means all queue items")
+    parser.add_argument("--run-id", default=None)
+    parser.add_argument(
+        "--fail-fast",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Stop after the first failed trace. Enabled by default for cost control.",
+    )
     parser.add_argument("--dry-run", action="store_true", help="Validate queue without RPC calls")
     parser.add_argument(
         "--write-failed-bundles",
@@ -329,6 +343,8 @@ def main_args(argv: list[str] | None = None) -> int:
                 written_item["persisted"] = True
             written.append(written_item)
             attempts.append({"queue_id": item.get("queue_id"), **trace_meta})
+            if args.fail_fast and bundle["trace_status"] != "ok":
+                break
         if not written or any(item["trace_status"] != "ok" for item in written):
             status = "degraded"
 
@@ -336,11 +352,14 @@ def main_args(argv: list[str] | None = None) -> int:
         "checked_at": now_dt().isoformat(timespec="milliseconds"),
         "status": status,
         "queue": args.queue,
+        "run_id": args.run_id,
         "queue_items_seen": len(items),
         "method": args.method,
         "dry_run": args.dry_run,
         "endpoint_configured": bool(args.rpc_url),
         "write_failed_bundles": args.write_failed_bundles,
+        "fail_fast": args.fail_fast,
+        "max_retries": args.retries,
         "written_trace_bundles": sum(1 for item in written if item["persisted"]),
         "ok_trace_bundles": sum(1 for item in written if item["trace_status"] == "ok"),
         "failed_trace_bundles": sum(1 for item in written if item["trace_status"] != "ok"),
