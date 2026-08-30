@@ -1,0 +1,16 @@
+{
+  "best_epoch": 1,
+  "best_validation_pr_auc": 1.0,
+  "checked_at": "2026-08-30T08:17:16.574+00:00",
+  "held_out_graph_files_loaded": 0,
+  "held_out_predictions": 0,
+  "last_epoch": 3,
+  "resumed_from": "models/graphsage/runs/stage6-acceptance-base-4955da5/last_model.pt",
+  "run_id": "stage6-acceptance-resume-4955da5",
+  "run_manifest": "models/graphsage/runs/stage6-acceptance-resume-4955da5/run_manifest.json",
+  "run_manifest_sha256": "9158641baad216cf78155b6b17c384aa782c306094903c18aef27b273c565c64",
+  "status": "ok",
+  "training_graph_files_loaded": 33,
+  "training_scope": "engineering_smoke_only",
+  "validation_graph_files_loaded": 11
+}
