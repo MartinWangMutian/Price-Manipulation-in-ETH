@@ -1,0 +1,16 @@
+{
+  "best_epoch": 4,
+  "best_validation_pr_auc": 1.0,
+  "checked_at": "2026-08-30T08:28:44.676+00:00",
+  "held_out_graph_files_loaded": 0,
+  "held_out_predictions": 0,
+  "last_epoch": 19,
+  "resumed_from": null,
+  "run_id": "stage7-graphsage-smoke-49665eb",
+  "run_manifest": "models/graphsage/runs/stage7-graphsage-smoke-49665eb/run_manifest.json",
+  "run_manifest_sha256": "238a8c5697187f8a951e43867b754606225c393a3d278c0332e74b52d7d92b37",
+  "status": "ok",
+  "training_graph_files_loaded": 33,
+  "training_scope": "engineering_smoke_only",
+  "validation_graph_files_loaded": 11
+}

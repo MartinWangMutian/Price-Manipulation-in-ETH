@@ -1,0 +1,4231 @@
+{
+  "created_at": "2026-08-30T02:37:42.108+00:00",
+  "decision_content_hash": "a2808784a95700449e37ebd9addfd27615fb453ee37c0693c2f5408a39bcd90a",
+  "decision_counts": {
+    "promoted": 55,
+    "unlabeled": 2
+  },
+  "exploit_decisions": [
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 1,
+      "candidate_role": "attack_tx",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches",
+        "token_decimals_missing"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "af56a5acfa911f25d1c729cd5e6c541c6d6cde3f6a6a00798b0c4ae637d4bbd5",
+      "graph_id": "graph:0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/af56a5acfa911f25d1c729cd5e6c541c6d6cde3f6a6a00798b0c4ae637d4bbd5.json",
+      "graph_stats": {
+        "call_edges": 322,
+        "context_edges": 0,
+        "edges": 376,
+        "failed_calls": 0,
+        "max_call_depth": 16,
+        "nodes": 74,
+        "semantic_actions": [
+          "erc20_approval",
+          "erc20_transfer",
+          "flash_loan",
+          "swap",
+          "unknown"
+        ],
+        "transfer_edges": 54
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "block_explorer",
+          "title": "Beanstalk Flashloan Exploiter Etherscan transaction",
+          "url": "https://etherscan.io/tx/0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7"
+        },
+        {
+          "source_type": "security_report",
+          "title": "Revisiting Beanstalk Farms Exploit",
+          "url": "https://www.certik.com/blog/revisiting-beanstalk-farms-exploit"
+        },
+        {
+          "source_type": "known_exploit_corpus_exact_match",
+          "title": "DeFiHackLabs exact transaction-hash match",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        }
+      ],
+      "incident_id": "beanstalk_2022_04_17",
+      "known_exploit_corpus_exact_match": true,
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "primary_exploit_transaction",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "notes": "Beanstalk attack transaction; public transaction reference and exploit-corpus exact match agree with the rich trace.",
+      "observed_at": "2022-04-17T12:24:16.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "ef8a7e6c6a634a936355be79427157136bee3f66c91553c7bfdb480582991424",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "d216a31db62240556e9e18f2b393c749110ce21c63363ee2ef50651875de902d",
+      "reason_codes": [
+        "transaction_specific_public_source",
+        "known_exploit_corpus_exact_match",
+        "rich_trace_role_consistent"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/572a2527bd76f0077295f1854e8d6646717383075840a9f0186264b135acf7db.json",
+      "trace_call_count": 322,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 1,
+      "candidate_role": "attack_tx",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches",
+        "token_decimals_missing"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "ff7a1c57be862aa40fa28a9c5845e78572674f1cf8da28c69a1fe912b93c5c33",
+      "graph_id": "graph:0x762881b07feb63c436dee38edd4ff1f7a74c33091e534af56c9f7d49b5ecac15",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/ff7a1c57be862aa40fa28a9c5845e78572674f1cf8da28c69a1fe912b93c5c33.json",
+      "graph_stats": {
+        "call_edges": 1204,
+        "context_edges": 0,
+        "edges": 1251,
+        "failed_calls": 0,
+        "max_call_depth": 18,
+        "nodes": 31,
+        "semantic_actions": [
+          "erc20_approval",
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 47
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "security_report",
+          "title": "SlowMist: Details of the twice hacking aimed at bZx",
+          "url": "https://slowmist.medium.com/introduction-ca09c9b32b1b"
+        },
+        {
+          "source_type": "security_report",
+          "title": "Slow Mist: Detailed explanation of the whole process of DeFi protocol bZx being hacked twice",
+          "url": "https://www.odaily.news/en/post/5146388"
+        }
+      ],
+      "incident_id": "bzx_2020_02_18",
+      "known_exploit_corpus_exact_match": false,
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "primary_exploit_transaction",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "notes": "bZx attack transaction; the high-confidence incident sources, timestamp, and deep rich trace are mutually consistent.",
+      "observed_at": "2020-02-18T03:13:58.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "199bc06fa94ea24ad2ba733bf310a2c12f2d137989f542d0d5f44a08e50fb580",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "6e588a939bb25b4c9be51ff50b03886524b4dd877cc4aecda011a9771b7ebc51",
+      "reason_codes": [
+        "high_confidence_incident_source",
+        "incident_time_match",
+        "rich_trace_role_consistent"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/d0f8233addefe8ffbbfe0916531ab49b915a8bc4db2227d83a540bc434d2196c.json",
+      "trace_call_count": 1204,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x762881b07feb63c436dee38edd4ff1f7a74c33091e534af56c9f7d49b5ecac15"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 1,
+      "candidate_role": "attack_tx",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "token_decimals_missing"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "208dc7d6a0d8a1753d002c6affbb24b7ed2db42edb3dc4a6fed4d1091020ecfb",
+      "graph_id": "graph:0x8b74995d1d61d3d7547575649136b8765acb22882960f0636941c44ec7bbe146",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/208dc7d6a0d8a1753d002c6affbb24b7ed2db42edb3dc4a6fed4d1091020ecfb.json",
+      "graph_stats": {
+        "call_edges": 6269,
+        "context_edges": 14,
+        "edges": 6510,
+        "failed_calls": 194,
+        "max_call_depth": 22,
+        "nodes": 101,
+        "semantic_actions": [
+          "erc20_approval",
+          "erc20_transfer",
+          "flash_loan",
+          "oracle_read",
+          "unknown"
+        ],
+        "transfer_edges": 227
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "security_report",
+          "title": "Conic Finance Incident Analysis",
+          "url": "https://www.certik.com/resources/blog/conic-finance-incident-analysis"
+        },
+        {
+          "source_type": "known_exploit_corpus_exact_match",
+          "title": "DeFiHackLabs exact transaction-hash match",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        }
+      ],
+      "incident_id": "conic_finance_2023_07_21",
+      "known_exploit_corpus_exact_match": true,
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "primary_exploit_transaction",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "notes": "Conic Finance attack transaction; public incident analysis and exploit-corpus exact match agree with the rich trace.",
+      "observed_at": "2023-07-21T10:35:11.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "9304e6ce910cdab6cf8d1afae0ea7e1b9eac27052b6588e6f6759df3a403212e",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "1444ad78f081c44b3e79f1d78e4f628ce18b397b313f694a7612a5aba4590efb",
+      "reason_codes": [
+        "transaction_specific_public_source",
+        "known_exploit_corpus_exact_match",
+        "rich_trace_role_consistent"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/330537f1cd85fd7c813346b3b69dc89660205a023cbc723962e7cde8ca9aa71f.json",
+      "trace_call_count": 6269,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x8b74995d1d61d3d7547575649136b8765acb22882960f0636941c44ec7bbe146"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 1,
+      "candidate_role": "attacker_flow_tx",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches",
+        "token_decimals_missing"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "a826f84922e5ed0a0e0f564403a22e782af84551b95d712aee17fe38bfb17e2e",
+      "graph_id": "graph:0x0fe2542079644e107cbf13690eb9c2c65963ccb79089ff96bfaf8dced2331c92",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/a826f84922e5ed0a0e0f564403a22e782af84551b95d712aee17fe38bfb17e2e.json",
+      "graph_stats": {
+        "call_edges": 3323,
+        "context_edges": 0,
+        "edges": 3392,
+        "failed_calls": 0,
+        "max_call_depth": 17,
+        "nodes": 159,
+        "semantic_actions": [
+          "erc20_transfer",
+          "flash_loan",
+          "oracle_read",
+          "swap",
+          "unknown"
+        ],
+        "transfer_edges": 69
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "block_explorer",
+          "title": "Cream Finance Flash Loan Exploiter Etherscan address",
+          "url": "https://etherscan.io/address/0x24354d31bc9d90f62fe5f2454709c32049cf866b"
+        },
+        {
+          "source_type": "incident_database",
+          "title": "Cream Finance Hack: $130 Million Stolen in Exploit",
+          "url": "https://dn.institute/research/cyberattacks/incidents/2021-10-27-cream-finance/"
+        },
+        {
+          "source_type": "known_exploit_corpus_exact_match",
+          "title": "DeFiHackLabs exact transaction-hash match",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        }
+      ],
+      "incident_id": "cream_finance_2021_10_27",
+      "known_exploit_corpus_exact_match": true,
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "malicious_incident_flow_transaction",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "notes": "Cream Finance malicious incident-flow transaction. It is retained as a positive flow sample, not represented as the primary exploit entry transaction.",
+      "observed_at": "2021-10-27T13:54:10.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "b42bec79c44938b9b27b355c02234654fea6148895044a31b263130f38f68357",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "b87a13c60cd4cebc1f296a9de2d7d54a52c8f9c6f3f269f7f699002eb1ebaa4c",
+      "reason_codes": [
+        "known_exploit_corpus_exact_match",
+        "incident_time_match",
+        "rich_trace_role_consistent"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/a4610df2f6583031081e09daf303a275d5634996cb6d0aed527c323b4ba0bddb.json",
+      "trace_call_count": 3323,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x0fe2542079644e107cbf13690eb9c2c65963ccb79089ff96bfaf8dced2331c92"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 1,
+      "candidate_role": "attack_tx",
+      "decision": "unlabeled",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches",
+        "token_decimals_missing"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "6f2c85c8cc1a58db1f553eca46b26aab751e087ab9690acd030f0ff53d4cea8b",
+      "graph_id": "graph:0x4197ed0ef9b60ab1cacdc31d6d3ce06413b333b14b8947be5c0cfe29cb88b088",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/6f2c85c8cc1a58db1f553eca46b26aab751e087ab9690acd030f0ff53d4cea8b.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 2,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 5,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "postmortem",
+          "title": "Curve Exploit Post Mortem",
+          "url": "https://alchemixfi.medium.com/curve-exploit-post-mortem-7142e78bc339"
+        },
+        {
+          "source_type": "security_report",
+          "title": "Vyper Incident Analysis",
+          "url": "https://www.certik.com/blog/vyper-incident-anaylsis"
+        }
+      ],
+      "incident_id": "curve_vyper_2023_07_30",
+      "known_exploit_corpus_exact_match": false,
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "unresolved_incident_related_transaction",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "notes": "The replay is dated 2023-08-04 and contains one call, which is not sufficient to support the queued primary-attack role for the 2023-07-30 Curve/Vyper incident.",
+      "observed_at": "2023-08-04T13:21:35.000+00:00",
+      "promotion_status": "not_promoted",
+      "queue_id": "9e0b2a86d3d2b5bc1cbc6e2de2d8753061280742826912d0d5cfdda862b6d763",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "4ce03719ca5168d3ee85837b79648c735a9a46fedb27f6b6fb34faeafa3483f4",
+      "reason_codes": [
+        "timestamp_after_incident_window",
+        "single_call_trace_role_mismatch",
+        "pool_scope_review_unresolved"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/02961e5fcc20d21b46e9d85b52554215956ea15c82693a872f5b24c5f530199f.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x4197ed0ef9b60ab1cacdc31d6d3ce06413b333b14b8947be5c0cfe29cb88b088"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 1,
+      "candidate_role": "attack_tx",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches",
+        "token_decimals_missing"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "246e22bad9dc434a0f3b367070160279b0aadb19e65ee6034bc6a8e8a6a7a4f6",
+      "graph_id": "graph:0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/246e22bad9dc434a0f3b367070160279b0aadb19e65ee6034bc6a8e8a6a7a4f6.json",
+      "graph_stats": {
+        "call_edges": 151,
+        "context_edges": 0,
+        "edges": 171,
+        "failed_calls": 0,
+        "max_call_depth": 11,
+        "nodes": 36,
+        "semantic_actions": [
+          "erc20_approval",
+          "erc20_transfer",
+          "flash_loan",
+          "oracle_read",
+          "unknown"
+        ],
+        "transfer_edges": 20
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "incident_database",
+          "title": "Euler Finance donateToReserves Flash Loan Exploit",
+          "url": "https://nomoslabs.io/archive/euler-finance-2023"
+        },
+        {
+          "source_type": "known_exploit_corpus_exact_match",
+          "title": "DeFiHackLabs exact transaction-hash match",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        }
+      ],
+      "incident_id": "euler_finance_2023_03_13",
+      "known_exploit_corpus_exact_match": true,
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "primary_exploit_transaction",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "notes": "Euler Finance attack transaction; transaction-specific public evidence and exploit-corpus exact match agree with the rich trace.",
+      "observed_at": "2023-03-13T08:50:59.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "9fed02bcf8a89f7a52df6f0a0b2ceacbf729605982cbbe06cda67591295b3b5d",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "bb2e07603ab85c1c70901da57659f9153615e6e97c45ab3cc8ba87afbd77bc3c",
+      "reason_codes": [
+        "transaction_specific_public_source",
+        "known_exploit_corpus_exact_match",
+        "rich_trace_role_consistent"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/7d8ba2242400ce5617bc40033b193a919a7b1f9afa42c353c73ecd4d648fc0e6.json",
+      "trace_call_count": 151,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 1,
+      "candidate_role": "attacker_profit_transfer_tx",
+      "decision": "unlabeled",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "f45519997b02537b07c6df5529ec9cadbc2c79affc03569c80241e96d0717ba9",
+      "graph_id": "graph:0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/f45519997b02537b07c6df5529ec9cadbc2c79affc03569c80241e96d0717ba9.json",
+      "graph_stats": {
+        "call_edges": 4,
+        "context_edges": 0,
+        "edges": 6,
+        "failed_calls": 0,
+        "max_call_depth": 2,
+        "nodes": 9,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 2
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "security_writeup",
+          "title": "Harvest Finance Hack",
+          "url": "https://cosimo.gitbook.io/ethereum-security/smart-contract-weaknesses/price-oracle-manipulation/harvest-finance-hack"
+        }
+      ],
+      "incident_id": "harvest_finance_2020_10_26",
+      "known_exploit_corpus_exact_match": false,
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "attacker_profit_transfer_only",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "notes": "The queued role is an attacker profit transfer and the trace contains only four calls. It remains event-linked evidence but is not promoted as an attack-transaction label.",
+      "observed_at": "2020-10-26T03:01:48.000+00:00",
+      "promotion_status": "not_promoted",
+      "queue_id": "c7124950b89988b15220fbda0dce85e757fa3812ee09dd383c301b68ccc89d77",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "5a66f4adcc2bbaf4a960912aee1e02b7a1b184604080add1d1a7440c4bb17fbe",
+      "reason_codes": [
+        "profit_transfer_not_attack_entry",
+        "attack_entry_transaction_unresolved",
+        "role_not_suitable_for_binary_attack_label"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/9016838b6032444ee12b051d3530598af99956afc9616d5d021a9c1bdda7ad96.json",
+      "trace_call_count": 4,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58"
+    }
+  ],
+  "feature_version": "cash-flow-graph-builder.v1",
+  "label_version": "engineering-smoke-labels.stage4.v1",
+  "normal_decisions": [
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches",
+        "token_decimals_missing"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "2e39477a5b39938b5a5ca03e9776e56a435311a66473103df9f6603943f733eb",
+      "graph_id": "graph:0xd9211c81adb2dd95030f06c2193e2dec9446eb2e258a98c7d386ab6d1c8298c7",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/2e39477a5b39938b5a5ca03e9776e56a435311a66473103df9f6603943f733eb.json",
+      "graph_stats": {
+        "call_edges": 28,
+        "context_edges": 0,
+        "edges": 32,
+        "failed_calls": 0,
+        "max_call_depth": 9,
+        "nodes": 21,
+        "semantic_actions": [
+          "erc20_approval",
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 4
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "hard_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x8a5221f95c8af2d249bc1a7f075b31336ee5032f",
+          "0xacddac6c77318b615f7f6fb9bb67c6833e9c05f1"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T02:38:11.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "a6cfc55190945188fc51bddff6c8bda10d2182d3d2035f6e04ac3ed8fb6ab90b",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "2bbefd82e842e131074a2e99031e3d522cbd4751552c506b3e83ba0ae44049f7",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "contract_call",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/a90cec7fc4b345b38fb4fa0c1116d4c6eab80267d63de0e92f3df36f811aac39.json",
+      "trace_call_count": 28,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xd9211c81adb2dd95030f06c2193e2dec9446eb2e258a98c7d386ab6d1c8298c7"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "d9c80eabaa10aae0c46ea161c0fb6f05cede43cdd1760d99c862790594c6224b",
+      "graph_id": "graph:0xb916099f8cbade06cc8c20b7d4dbb22c72c9c3569204eee2dc03175dd3fd2ee2",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/d9c80eabaa10aae0c46ea161c0fb6f05cede43cdd1760d99c862790594c6224b.json",
+      "graph_stats": {
+        "call_edges": 2,
+        "context_edges": 0,
+        "edges": 2,
+        "failed_calls": 0,
+        "max_call_depth": 1,
+        "nodes": 4,
+        "semantic_actions": [
+          "erc20_approval"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x259338656198ec7a76c729514d3cb45dfbf768a1",
+          "0x767890c2c0e1cbe275b26647e7d362ba5b48fe7c"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "237089507a3d3fc92d11fa58de34d1168ac84b83c284e6852cb67839e31bbc58",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "dcf6807d4ad9e8620822605e00c30b65c0a193385709e71ff77c4f67285ab890",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_approve",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/048f70f7bfb2cb2f1c0761c613e52179fa5d14489d3a7dde1bc8d179ba5ce207.json",
+      "trace_call_count": 2,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xb916099f8cbade06cc8c20b7d4dbb22c72c9c3569204eee2dc03175dd3fd2ee2"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "1275b6ae061d0efa487a4428ad020127b8ec57b054fd4656857bd617b49d7aaa",
+      "graph_id": "graph:0x2121c6baaca546b4b4c9f715fb184ae7c075c9187ce1e6003169784f2c45058a",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/1275b6ae061d0efa487a4428ad020127b8ec57b054fd4656857bd617b49d7aaa.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 2,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 5,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x19af84a5a207c39cf794cf6eeb9aa9793c022042",
+          "0xdac17f958d2ee523a2206206994597c13d831ec7"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T02:38:11.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "60d11cb105158783bac5cead3aa24c5174592ffc0ff5ce924fe4d5a711a02cd3",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "e7fbcfd5e5f42ba1a68b74aae29f70121b150e03ec525f489346e7e2dd16ada0",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/a89895e481b328ebbf2e530cbdee445efafd30ac6fd795034a8d478b1029c5ae.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x2121c6baaca546b4b4c9f715fb184ae7c075c9187ce1e6003169784f2c45058a"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_logs",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "2224ca46a63e7f1a7bf2b788e1116e650ed3ccb12f1a470db7d93272114c06e2",
+      "graph_id": "graph:0x3004f7f2c6d4e57039335b52a53e4529541d4c787e9f72c9661a034b4d81d7e2",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/2224ca46a63e7f1a7bf2b788e1116e650ed3ccb12f1a470db7d93272114c06e2.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 1,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 3,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0xe15dcd34128d235cdd514368513eb42785a98625",
+          "0xeea3cc82c5e925da49047405bbd7b2e6ee55a21a"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T02:38:11.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "eaae1a763c5198beb95606126c966236d04cee356a2f25f69929c74be8867ca0",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "e56ab804daecef8d8191b65ad458145c919d55b028b835d92f43a79067ffba9a",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "simple_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/91570976e78d314f3275a8c546500078ebb7d5cdbaec4d903d78b3589f446993.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x3004f7f2c6d4e57039335b52a53e4529541d4c787e9f72c9661a034b4d81d7e2"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "66bafd778b03751019d6c374314f353275b7949f738322bfe84577ecf5554000",
+      "graph_id": "graph:0x980cada374d27d546ca09c09bb243fa72af59247337558193455c5af04ef952f",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/66bafd778b03751019d6c374314f353275b7949f738322bfe84577ecf5554000.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 1,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 3,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x7ca6d3edbefebf9e0d61e783896e00669626c761",
+          "0xb3f85ef5a814793fd620b922393d71cced24a842"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:47.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "32d4f27f85b734a2f358c2e50f76c4ee09f44ee00e3fb577c378b56ac865a730",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "af9626b3401e6a3d74a5b580386614e24cf8d1166ed4b1b04739158ad42cd53a",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "contract_call",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/db40b87e651f96fba251cc43b34fb72106bc98f88c7d6b5a02bd285cd0fac30a.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x980cada374d27d546ca09c09bb243fa72af59247337558193455c5af04ef952f"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "783d94148ac612ca39879ba98067ff356fad04b06ff6818d66dea15aba4b95bc",
+      "graph_id": "graph:0x2668f88852bdafc95244bf06144a9f3aaf657424e812d87070163accb7fa5718",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/783d94148ac612ca39879ba98067ff356fad04b06ff6818d66dea15aba4b95bc.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 1,
+        "edges": 2,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 4,
+        "semantic_actions": [
+          "erc20_approval"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "0xdd00615c7d70e999e979edc0d8ee59980e2ac4e1"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "86feba7a790898684240f70d6285cae62435afdcc4fa85390600792fe9e0f739",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "04191d22cddc93af1164f6a38b6f9215e918d7a9b79a30cb0a075aed2454e2e2",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_approve",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/f0f27b7fad9cf2793acf3cf493fecbab17f30a89af0472a7783857a851ccdc79.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x2668f88852bdafc95244bf06144a9f3aaf657424e812d87070163accb7fa5718"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "46472122118cfcf1788e7ed9a31a3c77b156ecb63c3b566daa8988d0e0e9c79a",
+      "graph_id": "graph:0xe6b670cc55d258f08bc6feac61bbf1a5dd7ee678bafd8a3557876cbcc95a192a",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/46472122118cfcf1788e7ed9a31a3c77b156ecb63c3b566daa8988d0e0e9c79a.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 2,
+        "edges": 4,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 7,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0xadff6cec1e2af4f05406d53f2e94f6e433b9369a",
+          "0xdac17f958d2ee523a2206206994597c13d831ec7"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "e28f888f3830243c29b29b5c82e25513b7eacb10cae275619c75d617b1e4efe0",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "2d254ec2987692131e742c1a44a57d2ceb768c5a44f0a117fb6be321e35c38c0",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/8f576e5d61555870379c030fef79cf8b40b22383a688b659955ba784164acc1a.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xe6b670cc55d258f08bc6feac61bbf1a5dd7ee678bafd8a3557876cbcc95a192a"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_logs",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "0b738dfbe5f82ad5a69c5144453e7b409e2e557d247e200eae975d285b4f0841",
+      "graph_id": "graph:0x23c77e919e53989c596f5c3ce806adac16267a23a35c5cdb9b1b5117f28b4053",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/0b738dfbe5f82ad5a69c5144453e7b409e2e557d247e200eae975d285b4f0841.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 1,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 3,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x4aeb4c4eab243728dd25d909c98f79f108f5e0ec",
+          "0xcbd6832ebc203e49e2b771897067fce3c58575ac"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "b2b413f839c153f4a204be81eb533b1e1f8c58c4db3965b839db1c3a98795f33",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "1839a8f3557486001a8960d85f0cbf7923962bb0d62c993410fecb22b53778c2",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "simple_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/4ebfd7752b61c4ffca6e2c867409bb4fdd73a90b2c24aa17b18b82ffb8c64a5d.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x23c77e919e53989c596f5c3ce806adac16267a23a35c5cdb9b1b5117f28b4053"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "no_logs",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "5567756026e7416939ad406cf1717dcf9581ec6fc6f5351404e75f4e9c8d323f",
+      "graph_id": "graph:0x6c538dc4b66a6bed16ba71055b0ef3bcf9a094a3a7f12c9455354c798cf76d04",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/5567756026e7416939ad406cf1717dcf9581ec6fc6f5351404e75f4e9c8d323f.json",
+      "graph_stats": {
+        "call_edges": 13,
+        "context_edges": 1,
+        "edges": 14,
+        "failed_calls": 2,
+        "max_call_depth": 6,
+        "nodes": 10,
+        "semantic_actions": [
+          "erc20_transfer",
+          "swap",
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x278d858f05b94576c1e6f73285886876ff6ef8d2",
+          "0xf376425b6944e1825b27f4518d52302303e829cb"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:47.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "cddf1fdb30c7ec45518f8d01e54d6ef6a53a73f27fe0da2c86ed5bd14cc172d5",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "8de0f8bf710c838fb9a1626a8f9ac99ed55fe1cfcf6de3c1d161c52e27e13a07",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "contract_call",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/0ab477a91164abb2e29f2f127d8ef28e408af22671f4962922760be7eb53407c.json",
+      "trace_call_count": 13,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x6c538dc4b66a6bed16ba71055b0ef3bcf9a094a3a7f12c9455354c798cf76d04"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "a4f30b990bdd6847466add8f69b18c166f456dae3457f69548b53c67859c7d94",
+      "graph_id": "graph:0xd076d5aad131b6b7a5cdc68057d1bd809aaebac0e7d10a61ee12cbffd9715286",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/a4f30b990bdd6847466add8f69b18c166f456dae3457f69548b53c67859c7d94.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 1,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 3,
+        "semantic_actions": [
+          "erc20_approval"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x68bbed6a47194eff1cf514b50ea91895597fc91e",
+          "0xa1f06e5ab822c3022e6ca2c4e2ef2638e966716d"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:47.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "f5a16286651127b55f7e160719fe760328971158c3c4fbab7c150d4a6a40b587",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "76b7aaac77afe90643845c58298f80894e4e7ea2a9cbf523b2d36b6fe2ade583",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_approve",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/71386d0ef6c56455d2257b7d53ace73084327ff1b5fb130191086fe54839d5f2.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xd076d5aad131b6b7a5cdc68057d1bd809aaebac0e7d10a61ee12cbffd9715286"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "44685cadbe98761a58940ec2d8f4f5004dc3902b4efec5c383dad481968481c2",
+      "graph_id": "graph:0xdf1624057675fef2d1396285434463d6d8483af5d7be501d9e64e86cdf6207c9",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/44685cadbe98761a58940ec2d8f4f5004dc3902b4efec5c383dad481968481c2.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 2,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 5,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x97c5e43c895437ee3087c67e0ecc0a8413b38858",
+          "0xdac17f958d2ee523a2206206994597c13d831ec7"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "a43c2887f52b06e23dca8ad3c39adabfe352cff049ae4c489186bc8f79dc2ba8",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "0b53235ac9cf1023d6850d3d334cdc2c4373fa04cfbdba29bae356bbe7959b80",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/9de101163d028833d9c476603168de112eaad95d557ff4d4e4c3d6580b28f0f5.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xdf1624057675fef2d1396285434463d6d8483af5d7be501d9e64e86cdf6207c9"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_logs",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "a6d4f9e6071d8a15b73f5ea2034bed56cc16eacce7708b05cfc7e3ab7a347ddc",
+      "graph_id": "graph:0x1549a8f77ff4030877ba09c12b838c6dec51133d0ed5c2c3a641c4d01c617ab4",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/a6d4f9e6071d8a15b73f5ea2034bed56cc16eacce7708b05cfc7e3ab7a347ddc.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 1,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 3,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0xb71bbe3c5ade12e385425244383a94257e25612f",
+          "0xc1dce65f052803ab93747625ab78fae774ef290f"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "863e1e9edcd619aa8fa6c758dc9452aad15809dc51559905071909121f1e1536",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "2ee84c0954858a80c9e013cfcc6bc1b2e48221574d960a761a94ff290a921157",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "simple_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/e45f245640f73a703f1efc573474d206cdf1f200a1ccc50b2e45148fbd595e39.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x1549a8f77ff4030877ba09c12b838c6dec51133d0ed5c2c3a641c4d01c617ab4"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches",
+        "token_decimals_missing"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "892aaf4aa4827dcbcd3dec20ebb210d33162f8e652c38978c3a0db71b99fd81b",
+      "graph_id": "graph:0x15a4b05559833153e9ccb1dc6510c5a8a236c5df2ad1f8f60584a6bd6945aea1",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/892aaf4aa4827dcbcd3dec20ebb210d33162f8e652c38978c3a0db71b99fd81b.json",
+      "graph_stats": {
+        "call_edges": 3,
+        "context_edges": 0,
+        "edges": 4,
+        "failed_calls": 0,
+        "max_call_depth": 1,
+        "nodes": 7,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x4a98459c0c2cf86d3b4b8af90b57a40d7c08c273",
+          "0xd8822cdb7e83393fd5d57f604be2606545946aa0"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "070e7096c60b34af5b7eee50299c263523db6cccb2b6e24533c8bad793fcf769",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "83f7b63ec73e6fe94df786db7cef3171cf024c720f4aca7b54996254c2e409d0",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "contract_call",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/1b88fef9ad414a0acf89c42aa83feb4355fb5963e79b32b11b555a162cafba2f.json",
+      "trace_call_count": 3,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x15a4b05559833153e9ccb1dc6510c5a8a236c5df2ad1f8f60584a6bd6945aea1"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "24e6adb0dc805636a230958107d0c5503bf66b0ba420b84fbf1a0384dfdef448",
+      "graph_id": "graph:0x970925628ceee12ce68992f0c3f35cff3a0abd74fd90f29bc9d8acda3c7ba040",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/24e6adb0dc805636a230958107d0c5503bf66b0ba420b84fbf1a0384dfdef448.json",
+      "graph_stats": {
+        "call_edges": 2,
+        "context_edges": 0,
+        "edges": 3,
+        "failed_calls": 0,
+        "max_call_depth": 1,
+        "nodes": 6,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x81cd0778c20e72bb5457bc8d043d9686c86f0b7d",
+          "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "5c1ac285a2c5fdc59f71ac0f7d3ee807eab607a4a12c8fae76dc27a7fa572699",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "50889e488f1f8846732b8ee6f559eb5fb010fca9cd3a8e798352f23c271e2958",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=08/657ae464330bb13b0f12b2d37f6a5754e9b413482fa1de09383353ebbebe9549.json",
+      "trace_call_count": 2,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x970925628ceee12ce68992f0c3f35cff3a0abd74fd90f29bc9d8acda3c7ba040"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_logs",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "ae1492f512042d22b357d99f10eca9a907c69edb67fc00bd696f32411fa4e611",
+      "graph_id": "graph:0x65c43ae33c3dfa70b38cdfdd804818fab396e5b9e8af51c2da3e3e1ab9ce858a",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/ae1492f512042d22b357d99f10eca9a907c69edb67fc00bd696f32411fa4e611.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 1,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 3,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x3e1f44ab2b036a5df2fa70a8f6510940ce4a66c1",
+          "0x8a8ec1f91d109b18a620a768ada086fb40eb887e"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "a888f16f500f0391eeca438dd1446232d800445eaeb4fdc184f32a119ff403c6",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "d67d3986bfe3434ebfb36f2d2bf8f43883b1a5e150ad76dd5dfa205e990e430a",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "simple_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/dda20c480ef1d1eb6b4717d97f9b7804194b50f9b3b1080030d3d9d677c1ec49.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x65c43ae33c3dfa70b38cdfdd804818fab396e5b9e8af51c2da3e3e1ab9ce858a"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "no_protocol_role_matches",
+        "token_decimals_missing"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "c548b42f497f73169ce36245ef0953b7082bcd1c28fc9f1c69f7efecbba0e15a",
+      "graph_id": "graph:0xdd449ecee1bf5bc7a2bfefe1810b95213d30e628f7117d89293c089d6393325d",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/c548b42f497f73169ce36245ef0953b7082bcd1c28fc9f1c69f7efecbba0e15a.json",
+      "graph_stats": {
+        "call_edges": 10,
+        "context_edges": 2,
+        "edges": 14,
+        "failed_calls": 0,
+        "max_call_depth": 4,
+        "nodes": 12,
+        "semantic_actions": [
+          "erc20_transfer",
+          "swap",
+          "unknown"
+        ],
+        "transfer_edges": 2
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x278d858f05b94576c1e6f73285886876ff6ef8d2",
+          "0x2dc81d217ebb60290fd9f72ef1136e024a7b0b2d"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:47.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "de40d3c92046b5b694ad7acd34eea42f624600d283ec1d997def5a2390c410e5",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "0439569d05fa69e4df6d8c23e4f09a76c7edf05869fb2f49fdc28fa0e5b39362",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "contract_call",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/1fc8905d020b96b5ad40963393dcbfeaf972bb183bdf98904228e31adf6a20c1.json",
+      "trace_call_count": 10,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xdd449ecee1bf5bc7a2bfefe1810b95213d30e628f7117d89293c089d6393325d"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches",
+        "token_decimals_missing"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "ba1fed84b8d5c593cc928e25adc1eb9c12b17fd179c24d945a38b969c8ee0c20",
+      "graph_id": "graph:0x30c3524b6d4dcc443e67e238a38be4564c166fa9014631f8b4777c52af5bbab3",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/ba1fed84b8d5c593cc928e25adc1eb9c12b17fd179c24d945a38b969c8ee0c20.json",
+      "graph_stats": {
+        "call_edges": 13,
+        "context_edges": 0,
+        "edges": 14,
+        "failed_calls": 0,
+        "max_call_depth": 3,
+        "nodes": 12,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
+          "0xc17a40852e4bfe04bc81af355fdf132c539ba753"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "0698115b8c838eed26657416ecaa40571bb136461d587ad371dea0b58d9301e5",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "3ed9465d5179551bfa7e37831c59f50462fd85a687e2cf171f5e95dca928099e",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/0a211d9f010c7ba35b987cb7a516f4b9b57ff0a78daaa2795666974cba191f47.json",
+      "trace_call_count": 13,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x30c3524b6d4dcc443e67e238a38be4564c166fa9014631f8b4777c52af5bbab3"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_logs",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "1a5810870bd73d8df577a85dd051adf013b87b6d45e84bb202693322ce78fa2f",
+      "graph_id": "graph:0x871ae9d947bd7609cc160a7e7913aabfd9579984e9c54d0e4fa7c87c4f37c53f",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/1a5810870bd73d8df577a85dd051adf013b87b6d45e84bb202693322ce78fa2f.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 1,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 3,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0xa9ac43f5b5e38155a288d1a01d2cbc4478e14573",
+          "0xacdd0da707df61b7ddf244b292c1a8ec5ff00720"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "e64ac280d389e5b030839ad6da23383bd4868bdc811b6ebdf08f7fd66d026875",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "01963422cd3e7fdc2f28855f9de64418d36efbb4f1d28cf36af3aa2d694db5ef",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "simple_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/44f940e7d7cfc6024b2e842e560478b4e44d91c61cea62c169c2a6e179911a78.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x871ae9d947bd7609cc160a7e7913aabfd9579984e9c54d0e4fa7c87c4f37c53f"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "aaf80b9fd0579a47b198012590786bdc90561c7cf14d3e636519e48c05bb8190",
+      "graph_id": "graph:0xc6d08609cbee7029db102407aa1943aab8acabf68c176a2ce2c9968272d2e364",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/aaf80b9fd0579a47b198012590786bdc90561c7cf14d3e636519e48c05bb8190.json",
+      "graph_stats": {
+        "call_edges": 4,
+        "context_edges": 2,
+        "edges": 7,
+        "failed_calls": 0,
+        "max_call_depth": 1,
+        "nodes": 7,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0xa10c46b93f8ea6c62776b699627a87b727d8c17f",
+          "0xb685760ebd368a891f27ae547391f4e2a289895b"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "af266449ad7a782363ac95530a3d784ed2de69995908e0fc9a0ddc4809cd8ed8",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "00414f4d5a49b83f1d84541dabcab8b2fa57670a49ad9aa57cf916b5ba99d01b",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "contract_call",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/7e785a6c324fda84ac3e5b1763dff220b286018839238d739f559bfaeb64e931.json",
+      "trace_call_count": 4,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xc6d08609cbee7029db102407aa1943aab8acabf68c176a2ce2c9968272d2e364"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches",
+        "token_decimals_missing"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "532b7764d0434503e5b878810bb420e318e003f4eaeb8d3ba1b52bb6699053dc",
+      "graph_id": "graph:0xd459c573d99e05d890098b4853f3ff1127981136b4f1ec9fef0f67b7eecbcc70",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/532b7764d0434503e5b878810bb420e318e003f4eaeb8d3ba1b52bb6699053dc.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 2,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 5,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0xbe0562201362d5adea1b0c678406d70432d33d8d",
+          "0xc944e90c64b2c07662a292be6244bdf05cda44a7"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "7c0d0926bbc5b533592386b631de17725e20858190b013ed1d7c00574a96d50d",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "cc39b21eef64b1fe60d1c636a801b0718f5e107994934f9bde3bb3bfae56e98d",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/6eb986295d4ba34d5931aa3efd6d69cfa34c0e16a89ccf93b644395aa18135da.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xd459c573d99e05d890098b4853f3ff1127981136b4f1ec9fef0f67b7eecbcc70"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "no_logs",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "aaa9a10b1b0628ceffbb06f96abe405f700f0ee83ca7fffe87a59c86313f7f42",
+      "graph_id": "graph:0x4ae15a092a638c8d15bc2a30e52602d95aa81eab81c94cdeb96157b93d600534",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/aaa9a10b1b0628ceffbb06f96abe405f700f0ee83ca7fffe87a59c86313f7f42.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 2,
+        "edges": 3,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 5,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x93a1f8f699ce0995025282912d58ed4d8396b51c",
+          "0xae45a8240147e6179ec7c9f92c5a18f9a97b3fca"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "35f97bc22274d74326c102bab155f9a65819ca3a4655a5b07ac0b6f6b2ee0f15",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "d9d5175ab7ef017b091e47db61e31791e796d2a7e63fd1f9a893674b00a056a9",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "simple_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/a20727f382d224eec9a269365615f4ef73b1709ac603bc4dd4424d5e205c4fe6.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x4ae15a092a638c8d15bc2a30e52602d95aa81eab81c94cdeb96157b93d600534"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "68b77caa99a3782e992cacb3bf3b14dbc1c2e6cdd02f0e519f7fcf28bc0a3e25",
+      "graph_id": "graph:0xccb643fa42789800816f9951e23ffc9bba80234224c305c3ee1e8942ebb7b204",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/68b77caa99a3782e992cacb3bf3b14dbc1c2e6cdd02f0e519f7fcf28bc0a3e25.json",
+      "graph_stats": {
+        "call_edges": 17,
+        "context_edges": 0,
+        "edges": 19,
+        "failed_calls": 0,
+        "max_call_depth": 3,
+        "nodes": 10,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 2
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "hard_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x241b584b32b48338727bdb79d881373c4a433747",
+          "0x337685fdab40d39bd02028545a4ffa7d287cc3e2"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "954d773d8e682a247074b3b5199ec61fc33a9efbda54680e9e9b49fbd147e7a4",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "a41751dcf968d72a2f23d075bd903b44b5d7ef66e84af11f239df93827d276ff",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "contract_call",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/81670d8ba709aefc0eb371466865f2c234a251a4873e62f222c22d44b68e028d.json",
+      "trace_call_count": 17,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xccb643fa42789800816f9951e23ffc9bba80234224c305c3ee1e8942ebb7b204"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "5d473c1e7e93a94dafc48f98d0b61e0d698b5688bf3b3c93f7187ca8f23a11af",
+      "graph_id": "graph:0x0397d5a413d5585d011814876ebd770bbf6cc9ad1dcc9f685a1a6236bed43cbf",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/5d473c1e7e93a94dafc48f98d0b61e0d698b5688bf3b3c93f7187ca8f23a11af.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 2,
+        "edges": 4,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 7,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x5f45e35e1e45e01c7a77297de7688fc3fe43a750",
+          "0xdac17f958d2ee523a2206206994597c13d831ec7"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "d3be516b611d839a9a3d736203a01b77346ea422756adeea49380b8d45be8912",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "d1020912886bac49556a2986ce87c3cba4719acea97fe1134ac4bcfc743e0c7b",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/df8962432c37e5939736cb96e4181e8f70482e718237499711c617b9d4ad64e2.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x0397d5a413d5585d011814876ebd770bbf6cc9ad1dcc9f685a1a6236bed43cbf"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "no_logs",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "900b8b39a325984fe6947ca3b9e6394f129ffba1e9de16ef16f3ff9398b4c804",
+      "graph_id": "graph:0x9f13e14eea56fbb4f73c7d7b4bab5b924943b7ebf101943e4ab4a7c58d756fa7",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/900b8b39a325984fe6947ca3b9e6394f129ffba1e9de16ef16f3ff9398b4c804.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 2,
+        "edges": 3,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 5,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0xae45a8240147e6179ec7c9f92c5a18f9a97b3fca",
+          "0xfcdf956b3fd73b764140214bdb23bbecc37625c4"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "9d3c41a1f66630d39b0ce85e95056af417061bf9b5e84b29739124414048e052",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "c62a297a95c12550c5114959fd731a79de4c4cf7fb91db43569ec990781e9e99",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "simple_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/e23fecd2330715b2b942d92c14783e13b61c3f77569bbe2e3a1189baaabe542e.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x9f13e14eea56fbb4f73c7d7b4bab5b924943b7ebf101943e4ab4a7c58d756fa7"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "no_protocol_role_matches",
+        "token_decimals_missing"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "383c2c8632112264c8cc76b1497a5915d32c577a7ec24a9879423630e3803792",
+      "graph_id": "graph:0x5c7c89c0b97cdadcd9caf7809c2ed983a23200b778634b200a0812fe1970673c",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/383c2c8632112264c8cc76b1497a5915d32c577a7ec24a9879423630e3803792.json",
+      "graph_stats": {
+        "call_edges": 36,
+        "context_edges": 2,
+        "edges": 45,
+        "failed_calls": 0,
+        "max_call_depth": 6,
+        "nodes": 19,
+        "semantic_actions": [
+          "erc20_approval",
+          "erc20_transfer",
+          "swap",
+          "unknown"
+        ],
+        "transfer_edges": 7
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "hard_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0xabc40b37e3d616f9ab80f1ec5683c49270396422",
+          "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "fe05307019f510bf49b5af4dc7b9a64b64aa712bf3f8d870b1a7c84fbb2f59a2",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "046bffb9ed86f85006b38be5a56353a54ae0651cdf6fabf5e5ec329cb0c7af23",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "contract_call",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/0539d45c9a9fb2eb544aeaacf71c934f3341bf5d17b191b2f17396a225c8d049.json",
+      "trace_call_count": 36,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x5c7c89c0b97cdadcd9caf7809c2ed983a23200b778634b200a0812fe1970673c"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "dd39d5aa4448bf305cbfb8255f018d8a43b132b2056cf4bd353e7eb69ea55e00",
+      "graph_id": "graph:0x488cc85ac60ace248b499aeaeca1700bab20087a9632c68b39748ebf92520d72",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/dd39d5aa4448bf305cbfb8255f018d8a43b132b2056cf4bd353e7eb69ea55e00.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 2,
+        "edges": 4,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 7,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x99337b8b138537222342e86e76005f5e7c427d9f",
+          "0xdac17f958d2ee523a2206206994597c13d831ec7"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "ab7ac1a36ed5004d86a102e73e1e34fe2cf3b8c9a0812305650c57a9f00ae7ca",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "1cece051f2bc064ec4f03daf081ede1e1a6e4e3975c84d398fffdaf4355f5ede",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/a765c6330108849aff0115beee4cecfa90659426a01846fd6a378877730b6483.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x488cc85ac60ace248b499aeaeca1700bab20087a9632c68b39748ebf92520d72"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_logs",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "1fa596f9237e2ac2ab0c867204b146830d58e3985c59c77689af685b6427f76e",
+      "graph_id": "graph:0xb16f961749f343ea83ea05638822defc8eda9a194c07feb9f18143ede15dea0f",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/1fa596f9237e2ac2ab0c867204b146830d58e3985c59c77689af685b6427f76e.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 1,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 3,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x0514b193a02b910e24f2f074b95bc3edccc05e0a",
+          "0xae45a8240147e6179ec7c9f92c5a18f9a97b3fca"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "1402ab54536796a59b0c04cf72b90f0bf6f750297d413468e3269a1286e14c3a",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "ff19894eefb6a004eb9250e8ea0a36674bd662f7a8f6cb1238c8e03ec8cd59d1",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "simple_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/b45feaaa6b277d29b126b1097c78b65ce663878deb2c3af568e86f15fc353cba.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xb16f961749f343ea83ea05638822defc8eda9a194c07feb9f18143ede15dea0f"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "d9821930c8124a0573025de7bc50d9c6c82061ca4b711c3b3a758bf3ebb3607d",
+      "graph_id": "graph:0xd141eafe2ddee968efdbb6763672b23b71d2085f7cd46accc444c0e36e2e22f9",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/d9821930c8124a0573025de7bc50d9c6c82061ca4b711c3b3a758bf3ebb3607d.json",
+      "graph_stats": {
+        "call_edges": 13,
+        "context_edges": 2,
+        "edges": 15,
+        "failed_calls": 0,
+        "max_call_depth": 6,
+        "nodes": 13,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x19f494583c7c933be7b0ee58104ddafac1e8adfa",
+          "0xdab785f7719108390a26ff8d167e40ae4789f8d7"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "d969836e0017520e51236e004e3660408f4a9edbf0f6f32b447298ec59ad9c9e",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "6461ab2f8ce0657c64f1ec51eec4395e98b7c8292f1f46ee807c6e8fa119c76b",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "contract_call",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/b9642f7015aad7c39fd388773d0bd2930b66be8e828f21b020accc5e0d790b44.json",
+      "trace_call_count": 13,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xd141eafe2ddee968efdbb6763672b23b71d2085f7cd46accc444c0e36e2e22f9"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches",
+        "token_decimals_missing"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "9e47a1d0cd505f4b33638f27b2b78f0740a71f1a2cf20c50429da5819586a617",
+      "graph_id": "graph:0xbc708ce15e2b957651fbcae480d4049907ea18e8ff5c4955fc06211863f6a5bf",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/9e47a1d0cd505f4b33638f27b2b78f0740a71f1a2cf20c50429da5819586a617.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 2,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 5,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x30d20208d987713f46dfd34ef128bb16c404d10f",
+          "0x3ce2e18eaaccf404d2f083ea7d9a5b6f983b96e7"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "ddb2c9df6d9215b714878a750945194a45b1bd76a04c5d727411225d6ae39317",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "491a4ae8cb7a64ca729a7d123336a384d6139db8202dcffaf98e8e513e11edfa",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/bc3cb93483abcaa266f555ce5a41635f3e68d04b97d7f8c9c17756dfa84469df.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xbc708ce15e2b957651fbcae480d4049907ea18e8ff5c4955fc06211863f6a5bf"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_logs",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "8cae6d8370f0271c522d3b2d6b4be615da7ae794a4484797376ab7d8c1521cb2",
+      "graph_id": "graph:0xf6529a11c0ea87df71a7bc7e4bd7435d873e029117bdf1a033ae9b72e8324a34",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/8cae6d8370f0271c522d3b2d6b4be615da7ae794a4484797376ab7d8c1521cb2.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 1,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 3,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x911a978f0cac392079b51db03e6f3027dfe6f96e",
+          "0xc9aa3a499f81f99df51c01f9e49cb5aa476f7edc"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:47.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "793230f92e8c80b577d7691072a62426528dc7f27917bb75536655cbbb238f4b",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "a6efb69d28ae91b1a242d4fd1583c0ff0075b7c539cbb6300f9e43016442e302",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "simple_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/513727b79a2747fda63ab63cdcd03cdbab65e518fe2f9b865ca6635eb085536f.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xf6529a11c0ea87df71a7bc7e4bd7435d873e029117bdf1a033ae9b72e8324a34"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "0d9db0f1b8ccb5168ddc8f8efc41ee916ffea5233d3b526bd9eee02b8901909d",
+      "graph_id": "graph:0x98505a81598aa7b9fca65e8b6ede7af333fa5c413b056a29cb943afc8ac111a6",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/0d9db0f1b8ccb5168ddc8f8efc41ee916ffea5233d3b526bd9eee02b8901909d.json",
+      "graph_stats": {
+        "call_edges": 13,
+        "context_edges": 0,
+        "edges": 13,
+        "failed_calls": 0,
+        "max_call_depth": 6,
+        "nodes": 11,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x19f494583c7c933be7b0ee58104ddafac1e8adfa",
+          "0xdab785f7719108390a26ff8d167e40ae4789f8d7"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "f8215f6cc62229c4f384550ac474736349f44be929077a7e056fc250f52d3b57",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "9dcc855d9d06739cc5d81d881e5e3cdeed95f3a534bd6bc36baab3a3a20b5602",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "contract_call",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/988699e7afacb74fcb4f5f1b3b561b0ccb9f1f78d16fe672aa47d4f7ef5869a3.json",
+      "trace_call_count": 13,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x98505a81598aa7b9fca65e8b6ede7af333fa5c413b056a29cb943afc8ac111a6"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches",
+        "token_decimals_missing"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "4ca97887b4a5af893d29e92fa78f0d9669647b7dc1e96a54d71f6a5d0d049465",
+      "graph_id": "graph:0x7b7043167479b80052a5d7deb35011ebf7d1367398d322646bd5de57c8fc23f6",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/4ca97887b4a5af893d29e92fa78f0d9669647b7dc1e96a54d71f6a5d0d049465.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 2,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 5,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0xbf2c788931b3f4cc196aee8ac863680e54644089",
+          "0xcc84ff0d7cdcacc6f0eec5a322500a4a96606fe2"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "4c75d363f84be517a9bd92fc52486b8a5eb01895809857ca629c6f2f9ade3815",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "8350e2211c5ee14e6b47537800b583e6f7398a5d854f0e251e2fc1effb98adf3",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/f9da7fc5a81777556fdf34ac4628ae00d153322bdc5b48b997f89452bfacfd0b.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x7b7043167479b80052a5d7deb35011ebf7d1367398d322646bd5de57c8fc23f6"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_logs",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "d3c245ff680d36dbb2cde0f5211561274df62f077d0d1a3f0d745fb8caa66d41",
+      "graph_id": "graph:0x866d37d962506d5dccf72fc7f4d6699ef2b255f24287d209cebf66e74ea6eaf0",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/d3c245ff680d36dbb2cde0f5211561274df62f077d0d1a3f0d745fb8caa66d41.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 1,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 3,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x6cdb7776f6a20b9ed4441b791e9541a6fc04e313",
+          "0xfcebb4c6e860a3520e1d10f12e40dbb8d0ac7c2c"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "c73ad730ad321b7550e0e41d840c6bbc5ef1fb5c30a2717c566da5869c1ec85b",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "56c079e4d08376c7468eb99435fdc5596cb2f6548ec1f35f57b17051f167ee87",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "simple_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/3c1dc68554418a95f9e4e8b940bf5e33f8b241e13650e6b7472b58c3fccc6a89.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x866d37d962506d5dccf72fc7f4d6699ef2b255f24287d209cebf66e74ea6eaf0"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches",
+        "token_decimals_missing"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "d8beb2d90cbe2c83cd9c3a7d5b5a22a838128536947aab7a3e7e75a6b1cec28e",
+      "graph_id": "graph:0x5f9e4b19641f9fdbab171525b9368f98e87c0d7723d88707eabcbdfa528f8a1e",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/d8beb2d90cbe2c83cd9c3a7d5b5a22a838128536947aab7a3e7e75a6b1cec28e.json",
+      "graph_stats": {
+        "call_edges": 4,
+        "context_edges": 0,
+        "edges": 26,
+        "failed_calls": 0,
+        "max_call_depth": 1,
+        "nodes": 7,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 22
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "hard_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x1be4538f187761547d87ffbd80c680e6a838107a",
+          "0xbf7fe109f674ab1341d69e67a262e50ce87eb7c1"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "29d606fb51df9d1a8cb93d124e1543eacb1fc583f573d41ffa5fe27a3a14d2cf",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "edddaf94caf8dd349705e251f3295034168a25da625b768dfe9f7dd0bbfb2dac",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "contract_call",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/5698533c1dc169a6886843e93b69b7b1c014fce300ab47674889cd39984583e3.json",
+      "trace_call_count": 4,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x5f9e4b19641f9fdbab171525b9368f98e87c0d7723d88707eabcbdfa528f8a1e"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches",
+        "token_decimals_missing"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "4d345bbf81d1655f409936aa36a5995545ab69a2f6d390dceabcb154ce78182f",
+      "graph_id": "graph:0x666b2e40c2db67a0fbed9c48c3dc02f4ea162b78e67071a63b65fd1ebfe8d4fd",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/4d345bbf81d1655f409936aa36a5995545ab69a2f6d390dceabcb154ce78182f.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 2,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 5,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x0d0707963952f2fba59dd06f2b425ace40b492fe",
+          "0xfa1c09fc8b491b6a4d3ff53a10cad29381b3f949"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "c9cf64ca885daea3f81ddbb6f714b9078c5533fab28acd56a9d76acb6a1c9acc",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "d20e2518690707d08711998a89b894584bbb9f8a0fbe06a6de303888feb80829",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/acf5665e476e56a834c212a3906ac39a45cfe81d30751c51d9834f4b173503a5.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x666b2e40c2db67a0fbed9c48c3dc02f4ea162b78e67071a63b65fd1ebfe8d4fd"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "no_logs",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "55789946dbcce1d02efd1fee9668214e0fd68232808147541bde6121b3061f39",
+      "graph_id": "graph:0xc170c2439260d5885b28737abb1bf82cef55f11ecfaf88a7022bfd806f58748f",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/55789946dbcce1d02efd1fee9668214e0fd68232808147541bde6121b3061f39.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 1,
+        "edges": 2,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 4,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x3e1f44ab2b036a5df2fa70a8f6510940ce4a66c1",
+          "0x4c0a510fe65688835aedb1badca2ba1677ef1a90"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "186f704e483f59fd8037caf6d497f4e1b575c992d45a99e5ceba487677536e63",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "2cce4b418cd2c07fc2ed955ed1bfb50b6d364bfaa363f3c28cd24aa8d818f3e4",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "simple_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/22c3276cabe770fe583ab5abce84c7567916c5f0904d67d43eb3a53df8795036.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xc170c2439260d5885b28737abb1bf82cef55f11ecfaf88a7022bfd806f58748f"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "no_protocol_role_matches",
+        "token_decimals_missing"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "7a2f0f906b01fc5a208c3f1c7e8a375563c4266fdd26759d56c7ef79a45a9cf7",
+      "graph_id": "graph:0xf951d59cab68466fea04e29c3540f5d3f4f75d2c76b5d893c3ccccdad948442b",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/7a2f0f906b01fc5a208c3f1c7e8a375563c4266fdd26759d56c7ef79a45a9cf7.json",
+      "graph_stats": {
+        "call_edges": 23,
+        "context_edges": 3,
+        "edges": 42,
+        "failed_calls": 0,
+        "max_call_depth": 2,
+        "nodes": 34,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 16
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "hard_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x7830c87c02e56aff27fa8ab1241711331fa86f43",
+          "0xa9d1e08c7793af67e9d92fe308d5697fb81d3e43"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "142f75725280256cfee92566e42b02fa79228fd017854682f9b580bdcbd6491f",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "d24eb729333f215d3d892d0b6aa6ed97a770656e29be62463e7ef508e7434772",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "contract_call",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/cecfdbd757d429103d91f11e8b5c28a85086b233e2f387dae838ccc0f515f3b4.json",
+      "trace_call_count": 23,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xf951d59cab68466fea04e29c3540f5d3f4f75d2c76b5d893c3ccccdad948442b"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches",
+        "token_decimals_missing"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "75cd5930e40c4e5b27eafc41ca6f316f56c313e0d6ebbb813442c6fe5f598601",
+      "graph_id": "graph:0xc9f006fd96d8d2dff5e3855673c7652f9f252527dff421b730d10a198e522ac6",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/75cd5930e40c4e5b27eafc41ca6f316f56c313e0d6ebbb813442c6fe5f598601.json",
+      "graph_stats": {
+        "call_edges": 2,
+        "context_edges": 0,
+        "edges": 3,
+        "failed_calls": 0,
+        "max_call_depth": 1,
+        "nodes": 6,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x10dea67478c5f8c5e2d90e5e9b26dbe60c54d800",
+          "0xf89d7b9c864f589bbf53a82105107622b35eaa40"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "742fda403c6ac396933dba10bd3de0b3cf475fd09904be57d00813e147227701",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "82738a25cba011f75ee1ffae19b1035ac3f32f3090715b22e30ca5b0d4b621f6",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/4630cf85f4274cd9f7c0e3c03e11ec75d19bb120f15d06a47e2abe4c9b5ddc29.json",
+      "trace_call_count": 2,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xc9f006fd96d8d2dff5e3855673c7652f9f252527dff421b730d10a198e522ac6"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_logs",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "321c2ae042332c9a647c6539d2bf7a255d0bdebb4cd833d340b749797bdab81b",
+      "graph_id": "graph:0xd876340718eddc916301c2df59be599d49bba66c269266b011a901f36d704a7d",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/321c2ae042332c9a647c6539d2bf7a255d0bdebb4cd833d340b749797bdab81b.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 1,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 3,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0xa03400e098f4421b34a3a44a1b4e571419517687",
+          "0xa1229fd2c648af12292e0da23690bff15fdf534a"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "dd454bca7835a1174b50113ea34e3e61601272ed55f3877e94073b35d030c8c9",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "4da01f7ffd58c681e3c62300224cf73c36ab53ae98f917f0409ede8ad6f81d7b",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "simple_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/ab10bcad3b4778434785e317c6ddbb51fdd2c100c471321a7961719acc861eb4.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xd876340718eddc916301c2df59be599d49bba66c269266b011a901f36d704a7d"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_logs",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "5796cd693818e50c644d8d6f3de950f898bbe964d9640a6a229a2351bc5417d4",
+      "graph_id": "graph:0x7e0558f0780d9138b7781aaea55b7521f43ca0a3d5fccbdcc64f899382ff9ecf",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/5796cd693818e50c644d8d6f3de950f898bbe964d9640a6a229a2351bc5417d4.json",
+      "graph_stats": {
+        "call_edges": 15,
+        "context_edges": 0,
+        "edges": 15,
+        "failed_calls": 0,
+        "max_call_depth": 1,
+        "nodes": 17,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "hard_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x7830c87c02e56aff27fa8ab1241711331fa86f43",
+          "0xa9d1e08c7793af67e9d92fe308d5697fb81d3e43"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "f7cc0fd6d3d972f22df6823dd848d2a2023dbee210eafcae5f6cb4fb61970955",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "e8adf50a40c0f84d264146c000a475142127c08e1ed13ff3ac1b9078731b9d34",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "contract_call",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/1775566a3f6d4b8b7248d8fe47517b8b684c58d1a6e874fb3b98e8bb23a0d22a.json",
+      "trace_call_count": 15,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x7e0558f0780d9138b7781aaea55b7521f43ca0a3d5fccbdcc64f899382ff9ecf"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "0bfddfa40f63bad5abf6b5c65d74e7a427490ceb31d678216f774b0ad3304fe8",
+      "graph_id": "graph:0xd6b33e8bce363754295225edd16bf8eaf6c31839f0519a31569a70157fddc4e7",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/0bfddfa40f63bad5abf6b5c65d74e7a427490ceb31d678216f774b0ad3304fe8.json",
+      "graph_stats": {
+        "call_edges": 2,
+        "context_edges": 2,
+        "edges": 5,
+        "failed_calls": 0,
+        "max_call_depth": 1,
+        "nodes": 8,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x084d179db0d0572138d0baf3aef888056c37ff4b",
+          "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "1f850f7478e6b403c008e0cb76aaf4b3664e74f320bd0d9a7b98a1ba6ac52fb6",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "7f9c0b165313aa9a3c8c1dde4ed4c01eb7e94357998dea4adef9d532032d71db",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/675fc884f6ae9caacef45022efff99fe9bc0c26368560dbeed03bb7bb7c98a55.json",
+      "trace_call_count": 2,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xd6b33e8bce363754295225edd16bf8eaf6c31839f0519a31569a70157fddc4e7"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_logs",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "7310e5475b8980d4230ab2718d3fcd897870b606eb318f42219b612a1921d04a",
+      "graph_id": "graph:0x98dbcea3442c9f33a17ee49dbb482b7a946162a0fe8af27b85e209b16eb72154",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/7310e5475b8980d4230ab2718d3fcd897870b606eb318f42219b612a1921d04a.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 1,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 3,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x31fc2cb761083a77cf218461e2072bcea0ca35ef",
+          "0xd38c9db1781c7e9baf18328f8791291574987dd0"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:47.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "4099bebb3c27c755f21648a719d9e52a45cac9a5396dcdbaaee3079241eeea9b",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "9b66b0e73ca81d518390e7e1b289b794e15aa0c73d36af5c728c59582446990d",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "simple_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/d8abadd2817b6b87ab4550574687b0f1b4643103b064cc54fad17900d26f1d8a.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x98dbcea3442c9f33a17ee49dbb482b7a946162a0fe8af27b85e209b16eb72154"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_logs",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "35faa79bfb1d0ff19ade857372c87b19c0c47771a67d133dbc12da432cbc3919",
+      "graph_id": "graph:0x328fca7ecda8f170da8d0553ea4606c6931e7036e248b8af5f9840de2527abd0",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/35faa79bfb1d0ff19ade857372c87b19c0c47771a67d133dbc12da432cbc3919.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 1,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 3,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x7f921fab847b06da6a0357e0e662a8ade212dbb7",
+          "0xa5a5491bca93dd4c076e4906e79e7673f4a5a142"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "18b04f036f7b62774b04236739a47398d29e77165436d92017a3baa5149cda77",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "26941520a07c9817620e1e803ef17fee89e76775de712be5dfcc0377f45a91ec",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "contract_call",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/6b207e762d17eae6591a9915c475760fe2e72afcd25acfe5c7bfbe581b4f6f15.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x328fca7ecda8f170da8d0553ea4606c6931e7036e248b8af5f9840de2527abd0"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "09d8da5bb045f5c8104901d9eeb8bb853e55d6edb02164ac47c5c211d8b096c0",
+      "graph_id": "graph:0xe9ee021df4c86d7ec7c68d9ba3f526edf6d8506df37151fb19142c95a1a4a833",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/09d8da5bb045f5c8104901d9eeb8bb853e55d6edb02164ac47c5c211d8b096c0.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 2,
+        "edges": 4,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 7,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "0xf1088841ab08fc1cb3835fd75207bcb3137f6ee3"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "477f307964d7a0a54b217fef66cec71056ef956b590b7af2435f91235da77064",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "0542f38993e48fc0be2c1f9076929fd0ca952b29d25a4cb52ebb4fb4cc61343e",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/94eeb756b6fe3f8520e3e6b362aab25aae426122ba462f8b4a1566833fca7b6c.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xe9ee021df4c86d7ec7c68d9ba3f526edf6d8506df37151fb19142c95a1a4a833"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_logs",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "e26ea4ddb141a35a683268daf1fd8c6f9f38b3319263ea2d262cc83da777d6ae",
+      "graph_id": "graph:0xe142c6e24e43365d166e8f3c3255e5c501d31dceca6e173657a0951d77b0c669",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/e26ea4ddb141a35a683268daf1fd8c6f9f38b3319263ea2d262cc83da777d6ae.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 1,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 3,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x38dbd6fb655f0eba61ef8842cbfa5911d249d881",
+          "0x8d18d00074dd99de3e3f22210b705b9b0a19835a"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "9ec20cfc4209055d1cc8be369a343dafc660ece199408b80b6dd3ecc6289a9fa",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "f935d5e1bddb7bb49eb33089fd3730e2e9a64d34a3b88bbce75164f8659f2937",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "simple_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/9c2a9d00aa48f307ba78a845d8414b52300022e448081d957ebedb3822d0cf79.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xe142c6e24e43365d166e8f3c3255e5c501d31dceca6e173657a0951d77b0c669"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "cb933e577364e630539da878f2e83b36f8d5ad629869157f3c121a9374d9e43c",
+      "graph_id": "graph:0x3a17a7996b219a685f0332bd806784a3b5be47a2c0cc51c811b2b6816f5dff4e",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/cb933e577364e630539da878f2e83b36f8d5ad629869157f3c121a9374d9e43c.json",
+      "graph_stats": {
+        "call_edges": 13,
+        "context_edges": 0,
+        "edges": 13,
+        "failed_calls": 0,
+        "max_call_depth": 3,
+        "nodes": 8,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x10eefccc9c97a461484015467f2ee9f9f9c94b8e",
+          "0x991cec65a906b5727b32d175cfc550673a20ed17"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "0b0d767fb05119b2bb0e5a0c7206259cfc4bb8cb28f61ef8715866a6f3542c03",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "39ea170d072f1f5d771bb3b2199ed73096c7e939df52a92ba154f90d405dd599",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "contract_call",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/17d70db503247f3014c05e090117a1e1fc90dc33a923bb5e7f779fb97238074b.json",
+      "trace_call_count": 13,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x3a17a7996b219a685f0332bd806784a3b5be47a2c0cc51c811b2b6816f5dff4e"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "9cecfab703f79b724685ea35e40fa7a1e3423b06d0b3c70c7568bf500840e0fd",
+      "graph_id": "graph:0x7e7732acc762bec2092801fb651f2a495f7057cfedca85429b194ed1dc54c187",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/9cecfab703f79b724685ea35e40fa7a1e3423b06d0b3c70c7568bf500840e0fd.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 2,
+        "edges": 4,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 7,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0xaaff78b00a9c452d498c2ace5de1eda5cc3c678a",
+          "0xdac17f958d2ee523a2206206994597c13d831ec7"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "3583b91251925a10a597e398f99dd2c7a1307d3e9bfdca5cc647c6039be32f9c",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "92bd1b64649db71465c08f5b1bea09a0af5467f98ab10cc083ad05305a50228f",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/11d6218b604317a6e4ff834879c3fd26101710d3b101a3c34aa3ff529d8c99d0.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x7e7732acc762bec2092801fb651f2a495f7057cfedca85429b194ed1dc54c187"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "context_5m_address_empty",
+        "context_5m_address_unavailable",
+        "no_logs",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "c32171e1bbe6edc28dafe8f2869ccf6f56b2b2ccf054a65b9bee22af632b96d2",
+      "graph_id": "graph:0xd39630273909e3a5f416029587cf2f9a7bafda5394d9e00fc7d3b61079bb9f8c",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/c32171e1bbe6edc28dafe8f2869ccf6f56b2b2ccf054a65b9bee22af632b96d2.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 1,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 3,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x307576dd4f73f91bb8c4a2edb762938e8e067d31",
+          "0xfd4be211bd83ddedbdb9d21f4a04b15531221e08"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:47.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "94c5c603a18a613e2133e45f8994d51106bf3f8d347a221f00cfe85cdbca1f4f",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "1622e5e5260783f50ab45dcd4e05302e138962b15b1f46ddcd971606924449ce",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "simple_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/e8b4e097d50a329cc28a1615677bd790ed91abaccda911312a1e2389add5f86c.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xd39630273909e3a5f416029587cf2f9a7bafda5394d9e00fc7d3b61079bb9f8c"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "caa3f5faf57cb4d8868a9f4f5c993554c53eb4eda572a6d0aee17e16f54f8734",
+      "graph_id": "graph:0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/caa3f5faf57cb4d8868a9f4f5c993554c53eb4eda572a6d0aee17e16f54f8734.json",
+      "graph_stats": {
+        "call_edges": 3,
+        "context_edges": 2,
+        "edges": 6,
+        "failed_calls": 0,
+        "max_call_depth": 1,
+        "nodes": 9,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x13cee6cd97f74a9c6afa8ea5419519708205baba",
+          "0x45b45576d403a4326671ac3dd8b20eef30814a1b"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "8a67e94dbb100b9a031922fedc0997ab237eb96e86a19742e55be31404aa2fa5",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "b37d4c2e699083789e8709e1612ab9d794540fbb4e9afa4d191457d2baee81e6",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "contract_call",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/f6c27094466e152cfa803a9b4b8ce7a44f43e059afe459437f13480a73f5891f.json",
+      "trace_call_count": 3,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3"
+    },
+    {
+      "analyst": "codex-stage4-evidence-review",
+      "candidate_label": 0,
+      "candidate_role": "normal_candidate",
+      "decision": "promoted",
+      "feature_missing_flags": [
+        "context_1h_protocol_empty",
+        "context_1h_protocol_unavailable",
+        "no_protocol_role_matches"
+      ],
+      "feature_version": "cash-flow-graph-builder.v1",
+      "graph_event_id": "f1f53a4ed138e627dfc955904012de90a802574cc5e78d4bce4090b04cd91a8b",
+      "graph_id": "graph:0x8fde79c3357e5a6b17388183e5f8f372c7951be7e5726194f1fd36ed9fe497fa",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-29/hour=09/f1f53a4ed138e627dfc955904012de90a802574cc5e78d4bce4090b04cd91a8b.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 2,
+        "edges": 4,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 7,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "human_signoff": false,
+      "incident_evidence_refs": [
+        {
+          "source_type": "known_exploit_corpus_screen",
+          "title": "DeFiHackLabs exact transaction-hash screen",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"
+        },
+        {
+          "source_type": "sanctions_address_screen",
+          "title": "OFAC Sanctions List Service SDN data",
+          "url": "https://ofac.treasury.gov/sanctions-list-service"
+        }
+      ],
+      "incident_id": "normal_candidate",
+      "label_scope": "engineering_smoke_only",
+      "label_semantics": "matched_negative",
+      "label_version": "engineering-smoke-labels.stage4.v1",
+      "negative_screening": {
+        "known_exploit_tx_hits": [],
+        "ofac_sdn_endpoint_hits": [],
+        "positive_tx_overlap": false,
+        "screened_endpoints": [
+          "0x11c4fbe93c221fd6d3be84e279cf795a4b354212",
+          "0xdac17f958d2ee523a2206206994597c13d831ec7"
+        ],
+        "status": "pass"
+      },
+      "notes": "Promoted only for the engineering smoke dataset; absence of exact-match hits is not a research-grade proof of benign intent.",
+      "observed_at": "2026-05-13T09:26:35.000+00:00",
+      "promotion_status": "promoted",
+      "queue_id": "6d97c38224b8a4d79e09d8968a18502a59c47c421a0ec7b3d5d73932e0731c64",
+      "raw_trace_manifest_ref": "data/training/raw-trace-manifest.stage2.v1.json",
+      "raw_trace_sha256": "9820355c2dd6ddc1c426762dda9ab38cc2b61ac6a978353fb2b8820f7316f51c",
+      "reason_codes": [
+        "real_trace_transaction_bundle_present",
+        "strict_rich_graph_present",
+        "known_incident_and_sanctions_exact_match_screen_complete"
+      ],
+      "reviewed_at": "2026-08-30T02:31:20Z",
+      "reviewer_type": "agent_assisted_evidence_review",
+      "selection_bucket": "erc20_transfer",
+      "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-29/hour=09/6c9d92cf112894b2be9193f9deff8f581166ec9539fca14eab6c2115aa6f397f.json",
+      "trace_call_count": 1,
+      "trace_source": "trace_transaction",
+      "tx_hash": "0x8fde79c3357e5a6b17388183e5f8f372c7951be7e5726194f1fd36ed9fe497fa"
+    }
+  ],
+  "promoted_label_counts": {
+    "0": 50,
+    "1": 5
+  },
+  "research_training_ready": false,
+  "review": {
+    "analyst": "codex-stage4-evidence-review",
+    "human_signoff": false,
+    "reviewed_at": "2026-08-30T02:31:20Z",
+    "reviewer_type": "agent_assisted_evidence_review",
+    "scope": "engineering_smoke_only"
+  },
+  "schema_ver": "label-promotion-decisions.stage4.v1",
+  "screening_sources": {
+    "known_exploit_corpus": {
+      "commit": "ef5b8000148b1d5914ac1166af03d5227edce623",
+      "source": "https://github.com/SunWeb3Sec/DeFiHackLabs",
+      "transaction_hashes_indexed": 1319
+    },
+    "ofac_sdn": {
+      "bytes": 5670063,
+      "ethereum_like_addresses_indexed": 91,
+      "sha256": "a2ccea04237a13459009bc527502bb6a08d4e84fe97b46fcce1ed621e9a8301e",
+      "source": "https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.CSV"
+    },
+    "raw_external_inputs_committed": false
+  },
+  "snapshot_id": "engineering-smoke-labels.stage4-2026-08-30",
+  "status": "reviewed_with_unlabeled_holds",
+  "training_scope": "engineering_smoke_only"
+}

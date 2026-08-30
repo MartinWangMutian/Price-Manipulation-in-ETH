@@ -1,0 +1,37 @@
+{
+  "schema_ver": "engineering-smoke.stage7.v1",
+  "training_scope": "engineering_smoke_only",
+  "split_manifest": "data/training/split_manifest.stage4.v1.json",
+  "device": "auto",
+  "seed": 20260830,
+  "threshold": 0.5,
+  "graphsage": {
+    "batch_size": 8,
+    "hidden_dim": 64,
+    "num_layers": 2,
+    "dropout": 0.1,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "epochs": 100,
+    "patience": 15,
+    "loss": "focal",
+    "focal_gamma": 2.0,
+    "gradient_clip": 1.0,
+    "monitor": "pr_auc"
+  },
+  "pooled_mlp": {
+    "batch_size": 8,
+    "hidden_dim": 64,
+    "dropout": 0.1,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "epochs": 100,
+    "patience": 15,
+    "loss": "focal",
+    "focal_gamma": 2.0,
+    "gradient_clip": 1.0,
+    "monitor": "pr_auc"
+  },
+  "rule_baseline_config": "config/rule_baseline.json",
+  "held_out_test_policy": "prohibited_until_model_and_threshold_freeze"
+}

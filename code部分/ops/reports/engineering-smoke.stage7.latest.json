@@ -1,0 +1,44 @@
+{
+  "checked_at": "2026-08-30T08:28:45.818+00:00",
+  "comparison": [
+    {
+      "model": "graphsage",
+      "validation_brier_score": 0.23474831722395947,
+      "validation_f1": 0.0,
+      "validation_pr_auc": 1.0,
+      "validation_precision": 0.0,
+      "validation_recall": 0.0,
+      "validation_roc_auc": 1.0
+    },
+    {
+      "model": "pooled_feature_mlp",
+      "validation_brier_score": 0.28618716000717404,
+      "validation_f1": 0.16666666666666669,
+      "validation_pr_auc": 1.0,
+      "validation_precision": 0.09090909090909091,
+      "validation_recall": 1.0,
+      "validation_roc_auc": 1.0
+    },
+    {
+      "model": "rule_baseline",
+      "validation_brier_score": 0.09090909090909091,
+      "validation_f1": 0.0,
+      "validation_pr_auc": 0.09090909090909091,
+      "validation_precision": 0.0,
+      "validation_recall": 0.0,
+      "validation_roc_auc": 0.5
+    }
+  ],
+  "graphsage_run_id": "stage7-graphsage-smoke-49665eb",
+  "held_out_graph_files_loaded": 0,
+  "held_out_predictions": 0,
+  "predictions_written": 44,
+  "run_id": "stage7-baselines-smoke-49665eb",
+  "run_manifest": "models/graphsage/runs/stage7-baselines-smoke-49665eb/run_manifest.json",
+  "run_manifest_sha256": "f3972361ce4511791fe38ef27629994820e4b0ace02124f081b62aa64d2b84b5",
+  "schema_ver": "engineering-smoke-report.stage7.v1",
+  "status": "ok",
+  "train_graph_files_loaded": 33,
+  "training_scope": "engineering_smoke_only",
+  "validation_graph_files_loaded": 11
+}

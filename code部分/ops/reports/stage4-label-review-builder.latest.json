@@ -1,0 +1,52 @@
+{
+  "checked_at": "2026-08-30T02:37:42.111+00:00",
+  "decision_counts": {
+    "promoted": 55,
+    "unlabeled": 2
+  },
+  "expected_transactions": 57,
+  "exploit_decisions": 7,
+  "hard_negatives": 6,
+  "held_positive_transactions": [
+    {
+      "reason_codes": [
+        "timestamp_after_incident_window",
+        "single_call_trace_role_mismatch",
+        "pool_scope_review_unresolved"
+      ],
+      "tx_hash": "0x4197ed0ef9b60ab1cacdc31d6d3ce06413b333b14b8947be5c0cfe29cb88b088"
+    },
+    {
+      "reason_codes": [
+        "profit_transfer_not_attack_entry",
+        "attack_entry_transaction_unresolved",
+        "role_not_suitable_for_binary_attack_label"
+      ],
+      "tx_hash": "0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58"
+    }
+  ],
+  "normal_decisions": 50,
+  "normal_exploit_hash_hits": 0,
+  "normal_ofac_endpoint_hits": 0,
+  "out": "data/training/label_promotion_decisions.stage4.v1.json",
+  "promoted_label_counts": {
+    "0": 50,
+    "1": 5
+  },
+  "research_training_ready": false,
+  "screening_sources": {
+    "known_exploit_corpus": {
+      "commit": "ef5b8000148b1d5914ac1166af03d5227edce623",
+      "source": "https://github.com/SunWeb3Sec/DeFiHackLabs",
+      "transaction_hashes_indexed": 1319
+    },
+    "ofac_sdn": {
+      "bytes": 5670063,
+      "ethereum_like_addresses_indexed": 91,
+      "sha256": "a2ccea04237a13459009bc527502bb6a08d4e84fe97b46fcce1ed621e9a8301e",
+      "source": "https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.CSV"
+    },
+    "raw_external_inputs_committed": false
+  },
+  "status": "ok"
+}

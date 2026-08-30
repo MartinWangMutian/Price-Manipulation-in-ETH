@@ -1,0 +1,191 @@
+{
+  "checked_at": "2026-08-30T03:03:59.602+00:00",
+  "data_contract": {
+    "feature_version": "cash-flow-graph-builder.v1",
+    "graph_data_hash": "ab23f5e592c889081e4b004bacd4122b7097bf6880d1b1de375bd342521e18bb",
+    "graph_files_loaded": 2,
+    "held_out_test_graphs_loaded": 0,
+    "held_out_test_predictions": 0,
+    "label_version": "engineering-smoke-labels.stage4.v1",
+    "split_content_hash": "dbd05212393359c2806e4746d4994f20eece05ac7529e18d93d1cd8e5a757a8b",
+    "split_counts_seen_in_manifest": {
+      "held_out_test": 11,
+      "train": 33,
+      "validation": 11
+    },
+    "split_manifest": "data/training/split_manifest.stage4.v1.json",
+    "split_manifest_sha256": "f912e4960f2edbb464aba1acc9c24177ad5ff3a05ab6133ee2a4c1e5e832849b",
+    "train_graphs_loaded": 2,
+    "validation_graphs_loaded": 0
+  },
+  "device": {
+    "availability": {
+      "cpu": true,
+      "cuda": false,
+      "mps": false,
+      "mps_built": true
+    },
+    "requested": "auto",
+    "selected": "cpu"
+  },
+  "errors": [],
+  "git_commit": "975d3c18492749f0ba0f1748677f7f195d63290b",
+  "gradient_clip_norm": 1.0,
+  "model_config": {
+    "aggregator": "mean",
+    "dropout": 0.0,
+    "feature_ver": "cash-flow-graph-builder.v1",
+    "hidden_dim": 32,
+    "input_dim": 31,
+    "label_snapshot": "engineering-smoke-labels.stage4-2026-08-30",
+    "model_version": "graphsage.v1",
+    "num_layers": 2,
+    "threshold_profile": "graphsage-thresholds.v1"
+  },
+  "one_batch_overfit": {
+    "accuracy": 1.0,
+    "checkpoint": {
+      "model_state_restored": true,
+      "optimizer_state_restored": true,
+      "path": "models/graphsage/runs/stage5-smoke/one_batch_checkpoint.pt",
+      "prediction_max_abs_diff": 0.0,
+      "resume_step_loss_abs_diff": 0.0,
+      "resume_step_parameter_max_abs_diff": 0.0,
+      "rng_state_restored": true,
+      "scheduler_state_restored": true,
+      "sha256": "17e9ad0c1bd1ad0c473bedea5b4866babb8b8086a7c8d665f80fa58f96f5e5fd",
+      "step": 100
+    },
+    "edges": 424,
+    "final_loss": 1.218170488384755e-26,
+    "final_predictions": [
+      1.0,
+      2.43634097676951e-26
+    ],
+    "final_to_initial_loss_ratio": 1.744330653455751e-26,
+    "gradient_norm": {
+      "final": 0.0,
+      "maximum": 0.5374900698661804,
+      "minimum": 0.0
+    },
+    "gradients_finite": true,
+    "graphs": 2,
+    "initial_loss": 0.6983598470687866,
+    "initial_predictions": [
+      0.5255929231643677,
+      0.5292798280715942
+    ],
+    "labels": [
+      1,
+      0
+    ],
+    "loss_curve": [
+      {
+        "loss": 0.6983598470687866,
+        "step": 1
+      },
+      {
+        "loss": 0.0012890916550531983,
+        "step": 10
+      },
+      {
+        "loss": 2.4942645605180447e-12,
+        "step": 20
+      },
+      {
+        "loss": 4.1958728816934086e-19,
+        "step": 30
+      },
+      {
+        "loss": 5.624312565872936e-23,
+        "step": 40
+      },
+      {
+        "loss": 6.163675443054473e-25,
+        "step": 50
+      },
+      {
+        "loss": 7.134074073425118e-26,
+        "step": 60
+      },
+      {
+        "loss": 2.6213675317171205e-26,
+        "step": 70
+      },
+      {
+        "loss": 1.6578734680491805e-26,
+        "step": 80
+      },
+      {
+        "loss": 1.3463925099946418e-26,
+        "step": 90
+      },
+      {
+        "loss": 1.2254085953389489e-26,
+        "step": 100
+      }
+    ],
+    "nodes": 39,
+    "parameter_delta_l1": 625.2753400206566,
+    "status": "ok",
+    "tx_hashes": [
+      "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d",
+      "0xb16f961749f343ea83ea05638822defc8eda9a194c07feb9f18143ede15dea0f"
+    ]
+  },
+  "optimizer_config": {
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-10,
+    "lr": 0.03,
+    "name": "AdamW",
+    "weight_decay": 0.0
+  },
+  "scope": "minimum_training_closure",
+  "seed": {
+    "deterministic_algorithms": true,
+    "seed": 20260830
+  },
+  "single_graph": {
+    "checkpoint": {
+      "model_state_restored": true,
+      "optimizer_state_restored": true,
+      "path": "models/graphsage/runs/stage5-smoke/single_graph_checkpoint.pt",
+      "prediction_max_abs_diff": 0.0,
+      "resume_step_loss_abs_diff": 0.0,
+      "resume_step_parameter_max_abs_diff": 0.0,
+      "rng_state_restored": true,
+      "scheduler_state_restored": true,
+      "sha256": "f79de72d8bfa0bef2da5bcc914aa9d1d145a8ba9df59e95d9f636cc58f26f0c2",
+      "step": 1
+    },
+    "edge_index_shape": [
+      2,
+      422
+    ],
+    "edges": 171,
+    "gradient_norm_before_clip": 0.6156158447265625,
+    "gradients_finite": true,
+    "input_shape": [
+      36,
+      31
+    ],
+    "label": 1,
+    "loss_after": 0.4085523188114166,
+    "loss_before": 0.64322829246521,
+    "nodes": 36,
+    "parameter_delta_l1": 54.44952645897865,
+    "prediction_after": 0.6646116971969604,
+    "prediction_before": 0.5255929231643677,
+    "status": "ok",
+    "tx_hash": "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d"
+  },
+  "stage": 5,
+  "status": "ok",
+  "versions": {
+    "python": "3.13.2",
+    "torch": "2.13.0"
+  }
+}

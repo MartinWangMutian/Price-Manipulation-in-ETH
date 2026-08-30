@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-08-30T08:17:17.589+00:00",
+  "checkpoint_audit": {
+    "best_model.pt": {
+      "best_epoch": 1,
+      "epoch": 1,
+      "sha256": "f58e8501b6cb4a242cd6437ebaad8c3dfefcfb26fc8b8ac014edab091852f20e"
+    },
+    "last_model.pt": {
+      "best_epoch": 1,
+      "epoch": 3,
+      "sha256": "31878d6016e5dfdf9d24ec868197b416e91b4d5ba3837775afecc364e047935e"
+    }
+  },
+  "errors": [],
+  "held_out_graph_files_loaded": 0,
+  "held_out_predictions": 0,
+  "prediction_count": 44,
+  "prediction_splits": [
+    "train",
+    "validation"
+  ],
+  "required_artifacts": [
+    "best_model.pt",
+    "last_model.pt",
+    "metrics.json",
+    "predictions.jsonl",
+    "run_manifest.json",
+    "curves.json",
+    "curves.csv"
+  ],
+  "resume_required": true,
+  "run_dir": "models/graphsage/runs/stage6-acceptance-resume-4955da5",
+  "run_id": "stage6-acceptance-resume-4955da5",
+  "schema_ver": "graphsage-train-artifact-audit.stage6.v1",
+  "status": "ok"
+}

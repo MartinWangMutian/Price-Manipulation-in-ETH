@@ -2,7 +2,7 @@
 
 本仓库实现一个面向 Ethereum pending/replay 交易的 DeFi 价格操纵风险监控原型。系统目标是在交易确认前后尽早构建 cash-flow graph，结合规则基线和 GraphSAGE 风险模型输出可复核告警，并通过 RAG 证据解释辅助分析员复核。
 
-当前仓库是可审计的工程原型：Provider-only replay、真实历史 trace、富图构建、规则评分、告警、RAG 解释、报告审计和故障降级链路已经打通；GraphSAGE 训练入口、推理入口和模型版本协议已实现。当前 7 张攻击图和 50 张正常候选图只用于工程闭环；训练前仍需完成人工标签晋级、无泄漏切分和 `torch`/`torch_geometric` 环境锁定。
+当前仓库是可审计的工程原型：Provider-only replay、真实历史 trace、富图构建、规则评分、告警、RAG 解释、报告审计和故障降级链路已经打通；GraphSAGE 训练入口、推理入口和模型版本协议已实现。Stage 4 已将 57 张候选图冻结为 55 张工程烟雾标签（5 正、50 负），并完成事件/相关地址分组的 60/20/20 无泄漏切分；两笔角色证据不足的事件相关交易保留为 `unlabeled`。Stage 5 已锁定独立 PyTorch/PyG 环境并通过最小训练闭环；Stage 6 已升级可复现训练器；Stage 7 已完成规则基线、pooled-feature MLP 和 GraphSAGE 的同切分工程烟雾对比，并验证早停、最佳模型恢复、单图推理一致性和 held-out 隔离。当前样本仍不支持研究级结论，下一步是 Stage 8 研究级数据扩充。
 
 ## 目录结构
 
@@ -126,26 +126,48 @@ python3 scripts/rule_baseline_scorer.py \
   --out ops/reports/rule-baseline-scorer.latest.json
 ```
 
-导出图级训练标签：
+Stage 4 标签证据复核、图级标签导出与无泄漏切分见
+[`ops/label_promotion_runbook.md`](ops/label_promotion_runbook.md)。冻结图级标签可直接重新导出：
 
 ```bash
 python3 scripts/graph_label_exporter.py \
-  --decisions data/training/label_promotion_decisions.seed.json \
-  --graphs data/replay/graph-inference.v1 \
-  --out data/training/graph_labels.v1.json \
-  --report ops/reports/graph-label-exporter.latest.json
+  --decisions data/training/label_promotion_decisions.stage4.v1.json \
+  --graphs data/replay/graph-inference.v1/dt=2026-08-29 \
+  --out data/training/graph_labels.stage4.v1.json \
+  --report ops/reports/graph-label-exporter.stage4.latest.json
 ```
 
-GraphSAGE 训练预检：
+GraphSAGE 独立环境与最小训练闭环见
+[`ops/full_training_stage5_runbook.md`](ops/full_training_stage5_runbook.md)：
 
 ```bash
-python3 scripts/graphsage_train.py \
-  --graphs data/replay/graph-inference.v1 \
-  --labels data/training/graph_labels.v1.json \
-  --out-dir models/graphsage/latest \
-  --report ops/reports/graphsage-train.latest.json \
-  --dry-run
+python3 -m venv .venv-graphsage
+.venv-graphsage/bin/python -m pip install \
+  -r requirements/graphsage-stage5.lock.txt
+.venv-graphsage/bin/python scripts/training_environment_audit.py
+.venv-graphsage/bin/python scripts/training_smoke_test.py
 ```
+
+Stage 6 可复现训练器见
+[`ops/full_training_stage6_runbook.md`](ops/full_training_stage6_runbook.md)：
+
+```bash
+.venv-graphsage/bin/python scripts/graphsage_train.py \
+  --split-manifest data/training/split_manifest.stage4.v1.json \
+  --device auto \
+  --seed 20260830 \
+  --batch-size 8 \
+  --epochs 100 \
+  --patience 15 \
+  --monitor pr_auc \
+  --run-id stage7-engineering-smoke
+```
+
+该入口只加载 `train` 和 `validation`；冻结的 `held_out_test` 在模型和阈值锁定前不得评估。
+
+Stage 7 三模型工程烟雾对比和推理一致性验收见
+[`ops/full_training_stage7_runbook.md`](ops/full_training_stage7_runbook.md) 和
+[`ops/full_training_stage7_report.md`](ops/full_training_stage7_report.md)。
 
 GraphSAGE 推理入口：
 
@@ -168,4 +190,3 @@ python3 scripts/report_secret_audit.py \
 ```
 
 - 示例配置放在 `config/*.example.json` 或 `ops/*.env.example`。
-

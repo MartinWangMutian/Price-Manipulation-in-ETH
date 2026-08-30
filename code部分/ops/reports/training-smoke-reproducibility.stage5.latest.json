@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-08-30T03:04:00.899+00:00",
+  "device": "cpu",
+  "errors": [],
+  "first_run": "training-smoke.stage5.latest.json",
+  "one_batch_checkpoint_sha256": "17e9ad0c1bd1ad0c473bedea5b4866babb8b8086a7c8d665f80fa58f96f5e5fd",
+  "second_run": "training-smoke.stage5.repeat.json",
+  "seed": 20260830,
+  "single_graph_checkpoint_sha256": "f79de72d8bfa0bef2da5bcc914aa9d1d145a8ba9df59e95d9f636cc58f26f0c2",
+  "stable_fields_identical": true,
+  "status": "ok"
+}
