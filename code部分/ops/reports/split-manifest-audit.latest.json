@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-08-30T02:42:38.755+00:00",
+  "engineering_smoke_training_ready": true,
+  "errors": [],
+  "group_leaks": [],
+  "groups": 46,
+  "held_out_test_frozen": true,
+  "incident_leaks": [],
+  "label_counts": {
+    "0": 50,
+    "1": 5
+  },
+  "related_negative_pairs_checked": 11,
+  "relation_leaks": [],
+  "research_training_ready": false,
+  "split_counts": {
+    "held_out_test": 11,
+    "train": 33,
+    "validation": 11
+  },
+  "split_label_counts": {
+    "held_out_test": {
+      "0": 10,
+      "1": 1
+    },
+    "train": {
+      "0": 30,
+      "1": 3
+    },
+    "validation": {
+      "0": 10,
+      "1": 1
+    }
+  },
+  "status": "ok",
+  "transactions": 55
+}

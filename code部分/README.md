@@ -2,7 +2,7 @@
 
 本仓库实现一个面向 Ethereum pending/replay 交易的 DeFi 价格操纵风险监控原型。系统目标是在交易确认前后尽早构建 cash-flow graph，结合规则基线和 GraphSAGE 风险模型输出可复核告警，并通过 RAG 证据解释辅助分析员复核。
 
-当前仓库是可审计的工程原型：Provider-only replay、真实历史 trace、富图构建、规则评分、告警、RAG 解释、报告审计和故障降级链路已经打通；GraphSAGE 训练入口、推理入口和模型版本协议已实现。当前 7 张攻击图和 50 张正常候选图只用于工程闭环；训练前仍需完成人工标签晋级、无泄漏切分和 `torch`/`torch_geometric` 环境锁定。
+当前仓库是可审计的工程原型：Provider-only replay、真实历史 trace、富图构建、规则评分、告警、RAG 解释、报告审计和故障降级链路已经打通；GraphSAGE 训练入口、推理入口和模型版本协议已实现。Stage 4 已将 57 张候选图冻结为 55 张工程烟雾标签（5 正、50 负），并完成事件/相关地址分组的 60/20/20 无泄漏切分；两笔角色证据不足的事件相关交易保留为 `unlabeled`。该快照仍不支持研究级结论，下一步是锁定 `torch`/`torch_geometric` 环境并完成最小训练闭环。
 
 ## 目录结构
 
@@ -126,22 +126,23 @@ python3 scripts/rule_baseline_scorer.py \
   --out ops/reports/rule-baseline-scorer.latest.json
 ```
 
-导出图级训练标签：
+Stage 4 标签证据复核、图级标签导出与无泄漏切分见
+[`ops/label_promotion_runbook.md`](ops/label_promotion_runbook.md)。冻结图级标签可直接重新导出：
 
 ```bash
 python3 scripts/graph_label_exporter.py \
-  --decisions data/training/label_promotion_decisions.seed.json \
-  --graphs data/replay/graph-inference.v1 \
-  --out data/training/graph_labels.v1.json \
-  --report ops/reports/graph-label-exporter.latest.json
+  --decisions data/training/label_promotion_decisions.stage4.v1.json \
+  --graphs data/replay/graph-inference.v1/dt=2026-08-29 \
+  --out data/training/graph_labels.stage4.v1.json \
+  --report ops/reports/graph-label-exporter.stage4.latest.json
 ```
 
 GraphSAGE 训练预检：
 
 ```bash
 python3 scripts/graphsage_train.py \
-  --graphs data/replay/graph-inference.v1 \
-  --labels data/training/graph_labels.v1.json \
+  --graphs data/replay/graph-inference.v1/dt=2026-08-29 \
+  --labels data/training/graph_labels.stage4.v1.json \
   --out-dir models/graphsage/latest \
   --report ops/reports/graphsage-train.latest.json \
   --dry-run
@@ -168,4 +169,3 @@ python3 scripts/report_secret_audit.py \
 ```
 
 - 示例配置放在 `config/*.example.json` 或 `ops/*.env.example`。
-

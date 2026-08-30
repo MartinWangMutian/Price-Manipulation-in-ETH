@@ -1,15 +1,27 @@
 {
-  "checked_at": "2026-05-14T13:37:41.104+00:00",
+  "checked_at": "2026-08-30T02:39:32.295+00:00",
+  "coverage": {
+    "expected": 57,
+    "observed": 57
+  },
   "decision_counts": {
-    "pending_trace": 57
+    "promoted": 55,
+    "unlabeled": 2
   },
   "errors": [],
   "exploit_decisions": 7,
   "normal_decisions": 50,
-  "promoted_markers": 0,
-  "promotion_counts": {
-    "not_promoted": 57
+  "promoted_label_counts": {
+    "0": 50,
+    "1": 5
   },
+  "promoted_markers": 55,
+  "promotion_counts": {
+    "not_promoted": 2,
+    "promoted": 55
+  },
+  "research_training_ready": false,
   "status": "ok",
-  "training_ready": false
+  "training_ready": true,
+  "training_scope": "engineering_smoke_only"
 }

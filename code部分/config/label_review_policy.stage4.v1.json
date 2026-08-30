@@ -1,0 +1,125 @@
+{
+  "schema_ver": "label-review-policy.stage4.v1",
+  "snapshot_id": "engineering-smoke-labels.stage4-2026-08-30",
+  "label_version": "engineering-smoke-labels.stage4.v1",
+  "feature_version": "cash-flow-graph-builder.v1",
+  "review": {
+    "analyst": "codex-stage4-evidence-review",
+    "reviewer_type": "agent_assisted_evidence_review",
+    "reviewed_at": "2026-08-30T02:31:20Z",
+    "scope": "engineering_smoke_only",
+    "human_signoff": false
+  },
+  "positive_decisions": [
+    {
+      "tx_hash": "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7",
+      "decision": "promoted",
+      "label_semantics": "primary_exploit_transaction",
+      "reason_codes": [
+        "transaction_specific_public_source",
+        "known_exploit_corpus_exact_match",
+        "rich_trace_role_consistent"
+      ],
+      "notes": "Beanstalk attack transaction; public transaction reference and exploit-corpus exact match agree with the rich trace."
+    },
+    {
+      "tx_hash": "0x762881b07feb63c436dee38edd4ff1f7a74c33091e534af56c9f7d49b5ecac15",
+      "decision": "promoted",
+      "label_semantics": "primary_exploit_transaction",
+      "reason_codes": [
+        "high_confidence_incident_source",
+        "incident_time_match",
+        "rich_trace_role_consistent"
+      ],
+      "notes": "bZx attack transaction; the high-confidence incident sources, timestamp, and deep rich trace are mutually consistent."
+    },
+    {
+      "tx_hash": "0x8b74995d1d61d3d7547575649136b8765acb22882960f0636941c44ec7bbe146",
+      "decision": "promoted",
+      "label_semantics": "primary_exploit_transaction",
+      "reason_codes": [
+        "transaction_specific_public_source",
+        "known_exploit_corpus_exact_match",
+        "rich_trace_role_consistent"
+      ],
+      "notes": "Conic Finance attack transaction; public incident analysis and exploit-corpus exact match agree with the rich trace."
+    },
+    {
+      "tx_hash": "0x0fe2542079644e107cbf13690eb9c2c65963ccb79089ff96bfaf8dced2331c92",
+      "decision": "promoted",
+      "label_semantics": "malicious_incident_flow_transaction",
+      "reason_codes": [
+        "known_exploit_corpus_exact_match",
+        "incident_time_match",
+        "rich_trace_role_consistent"
+      ],
+      "notes": "Cream Finance malicious incident-flow transaction. It is retained as a positive flow sample, not represented as the primary exploit entry transaction."
+    },
+    {
+      "tx_hash": "0x4197ed0ef9b60ab1cacdc31d6d3ce06413b333b14b8947be5c0cfe29cb88b088",
+      "decision": "unlabeled",
+      "label_semantics": "unresolved_incident_related_transaction",
+      "reason_codes": [
+        "timestamp_after_incident_window",
+        "single_call_trace_role_mismatch",
+        "pool_scope_review_unresolved"
+      ],
+      "notes": "The replay is dated 2023-08-04 and contains one call, which is not sufficient to support the queued primary-attack role for the 2023-07-30 Curve/Vyper incident."
+    },
+    {
+      "tx_hash": "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d",
+      "decision": "promoted",
+      "label_semantics": "primary_exploit_transaction",
+      "reason_codes": [
+        "transaction_specific_public_source",
+        "known_exploit_corpus_exact_match",
+        "rich_trace_role_consistent"
+      ],
+      "notes": "Euler Finance attack transaction; transaction-specific public evidence and exploit-corpus exact match agree with the rich trace."
+    },
+    {
+      "tx_hash": "0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58",
+      "decision": "unlabeled",
+      "label_semantics": "attacker_profit_transfer_only",
+      "reason_codes": [
+        "profit_transfer_not_attack_entry",
+        "attack_entry_transaction_unresolved",
+        "role_not_suitable_for_binary_attack_label"
+      ],
+      "notes": "The queued role is an attacker profit transfer and the trace contains only four calls. It remains event-linked evidence but is not promoted as an attack-transaction label."
+    }
+  ],
+  "negative_policy": {
+    "promote_when_all": [
+      "real_trace_transaction_bundle_present",
+      "strict_rich_graph_present",
+      "not_in_positive_transaction_set",
+      "no_known_exploit_transaction_hash_match",
+      "no_ofac_sdn_endpoint_address_match"
+    ],
+    "unlabeled_on_any": [
+      "known_exploit_transaction_hash_match",
+      "ofac_sdn_endpoint_address_match",
+      "positive_transaction_overlap",
+      "missing_or_invalid_rich_graph"
+    ],
+    "hard_negative_thresholds": {
+      "call_edges_at_least": 15,
+      "transfer_edges_at_least": 10,
+      "max_call_depth_at_least": 8
+    }
+  },
+  "split_policy": {
+    "seed": 20260830,
+    "ratios": {
+      "train": 0.6,
+      "validation": 0.2,
+      "held_out_test": 0.2
+    },
+    "positive_grouping": "incident_id",
+    "negative_grouping": "temporal_related_address_component",
+    "temporal_window_seconds": 900,
+    "max_shared_endpoint_frequency": 5,
+    "test_usage_policy": "freeze_before_training_and_evaluate_once_after_model_and_threshold_freeze"
+  }
+}

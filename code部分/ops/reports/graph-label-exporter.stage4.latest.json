@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-08-30T02:37:49.992+00:00",
+  "errors": [],
+  "graphs_seen": 57,
+  "label_content_hash": "92f35a45fb49cf6d2d9e2340cb3a1e52385298d95c70def94628bb96d3f21bbd",
+  "label_counts": {
+    "0": 50,
+    "1": 5
+  },
+  "out": "data/training/graph_labels.stage4.v1.json",
+  "promoted_labels": 55,
+  "research_training_ready": false,
+  "status": "ok",
+  "training_ready": true
+}
