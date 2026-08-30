@@ -1,0 +1,145 @@
+{
+  "attempts": [
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_ms": 841.72,
+          "ok": true,
+          "source": "trace_transaction"
+        }
+      ],
+      "queue_id": "a0db313c7d32e80c16d2112a6839dd38c67726242edf391e4f7eee1d3e1a2b10",
+      "selected": "trace_transaction"
+    },
+    {
+      "attempts": [],
+      "queue_id": "b5130a2d3aaaf655f3bb61f8fd39c1c06b9eb904d0a38efb201a67baafe755e6",
+      "selected": "none"
+    }
+  ],
+  "block_context_cache_entries": 11,
+  "block_context_cache_hits": 0,
+  "chain_check": {
+    "chain_id": "0x1",
+    "latency_ms": 541.43,
+    "ok": true,
+    "performed": true
+  },
+  "checked_at": "2026-08-30T13:24:29.388+00:00",
+  "dry_run": false,
+  "endpoint_configured": true,
+  "fail_fast": true,
+  "failed_trace_bundles": 1,
+  "inter_item_delay_s": 0.25,
+  "max_retries": 1,
+  "method": "trace_transaction",
+  "ok_trace_bundles": 1,
+  "provider_cost_note": "Inspect the provider billing dashboard; JSON-RPC responses do not include invoice cost.",
+  "queue": "data/training/research_positive_trace_queue.stage8.round-002.v1.json",
+  "queue_items_seen": 5,
+  "reused_existing_bundles": 0,
+  "rpc_call_summary": {
+    "chain_checks": 1,
+    "trace_attempts": 1,
+    "transaction_context_calls": 6
+  },
+  "run_id": "stage8-round-002-positive",
+  "skip_existing": true,
+  "start_index": 0,
+  "status": "degraded",
+  "transaction_contexts": [
+    {
+      "calls": [
+        {
+          "attempt": 1,
+          "latency_ms": 472.76,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "attempt": 1,
+          "latency_ms": 499.82,
+          "method": "eth_getTransactionReceipt",
+          "ok": true
+        },
+        {
+          "attempt": 1,
+          "latency_ms": 698.66,
+          "method": "eth_getBlockByHash",
+          "ok": true
+        }
+      ],
+      "context": {
+        "block_hash": "0x85fc4315dd74359f50ea67d75613a632321c1d08062b4c9c99c09dbe4da22dbb",
+        "block_number": "0x135946f",
+        "log_count": 47,
+        "observed_at": "2024-07-12T06:26:11.000+00:00",
+        "receipt_status": "0x1",
+        "tx_hash": "0x92cdcc732eebf47200ea56123716e337f6ef7d5ad714a2295794fdc6031ebb2e"
+      },
+      "queue_id": "a0db313c7d32e80c16d2112a6839dd38c67726242edf391e4f7eee1d3e1a2b10",
+      "tx_hash": "0x92cdcc732eebf47200ea56123716e337f6ef7d5ad714a2295794fdc6031ebb2e"
+    },
+    {
+      "calls": [
+        {
+          "attempt": 1,
+          "latency_ms": 692.83,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "attempt": 1,
+          "error": {
+            "code": "transport_error",
+            "latency_ms": 1001.97,
+            "message": "IncompleteRead(245760 bytes read)",
+            "source": "eth_getTransactionReceipt"
+          },
+          "latency_ms": 1001.97,
+          "method": "eth_getTransactionReceipt",
+          "ok": false
+        },
+        {
+          "attempt": 2,
+          "error": {
+            "code": "transport_error",
+            "latency_ms": 1045.7,
+            "message": "IncompleteRead(229370 bytes read)",
+            "source": "eth_getTransactionReceipt"
+          },
+          "latency_ms": 1045.7,
+          "method": "eth_getTransactionReceipt",
+          "ok": false
+        }
+      ],
+      "context": null,
+      "queue_id": "b5130a2d3aaaf655f3bb61f8fd39c1c06b9eb904d0a38efb201a67baafe755e6",
+      "tx_hash": "0x44aad3b853866468161735496a5d9cc961ce5aa872924c5d78673076b1cd95aa"
+    }
+  ],
+  "validation_errors": [],
+  "write_failed_bundles": false,
+  "written": [
+    {
+      "event_id": "137aefcd6e7d40dc8eb29feff3d2fd5f842c1eb720189708d51f30589d22a07c",
+      "incident_id": "dough_finance_2024_07_12",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-30/hour=13/137aefcd6e7d40dc8eb29feff3d2fd5f842c1eb720189708d51f30589d22a07c.json",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x92cdcc732eebf47200ea56123716e337f6ef7d5ad714a2295794fdc6031ebb2e"
+    },
+    {
+      "event_id": "9a846cbc3d5322f522950db9d41e696bddebdce4bdf92c3416aecfa340109f65",
+      "incident_id": "indexed_finance_2021_10_14",
+      "persisted": false,
+      "replay_path": null,
+      "trace_source": "trace_transaction",
+      "trace_status": "failed",
+      "tx_hash": "0x44aad3b853866468161735496a5d9cc961ce5aa872924c5d78673076b1cd95aa"
+    }
+  ],
+  "written_trace_bundles": 1
+}

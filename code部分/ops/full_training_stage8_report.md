@@ -18,8 +18,8 @@ No labels were promoted automatically.
 | Verified independent attack events | 20 | 20 | met |
 | Promoted positive rich graphs | 5 | 100 | gap: 95 |
 | Promoted negative rich graphs | 50 | 1,000 | gap: 950 |
-| New verified positive anchor queue | 15 | supporting input | ready, not fully replayed |
-| Negative sampling slots | 1,000 | 1,000 | planned, not collected |
+| New verified positive anchor queue | 15 | supporting input | 6 replayed, 9 pending |
+| Negative sampling slots | 1,000 | 1,000 | 30 candidates replayed |
 
 The catalog contains 22 incident records: 20 `verified_anchor` groups and two
 `review_hold` records. The held records do not count toward the verified-event
@@ -47,8 +47,8 @@ candidates. That failed attempt is retained as audit evidence rather than
 silently discarded.
 
 The provider response exposes request results and latency, not invoice cost.
-The exact charge must be checked in the provider billing dashboard before any
-larger paid batch.
+The user inspected the dashboard, confirmed the usage remained very small, set
+an account usage limit, and authorized the bounded round-002 batch.
 
 ## Candidate screening and label safety
 
@@ -78,12 +78,45 @@ Structural lineage and content checks passed for all six graphs:
 - feature and builder versions are present;
 - frozen held-out overlap is zero.
 
-Protocol-role coverage is zero of six graphs. The current dictionary loaded ten
-role contracts but matched none of the pilot addresses. This is an explicit
-research-grade blocker: the five candidates must not be promoted and the next
-large batch must not start until role coverage is expanded and re-audited.
-Context-window records are also marked unavailable/empty for this isolated
-historical pilot and remain visible through feature-missing flags.
+Protocol-role coverage was initially zero of six. The dictionary was expanded
+only from verified Balancer and Nuo deployment evidence, and the pilot was
+rebuilt in place with stable event paths. Coverage is now two of six (33.3%),
+the low-coverage warning is cleared, and graph lineage remains clean. Context
+windows that cannot be reconstructed from the isolated historical cohort remain
+visible through feature-missing flags.
+
+## Bounded round-002 continuation
+
+Round-002 froze five independent positive anchors and five metadata-matched
+negative candidates per event, for a maximum of 30 unique paid traces. One
+Lendf.Me candidate block returned zero transactions; the attempt stopped before
+trace and was preserved. A second explicit offset yielded five candidates.
+
+The first positive run traced Dough Finance, then stopped when the Indexed
+Finance receipt was truncated twice by the Python HTTP connection. A direct
+transport diagnostic retrieved the complete 299,343-byte receipt. The replay
+client was updated to request uncompressed JSON over a closing connection, and
+the same queue resumed while reusing the paid Dough bundle.
+
+Round-002 results:
+
+- unique `trace_transaction` bundles: 30/30;
+- trace attempts: 31, including one successful retry after a transient close;
+- `debug_traceTransaction` attempts: zero;
+- successful calls parsed: 2,507;
+- ERC-20/ERC-721 transfers parsed: 394/10;
+- rich graph edges: 2,507 Call, 404 Transfer, 148 Context;
+- structural review: all five positive graphs plus ten stratified negatives;
+- exact exploit/OFAC/positive-anchor matches among negatives: zero;
+- hard-negative candidates: seven;
+- labels promoted: zero;
+- frozen held-out overlap: zero.
+
+Only four of the 30 round-002 graphs have a known protocol role, including only
+one of 25 negative candidates. The unmatched negatives therefore remain a
+review pool and are not protocol-matched research negatives. Across the pilot
+and round-002, the unpromoted pool now contains six positive rich graphs and 30
+negative candidates, including nine hard-negative candidates.
 
 ## Isolation and cost controls
 
@@ -120,17 +153,18 @@ historical pilot and remain visible through feature-missing flags.
 - `ops/reports/rich-graph-quality-audit.stage8.pilot.latest.json`
 - `ops/reports/research-negative-screen.stage8.pilot.latest.json`
 - `ops/reports/research-expansion-audit.stage8.latest.json`
+- `ops/reports/research-batch-audit.stage8.round-002.latest.json`
+- `ops/full_training_stage8_round2_runbook.md`
 - `ops/full_training_stage8_runbook.md`
 
 ## Next gate
 
-Before any new paid batch:
+Before any new paid batch or label snapshot:
 
-1. inspect the six-call pilot charge in the provider billing dashboard;
-2. manually review all five negative candidates and preserve uncertain items as
-   unlabeled;
-3. expand and verify protocol-role coverage;
-4. create a new versioned batch manifest and authorize its bounded size.
+1. manually review six positive anchors and 30 negative candidates;
+2. keep ambiguous records unlabeled and reject transaction-role mismatches;
+3. retain only protocol-matched or otherwise justified stratified negatives;
+4. create a versioned promotion decision and re-audit grouped split isolation.
 
 Stage 8 remains active until at least 100 promoted positive and 1,000 promoted
 negative rich graphs exist with hard-negative coverage. Stage 9 model search,

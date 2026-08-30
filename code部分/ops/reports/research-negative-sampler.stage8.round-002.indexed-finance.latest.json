@@ -1,0 +1,39 @@
+{
+  "anchor_block": 13417949,
+  "anchor_tx_hash": "0x44aad3b853866468161735496a5d9cc961ce5aa872924c5d78673076b1cd95aa",
+  "block_summaries": [
+    {
+      "block_hash": "0x20d8aaf9bacffa0b5ac6baa7f073ecb0d237924c12caacb87be43fbeedcee05e",
+      "block_number": 13405949,
+      "block_offset": -12000,
+      "transactions": 336
+    }
+  ],
+  "blocks_loaded": 1,
+  "blocks_requested": 1,
+  "checked_at": "2026-08-30T13:23:09.363+00:00",
+  "dry_run": false,
+  "errors": [],
+  "excluded_addresses": 2,
+  "excluded_frozen_held_out_hashes": 11,
+  "excluded_positive_hashes": 22,
+  "gate": "stage8_negative_metadata_pilot",
+  "incident_id": "indexed_finance_2021_10_14",
+  "max_retries": 1,
+  "provider_cost_note": "Inspect the provider billing dashboard; JSON-RPC responses do not include invoice cost.",
+  "rpc_call_attempts": 3,
+  "rpc_calls_ok": 3,
+  "selected_count": 5,
+  "skipped": {
+    "duplicate_hash": 0,
+    "excluded_address": 0,
+    "excluded_hash": 0,
+    "gas_below_minimum": 58,
+    "invalid_hash": 0,
+    "not_contract_call": 135,
+    "to_address_cap": 0
+  },
+  "status": "ok",
+  "target_count": 5,
+  "trace_calls_performed": 0
+}

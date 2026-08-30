@@ -1,0 +1,102 @@
+{
+  "chain_id": 1,
+  "context_windows": [
+    "tx-only"
+  ],
+  "created_at": "2026-08-30T13:29:10.914+00:00",
+  "edges": [
+    {
+      "amount_norm": "485",
+      "amount_raw": "485000000000000000000",
+      "asset_node": "asset:0x6b175474e89094c44da98b954eedeac495271d0f",
+      "edge_id": "edge:54da07dd66e7487a9410e522",
+      "edge_type": "transfer",
+      "from_node": "address:0x66c57bf505a85a74609d2c83e94aabb26d691e1f",
+      "log_index": 136,
+      "standard": "erc20",
+      "to_node": "address:0x5a707e4aaf7399285b3592837a6eacb0a77aa62a",
+      "token_id": null
+    },
+    {
+      "call_depth": 0,
+      "call_type": "call",
+      "depth": 0,
+      "edge_id": "edge:e5a09daab209649617f05599",
+      "edge_type": "call",
+      "from_node": "address:0x66c57bf505a85a74609d2c83e94aabb26d691e1f",
+      "function_name": "transfer",
+      "function_selector": "0xa9059cbb",
+      "function_signature": "transfer(address,uint256)",
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": false,
+      "ordinal": 0,
+      "protocol_hint": "erc20",
+      "revert_reason": null,
+      "selector_family": "erc20_transfer",
+      "semantic_action": "erc20_transfer",
+      "success": true,
+      "to_node": "address:0x6b175474e89094c44da98b954eedeac495271d0f",
+      "value": "0"
+    }
+  ],
+  "event_id": "9c86471fb6ef3edd5fa31083d2b3fc988c1c6195f18c4959868ba3f1e5a9b81d",
+  "feature_missing_flags": [
+    "context_1h_protocol_empty",
+    "context_1h_protocol_unavailable",
+    "context_5m_address_empty",
+    "context_5m_address_unavailable",
+    "no_protocol_role_matches"
+  ],
+  "feature_ver": "cash-flow-graph-builder.v1",
+  "graph_id": "graph:0x9358446787aff06afe4151adb0b94cdfa6414b78210bfe8886e532efaad2f47c",
+  "graph_snapshot_ref": "data/graph-snapshots/graph-inference.v1/dt=2026-08-30/hour=13/9c86471fb6ef3edd5fa31083d2b3fc988c1c6195f18c4959868ba3f1e5a9b81d.json",
+  "idempotency_key": "1:0x9358446787aff06afe4151adb0b94cdfa6414b78210bfe8886e532efaad2f47c:trace_transaction:parsed-trace.v1:graph-inference.v1",
+  "lineage": {
+    "graph_builder_ver": "cash-flow-graph-builder.v1",
+    "parsed_trace_event_id": "39d1d5b73c6d7b426f15616c092ec7b85061b5860c03b23babe1403fc3e235f4",
+    "parsed_trace_idempotency_key": "1:0x9358446787aff06afe4151adb0b94cdfa6414b78210bfe8886e532efaad2f47c:trace_transaction:parsed-trace.v1",
+    "protocol_features_event_id": "5130fe6c7f164355e4ce51852c4db24c1e628b5b6bf6f7988b744b2b469d9d21",
+    "protocol_features_idempotency_key": "1:0x9358446787aff06afe4151adb0b94cdfa6414b78210bfe8886e532efaad2f47c:trace_transaction:parsed-trace.v1:protocol-features.v1",
+    "protocol_role_enricher_ver": "protocol-role-enricher.v1",
+    "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-30/hour=13/1-0x9358446787aff06afe4151adb0b94cdfa6414b78210bfe8886e532efaad2f47c-trace_transaction.json",
+    "trace_bundle_event_id": "0862b2b908d5e40c85ca0640792e321cd32ea01e65ae80a3181488c94af87daf",
+    "trace_bundle_idempotency_key": "1:0x9358446787aff06afe4151adb0b94cdfa6414b78210bfe8886e532efaad2f47c:trace_transaction",
+    "trace_parser_ver": "trace-parser.v1",
+    "transaction_ref": "ethereum:1:0x9358446787aff06afe4151adb0b94cdfa6414b78210bfe8886e532efaad2f47c"
+  },
+  "nodes": [
+    {
+      "address": "0x5a707e4aaf7399285b3592837a6eacb0a77aa62a",
+      "node_id": "address:0x5a707e4aaf7399285b3592837a6eacb0a77aa62a",
+      "node_type": "address"
+    },
+    {
+      "address": "0x66c57bf505a85a74609d2c83e94aabb26d691e1f",
+      "node_id": "address:0x66c57bf505a85a74609d2c83e94aabb26d691e1f",
+      "node_type": "address"
+    },
+    {
+      "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+      "node_id": "address:0x6b175474e89094c44da98b954eedeac495271d0f",
+      "node_type": "address"
+    },
+    {
+      "address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+      "decimals": 18,
+      "node_id": "asset:0x6b175474e89094c44da98b954eedeac495271d0f",
+      "node_type": "asset",
+      "standard": "erc20",
+      "symbol": "DAI"
+    },
+    {
+      "node_id": "tx:0x9358446787aff06afe4151adb0b94cdfa6414b78210bfe8886e532efaad2f47c",
+      "node_type": "transaction",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x9358446787aff06afe4151adb0b94cdfa6414b78210bfe8886e532efaad2f47c"
+    }
+  ],
+  "schema_ver": "graph-inference.v1",
+  "tx_hash": "0x9358446787aff06afe4151adb0b94cdfa6414b78210bfe8886e532efaad2f47c"
+}

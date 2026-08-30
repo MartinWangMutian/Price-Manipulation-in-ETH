@@ -1,0 +1,22 @@
+{
+  "batch_id": "research-expansion.stage8.round-002",
+  "checked_at": "2026-08-30T13:24:08.182+00:00",
+  "errors": [],
+  "frozen_held_out_overlap": [],
+  "gate": "stage8_research_batch_builder",
+  "labels_promoted": 0,
+  "max_paid_trace_calls": 30,
+  "negative_count": 25,
+  "negative_counts_by_incident": {
+    "dough_finance_2024_07_12": 5,
+    "indexed_finance_2021_10_14": 5,
+    "kyberswap_2023_11_22": 5,
+    "lendfme_2020_04_19": 5,
+    "saddle_finance_2022_04_30": 5
+  },
+  "negative_queue_sha256": "c1e12d5d8dde719518436e5be1a43303d7a2191062223969900e2e9a1841f3a5",
+  "positive_count": 5,
+  "positive_queue_sha256": "61a7519cec8875461d182599d30464821dfd0659240e9fd224f87b776b3be07b",
+  "status": "ready_for_paid_dry_run",
+  "trace_method": "trace_transaction"
+}

@@ -1,0 +1,168 @@
+{
+  "created_at": "2026-08-30T13:24:08.182+00:00",
+  "items": [
+    {
+      "candidate_role": "research_attack_anchor",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "confidence": "high",
+      "event_evidence": [
+        {
+          "source_type": "security_report",
+          "url": "https://safe-edges.medium.com/dough-finance-1-8-m-hack-analysis-d83bcb6b3500"
+        }
+      ],
+      "incident_id": "dough_finance_2024_07_12",
+      "independent_event_group": "dough_finance_2024_07_12",
+      "preferred_rpc_methods": [
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "a0db313c7d32e80c16d2112a6839dd38c67726242edf391e4f7eee1d3e1a2b10",
+      "review_status": "needs_paid_trace_graph_and_human_promotion",
+      "transaction_evidence": [
+        {
+          "source_type": "block_explorer",
+          "url": "https://etherscan.io/tx/0x92cdcc732eebf47200ea56123716e337f6ef7d5ad714a2295794fdc6031ebb2e"
+        },
+        {
+          "source_type": "reproduction_corpus",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-07/DoughFina_exp.sol"
+        }
+      ],
+      "tx_hash": "0x92cdcc732eebf47200ea56123716e337f6ef7d5ad714a2295794fdc6031ebb2e"
+    },
+    {
+      "candidate_role": "research_attack_anchor",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "confidence": "high",
+      "event_evidence": [
+        {
+          "source_type": "protocol_postmortem",
+          "url": "https://ndxfi.medium.com/indexed-attack-post-mortem-b006094f0bdc"
+        }
+      ],
+      "incident_id": "indexed_finance_2021_10_14",
+      "independent_event_group": "indexed_finance_2021_10_14",
+      "preferred_rpc_methods": [
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "b5130a2d3aaaf655f3bb61f8fd39c1c06b9eb904d0a38efb201a67baafe755e6",
+      "review_status": "needs_paid_trace_graph_and_human_promotion",
+      "transaction_evidence": [
+        {
+          "source_type": "block_explorer",
+          "url": "https://etherscan.io/tx/0x44aad3b853866468161735496a5d9cc961ce5aa872924c5d78673076b1cd95aa"
+        },
+        {
+          "source_type": "reproduction_corpus",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-10/IndexedFinance_exp.sol"
+        }
+      ],
+      "tx_hash": "0x44aad3b853866468161735496a5d9cc961ce5aa872924c5d78673076b1cd95aa"
+    },
+    {
+      "candidate_role": "research_attack_anchor",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "confidence": "high",
+      "event_evidence": [
+        {
+          "source_type": "protocol_postmortem",
+          "url": "https://blog.kyberswap.com/post-mortem-kyberswap-elastic-exploit/"
+        }
+      ],
+      "incident_id": "kyberswap_2023_11_22",
+      "independent_event_group": "kyberswap_2023_11_22",
+      "preferred_rpc_methods": [
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "34c4d9eb84081238778580f4cd47fa496222fde88c497ea5f486c2963944e62a",
+      "review_status": "needs_paid_trace_graph_and_human_promotion",
+      "transaction_evidence": [
+        {
+          "source_type": "block_explorer",
+          "url": "https://etherscan.io/tx/0x485e08dc2b6a4b3aeadcb89c3d18a37666dc7d9424961a2091d6b3696792f0f3"
+        },
+        {
+          "source_type": "reproduction_corpus",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/KyberSwap_exp.eth.1.sol"
+        }
+      ],
+      "tx_hash": "0x485e08dc2b6a4b3aeadcb89c3d18a37666dc7d9424961a2091d6b3696792f0f3"
+    },
+    {
+      "candidate_role": "research_attack_anchor",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "confidence": "high",
+      "event_evidence": [
+        {
+          "source_type": "security_report",
+          "url": "https://peckshield.medium.com/uniswap-lendf-me-hacks-root-cause-and-loss-analysis-50f3263dcc09"
+        }
+      ],
+      "incident_id": "lendfme_2020_04_19",
+      "independent_event_group": "lendfme_2020_04_19",
+      "preferred_rpc_methods": [
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "3729b1b5a5de028bb71471f68ec18fa37654e31645d0fe649fb998c5b203268c",
+      "review_status": "needs_paid_trace_graph_and_human_promotion",
+      "transaction_evidence": [
+        {
+          "source_type": "block_explorer",
+          "url": "https://etherscan.io/tx/0xae7d664bdfcc54220df4f18d339005c6faf6e62c9ca79c56387bc0389274363b"
+        },
+        {
+          "source_type": "reproduction_corpus",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2020-04/LendfMe_exp.sol"
+        }
+      ],
+      "tx_hash": "0xae7d664bdfcc54220df4f18d339005c6faf6e62c9ca79c56387bc0389274363b"
+    },
+    {
+      "candidate_role": "research_attack_anchor",
+      "chain": "ethereum",
+      "chain_id": 1,
+      "confidence": "high",
+      "event_evidence": [
+        {
+          "source_type": "security_report",
+          "url": "https://medium.com/immunefi/hack-analysis-saddle-finance-april-2022-f2bcb119f38"
+        }
+      ],
+      "incident_id": "saddle_finance_2022_04_30",
+      "independent_event_group": "saddle_finance_2022_04_30",
+      "preferred_rpc_methods": [
+        "trace_transaction"
+      ],
+      "promotion_required": true,
+      "queue_id": "88359acdf9b647b531e9916660c5908a658cea7638f29eff0daff813b5d3f477",
+      "review_status": "needs_paid_trace_graph_and_human_promotion",
+      "transaction_evidence": [
+        {
+          "source_type": "block_explorer",
+          "url": "https://etherscan.io/tx/0x2b023d65485c4bb68d781960c2196588d03b871dc9eb1c054f596b7ca6f7da56"
+        },
+        {
+          "source_type": "reproduction_corpus",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-04/Saddle_exp.sol"
+        }
+      ],
+      "tx_hash": "0x2b023d65485c4bb68d781960c2196588d03b871dc9eb1c054f596b7ca6f7da56"
+    }
+  ],
+  "promotion_criteria": [
+    "trace_transaction and rich graph pass every structural gate",
+    "event evidence and graph are human-reviewed before label promotion"
+  ],
+  "schema_ver": "trace-replay-queue.v1",
+  "skipped": [],
+  "snapshot_id": "research-expansion.stage8.round-002.positive",
+  "trace_method": "trace_transaction"
+}

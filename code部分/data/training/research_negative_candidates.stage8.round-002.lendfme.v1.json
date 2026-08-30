@@ -1,0 +1,11 @@
+{
+  "anchor_block": 9899738,
+  "anchor_tx_hash": "0xae7d664bdfcc54220df4f18d339005c6faf6e62c9ca79c56387bc0389274363b",
+  "candidate_label": null,
+  "created_at": "2026-08-30T13:23:14.407+00:00",
+  "incident_exclusion_window_blocks": 7200,
+  "items": [],
+  "matched_incident_id": "lendfme_2020_04_19",
+  "schema_ver": "research-negative-candidates.stage8.v1",
+  "snapshot_id": "research-expansion.stage8.round-001.negative-pilot"
+}

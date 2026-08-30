@@ -1,0 +1,126 @@
+{
+  "chain_id": 1,
+  "context_windows": [
+    "tx-only"
+  ],
+  "created_at": "2026-08-30T13:29:10.915+00:00",
+  "edges": [
+    {
+      "call_depth": 0,
+      "call_type": "call",
+      "depth": 0,
+      "edge_id": "edge:c5e8fed81b3c7296a2e817bb",
+      "edge_type": "call",
+      "from_node": "address:0x710bda329b2a6224e4b44833de30f38e7f81d564",
+      "function_name": null,
+      "function_selector": "0x23c452cd",
+      "function_signature": null,
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": false,
+      "ordinal": 0,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "selector_family": "unknown_selector",
+      "semantic_action": "unknown",
+      "success": true,
+      "to_node": "address:0xb8901acb165ed027e32754e0ffe830802919727f",
+      "value": "0"
+    },
+    {
+      "call_depth": 1,
+      "call_type": "call",
+      "depth": 1,
+      "edge_id": "edge:47a448331abc03f0ee11c7ff",
+      "edge_type": "call",
+      "from_node": "address:0xb8901acb165ed027e32754e0ffe830802919727f",
+      "function_name": null,
+      "function_selector": null,
+      "function_signature": null,
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": true,
+      "ordinal": 1,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "selector_family": null,
+      "semantic_action": "unknown",
+      "success": true,
+      "to_node": "address:0x457000862620e1df95dc4d4ba69168ea6f528b70",
+      "value": "178607344841717206"
+    },
+    {
+      "call_depth": 1,
+      "call_type": "call",
+      "depth": 1,
+      "edge_id": "edge:69135bb8d407e91dbc1835fd",
+      "edge_type": "call",
+      "from_node": "address:0xb8901acb165ed027e32754e0ffe830802919727f",
+      "function_name": null,
+      "function_selector": null,
+      "function_signature": null,
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": true,
+      "ordinal": 2,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "selector_family": null,
+      "semantic_action": "unknown",
+      "success": true,
+      "to_node": "address:0x710bda329b2a6224e4b44833de30f38e7f81d564",
+      "value": "2652310493274634"
+    }
+  ],
+  "event_id": "c1233e5b00a7fb6c63ce288152c2aabe2cd1c3869ee03a0da99ec9b137ba7490",
+  "feature_missing_flags": [
+    "context_1h_protocol_empty",
+    "context_1h_protocol_unavailable",
+    "context_5m_address_empty",
+    "context_5m_address_unavailable",
+    "no_protocol_role_matches"
+  ],
+  "feature_ver": "cash-flow-graph-builder.v1",
+  "graph_id": "graph:0xa6bfb7579185803862c56b0cac17d9d9160ac3fa5b2e9ee0e6c057562da16607",
+  "graph_snapshot_ref": "data/graph-snapshots/graph-inference.v1/dt=2026-08-30/hour=13/c1233e5b00a7fb6c63ce288152c2aabe2cd1c3869ee03a0da99ec9b137ba7490.json",
+  "idempotency_key": "1:0xa6bfb7579185803862c56b0cac17d9d9160ac3fa5b2e9ee0e6c057562da16607:trace_transaction:parsed-trace.v1:graph-inference.v1",
+  "lineage": {
+    "graph_builder_ver": "cash-flow-graph-builder.v1",
+    "parsed_trace_event_id": "5160b1f8ef666aa961917dec70a864e01a342f96281b7581ac8921ff02412bfd",
+    "parsed_trace_idempotency_key": "1:0xa6bfb7579185803862c56b0cac17d9d9160ac3fa5b2e9ee0e6c057562da16607:trace_transaction:parsed-trace.v1",
+    "protocol_features_event_id": "a90f195db943b0a63c799129e6b0b7f79e8fb968f5c86027c161b5ee0b8c4d10",
+    "protocol_features_idempotency_key": "1:0xa6bfb7579185803862c56b0cac17d9d9160ac3fa5b2e9ee0e6c057562da16607:trace_transaction:parsed-trace.v1:protocol-features.v1",
+    "protocol_role_enricher_ver": "protocol-role-enricher.v1",
+    "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-30/hour=13/1-0xa6bfb7579185803862c56b0cac17d9d9160ac3fa5b2e9ee0e6c057562da16607-trace_transaction.json",
+    "trace_bundle_event_id": "2da61c90ced83f390c83969d8e130bfeadc2eadcd1cd75b3e2c5ea90427953c5",
+    "trace_bundle_idempotency_key": "1:0xa6bfb7579185803862c56b0cac17d9d9160ac3fa5b2e9ee0e6c057562da16607:trace_transaction",
+    "trace_parser_ver": "trace-parser.v1",
+    "transaction_ref": "ethereum:1:0xa6bfb7579185803862c56b0cac17d9d9160ac3fa5b2e9ee0e6c057562da16607"
+  },
+  "nodes": [
+    {
+      "address": "0x457000862620e1df95dc4d4ba69168ea6f528b70",
+      "node_id": "address:0x457000862620e1df95dc4d4ba69168ea6f528b70",
+      "node_type": "address"
+    },
+    {
+      "address": "0x710bda329b2a6224e4b44833de30f38e7f81d564",
+      "node_id": "address:0x710bda329b2a6224e4b44833de30f38e7f81d564",
+      "node_type": "address"
+    },
+    {
+      "address": "0xb8901acb165ed027e32754e0ffe830802919727f",
+      "node_id": "address:0xb8901acb165ed027e32754e0ffe830802919727f",
+      "node_type": "address"
+    },
+    {
+      "node_id": "tx:0xa6bfb7579185803862c56b0cac17d9d9160ac3fa5b2e9ee0e6c057562da16607",
+      "node_type": "transaction",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0xa6bfb7579185803862c56b0cac17d9d9160ac3fa5b2e9ee0e6c057562da16607"
+    }
+  ],
+  "schema_ver": "graph-inference.v1",
+  "tx_hash": "0xa6bfb7579185803862c56b0cac17d9d9160ac3fa5b2e9ee0e6c057562da16607"
+}

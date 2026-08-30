@@ -1,0 +1,40 @@
+{
+  "schema_ver": "research-batch.stage8.v1",
+  "batch_id": "research-expansion.stage8.round-002",
+  "chain": "ethereum",
+  "chain_id": 1,
+  "trace_method": "trace_transaction",
+  "positive_incident_ids": [
+    "dough_finance_2024_07_12",
+    "indexed_finance_2021_10_14",
+    "kyberswap_2023_11_22",
+    "lendfme_2020_04_19",
+    "saddle_finance_2022_04_30"
+  ],
+  "positive_count": 5,
+  "negative_per_incident": 5,
+  "negative_count": 25,
+  "sampler_max_blocks_per_incident": 1,
+  "max_paid_trace_calls": 30,
+  "paid_call_guards": {
+    "max_retries": 1,
+    "fail_fast": true,
+    "skip_existing": true,
+    "inter_item_delay_s": 0.25,
+    "forbid_debug_trace_transaction": true,
+    "stop_after_batch": true,
+    "provider_usage_limit_confirmed_by_user": true,
+    "cost_source": "provider_billing_dashboard"
+  },
+  "label_policy": {
+    "positive_anchors_require_trace_graph_and_human_promotion": true,
+    "negative_candidates_remain_unlabeled": true,
+    "automatic_label_promotion": false
+  },
+  "lineage": {
+    "base_expansion_config": "config/research_expansion.stage8.v1.json",
+    "full_positive_queue": "data/training/research_positive_trace_queue.stage8.v1.json",
+    "frozen_split": "data/training/split_manifest.stage4.v1.json",
+    "feature_version": "cash-flow-graph-builder.v1"
+  }
+}

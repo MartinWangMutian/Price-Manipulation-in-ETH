@@ -1,0 +1,1077 @@
+{
+  "call_protocol_annotations": [
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 4,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "to",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 5,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 6,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 7,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 10,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 79,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 81,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 83,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 85,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "to",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 86,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 87,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 89,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 90,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 105,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "to",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 106,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 107,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 108,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 111,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 180,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 182,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 184,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 186,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "to",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 187,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 188,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 190,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 191,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 206,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "to",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 207,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 208,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 209,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 212,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 281,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 283,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 285,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 287,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "to",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 288,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 289,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 291,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 292,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 307,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "to",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 308,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 309,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 310,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 313,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 382,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 384,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 386,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 388,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "to",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 389,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 390,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 392,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    },
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "call_ordinal": 393,
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "side": "from",
+      "upgradeability": "proxy"
+    }
+  ],
+  "chain_id": 1,
+  "created_at": "2026-08-30T13:29:10.798+00:00",
+  "event_id": "b881cc77bb4a5bf32d628128c8146669cd3259562418a8f0b05b0fd78dad305d",
+  "feature_enricher_ver": "protocol-role-enricher.v1",
+  "feature_missing_flags": [
+    "token_decimals_missing"
+  ],
+  "idempotency_key": "1:0x485e08dc2b6a4b3aeadcb89c3d18a37666dc7d9424961a2091d6b3696792f0f3:trace_transaction:parsed-trace.v1:protocol-features.v1",
+  "matched_protocol_roles": [
+    {
+      "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+      "audit_status": "audited",
+      "category": "lending",
+      "contract": "Pool",
+      "emergency_surface": true,
+      "governance_control": "aave_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": true,
+      "protocol_id": "aave_v3_ethereum",
+      "risk_tier": "core",
+      "roles": [
+        "pool",
+        "lending_market",
+        "liquidation_module"
+      ],
+      "upgradeability": "proxy"
+    }
+  ],
+  "schema_ver": "protocol-features.v1",
+  "source_parsed_event_id": "036a3a1a35c0bade05c563ada53d455f3ac7f8695eb99dfbbb00fae43f399bcf",
+  "source_parsed_idempotency_key": "1:0x485e08dc2b6a4b3aeadcb89c3d18a37666dc7d9424961a2091d6b3696792f0f3:trace_transaction:parsed-trace.v1",
+  "transfer_protocol_annotations": [],
+  "tx_hash": "0x485e08dc2b6a4b3aeadcb89c3d18a37666dc7d9424961a2091d6b3696792f0f3"
+}

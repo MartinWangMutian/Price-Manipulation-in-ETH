@@ -1,0 +1,39 @@
+{
+  "anchor_block": 14684307,
+  "anchor_tx_hash": "0x2b023d65485c4bb68d781960c2196588d03b871dc9eb1c054f596b7ca6f7da56",
+  "block_summaries": [
+    {
+      "block_hash": "0x20a75358a1d5fe8cbf01d622b15cfbf32c1881d1f6041b4eaf429a10b344d6ba",
+      "block_number": 14672307,
+      "block_offset": -12000,
+      "transactions": 139
+    }
+  ],
+  "blocks_loaded": 1,
+  "blocks_requested": 1,
+  "checked_at": "2026-08-30T13:23:16.142+00:00",
+  "dry_run": false,
+  "errors": [],
+  "excluded_addresses": 2,
+  "excluded_frozen_held_out_hashes": 11,
+  "excluded_positive_hashes": 22,
+  "gate": "stage8_negative_metadata_pilot",
+  "incident_id": "saddle_finance_2022_04_30",
+  "max_retries": 1,
+  "provider_cost_note": "Inspect the provider billing dashboard; JSON-RPC responses do not include invoice cost.",
+  "rpc_call_attempts": 3,
+  "rpc_calls_ok": 3,
+  "selected_count": 5,
+  "skipped": {
+    "duplicate_hash": 0,
+    "excluded_address": 0,
+    "excluded_hash": 0,
+    "gas_below_minimum": 44,
+    "invalid_hash": 0,
+    "not_contract_call": 56,
+    "to_address_cap": 1
+  },
+  "status": "ok",
+  "target_count": 5,
+  "trace_calls_performed": 0
+}

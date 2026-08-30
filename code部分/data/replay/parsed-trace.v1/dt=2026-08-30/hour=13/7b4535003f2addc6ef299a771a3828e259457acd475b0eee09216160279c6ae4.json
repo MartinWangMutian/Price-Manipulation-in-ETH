@@ -1,0 +1,103 @@
+{
+  "calls": [
+    {
+      "depth": 0,
+      "from": "0x808b4da0be6c9512e948521452227efc619bea52",
+      "function_name": null,
+      "function_selector": "0x2da03409",
+      "function_signature": null,
+      "ordinal": 0,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "success": true,
+      "to": "0x2a549b4af9ec39b03142da6dc32221fc390b5533",
+      "type": "call",
+      "value": "0"
+    },
+    {
+      "depth": 1,
+      "from": "0x2a549b4af9ec39b03142da6dc32221fc390b5533",
+      "function_name": null,
+      "function_selector": "0x3ef13367",
+      "function_signature": null,
+      "ordinal": 1,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "success": true,
+      "to": "0x27cb7383b13797afeedcb1fec8c547886c17b3b1",
+      "type": "call",
+      "value": "0"
+    },
+    {
+      "depth": 2,
+      "from": "0x27cb7383b13797afeedcb1fec8c547886c17b3b1",
+      "function_name": null,
+      "function_selector": "0x3ef13367",
+      "function_signature": null,
+      "ordinal": 2,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "success": true,
+      "to": "0x059ffafdc6ef594230de44f824e2bd0a51ca5ded",
+      "type": "call",
+      "value": "0"
+    },
+    {
+      "depth": 3,
+      "from": "0x27cb7383b13797afeedcb1fec8c547886c17b3b1",
+      "function_name": null,
+      "function_selector": "0x70a08231",
+      "function_signature": null,
+      "ordinal": 3,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "success": true,
+      "to": "0x6b175474e89094c44da98b954eedeac495271d0f",
+      "type": "call",
+      "value": "0"
+    },
+    {
+      "depth": 3,
+      "from": "0x27cb7383b13797afeedcb1fec8c547886c17b3b1",
+      "function_name": "transfer",
+      "function_selector": "0xa9059cbb",
+      "function_signature": "transfer(address,uint256)",
+      "ordinal": 4,
+      "protocol_hint": "erc20",
+      "revert_reason": null,
+      "success": true,
+      "to": "0x6b175474e89094c44da98b954eedeac495271d0f",
+      "type": "call",
+      "value": "0"
+    }
+  ],
+  "chain_id": 1,
+  "created_at": "2026-08-30T13:29:10.751+00:00",
+  "event_id": "7b4535003f2addc6ef299a771a3828e259457acd475b0eee09216160279c6ae4",
+  "feature_missing_flags": [],
+  "idempotency_key": "1:0x7d9626d8a31c8e2ab6320eed43c25e7aef3edb5272364c28691779ff272e2965:trace_transaction:parsed-trace.v1",
+  "observed_at": "2021-10-12T21:00:47.000+00:00",
+  "parser_ver": "trace-parser.v1",
+  "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-30/hour=13/1-0x7d9626d8a31c8e2ab6320eed43c25e7aef3edb5272364c28691779ff272e2965-trace_transaction.json",
+  "schema_ver": "parsed-trace.v1",
+  "source_trace_event_id": "89b8eed04573708e68348ee8302033747303c033a5098c1958ecbccf1e19eb19",
+  "source_trace_idempotency_key": "1:0x7d9626d8a31c8e2ab6320eed43c25e7aef3edb5272364c28691779ff272e2965:trace_transaction",
+  "token_transfers": [
+    {
+      "amount_norm": "15000",
+      "amount_raw": "15000000000000000000000",
+      "decimals": 18,
+      "event_id": "131e894acad4f0c46d9b222a9860225d19d3f41b010d26578940288cdf42460c",
+      "from": "0x27cb7383b13797afeedcb1fec8c547886c17b3b1",
+      "log_index": 365,
+      "standard": "erc20",
+      "symbol": "DAI",
+      "to": "0x2a549b4af9ec39b03142da6dc32221fc390b5533",
+      "token": "0x6b175474e89094c44da98b954eedeac495271d0f",
+      "token_id": null
+    }
+  ],
+  "trace_source": "trace_transaction",
+  "trace_status": "ok",
+  "tx_hash": "0x7d9626d8a31c8e2ab6320eed43c25e7aef3edb5272364c28691779ff272e2965"
+}

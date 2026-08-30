@@ -1,0 +1,36 @@
+{
+  "batch_complete": true,
+  "batch_id": "research-expansion.stage8.round-002",
+  "checked_at": "2026-08-30T13:31:09.308+00:00",
+  "counts": {
+    "frozen_held_out_overlap": 0,
+    "hard_negative_candidates": 7,
+    "labels_promoted": 0,
+    "positive_rich_graphs": 5,
+    "protocol_role_graphs": 4,
+    "unlabeled_negative_rich_graphs": 25
+  },
+  "cumulative_unpromoted_pool": {
+    "hard_negative_candidates": 9,
+    "negative_rich_graph_candidates": 30,
+    "positive_rich_graphs": 6
+  },
+  "errors": [],
+  "frozen_held_out_overlap": [],
+  "gate": "stage8_research_batch_round_002",
+  "input_content_hash": "f25294a386fe0bf102ad860026828aabbc19a9f547ea7fee09099a149b1fae90",
+  "next_gate": "analyst review, protocol-matched negative filtering, and versioned label promotion",
+  "paid_calls": {
+    "debug_trace_transaction_attempts": 0,
+    "reused_successful_bundles": 1,
+    "trace_transaction_attempts": 31,
+    "unique_trace_transactions": 30
+  },
+  "provider_cost_note": "Inspect the provider billing dashboard; RPC responses do not include invoice cost.",
+  "research_target_complete": false,
+  "status": "batch_ok_review_pending_target_incomplete",
+  "warnings": [
+    "protocol-role coverage is below 25%; unmatched negatives remain review candidates",
+    "one-hour protocol context is unavailable for this isolated historical batch"
+  ]
+}

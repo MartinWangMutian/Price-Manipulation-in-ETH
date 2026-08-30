@@ -1,0 +1,41 @@
+{
+  "anchor_block": 9899738,
+  "anchor_tx_hash": "0xae7d664bdfcc54220df4f18d339005c6faf6e62c9ca79c56387bc0389274363b",
+  "block_summaries": [
+    {
+      "block_hash": "0x2809a5db63539bd52be10e564400b5d42f90341cb36762090c0a16772c579f92",
+      "block_number": 9887738,
+      "block_offset": -12000,
+      "transactions": 0
+    }
+  ],
+  "blocks_loaded": 1,
+  "blocks_requested": 1,
+  "checked_at": "2026-08-30T13:23:14.407+00:00",
+  "dry_run": false,
+  "errors": [
+    "selected 0/5 candidates"
+  ],
+  "excluded_addresses": 2,
+  "excluded_frozen_held_out_hashes": 11,
+  "excluded_positive_hashes": 22,
+  "gate": "stage8_negative_metadata_pilot",
+  "incident_id": "lendfme_2020_04_19",
+  "max_retries": 1,
+  "provider_cost_note": "Inspect the provider billing dashboard; JSON-RPC responses do not include invoice cost.",
+  "rpc_call_attempts": 3,
+  "rpc_calls_ok": 3,
+  "selected_count": 0,
+  "skipped": {
+    "duplicate_hash": 0,
+    "excluded_address": 0,
+    "excluded_hash": 0,
+    "gas_below_minimum": 0,
+    "invalid_hash": 0,
+    "not_contract_call": 0,
+    "to_address_cap": 0
+  },
+  "status": "insufficient_candidates",
+  "target_count": 5,
+  "trace_calls_performed": 0
+}

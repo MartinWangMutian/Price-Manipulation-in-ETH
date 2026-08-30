@@ -1,0 +1,161 @@
+{
+  "call_protocol_annotations": [
+    {
+      "address": "0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45",
+      "audit_status": "audited",
+      "call_ordinal": 388,
+      "category": "router",
+      "contract": "SwapRouter02",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3_router",
+      "risk_tier": "router",
+      "roles": [
+        "router"
+      ],
+      "side": "to",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45",
+      "audit_status": "audited",
+      "call_ordinal": 389,
+      "category": "router",
+      "contract": "SwapRouter02",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3_router",
+      "risk_tier": "router",
+      "roles": [
+        "router"
+      ],
+      "side": "from",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45",
+      "audit_status": "audited",
+      "call_ordinal": 391,
+      "category": "router",
+      "contract": "SwapRouter02",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3_router",
+      "risk_tier": "router",
+      "roles": [
+        "router"
+      ],
+      "side": "from",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45",
+      "audit_status": "audited",
+      "call_ordinal": 392,
+      "category": "router",
+      "contract": "SwapRouter02",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3_router",
+      "risk_tier": "router",
+      "roles": [
+        "router"
+      ],
+      "side": "from",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45",
+      "audit_status": "audited",
+      "call_ordinal": 393,
+      "category": "router",
+      "contract": "SwapRouter02",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3_router",
+      "risk_tier": "router",
+      "roles": [
+        "router"
+      ],
+      "side": "from",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45",
+      "audit_status": "audited",
+      "call_ordinal": 395,
+      "category": "router",
+      "contract": "SwapRouter02",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3_router",
+      "risk_tier": "router",
+      "roles": [
+        "router"
+      ],
+      "side": "from",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45",
+      "audit_status": "audited",
+      "call_ordinal": 400,
+      "category": "router",
+      "contract": "SwapRouter02",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3_router",
+      "risk_tier": "router",
+      "roles": [
+        "router"
+      ],
+      "side": "from",
+      "upgradeability": "immutable"
+    }
+  ],
+  "chain_id": 1,
+  "created_at": "2026-08-30T13:29:10.811+00:00",
+  "event_id": "f9cf8ecd2a2a19cbe0c86a1ca8a0098e64418f5053456be24317fbf0defba551",
+  "feature_enricher_ver": "protocol-role-enricher.v1",
+  "feature_missing_flags": [
+    "token_decimals_missing"
+  ],
+  "idempotency_key": "1:0x2b023d65485c4bb68d781960c2196588d03b871dc9eb1c054f596b7ca6f7da56:trace_transaction:parsed-trace.v1:protocol-features.v1",
+  "matched_protocol_roles": [
+    {
+      "address": "0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45",
+      "audit_status": "audited",
+      "category": "router",
+      "contract": "SwapRouter02",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3_router",
+      "risk_tier": "router",
+      "roles": [
+        "router"
+      ],
+      "upgradeability": "immutable"
+    }
+  ],
+  "schema_ver": "protocol-features.v1",
+  "source_parsed_event_id": "cfabe56179bb15490fddefbd6a3ad3b71bf926ea328c94fd0477958766c2a588",
+  "source_parsed_idempotency_key": "1:0x2b023d65485c4bb68d781960c2196588d03b871dc9eb1c054f596b7ca6f7da56:trace_transaction:parsed-trace.v1",
+  "transfer_protocol_annotations": [],
+  "tx_hash": "0x2b023d65485c4bb68d781960c2196588d03b871dc9eb1c054f596b7ca6f7da56"
+}

@@ -1,0 +1,61 @@
+{
+  "calls": [
+    {
+      "depth": 0,
+      "from": "0xdc1bfbc2b8f01439eeea8e4659bbb452d0f9ee2a",
+      "function_name": null,
+      "function_selector": "0xc8b1031a",
+      "function_signature": null,
+      "ordinal": 0,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "success": true,
+      "to": "0x5fdcca53617f4d2b9134b29090c87d01058e27e9",
+      "type": "call",
+      "value": "0"
+    },
+    {
+      "depth": 1,
+      "from": "0x5fdcca53617f4d2b9134b29090c87d01058e27e9",
+      "function_name": null,
+      "function_selector": "0xc8b1031a",
+      "function_signature": null,
+      "ordinal": 1,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "success": true,
+      "to": "0x4edd62189732e9ff476aba880b48c29432a7ac9b",
+      "type": "call",
+      "value": "0"
+    },
+    {
+      "depth": 2,
+      "from": "0x5fdcca53617f4d2b9134b29090c87d01058e27e9",
+      "function_name": null,
+      "function_selector": "0xc8b1031a",
+      "function_signature": null,
+      "ordinal": 2,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "success": true,
+      "to": "0x8536850750956c2feebecab786d82271a5467687",
+      "type": "call",
+      "value": "0"
+    }
+  ],
+  "chain_id": 1,
+  "created_at": "2026-08-30T13:29:10.763+00:00",
+  "event_id": "224cd4e00ebefab850a15d2665a02c2db85d35f114ce3f76cd5e0db16049aa4d",
+  "feature_missing_flags": [],
+  "idempotency_key": "1:0xc3e4ab155da0a52c9e5b9466aca723d27f227c269f3ff0bd28a19a4fa6417b5e:trace_transaction:parsed-trace.v1",
+  "observed_at": "2024-07-10T14:13:11.000+00:00",
+  "parser_ver": "trace-parser.v1",
+  "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-30/hour=13/1-0xc3e4ab155da0a52c9e5b9466aca723d27f227c269f3ff0bd28a19a4fa6417b5e-trace_transaction.json",
+  "schema_ver": "parsed-trace.v1",
+  "source_trace_event_id": "ca6e05d7a551bca8afc1faf51125b5fa5ae5d8305b3370a53c82f5419febe70a",
+  "source_trace_idempotency_key": "1:0xc3e4ab155da0a52c9e5b9466aca723d27f227c269f3ff0bd28a19a4fa6417b5e:trace_transaction",
+  "token_transfers": [],
+  "trace_source": "trace_transaction",
+  "trace_status": "ok",
+  "tx_hash": "0xc3e4ab155da0a52c9e5b9466aca723d27f227c269f3ff0bd28a19a4fa6417b5e"
+}

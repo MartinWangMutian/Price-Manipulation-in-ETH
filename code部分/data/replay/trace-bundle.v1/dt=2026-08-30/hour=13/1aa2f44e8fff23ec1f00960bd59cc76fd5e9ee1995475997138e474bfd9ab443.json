@@ -1,0 +1,54 @@
+{
+  "calls": [
+    {
+      "action": {
+        "callType": "call",
+        "from": "0xc59c0bc8905bac27ae0c5671b952260ed39bfbb7",
+        "gas": "0xeef6c",
+        "input": "0x9bf6fa570000000000000000000000000000000000000000000000000000000000000014",
+        "to": "0xee4650cbe7a2b23701d416f58b41d8b76b617797",
+        "value": "0x0"
+      },
+      "blockHash": "0x34c24b9053d0423a0b428a440bc75d09028fbb68ebb34329f5a221df5b175438",
+      "blockNumber": 9888738,
+      "result": {
+        "gasUsed": "0xddc2",
+        "output": "0x00000000000000000000000000000000000000000000000000000000000000c9"
+      },
+      "subtraces": 0,
+      "traceAddress": [],
+      "transactionHash": "0x73764c0f086898a3995e28075b43a5ffdf50014b948f744183e49bacbeeb9e4f",
+      "transactionPosition": 12,
+      "type": "call"
+    }
+  ],
+  "chain_id": 1,
+  "created_at": "2026-08-30T13:27:40.902+00:00",
+  "event_id": "1aa2f44e8fff23ec1f00960bd59cc76fd5e9ee1995475997138e474bfd9ab443",
+  "idempotency_key": "1:0x73764c0f086898a3995e28075b43a5ffdf50014b948f744183e49bacbeeb9e4f:trace_transaction",
+  "logs": [
+    {
+      "address": "0xee4650cbe7a2b23701d416f58b41d8b76b617797",
+      "blockHash": "0x34c24b9053d0423a0b428a440bc75d09028fbb68ebb34329f5a221df5b175438",
+      "blockNumber": "0x96e3e2",
+      "blockTimestamp": "0x5e996272",
+      "data": "0x00000000000000000000000000000000000000000000000000000000000000c800000000000000000000000000000000000000000000000000000000000000c9",
+      "logIndex": "0xa",
+      "removed": false,
+      "topics": [
+        "0xb8818b6d0c27e4fc7cf75de16ac2543426d3c0bcc520931d24e5a7dde4adca11"
+      ],
+      "transactionHash": "0x73764c0f086898a3995e28075b43a5ffdf50014b948f744183e49bacbeeb9e4f",
+      "transactionIndex": "0xc"
+    }
+  ],
+  "observed_at": "2020-04-17T08:01:54.000+00:00",
+  "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-30/hour=13/1-0x73764c0f086898a3995e28075b43a5ffdf50014b948f744183e49bacbeeb9e4f-trace_transaction.json",
+  "schema_ver": "trace-bundle.v1",
+  "state_diff": {},
+  "token_transfers": [],
+  "trace_error": null,
+  "trace_source": "trace_transaction",
+  "trace_status": "ok",
+  "tx_hash": "0x73764c0f086898a3995e28075b43a5ffdf50014b948f744183e49bacbeeb9e4f"
+}

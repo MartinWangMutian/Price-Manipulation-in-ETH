@@ -1,0 +1,322 @@
+{
+  "call_protocol_annotations": [
+    {
+      "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "audit_status": "audited",
+      "call_ordinal": 0,
+      "category": "amm_dex",
+      "contract": "NonfungiblePositionManager",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3",
+      "risk_tier": "core",
+      "roles": [
+        "lp_position_manager"
+      ],
+      "side": "to",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "audit_status": "audited",
+      "call_ordinal": 1,
+      "category": "amm_dex",
+      "contract": "NonfungiblePositionManager",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3",
+      "risk_tier": "core",
+      "roles": [
+        "lp_position_manager"
+      ],
+      "side": "from",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "audit_status": "audited",
+      "call_ordinal": 1,
+      "category": "amm_dex",
+      "contract": "NonfungiblePositionManager",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3",
+      "risk_tier": "core",
+      "roles": [
+        "lp_position_manager"
+      ],
+      "side": "to",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "audit_status": "audited",
+      "call_ordinal": 2,
+      "category": "amm_dex",
+      "contract": "NonfungiblePositionManager",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3",
+      "risk_tier": "core",
+      "roles": [
+        "lp_position_manager"
+      ],
+      "side": "from",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "audit_status": "audited",
+      "call_ordinal": 3,
+      "category": "amm_dex",
+      "contract": "NonfungiblePositionManager",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3",
+      "risk_tier": "core",
+      "roles": [
+        "lp_position_manager"
+      ],
+      "side": "to",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "audit_status": "audited",
+      "call_ordinal": 4,
+      "category": "amm_dex",
+      "contract": "NonfungiblePositionManager",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3",
+      "risk_tier": "core",
+      "roles": [
+        "lp_position_manager"
+      ],
+      "side": "to",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "audit_status": "audited",
+      "call_ordinal": 6,
+      "category": "amm_dex",
+      "contract": "NonfungiblePositionManager",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3",
+      "risk_tier": "core",
+      "roles": [
+        "lp_position_manager"
+      ],
+      "side": "from",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "audit_status": "audited",
+      "call_ordinal": 6,
+      "category": "amm_dex",
+      "contract": "NonfungiblePositionManager",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3",
+      "risk_tier": "core",
+      "roles": [
+        "lp_position_manager"
+      ],
+      "side": "to",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "audit_status": "audited",
+      "call_ordinal": 7,
+      "category": "amm_dex",
+      "contract": "NonfungiblePositionManager",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3",
+      "risk_tier": "core",
+      "roles": [
+        "lp_position_manager"
+      ],
+      "side": "from",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "audit_status": "audited",
+      "call_ordinal": 8,
+      "category": "amm_dex",
+      "contract": "NonfungiblePositionManager",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3",
+      "risk_tier": "core",
+      "roles": [
+        "lp_position_manager"
+      ],
+      "side": "to",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "audit_status": "audited",
+      "call_ordinal": 9,
+      "category": "amm_dex",
+      "contract": "NonfungiblePositionManager",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3",
+      "risk_tier": "core",
+      "roles": [
+        "lp_position_manager"
+      ],
+      "side": "to",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "audit_status": "audited",
+      "call_ordinal": 11,
+      "category": "amm_dex",
+      "contract": "NonfungiblePositionManager",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3",
+      "risk_tier": "core",
+      "roles": [
+        "lp_position_manager"
+      ],
+      "side": "to",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "audit_status": "audited",
+      "call_ordinal": 13,
+      "category": "amm_dex",
+      "contract": "NonfungiblePositionManager",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3",
+      "risk_tier": "core",
+      "roles": [
+        "lp_position_manager"
+      ],
+      "side": "to",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "audit_status": "audited",
+      "call_ordinal": 15,
+      "category": "amm_dex",
+      "contract": "NonfungiblePositionManager",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3",
+      "risk_tier": "core",
+      "roles": [
+        "lp_position_manager"
+      ],
+      "side": "to",
+      "upgradeability": "immutable"
+    }
+  ],
+  "chain_id": 1,
+  "created_at": "2026-08-30T13:29:10.808+00:00",
+  "event_id": "a3bcaa6af87e5d7d16ab74757b48db4f4a92cfbd1d9edd3dd489a144c3147259",
+  "feature_enricher_ver": "protocol-role-enricher.v1",
+  "feature_missing_flags": [],
+  "idempotency_key": "1:0x27207b08a3810945988344352ddca3c6c9721ec93b87f1062e67288ff8179d48:trace_transaction:parsed-trace.v1:protocol-features.v1",
+  "matched_protocol_roles": [
+    {
+      "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "audit_status": "audited",
+      "category": "amm_dex",
+      "contract": "NonfungiblePositionManager",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3",
+      "risk_tier": "core",
+      "roles": [
+        "lp_position_manager"
+      ],
+      "upgradeability": "immutable"
+    }
+  ],
+  "schema_ver": "protocol-features.v1",
+  "source_parsed_event_id": "71e059134936f2524b2539ddc2d30135c5c5390a736d76aaa6e4af1b8fae005e",
+  "source_parsed_idempotency_key": "1:0x27207b08a3810945988344352ddca3c6c9721ec93b87f1062e67288ff8179d48:trace_transaction:parsed-trace.v1",
+  "transfer_protocol_annotations": [
+    {
+      "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "audit_status": "audited",
+      "category": "amm_dex",
+      "contract": "NonfungiblePositionManager",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3",
+      "risk_tier": "core",
+      "roles": [
+        "lp_position_manager"
+      ],
+      "side": "token",
+      "transfer_event_id": "726d1e9e7e35c0a16f8ebfef899c6a17a45ef26602f232aab3a4e00944cbfafb",
+      "upgradeability": "immutable"
+    },
+    {
+      "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "audit_status": "audited",
+      "category": "amm_dex",
+      "contract": "NonfungiblePositionManager",
+      "emergency_surface": false,
+      "governance_control": "uniswap_governance",
+      "graph_node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "uniswap_v3",
+      "risk_tier": "core",
+      "roles": [
+        "lp_position_manager"
+      ],
+      "side": "token",
+      "transfer_event_id": "6e750723d54bf84a51be90ff53dfc6b3fc778e7b404fec7cad50e7ffe01501f9",
+      "upgradeability": "immutable"
+    }
+  ],
+  "tx_hash": "0x27207b08a3810945988344352ddca3c6c9721ec93b87f1062e67288ff8179d48"
+}

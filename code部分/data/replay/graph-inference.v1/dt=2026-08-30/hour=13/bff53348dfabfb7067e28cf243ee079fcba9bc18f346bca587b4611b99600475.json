@@ -1,0 +1,147 @@
+{
+  "chain_id": 1,
+  "context_windows": [
+    "tx-only",
+    "5m-address"
+  ],
+  "created_at": "2026-08-30T13:29:10.888+00:00",
+  "edges": [
+    {
+      "amount_norm": "338.2815",
+      "amount_raw": "338281500",
+      "asset_node": "asset:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "edge_id": "edge:a68eeb1c3c0938a48511b0c2",
+      "edge_type": "transfer",
+      "from_node": "address:0x89e51fa8ca5d66cd220baed62ed01e8951aa7c40",
+      "log_index": 139,
+      "standard": "erc20",
+      "to_node": "address:0xb55cf564e410b953ffc58608a2bfebf352487065",
+      "token_id": null
+    },
+    {
+      "call_depth": 0,
+      "call_type": "call",
+      "depth": 0,
+      "edge_id": "edge:8c54f68a54c204acb1a0b1c3",
+      "edge_type": "call",
+      "from_node": "address:0x89e51fa8ca5d66cd220baed62ed01e8951aa7c40",
+      "function_name": "transfer",
+      "function_selector": "0xa9059cbb",
+      "function_signature": "transfer(address,uint256)",
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": false,
+      "ordinal": 0,
+      "protocol_hint": "erc20",
+      "revert_reason": null,
+      "selector_family": "erc20_transfer",
+      "semantic_action": "erc20_transfer",
+      "success": true,
+      "to_node": "address:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "value": "0"
+    },
+    {
+      "context_type": "temporal_window",
+      "count": 1,
+      "edge_id": "edge:319c7a51d7155954d38795f0",
+      "edge_type": "context",
+      "from_node": "tx:0x0f01f0de7b2a4acd56d4452483df3a7aa53147726ba635a3e7c7454377fb7b95",
+      "last_seen_at": "2021-10-12T21:00:47.000+00:00",
+      "relation_type": "same_counterparty",
+      "to_node": "context:7d6c4eb16173bc15a4ec31f1",
+      "window": "5m-address"
+    },
+    {
+      "context_type": "temporal_window",
+      "count": 1,
+      "edge_id": "edge:c008de7f12541b37d2e0ae7e",
+      "edge_type": "context",
+      "from_node": "tx:0x0f01f0de7b2a4acd56d4452483df3a7aa53147726ba635a3e7c7454377fb7b95",
+      "last_seen_at": "2021-10-12T21:00:47.000+00:00",
+      "relation_type": "same_asset",
+      "to_node": "context:c0ee5f22fc907667fd8514d6",
+      "window": "5m-address"
+    }
+  ],
+  "event_id": "bff53348dfabfb7067e28cf243ee079fcba9bc18f346bca587b4611b99600475",
+  "feature_missing_flags": [
+    "context_1h_protocol_empty",
+    "context_1h_protocol_unavailable",
+    "no_protocol_role_matches"
+  ],
+  "feature_ver": "cash-flow-graph-builder.v1",
+  "graph_id": "graph:0x0f01f0de7b2a4acd56d4452483df3a7aa53147726ba635a3e7c7454377fb7b95",
+  "graph_snapshot_ref": "data/graph-snapshots/graph-inference.v1/dt=2026-08-30/hour=13/bff53348dfabfb7067e28cf243ee079fcba9bc18f346bca587b4611b99600475.json",
+  "idempotency_key": "1:0x0f01f0de7b2a4acd56d4452483df3a7aa53147726ba635a3e7c7454377fb7b95:trace_transaction:parsed-trace.v1:graph-inference.v1",
+  "lineage": {
+    "graph_builder_ver": "cash-flow-graph-builder.v1",
+    "parsed_trace_event_id": "15c99916f920a9d9e37fd71f06deeb4027494438c9db36859df288e8bff5e052",
+    "parsed_trace_idempotency_key": "1:0x0f01f0de7b2a4acd56d4452483df3a7aa53147726ba635a3e7c7454377fb7b95:trace_transaction:parsed-trace.v1",
+    "protocol_features_event_id": "c24582b24a8c9f2057cc7b149271226ef3470798aa590e33466ba2acb753da34",
+    "protocol_features_idempotency_key": "1:0x0f01f0de7b2a4acd56d4452483df3a7aa53147726ba635a3e7c7454377fb7b95:trace_transaction:parsed-trace.v1:protocol-features.v1",
+    "protocol_role_enricher_ver": "protocol-role-enricher.v1",
+    "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-30/hour=13/1-0x0f01f0de7b2a4acd56d4452483df3a7aa53147726ba635a3e7c7454377fb7b95-trace_transaction.json",
+    "trace_bundle_event_id": "79f85f36f9009c67f206f9201500a4a0b13b32acbfce91141fec26f754a47751",
+    "trace_bundle_idempotency_key": "1:0x0f01f0de7b2a4acd56d4452483df3a7aa53147726ba635a3e7c7454377fb7b95:trace_transaction",
+    "trace_parser_ver": "trace-parser.v1",
+    "transaction_ref": "ethereum:1:0x0f01f0de7b2a4acd56d4452483df3a7aa53147726ba635a3e7c7454377fb7b95"
+  },
+  "nodes": [
+    {
+      "address": "0x89e51fa8ca5d66cd220baed62ed01e8951aa7c40",
+      "node_id": "address:0x89e51fa8ca5d66cd220baed62ed01e8951aa7c40",
+      "node_type": "address"
+    },
+    {
+      "address": "0xb55cf564e410b953ffc58608a2bfebf352487065",
+      "node_id": "address:0xb55cf564e410b953ffc58608a2bfebf352487065",
+      "node_type": "address"
+    },
+    {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_id": "address:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_type": "address"
+    },
+    {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "decimals": 6,
+      "node_id": "asset:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_type": "asset",
+      "standard": "erc20",
+      "symbol": "USDT"
+    },
+    {
+      "count": 1,
+      "last_seen_at": "2021-10-12T21:00:47.000+00:00",
+      "liquidity_delta_usd": null,
+      "node_id": "context:7d6c4eb16173bc15a4ec31f1",
+      "node_type": "context",
+      "price_deviation_bps": null,
+      "relation_type": "same_counterparty",
+      "subject": "0x89e51fa8ca5d66cd220baed62ed01e8951aa7c40",
+      "volume_usd": null,
+      "window": "5m-address"
+    },
+    {
+      "count": 1,
+      "last_seen_at": "2021-10-12T21:00:47.000+00:00",
+      "liquidity_delta_usd": null,
+      "node_id": "context:c0ee5f22fc907667fd8514d6",
+      "node_type": "context",
+      "price_deviation_bps": null,
+      "relation_type": "same_asset",
+      "subject": "0x89e51fa8ca5d66cd220baed62ed01e8951aa7c40",
+      "volume_usd": null,
+      "window": "5m-address"
+    },
+    {
+      "node_id": "tx:0x0f01f0de7b2a4acd56d4452483df3a7aa53147726ba635a3e7c7454377fb7b95",
+      "node_type": "transaction",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x0f01f0de7b2a4acd56d4452483df3a7aa53147726ba635a3e7c7454377fb7b95"
+    }
+  ],
+  "schema_ver": "graph-inference.v1",
+  "tx_hash": "0x0f01f0de7b2a4acd56d4452483df3a7aa53147726ba635a3e7c7454377fb7b95"
+}

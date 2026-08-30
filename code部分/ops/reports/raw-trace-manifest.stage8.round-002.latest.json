@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-08-30T13:28:25.662+00:00",
+  "errors": [],
+  "expected_transactions": 30,
+  "manifest_entries": 30,
+  "out": "data/training/raw-trace-manifest.stage8.round-002.v1.json",
+  "raw_bytes": 2369339,
+  "status": "ok"
+}

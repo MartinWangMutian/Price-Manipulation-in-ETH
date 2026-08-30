@@ -1,0 +1,18 @@
+{
+  "call_protocol_annotations": [],
+  "chain_id": 1,
+  "created_at": "2026-08-30T13:29:10.807+00:00",
+  "event_id": "6619b7bd14ff515878bfb3050430b94fdaa456ad61ffae976ad3a6a7294d9168",
+  "feature_enricher_ver": "protocol-role-enricher.v1",
+  "feature_missing_flags": [
+    "no_protocol_role_matches",
+    "token_decimals_missing"
+  ],
+  "idempotency_key": "1:0xa9e8635065486f8d8cb735ec7825476434b6d79a23daf192625bab9793ad6309:trace_transaction:parsed-trace.v1:protocol-features.v1",
+  "matched_protocol_roles": [],
+  "schema_ver": "protocol-features.v1",
+  "source_parsed_event_id": "62ad6c0c6a447a451aed8b4824d60fbc44e1fcd788668b1975cb32e6e3115b32",
+  "source_parsed_idempotency_key": "1:0xa9e8635065486f8d8cb735ec7825476434b6d79a23daf192625bab9793ad6309:trace_transaction:parsed-trace.v1",
+  "transfer_protocol_annotations": [],
+  "tx_hash": "0xa9e8635065486f8d8cb735ec7825476434b6d79a23daf192625bab9793ad6309"
+}

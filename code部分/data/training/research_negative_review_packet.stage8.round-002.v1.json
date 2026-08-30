@@ -1,0 +1,1196 @@
+{
+  "candidate_label": null,
+  "created_at": "2026-08-30T13:29:35.598+00:00",
+  "errors": [],
+  "items": [
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 20276623,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0xa9e8635065486f8d8cb735ec7825476434b6d79a23daf192625bab9793ad6309",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0x29b93ab7dc31f786fbc0ad2899921c027c1ceef7",
+      "gas": "0x11eb72",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/ae9d53d515659a9d0a8b3595a1c4e895479a9f02178a1b8ba9c3dbb5a0bcbd3f.json",
+      "graph_stats": {
+        "call_edges": 241,
+        "context_edges": 0,
+        "edges": 242,
+        "failed_calls": 0,
+        "max_call_depth": 10,
+        "nodes": 41,
+        "semantic_actions": [
+          "oracle_read",
+          "unknown"
+        ],
+        "transfer_edges": 1
+      },
+      "hard_negative_candidate": true,
+      "input_bytes": 68,
+      "matched_incident_id": "dough_finance_2024_07_12",
+      "metadata_match_score": 0.76525729,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0x5efc9d10e42fb517456f4ac41eb5e2ebe42c8918",
+      "tx_hash": "0xa9e8635065486f8d8cb735ec7825476434b6d79a23daf192625bab9793ad6309",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 20276623,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0xc24716865bca2f3485ca2c18fc2f2938ca343bf8fa2b8cd581b77fd53796dfb8",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0x1980475c3a279935ca611c9a41f17974ebc2e050",
+      "gas": "0x96c71",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/988360498116befe357e0b4f0df069886675a17a6f471c233a0bb2e39a2d45c4.json",
+      "graph_stats": {
+        "call_edges": 44,
+        "context_edges": 0,
+        "edges": 52,
+        "failed_calls": 0,
+        "max_call_depth": 6,
+        "nodes": 20,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 8
+      },
+      "hard_negative_candidate": true,
+      "input_bytes": 279,
+      "matched_incident_id": "dough_finance_2024_07_12",
+      "metadata_match_score": 0.75331085,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0xcf5540fffcdc3d510b18bfca6d2b9987b0772559",
+      "tx_hash": "0xc24716865bca2f3485ca2c18fc2f2938ca343bf8fa2b8cd581b77fd53796dfb8",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 20276623,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0x6c338e4030efa3788b9d1e51338a56b88cc6b197753588752c6ed325ccfc699f",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0x7449e9c55151caf5639062f644423b0c2e37078e",
+      "gas": "0x428a4",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/b69c35afbdf374641c3d42686293f50542eb590cdca495353919f99ef5b35fd0.json",
+      "graph_stats": {
+        "call_edges": 14,
+        "context_edges": 0,
+        "edges": 16,
+        "failed_calls": 0,
+        "max_call_depth": 3,
+        "nodes": 9,
+        "semantic_actions": [
+          "erc20_transfer",
+          "swap",
+          "unknown"
+        ],
+        "transfer_edges": 2
+      },
+      "hard_negative_candidate": false,
+      "input_bytes": 260,
+      "matched_incident_id": "dough_finance_2024_07_12",
+      "metadata_match_score": 0.71652319,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0xed12310d5a37326e6506209c4838146950166760",
+      "tx_hash": "0x6c338e4030efa3788b9d1e51338a56b88cc6b197753588752c6ed325ccfc699f",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 20276623,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0xa6bfb7579185803862c56b0cac17d9d9160ac3fa5b2e9ee0e6c057562da16607",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0x710bda329b2a6224e4b44833de30f38e7f81d564",
+      "gas": "0x7a120",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/c1233e5b00a7fb6c63ce288152c2aabe2cd1c3869ee03a0da99ec9b137ba7490.json",
+      "graph_stats": {
+        "call_edges": 3,
+        "context_edges": 0,
+        "edges": 3,
+        "failed_calls": 0,
+        "max_call_depth": 1,
+        "nodes": 4,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "hard_negative_candidate": false,
+      "input_bytes": 132,
+      "matched_incident_id": "dough_finance_2024_07_12",
+      "metadata_match_score": 0.70037178,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0xb8901acb165ed027e32754e0ffe830802919727f",
+      "tx_hash": "0xa6bfb7579185803862c56b0cac17d9d9160ac3fa5b2e9ee0e6c057562da16607",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 20276623,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0xc3e4ab155da0a52c9e5b9466aca723d27f227c269f3ff0bd28a19a4fa6417b5e",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0xdc1bfbc2b8f01439eeea8e4659bbb452d0f9ee2a",
+      "gas": "0x493e0",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/ad173e92ecab66c7e6275c2f0e091b5d05505637738940734f0445d66cebd88c.json",
+      "graph_stats": {
+        "call_edges": 3,
+        "context_edges": 0,
+        "edges": 3,
+        "failed_calls": 0,
+        "max_call_depth": 2,
+        "nodes": 5,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "hard_negative_candidate": false,
+      "input_bytes": 164,
+      "matched_incident_id": "dough_finance_2024_07_12",
+      "metadata_match_score": 0.69417541,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0x5fdcca53617f4d2b9134b29090c87d01058e27e9",
+      "tx_hash": "0xc3e4ab155da0a52c9e5b9466aca723d27f227c269f3ff0bd28a19a4fa6417b5e",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 13405949,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0x0f01f0de7b2a4acd56d4452483df3a7aa53147726ba635a3e7c7454377fb7b95",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0x89e51fa8ca5d66cd220baed62ed01e8951aa7c40",
+      "gas": "0x7a120",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/bff53348dfabfb7067e28cf243ee079fcba9bc18f346bca587b4611b99600475.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 2,
+        "edges": 4,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 7,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "hard_negative_candidate": false,
+      "input_bytes": 68,
+      "matched_incident_id": "indexed_finance_2021_10_14",
+      "metadata_match_score": 0.70347588,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "tx_hash": "0x0f01f0de7b2a4acd56d4452483df3a7aa53147726ba635a3e7c7454377fb7b95",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 13405949,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0x7d9626d8a31c8e2ab6320eed43c25e7aef3edb5272364c28691779ff272e2965",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0x808b4da0be6c9512e948521452227efc619bea52",
+      "gas": "0x7a120",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/8855ed2b185f8694872dc80eb4522428d2f8b6649fa4e296e404734c41c7a89e.json",
+      "graph_stats": {
+        "call_edges": 5,
+        "context_edges": 2,
+        "edges": 8,
+        "failed_calls": 0,
+        "max_call_depth": 3,
+        "nodes": 9,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 1
+      },
+      "hard_negative_candidate": false,
+      "input_bytes": 68,
+      "matched_incident_id": "indexed_finance_2021_10_14",
+      "metadata_match_score": 0.70347588,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0x2a549b4af9ec39b03142da6dc32221fc390b5533",
+      "tx_hash": "0x7d9626d8a31c8e2ab6320eed43c25e7aef3edb5272364c28691779ff272e2965",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 13405949,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0xce20c04d0a5d83a31738ac2b7cc793ce761e769d4e0ea47c8aa58e14affc80dd",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0x012480c08d20a14cf3cb495e942a94dd926dcc8f",
+      "gas": "0x7a120",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/feb9812ed0b6547179e18878f82a206ab13cd26296bea86c5f8b678678082423.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 2,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 5,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "hard_negative_candidate": false,
+      "input_bytes": 68,
+      "matched_incident_id": "indexed_finance_2021_10_14",
+      "metadata_match_score": 0.70347588,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0xbb0e17ef65f82ab018d8edd776e8dd940327b28b",
+      "tx_hash": "0xce20c04d0a5d83a31738ac2b7cc793ce761e769d4e0ea47c8aa58e14affc80dd",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 13405949,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0x9358446787aff06afe4151adb0b94cdfa6414b78210bfe8886e532efaad2f47c",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0x66c57bf505a85a74609d2c83e94aabb26d691e1f",
+      "gas": "0x7a120",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/9c86471fb6ef3edd5fa31083d2b3fc988c1c6195f18c4959868ba3f1e5a9b81d.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 2,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 5,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "hard_negative_candidate": false,
+      "input_bytes": 68,
+      "matched_incident_id": "indexed_finance_2021_10_14",
+      "metadata_match_score": 0.70347588,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0x6b175474e89094c44da98b954eedeac495271d0f",
+      "tx_hash": "0x9358446787aff06afe4151adb0b94cdfa6414b78210bfe8886e532efaad2f47c",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 13405949,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0x161cd17269fa61d74d422b51a644d931795923bc2f2c5088e8b7b4778cbd6c34",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0xd2c82f2e5fa236e114a81173e375a73664610998",
+      "gas": "0x7a120",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/2cab576baf65fdd7a92f5e6eaef5c0e445f0715184abf42b88e172837f05773e.json",
+      "graph_stats": {
+        "call_edges": 5,
+        "context_edges": 0,
+        "edges": 6,
+        "failed_calls": 0,
+        "max_call_depth": 3,
+        "nodes": 7,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 1
+      },
+      "hard_negative_candidate": false,
+      "input_bytes": 68,
+      "matched_incident_id": "indexed_finance_2021_10_14",
+      "metadata_match_score": 0.70347588,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0x8d1f2ebfaccf1136db76fdd1b86f1dede2d23852",
+      "tx_hash": "0x161cd17269fa61d74d422b51a644d931795923bc2f2c5088e8b7b4778cbd6c34",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 18618392,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0xc2d157c4477d006ed1b147cfdaaf2c7bafed3f8ee5637d66bbf389f5562ad156",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0x46add5069f015db84d91207f80278cffa18d65b9",
+      "gas": "0x11a49a0",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/3d2bd604f0345cdd63220220bee332222957182683b539d071fc8fe81f0e3d7f.json",
+      "graph_stats": {
+        "call_edges": 13,
+        "context_edges": 0,
+        "edges": 24,
+        "failed_calls": 0,
+        "max_call_depth": 1,
+        "nodes": 20,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 11
+      },
+      "hard_negative_candidate": true,
+      "input_bytes": 1604,
+      "matched_incident_id": "kyberswap_2023_11_22",
+      "metadata_match_score": 0.86737634,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0x33ec33b5405cd3725d1aecf818d7d0b285b90962",
+      "tx_hash": "0xc2d157c4477d006ed1b147cfdaaf2c7bafed3f8ee5637d66bbf389f5562ad156",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 18618392,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0x32c1de92446f9446e6e5ae5f482dd5ed58b205f1f30bd3d67b6d6dc972649044",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0xe93685f3bba03016f02bd1828badd6195988d950",
+      "gas": "0x5a72e8",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/6da31f9876fd0f0ec833300f7ed225aec2eaece274900fe0d4529621d0b92613.json",
+      "graph_stats": {
+        "call_edges": 31,
+        "context_edges": 0,
+        "edges": 34,
+        "failed_calls": 0,
+        "max_call_depth": 12,
+        "nodes": 22,
+        "semantic_actions": [
+          "erc20_transfer",
+          "swap",
+          "unknown"
+        ],
+        "transfer_edges": 3
+      },
+      "hard_negative_candidate": true,
+      "input_bytes": 1476,
+      "matched_incident_id": "kyberswap_2023_11_22",
+      "metadata_match_score": 0.75096227,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0x902f09715b6303d4173037652fa7377e5b98089e",
+      "tx_hash": "0x32c1de92446f9446e6e5ae5f482dd5ed58b205f1f30bd3d67b6d6dc972649044",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 18618392,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0x27207b08a3810945988344352ddca3c6c9721ec93b87f1062e67288ff8179d48",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0xd8c027cb6dbbecb41f3184f62e6281dab531fca8",
+      "gas": "0x9e227",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/d7011dd137f1ddf837e127a6609b2358c4a01fb1394ca7129726964726b2d2d3.json",
+      "graph_stats": {
+        "call_edges": 17,
+        "context_edges": 17,
+        "edges": 36,
+        "failed_calls": 0,
+        "max_call_depth": 3,
+        "nodes": 8,
+        "semantic_actions": [
+          "batched_call",
+          "unknown"
+        ],
+        "transfer_edges": 2
+      },
+      "hard_negative_candidate": true,
+      "input_bytes": 1508,
+      "matched_incident_id": "kyberswap_2023_11_22",
+      "metadata_match_score": 0.69770006,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [
+        {
+          "address": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+          "contract": "NonfungiblePositionManager",
+          "protocol_id": "uniswap_v3",
+          "roles": [
+            "lp_position_manager"
+          ]
+        }
+      ],
+      "to": "0xc36442b4a4522e871399cd717abdd847ab11fe88",
+      "tx_hash": "0x27207b08a3810945988344352ddca3c6c9721ec93b87f1062e67288ff8179d48",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 18618392,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0x5accdba775fa58dbda6a8d68002994b3b32a8fd437e2d08e4cb9dd0cc0de5510",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0xc0986d68e483376291922a5aa3a5a8cd8928e523",
+      "gas": "0x434b1",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/2a9e8a2d558fd4601e2adcfaaef4884199d4152ee3886e80b460bc0449d3aca2.json",
+      "graph_stats": {
+        "call_edges": 11,
+        "context_edges": 0,
+        "edges": 16,
+        "failed_calls": 0,
+        "max_call_depth": 3,
+        "nodes": 12,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 5
+      },
+      "hard_negative_candidate": false,
+      "input_bytes": 1828,
+      "matched_incident_id": "kyberswap_2023_11_22",
+      "metadata_match_score": 0.65620921,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0xb2ecfe4e4d61f8790bbb9de2d1259b9e2410cea5",
+      "tx_hash": "0x5accdba775fa58dbda6a8d68002994b3b32a8fd437e2d08e4cb9dd0cc0de5510",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 18618392,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0x0fc4a04ec8b9149dc1169c44641bd1a0f140082a993c2f3b74d142742283ec4e",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0xe3067c7c27c1038de4e8ad95a83b927d23dfbd99",
+      "gas": "0x74b18",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/9a614085492e4d3c7924a638f1eccd4f5786d709776015ecf567d9fd729d1206.json",
+      "graph_stats": {
+        "call_edges": 12,
+        "context_edges": 2,
+        "edges": 17,
+        "failed_calls": 0,
+        "max_call_depth": 3,
+        "nodes": 16,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 3
+      },
+      "hard_negative_candidate": false,
+      "input_bytes": 1956,
+      "matched_incident_id": "kyberswap_2023_11_22",
+      "metadata_match_score": 0.65276722,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0x9008d19f58aabd9ed0d60971565aa8510560ab41",
+      "tx_hash": "0x0fc4a04ec8b9149dc1169c44641bd1a0f140082a993c2f3b74d142742283ec4e",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 9888738,
+      "block_offset": -11000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0x702563f4ff2b1420788790baf931b997d87fb689d3c774001e72551ba4b6fdea",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0x158ed735c864445c35569ad20d6f05952707a23c",
+      "gas": "0x67ab8",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/4fda9cb72924904042be1e13450a5b60f1063b8b37f1e413f558c8793b5a8553.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 1,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 3,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "hard_negative_candidate": false,
+      "input_bytes": 4,
+      "matched_incident_id": "lendfme_2020_04_19",
+      "metadata_match_score": 0.81020468,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0x5fd3e66dcc3915d24b9e6fc57720dc2835714ced",
+      "tx_hash": "0x702563f4ff2b1420788790baf931b997d87fb689d3c774001e72551ba4b6fdea",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 9888738,
+      "block_offset": -11000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0xeb65a9527f8198552a34fe3e463fcd950b1d24e8af1a08cd0c8fd64d41e7ac3c",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0x32c007778ede467aa23000137c6952cf7344e999",
+      "gas": "0x30d40",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/1044739a0e9b3d77ad0e94dbfd89d0cac48a90daf7e4991924b9ddcf0e942917.json",
+      "graph_stats": {
+        "call_edges": 14,
+        "context_edges": 0,
+        "edges": 15,
+        "failed_calls": 0,
+        "max_call_depth": 3,
+        "nodes": 11,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 1
+      },
+      "hard_negative_candidate": false,
+      "input_bytes": 4,
+      "matched_incident_id": "lendfme_2020_04_19",
+      "metadata_match_score": 0.75544981,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0x13b54e8271b3e45ce71d8f4fc73ea936873a34fc",
+      "tx_hash": "0xeb65a9527f8198552a34fe3e463fcd950b1d24e8af1a08cd0c8fd64d41e7ac3c",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 9888738,
+      "block_offset": -11000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0xa9b95921dd6780b5f57826199b03e9dbb7f3aaee2c517a018207c4e8678d815a",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0xd57d50793ad6f5169bfc82c755aa1a42fe5ac0b2",
+      "gas": "0x29284",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/dc6e4da0544131a466201b3888a422b1c6c558eebce0a371b96de7fffc9f3b62.json",
+      "graph_stats": {
+        "call_edges": 2,
+        "context_edges": 0,
+        "edges": 3,
+        "failed_calls": 0,
+        "max_call_depth": 1,
+        "nodes": 5,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 1
+      },
+      "hard_negative_candidate": false,
+      "input_bytes": 4,
+      "matched_incident_id": "lendfme_2020_04_19",
+      "metadata_match_score": 0.74772789,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0xd26b1a36c29e176bfedda7c5aa79bd20ac3d0a9c",
+      "tx_hash": "0xa9b95921dd6780b5f57826199b03e9dbb7f3aaee2c517a018207c4e8678d815a",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 9888738,
+      "block_offset": -11000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0xeeb5cb883f7cf7b1a6c9f2534c93e0091c26b97f4057e9206817ae4393c4f2b7",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0x78517bab53a8adfed24472864d413e074671e0be",
+      "gas": "0x1e5d9",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/9df24b0c109679e56f54bca3704b5f911aba89950d920a63f0c37904e666b628.json",
+      "graph_stats": {
+        "call_edges": 2,
+        "context_edges": 0,
+        "edges": 2,
+        "failed_calls": 0,
+        "max_call_depth": 1,
+        "nodes": 4,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "hard_negative_candidate": false,
+      "input_bytes": 4,
+      "matched_incident_id": "lendfme_2020_04_19",
+      "metadata_match_score": 0.73636728,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0x3dae53ee778a324bd317bd270d6227406b6bd4ed",
+      "tx_hash": "0xeeb5cb883f7cf7b1a6c9f2534c93e0091c26b97f4057e9206817ae4393c4f2b7",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 9888738,
+      "block_offset": -11000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0x73764c0f086898a3995e28075b43a5ffdf50014b948f744183e49bacbeeb9e4f",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0xc59c0bc8905bac27ae0c5671b952260ed39bfbb7",
+      "gas": "0xf4240",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/e5425855fd9b3ee0b72fa2953cb3a82d6d46b334b8edc777fdfe8ad84d4d7cff.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 1,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 3,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "hard_negative_candidate": false,
+      "input_bytes": 36,
+      "matched_incident_id": "lendfme_2020_04_19",
+      "metadata_match_score": 0.69828984,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0xee4650cbe7a2b23701d416f58b41d8b76b617797",
+      "tx_hash": "0x73764c0f086898a3995e28075b43a5ffdf50014b948f744183e49bacbeeb9e4f",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 14672307,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0x47d3f14b796b5f50531c4e06ef80f8eecd281535eb2fd35986f79f03da1531d0",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0xcbe7b755a6a5943cf64a8b02bbc4f7663067acb9",
+      "gas": "0x210256",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/6ead558a22f1d5aa6817b096d4e2c8bda3bc36bd7d3509fcdc867b58e109da21.json",
+      "graph_stats": {
+        "call_edges": 2,
+        "context_edges": 0,
+        "edges": 3,
+        "failed_calls": 0,
+        "max_call_depth": 1,
+        "nodes": 5,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 1
+      },
+      "hard_negative_candidate": false,
+      "input_bytes": 36,
+      "matched_incident_id": "saddle_finance_2022_04_30",
+      "metadata_match_score": 0.75697876,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0xa404f66b9278c4ab8428225014266b4b239bcdc7",
+      "tx_hash": "0x47d3f14b796b5f50531c4e06ef80f8eecd281535eb2fd35986f79f03da1531d0",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 14672307,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0x24e4573c90ac8a9032930017ecf156234edd895d3c05c2e52ab1a8781c50b2c4",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0x7d461ba63078c4d151f16ef602f695a643e89c52",
+      "gas": "0x2a3a7",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/18ba84ec2e0dde219a2776bf991b967b51cb3b39060d6ac56449e3653e86e217.json",
+      "graph_stats": {
+        "call_edges": 9,
+        "context_edges": 0,
+        "edges": 12,
+        "failed_calls": 0,
+        "max_call_depth": 3,
+        "nodes": 13,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 3
+      },
+      "hard_negative_candidate": false,
+      "input_bytes": 4,
+      "matched_incident_id": "saddle_finance_2022_04_30",
+      "metadata_match_score": 0.71185088,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0x808ed7a55b133f64069318da0b173b71bbe44414",
+      "tx_hash": "0x24e4573c90ac8a9032930017ecf156234edd895d3c05c2e52ab1a8781c50b2c4",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 14672307,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0x74a98e25aa72badb85525994ba6064881171e98cfe6742ce79083e80629c6eeb",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0x230a1ac45690b9ae1176389434610b9526d2f21b",
+      "gas": "0xf4240",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/40508762e4a93906b259eb840e0bab5d1c2a7d8aa6cdb50914aac6a5eb80d908.json",
+      "graph_stats": {
+        "call_edges": 26,
+        "context_edges": 1,
+        "edges": 30,
+        "failed_calls": 0,
+        "max_call_depth": 6,
+        "nodes": 16,
+        "semantic_actions": [
+          "erc20_approval",
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 3
+      },
+      "hard_negative_candidate": true,
+      "input_bytes": 292,
+      "matched_incident_id": "saddle_finance_2022_04_30",
+      "metadata_match_score": 0.62164464,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0x2796317b0ff8538f253012862c06787adfb8ceb6",
+      "tx_hash": "0x74a98e25aa72badb85525994ba6064881171e98cfe6742ce79083e80629c6eeb",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 14672307,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0x5d70c98f2dad58bdf21ba8e5a7e0d77d9a29881d57acc73ad154fff578bded66",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0x62e142f218585827436f59997c301f7040396ad4",
+      "gas": "0xaae60",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/93d5d2fba1a4598ece66f1278d86e4fa0c587abd6e32596cadb0da4f36e06de1.json",
+      "graph_stats": {
+        "call_edges": 16,
+        "context_edges": 0,
+        "edges": 16,
+        "failed_calls": 0,
+        "max_call_depth": 6,
+        "nodes": 17,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "hard_negative_candidate": true,
+      "input_bytes": 548,
+      "matched_incident_id": "saddle_finance_2022_04_30",
+      "metadata_match_score": 0.59359453,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+      "tx_hash": "0x5d70c98f2dad58bdf21ba8e5a7e0d77d9a29881d57acc73ad154fff578bded66",
+      "value": "0x0"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "explorer_checked": false,
+        "known_incident_search_checked": false,
+        "protocol_context_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending"
+      },
+      "block_number": 14672307,
+      "block_offset": -12000,
+      "candidate_label": null,
+      "explorer_url": "https://etherscan.io/tx/0x6188e025e49737f50cc5299ccaddf975ba67add75cd7edebf113008ed1444965",
+      "external_screen": {
+        "blockers": [],
+        "known_exploit_transaction_hash_match": false,
+        "ofac_sdn_graph_address_hits": [],
+        "positive_anchor_overlap": false
+      },
+      "from": "0x5041ed759dd4afc3a72b8192c143f72f4724081a",
+      "gas": "0x668a0",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/13b55d77fd764e3e8b92400d1d9f1e471153bfde812274b486b3afeebf489e97.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 2,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 5,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "hard_negative_candidate": false,
+      "input_bytes": 68,
+      "matched_incident_id": "saddle_finance_2022_04_30",
+      "metadata_match_score": 0.59089609,
+      "promotion_status": "not_promoted",
+      "protocol_roles": [],
+      "to": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "tx_hash": "0x6188e025e49737f50cc5299ccaddf975ba67add75cd7edebf113008ed1444965",
+      "value": "0x0"
+    }
+  ],
+  "labels_promoted": 0,
+  "review_packet_content_hash": "05b09caa00a2e21a74df127bf95c51731615fc3222718b41ae16ee98307a1082",
+  "review_policy": [
+    "A screen pass is not evidence that a transaction is benign.",
+    "Open the explorer record and verify the transaction purpose and counterparties.",
+    "Search for incident, sanctions, and suspicious-address evidence beyond exact matches.",
+    "Keep ambiguous candidates unlabeled; do not force a negative decision.",
+    "A negative label requires analyst, reviewed_at, rationale, trace ref, and graph ref."
+  ],
+  "schema_ver": "research-negative-review-packet.stage8.v1",
+  "snapshot_id": "research-expansion.stage8.round-002.negative",
+  "status": "ready_for_analyst"
+}

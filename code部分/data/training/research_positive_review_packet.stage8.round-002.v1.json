@@ -1,0 +1,319 @@
+{
+  "created_at": "2026-08-30T13:32:12.194+00:00",
+  "errors": [],
+  "items": [
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "event_evidence_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending",
+        "trace_graph_checked": false,
+        "transaction_role_checked": false
+      },
+      "event_evidence": [
+        {
+          "source_type": "security_report",
+          "url": "https://safe-edges.medium.com/dough-finance-1-8-m-hack-analysis-d83bcb6b3500"
+        }
+      ],
+      "explorer_url": "https://etherscan.io/tx/0x92cdcc732eebf47200ea56123716e337f6ef7d5ad714a2295794fdc6031ebb2e",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/45812d9e067f635f6983c0604e808e1b157324d76b89b796e1d6690de4ac6504.json",
+      "graph_stats": {
+        "call_edges": 189,
+        "context_edges": 63,
+        "edges": 270,
+        "failed_calls": 0,
+        "max_call_depth": 17,
+        "nodes": 45,
+        "semantic_actions": [
+          "erc20_approval",
+          "erc20_transfer",
+          "flash_loan",
+          "repay",
+          "supply",
+          "swap",
+          "unknown",
+          "withdraw"
+        ],
+        "transfer_edges": 18
+      },
+      "incident_id": "dough_finance_2024_07_12",
+      "independent_event_group": "dough_finance_2024_07_12",
+      "label": null,
+      "promotion_status": "not_promoted",
+      "proposed_label": 1,
+      "protocol_roles": [
+        {
+          "address": "0x2f39d218133afab8f2b819b1066c7e434ad94e9e",
+          "contract": "PoolAddressesProvider",
+          "protocol_id": "aave_v3_ethereum",
+          "roles": [
+            "address_registry"
+          ]
+        },
+        {
+          "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+          "contract": "Pool",
+          "protocol_id": "aave_v3_ethereum",
+          "roles": [
+            "pool",
+            "lending_market",
+            "liquidation_module"
+          ]
+        }
+      ],
+      "transaction_evidence": [
+        {
+          "source_type": "block_explorer",
+          "url": "https://etherscan.io/tx/0x92cdcc732eebf47200ea56123716e337f6ef7d5ad714a2295794fdc6031ebb2e"
+        },
+        {
+          "source_type": "reproduction_corpus",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-07/DoughFina_exp.sol"
+        }
+      ],
+      "tx_hash": "0x92cdcc732eebf47200ea56123716e337f6ef7d5ad714a2295794fdc6031ebb2e"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "event_evidence_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending",
+        "trace_graph_checked": false,
+        "transaction_role_checked": false
+      },
+      "event_evidence": [
+        {
+          "source_type": "protocol_postmortem",
+          "url": "https://ndxfi.medium.com/indexed-attack-post-mortem-b006094f0bdc"
+        }
+      ],
+      "explorer_url": "https://etherscan.io/tx/0x44aad3b853866468161735496a5d9cc961ce5aa872924c5d78673076b1cd95aa",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/ed1ca0e870e2c4dd7b601f10600e8099e1e9e8b98a8a64d1163e470a2ea6b134.json",
+      "graph_stats": {
+        "call_edges": 880,
+        "context_edges": 0,
+        "edges": 1081,
+        "failed_calls": 0,
+        "max_call_depth": 21,
+        "nodes": 46,
+        "semantic_actions": [
+          "erc20_approval",
+          "erc20_transfer",
+          "swap",
+          "unknown"
+        ],
+        "transfer_edges": 201
+      },
+      "incident_id": "indexed_finance_2021_10_14",
+      "independent_event_group": "indexed_finance_2021_10_14",
+      "label": null,
+      "promotion_status": "not_promoted",
+      "proposed_label": 1,
+      "protocol_roles": [],
+      "transaction_evidence": [
+        {
+          "source_type": "block_explorer",
+          "url": "https://etherscan.io/tx/0x44aad3b853866468161735496a5d9cc961ce5aa872924c5d78673076b1cd95aa"
+        },
+        {
+          "source_type": "reproduction_corpus",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-10/IndexedFinance_exp.sol"
+        }
+      ],
+      "tx_hash": "0x44aad3b853866468161735496a5d9cc961ce5aa872924c5d78673076b1cd95aa"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "event_evidence_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending",
+        "trace_graph_checked": false,
+        "transaction_role_checked": false
+      },
+      "event_evidence": [
+        {
+          "source_type": "protocol_postmortem",
+          "url": "https://blog.kyberswap.com/post-mortem-kyberswap-elastic-exploit/"
+        }
+      ],
+      "explorer_url": "https://etherscan.io/tx/0x485e08dc2b6a4b3aeadcb89c3d18a37666dc7d9424961a2091d6b3696792f0f3",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/b3844dfb9d124ff03fcb5c503908951e75198720e039aa3e55cae008ccded8ba.json",
+      "graph_stats": {
+        "call_edges": 513,
+        "context_edges": 53,
+        "edges": 661,
+        "failed_calls": 0,
+        "max_call_depth": 9,
+        "nodes": 46,
+        "semantic_actions": [
+          "erc20_approval",
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 95
+      },
+      "incident_id": "kyberswap_2023_11_22",
+      "independent_event_group": "kyberswap_2023_11_22",
+      "label": null,
+      "promotion_status": "not_promoted",
+      "proposed_label": 1,
+      "protocol_roles": [
+        {
+          "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+          "contract": "Pool",
+          "protocol_id": "aave_v3_ethereum",
+          "roles": [
+            "pool",
+            "lending_market",
+            "liquidation_module"
+          ]
+        }
+      ],
+      "transaction_evidence": [
+        {
+          "source_type": "block_explorer",
+          "url": "https://etherscan.io/tx/0x485e08dc2b6a4b3aeadcb89c3d18a37666dc7d9424961a2091d6b3696792f0f3"
+        },
+        {
+          "source_type": "reproduction_corpus",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/KyberSwap_exp.eth.1.sol"
+        }
+      ],
+      "tx_hash": "0x485e08dc2b6a4b3aeadcb89c3d18a37666dc7d9424961a2091d6b3696792f0f3"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "event_evidence_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending",
+        "trace_graph_checked": false,
+        "transaction_role_checked": false
+      },
+      "event_evidence": [
+        {
+          "source_type": "security_report",
+          "url": "https://peckshield.medium.com/uniswap-lendf-me-hacks-root-cause-and-loss-analysis-50f3263dcc09"
+        }
+      ],
+      "explorer_url": "https://etherscan.io/tx/0xae7d664bdfcc54220df4f18d339005c6faf6e62c9ca79c56387bc0389274363b",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/84ccff324eb0786c68b8022878768cf11db1dd240e272541fd540a6fc2638e6a.json",
+      "graph_stats": {
+        "call_edges": 46,
+        "context_edges": 0,
+        "edges": 49,
+        "failed_calls": 0,
+        "max_call_depth": 6,
+        "nodes": 10,
+        "semantic_actions": [
+          "erc20_approval",
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 3
+      },
+      "incident_id": "lendfme_2020_04_19",
+      "independent_event_group": "lendfme_2020_04_19",
+      "label": null,
+      "promotion_status": "not_promoted",
+      "proposed_label": 1,
+      "protocol_roles": [],
+      "transaction_evidence": [
+        {
+          "source_type": "block_explorer",
+          "url": "https://etherscan.io/tx/0xae7d664bdfcc54220df4f18d339005c6faf6e62c9ca79c56387bc0389274363b"
+        },
+        {
+          "source_type": "reproduction_corpus",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2020-04/LendfMe_exp.sol"
+        }
+      ],
+      "tx_hash": "0xae7d664bdfcc54220df4f18d339005c6faf6e62c9ca79c56387bc0389274363b"
+    },
+    {
+      "analyst_review": {
+        "analyst": null,
+        "decision": null,
+        "event_evidence_checked": false,
+        "rationale": null,
+        "reviewed_at": null,
+        "status": "pending",
+        "trace_graph_checked": false,
+        "transaction_role_checked": false
+      },
+      "event_evidence": [
+        {
+          "source_type": "security_report",
+          "url": "https://medium.com/immunefi/hack-analysis-saddle-finance-april-2022-f2bcb119f38"
+        }
+      ],
+      "explorer_url": "https://etherscan.io/tx/0x2b023d65485c4bb68d781960c2196588d03b871dc9eb1c054f596b7ca6f7da56",
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=13/ebb6681e0355ab6c71c0e4a50bad2581659baabf21bc4bd321c3390e07f2ef49.json",
+      "graph_stats": {
+        "call_edges": 403,
+        "context_edges": 8,
+        "edges": 448,
+        "failed_calls": 0,
+        "max_call_depth": 11,
+        "nodes": 41,
+        "semantic_actions": [
+          "erc20_approval",
+          "erc20_transfer",
+          "swap",
+          "unknown"
+        ],
+        "transfer_edges": 37
+      },
+      "incident_id": "saddle_finance_2022_04_30",
+      "independent_event_group": "saddle_finance_2022_04_30",
+      "label": null,
+      "promotion_status": "not_promoted",
+      "proposed_label": 1,
+      "protocol_roles": [
+        {
+          "address": "0x68b3465833fb72a70ecdf485e0e4c7bd8665fc45",
+          "contract": "SwapRouter02",
+          "protocol_id": "uniswap_v3_router",
+          "roles": [
+            "router"
+          ]
+        }
+      ],
+      "transaction_evidence": [
+        {
+          "source_type": "block_explorer",
+          "url": "https://etherscan.io/tx/0x2b023d65485c4bb68d781960c2196588d03b871dc9eb1c054f596b7ca6f7da56"
+        },
+        {
+          "source_type": "reproduction_corpus",
+          "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-04/Saddle_exp.sol"
+        }
+      ],
+      "tx_hash": "0x2b023d65485c4bb68d781960c2196588d03b871dc9eb1c054f596b7ca6f7da56"
+    }
+  ],
+  "labels_promoted": 0,
+  "review_packet_content_hash": "f45a15cfb00d5abf1aa7c8651d077fcc2b05a5ae5677e0c6e1d7d6e6a5725bb9",
+  "review_policy": [
+    "Verify the event evidence and the exact role of this transaction.",
+    "Verify trace and rich-graph lineage before promotion.",
+    "A verified event does not automatically prove every candidate transaction is an attack entry.",
+    "Keep a mismatched or ambiguous transaction unlabeled.",
+    "Promotion requires analyst, reviewed_at, rationale, trace ref, and graph ref."
+  ],
+  "schema_ver": "research-positive-review-packet.stage8.v1",
+  "snapshot_id": "research-expansion.stage8.round-002.positive",
+  "status": "ready_for_analyst"
+}

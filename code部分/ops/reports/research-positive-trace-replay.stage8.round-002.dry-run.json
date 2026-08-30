@@ -1,0 +1,37 @@
+{
+  "attempts": [],
+  "block_context_cache_entries": 10,
+  "block_context_cache_hits": 0,
+  "chain_check": {
+    "chain_id": null,
+    "ok": false,
+    "performed": false
+  },
+  "checked_at": "2026-08-30T13:24:08.218+00:00",
+  "dry_run": true,
+  "endpoint_configured": false,
+  "fail_fast": true,
+  "failed_trace_bundles": 0,
+  "inter_item_delay_s": 0.0,
+  "max_retries": 1,
+  "method": "trace_transaction",
+  "ok_trace_bundles": 0,
+  "provider_cost_note": "Inspect the provider billing dashboard; JSON-RPC responses do not include invoice cost.",
+  "queue": "data/training/research_positive_trace_queue.stage8.round-002.v1.json",
+  "queue_items_seen": 5,
+  "reused_existing_bundles": 0,
+  "rpc_call_summary": {
+    "chain_checks": 0,
+    "trace_attempts": 0,
+    "transaction_context_calls": 0
+  },
+  "run_id": "stage8-round-002-positive",
+  "skip_existing": true,
+  "start_index": 0,
+  "status": "dry_run_ok",
+  "transaction_contexts": [],
+  "validation_errors": [],
+  "write_failed_bundles": false,
+  "written": [],
+  "written_trace_bundles": 0
+}

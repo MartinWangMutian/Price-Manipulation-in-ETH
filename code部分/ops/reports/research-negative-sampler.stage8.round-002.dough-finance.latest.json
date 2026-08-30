@@ -1,0 +1,39 @@
+{
+  "anchor_block": 20288623,
+  "anchor_tx_hash": "0x92cdcc732eebf47200ea56123716e337f6ef7d5ad714a2295794fdc6031ebb2e",
+  "block_summaries": [
+    {
+      "block_hash": "0x72fcb07dd7ae9133c48f82b1fef9e9a6847c6ad8d0f41a083902ed439d54fbb4",
+      "block_number": 20276623,
+      "block_offset": -12000,
+      "transactions": 177
+    }
+  ],
+  "blocks_loaded": 1,
+  "blocks_requested": 1,
+  "checked_at": "2026-08-30T13:23:06.792+00:00",
+  "dry_run": false,
+  "errors": [],
+  "excluded_addresses": 2,
+  "excluded_frozen_held_out_hashes": 11,
+  "excluded_positive_hashes": 22,
+  "gate": "stage8_negative_metadata_pilot",
+  "incident_id": "dough_finance_2024_07_12",
+  "max_retries": 1,
+  "provider_cost_note": "Inspect the provider billing dashboard; JSON-RPC responses do not include invoice cost.",
+  "rpc_call_attempts": 3,
+  "rpc_calls_ok": 3,
+  "selected_count": 5,
+  "skipped": {
+    "duplicate_hash": 0,
+    "excluded_address": 0,
+    "excluded_hash": 0,
+    "gas_below_minimum": 34,
+    "invalid_hash": 0,
+    "not_contract_call": 79,
+    "to_address_cap": 0
+  },
+  "status": "ok",
+  "target_count": 5,
+  "trace_calls_performed": 0
+}
