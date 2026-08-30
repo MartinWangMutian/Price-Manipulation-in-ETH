@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-08-30T08:52:39.536+00:00",
+  "errors": [],
+  "existing_frozen_anchor_count": 1,
+  "gate": "stage8_research_expansion_builder",
+  "negative_graph_target_met": false,
+  "new_frozen_held_out_overlap": [],
+  "next_gate": "one verified positive anchor plus five unlabeled matched negative candidates",
+  "paid_calls_performed": 0,
+  "positive_graph_target_met": false,
+  "progress": {
+    "current_promoted_negative_rich_graphs": 50,
+    "current_promoted_positive_rich_graphs": 5,
+    "negative_rich_graph_gap": 950,
+    "negative_sampling_slots": 1000,
+    "new_positive_anchor_queue_items": 15,
+    "positive_rich_graph_gap": 95,
+    "verified_anchor_transactions": 20,
+    "verified_independent_events": 20
+  },
+  "research_target_complete": false,
+  "status": "ready_for_pilot",
+  "verified_event_target_met": true
+}

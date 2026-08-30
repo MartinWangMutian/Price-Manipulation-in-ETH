@@ -1,0 +1,313 @@
+{
+  "schema_ver": "research-incidents.stage8.v1",
+  "snapshot_id": "research-incidents.stage8.round-001",
+  "created_at": "2026-08-30T00:00:00.000+00:00",
+  "chain": "ethereum",
+  "chain_id": 1,
+  "incidents": [
+    {
+      "incident_id": "bzx_2020_02_18",
+      "independent_event_group": "bzx_2020_02_18",
+      "incident_date": "2020-02-18",
+      "affected_protocol": "bZx",
+      "attack_type": "oracle_manipulation_margin_position",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0x762881b07feb63c436dee38edd4ff1f7a74c33091e534af56c9f7d49b5ecac15"],
+      "event_evidence": [{"source_type": "security_report", "url": "https://slowmist.medium.com/introduction-ca09c9b32b1b"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0x762881b07feb63c436dee38edd4ff1f7a74c33091e534af56c9f7d49b5ecac15"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"}
+      ]
+    },
+    {
+      "incident_id": "lendfme_2020_04_19",
+      "independent_event_group": "lendfme_2020_04_19",
+      "incident_date": "2020-04-19",
+      "affected_protocol": "Lendf.Me",
+      "attack_type": "erc777_reentrancy",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0xae7d664bdfcc54220df4f18d339005c6faf6e62c9ca79c56387bc0389274363b"],
+      "event_evidence": [{"source_type": "security_report", "url": "https://peckshield.medium.com/uniswap-lendf-me-hacks-root-cause-and-loss-analysis-50f3263dcc09"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0xae7d664bdfcc54220df4f18d339005c6faf6e62c9ca79c56387bc0389274363b"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2020-04/LendfMe_exp.sol"}
+      ]
+    },
+    {
+      "incident_id": "balancer_2020_06_28",
+      "independent_event_group": "balancer_2020_06_28",
+      "incident_date": "2020-06-28",
+      "affected_protocol": "Balancer",
+      "attack_type": "deflationary_token_pool_price_manipulation",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0x013be97768b702fe8eccef1a40544d5ecb3c1961ad5f87fee4d16fdc08c78106"],
+      "event_evidence": [{"source_type": "protocol_postmortem", "url": "https://medium.com/balancer-protocol/incident-with-non-standard-erc20-deflationary-tokens-95a0f6d46dea"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0x013be97768b702fe8eccef1a40544d5ecb3c1961ad5f87fee4d16fdc08c78106"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2020-06/Balancer_20200628_exp.sol"}
+      ]
+    },
+    {
+      "incident_id": "harvest_finance_2020_10_26",
+      "independent_event_group": "harvest_finance_2020_10_26",
+      "incident_date": "2020-10-26",
+      "affected_protocol": "Harvest Finance",
+      "attack_type": "curve_price_manipulation",
+      "status": "review_hold",
+      "hold_reason": "existing candidate is an attacker profit transfer rather than an attack entry transaction",
+      "anchor_transactions": ["0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58"],
+      "event_evidence": [{"source_type": "protocol_postmortem", "url": "https://docs.harvest.finance/other/security/incidents/fusdc-fusdt-economic-attack-oct-26-2020"}],
+      "transaction_evidence": [{"source_type": "block_explorer", "url": "https://etherscan.io/tx/0x53fae6f1d6b8a76a666a0bf7f9c724e6006465e544f89f1515b939d8911e8c58"}]
+    },
+    {
+      "incident_id": "pickle_finance_2020_11_21",
+      "independent_event_group": "pickle_finance_2020_11_21",
+      "incident_date": "2020-11-21",
+      "affected_protocol": "Pickle Finance",
+      "attack_type": "malicious_strategy_swap",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0xe72d4e7ba9b5af0cf2a8cfb1e30fd9f388df0ab3da79790be842bfbed11087b0"],
+      "event_evidence": [{"source_type": "onchain_evidence", "url": "https://etherscan.io/tx/0xe72d4e7ba9b5af0cf2a8cfb1e30fd9f388df0ab3da79790be842bfbed11087b0"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0xe72d4e7ba9b5af0cf2a8cfb1e30fd9f388df0ab3da79790be842bfbed11087b0"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2020-11/Pickle_exp.sol"}
+      ]
+    },
+    {
+      "incident_id": "yearn_ydai_2021_02_04",
+      "independent_event_group": "yearn_ydai_2021_02_04",
+      "incident_date": "2021-02-04",
+      "affected_protocol": "Yearn Finance",
+      "attack_type": "vault_share_price_manipulation",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0x59faab5a1911618064f1ffa1e4649d85c99cfd9f0d64dcebbc1af7d7630da98b"],
+      "event_evidence": [{"source_type": "protocol_postmortem", "url": "https://github.com/yearn/yearn-security/blob/master/disclosures/2021-02-04.md"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0x59faab5a1911618064f1ffa1e4649d85c99cfd9f0d64dcebbc1af7d7630da98b"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-02/Yearn_ydai_exp.sol"}
+      ]
+    },
+    {
+      "incident_id": "rari_capital_2021_05_08",
+      "independent_event_group": "rari_capital_2021_05_08",
+      "incident_date": "2021-05-08",
+      "affected_protocol": "Rari Capital",
+      "attack_type": "cross_protocol_exchange_rate_reentrancy",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0x171072422efb5cd461546bfe986017d9b5aa427ff1c07ebe8acc064b13a7b7be"],
+      "event_evidence": [{"source_type": "protocol_postmortem", "url": "https://medium.com/rari-capital/5-8-2021-rari-ethereum-pool-post-mortem-60aab6a6f8f9"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0x171072422efb5cd461546bfe986017d9b5aa427ff1c07ebe8acc064b13a7b7be"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-05/RariCapital_exp.sol"}
+      ]
+    },
+    {
+      "incident_id": "poly_network_2021_08_10",
+      "independent_event_group": "poly_network_2021_08_10",
+      "incident_date": "2021-08-10",
+      "affected_protocol": "Poly Network",
+      "attack_type": "cross_chain_message_verification_bypass",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0xb1f70464bd95b774c6ce60fc706eb5f9e35cb5f06e6cfe7c17dcda46ffd59581"],
+      "event_evidence": [{"source_type": "onchain_evidence", "url": "https://etherscan.io/tx/0xb1f70464bd95b774c6ce60fc706eb5f9e35cb5f06e6cfe7c17dcda46ffd59581"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0xb1f70464bd95b774c6ce60fc706eb5f9e35cb5f06e6cfe7c17dcda46ffd59581"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-08/PolyNetwork_exp.sol"}
+      ]
+    },
+    {
+      "incident_id": "indexed_finance_2021_10_14",
+      "independent_event_group": "indexed_finance_2021_10_14",
+      "incident_date": "2021-10-14",
+      "affected_protocol": "Indexed Finance",
+      "attack_type": "index_pool_rebalance_price_manipulation",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0x44aad3b853866468161735496a5d9cc961ce5aa872924c5d78673076b1cd95aa"],
+      "event_evidence": [{"source_type": "protocol_postmortem", "url": "https://ndxfi.medium.com/indexed-attack-post-mortem-b006094f0bdc"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0x44aad3b853866468161735496a5d9cc961ce5aa872924c5d78673076b1cd95aa"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2021-10/IndexedFinance_exp.sol"}
+      ]
+    },
+    {
+      "incident_id": "cream_finance_2021_10_27",
+      "independent_event_group": "cream_finance_2021_10_27",
+      "incident_date": "2021-10-27",
+      "affected_protocol": "Cream Finance",
+      "attack_type": "oracle_manipulation_lending_pool",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0x0fe2542079644e107cbf13690eb9c2c65963ccb79089ff96bfaf8dced2331c92"],
+      "event_evidence": [{"source_type": "security_report", "url": "https://dn.institute/research/cyberattacks/incidents/2021-10-27-cream-finance/"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0x0fe2542079644e107cbf13690eb9c2c65963ccb79089ff96bfaf8dced2331c92"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"}
+      ]
+    },
+    {
+      "incident_id": "beanstalk_2022_04_17",
+      "independent_event_group": "beanstalk_2022_04_17",
+      "incident_date": "2022-04-17",
+      "affected_protocol": "Beanstalk Farms",
+      "attack_type": "flash_loan_governance",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7"],
+      "event_evidence": [{"source_type": "protocol_postmortem", "url": "https://bean.money/blog/beanstalk-farms-2022-roundup"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"}
+      ]
+    },
+    {
+      "incident_id": "rari_fei_2022_04_30",
+      "independent_event_group": "rari_fei_2022_04_30",
+      "incident_date": "2022-04-30",
+      "affected_protocol": "Rari Capital Fuse / Fei Protocol",
+      "attack_type": "compound_fork_reentrancy",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530"],
+      "event_evidence": [{"source_type": "security_report", "url": "https://certik.medium.com/fei-protocol-incident-analysis-8527440696cc"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-04/Rari_exp.sol"}
+      ]
+    },
+    {
+      "incident_id": "saddle_finance_2022_04_30",
+      "independent_event_group": "saddle_finance_2022_04_30",
+      "incident_date": "2022-04-30",
+      "affected_protocol": "Saddle Finance",
+      "attack_type": "metapool_virtual_price_manipulation",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0x2b023d65485c4bb68d781960c2196588d03b871dc9eb1c054f596b7ca6f7da56"],
+      "event_evidence": [{"source_type": "security_report", "url": "https://medium.com/immunefi/hack-analysis-saddle-finance-april-2022-f2bcb119f38"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0x2b023d65485c4bb68d781960c2196588d03b871dc9eb1c054f596b7ca6f7da56"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2022-04/Saddle_exp.sol"}
+      ]
+    },
+    {
+      "incident_id": "conic_finance_2023_07_21",
+      "independent_event_group": "conic_finance_2023_07_21",
+      "incident_date": "2023-07-21",
+      "affected_protocol": "Conic Finance",
+      "attack_type": "read_only_reentrancy",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0x8b74995d1d61d3d7547575649136b8765acb22882960f0636941c44ec7bbe146"],
+      "event_evidence": [{"source_type": "security_report", "url": "https://www.certik.com/resources/blog/conic-finance-incident-analysis"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0x8b74995d1d61d3d7547575649136b8765acb22882960f0636941c44ec7bbe146"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"}
+      ]
+    },
+    {
+      "incident_id": "curve_vyper_2023_07_30",
+      "independent_event_group": "curve_vyper_2023_07_30",
+      "incident_date": "2023-07-30",
+      "affected_protocol": "Curve Finance",
+      "attack_type": "reentrancy_compiler_bug",
+      "status": "review_hold",
+      "hold_reason": "existing candidate occurred after the incident and has a single-call structural mismatch",
+      "anchor_transactions": ["0x4197ed0ef9b60ab1cacdc31d6d3ce06413b333b14b8947be5c0cfe29cb88b088"],
+      "event_evidence": [{"source_type": "security_report", "url": "https://www.certik.com/blog/vyper-incident-anaylsis"}],
+      "transaction_evidence": [{"source_type": "block_explorer", "url": "https://etherscan.io/tx/0x4197ed0ef9b60ab1cacdc31d6d3ce06413b333b14b8947be5c0cfe29cb88b088"}]
+    },
+    {
+      "incident_id": "euler_finance_2023_03_13",
+      "independent_event_group": "euler_finance_2023_03_13",
+      "incident_date": "2023-03-13",
+      "affected_protocol": "Euler Finance",
+      "attack_type": "flash_loan_liquidation_logic",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d"],
+      "event_evidence": [{"source_type": "security_report", "url": "https://www.certik.com/resources/blog/euler-finance-incident-analysis"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs"}
+      ]
+    },
+    {
+      "incident_id": "wise_lending_2023_10_13",
+      "independent_event_group": "wise_lending_2023_10_13",
+      "incident_date": "2023-10-13",
+      "affected_protocol": "Wise Lending",
+      "attack_type": "donation_rounding_whitehat_exploit",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0x7ac4a98599596adbf12fffa2bd23e2a2d2ac7e8989b6ea043fcc412a29126555"],
+      "event_evidence": [{"source_type": "security_report", "url": "https://twitter.com/BlockSecTeam/status/1712871304993689709"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0x7ac4a98599596adbf12fffa2bd23e2a2d2ac7e8989b6ea043fcc412a29126555"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-10/WiseLending_exp.sol"}
+      ]
+    },
+    {
+      "incident_id": "kyberswap_2023_11_22",
+      "independent_event_group": "kyberswap_2023_11_22",
+      "incident_date": "2023-11-22",
+      "affected_protocol": "KyberSwap Elastic",
+      "attack_type": "concentrated_liquidity_rounding_error",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0x485e08dc2b6a4b3aeadcb89c3d18a37666dc7d9424961a2091d6b3696792f0f3"],
+      "event_evidence": [{"source_type": "protocol_postmortem", "url": "https://blog.kyberswap.com/post-mortem-kyberswap-elastic-exploit/"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0x485e08dc2b6a4b3aeadcb89c3d18a37666dc7d9424961a2091d6b3696792f0f3"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2023-11/KyberSwap_exp.eth.1.sol"}
+      ]
+    },
+    {
+      "incident_id": "wise_lending_2024_01_12",
+      "independent_event_group": "wise_lending_2024_01_12",
+      "incident_date": "2024-01-12",
+      "affected_protocol": "Wise Lending",
+      "attack_type": "share_price_donation_manipulation",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0x04e16a79ff928db2fa88619cdd045cdfc7979a61d836c9c9e585b3d6f6d8bc31"],
+      "event_evidence": [{"source_type": "security_report", "url": "https://twitter.com/peckshield/status/1745907642118123774"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0x04e16a79ff928db2fa88619cdd045cdfc7979a61d836c9c9e585b3d6f6d8bc31"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-01/WiseLending02_exp.sol"}
+      ]
+    },
+    {
+      "incident_id": "prisma_finance_2024_03_28",
+      "independent_event_group": "prisma_finance_2024_03_28",
+      "incident_date": "2024-03-28",
+      "affected_protocol": "Prisma Finance",
+      "attack_type": "migrate_trove_input_validation",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0x00c503b595946bccaea3d58025b5f9b3726177bbdc9674e634244135282116c7"],
+      "event_evidence": [{"source_type": "security_report", "url": "https://medium.com/neptune-mutual/analysis-of-the-prisma-finance-exploit-343ea42cf68e"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0x00c503b595946bccaea3d58025b5f9b3726177bbdc9674e634244135282116c7"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-03/Prisma_exp.sol"}
+      ]
+    },
+    {
+      "incident_id": "uwu_lend_2024_06_10",
+      "independent_event_group": "uwu_lend_2024_06_10",
+      "incident_date": "2024-06-10",
+      "affected_protocol": "UwU Lend",
+      "attack_type": "curve_spot_oracle_manipulation",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0x242a0fb4fde9de0dc2fd42e8db743cbc197ffa2bf6a036ba0bba303df296408b"],
+      "event_evidence": [{"source_type": "audit_report", "url": "https://quillaudits.medium.com/decoding-uwu-lends-19-4-million-exploit-quillaudits-15a9c158166a"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0x242a0fb4fde9de0dc2fd42e8db743cbc197ffa2bf6a036ba0bba303df296408b"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-06/UwuLend_First_exp.sol"}
+      ]
+    },
+    {
+      "incident_id": "dough_finance_2024_07_12",
+      "independent_event_group": "dough_finance_2024_07_12",
+      "incident_date": "2024-07-12",
+      "affected_protocol": "Dough Finance",
+      "attack_type": "flash_loan_callback_input_validation",
+      "status": "verified_anchor",
+      "anchor_transactions": ["0x92cdcc732eebf47200ea56123716e337f6ef7d5ad714a2295794fdc6031ebb2e"],
+      "event_evidence": [{"source_type": "security_report", "url": "https://safe-edges.medium.com/dough-finance-1-8-m-hack-analysis-d83bcb6b3500"}],
+      "transaction_evidence": [
+        {"source_type": "block_explorer", "url": "https://etherscan.io/tx/0x92cdcc732eebf47200ea56123716e337f6ef7d5ad714a2295794fdc6031ebb2e"},
+        {"source_type": "reproduction_corpus", "url": "https://github.com/SunWeb3Sec/DeFiHackLabs/blob/main/src/test/2024-07/DoughFina_exp.sol"}
+      ]
+    }
+  ]
+}

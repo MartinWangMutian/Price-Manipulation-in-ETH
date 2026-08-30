@@ -1,0 +1,470 @@
+{
+  "created_at": "2026-08-30T08:52:39.536+00:00",
+  "frozen_held_out_count": 11,
+  "held_out_exclusions_sha256": "1cdac01298f3a62c49683e32ec7e025da28f2ac2b299359274699d5c300ca951",
+  "requested_total": 1000,
+  "requests": [
+    {
+      "affected_protocol": "Balancer",
+      "anchor_transactions": [
+        "0x013be97768b702fe8eccef1a40544d5ecb3c1961ad5f87fee4d16fdc08c78106"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "balancer_2020_06_28",
+      "independent_event_group": "balancer_2020_06_28",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "4155c8c7d04171475b48a6364efba665a237fe14d2a803a8c4def18cbb687579",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "Beanstalk Farms",
+      "anchor_transactions": [
+        "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "beanstalk_2022_04_17",
+      "independent_event_group": "beanstalk_2022_04_17",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "edb54c4da43bc60b553cbacc991e098c24a9ef0a7583901a178d6919b2b846a1",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "bZx",
+      "anchor_transactions": [
+        "0x762881b07feb63c436dee38edd4ff1f7a74c33091e534af56c9f7d49b5ecac15"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "bzx_2020_02_18",
+      "independent_event_group": "bzx_2020_02_18",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "fcd705a55bdb1431bdd946906dc35f7babafcb607f4a47731eabfb7683eedf6c",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "Conic Finance",
+      "anchor_transactions": [
+        "0x8b74995d1d61d3d7547575649136b8765acb22882960f0636941c44ec7bbe146"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "conic_finance_2023_07_21",
+      "independent_event_group": "conic_finance_2023_07_21",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "0206f931b619f255bb28a36b9e6a9745197c502859504bc836583975a0bcac34",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "Cream Finance",
+      "anchor_transactions": [
+        "0x0fe2542079644e107cbf13690eb9c2c65963ccb79089ff96bfaf8dced2331c92"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "cream_finance_2021_10_27",
+      "independent_event_group": "cream_finance_2021_10_27",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "7cf401aa3c9b2395e840689ea402c74d1491868a4bed7c1d874f6478edcb4f08",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "Dough Finance",
+      "anchor_transactions": [
+        "0x92cdcc732eebf47200ea56123716e337f6ef7d5ad714a2295794fdc6031ebb2e"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "dough_finance_2024_07_12",
+      "independent_event_group": "dough_finance_2024_07_12",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "4d808485617167324117dddb2a846d0ebd509295bf223c75db73db5421020f55",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "Euler Finance",
+      "anchor_transactions": [
+        "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "euler_finance_2023_03_13",
+      "independent_event_group": "euler_finance_2023_03_13",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "6d77ee5042a2789ab81c63ef9d7f501dd06a1c8c240df76d6d48322fb5dc65f6",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "Indexed Finance",
+      "anchor_transactions": [
+        "0x44aad3b853866468161735496a5d9cc961ce5aa872924c5d78673076b1cd95aa"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "indexed_finance_2021_10_14",
+      "independent_event_group": "indexed_finance_2021_10_14",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "e564db7586990706737c78aaf392215695b740cb848eb47d439bce878443e36f",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "KyberSwap Elastic",
+      "anchor_transactions": [
+        "0x485e08dc2b6a4b3aeadcb89c3d18a37666dc7d9424961a2091d6b3696792f0f3"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "kyberswap_2023_11_22",
+      "independent_event_group": "kyberswap_2023_11_22",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "a2c264429ce57fba73307515a4ed21a7c30d1edde40021637012645c26551f75",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "Lendf.Me",
+      "anchor_transactions": [
+        "0xae7d664bdfcc54220df4f18d339005c6faf6e62c9ca79c56387bc0389274363b"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "lendfme_2020_04_19",
+      "independent_event_group": "lendfme_2020_04_19",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "8cc71e33b79b643b009b85a3b5b000c72ac23d9d8eaf2c10e8c561ba00ea3589",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "Pickle Finance",
+      "anchor_transactions": [
+        "0xe72d4e7ba9b5af0cf2a8cfb1e30fd9f388df0ab3da79790be842bfbed11087b0"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "pickle_finance_2020_11_21",
+      "independent_event_group": "pickle_finance_2020_11_21",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "0d139ad6bf9cf98c8c37994038c474b359c8bb5e9b4eb250df7420fe599e14dc",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "Poly Network",
+      "anchor_transactions": [
+        "0xb1f70464bd95b774c6ce60fc706eb5f9e35cb5f06e6cfe7c17dcda46ffd59581"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "poly_network_2021_08_10",
+      "independent_event_group": "poly_network_2021_08_10",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "464cef438f0b1e21399ff3954e383a8d6cf232cedc33de79f3f44c93c9bd2593",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "Prisma Finance",
+      "anchor_transactions": [
+        "0x00c503b595946bccaea3d58025b5f9b3726177bbdc9674e634244135282116c7"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "prisma_finance_2024_03_28",
+      "independent_event_group": "prisma_finance_2024_03_28",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "4d67830d081ab23e36413de8d854f597eaa2748b3dedfacb6c168f9d7558bef6",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "Rari Capital",
+      "anchor_transactions": [
+        "0x171072422efb5cd461546bfe986017d9b5aa427ff1c07ebe8acc064b13a7b7be"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "rari_capital_2021_05_08",
+      "independent_event_group": "rari_capital_2021_05_08",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "1075097fd3f3375b8ba1a86cbe4ba88525ec0ddfcb20a4c6f145ff61f564e2a4",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "Rari Capital Fuse / Fei Protocol",
+      "anchor_transactions": [
+        "0xab486012f21be741c9e674ffda227e30518e8a1e37a5f1d58d0b0d41f6e76530"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "rari_fei_2022_04_30",
+      "independent_event_group": "rari_fei_2022_04_30",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "3ec9f9dd3d991462a1bb366efafcb37fc8ea88d4d76b3c33ca828f94e8ecad7b",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "Saddle Finance",
+      "anchor_transactions": [
+        "0x2b023d65485c4bb68d781960c2196588d03b871dc9eb1c054f596b7ca6f7da56"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "saddle_finance_2022_04_30",
+      "independent_event_group": "saddle_finance_2022_04_30",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "a6e3a074b594d3d75614c90781d362ee1ae57754f79f1c9f3b4a2403e8d08d66",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "UwU Lend",
+      "anchor_transactions": [
+        "0x242a0fb4fde9de0dc2fd42e8db743cbc197ffa2bf6a036ba0bba303df296408b"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "uwu_lend_2024_06_10",
+      "independent_event_group": "uwu_lend_2024_06_10",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "61204a7e4d122e3c1e3b32ed19e09b3e75bad385afb81efe3031665a7d8fa806",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "Wise Lending",
+      "anchor_transactions": [
+        "0x7ac4a98599596adbf12fffa2bd23e2a2d2ac7e8989b6ea043fcc412a29126555"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "wise_lending_2023_10_13",
+      "independent_event_group": "wise_lending_2023_10_13",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "eea1beda6e4639a472abd228a7e6ce2f39fd917efffae512adb33c80ef332001",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "Wise Lending",
+      "anchor_transactions": [
+        "0x04e16a79ff928db2fa88619cdd045cdfc7979a61d836c9c9e585b3d6f6d8bc31"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "wise_lending_2024_01_12",
+      "independent_event_group": "wise_lending_2024_01_12",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "18788045f3e75ff481b3fa28d6948498765150986007155828f7a4592b8ffa29",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    },
+    {
+      "affected_protocol": "Yearn Finance",
+      "anchor_transactions": [
+        "0x59faab5a1911618064f1ffa1e4649d85c99cfd9f0d64dcebbc1af7d7630da98b"
+      ],
+      "candidate_label": null,
+      "incident_exclusion_window_blocks": 7200,
+      "incident_id": "yearn_ydai_2021_02_04",
+      "independent_event_group": "yearn_ydai_2021_02_04",
+      "matching_dimensions": [
+        "protocol",
+        "time",
+        "gas_limit",
+        "input_size",
+        "transaction_value",
+        "call_depth",
+        "asset_count",
+        "transaction_scale"
+      ],
+      "request_id": "a3ab0d3f3c44d01848bdc77fe9046b282a41285ea09b5cc161bb3b582bf86127",
+      "requested_candidates": 50,
+      "review_status": "needs_metadata_sampling_trace_and_human_screening"
+    }
+  ],
+  "schema_ver": "research-negative-sampling-plan.stage8.v1",
+  "snapshot_id": "research-expansion.stage8.round-001"
+}
