@@ -2,7 +2,7 @@
 
 本仓库实现一个面向 Ethereum pending/replay 交易的 DeFi 价格操纵风险监控原型。系统目标是在交易确认前后尽早构建 cash-flow graph，结合规则基线和 GraphSAGE 风险模型输出可复核告警，并通过 RAG 证据解释辅助分析员复核。
 
-当前仓库是可审计的工程原型：Provider-only replay、真实历史 trace、富图构建、规则评分、告警、RAG 解释、报告审计和故障降级链路已经打通；GraphSAGE 训练入口、推理入口和模型版本协议已实现。Stage 4 已将 57 张候选图冻结为 55 张工程烟雾标签（5 正、50 负），并完成事件/相关地址分组的 60/20/20 无泄漏切分；两笔角色证据不足的事件相关交易保留为 `unlabeled`。该快照仍不支持研究级结论，下一步是锁定 `torch`/`torch_geometric` 环境并完成最小训练闭环。
+当前仓库是可审计的工程原型：Provider-only replay、真实历史 trace、富图构建、规则评分、告警、RAG 解释、报告审计和故障降级链路已经打通；GraphSAGE 训练入口、推理入口和模型版本协议已实现。Stage 4 已将 57 张候选图冻结为 55 张工程烟雾标签（5 正、50 负），并完成事件/相关地址分组的 60/20/20 无泄漏切分；两笔角色证据不足的事件相关交易保留为 `unlabeled`。Stage 5 已锁定独立 PyTorch/PyG 环境，并通过单图更新、单批过拟合、checkpoint 精确恢复和重复运行一致性门控。该快照仍不支持研究级结论，下一步是 Stage 6 训练器升级。
 
 ## 目录结构
 
@@ -137,16 +137,18 @@ python3 scripts/graph_label_exporter.py \
   --report ops/reports/graph-label-exporter.stage4.latest.json
 ```
 
-GraphSAGE 训练预检：
+GraphSAGE 独立环境与最小训练闭环见
+[`ops/full_training_stage5_runbook.md`](ops/full_training_stage5_runbook.md)：
 
 ```bash
-python3 scripts/graphsage_train.py \
-  --graphs data/replay/graph-inference.v1/dt=2026-08-29 \
-  --labels data/training/graph_labels.stage4.v1.json \
-  --out-dir models/graphsage/latest \
-  --report ops/reports/graphsage-train.latest.json \
-  --dry-run
+python3 -m venv .venv-graphsage
+.venv-graphsage/bin/python -m pip install \
+  -r requirements/graphsage-stage5.lock.txt
+.venv-graphsage/bin/python scripts/training_environment_audit.py
+.venv-graphsage/bin/python scripts/training_smoke_test.py
 ```
+
+现有 `graphsage_train.py` 仍是 Stage 6 升级前的旧入口，不得用于正式训练或冻结测试集评估。
 
 GraphSAGE 推理入口：
 
