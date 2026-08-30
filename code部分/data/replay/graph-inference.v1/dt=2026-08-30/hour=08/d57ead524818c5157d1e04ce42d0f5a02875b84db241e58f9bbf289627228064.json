@@ -1,0 +1,102 @@
+{
+  "chain_id": 1,
+  "context_windows": [
+    "tx-only"
+  ],
+  "created_at": "2026-08-30T08:57:49.976+00:00",
+  "edges": [
+    {
+      "amount_norm": "12",
+      "amount_raw": "12000000",
+      "asset_node": "asset:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "edge_id": "edge:aa7b7d7fcab013bec40feb94",
+      "edge_type": "transfer",
+      "from_node": "address:0x5041ed759dd4afc3a72b8192c143f72f4724081a",
+      "log_index": 1,
+      "standard": "erc20",
+      "to_node": "address:0x96468c6caf3457b49d9681b9a6db3c2ae7756123",
+      "token_id": null
+    },
+    {
+      "call_depth": 0,
+      "call_type": "call",
+      "depth": 0,
+      "edge_id": "edge:3d072adf45e1fe9dc7d21d82",
+      "edge_type": "call",
+      "from_node": "address:0x5041ed759dd4afc3a72b8192c143f72f4724081a",
+      "function_name": "transfer",
+      "function_selector": "0xa9059cbb",
+      "function_signature": "transfer(address,uint256)",
+      "is_delegatecall": false,
+      "is_staticcall": false,
+      "is_value_transfer": false,
+      "ordinal": 0,
+      "protocol_hint": "erc20",
+      "revert_reason": null,
+      "selector_family": "erc20_transfer",
+      "semantic_action": "erc20_transfer",
+      "success": true,
+      "to_node": "address:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "value": "0"
+    }
+  ],
+  "event_id": "d57ead524818c5157d1e04ce42d0f5a02875b84db241e58f9bbf289627228064",
+  "feature_missing_flags": [
+    "context_1h_protocol_empty",
+    "context_1h_protocol_unavailable",
+    "context_5m_address_empty",
+    "context_5m_address_unavailable",
+    "no_protocol_role_matches"
+  ],
+  "feature_ver": "cash-flow-graph-builder.v1",
+  "graph_id": "graph:0x996428399af402761ed0bb8993809e1a7ebcd17dd044f71af6df92461b513f85",
+  "graph_snapshot_ref": "data/graph-snapshots/graph-inference.v1/dt=2026-08-30/hour=08/d57ead524818c5157d1e04ce42d0f5a02875b84db241e58f9bbf289627228064.json",
+  "idempotency_key": "1:0x996428399af402761ed0bb8993809e1a7ebcd17dd044f71af6df92461b513f85:trace_transaction:parsed-trace.v1:graph-inference.v1",
+  "lineage": {
+    "graph_builder_ver": "cash-flow-graph-builder.v1",
+    "parsed_trace_event_id": "8e92b70155b078465af5a2a568ddb95f9c779e330d1b26e98b3ff4c19ef2956f",
+    "parsed_trace_idempotency_key": "1:0x996428399af402761ed0bb8993809e1a7ebcd17dd044f71af6df92461b513f85:trace_transaction:parsed-trace.v1",
+    "protocol_features_event_id": "995a232c3aa2030f4f593ecd403b381a7031e13db58843d9b4a9c7b4f5bcc920",
+    "protocol_features_idempotency_key": "1:0x996428399af402761ed0bb8993809e1a7ebcd17dd044f71af6df92461b513f85:trace_transaction:parsed-trace.v1:protocol-features.v1",
+    "protocol_role_enricher_ver": "protocol-role-enricher.v1",
+    "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-30/hour=08/1-0x996428399af402761ed0bb8993809e1a7ebcd17dd044f71af6df92461b513f85-trace_transaction.json",
+    "trace_bundle_event_id": "450afa2cc3a94c2b9c1bbe7cc932145193bea3c48656f0db1d291f5332f624ff",
+    "trace_bundle_idempotency_key": "1:0x996428399af402761ed0bb8993809e1a7ebcd17dd044f71af6df92461b513f85:trace_transaction",
+    "trace_parser_ver": "trace-parser.v1",
+    "transaction_ref": "ethereum:1:0x996428399af402761ed0bb8993809e1a7ebcd17dd044f71af6df92461b513f85"
+  },
+  "nodes": [
+    {
+      "address": "0x5041ed759dd4afc3a72b8192c143f72f4724081a",
+      "node_id": "address:0x5041ed759dd4afc3a72b8192c143f72f4724081a",
+      "node_type": "address"
+    },
+    {
+      "address": "0x96468c6caf3457b49d9681b9a6db3c2ae7756123",
+      "node_id": "address:0x96468c6caf3457b49d9681b9a6db3c2ae7756123",
+      "node_type": "address"
+    },
+    {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_id": "address:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_type": "address"
+    },
+    {
+      "address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "decimals": 6,
+      "node_id": "asset:0xdac17f958d2ee523a2206206994597c13d831ec7",
+      "node_type": "asset",
+      "standard": "erc20",
+      "symbol": "USDT"
+    },
+    {
+      "node_id": "tx:0x996428399af402761ed0bb8993809e1a7ebcd17dd044f71af6df92461b513f85",
+      "node_type": "transaction",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x996428399af402761ed0bb8993809e1a7ebcd17dd044f71af6df92461b513f85"
+    }
+  ],
+  "schema_ver": "graph-inference.v1",
+  "tx_hash": "0x996428399af402761ed0bb8993809e1a7ebcd17dd044f71af6df92461b513f85"
+}

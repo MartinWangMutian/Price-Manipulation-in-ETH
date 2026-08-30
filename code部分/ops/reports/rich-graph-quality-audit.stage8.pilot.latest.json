@@ -1,0 +1,238 @@
+{
+  "audited": {
+    "graph_replay_bytes": 748683,
+    "graphs": 6,
+    "parsed_traces": 6,
+    "protocol_feature_records": 6,
+    "raw_trace_bytes": 695461,
+    "trace_bundles": 6,
+    "unique_transactions": 6
+  },
+  "checked_at": "2026-08-30T08:57:50.023+00:00",
+  "cohort_stats": {
+    "exploit_candidate": {
+      "calls": 653,
+      "graphs": 1,
+      "transfers": 315
+    },
+    "normal_candidate": {
+      "calls": 144,
+      "graphs": 5,
+      "transfers": 3
+    }
+  },
+  "context_address_coverage_rates": {
+    "exploit_candidate": 0.0,
+    "normal_candidate": 0.0
+  },
+  "edge_counts": {
+    "call": 797,
+    "transfer": 318
+  },
+  "errors": [],
+  "expected": {
+    "exploit_graphs": 1,
+    "normal_graphs": 5,
+    "total_graphs": 6
+  },
+  "feature_missing_flags": {
+    "context_1h_protocol_empty": 6,
+    "context_1h_protocol_unavailable": 6,
+    "context_5m_address_empty": 6,
+    "context_5m_address_unavailable": 6,
+    "no_logs": 1,
+    "no_protocol_role_matches": 6,
+    "token_decimals_missing": 3
+  },
+  "gate": "phase3_rich_graph_quality",
+  "inputs": {
+    "exploit_queue": "data/training/research_pilot_positive_trace_queue.stage8.v1.json",
+    "graph_input": "data/replay/graph-inference.v1/dt=2026-08-30",
+    "normal_queue": "data/training/research_pilot_negative_trace_queue.stage8.v1.json",
+    "parsed_input": "data/replay/parsed-trace.v1/dt=2026-08-30",
+    "protocol_input": "data/replay/protocol-features.v1/dt=2026-08-30",
+    "raw_manifest": "data/training/raw-trace-manifest.stage8.pilot.v1.json",
+    "trace_input": "data/replay/trace-bundle.v1/dt=2026-08-30"
+  },
+  "max_call_depth": 7,
+  "node_counts": {
+    "address": 97,
+    "asset": 9,
+    "transaction": 6
+  },
+  "status": "ok",
+  "structural_review": {
+    "exploit_reviewed": 1,
+    "items": [
+      {
+        "call_edges": 653,
+        "cohort": "exploit_candidate",
+        "context_edges": 0,
+        "feature_missing_flags": [
+          "context_1h_protocol_empty",
+          "context_1h_protocol_unavailable",
+          "context_5m_address_empty",
+          "context_5m_address_unavailable",
+          "no_protocol_role_matches",
+          "token_decimals_missing"
+        ],
+        "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=08/d303277cb163699ceeb11c23453954c07c086d2dbd46e386ae0036a219b38078.json",
+        "incident_id": "balancer_2020_06_28",
+        "max_call_depth": 7,
+        "nodes": 28,
+        "parsed_trace_ref": "data/replay/parsed-trace.v1/dt=2026-08-30/hour=08/bdef6eabc00e1012c5ea51c052afed955ae0b061ec7c1f655ab591a53fac3bd8.json",
+        "protocol_features_ref": "data/replay/protocol-features.v1/dt=2026-08-30/hour=08/c7fb169758084ceec04b4882dd4c46d6863ec3161d825877d7aae6fc672aea69.json",
+        "protocol_roles": [],
+        "review_kind": "agent_assisted_structural_review",
+        "review_status": "passed",
+        "selection_bucket": null,
+        "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-30/hour=08/edb644ada469a5b82be9e6fdee2ffeb62ffab2e4a532a0ffc54c472074deafe2.json",
+        "transfer_edges": 315,
+        "tx_hash": "0x013be97768b702fe8eccef1a40544d5ecb3c1961ad5f87fee4d16fdc08c78106"
+      },
+      {
+        "call_edges": 1,
+        "cohort": "normal_candidate",
+        "context_edges": 0,
+        "feature_missing_flags": [
+          "context_1h_protocol_empty",
+          "context_1h_protocol_unavailable",
+          "context_5m_address_empty",
+          "context_5m_address_unavailable",
+          "no_logs",
+          "no_protocol_role_matches"
+        ],
+        "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=08/c26287565b92029191faa783df9bdcc412eda8300573b870ab183687faa26859.json",
+        "incident_id": "negative_match:balancer_2020_06_28",
+        "max_call_depth": 0,
+        "nodes": 3,
+        "parsed_trace_ref": "data/replay/parsed-trace.v1/dt=2026-08-30/hour=08/486f8b985b619421ad30e7dcd7029f86d68992ed76233e24e7d23f853a8c892d.json",
+        "protocol_features_ref": "data/replay/protocol-features.v1/dt=2026-08-30/hour=08/9fa9a0630dbd063acda09ee9e3dd27ac0ad14b3dc026820541db539e6680715c.json",
+        "protocol_roles": [],
+        "review_kind": "agent_assisted_structural_review",
+        "review_status": "passed",
+        "selection_bucket": "time_gas_input_value_matched_contract_call",
+        "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-30/hour=08/29dbea72b5a615e6ba954e0004077c29b30d6861b82ca9b42f846fa72593abca.json",
+        "transfer_edges": 0,
+        "tx_hash": "0xff5d269e17d9c7576021b00b45bb273c702411bef8050202abbd5b9580fe46f4"
+      },
+      {
+        "call_edges": 6,
+        "cohort": "normal_candidate",
+        "context_edges": 0,
+        "feature_missing_flags": [
+          "context_1h_protocol_empty",
+          "context_1h_protocol_unavailable",
+          "context_5m_address_empty",
+          "context_5m_address_unavailable",
+          "no_protocol_role_matches",
+          "token_decimals_missing"
+        ],
+        "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=08/e1688a964739bcad8ddf14d8c677c325fbbb87786b1058042c4c3d3e7e4887c4.json",
+        "incident_id": "negative_match:balancer_2020_06_28",
+        "max_call_depth": 2,
+        "nodes": 8,
+        "parsed_trace_ref": "data/replay/parsed-trace.v1/dt=2026-08-30/hour=08/5618529b55eff1abf8013bcb1bd2a88407da4f9fb69cd7c92ac9776a9482684d.json",
+        "protocol_features_ref": "data/replay/protocol-features.v1/dt=2026-08-30/hour=08/bb174754b4c68f4180b5a4c35d906e16960de05116387e065e0dfa6bcf0bd725.json",
+        "protocol_roles": [],
+        "review_kind": "agent_assisted_structural_review",
+        "review_status": "passed",
+        "selection_bucket": "time_gas_input_value_matched_contract_call",
+        "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-30/hour=08/e0b5a82523def8473f16c324b367f5890e9c16ae55d89b98403f393bcdb800c5.json",
+        "transfer_edges": 1,
+        "tx_hash": "0xe9264bcff60a5ce048fbc8230a35bd3602cbe299b739a464b7d888b7bfd0a4ed"
+      },
+      {
+        "call_edges": 79,
+        "cohort": "normal_candidate",
+        "context_edges": 0,
+        "feature_missing_flags": [
+          "context_1h_protocol_empty",
+          "context_1h_protocol_unavailable",
+          "context_5m_address_empty",
+          "context_5m_address_unavailable",
+          "no_protocol_role_matches",
+          "token_decimals_missing"
+        ],
+        "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=08/76e13fee89940f088f6b098023e8a73f5b0915c013210138d2003b404fab0ab5.json",
+        "incident_id": "negative_match:balancer_2020_06_28",
+        "max_call_depth": 3,
+        "nodes": 63,
+        "parsed_trace_ref": "data/replay/parsed-trace.v1/dt=2026-08-30/hour=08/0bbe613b4e9ec3dea4bc1424550bd380dd9f0b7aaa171a355fa251df203526b3.json",
+        "protocol_features_ref": "data/replay/protocol-features.v1/dt=2026-08-30/hour=08/5aa283ee2e127ba664205901ab490b42f4541ceae4efbd429c9066daaea5a1dc.json",
+        "protocol_roles": [],
+        "review_kind": "agent_assisted_structural_review",
+        "review_status": "passed",
+        "selection_bucket": "time_gas_input_value_matched_contract_call",
+        "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-30/hour=08/bf37e5d3cf84bacd6097a2a298a12e4cf94b79d760fa08106a30f69d14e6dc02.json",
+        "transfer_edges": 1,
+        "tx_hash": "0x31f370eff8273aa27db302dd9bf4845f694709e9a7c90b2cfa504fc5660572dd"
+      },
+      {
+        "call_edges": 57,
+        "cohort": "normal_candidate",
+        "context_edges": 0,
+        "feature_missing_flags": [
+          "context_1h_protocol_empty",
+          "context_1h_protocol_unavailable",
+          "context_5m_address_empty",
+          "context_5m_address_unavailable",
+          "no_protocol_role_matches"
+        ],
+        "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=08/4829bc202183e37e057582d71f54b3d7f12fa10d2bde738a756c2636dd1ff23c.json",
+        "incident_id": "negative_match:balancer_2020_06_28",
+        "max_call_depth": 1,
+        "nodes": 5,
+        "parsed_trace_ref": "data/replay/parsed-trace.v1/dt=2026-08-30/hour=08/8191b49fd40202b6f3ac80d0850707f9d02d74d545ccaa0e0f5bec2133a31704.json",
+        "protocol_features_ref": "data/replay/protocol-features.v1/dt=2026-08-30/hour=08/8eee076595596a69f0810ea9af30014b17299bc9b295d3a1d761bbdc3266de88.json",
+        "protocol_roles": [],
+        "review_kind": "agent_assisted_structural_review",
+        "review_status": "passed",
+        "selection_bucket": "time_gas_input_value_matched_contract_call",
+        "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-30/hour=08/dd948117803e0576b317719f3c4770ec266912d3c6a5e5f4bd2a9c04ee91cbb0.json",
+        "transfer_edges": 0,
+        "tx_hash": "0x2198f9a811271fbe577992a75eb89d4d22d167b6a7ee4ff1d9a5e4ef54edf6c5"
+      },
+      {
+        "call_edges": 1,
+        "cohort": "normal_candidate",
+        "context_edges": 0,
+        "feature_missing_flags": [
+          "context_1h_protocol_empty",
+          "context_1h_protocol_unavailable",
+          "context_5m_address_empty",
+          "context_5m_address_unavailable",
+          "no_protocol_role_matches"
+        ],
+        "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=08/d57ead524818c5157d1e04ce42d0f5a02875b84db241e58f9bbf289627228064.json",
+        "incident_id": "negative_match:balancer_2020_06_28",
+        "max_call_depth": 0,
+        "nodes": 5,
+        "parsed_trace_ref": "data/replay/parsed-trace.v1/dt=2026-08-30/hour=08/8e92b70155b078465af5a2a568ddb95f9c779e330d1b26e98b3ff4c19ef2956f.json",
+        "protocol_features_ref": "data/replay/protocol-features.v1/dt=2026-08-30/hour=08/995a232c3aa2030f4f593ecd403b381a7031e13db58843d9b4a9c7b4f5bcc920.json",
+        "protocol_roles": [],
+        "review_kind": "agent_assisted_structural_review",
+        "review_status": "passed",
+        "selection_bucket": "time_gas_input_value_matched_contract_call",
+        "trace_bundle_ref": "data/replay/trace-bundle.v1/dt=2026-08-30/hour=08/450afa2cc3a94c2b9c1bbe7cc932145193bea3c48656f0db1d291f5332f624ff.json",
+        "transfer_edges": 1,
+        "tx_hash": "0x996428399af402761ed0bb8993809e1a7ebcd17dd044f71af6df92461b513f85"
+      }
+    ],
+    "method": "all exploit graphs plus a deterministic bucket-stratified normal sample",
+    "normal_reviewed": 5
+  },
+  "training_scope": "engineering_smoke_only_pending_label_promotion",
+  "versions": {
+    "graph_builder_and_feature_contract": "cash-flow-graph-builder.v1",
+    "protocol_role_enricher": "protocol-role-enricher.v1",
+    "trace_parser": "trace-parser.v1"
+  },
+  "warnings": [
+    {
+      "code": "protocol_role_coverage_low",
+      "graphs_with_roles": 0,
+      "message": "Configured protocol-role dictionary covers fewer than 25% of rich graphs; expand it before research-grade training."
+    }
+  ]
+}

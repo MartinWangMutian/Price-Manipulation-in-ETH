@@ -1,0 +1,23 @@
+{
+  "calls": {
+    "failed": 0,
+    "success": 797,
+    "total": 797
+  },
+  "checked_at": "2026-08-30T08:57:49.895+00:00",
+  "errors": [],
+  "feature_missing_flags": {
+    "no_logs": 1,
+    "token_decimals_missing": 3
+  },
+  "files_seen": 6,
+  "input": "data/replay/trace-bundle.v1/dt=2026-08-30",
+  "parsed_records": 6,
+  "skipped_duplicate_trace_bundles": 0,
+  "status": "ok",
+  "token_transfer_counts": {
+    "erc20": 318
+  },
+  "unique_trace_bundles": 6,
+  "write_replay": true
+}

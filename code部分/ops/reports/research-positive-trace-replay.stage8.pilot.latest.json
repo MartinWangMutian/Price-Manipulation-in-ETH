@@ -1,0 +1,94 @@
+{
+  "attempts": [
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_ms": 864.71,
+          "ok": true,
+          "source": "trace_transaction"
+        }
+      ],
+      "queue_id": "e9de259f40ec17c2e87a16c7d08ed14a6d0581697f4e579c67e8349baec47ba8",
+      "selected": "trace_transaction"
+    }
+  ],
+  "block_context_cache_entries": 11,
+  "block_context_cache_hits": 0,
+  "chain_check": {
+    "chain_id": "0x1",
+    "latency_ms": 522.34,
+    "ok": true,
+    "performed": true
+  },
+  "checked_at": "2026-08-30T08:56:37.744+00:00",
+  "dry_run": false,
+  "endpoint_configured": true,
+  "fail_fast": true,
+  "failed_trace_bundles": 0,
+  "inter_item_delay_s": 0.0,
+  "max_retries": 1,
+  "method": "trace_transaction",
+  "ok_trace_bundles": 1,
+  "provider_cost_note": "Inspect the provider billing dashboard; JSON-RPC responses do not include invoice cost.",
+  "queue": "data/training/research_pilot_positive_trace_queue.stage8.v1.json",
+  "queue_items_seen": 1,
+  "reused_existing_bundles": 0,
+  "rpc_call_summary": {
+    "chain_checks": 1,
+    "trace_attempts": 1,
+    "transaction_context_calls": 3
+  },
+  "run_id": "stage8-positive-pilot",
+  "skip_existing": true,
+  "start_index": 0,
+  "status": "ok",
+  "transaction_contexts": [
+    {
+      "calls": [
+        {
+          "attempt": 1,
+          "latency_ms": 505.86,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "attempt": 1,
+          "latency_ms": 775.18,
+          "method": "eth_getTransactionReceipt",
+          "ok": true
+        },
+        {
+          "attempt": 1,
+          "latency_ms": 476.98,
+          "method": "eth_getBlockByHash",
+          "ok": true
+        }
+      ],
+      "context": {
+        "block_hash": "0x9cac8ceafaf7c0052e75fb09a0f9f422d31b8fb9edc84e757beafa806df8f384",
+        "block_number": "0x9e045f",
+        "log_count": 591,
+        "observed_at": "2020-06-28T18:03:11.000+00:00",
+        "receipt_status": "0x1",
+        "tx_hash": "0x013be97768b702fe8eccef1a40544d5ecb3c1961ad5f87fee4d16fdc08c78106"
+      },
+      "queue_id": "e9de259f40ec17c2e87a16c7d08ed14a6d0581697f4e579c67e8349baec47ba8",
+      "tx_hash": "0x013be97768b702fe8eccef1a40544d5ecb3c1961ad5f87fee4d16fdc08c78106"
+    }
+  ],
+  "validation_errors": [],
+  "write_failed_bundles": false,
+  "written": [
+    {
+      "event_id": "edb644ada469a5b82be9e6fdee2ffeb62ffab2e4a532a0ffc54c472074deafe2",
+      "incident_id": "balancer_2020_06_28",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-30/hour=08/edb644ada469a5b82be9e6fdee2ffeb62ffab2e4a532a0ffc54c472074deafe2.json",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x013be97768b702fe8eccef1a40544d5ecb3c1961ad5f87fee4d16fdc08c78106"
+    }
+  ],
+  "written_trace_bundles": 1
+}

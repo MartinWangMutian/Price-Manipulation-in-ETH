@@ -1,0 +1,167 @@
+{
+  "candidate_label": null,
+  "created_at": "2026-08-30T08:59:49.005+00:00",
+  "human_review_completed": false,
+  "items": [
+    {
+      "block_number": 10343807,
+      "block_offset": -12000,
+      "blockers": [],
+      "candidate_label": null,
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=08/c26287565b92029191faa783df9bdcc412eda8300573b870ab183687faa26859.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 1,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 3,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "hard_negative_candidate": false,
+      "human_review_completed": false,
+      "known_exploit_transaction_hash_match": false,
+      "matched_incident_id": "balancer_2020_06_28",
+      "ofac_sdn_graph_address_hits": [],
+      "positive_anchor_overlap": false,
+      "review_status": "screen_pass_human_review_required",
+      "screened_graph_addresses": 2,
+      "tx_hash": "0xff5d269e17d9c7576021b00b45bb273c702411bef8050202abbd5b9580fe46f4"
+    },
+    {
+      "block_number": 10343807,
+      "block_offset": -12000,
+      "blockers": [],
+      "candidate_label": null,
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=08/e1688a964739bcad8ddf14d8c677c325fbbb87786b1058042c4c3d3e7e4887c4.json",
+      "graph_stats": {
+        "call_edges": 6,
+        "context_edges": 0,
+        "edges": 7,
+        "failed_calls": 0,
+        "max_call_depth": 2,
+        "nodes": 8,
+        "semantic_actions": [
+          "erc20_transfer",
+          "unknown"
+        ],
+        "transfer_edges": 1
+      },
+      "hard_negative_candidate": false,
+      "human_review_completed": false,
+      "known_exploit_transaction_hash_match": false,
+      "matched_incident_id": "balancer_2020_06_28",
+      "ofac_sdn_graph_address_hits": [],
+      "positive_anchor_overlap": false,
+      "review_status": "screen_pass_human_review_required",
+      "screened_graph_addresses": 6,
+      "tx_hash": "0xe9264bcff60a5ce048fbc8230a35bd3602cbe299b739a464b7d888b7bfd0a4ed"
+    },
+    {
+      "block_number": 10343807,
+      "block_offset": -12000,
+      "blockers": [],
+      "candidate_label": null,
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=08/76e13fee89940f088f6b098023e8a73f5b0915c013210138d2003b404fab0ab5.json",
+      "graph_stats": {
+        "call_edges": 79,
+        "context_edges": 0,
+        "edges": 80,
+        "failed_calls": 0,
+        "max_call_depth": 3,
+        "nodes": 63,
+        "semantic_actions": [
+          "erc20_transfer",
+          "oracle_read",
+          "unknown"
+        ],
+        "transfer_edges": 1
+      },
+      "hard_negative_candidate": true,
+      "human_review_completed": false,
+      "known_exploit_transaction_hash_match": false,
+      "matched_incident_id": "balancer_2020_06_28",
+      "ofac_sdn_graph_address_hits": [],
+      "positive_anchor_overlap": false,
+      "review_status": "screen_pass_human_review_required",
+      "screened_graph_addresses": 61,
+      "tx_hash": "0x31f370eff8273aa27db302dd9bf4845f694709e9a7c90b2cfa504fc5660572dd"
+    },
+    {
+      "block_number": 10343807,
+      "block_offset": -12000,
+      "blockers": [],
+      "candidate_label": null,
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=08/4829bc202183e37e057582d71f54b3d7f12fa10d2bde738a756c2636dd1ff23c.json",
+      "graph_stats": {
+        "call_edges": 57,
+        "context_edges": 0,
+        "edges": 57,
+        "failed_calls": 0,
+        "max_call_depth": 1,
+        "nodes": 5,
+        "semantic_actions": [
+          "unknown"
+        ],
+        "transfer_edges": 0
+      },
+      "hard_negative_candidate": true,
+      "human_review_completed": false,
+      "known_exploit_transaction_hash_match": false,
+      "matched_incident_id": "balancer_2020_06_28",
+      "ofac_sdn_graph_address_hits": [],
+      "positive_anchor_overlap": false,
+      "review_status": "screen_pass_human_review_required",
+      "screened_graph_addresses": 4,
+      "tx_hash": "0x2198f9a811271fbe577992a75eb89d4d22d167b6a7ee4ff1d9a5e4ef54edf6c5"
+    },
+    {
+      "block_number": 10343807,
+      "block_offset": -12000,
+      "blockers": [],
+      "candidate_label": null,
+      "graph_ref": "data/replay/graph-inference.v1/dt=2026-08-30/hour=08/d57ead524818c5157d1e04ce42d0f5a02875b84db241e58f9bbf289627228064.json",
+      "graph_stats": {
+        "call_edges": 1,
+        "context_edges": 0,
+        "edges": 2,
+        "failed_calls": 0,
+        "max_call_depth": 0,
+        "nodes": 5,
+        "semantic_actions": [
+          "erc20_transfer"
+        ],
+        "transfer_edges": 1
+      },
+      "hard_negative_candidate": false,
+      "human_review_completed": false,
+      "known_exploit_transaction_hash_match": false,
+      "matched_incident_id": "balancer_2020_06_28",
+      "ofac_sdn_graph_address_hits": [],
+      "positive_anchor_overlap": false,
+      "review_status": "screen_pass_human_review_required",
+      "screened_graph_addresses": 3,
+      "tx_hash": "0x996428399af402761ed0bb8993809e1a7ebcd17dd044f71af6df92461b513f85"
+    }
+  ],
+  "schema_ver": "research-negative-screen.stage8.v1",
+  "screen_content_hash": "41c0d44b9096a47c430d1ad6062355e8e25eca38fbd3965144a63562170782dc",
+  "screening_sources": {
+    "known_exploit_corpus": {
+      "source": "https://github.com/SunWeb3Sec/DeFiHackLabs",
+      "transaction_hashes_indexed": 1320,
+      "version": "d7539634f8e48b15829c5716f5618cf1851f27b6"
+    },
+    "ofac_sdn": {
+      "bytes": 5670063,
+      "ethereum_like_addresses_indexed": 91,
+      "sha256": "a2ccea04237a13459009bc527502bb6a08d4e84fe97b46fcce1ed621e9a8301e",
+      "source": "https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.CSV"
+    },
+    "raw_external_inputs_committed": false
+  },
+  "snapshot_id": "research-expansion.stage8.round-001.negative-pilot"
+}

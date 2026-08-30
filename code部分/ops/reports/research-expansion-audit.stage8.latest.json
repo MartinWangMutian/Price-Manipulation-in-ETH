@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-08-30T09:06:23.165+00:00",
+  "errors": [],
+  "frozen_held_out_count": 11,
+  "frozen_held_out_overlap": [],
+  "gate": "stage8_research_expansion_pilot",
+  "input_content_hash": "4c6176dafac34ae9fdfd8e11375da02a4fa7223a0c75b8d40895edfc31df2dbb",
+  "negative_graph_target_met": false,
+  "next_gate": "human-review the five candidates, inspect provider cost, expand protocol-role coverage, then authorize the next versioned batch",
+  "pilot": {
+    "hard_negative_candidates": 2,
+    "labels_promoted": 0,
+    "metadata_sampler_rpc_attempts": 3,
+    "negative_candidates_requiring_human_review": 5,
+    "positive_trace_graphs": 1,
+    "trace_transaction_attempts": 6,
+    "unlabeled_negative_trace_graphs": 5,
+    "wide_sampler_attempt_stopped_before_trace": true
+  },
+  "pilot_complete": true,
+  "positive_graph_target_met": false,
+  "progress": {
+    "current_promoted_negative_rich_graphs": 50,
+    "current_promoted_positive_rich_graphs": 5,
+    "negative_rich_graph_gap": 950,
+    "negative_sampling_slots": 1000,
+    "new_positive_anchor_queue_items": 15,
+    "positive_rich_graph_gap": 95,
+    "verified_anchor_transactions": 20,
+    "verified_independent_events": 20
+  },
+  "provider_cost_note": "Inspect the provider billing dashboard; JSON-RPC responses do not include invoice cost.",
+  "research_target_complete": false,
+  "status": "pilot_ok_target_incomplete",
+  "stop_reason": "paid pilot completed; stop_after_pilot is enabled and research graph targets remain unmet",
+  "verified_event_target_met": true
+}

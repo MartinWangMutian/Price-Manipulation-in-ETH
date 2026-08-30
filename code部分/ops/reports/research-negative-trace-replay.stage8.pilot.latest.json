@@ -1,0 +1,306 @@
+{
+  "attempts": [
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_ms": 1217.92,
+          "ok": true,
+          "source": "trace_transaction"
+        }
+      ],
+      "queue_id": "d42dc4f25d9f9eb1fd2fda3b77a964a6f3c38afc35c2f4f647c9401f5314141a",
+      "selected": "trace_transaction"
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_ms": 590.64,
+          "ok": true,
+          "source": "trace_transaction"
+        }
+      ],
+      "queue_id": "936c079bdc6065bee93d517c003047cdcff0cffa0710f49880a292fccbd8ef6a",
+      "selected": "trace_transaction"
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_ms": 854.03,
+          "ok": true,
+          "source": "trace_transaction"
+        }
+      ],
+      "queue_id": "f1336d7c3f8b4d6edbde106a86ef69b0efd084fb619b09125b91fb4832042b1b",
+      "selected": "trace_transaction"
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_ms": 501.19,
+          "ok": true,
+          "source": "trace_transaction"
+        }
+      ],
+      "queue_id": "4fae5f4836acfdd15625e25185df73ca915e5ae66dd4fba02af3e8141848bbd7",
+      "selected": "trace_transaction"
+    },
+    {
+      "attempts": [
+        {
+          "attempt": 1,
+          "latency_ms": 602.22,
+          "ok": true,
+          "source": "trace_transaction"
+        }
+      ],
+      "queue_id": "f067ffc9d40078d66de168f356e0ef72aa2c504e22b8875cbbaefaafbefa810a",
+      "selected": "trace_transaction"
+    }
+  ],
+  "block_context_cache_entries": 11,
+  "block_context_cache_hits": 4,
+  "chain_check": {
+    "chain_id": "0x1",
+    "latency_ms": 563.63,
+    "ok": true,
+    "performed": true
+  },
+  "checked_at": "2026-08-30T08:57:20.246+00:00",
+  "dry_run": false,
+  "endpoint_configured": true,
+  "fail_fast": true,
+  "failed_trace_bundles": 0,
+  "inter_item_delay_s": 0.25,
+  "max_retries": 1,
+  "method": "trace_transaction",
+  "ok_trace_bundles": 5,
+  "provider_cost_note": "Inspect the provider billing dashboard; JSON-RPC responses do not include invoice cost.",
+  "queue": "data/training/research_pilot_negative_trace_queue.stage8.v1.json",
+  "queue_items_seen": 5,
+  "reused_existing_bundles": 0,
+  "rpc_call_summary": {
+    "chain_checks": 1,
+    "trace_attempts": 5,
+    "transaction_context_calls": 15
+  },
+  "run_id": "stage8-negative-pilot",
+  "skip_existing": true,
+  "start_index": 0,
+  "status": "ok",
+  "transaction_contexts": [
+    {
+      "calls": [
+        {
+          "attempt": 1,
+          "latency_ms": 725.66,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "attempt": 1,
+          "latency_ms": 477.16,
+          "method": "eth_getTransactionReceipt",
+          "ok": true
+        },
+        {
+          "attempt": 1,
+          "latency_ms": 481.24,
+          "method": "eth_getBlockByHash",
+          "ok": true
+        }
+      ],
+      "context": {
+        "block_hash": "0x93d67599ec3e97415c97f41ce35031e4a34afac4fba91c30ae5199331feab9f2",
+        "block_number": "0x9dd57f",
+        "log_count": 0,
+        "observed_at": "2020-06-26T21:22:36.000+00:00",
+        "receipt_status": "0x1",
+        "tx_hash": "0xff5d269e17d9c7576021b00b45bb273c702411bef8050202abbd5b9580fe46f4"
+      },
+      "queue_id": "d42dc4f25d9f9eb1fd2fda3b77a964a6f3c38afc35c2f4f647c9401f5314141a",
+      "tx_hash": "0xff5d269e17d9c7576021b00b45bb273c702411bef8050202abbd5b9580fe46f4"
+    },
+    {
+      "calls": [
+        {
+          "attempt": 1,
+          "latency_ms": 1136.83,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "attempt": 1,
+          "latency_ms": 616.1,
+          "method": "eth_getTransactionReceipt",
+          "ok": true
+        },
+        {
+          "attempt": 1,
+          "latency_ms": 0.0,
+          "method": "local_block_context_cache",
+          "ok": true
+        }
+      ],
+      "context": {
+        "block_hash": "0x93d67599ec3e97415c97f41ce35031e4a34afac4fba91c30ae5199331feab9f2",
+        "block_number": "0x9dd57f",
+        "log_count": 5,
+        "observed_at": "2020-06-26T21:22:36.000+00:00",
+        "receipt_status": "0x1",
+        "tx_hash": "0xe9264bcff60a5ce048fbc8230a35bd3602cbe299b739a464b7d888b7bfd0a4ed"
+      },
+      "queue_id": "936c079bdc6065bee93d517c003047cdcff0cffa0710f49880a292fccbd8ef6a",
+      "tx_hash": "0xe9264bcff60a5ce048fbc8230a35bd3602cbe299b739a464b7d888b7bfd0a4ed"
+    },
+    {
+      "calls": [
+        {
+          "attempt": 1,
+          "latency_ms": 523.68,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "attempt": 1,
+          "latency_ms": 619.99,
+          "method": "eth_getTransactionReceipt",
+          "ok": true
+        },
+        {
+          "attempt": 1,
+          "latency_ms": 0.0,
+          "method": "local_block_context_cache",
+          "ok": true
+        }
+      ],
+      "context": {
+        "block_hash": "0x93d67599ec3e97415c97f41ce35031e4a34afac4fba91c30ae5199331feab9f2",
+        "block_number": "0x9dd57f",
+        "log_count": 1,
+        "observed_at": "2020-06-26T21:22:36.000+00:00",
+        "receipt_status": "0x1",
+        "tx_hash": "0x31f370eff8273aa27db302dd9bf4845f694709e9a7c90b2cfa504fc5660572dd"
+      },
+      "queue_id": "f1336d7c3f8b4d6edbde106a86ef69b0efd084fb619b09125b91fb4832042b1b",
+      "tx_hash": "0x31f370eff8273aa27db302dd9bf4845f694709e9a7c90b2cfa504fc5660572dd"
+    },
+    {
+      "calls": [
+        {
+          "attempt": 1,
+          "latency_ms": 482.0,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "attempt": 1,
+          "latency_ms": 497.42,
+          "method": "eth_getTransactionReceipt",
+          "ok": true
+        },
+        {
+          "attempt": 1,
+          "latency_ms": 0.0,
+          "method": "local_block_context_cache",
+          "ok": true
+        }
+      ],
+      "context": {
+        "block_hash": "0x93d67599ec3e97415c97f41ce35031e4a34afac4fba91c30ae5199331feab9f2",
+        "block_number": "0x9dd57f",
+        "log_count": 23,
+        "observed_at": "2020-06-26T21:22:36.000+00:00",
+        "receipt_status": "0x1",
+        "tx_hash": "0x2198f9a811271fbe577992a75eb89d4d22d167b6a7ee4ff1d9a5e4ef54edf6c5"
+      },
+      "queue_id": "4fae5f4836acfdd15625e25185df73ca915e5ae66dd4fba02af3e8141848bbd7",
+      "tx_hash": "0x2198f9a811271fbe577992a75eb89d4d22d167b6a7ee4ff1d9a5e4ef54edf6c5"
+    },
+    {
+      "calls": [
+        {
+          "attempt": 1,
+          "latency_ms": 522.75,
+          "method": "eth_getTransactionByHash",
+          "ok": true
+        },
+        {
+          "attempt": 1,
+          "latency_ms": 606.54,
+          "method": "eth_getTransactionReceipt",
+          "ok": true
+        },
+        {
+          "attempt": 1,
+          "latency_ms": 0.0,
+          "method": "local_block_context_cache",
+          "ok": true
+        }
+      ],
+      "context": {
+        "block_hash": "0x93d67599ec3e97415c97f41ce35031e4a34afac4fba91c30ae5199331feab9f2",
+        "block_number": "0x9dd57f",
+        "log_count": 1,
+        "observed_at": "2020-06-26T21:22:36.000+00:00",
+        "receipt_status": "0x1",
+        "tx_hash": "0x996428399af402761ed0bb8993809e1a7ebcd17dd044f71af6df92461b513f85"
+      },
+      "queue_id": "f067ffc9d40078d66de168f356e0ef72aa2c504e22b8875cbbaefaafbefa810a",
+      "tx_hash": "0x996428399af402761ed0bb8993809e1a7ebcd17dd044f71af6df92461b513f85"
+    }
+  ],
+  "validation_errors": [],
+  "write_failed_bundles": false,
+  "written": [
+    {
+      "event_id": "29dbea72b5a615e6ba954e0004077c29b30d6861b82ca9b42f846fa72593abca",
+      "incident_id": "negative_match:balancer_2020_06_28",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-30/hour=08/29dbea72b5a615e6ba954e0004077c29b30d6861b82ca9b42f846fa72593abca.json",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0xff5d269e17d9c7576021b00b45bb273c702411bef8050202abbd5b9580fe46f4"
+    },
+    {
+      "event_id": "e0b5a82523def8473f16c324b367f5890e9c16ae55d89b98403f393bcdb800c5",
+      "incident_id": "negative_match:balancer_2020_06_28",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-30/hour=08/e0b5a82523def8473f16c324b367f5890e9c16ae55d89b98403f393bcdb800c5.json",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0xe9264bcff60a5ce048fbc8230a35bd3602cbe299b739a464b7d888b7bfd0a4ed"
+    },
+    {
+      "event_id": "bf37e5d3cf84bacd6097a2a298a12e4cf94b79d760fa08106a30f69d14e6dc02",
+      "incident_id": "negative_match:balancer_2020_06_28",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-30/hour=08/bf37e5d3cf84bacd6097a2a298a12e4cf94b79d760fa08106a30f69d14e6dc02.json",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x31f370eff8273aa27db302dd9bf4845f694709e9a7c90b2cfa504fc5660572dd"
+    },
+    {
+      "event_id": "dd948117803e0576b317719f3c4770ec266912d3c6a5e5f4bd2a9c04ee91cbb0",
+      "incident_id": "negative_match:balancer_2020_06_28",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-30/hour=08/dd948117803e0576b317719f3c4770ec266912d3c6a5e5f4bd2a9c04ee91cbb0.json",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x2198f9a811271fbe577992a75eb89d4d22d167b6a7ee4ff1d9a5e4ef54edf6c5"
+    },
+    {
+      "event_id": "450afa2cc3a94c2b9c1bbe7cc932145193bea3c48656f0db1d291f5332f624ff",
+      "incident_id": "negative_match:balancer_2020_06_28",
+      "persisted": true,
+      "replay_path": "data/replay/trace-bundle.v1/dt=2026-08-30/hour=08/450afa2cc3a94c2b9c1bbe7cc932145193bea3c48656f0db1d291f5332f624ff.json",
+      "trace_source": "trace_transaction",
+      "trace_status": "ok",
+      "tx_hash": "0x996428399af402761ed0bb8993809e1a7ebcd17dd044f71af6df92461b513f85"
+    }
+  ],
+  "written_trace_bundles": 5
+}

@@ -1,0 +1,119 @@
+{
+  "calls": [
+    {
+      "depth": 0,
+      "from": "0xddd26c200bf6dbb775a9d91fc24b5ece5be7a45f",
+      "function_name": null,
+      "function_selector": "0xae8123ba",
+      "function_signature": null,
+      "ordinal": 0,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "success": true,
+      "to": "0x8a91c9a16cd62693649d80afa85a09dbbdcb8508",
+      "type": "call",
+      "value": "0"
+    },
+    {
+      "depth": 1,
+      "from": "0x8a91c9a16cd62693649d80afa85a09dbbdcb8508",
+      "function_name": null,
+      "function_selector": "0x70a08231",
+      "function_signature": null,
+      "ordinal": 1,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "success": true,
+      "to": "0x8e870d67f660d95d5be530380d0ec0bd388289e1",
+      "type": "call",
+      "value": "0"
+    },
+    {
+      "depth": 2,
+      "from": "0x8e870d67f660d95d5be530380d0ec0bd388289e1",
+      "function_name": null,
+      "function_selector": "0x70a08231",
+      "function_signature": null,
+      "ordinal": 2,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "success": true,
+      "to": "0x86eee0422322710866af89e9cae3f7383d55310a",
+      "type": "call",
+      "value": "0"
+    },
+    {
+      "depth": 1,
+      "from": "0x8a91c9a16cd62693649d80afa85a09dbbdcb8508",
+      "function_name": "transferFrom",
+      "function_selector": "0x23b872dd",
+      "function_signature": "transferFrom(address,address,uint256)",
+      "ordinal": 3,
+      "protocol_hint": "erc20",
+      "revert_reason": null,
+      "success": true,
+      "to": "0x8e870d67f660d95d5be530380d0ec0bd388289e1",
+      "type": "call",
+      "value": "0"
+    },
+    {
+      "depth": 2,
+      "from": "0x8e870d67f660d95d5be530380d0ec0bd388289e1",
+      "function_name": "transferFrom",
+      "function_selector": "0x23b872dd",
+      "function_signature": "transferFrom(address,address,uint256)",
+      "ordinal": 4,
+      "protocol_hint": "erc20",
+      "revert_reason": null,
+      "success": true,
+      "to": "0x86eee0422322710866af89e9cae3f7383d55310a",
+      "type": "call",
+      "value": "0"
+    },
+    {
+      "depth": 1,
+      "from": "0x8a91c9a16cd62693649d80afa85a09dbbdcb8508",
+      "function_name": null,
+      "function_selector": "0xa48c6adc",
+      "function_signature": null,
+      "ordinal": 5,
+      "protocol_hint": null,
+      "revert_reason": null,
+      "success": true,
+      "to": "0x1149cd70ae511fc600fb7143ac2f037ac5a4c748",
+      "type": "call",
+      "value": "0"
+    }
+  ],
+  "chain_id": 1,
+  "created_at": "2026-08-30T08:57:49.887+00:00",
+  "event_id": "5618529b55eff1abf8013bcb1bd2a88407da4f9fb69cd7c92ac9776a9482684d",
+  "feature_missing_flags": [
+    "token_decimals_missing"
+  ],
+  "idempotency_key": "1:0xe9264bcff60a5ce048fbc8230a35bd3602cbe299b739a464b7d888b7bfd0a4ed:trace_transaction:parsed-trace.v1",
+  "observed_at": "2020-06-26T21:22:36.000+00:00",
+  "parser_ver": "trace-parser.v1",
+  "raw_trace_ref": "data/raw-trace/chain_id=1/dt=2026-08-30/hour=08/1-0xe9264bcff60a5ce048fbc8230a35bd3602cbe299b739a464b7d888b7bfd0a4ed-trace_transaction.json",
+  "schema_ver": "parsed-trace.v1",
+  "source_trace_event_id": "e0b5a82523def8473f16c324b367f5890e9c16ae55d89b98403f393bcdb800c5",
+  "source_trace_idempotency_key": "1:0xe9264bcff60a5ce048fbc8230a35bd3602cbe299b739a464b7d888b7bfd0a4ed:trace_transaction",
+  "token_transfers": [
+    {
+      "amount_norm": null,
+      "amount_raw": "1000000000000000000000",
+      "decimals": null,
+      "event_id": "46cb2cdd4c98c038a1b67e640c2e9b8f6028427255066996acc3c2167315b074",
+      "from": "0x7000cc37d1b83ce772421de15fc7e01e634a05f3",
+      "log_index": 57,
+      "standard": "erc20",
+      "symbol": null,
+      "to": "0x8a91c9a16cd62693649d80afa85a09dbbdcb8508",
+      "token": "0x8e870d67f660d95d5be530380d0ec0bd388289e1",
+      "token_id": null
+    }
+  ],
+  "trace_source": "trace_transaction",
+  "trace_status": "ok",
+  "tx_hash": "0xe9264bcff60a5ce048fbc8230a35bd3602cbe299b739a464b7d888b7bfd0a4ed"
+}

@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-08-30T08:57:49.922+00:00",
+  "errors": [],
+  "feature_missing_flags": {
+    "no_logs": 1,
+    "no_protocol_role_matches": 6,
+    "token_decimals_missing": 3
+  },
+  "files_seen": 6,
+  "input": "data/replay/parsed-trace.v1/dt=2026-08-30",
+  "protocol_counts": {},
+  "protocol_feature_records": 6,
+  "records_with_role_matches": 0,
+  "role_contracts_loaded": 10,
+  "role_counts": {},
+  "skipped_duplicate_parsed_records": 0,
+  "status": "ok",
+  "unique_parsed_records": 6,
+  "write_replay": true
+}

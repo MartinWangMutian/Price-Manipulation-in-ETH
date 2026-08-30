@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-08-30T08:56:47.905+00:00",
+  "errors": [],
+  "expected_transactions": 1,
+  "manifest_entries": 1,
+  "out": "data/training/raw-trace-manifest.stage8.positive-pilot.v1.json",
+  "raw_bytes": 578715,
+  "status": "ok"
+}

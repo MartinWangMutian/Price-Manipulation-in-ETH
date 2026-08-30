@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-08-30T08:54:29.301+00:00",
+  "status": "failed_stopped",
+  "gate": "stage8_negative_metadata_pilot",
+  "incident_id": "balancer_2020_06_28",
+  "blocks_requested": 10,
+  "blocks_loaded_before_stop": 4,
+  "rpc_call_attempts": 10,
+  "rpc_calls_ok": 6,
+  "trace_calls_performed": 0,
+  "selected_count": 0,
+  "error": "failed to load candidate block 10347807 after the allowed retry",
+  "response": "stopped without trace calls; the corrected pilot was reduced to one previously successful block"
+}

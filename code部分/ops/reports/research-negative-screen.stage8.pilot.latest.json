@@ -1,0 +1,30 @@
+{
+  "blocked_unlabeled": 0,
+  "candidate_count": 5,
+  "checked_at": "2026-08-30T08:59:49.005+00:00",
+  "errors": [],
+  "gate": "stage8_negative_candidate_screen",
+  "hard_negative_candidates": 2,
+  "human_review_completed": false,
+  "known_exploit_transaction_hash_hits": 0,
+  "labels_promoted": 0,
+  "ofac_sdn_graph_address_hits": 0,
+  "positive_anchor_overlaps": 0,
+  "screen_pass_human_review_required": 5,
+  "screened_count": 5,
+  "screening_sources": {
+    "known_exploit_corpus": {
+      "source": "https://github.com/SunWeb3Sec/DeFiHackLabs",
+      "transaction_hashes_indexed": 1320,
+      "version": "d7539634f8e48b15829c5716f5618cf1851f27b6"
+    },
+    "ofac_sdn": {
+      "bytes": 5670063,
+      "ethereum_like_addresses_indexed": 91,
+      "sha256": "a2ccea04237a13459009bc527502bb6a08d4e84fe97b46fcce1ed621e9a8301e",
+      "source": "https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.CSV"
+    },
+    "raw_external_inputs_committed": false
+  },
+  "status": "ok"
+}
