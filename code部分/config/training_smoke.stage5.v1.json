@@ -1,0 +1,38 @@
+{
+  "schema_ver": "training-smoke.stage5.v1",
+  "seed": 20260830,
+  "device": "auto",
+  "hidden_dim": 32,
+  "num_layers": 2,
+  "dropout": 0.0,
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.03,
+    "weight_decay": 0.0,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-10
+  },
+  "gradient_clip_norm": 1.0,
+  "overfit_steps": 100,
+  "overfit_batch": {
+    "positive_graphs": 1,
+    "negative_graphs": 1,
+    "selection": "smallest_graph_file_then_tx_hash"
+  },
+  "acceptance": {
+    "maximum_final_loss": 0.1,
+    "maximum_final_to_initial_loss_ratio": 0.25,
+    "minimum_parameter_delta_l1": 1e-08,
+    "classification_threshold": 0.5,
+    "checkpoint_prediction_tolerance": 1e-06
+  },
+  "data_policy": {
+    "allowed_split": "train",
+    "validation_graphs_loaded": 0,
+    "held_out_test_graphs_loaded": 0,
+    "held_out_test_predictions": 0
+  }
+}

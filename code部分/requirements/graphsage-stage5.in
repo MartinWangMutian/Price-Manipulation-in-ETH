@@ -1,0 +1,4 @@
+# Direct dependencies for the Stage 5 GraphSAGE training environment.
+# Python target: CPython 3.13 on macOS arm64.
+torch==2.13.0
+torch-geometric==2.8.0.post1
