@@ -1,0 +1,463 @@
+{
+  "checked_at": "2026-08-30T08:28:46.939+00:00",
+  "checkpoint": "models/graphsage/runs/stage7-graphsage-smoke-49665eb/best_model.pt",
+  "checkpoint_sha256": "e6788bfbee1a2cb2129bcbfb6de2d8e16e021fa510b5fde6298cb5dc88c564b0",
+  "device": {
+    "availability": {
+      "cpu": true,
+      "cuda": false,
+      "mps": false,
+      "mps_built": true
+    },
+    "requested": "auto",
+    "selected": "cpu"
+  },
+  "errors": [],
+  "graphs_checked": 44,
+  "held_out_graph_files_loaded": 0,
+  "held_out_predictions": 0,
+  "items": [
+    {
+      "batch_probability": 0.4867960512638092,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.4867960512638092,
+      "single_stored_difference": 3.6190772600974697e-11,
+      "split": "train",
+      "stored_probability": 0.4867960513,
+      "tx_hash": "0x0397d5a413d5585d011814876ebd770bbf6cc9ad1dcc9f685a1a6236bed43cbf"
+    },
+    {
+      "batch_probability": 0.49399349093437195,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.49399349093437195,
+      "single_stored_difference": 3.4371949730882534e-11,
+      "split": "train",
+      "stored_probability": 0.4939934909,
+      "tx_hash": "0x0fe2542079644e107cbf13690eb9c2c65963ccb79089ff96bfaf8dced2331c92"
+    },
+    {
+      "batch_probability": 0.47764110565185547,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.47764110565185547,
+      "single_stored_difference": 4.814454390711376e-11,
+      "split": "train",
+      "stored_probability": 0.4776411057,
+      "tx_hash": "0x1549a8f77ff4030877ba09c12b838c6dec51133d0ed5c2c3a641c4d01c617ab4"
+    },
+    {
+      "batch_probability": 0.47764110565185547,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.47764110565185547,
+      "single_stored_difference": 4.814454390711376e-11,
+      "split": "train",
+      "stored_probability": 0.4776411057,
+      "tx_hash": "0x23c77e919e53989c596f5c3ce806adac16267a23a35c5cdb9b1b5117f28b4053"
+    },
+    {
+      "batch_probability": 0.47764110565185547,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.47764110565185547,
+      "single_stored_difference": 4.814454390711376e-11,
+      "split": "train",
+      "stored_probability": 0.4776411057,
+      "tx_hash": "0x2668f88852bdafc95244bf06144a9f3aaf657424e812d87070163accb7fa5718"
+    },
+    {
+      "batch_probability": 0.47939443588256836,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.47939443588256836,
+      "single_stored_difference": 1.7431667220790814e-11,
+      "split": "train",
+      "stored_probability": 0.4793944359,
+      "tx_hash": "0x3a17a7996b219a685f0332bd806784a3b5be47a2c0cc51c811b2b6816f5dff4e"
+    },
+    {
+      "batch_probability": 0.4847416877746582,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.4847416877746582,
+      "single_stored_difference": 2.534178422664013e-11,
+      "split": "train",
+      "stored_probability": 0.4847416878,
+      "tx_hash": "0x488cc85ac60ace248b499aeaeca1700bab20087a9632c68b39748ebf92520d72"
+    },
+    {
+      "batch_probability": 0.47764110565185547,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.47764110565185547,
+      "single_stored_difference": 4.814454390711376e-11,
+      "split": "train",
+      "stored_probability": 0.4776411057,
+      "tx_hash": "0x4ae15a092a638c8d15bc2a30e52602d95aa81eab81c94cdeb96157b93d600534"
+    },
+    {
+      "batch_probability": 0.48439493775367737,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.48439493775367737,
+      "single_stored_difference": 4.6322612412552644e-11,
+      "split": "train",
+      "stored_probability": 0.4843949378,
+      "tx_hash": "0x5c7c89c0b97cdadcd9caf7809c2ed983a23200b778634b200a0812fe1970673c"
+    },
+    {
+      "batch_probability": 0.47764110565185547,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.47764110565185547,
+      "single_stored_difference": 4.814454390711376e-11,
+      "split": "train",
+      "stored_probability": 0.4776411057,
+      "tx_hash": "0x65c43ae33c3dfa70b38cdfdd804818fab396e5b9e8af51c2da3e3e1ab9ce858a"
+    },
+    {
+      "batch_probability": 0.48272958397865295,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.48272958397865295,
+      "single_stored_difference": 2.1347035250585122e-11,
+      "split": "train",
+      "stored_probability": 0.482729584,
+      "tx_hash": "0x6c538dc4b66a6bed16ba71055b0ef3bcf9a094a3a7f12c9455354c798cf76d04"
+    },
+    {
+      "batch_probability": 0.4792781472206116,
+      "batch_single_difference": 5.960464477539063e-08,
+      "single_probability": 0.47927820682525635,
+      "single_stored_difference": 5.962525634339855e-08,
+      "split": "train",
+      "stored_probability": 0.4792781472,
+      "tx_hash": "0x7b7043167479b80052a5d7deb35011ebf7d1367398d322646bd5de57c8fc23f6"
+    },
+    {
+      "batch_probability": 0.47938376665115356,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.47938376665115356,
+      "single_stored_difference": 4.884642690328178e-11,
+      "split": "train",
+      "stored_probability": 0.4793837667,
+      "tx_hash": "0x7e0558f0780d9138b7781aaea55b7521f43ca0a3d5fccbdcc64f899382ff9ecf"
+    },
+    {
+      "batch_probability": 0.4806971848011017,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.4806971848011017,
+      "single_stored_difference": 1.1016743073355428e-12,
+      "split": "train",
+      "stored_probability": 0.4806971848,
+      "tx_hash": "0x7e7732acc762bec2092801fb651f2a495f7057cfedca85429b194ed1dc54c187"
+    },
+    {
+      "batch_probability": 0.47764110565185547,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.47764110565185547,
+      "single_stored_difference": 4.814454390711376e-11,
+      "split": "train",
+      "stored_probability": 0.4776411057,
+      "tx_hash": "0x871ae9d947bd7609cc160a7e7913aabfd9579984e9c54d0e4fa7c87c4f37c53f"
+    },
+    {
+      "batch_probability": 0.49562501907348633,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.49562501907348633,
+      "single_stored_difference": 2.6513680140283213e-11,
+      "split": "train",
+      "stored_probability": 0.4956250191,
+      "tx_hash": "0x8b74995d1d61d3d7547575649136b8765acb22882960f0636941c44ec7bbe146"
+    },
+    {
+      "batch_probability": 0.4794118106365204,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.4794118106365204,
+      "single_stored_difference": 3.6520397816985906e-11,
+      "split": "train",
+      "stored_probability": 0.4794118106,
+      "tx_hash": "0x98505a81598aa7b9fca65e8b6ede7af333fa5c413b056a29cb943afc8ac111a6"
+    },
+    {
+      "batch_probability": 0.47764110565185547,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.47764110565185547,
+      "single_stored_difference": 4.814454390711376e-11,
+      "split": "train",
+      "stored_probability": 0.4776411057,
+      "tx_hash": "0x9f13e14eea56fbb4f73c7d7b4bab5b924943b7ebf101943e4ab4a7c58d756fa7"
+    },
+    {
+      "batch_probability": 0.47764110565185547,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.47764110565185547,
+      "single_stored_difference": 4.814454390711376e-11,
+      "split": "train",
+      "stored_probability": 0.4776411057,
+      "tx_hash": "0xb16f961749f343ea83ea05638822defc8eda9a194c07feb9f18143ede15dea0f"
+    },
+    {
+      "batch_probability": 0.47927820682525635,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.47927820682525635,
+      "single_stored_difference": 2.5256352564895224e-11,
+      "split": "train",
+      "stored_probability": 0.4792782068,
+      "tx_hash": "0xbc708ce15e2b957651fbcae480d4049907ea18e8ff5c4955fc06211863f6a5bf"
+    },
+    {
+      "batch_probability": 0.47764110565185547,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.47764110565185547,
+      "single_stored_difference": 4.814454390711376e-11,
+      "split": "train",
+      "stored_probability": 0.4776411057,
+      "tx_hash": "0xc170c2439260d5885b28737abb1bf82cef55f11ecfaf88a7022bfd806f58748f"
+    },
+    {
+      "batch_probability": 0.5097556114196777,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.5097556114196777,
+      "single_stored_difference": 1.9677703910758737e-11,
+      "split": "train",
+      "stored_probability": 0.5097556114,
+      "tx_hash": "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d"
+    },
+    {
+      "batch_probability": 0.4801083207130432,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.4801083207130432,
+      "single_stored_difference": 1.3043233160203727e-11,
+      "split": "train",
+      "stored_probability": 0.4801083207,
+      "tx_hash": "0xccb643fa42789800816f9951e23ffc9bba80234224c305c3ee1e8942ebb7b204"
+    },
+    {
+      "batch_probability": 0.4794118106365204,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.4794118106365204,
+      "single_stored_difference": 3.6520397816985906e-11,
+      "split": "train",
+      "stored_probability": 0.4794118106,
+      "tx_hash": "0xd141eafe2ddee968efdbb6763672b23b71d2085f7cd46accc444c0e36e2e22f9"
+    },
+    {
+      "batch_probability": 0.4792781472206116,
+      "batch_single_difference": 5.960464477539063e-08,
+      "single_probability": 0.47927820682525635,
+      "single_stored_difference": 5.962525634339855e-08,
+      "split": "train",
+      "stored_probability": 0.4792781472,
+      "tx_hash": "0xd459c573d99e05d890098b4853f3ff1127981136b4f1ec9fef0f67b7eecbcc70"
+    },
+    {
+      "batch_probability": 0.47764110565185547,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.47764110565185547,
+      "single_stored_difference": 4.814454390711376e-11,
+      "split": "train",
+      "stored_probability": 0.4776411057,
+      "tx_hash": "0xd876340718eddc916301c2df59be599d49bba66c269266b011a901f36d704a7d"
+    },
+    {
+      "batch_probability": 0.4804612696170807,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.4804612696170807,
+      "single_stored_difference": 1.708067021155557e-11,
+      "split": "train",
+      "stored_probability": 0.4804612696,
+      "tx_hash": "0xd9211c81adb2dd95030f06c2193e2dec9446eb2e258a98c7d386ab6d1c8298c7"
+    },
+    {
+      "batch_probability": 0.4856543242931366,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.4856543242931366,
+      "single_stored_difference": 6.863398738232718e-12,
+      "split": "train",
+      "stored_probability": 0.4856543243,
+      "tx_hash": "0xdd449ecee1bf5bc7a2bfefe1810b95213d30e628f7117d89293c089d6393325d"
+    },
+    {
+      "batch_probability": 0.48243406414985657,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.48243406414985657,
+      "single_stored_difference": 4.985656332223698e-11,
+      "split": "train",
+      "stored_probability": 0.4824340641,
+      "tx_hash": "0xdf1624057675fef2d1396285434463d6d8483af5d7be501d9e64e86cdf6207c9"
+    },
+    {
+      "batch_probability": 0.47764110565185547,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.47764110565185547,
+      "single_stored_difference": 4.814454390711376e-11,
+      "split": "train",
+      "stored_probability": 0.4776411057,
+      "tx_hash": "0xe142c6e24e43365d166e8f3c3255e5c501d31dceca6e173657a0951d77b0c669"
+    },
+    {
+      "batch_probability": 0.4826444685459137,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.4826444685459137,
+      "single_stored_difference": 4.59137172725832e-11,
+      "split": "train",
+      "stored_probability": 0.4826444685,
+      "tx_hash": "0xe6b670cc55d258f08bc6feac61bbf1a5dd7ee678bafd8a3557876cbcc95a192a"
+    },
+    {
+      "batch_probability": 0.47764110565185547,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.47764110565185547,
+      "single_stored_difference": 4.814454390711376e-11,
+      "split": "train",
+      "stored_probability": 0.4776411057,
+      "tx_hash": "0xf6529a11c0ea87df71a7bc7e4bd7435d873e029117bdf1a033ae9b72e8324a34"
+    },
+    {
+      "batch_probability": 0.49992477893829346,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.49992477893829346,
+      "single_stored_difference": 3.829347949846351e-11,
+      "split": "train",
+      "stored_probability": 0.4999247789,
+      "tx_hash": "0xf951d59cab68466fea04e29c3540f5d3f4f75d2c76b5d893c3ccccdad948442b"
+    },
+    {
+      "batch_probability": 0.4848767817020416,
+      "batch_single_difference": 5.960464477539063e-08,
+      "single_probability": 0.4848768413066864,
+      "single_stored_difference": 5.960668642002176e-08,
+      "split": "validation",
+      "stored_probability": 0.4848767817,
+      "tx_hash": "0x2121c6baaca546b4b4c9f715fb184ae7c075c9187ce1e6003169784f2c45058a"
+    },
+    {
+      "batch_probability": 0.49062201380729675,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.49062201380729675,
+      "single_stored_difference": 7.296774295895148e-12,
+      "split": "validation",
+      "stored_probability": 0.4906220138,
+      "tx_hash": "0x762881b07feb63c436dee38edd4ff1f7a74c33091e534af56c9f7d49b5ecac15"
+    },
+    {
+      "batch_probability": 0.47764110565185547,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.47764110565185547,
+      "single_stored_difference": 4.814454390711376e-11,
+      "split": "validation",
+      "stored_probability": 0.4776411057,
+      "tx_hash": "0x866d37d962506d5dccf72fc7f4d6699ef2b255f24287d209cebf66e74ea6eaf0"
+    },
+    {
+      "batch_probability": 0.4829873740673065,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.4829873740673065,
+      "single_stored_difference": 3.269345905110299e-11,
+      "split": "validation",
+      "stored_probability": 0.4829873741,
+      "tx_hash": "0x970925628ceee12ce68992f0c3f35cff3a0abd74fd90f29bc9d8acda3c7ba040"
+    },
+    {
+      "batch_probability": 0.47764110565185547,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.47764110565185547,
+      "single_stored_difference": 4.814454390711376e-11,
+      "split": "validation",
+      "stored_probability": 0.4776411057,
+      "tx_hash": "0x980cada374d27d546ca09c09bb243fa72af59247337558193455c5af04ef952f"
+    },
+    {
+      "batch_probability": 0.4782617688179016,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.4782617688179016,
+      "single_stored_difference": 1.7901624627114643e-11,
+      "split": "validation",
+      "stored_probability": 0.4782617688,
+      "tx_hash": "0xb916099f8cbade06cc8c20b7d4dbb22c72c9c3569204eee2dc03175dd3fd2ee2"
+    },
+    {
+      "batch_probability": 0.4898799955844879,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.4898799955844879,
+      "single_stored_difference": 1.551209161121392e-11,
+      "split": "validation",
+      "stored_probability": 0.4898799956,
+      "tx_hash": "0xc6d08609cbee7029db102407aa1943aab8acabf68c176a2ce2c9968272d2e364"
+    },
+    {
+      "batch_probability": 0.4789201319217682,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.4789201319217682,
+      "single_stored_difference": 2.1768198354976676e-11,
+      "split": "validation",
+      "stored_probability": 0.4789201319,
+      "tx_hash": "0xc9f006fd96d8d2dff5e3855673c7652f9f252527dff421b730d10a198e522ac6"
+    },
+    {
+      "batch_probability": 0.47764110565185547,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.47764110565185547,
+      "single_stored_difference": 4.814454390711376e-11,
+      "split": "validation",
+      "stored_probability": 0.4776411057,
+      "tx_hash": "0xd39630273909e3a5f416029587cf2f9a7bafda5394d9e00fc7d3b61079bb9f8c"
+    },
+    {
+      "batch_probability": 0.48363569378852844,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.48363569378852844,
+      "single_stored_difference": 1.1471545935393124e-11,
+      "split": "validation",
+      "stored_probability": 0.4836356938,
+      "tx_hash": "0xe9ee021df4c86d7ec7c68d9ba3f526edf6d8506df37151fb19142c95a1a4a833"
+    },
+    {
+      "batch_probability": 0.4878273010253906,
+      "batch_single_difference": 0.0,
+      "single_probability": 0.4878273010253906,
+      "single_stored_difference": 2.5390634039723636e-11,
+      "split": "validation",
+      "stored_probability": 0.487827301,
+      "tx_hash": "0xf81cad779064078285f795860a3494a879f3ac01c0376d3f34e880c9925c98e3"
+    }
+  ],
+  "load_audit": {
+    "graph_files_loaded": 44,
+    "graph_files_loaded_by_split": {
+      "train": 33,
+      "validation": 11
+    },
+    "held_out_graph_files_loaded": 0,
+    "loaded_path_hash": "a38a23232aae9080ec4d2b2eb797cde400e6d009883ed46d631b0529777e5f6a"
+  },
+  "max_batch_single_difference": 5.960464477539063e-08,
+  "max_single_stored_difference": 5.962525634339855e-08,
+  "run_dir": "models/graphsage/runs/stage7-graphsage-smoke-49665eb",
+  "run_id": "stage7-graphsage-smoke-49665eb",
+  "schema_ver": "graphsage-inference-consistency.stage7.v1",
+  "split_audit": {
+    "group_counts": {
+      "held_out_test": 11,
+      "train": 24,
+      "validation": 11
+    },
+    "item_counts": {
+      "held_out_test": 11,
+      "train": 33,
+      "validation": 11
+    },
+    "label_counts": {
+      "held_out_test": {
+        "0": 10,
+        "1": 1
+      },
+      "train": {
+        "0": 30,
+        "1": 3
+      },
+      "validation": {
+        "0": 10,
+        "1": 1
+      }
+    }
+  },
+  "split_counts": {
+    "train": 33,
+    "validation": 11
+  },
+  "status": "ok",
+  "tolerance": 1e-06
+}

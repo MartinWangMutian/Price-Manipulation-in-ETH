@@ -1,0 +1,61 @@
+{
+  "baseline_run_id": "stage7-baselines-smoke-49665eb",
+  "checked_at": "2026-08-30T08:28:47.931+00:00",
+  "checkpoint_audit": {
+    "best_model.pt": {
+      "best_epoch": 1,
+      "epoch": 1,
+      "sha256": "655be109ea896a8166ec723f6258670d19e599af5392ef000071a277325db28a"
+    },
+    "last_model.pt": {
+      "best_epoch": 1,
+      "epoch": 16,
+      "sha256": "aa47ebec4dbd7093bafa3baad38b468a94a731ccd66182ac6ab62a90cf0f9cba"
+    }
+  },
+  "comparison": [
+    {
+      "model": "graphsage",
+      "validation_brier_score": 0.23474831722395947,
+      "validation_f1": 0.0,
+      "validation_pr_auc": 1.0,
+      "validation_precision": 0.0,
+      "validation_recall": 0.0,
+      "validation_roc_auc": 1.0
+    },
+    {
+      "model": "pooled_feature_mlp",
+      "validation_brier_score": 0.28618716000717404,
+      "validation_f1": 0.16666666666666669,
+      "validation_pr_auc": 1.0,
+      "validation_precision": 0.09090909090909091,
+      "validation_recall": 1.0,
+      "validation_roc_auc": 1.0
+    },
+    {
+      "model": "rule_baseline",
+      "validation_brier_score": 0.09090909090909091,
+      "validation_f1": 0.0,
+      "validation_pr_auc": 0.09090909090909091,
+      "validation_precision": 0.0,
+      "validation_recall": 0.0,
+      "validation_roc_auc": 0.5
+    }
+  ],
+  "errors": [],
+  "graphsage_best_epoch": 4,
+  "graphsage_run_id": "stage7-graphsage-smoke-49665eb",
+  "held_out_graph_files_loaded": 0,
+  "held_out_predictions": 0,
+  "inference_graphs_checked": 44,
+  "max_batch_single_difference": 5.960464477539063e-08,
+  "max_single_stored_difference": 5.962525634339855e-08,
+  "pooled_mlp_best_epoch": 1,
+  "prediction_count": 44,
+  "prediction_splits": [
+    "train",
+    "validation"
+  ],
+  "schema_ver": "engineering-smoke-artifact-audit.stage7.v1",
+  "status": "ok"
+}

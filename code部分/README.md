@@ -2,7 +2,7 @@
 
 本仓库实现一个面向 Ethereum pending/replay 交易的 DeFi 价格操纵风险监控原型。系统目标是在交易确认前后尽早构建 cash-flow graph，结合规则基线和 GraphSAGE 风险模型输出可复核告警，并通过 RAG 证据解释辅助分析员复核。
 
-当前仓库是可审计的工程原型：Provider-only replay、真实历史 trace、富图构建、规则评分、告警、RAG 解释、报告审计和故障降级链路已经打通；GraphSAGE 训练入口、推理入口和模型版本协议已实现。Stage 4 已将 57 张候选图冻结为 55 张工程烟雾标签（5 正、50 负），并完成事件/相关地址分组的 60/20/20 无泄漏切分；两笔角色证据不足的事件相关交易保留为 `unlabeled`。Stage 5 已锁定独立 PyTorch/PyG 环境，并通过最小训练闭环；Stage 6 已将旧的全量单批脚本升级为严格消费冻结 split manifest 的可复现 mini-batch 训练器，支持 validation PR-AUC 早停、最佳/最后 checkpoint、恢复训练和完整运行产物。该快照仍不支持研究级结论，下一步是 Stage 7 的 57 笔工程烟雾训练与基线对比。
+当前仓库是可审计的工程原型：Provider-only replay、真实历史 trace、富图构建、规则评分、告警、RAG 解释、报告审计和故障降级链路已经打通；GraphSAGE 训练入口、推理入口和模型版本协议已实现。Stage 4 已将 57 张候选图冻结为 55 张工程烟雾标签（5 正、50 负），并完成事件/相关地址分组的 60/20/20 无泄漏切分；两笔角色证据不足的事件相关交易保留为 `unlabeled`。Stage 5 已锁定独立 PyTorch/PyG 环境并通过最小训练闭环；Stage 6 已升级可复现训练器；Stage 7 已完成规则基线、pooled-feature MLP 和 GraphSAGE 的同切分工程烟雾对比，并验证早停、最佳模型恢复、单图推理一致性和 held-out 隔离。当前样本仍不支持研究级结论，下一步是 Stage 8 研究级数据扩充。
 
 ## 目录结构
 
@@ -164,6 +164,10 @@ Stage 6 可复现训练器见
 ```
 
 该入口只加载 `train` 和 `validation`；冻结的 `held_out_test` 在模型和阈值锁定前不得评估。
+
+Stage 7 三模型工程烟雾对比和推理一致性验收见
+[`ops/full_training_stage7_runbook.md`](ops/full_training_stage7_runbook.md) 和
+[`ops/full_training_stage7_report.md`](ops/full_training_stage7_report.md)。
 
 GraphSAGE 推理入口：
 
