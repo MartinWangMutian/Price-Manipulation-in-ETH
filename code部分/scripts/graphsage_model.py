@@ -56,24 +56,32 @@ try:
     _torch, _nn, _functional, _SAGEConv = require_torch_stack()
 
     class CashFlowGraphSAGE(_nn.Module):
-        """Two-layer GraphSAGE graph classifier for GraphInferenceRequest records."""
+        """Configurable GraphSAGE graph classifier for GraphInferenceRequest records."""
 
         def __init__(self, config: GraphSAGEConfig):
             super().__init__()
-            if config.num_layers != 2:
-                raise ValueError("only the validated two-layer GraphSAGE topology is supported")
+            if config.num_layers < 1:
+                raise ValueError("num_layers must be at least one")
+            if config.hidden_dim < 1:
+                raise ValueError("hidden_dim must be at least one")
+            if not 0.0 <= config.dropout < 1.0:
+                raise ValueError("dropout must be in [0, 1)")
             self.config = config
-            self.conv1 = _SAGEConv(config.input_dim, config.hidden_dim, aggr=config.aggregator)
-            self.conv2 = _SAGEConv(config.hidden_dim, config.hidden_dim, aggr=config.aggregator)
+            dimensions = [config.input_dim] + [config.hidden_dim] * config.num_layers
+            self.convs = _nn.ModuleList(
+                _SAGEConv(dimensions[index], dimensions[index + 1], aggr=config.aggregator)
+                for index in range(config.num_layers)
+            )
             self.dropout = _nn.Dropout(config.dropout)
             self.readout = _nn.Linear(config.hidden_dim, 1)
 
-        def forward(self, x: Any, edge_index: Any, batch: Any) -> Any:
-            hidden = self.conv1(x, edge_index)
-            hidden = _functional.relu(hidden)
-            hidden = self.dropout(hidden)
-            hidden = self.conv2(hidden, edge_index)
-            hidden = _functional.relu(hidden)
+        def forward_logits(self, x: Any, edge_index: Any, batch: Any) -> Any:
+            hidden = x
+            for index, convolution in enumerate(self.convs):
+                hidden = convolution(hidden, edge_index)
+                hidden = _functional.relu(hidden)
+                if index < len(self.convs) - 1:
+                    hidden = self.dropout(hidden)
             graph_count = int(batch.max().item()) + 1 if batch.numel() else 1
             # The first NODE_TYPES columns are one-hot node types. Pool only
             # Address and Protocol nodes, falling back to all nodes for a
@@ -87,7 +95,11 @@ try:
             counts = hidden.new_zeros((graph_count, 1))
             counts.index_add_(0, batch, hidden.new_ones((hidden.shape[0], 1)))
             pooled = pooled / counts.clamp_min(1.0)
-            return _torch.sigmoid(self.readout(pooled)).squeeze(-1)
+            return self.readout(pooled).squeeze(-1)
+
+        def forward(self, x: Any, edge_index: Any, batch: Any) -> Any:
+            """Return probabilities for backward-compatible inference callers."""
+            return _torch.sigmoid(self.forward_logits(x, edge_index, batch))
 
 except RuntimeError:
 

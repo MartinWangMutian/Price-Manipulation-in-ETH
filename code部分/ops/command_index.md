@@ -291,12 +291,24 @@ python3 scripts/graph_label_exporter.py \
 ```
 
 ```bash
-python3 scripts/graphsage_train.py \
-  --graphs data/replay/graph-inference.v1 \
-  --labels data/training/graph_labels.v1.json \
-  --out-dir models/graphsage/latest \
-  --report ops/reports/graphsage-train.latest.json \
+.venv-graphsage/bin/python scripts/graphsage_train.py \
+  --split-manifest data/training/split_manifest.stage4.v1.json \
+  --device auto \
+  --seed 20260830 \
+  --batch-size 8 \
+  --hidden-dim 64 \
+  --num-layers 2 \
+  --epochs 100 \
+  --patience 15 \
+  --monitor pr_auc \
+  --run-id stage7-engineering-smoke \
   --dry-run
+```
+
+```bash
+.venv-graphsage/bin/python scripts/graphsage_train_artifact_audit.py \
+  --run-dir models/graphsage/runs/stage7-engineering-smoke \
+  --split-manifest data/training/split_manifest.stage4.v1.json
 ```
 
 ```bash

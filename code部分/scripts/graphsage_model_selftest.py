@@ -3,7 +3,16 @@
 
 from __future__ import annotations
 
-from graphsage_model import EDGE_SUMMARY_DIM, FEATURE_DIM, incident_edge_features, node_feature
+from graphsage_model import (
+    EDGE_SUMMARY_DIM,
+    FEATURE_DIM,
+    CashFlowGraphSAGE,
+    GraphSAGEConfig,
+    dependency_status,
+    graph_tensors,
+    incident_edge_features,
+    node_feature,
+)
 
 
 def main() -> int:
@@ -26,6 +35,18 @@ def main() -> int:
     assert len(incident["address:left"]) == EDGE_SUMMARY_DIM
     assert any(incident["address:left"]), incident
     assert len(node_feature(left, incident["address:left"])) == FEATURE_DIM
+    if all(dependency_status().values()):
+        import torch
+
+        x, edge_index, batch = graph_tensors([graph])
+        for layers in (1, 2, 3):
+            model = CashFlowGraphSAGE(
+                GraphSAGEConfig(hidden_dim=8, num_layers=layers, dropout=0.0)
+            )
+            logits = model.forward_logits(x, edge_index, batch)
+            probabilities = model(x, edge_index, batch)
+            assert tuple(logits.shape) == (1,)
+            assert torch.allclose(probabilities, torch.sigmoid(logits))
     print("graphsage_model_selftest ok")
     return 0
 

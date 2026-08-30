@@ -2,7 +2,7 @@
 
 本仓库实现一个面向 Ethereum pending/replay 交易的 DeFi 价格操纵风险监控原型。系统目标是在交易确认前后尽早构建 cash-flow graph，结合规则基线和 GraphSAGE 风险模型输出可复核告警，并通过 RAG 证据解释辅助分析员复核。
 
-当前仓库是可审计的工程原型：Provider-only replay、真实历史 trace、富图构建、规则评分、告警、RAG 解释、报告审计和故障降级链路已经打通；GraphSAGE 训练入口、推理入口和模型版本协议已实现。Stage 4 已将 57 张候选图冻结为 55 张工程烟雾标签（5 正、50 负），并完成事件/相关地址分组的 60/20/20 无泄漏切分；两笔角色证据不足的事件相关交易保留为 `unlabeled`。Stage 5 已锁定独立 PyTorch/PyG 环境，并通过单图更新、单批过拟合、checkpoint 精确恢复和重复运行一致性门控。该快照仍不支持研究级结论，下一步是 Stage 6 训练器升级。
+当前仓库是可审计的工程原型：Provider-only replay、真实历史 trace、富图构建、规则评分、告警、RAG 解释、报告审计和故障降级链路已经打通；GraphSAGE 训练入口、推理入口和模型版本协议已实现。Stage 4 已将 57 张候选图冻结为 55 张工程烟雾标签（5 正、50 负），并完成事件/相关地址分组的 60/20/20 无泄漏切分；两笔角色证据不足的事件相关交易保留为 `unlabeled`。Stage 5 已锁定独立 PyTorch/PyG 环境，并通过最小训练闭环；Stage 6 已将旧的全量单批脚本升级为严格消费冻结 split manifest 的可复现 mini-batch 训练器，支持 validation PR-AUC 早停、最佳/最后 checkpoint、恢复训练和完整运行产物。该快照仍不支持研究级结论，下一步是 Stage 7 的 57 笔工程烟雾训练与基线对比。
 
 ## 目录结构
 
@@ -148,7 +148,22 @@ python3 -m venv .venv-graphsage
 .venv-graphsage/bin/python scripts/training_smoke_test.py
 ```
 
-现有 `graphsage_train.py` 仍是 Stage 6 升级前的旧入口，不得用于正式训练或冻结测试集评估。
+Stage 6 可复现训练器见
+[`ops/full_training_stage6_runbook.md`](ops/full_training_stage6_runbook.md)：
+
+```bash
+.venv-graphsage/bin/python scripts/graphsage_train.py \
+  --split-manifest data/training/split_manifest.stage4.v1.json \
+  --device auto \
+  --seed 20260830 \
+  --batch-size 8 \
+  --epochs 100 \
+  --patience 15 \
+  --monitor pr_auc \
+  --run-id stage7-engineering-smoke
+```
+
+该入口只加载 `train` 和 `validation`；冻结的 `held_out_test` 在模型和阈值锁定前不得评估。
 
 GraphSAGE 推理入口：
 
