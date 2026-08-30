@@ -3,7 +3,7 @@
   "context_windows": [
     "tx-only"
   ],
-  "created_at": "2026-08-30T08:57:49.975+00:00",
+  "created_at": "2026-08-30T13:19:27.460+00:00",
   "edges": [
     {
       "call_depth": 0,
@@ -1258,6 +1258,591 @@
       "success": true,
       "to_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
       "value": "0"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:3a98227cc2158fded3d01822",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "matched",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:03a41ae37f251e05449b8107",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:b12a2b8037a7fe5ed250d0b9",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:91327556ca7fc5b09379bd98",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:3cfbdc29cbebf925f3460c6c",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:e686af2635d816e618902093",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:ad0ca48f2f21edf570fc95e9",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:a1d983cbc04e2cc19eeb3dc8",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:0f1655fe6080634cbc9afc30",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:79fa60b7495d487335a8e5b1",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:e9404ee728a58b724536e5d8",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:5f815b3be63a5063ea37d30f",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:03810e21b3ff2cb5c2742697",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:3bccdd971d2a000bc0027777",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:eece1a5eff6abfd074648685",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:7de376b0746821e9b846a6b1",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:7bec0abf7155812523367443",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:72fd58d1d147d5e2cc5d6103",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:e35093feef455d9110499cbb",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:8de016eaaefae946c8490503",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:ff7b1653298d27cd332de127",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:9bac0c599a6469e66ab85e40",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:75948d0156f7712b4829d0a1",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:a8d9cf09dc3ee9de7874df27",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:73a5d567e21a101d2bba2d9b",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:da013f6becc3754d88ceb99f",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:8acdcced15da61aa149a6d56",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:b2df4d515a06c1d392d2be32",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:41021caa22c406275200a994",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:4dcd19bac9b547aec0d0a2e2",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:c6b5b9b0feec35379a259fa0",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:385dd1176359888a65b938c9",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:db60f1413c03fddff9d4322d",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:9352778020dbd2d5c28c820b",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:80b79ca3e054a06a3fce9fa9",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:4c89b4516ba33455161bb01f",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:61e134f1f1d25f2976d8babc",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:980f24c671bcf43ee44a7f28",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:35df8a769c0baffa6c94413e",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:15139023c714795b289ee11e",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:0ca7b10170d8201f61d3b302",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:50b4d7b18c637c4be4620ca8",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:069dc6fb4a5211071f0d672f",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:35e8b945dcfdafd5d78488d9",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
+    },
+    {
+      "context_type": "protocol_role_match",
+      "edge_id": "edge:cf79acda18625128c40d25e8",
+      "edge_type": "context",
+      "from_node": "address:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "relation_type": "protocol_role",
+      "roles": [
+        "datetime_utility"
+      ],
+      "side": "to",
+      "to_node": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "window": "tx-only"
     }
   ],
   "event_id": "4829bc202183e37e057582d71f54b3d7f12fa10d2bde738a756c2636dd1ff23c",
@@ -1265,8 +1850,7 @@
     "context_1h_protocol_empty",
     "context_1h_protocol_unavailable",
     "context_5m_address_empty",
-    "context_5m_address_unavailable",
-    "no_protocol_role_matches"
+    "context_5m_address_unavailable"
   ],
   "feature_ver": "cash-flow-graph-builder.v1",
   "graph_id": "graph:0x2198f9a811271fbe577992a75eb89d4d22d167b6a7ee4ff1d9a5e4ef54edf6c5",
@@ -1305,6 +1889,23 @@
       "address": "0x681d2475bd0cdaa134dc5179d95f9ed4b354a28b",
       "node_id": "address:0x681d2475bd0cdaa134dc5179d95f9ed4b354a28b",
       "node_type": "address"
+    },
+    {
+      "address": "0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "audit_status": "audited_deployment_manifest",
+      "category": "lending",
+      "contract": "DateTime",
+      "emergency_surface": false,
+      "governance_control": "nuo_network_v2",
+      "node_id": "protocol:0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "node_type": "protocol",
+      "pause_capability": false,
+      "protocol_id": "nuo_network_v2",
+      "risk_tier": "auxiliary",
+      "roles": [
+        "datetime_utility"
+      ],
+      "upgradeability": "immutable_contract_code"
     },
     {
       "node_id": "tx:0x2198f9a811271fbe577992a75eb89d4d22d167b6a7ee4ff1d9a5e4ef54edf6c5",

@@ -35,6 +35,12 @@ def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def iter_json_files(path: Path) -> list[Path]:
+    if path.is_file():
+        return [path]
+    return sorted(path.rglob("*.json"))
+
+
 def audit_bundle(root: Path, path: Path, bundle: dict[str, Any]) -> list[str]:
     errors = []
     if bundle.get("schema_ver") != "trace-bundle.v1":
@@ -89,7 +95,7 @@ def main() -> int:
     args = parser.parse_args()
 
     root = Path(__file__).resolve().parents[1]
-    files = sorted((root / args.input).glob("dt=*/hour=*/*.json"))
+    files = iter_json_files(root / args.input)
     errors = []
     keys = []
     status_counts: Counter[str] = Counter()

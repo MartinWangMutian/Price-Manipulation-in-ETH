@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-08-30T13:19:27.404+00:00",
+  "errors": [],
+  "feature_missing_flags": {
+    "no_logs": 1,
+    "no_protocol_role_matches": 4,
+    "token_decimals_missing": 3
+  },
+  "files_seen": 6,
+  "input": "data/replay/parsed-trace.v1/dt=2026-08-30",
+  "protocol_counts": {
+    "balancer_v1_sta_pool": 1,
+    "nuo_network_v2": 1
+  },
+  "protocol_feature_records": 6,
+  "records_with_role_matches": 2,
+  "role_contracts_loaded": 12,
+  "role_counts": {
+    "datetime_utility": 1,
+    "liquidity_pool": 1,
+    "pool": 1,
+    "price_formation": 1
+  },
+  "skipped_duplicate_parsed_records": 0,
+  "status": "ok",
+  "unique_parsed_records": 6,
+  "write_replay": true
+}

@@ -88,7 +88,18 @@ def raw_trace_path(root: Path, created_at: datetime, tx_hash: str, source: str) 
 
 def rpc_call(url: str, method: str, params: list[Any], timeout_s: float) -> tuple[dict[str, Any], float]:
     payload = json.dumps({"jsonrpc": "2.0", "id": 1, "method": method, "params": params}).encode("utf-8")
-    request = Request(url, data=payload, headers={"Content-Type": "application/json"}, method="POST")
+    request = Request(
+        url,
+        data=payload,
+        headers={
+            "Accept": "application/json",
+            "Accept-Encoding": "identity",
+            "Connection": "close",
+            "Content-Type": "application/json",
+            "User-Agent": "cash-flow-graph-replay/1.0",
+        },
+        method="POST",
+    )
     started = time.perf_counter()
     try:
         with urlopen(request, timeout=timeout_s, context=ssl_context()) as response:

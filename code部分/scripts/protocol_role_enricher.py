@@ -145,12 +145,17 @@ def build_protocol_features(parsed: dict[str, Any], role_index: dict[str, dict[s
 
 
 def replay_output_path(root: Path, record: dict[str, Any]) -> Path:
+    replay_root = root / "data" / "replay" / "protocol-features.v1"
+    existing = sorted(replay_root.rglob(f"{record['event_id']}.json"))
+    if len(existing) == 1:
+        return existing[0]
+    if len(existing) > 1:
+        raise ValueError(
+            f"duplicate protocol feature event paths for {record['event_id']}: {existing}"
+        )
     created = datetime.fromisoformat(record["created_at"])
     return (
-        root
-        / "data"
-        / "replay"
-        / "protocol-features.v1"
+        replay_root
         / f"dt={created:%Y-%m-%d}"
         / f"hour={created:%H}"
         / f"{record['event_id']}.json"

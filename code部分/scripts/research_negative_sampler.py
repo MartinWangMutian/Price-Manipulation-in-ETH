@@ -172,6 +172,12 @@ def main() -> int:
     parser.add_argument("--incident-id")
     parser.add_argument("--target-count", type=int)
     parser.add_argument("--max-blocks", type=int)
+    parser.add_argument(
+        "--block-offset",
+        action="append",
+        type=int,
+        help="Explicit incident-relative block offset; repeat for multiple blocks.",
+    )
     parser.add_argument("--rpc-url", default=os.environ.get("ETH_MAIN_HTTP_URL"))
     parser.add_argument("--timeout-s", type=float, default=20.0)
     parser.add_argument("--dry-run", action="store_true")
@@ -195,7 +201,14 @@ def main() -> int:
         parser.error("--target-count and --max-blocks must be positive")
     incident = incident_by_id(incidents_payload, incident_id)
     anchor_hash = str(incident["anchor_transactions"][0]).lower()
-    offsets = list(config["pilot"]["negative_block_offsets"])[:max_blocks]
+    configured_offsets = (
+        args.block_offset
+        if args.block_offset is not None
+        else list(config["pilot"]["negative_block_offsets"])
+    )
+    offsets = configured_offsets[:max_blocks]
+    if not offsets:
+        parser.error("at least one negative block offset is required")
     exclusion_window = config["negative_sampling"]["incident_exclusion_window_blocks"]
     if any(abs(int(offset)) <= exclusion_window for offset in offsets):
         parser.error("negative block offsets must remain outside the incident exclusion window")

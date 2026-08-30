@@ -141,6 +141,41 @@
       "upgradeability": "proxy",
       "risk_tier": "oracle",
       "emergency_surface": false
+    },
+    {
+      "protocol_id": "balancer_v1_sta_pool",
+      "category": "amm_dex",
+      "contract": "BPool ETH-WBTC-LINK-SNX-STA",
+      "address": "0x0e511aa1a137aad267dfe3a6bfca0b856c1a3682",
+      "roles": ["pool", "liquidity_pool", "price_formation"],
+      "graph_node_type": "protocol",
+      "audit_status": "explorer_and_postmortem_verified",
+      "governance_control": "balancer_v1_pool_controller",
+      "pause_capability": false,
+      "upgradeability": "immutable_contract_code",
+      "risk_tier": "core",
+      "emergency_surface": false,
+      "source_refs": [
+        "https://etherscan.io/address/0x0e511aa1a137aad267dfe3a6bfca0b856c1a3682",
+        "https://medium.com/balancer-protocol/incident-with-non-standard-erc20-deflationary-tokens-95a0f6d46dea"
+      ]
+    },
+    {
+      "protocol_id": "nuo_network_v2",
+      "category": "lending",
+      "contract": "DateTime",
+      "address": "0x2929e21109901461659c0f26ad7f0e7633ea6539",
+      "roles": ["datetime_utility"],
+      "graph_node_type": "protocol",
+      "audit_status": "audited_deployment_manifest",
+      "governance_control": "nuo_network_v2",
+      "pause_capability": false,
+      "upgradeability": "immutable_contract_code",
+      "risk_tier": "auxiliary",
+      "emergency_surface": false,
+      "source_refs": [
+        "https://github.com/NuoNetwork/nuo-audited-contracts"
+      ]
     }
   ],
   "dynamic_role_rules": [

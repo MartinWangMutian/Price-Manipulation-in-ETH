@@ -1,0 +1,41 @@
+{
+  "build_latency_ms": {
+    "max": 3.172,
+    "p50": 0.036,
+    "p95": 3.172
+  },
+  "checked_at": "2026-08-30T13:19:27.484+00:00",
+  "context_window_counts": {
+    "tx-only": 6
+  },
+  "edge_counts": {
+    "call": 797,
+    "context": 719,
+    "transfer": 318
+  },
+  "errors": [],
+  "feature_missing_flags": {
+    "context_1h_protocol_empty": 6,
+    "context_1h_protocol_unavailable": 6,
+    "context_5m_address_empty": 6,
+    "context_5m_address_unavailable": 6,
+    "no_logs": 1,
+    "no_protocol_role_matches": 4,
+    "token_decimals_missing": 3
+  },
+  "files_seen": 6,
+  "graphs_built": 6,
+  "node_counts": {
+    "address": 97,
+    "asset": 9,
+    "protocol": 2,
+    "transaction": 6
+  },
+  "parsed_input": "data/replay/parsed-trace.v1/dt=2026-08-30",
+  "protocol_features": "data/replay/protocol-features.v1/dt=2026-08-30",
+  "skipped_duplicate_parsed_records": 0,
+  "status": "ok",
+  "unique_parsed_records": 6,
+  "write_replay": true,
+  "write_snapshot": true
+}

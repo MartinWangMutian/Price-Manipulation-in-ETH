@@ -3,7 +3,15 @@
 
 from __future__ import annotations
 
-from cash_flow_graph_builder import build_graph, validate_graph_shape
+from pathlib import Path
+from tempfile import TemporaryDirectory
+
+from cash_flow_graph_builder import (
+    build_graph,
+    replay_output_path,
+    snapshot_output_path,
+    validate_graph_shape,
+)
 
 
 def main() -> int:
@@ -120,6 +128,23 @@ def main() -> int:
         if edge.get("edge_type") == "context" and edge.get("context_type") == "temporal_window"
     ]
     assert {edge["window"] for edge in temporal_edges} == {"5m-address", "1h-protocol"}, graph
+    with TemporaryDirectory() as temp_dir:
+        root = Path(temp_dir)
+        replay = (
+            root
+            / "data/replay/graph-inference.v1/dt=2026-05-14/hour=00"
+            / f"{graph['event_id']}.json"
+        )
+        snapshot = (
+            root
+            / "data/graph-snapshots/graph-inference.v1/dt=2026-05-14/hour=00"
+            / f"{graph['event_id']}.json"
+        )
+        for path in (replay, snapshot):
+            path.parent.mkdir(parents=True)
+            path.write_text("{}\n", encoding="utf-8")
+        assert replay_output_path(root, graph) == replay
+        assert snapshot_output_path(root, graph) == snapshot
     print("cash_flow_graph_builder_selftest ok")
     return 0
 

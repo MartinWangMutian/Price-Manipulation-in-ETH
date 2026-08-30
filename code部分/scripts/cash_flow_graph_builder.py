@@ -459,12 +459,15 @@ def build_graph(
 
 
 def replay_output_path(root: Path, record: dict[str, Any]) -> Path:
+    replay_root = root / "data" / "replay" / "graph-inference.v1"
+    existing = sorted(replay_root.rglob(f"{record['event_id']}.json"))
+    if len(existing) == 1:
+        return existing[0]
+    if len(existing) > 1:
+        raise ValueError(f"duplicate graph replay paths for {record['event_id']}: {existing}")
     created = datetime.fromisoformat(record["created_at"])
     return (
-        root
-        / "data"
-        / "replay"
-        / "graph-inference.v1"
+        replay_root
         / f"dt={created:%Y-%m-%d}"
         / f"hour={created:%H}"
         / f"{record['event_id']}.json"
@@ -472,12 +475,15 @@ def replay_output_path(root: Path, record: dict[str, Any]) -> Path:
 
 
 def snapshot_output_path(root: Path, record: dict[str, Any]) -> Path:
+    snapshot_root = root / "data" / "graph-snapshots" / "graph-inference.v1"
+    existing = sorted(snapshot_root.rglob(f"{record['event_id']}.json"))
+    if len(existing) == 1:
+        return existing[0]
+    if len(existing) > 1:
+        raise ValueError(f"duplicate graph snapshot paths for {record['event_id']}: {existing}")
     created = datetime.fromisoformat(record["created_at"])
     return (
-        root
-        / "data"
-        / "graph-snapshots"
-        / "graph-inference.v1"
+        snapshot_root
         / f"dt={created:%Y-%m-%d}"
         / f"hour={created:%H}"
         / f"{record['event_id']}.json"

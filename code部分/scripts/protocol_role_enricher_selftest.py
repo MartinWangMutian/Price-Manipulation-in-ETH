@@ -3,7 +3,10 @@
 
 from __future__ import annotations
 
-from protocol_role_enricher import build_protocol_features
+from pathlib import Path
+from tempfile import TemporaryDirectory
+
+from protocol_role_enricher import build_protocol_features, replay_output_path
 
 
 def main() -> int:
@@ -53,6 +56,16 @@ def main() -> int:
     assert any("lending_market" in roles for roles in role_sets), record
     assert any("oracle" in roles for roles in role_sets), record
     assert "no_protocol_role_matches" not in record["feature_missing_flags"], record
+    with TemporaryDirectory() as temp_dir:
+        root = Path(temp_dir)
+        existing = (
+            root
+            / "data/replay/protocol-features.v1/dt=2026-05-14/hour=00"
+            / f"{record['event_id']}.json"
+        )
+        existing.parent.mkdir(parents=True)
+        existing.write_text("{}\n", encoding="utf-8")
+        assert replay_output_path(root, record) == existing
     print("protocol_role_enricher_selftest ok")
     return 0
 
