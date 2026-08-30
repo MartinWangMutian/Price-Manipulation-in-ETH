@@ -181,12 +181,12 @@ def minibatches(
 
 
 def pr_auc(labels: list[int], scores: list[float]) -> float:
+    """Return tie-aware step-wise average precision (the PR-AUC selection metric)."""
     positives = sum(labels)
     if positives == 0:
         raise ValueError("PR-AUC requires at least one positive label")
     ranked = sorted(zip(scores, labels), key=lambda item: item[0], reverse=True)
     previous_recall = 0.0
-    previous_precision = 1.0
     area = 0.0
     true_positives = 0
     false_positives = 0
@@ -200,9 +200,8 @@ def pr_auc(labels: list[int], scores: list[float]) -> float:
             index += 1
         recall = true_positives / positives
         precision = true_positives / (true_positives + false_positives)
-        area += (recall - previous_recall) * (precision + previous_precision) / 2.0
+        area += (recall - previous_recall) * precision
         previous_recall = recall
-        previous_precision = precision
     return float(area)
 
 

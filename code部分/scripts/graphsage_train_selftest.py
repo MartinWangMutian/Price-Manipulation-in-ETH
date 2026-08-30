@@ -53,8 +53,10 @@ def main() -> int:
     assert metrics["roc_auc"] == 1.0, metrics
     assert metrics["f1"] == 1.0, metrics
     inverse = binary_metrics([0, 1], [0.9, 0.1], threshold=0.5)
-    assert inverse["pr_auc"] == 0.25, inverse
+    assert inverse["pr_auc"] == 0.5, inverse
     assert inverse["roc_auc"] == 0.0, inverse
+    tied = binary_metrics([0, 0, 1], [0.0, 0.0, 0.0], threshold=0.5)
+    assert tied["pr_auc"] == 1 / 3, tied
 
     samples = [{"id": index} for index in range(7)]
     first = [[item["id"] for item in batch] for batch in minibatches(samples, 3, seed=11)]
